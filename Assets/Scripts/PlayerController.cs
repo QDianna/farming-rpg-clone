@@ -117,6 +117,7 @@ public class PlayerController : MonoBehaviour
         switch (toolSystem.currentTool)
         {
             case ToolType.Hoe:
+                // animator.SetTrigger("UseHoe");
                 plotlandController.TillPlot(playerPosition);
                 break;
 
