@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public InputAction MoveAction;
     private Rigidbody2D rigidbody2d;
     private Vector2 move;
+    private Vector2 moveDirection = new Vector2(0, -1);
     private float unitsPerSecond = 4.0f;
 
     #endregion
@@ -38,6 +39,13 @@ public class PlayerController : MonoBehaviour
     // [SerializeField] private GameObject seedPrefab;
 
     #endregion
+    
+    #region Animations
+
+    [Header("Animation Settings")] 
+    public Animator animator;
+    
+    #endregion
 
     #region Unity Methods
 
@@ -48,6 +56,8 @@ public class PlayerController : MonoBehaviour
         ToolAction.Enable();
         
         rigidbody2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        
         currentInteractable = null;
     }
 
@@ -55,6 +65,16 @@ public class PlayerController : MonoBehaviour
     {
         move = MoveAction.ReadValue<Vector2>();
 
+        if(!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y,0.0f))
+        {
+            moveDirection.Set(move.x, move.y);
+            moveDirection.Normalize();
+        }
+        
+        animator.SetFloat("Move X", moveDirection.x);
+        animator.SetFloat("Move Y", moveDirection.y);
+        animator.SetFloat("Speed", move.magnitude);
+        
         HandleInteractInput();
         HandleToolInput();
     }
