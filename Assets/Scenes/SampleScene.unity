@@ -47885,11 +47885,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1600520873}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1791912045 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 771534080730191865, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-  m_PrefabInstance: {fileID: 6013774020607531940}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1843876587
 GameObject:
   m_ObjectHideFlags: 0
@@ -49904,38 +49899,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 596685181290690568, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: hoeObject
-      value: 
-      objectReference: {fileID: 1791912045}
-    - target: {fileID: 771534080730191865, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: m_Name
-      value: HoeSprite
-      objectReference: {fileID: 0}
-    - target: {fileID: 3894650541190145971, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3894650541190145971, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3894650541190145971, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5510643312354073766, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5510643312354073766, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5510643312354073766, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5657702628253418783, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -49983,14 +49946,6 @@ PrefabInstance:
     - target: {fileID: 7794502562995452509, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8982209113101767293, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: m_Name
-      value: ToolAnimationPivot
-      objectReference: {fileID: 0}
-    - target: {fileID: 9149547885705101674, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

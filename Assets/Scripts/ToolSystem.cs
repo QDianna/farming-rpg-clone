@@ -12,13 +12,17 @@ public class ToolSystem : MonoBehaviour
     public ToolType currentTool = ToolType.None;
     
     [Header("Tool GameObjects")]
-    [SerializeField] private Transform toolPivot; // General pivot pentru rotație
+    [SerializeField] private Transform toolPivot;  // tool placement & animation pivot
     [SerializeField] private GameObject hoeObject;
     // [SerializeField] private GameObject axeObject;
 
+    void Start()
+    {
+        UpdateToolVisibility(); // Hide all tools at start
+    }
+    
     void Update()
     {
-        // Schimbă uneltele apăsând tastele 1, 2, 3, 4
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SetTool(ToolType.Hoe);

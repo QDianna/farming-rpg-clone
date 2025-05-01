@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Tool Settings")]
     public InputAction ToolAction;
+    [SerializeField] private Transform toolPivot;
     [SerializeField] private ToolSystem toolSystem;
     [SerializeField] private PlotlandController plotlandController;
     // [SerializeField] private Inventory playerInventory;
@@ -77,6 +78,8 @@ public class PlayerController : MonoBehaviour
         
         HandleInteractInput();
         HandleToolInput();
+        
+        UpdateToolDirection(moveDirection);
     }
 
     private void FixedUpdate()
@@ -117,7 +120,7 @@ public class PlayerController : MonoBehaviour
         switch (toolSystem.currentTool)
         {
             case ToolType.Hoe:
-                // animator.SetTrigger("UseHoe");
+                animator.SetTrigger("UseTool");
                 plotlandController.TillPlot(playerPosition);
                 break;
 
@@ -126,6 +129,46 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
+    private void UpdateToolDirection(Vector2 direction)
+    {
+        Vector3 positionOffset = new Vector3(-0.45f, 0.6f, 0);
+        // float rotationAngle = 13.25f;  // bug? rotation doesn't work
+        
+        if (direction.y < 0 && Mathf.Abs(direction.y) > Mathf.Abs(direction.x))          // down
+        {
+            toolPivot.localPosition = positionOffset;
+            // toolPivot.localRotation = Quaternion.Euler(0, 0, rotationAngle);
+        }
+        else if (direction.y > 0 && Mathf.Abs(direction.y) > Mathf.Abs(direction.x))     // up
+        {
+            toolPivot.localPosition = new Vector3(
+                -positionOffset.x,
+                positionOffset.y,
+                -positionOffset.z
+            );
+            // toolPivot.localRotation = Quaternion.Euler(0, 0, -rotationAngle);;
+        }
+        else if (direction.x < 0)                                                          // left
+        {
+            toolPivot.localPosition = new Vector3(
+                0.0f * positionOffset.x,
+                positionOffset.y,
+                positionOffset.z
+            );
+            // toolPivot.localRotation = Quaternion.Euler(0, 0, -rotationAngle);
+        }
+        else if (direction.x > 0)                                                         // right
+        {
+            toolPivot.localPosition = new Vector3(
+                0.0f * positionOffset.x,
+                positionOffset.y,
+                positionOffset.z
+            );
+            // toolPivot.localRotation = Quaternion.Euler(0, 0, rotationAngle);
+        }
+    }
+    
 
     #endregion
 }

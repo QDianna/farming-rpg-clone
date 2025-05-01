@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5510643312354073766}
   - component: {fileID: 9149547885705101674}
   m_Layer: 0
-  m_Name: farming-tileset_105
+  m_Name: HoeSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771534080730191865}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.959265, y: -2.133885, z: 0.035331253}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300210, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -275,6 +275,7 @@ MonoBehaviour:
       m_Action: Tool
       m_Flags: 0
     m_Flags: 0
+  toolPivot: {fileID: 3894650541190145971}
   toolSystem: {fileID: 596685181290690568}
   plotlandController: {fileID: 0}
   animator: {fileID: 0}
@@ -291,6 +292,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTool: 0
+  toolPivot: {fileID: 3894650541190145971}
+  hoeObject: {fileID: 771534080730191865}
 --- !u!50 &1001675679381337709
 Rigidbody2D:
   serializedVersion: 5
@@ -396,7 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3894650541190145971}
   m_Layer: 0
-  m_Name: HoeAnimationPivot
+  m_Name: ToolAnimationPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,11 +413,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8982209113101767293}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.989265, y: 2.133885, z: -0.035331253}
+  m_LocalRotation: {x: 0, y: 0, z: 0.11537064, w: 0.99332255}
+  m_LocalPosition: {x: -0.45, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5510643312354073766}
   m_Father: {fileID: 5657702628253418783}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.25}
