@@ -9,12 +9,11 @@ public enum ToolType
 
 public class ToolSystem : MonoBehaviour
 {
-    public ToolType currentTool = ToolType.None;
-    
-    [Header("Tool GameObjects")]
-    [SerializeField] private Transform toolPivot;  // tool placement & animation pivot
+    [SerializeField] private PlotlandController plotlandController;
     [SerializeField] private GameObject hoeObject;
     // [SerializeField] private GameObject axeObject;
+    
+    public ToolType currentTool = ToolType.None;
 
     void Start()
     {
@@ -55,6 +54,21 @@ public class ToolSystem : MonoBehaviour
         // if (axeObject != null) {
         //    axeObject.SetActive(currentTool == ToolType.Axe);
         // }
+    }
+
+    public void ToolAction(PlayerController player)
+    {
+        switch (currentTool)
+        {
+            case ToolType.Hoe:
+                
+                plotlandController.TillPlot(player.transform.position);
+                break;
+
+            case ToolType.Axe:
+                // TODO
+                break;
+        }
     }
     
 }

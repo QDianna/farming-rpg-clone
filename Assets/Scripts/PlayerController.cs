@@ -4,8 +4,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    #region Movement
-
     [Header("Movement Settings")]
     public InputAction MoveAction;
     private Rigidbody2D rigidbody2d;
@@ -13,53 +11,45 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveDirection = new Vector2(0, -1);
     private float unitsPerSecond = 4.0f;
 
-    #endregion
-
-    #region Interaction
-
     [Header("Interaction Settings")]
     public InputAction InteractAction;
-    private IInteractable currentInteractable;
-
+    private IInteractable currentInteractable = null;
     public IInteractable CurrentInteractable
     {
         get => currentInteractable;
         set => currentInteractable = value;
     }
-
-    #endregion
-
-    #region Tool Interaction
-
+    
     [Header("Tool Settings")]
     public InputAction ToolAction;
-    [SerializeField] private Transform toolPivot;
-    [SerializeField] private ToolSystem toolSystem;
-    [SerializeField] private PlotlandController plotlandController;
-    // [SerializeField] private Inventory playerInventory;
-    // [SerializeField] private GameObject seedPrefab;
-
-    #endregion
-    
-    #region Animations
+    [SerializeField] private ToolSystem tools;
+    [SerializeField] private Transform toolPivot;  // for positioning and animation of tools
 
     [Header("Animation Settings")] 
     public Animator animator;
+
+    [Header("Inventory Settings")]
+    public InputAction InventoryAction;
+    [SerializeField] private InventorySystem inventory;
     
-    #endregion
 
     #region Unity Methods
-
+    
     private void Start()
     {
         MoveAction.Enable();
         InteractAction.Enable();
         ToolAction.Enable();
+        InventoryAction.Enable();
         
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        
-        currentInteractable = null;
+        inventory = GetComponent<InventorySystem>();
+
+        // debug hardcoding - to be removed
+        inventory.AddItem("plant1_seeds", 3);
+        inventory.AddItem("plant2_seeds", 3);
+        inventory.AddItem("plant3_seeds", 3);
     }
 
     private void Update()
@@ -72,14 +62,15 @@ public class PlayerController : MonoBehaviour
             moveDirection.Normalize();
         }
         
+        // update player animation and tools facing direction
         animator.SetFloat("Move X", moveDirection.x);
         animator.SetFloat("Move Y", moveDirection.y);
         animator.SetFloat("Speed", move.magnitude);
+        UpdateToolDirection(moveDirection);
         
         HandleInteractInput();
         HandleToolInput();
-        
-        UpdateToolDirection(moveDirection);
+        HandleInventoryInput();
     }
 
     private void FixedUpdate()
@@ -90,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    #region Interaction Methods
+    #region Input Handling
 
     private void HandleInteractInput()
     {
@@ -101,35 +92,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    #endregion
-
-    #region Tool Methods
-
     private void HandleToolInput()
     {
         if (ToolAction.triggered)
         {
-            HandleToolAction();
+            tools.ToolAction(this);
+            animator.SetTrigger("UseTool");
         }
     }
-
-    private void HandleToolAction()
+    
+    private void HandleInventoryInput()
     {
-        Vector3 playerPosition = transform.position;
-
-        switch (toolSystem.currentTool)
+        if (InventoryAction.triggered)
         {
-            case ToolType.Hoe:
-                animator.SetTrigger("UseTool");
-                plotlandController.TillPlot(playerPosition);
-                break;
-
-            case ToolType.Axe:
-                // TODO
-                break;
+            inventory.GetNextItem();
         }
     }
+    
+    #endregion
 
+    #region Update-related methods
     private void UpdateToolDirection(Vector2 direction)
     {
         Vector3 positionOffset = new Vector3(-0.45f, 0.6f, 0);
@@ -169,6 +151,10 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-
     #endregion
+
+    
+    
+    
+    
 }
