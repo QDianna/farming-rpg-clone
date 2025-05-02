@@ -5,14 +5,14 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public InputAction MoveAction;
+    [SerializeField] private InputAction MoveAction;
     private Rigidbody2D rigidbody2d;
     private Vector2 move;
     private Vector2 moveDirection = new Vector2(0, -1);
     private float unitsPerSecond = 4.0f;
 
     [Header("Interaction Settings")]
-    public InputAction InteractAction;
+    [SerializeField] private InputAction InteractAction;
     private IInteractable currentInteractable = null;
     public IInteractable CurrentInteractable
     {
@@ -21,20 +21,23 @@ public class PlayerController : MonoBehaviour
     }
     
     [Header("Tool Settings")]
-    public InputAction ToolAction;
-    [SerializeField] private ToolSystem tools;
+    [SerializeField] private InputAction ToolAction;
     [SerializeField] private Transform toolPivot;  // for positioning and animation of tools
+    private ToolSystem tools;
 
     [Header("Animation Settings")] 
-    public Animator animator;
+    private Animator animator;
 
     [Header("Inventory Settings")]
-    public InputAction InventoryAction;
-    public InputAction UseItemAction;
-    [SerializeField] private InventorySystem inventory;
-    [SerializeField] private PlotlandController plotlandController;
+    [SerializeField] private InputAction InventoryAction;
+    [SerializeField] private InputAction UseItemAction;
+    public InventorySystem inventory;
     
-
+    public PlotlandController plotlandController;
+    // debug only
+    public InventoryItem testSeedItem1;
+    public InventoryItem testSeedItem2;
+    
     #region Unity Methods
     
     private void Start()
@@ -49,11 +52,9 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         tools = GetComponent<ToolSystem>();
         inventory = GetComponent<InventorySystem>();
-
-        // debug hardcoding - to be removed
-        inventory.AddItem("plant1_seeds", 3);
-        inventory.AddItem("plant2_seeds", 3);
-        inventory.AddItem("plant3_seeds", 3);
+        
+        inventory.AddItem(testSeedItem1, 5);
+        inventory.AddItem(testSeedItem2, 3);
     }
 
     private void Update()
@@ -128,23 +129,11 @@ public class PlayerController : MonoBehaviour
             var item = inventory.GetSelectedItem();
             if (item == null)
             {
-                Debug.Log("No action defined for this item.");
+                Debug.Log("No item to use.");
                 return;
             }
 
-            // seeds usage logic
-            if (item.itemName.EndsWith("_seeds"))
-            {
-                if (!plotlandController.CanPlant(transform.position))
-                {
-                    Debug.Log("Can't plant here.");
-                    return;
-                }
-
-                plotlandController.PlantPlot(transform.position, item);
-                // inventory.RemoveItem(seedItem.itemName, 1);
-            }
-            
+            item.Use(transform.position, this);
         }
         
     }

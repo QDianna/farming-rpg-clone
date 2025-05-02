@@ -37,7 +37,7 @@ public class PlotlandController : MonoBehaviour
         return currentTile == soilTilledTile;
     }
 
-    public void PlantPlot(Vector3 worldPosition, InventoryItem seed)
+    public void PlantPlot(Vector3 worldPosition, InventoryItem seed, PlayerController player)
     {
         Vector3Int tilePosition = plotTilemap.WorldToCell(worldPosition);
         TileBase currentTile = plotTilemap.GetTile(tilePosition);
@@ -52,6 +52,7 @@ public class PlotlandController : MonoBehaviour
             plantedSeeds[tilePosition] = seed.itemName;
 
         Debug.Log($"Planted {seed.itemName} at {tilePosition}");
+        player.inventory.RemoveItem(seed, 1);
     }
     
 }

@@ -49903,6 +49903,18 @@ PrefabInstance:
       propertyPath: plotlandController
       value: 
       objectReference: {fileID: 2022335781}
+    - target: {fileID: 3894650541190145971, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99332255
+      objectReference: {fileID: 0}
+    - target: {fileID: 3894650541190145971, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.11537064
+      objectReference: {fileID: 0}
+    - target: {fileID: 3894650541190145971, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 13.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5657702628253418783, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -49943,6 +49955,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: testSeedItem
+      value: 
+      objectReference: {fileID: 11400000, guid: bb8d10a6962f00b4bb534708b2ec2b43, type: 2}
     - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
       propertyPath: plotlandController
       value: 

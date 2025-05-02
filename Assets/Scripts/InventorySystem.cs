@@ -1,11 +1,17 @@
+using System;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {
-    public List<InventoryItem> items;
-    public int selected;
+    private List<InventoryEntry> items = new();
+    private int selected = -2;
 
+    void Awake()
+    {
+        selected = -2;
+    }
     public InventoryItem GetSelectedItem()
     {
         if (items.Count == 0 || selected < 0 || selected > items.Count - 1)
@@ -13,39 +19,71 @@ public class InventorySystem : MonoBehaviour
             return null;
         }
 
-        return items[selected];
+        return items[selected].item;
     }
-
+    
     public void GetNextItem()
     {
-        if (selected == -1)
+        if (selected == -2)
         {
             Debug.Log("Opening inventory");
-            selected = 0;
+            selected = -1;
             return;
         }
+        
         if (items.Count == 0)
         {
             Debug.Log("Empty inventory");
             return;
         }
 
-        Debug.Log("You've selected item: " + GetSelectedItem().itemName);
         selected = (selected + 1) % items.Count;
+        Debug.Log("You've selected item: " + items[selected].item + " - count: " + items[selected].quantity);
     }
 
-    public void AddItem(string itemName, int amount)
+    public void AddItem(InventoryItem item, int amount)
     {
-        InventoryItem newItem = new InventoryItem(itemName, amount);
-        
-        items.Add(newItem);
+        var entry = items.Find(i => i.item == item);
+        if (entry != null)
+        {
+            entry.quantity += amount;
+        }
+        else
+        {
+            items.Add(new InventoryEntry(item, amount));
+        }
     }
-    
-    public void RemoveItem(string itemName, int amount) { /*...*/ }
-    
-    void Awake()
+
+    public void RemoveItem(InventoryItem item, int amount)
     {
-        items = new List<InventoryItem>();
-        selected = -1;
+        var entry = items.Find(i => i.item == item);
+        if (entry != null)
+        {
+            entry.quantity -= amount;
+            if (entry.quantity <= 0)
+            {
+                items.Remove(entry);
+
+                if (items.Count == 0)
+                {
+                    // deleted all inventory
+                    selected = -2;
+                    return;
+                }
+                
+                if (selected >= items.Count)
+                {
+                    // deleted last position item of inventory
+                    selected = 0;  // reset to first item
+                    Debug.Log("You've selected item: " + items[selected].item + " - count: " + items[selected].quantity);
+                }
+            }
+
+            else
+            {
+                Debug.Log("Your item: " + items[selected].item + " - remaining: " + items[selected].quantity);
+            }
+
+        }
     }
 }

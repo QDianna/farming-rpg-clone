@@ -1,14 +1,13 @@
+using System;
 using UnityEngine;
 
-public class InventoryItem
+public class InventoryItem : ScriptableObject
 {
     public string itemName;
     public Sprite itemSpriteIcon;
-    public int quantity;
 
-    public InventoryItem(string itemName, int quantity)
+    public virtual void Use(Vector3 position, PlayerController player)
     {
-        this.itemName = itemName;
-        this.quantity = quantity;
+        Debug.Log("This item does nothing!");
     }
 }

@@ -11,8 +11,8 @@ using Unity.Cinemachine;
 
 public class InteractionTeleport : MonoBehaviour, IInteractable
 {
-    public CinemachineConfiner2D cameraConfiner;
-    public Zone targetZone;
+    [SerializeField] private CinemachineConfiner2D cameraConfiner;
+    [SerializeField] private Zone targetZone;
     
     // public CinemachineConfiner2D currentConfiner;
     // public Collider2D newConfiner;
