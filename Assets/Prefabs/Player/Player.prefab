@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 4096598973139266459}
   - component: {fileID: 6543060790827308900}
   - component: {fileID: 596685181290690568}
+  - component: {fileID: 603208962506915739}
   - component: {fileID: 1001675679381337709}
   - component: {fileID: 2283150326571705030}
   - component: {fileID: 279568774838252289}
@@ -275,10 +276,45 @@ MonoBehaviour:
       m_Action: Tool
       m_Flags: 0
     m_Flags: 0
+  tools: {fileID: 0}
   toolPivot: {fileID: 3894650541190145971}
-  toolSystem: {fileID: 596685181290690568}
-  plotlandController: {fileID: 0}
   animator: {fileID: 0}
+  InventoryAction:
+    m_Name: Inventory
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 1cf7602d-e003-4120-bec6-0b1a76be8c6b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 8330a78c-8b65-4196-9bbf-85b6ddd0194b
+      m_Path: <Keyboard>/tab
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Inventory
+      m_Flags: 0
+    m_Flags: 0
+  UseItemAction:
+    m_Name: Use Item
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 50c7f181-10da-4761-bff6-bf2b2c04cc85
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e1f21f3c-ca7b-42a3-ab55-3ca82794292c
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Use Item
+      m_Flags: 0
+    m_Flags: 0
+  inventory: {fileID: 0}
+  plotlandController: {fileID: 0}
 --- !u!114 &596685181290690568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,9 +327,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649da2a9be5d4e60884d3b8485371348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTool: 0
-  toolPivot: {fileID: 3894650541190145971}
+  plotlandController: {fileID: 0}
   hoeObject: {fileID: 771534080730191865}
+  currentTool: 0
+--- !u!114 &603208962506915739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7794502562995452509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71c9548e5ff1c446908753ad3fb172a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected: 0
 --- !u!50 &1001675679381337709
 Rigidbody2D:
   serializedVersion: 5

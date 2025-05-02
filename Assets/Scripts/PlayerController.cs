@@ -30,7 +30,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Inventory Settings")]
     public InputAction InventoryAction;
+    public InputAction UseItemAction;
     [SerializeField] private InventorySystem inventory;
+    [SerializeField] private PlotlandController plotlandController;
     
 
     #region Unity Methods
@@ -41,9 +43,11 @@ public class PlayerController : MonoBehaviour
         InteractAction.Enable();
         ToolAction.Enable();
         InventoryAction.Enable();
+        UseItemAction.Enable();
         
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        tools = GetComponent<ToolSystem>();
         inventory = GetComponent<InventorySystem>();
 
         // debug hardcoding - to be removed
@@ -68,9 +72,14 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", move.magnitude);
         UpdateToolDirection(moveDirection);
         
-        HandleInteractInput();
         HandleToolInput();
         HandleInventoryInput();
+        
+        // using the same keybinding so only checking one of them
+        if (HandleInteractInput() == false)
+        {
+            HandleUseItemInput();
+        }
     }
 
     private void FixedUpdate()
@@ -83,13 +92,16 @@ public class PlayerController : MonoBehaviour
 
     #region Input Handling
 
-    private void HandleInteractInput()
+    private bool HandleInteractInput()
     {
         if (currentInteractable != null && InteractAction.triggered)
         {
             Debug.Log("Player interacted!");
             currentInteractable.Interact(this);
+            return true;
         }
+
+        return false;
     }
 
     private void HandleToolInput()
@@ -108,6 +120,35 @@ public class PlayerController : MonoBehaviour
             inventory.GetNextItem();
         }
     }
+    
+    private void HandleUseItemInput()
+    {
+        if (UseItemAction.triggered)
+        {
+            var item = inventory.GetSelectedItem();
+            if (item == null)
+            {
+                Debug.Log("No action defined for this item.");
+                return;
+            }
+
+            // seeds usage logic
+            if (item.itemName.EndsWith("_seeds"))
+            {
+                if (!plotlandController.CanPlant(transform.position))
+                {
+                    Debug.Log("Can't plant here.");
+                    return;
+                }
+
+                plotlandController.PlantPlot(transform.position, item);
+                // inventory.RemoveItem(seedItem.itemName, 1);
+            }
+            
+        }
+        
+    }
+
     
     #endregion
 

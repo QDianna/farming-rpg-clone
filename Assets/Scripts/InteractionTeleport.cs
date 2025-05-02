@@ -28,7 +28,7 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         PlayerController controller = other.GetComponent<PlayerController>();
         if (controller != null)
@@ -77,5 +77,8 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
         }
 
         Debug.Log($"Player teleported to zone: {targetZone.zoneName}");
+        
+        // since the player is teleporting the 'OnTriggerExit' method won't be able to reset this
+        player.CurrentInteractable = null;
     }
 }
