@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a679d765daf249b4b6c1fea94226ca57, type: 3}
-  m_Name: New Seed Item 2
+  m_Name: Wheat Seed Item
   m_EditorClassIdentifier: 
-  itemName: plant2_seed
+  itemName: wheat_seed
   itemSpriteIcon: {fileID: 0}
+  growthTime: 5
+  plantedTile: {fileID: 11400000, guid: e4bf4de57663a9647a5175e5e2574429, type: 2}
+  grownTile: {fileID: 11400000, guid: 6ffe6c1badfec84409c99d64be50e135, type: 2}
