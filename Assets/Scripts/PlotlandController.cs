@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Playables;
 using UnityEngine.Tilemaps;
 
 // PlotState enum for clarity
@@ -18,19 +19,21 @@ public class PlotData
 {
     public PlotState state;
     public SeedItem seedData;
-    public float growthTimer;
+    public float growthTimer = 0;
+    public int stages = 5;          // hardcoded for now?
+    public int currentStage = 0;   // starting stage
 }
 
 public class PlotlandController : MonoBehaviour
 {
-    private Tilemap plotTilemap;         // tilemap plotland
-    public Tilemap cropTilemap;         // tilemap randare plante peste pamant
-    public Tilemap expansion1Tilemap;   // tilemap zona 1 extindere plotland
-    public Tilemap expansion2Tilemap;   // tilemap zona 2 extindere plotland
+    private Tilemap plotTilemap;            // tilemap plotland
+    public Tilemap cropTilemap;             // tilemap randare plante peste pamant
+    public Tilemap expansion1Tilemap;       // tilemap zona 1 extindere plotland
+    public Tilemap expansion2Tilemap;       // tilemap zona 2 extindere plotland
 
     public TileBase lockedTile;
     public TileBase emptyTile;
-    public TileBase tilledTile;     // tile pamant arat
+    public TileBase tilledTile;             // tile pamant arat
 
     private Dictionary<Vector3Int, PlotData> plotStates = new();
     private void Start()
@@ -102,9 +105,9 @@ public class PlotlandController : MonoBehaviour
 
         // Render planted sprite in crop tilemap
         SeedItem seedItem = seed as SeedItem;
-        if (seedItem != null && seedItem.plantedTile != null)
+        if (seedItem != null && seedItem.stage0 != null)
         {
-            cropTilemap.SetTile(pos, seedItem.plantedTile);
+            cropTilemap.SetTile(pos, seedItem.stage0);
         }
         
         plotStates[pos].state = PlotState.Planted;
@@ -144,18 +147,18 @@ public class PlotlandController : MonoBehaviour
             if (data.state == PlotState.Planted && data.seedData != null)
             {
                 data.growthTimer += Time.deltaTime;
-                if (data.growthTimer >= data.seedData.growthTime)
+
+                var growthPercent = data.growthTimer / data.seedData.growthTime;
+                var newStage = Mathf.FloorToInt(Mathf.Clamp01(growthPercent) * data.stages); // gets stages 0 to 4
+
+                if (newStage > data.currentStage)
                 {
-                    data.state = PlotState.Grown;
-                    Debug.Log($"CROP READY @ {pos} HARVEST {data.seedData.itemName}");
-                    // Update crop tile to grown sprite
-                    if (data.seedData.grownTile != null)
-                    {
-                        cropTilemap.SetTile(pos, data.seedData.grownTile);
-                    }
+                    data.currentStage = newStage;
+                    TileBase currentTile = data.seedData.GetStageTile(data.currentStage);
+                    
+                    cropTilemap.SetTile(pos,currentTile);
                 }
             }
         }
-        
     }
 }

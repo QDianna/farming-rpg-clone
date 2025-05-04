@@ -35,8 +35,9 @@ public class PlayerController : MonoBehaviour
     
     public PlotlandController plotlandController;
     // debug only
-    public InventoryItem testSeedItem1;
-    public InventoryItem testSeedItem2;
+    public InventoryItem seed1;
+    public InventoryItem seed2;
+    public InventoryItem seed3;
     
     #region Unity Methods
     
@@ -53,8 +54,9 @@ public class PlayerController : MonoBehaviour
         tools = GetComponent<ToolSystem>();
         inventory = GetComponent<InventorySystem>();
         
-        inventory.AddItem(testSeedItem1, 5);
-        inventory.AddItem(testSeedItem2, 3);
+        inventory.AddItem(seed1, 5);
+        inventory.AddItem(seed2, 3);
+        inventory.AddItem(seed3, 3);
     }
 
     private void Update()
