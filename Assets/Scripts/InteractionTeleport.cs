@@ -14,16 +14,12 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
     [SerializeField] private CinemachineConfiner2D cameraConfiner;
     [SerializeField] private Zone targetZone;
     
-    // public CinemachineConfiner2D currentConfiner;
-    // public Collider2D newConfiner;
-    // public Transform teleportTarget;  // object that acts like a spawn point for each region
-    
     private void OnTriggerEnter2D(Collider2D other)
     {
         PlayerController controller = other.GetComponent<PlayerController>();
         if (controller != null)
         {
-            Debug.Log("player entered the trigger!");
+            Debug.Log("Press E to open the door!");
             controller.CurrentInteractable = this;
         }
     }
@@ -33,7 +29,7 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
         PlayerController controller = other.GetComponent<PlayerController>();
         if (controller != null)
         {
-            Debug.Log("player exited the trigger!");
+            Debug.Log("exited interaction");
             controller.CurrentInteractable = null;
         }
     }

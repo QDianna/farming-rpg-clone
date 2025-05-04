@@ -23,27 +23,51 @@ public class PlotData
 
 public class PlotlandController : MonoBehaviour
 {
-    public Tilemap plotTilemap;         // Tilemap-ul plotland-ului
-    public Tilemap cropTilemap;         // Tilemap-ul pentru plante, rendered on top of plotland
-    
-    public TileBase soilNormalTile;     // tile pamant normal/nearat
-    public TileBase soilTilledTile;     // tile pamand arat
+    private Tilemap plotTilemap;         // tilemap plotland
+    public Tilemap cropTilemap;         // tilemap randare plante peste pamant
+    public Tilemap expansion1Tilemap;   // tilemap zona 1 extindere plotland
+    public Tilemap expansion2Tilemap;   // tilemap zona 2 extindere plotland
+
+    public TileBase lockedTile;
+    public TileBase emptyTile;
+    public TileBase tilledTile;     // tile pamant arat
 
     private Dictionary<Vector3Int, PlotData> plotStates = new();
-    private void Awake()
+    private void Start()
     {
         plotTilemap = GetComponent<Tilemap>();
         
-        // load all plotland tiles into dictionary
+        // load all tiles from Tilemap_plotland into dictionary and assign Empty state
         foreach (Vector3Int pos in plotTilemap.cellBounds.allPositionsWithin)
         {
             TileBase tile = plotTilemap.GetTile(pos);
-            if (tile == soilNormalTile)
+            
+            if (tile == emptyTile)
             {
                 plotStates[pos] = new PlotData { state = PlotState.Empty };
             }
-        } 
+        }
         
+        // assign Locked state to all tiles from Tilemap_plotland_extension1 and Tilemap_plotland_extension2
+        foreach (Vector3Int pos in expansion1Tilemap.cellBounds.allPositionsWithin)
+        {
+            TileBase tile = expansion1Tilemap.GetTile(pos);
+            
+            if (tile == lockedTile)
+            {
+                plotStates[pos] = new PlotData { state = PlotState.Locked };
+            }
+        }
+        
+        foreach (Vector3Int pos in expansion2Tilemap.cellBounds.allPositionsWithin)
+        {
+            TileBase tile = expansion2Tilemap.GetTile(pos);
+            
+            if (tile == lockedTile)
+            {
+                plotStates[pos] = new PlotData { state = PlotState.Locked };
+            }
+        }
     }
 
     public bool CanTill(Vector3 worldPosition)
@@ -55,9 +79,10 @@ public class PlotlandController : MonoBehaviour
     public void TillPlot(Vector3 worldPosition)
     {
         Vector3Int pos = plotTilemap.WorldToCell(worldPosition);
+        
         if (CanTill(worldPosition))
         {
-            plotTilemap.SetTile(pos, soilTilledTile);
+            plotTilemap.SetTile(pos, tilledTile);
             plotStates[pos].state = PlotState.Tilled;
         }
     }
@@ -90,6 +115,24 @@ public class PlotlandController : MonoBehaviour
         player.inventory.RemoveItem(seed, 1);
     }
 
+    // this method is called by the player controller when the player executes an interaction - buy
+    public void UnlockPlot(Tilemap expansion)
+    {
+        foreach (Vector3Int pos in expansion.cellBounds.allPositionsWithin)
+        {
+            TileBase tile = expansion.GetTile(pos);
+            
+            if (tile == lockedTile && plotStates.ContainsKey(pos) && plotStates[pos].state == PlotState.Locked)  // it should be all true
+            {
+                plotStates[pos].state = PlotState.Empty;
+                plotTilemap.SetTile(pos, emptyTile);
+                expansion.SetTile(pos, null);    // Optionally clear from expansion map
+            }
+        }
+        
+        Debug.Log($"Unlocked {expansion.name}");
+    }
+
 
     private void Update()
     {
@@ -113,5 +156,6 @@ public class PlotlandController : MonoBehaviour
                 }
             }
         }
+        
     }
 }

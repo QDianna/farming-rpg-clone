@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     [Header("Inventory Settings")]
     [SerializeField] private InputAction InventoryAction;
     [SerializeField] private InputAction UseItemAction;
-    public InventorySystem inventory;
+    [HideInInspector] public InventorySystem inventory;
     
     public PlotlandController plotlandController;
     // debug only
