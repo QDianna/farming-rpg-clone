@@ -1,5 +1,25 @@
 using UnityEngine;
 
+/// <summary>
+/// Manages the player's equipped tool and tool-based interactions such as tilling.
+/// 
+/// Responsibilities:
+/// - Tracks the currently selected tool (Hoe, Axe, etc.)
+/// - Handles visual activation of tool GameObjects
+/// - Executes tool-specific actions (e.g., tilling the soil when using a hoe)
+/// 
+/// Usage:
+/// - Tools are switched using number key shortcuts (1 = Hoe, 2 = Axe, 0 = None)
+/// - The ToolAction() method is called by the player controller when the tool input is triggered
+/// 
+/// Design Considerations:
+/// - Tool switching and action logic are encapsulated in one place for modularity
+/// - Easily extendable: new tools and behaviors can be added without modifying other systems
+/// - References external systems (e.g., PlotlandController) to perform context-sensitive actions
+/// 
+/// Part of the modular gameplay system enabling flexible player actions through tool types.
+/// </summary>
+
 public enum ToolType
 {
     None,

@@ -1,12 +1,11 @@
-using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 /// <summary>
-/// Handles the plot land extension when the player interacts with plot land regions
-/// that are for sale.
-/// Calls PlotlandController's UnlockPlot method for the plot land tilemap that triggered
-/// the interaction.
+/// Enables the player to purchase additional plot land by interacting with expansion zones.
+/// When triggered, it calls the PlotlandController to unlock the associated expansion tilemap.
+/// This component should be attached to a tilemap representing a locked land area with a trigger collider.
+/// Implements the IInteractable interface to support modular interaction logic.
 /// </summary>
 
 public class InteractionBuyLand : MonoBehaviour, IInteractable

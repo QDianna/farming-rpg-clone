@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cf08809745e46ee907d4ee2b778dde1, type: 3}
-  m_Name: Onion Crop Item
+  m_Name: Cauliflower Crop Item
   m_EditorClassIdentifier: 
-  itemName: onion_crop
-  itemSpriteIcon: {fileID: -707816501, guid: 4038e15739dd2be498076e728299f386, type: 3}
-  itemSprite: {fileID: -707816501, guid: 4038e15739dd2be498076e728299f386, type: 3}
+  itemName: cauliflower_crop
+  itemSpriteIcon: {fileID: 1257080661, guid: 4038e15739dd2be498076e728299f386, type: 3}
+  itemSprite: {fileID: 1257080661, guid: 4038e15739dd2be498076e728299f386, type: 3}
+  droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}

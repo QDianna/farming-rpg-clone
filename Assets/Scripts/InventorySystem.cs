@@ -1,8 +1,28 @@
-using System;
 using System.Collections.Generic;
-using DefaultNamespace;
 using UnityEngine;
 
+/// <summary>
+/// Represents a single entry in the player's inventory, storing a reference to an InventoryItem
+/// and the quantity owned. Used internally by the InventorySystem to track item stacks.
+/// </summary>
+
+public class InventoryEntry
+{
+    public InventoryItem item;
+    public int quantity;
+
+    public InventoryEntry(InventoryItem item, int quantity)
+    {
+        this.item = item;
+        this.quantity = quantity;
+    }
+}
+
+/// <summary>
+/// Manages the player's inventory, including adding, removing, and selecting items.
+/// Designed to be lightweight, stack-based, and scalable for future features like UI or item categories.
+/// Items are stored as InventoryEntry instances containing item data and quantity.
+/// </summary>
 public class InventorySystem : MonoBehaviour
 {
     private List<InventoryEntry> items = new();

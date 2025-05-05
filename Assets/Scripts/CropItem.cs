@@ -1,29 +1,36 @@
-using System;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
+/// <summary>
+/// A specialized InventoryItem representing a harvestable crop.
+/// 
+/// CropItems can be used by the player (e.g., to eat or feed others) and visually displayed
+/// in the world upon harvesting through a collectible drop effect.
+/// </summary>
 
 [CreateAssetMenu(menuName = "Items/CropItem")]
 public class CropItem : InventoryItem
 {
-    
+    // image that represents the crop (ex: carrot image)
     public Sprite itemSprite;
-    [SerializeField] private GameObject droppedItemPrefab;  // visually drop item after harvest
+    // prefab used to visually represent the dropped item after harvesting
+    [SerializeField] private GameObject droppedItemPrefab;
     
     public override void Use(Vector3 position, PlayerController player)
     {
         Debug.Log("Do you want to eat " + this.itemName + "?");
         
         // TODO - eating crop, feeding crop to husband
-
         player.inventory.RemoveItem(this, 1);
     }
 
+    /// <summary>
+    /// Spawns a visual drop of the crop in the world at a random nearby position.
+    /// The drop moves toward the player and disappears when collected.
+    /// Uses DroppedItem to render and move the itemSprite.
+    /// </summary>
     public void DisplayCrop(Vector3 playerPosition, PlayerController player)
     {
-        Vector2 offset = UnityEngine.Random.insideUnitCircle;
+        Vector2 offset = Random.insideUnitCircle;
         Vector3 cropSpawnPosition = playerPosition + new Vector3(offset.x, offset.y, 0);
 
         if (droppedItemPrefab != null)

@@ -1,12 +1,10 @@
-using System;
 using UnityEngine;
-using DefaultNamespace;
 using Unity.Cinemachine;
 
 /// <summary>
-/// Handles teleporting the player from one area to another (inside - outside the house)
-/// when interacting with a door trigger.
-/// Updates the Cinemachine camera confiner to match the new area.
+/// A reusable interaction component that teleports the player between zones (e.g. house entrance/exit).
+/// Integrates with Cinemachine to update camera bounds and positioning during the transition.
+/// Implements the IInteractable interface to support modular interaction logic.
 /// </summary>
 
 public class InteractionTeleport : MonoBehaviour, IInteractable
@@ -34,8 +32,10 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
         }
     }
 
-    // Called when the player interacts with this door (e.g. presses "E")
-    // Teleports the player to a new region and updates the camera confiner
+    /// <summary>
+    /// Teleports the player to the specified target zone and updates the Cinemachine camera confiner accordingly.
+    /// Ensures a seamless transition by adjusting the camera bounds and syncing the camera position after the move.
+    /// </summary>
     public void Interact(PlayerController player)
     {
         if (targetZone == null || cameraConfiner == null)
@@ -74,7 +74,7 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
 
         Debug.Log($"Player teleported to zone: {targetZone.zoneName}");
         
-        // since the player is teleporting the 'OnTriggerExit' method won't be able to reset this
-        player.CurrentInteractable = null;
+        // delete? since the player is teleporting the 'OnTriggerExit' method won't be able to reset this
+        // player.CurrentInteractable = null;
     }
 }

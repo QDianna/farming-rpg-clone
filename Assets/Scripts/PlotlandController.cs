@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Playables;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
@@ -15,7 +13,10 @@ public enum PlotState
     Grown
 }
 
-// Data for a tile in the plot
+/// <summary>
+/// Represents an entry in the plotStates dictionary of the plotland controller.
+/// Defines the state of a tile at a certain time.
+/// </summary>
 public class PlotData
 {
     public PlotState state;
@@ -23,6 +24,25 @@ public class PlotData
     public float growthTimer = 0;
     public int currentGrowthStage = 0;
 }
+
+/// <summary>
+/// Centralized system for managing the state and behavior of all farming plots in the game.
+/// 
+/// Responsibilities:
+/// - Tracks tile-based plot states (locked, empty, tilled, planted, grown)
+/// - Handles tilling, planting, crop growth updates, and harvesting
+/// - Manages multiple tilemaps: plotland, crop visuals, and expansion zones
+/// 
+/// Design considerations:
+/// - Uses a dictionary (plotStates) to efficiently track and update individual plot data
+/// - Supports expansion of the farming area through UnlockPlot() tied to interactive zones
+/// - Decouples visual updates (cropTilemap) from gameplay logic (plotTilemap)
+/// - Designed for scalability: adding new crops, zones, or stages requires minimal changes
+/// 
+/// Crop growth is animated over time using stage-based tiles, and harvests are visually represented
+/// by temporary dropped items that move toward the player. Tile-based interactions avoid unnecessary
+/// collider overhead, favoring performant grid checks.
+/// </summary>
 
 public class PlotlandController : MonoBehaviour
 {

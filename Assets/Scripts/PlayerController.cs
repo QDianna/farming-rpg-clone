@@ -1,6 +1,18 @@
-using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+/// <summary>
+/// Central controller for player behavior, including movement, interaction, inventory handling,
+/// tool usage, and animation updates. Uses Unity's Input System for modular input mapping.
+/// 
+/// The class also manages interaction logic with the environment through two mechanisms:
+/// 1. Interface-based interaction (IInteractable) for objects like doors or buyable plots
+/// 2. Direct interaction with the tilemap (e.g. harvesting crops) without using IInteractable
+///    to optimize performance and avoid complex collider management.
+///
+/// The system supports modular inventory item usage (via ScriptableObjects), tool actions,
+/// and a scalable interaction pipeline for extensibility.
+/// </summary>
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Interaction Settings")]
     [SerializeField] private InputAction InteractAction;
-    private IInteractable currentInteractable = null;
+    private IInteractable currentInteractable = null;   // for the IInteractable interface
     public IInteractable CurrentInteractable
     {
         get => currentInteractable;
@@ -22,7 +34,7 @@ public class PlayerController : MonoBehaviour
     
     [Header("Tool Settings")]
     [SerializeField] private InputAction ToolAction;
-    [SerializeField] private Transform toolPivot;  // for positioning and animation of tools
+    [SerializeField] private Transform toolPivot;       // for positioning and animation of tools
     private ToolSystem tools;
 
     [Header("Animation Settings")] 
@@ -34,7 +46,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public InventorySystem inventory;
     
     public PlotlandController plotlandController;
-    // debug only
+    
+    // debug / starter items
     public InventoryItem seed1;
     public InventoryItem seed2;
     public InventoryItem seed3;
