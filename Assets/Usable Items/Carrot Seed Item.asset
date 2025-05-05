@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a679d765daf249b4b6c1fea94226ca57, type: 3}
   m_Name: Carrot Seed Item
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: carrot_seed
   itemSpriteIcon: {fileID: 0}
-  growthTime: 0
-  plantedTile: {fileID: 0}
-  grownTile: {fileID: 0}
+  growthTime: 10
+  growthStageTiles:
+  - {fileID: 11400000, guid: f5780b054e859e6479feb5b305b27a76, type: 2}
+  - {fileID: 11400000, guid: 37c824742b5a33b4fad8aa66a164cc14, type: 2}
+  - {fileID: 11400000, guid: 426baecafd189ef49bffe05d8aacb7c7, type: 2}
+  - {fileID: 11400000, guid: e4551e53488e6ac4d9f0f5708912739a, type: 2}
+  - {fileID: 11400000, guid: 88faebbc228af8044810ee482b7128b9, type: 2}
+  cropItem: {fileID: 11400000, guid: bb69fbc96e57eee4aa0f78539332d899, type: 2}

@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a679d765daf249b4b6c1fea94226ca57, type: 3}
   m_Name: Onion Seed Item
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: onion_seed
   itemSpriteIcon: {fileID: 0}
-  growthTime: 0
-  plantedTile: {fileID: 0}
-  grownTile: {fileID: 0}
+  growthTime: 120
+  growthStageTiles:
+  - {fileID: 11400000, guid: 18a0be23bbd2cf64d81422a8d3644622, type: 2}
+  - {fileID: 11400000, guid: e2e0c1d25f113fb43afb58f2b70f88ca, type: 2}
+  - {fileID: 11400000, guid: 6461e5a78b8cad84c926663edcf26d4e, type: 2}
+  - {fileID: 11400000, guid: 6693becbf5593cc4184e78a9938e025a, type: 2}
+  - {fileID: 11400000, guid: 7c66fc4b75a29d2478bd6f16c2eb6a24, type: 2}
+  cropItem: {fileID: 11400000, guid: d1cb36d72f0d9024987188630be0d2d9, type: 2}

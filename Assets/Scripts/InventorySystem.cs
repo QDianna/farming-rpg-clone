@@ -81,7 +81,7 @@ public class InventorySystem : MonoBehaviour
 
             else
             {
-                Debug.Log("Your item: " + items[selected].item + " - remaining: " + items[selected].quantity);
+                Debug.Log("You've used item: " + items[selected].item + " - remaining: " + items[selected].quantity);
             }
 
         }

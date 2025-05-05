@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -7,11 +8,9 @@ using UnityEngine.Tilemaps;
 public class SeedItem : InventoryItem
 {
     public float growthTime;
-    public TileBase stage0;
-    public TileBase stage1;
-    public TileBase stage2;
-    public TileBase stage3;
-    public TileBase stage4;
+    public List<TileBase> growthStageTiles = new(5);
+    public CropItem cropItem;
+    
     public override void Use(Vector3 position, PlayerController player)
     {
         if (!player.plotlandController.CanPlant(position))
@@ -21,18 +20,17 @@ public class SeedItem : InventoryItem
         }
         
         player.plotlandController.PlantPlot(position, this, player);
-        // player.inventory.RemoveItem(itemName, 1);
+        player.inventory.RemoveItem(this, 1);
     }
 
     public TileBase GetStageTile(int stage)
     {
-        return stage switch
+        if (stage >= growthStageTiles.Count || growthStageTiles[stage] == null)
         {
-            0 => stage0,
-            1 => stage1,
-            2 => stage2,
-            3 => stage3,
-            _ => stage4
-        };
+            Debug.Log("Error - growth stage not defined // no tile assigned");
+            return null;
+        }
+        
+        return growthStageTiles[stage];
     }
 }

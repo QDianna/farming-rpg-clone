@@ -78,7 +78,8 @@ public class PlayerController : MonoBehaviour
         HandleToolInput();
         HandleInventoryInput();
         
-        // using the same keybinding so only checking one of them
+        // using the same keybinding
+        // prioritise interaction handling over use of inventory items
         if (HandleInteractInput() == false)
         {
             HandleUseItemInput();
@@ -97,11 +98,23 @@ public class PlayerController : MonoBehaviour
 
     private bool HandleInteractInput()
     {
-        if (currentInteractable != null && InteractAction.triggered)
+        if (InteractAction.triggered)
         {
-            Debug.Log("Player interacted!");
-            currentInteractable.Interact(this);
-            return true;
+            // check if player can interact with an IInteractable object
+            if (currentInteractable != null)
+            {
+                Debug.Log("Player interacted!");
+                currentInteractable.Interact(this);
+                return true;
+            }
+            
+            // check if player can interact with the crops and harvest them
+            if (plotlandController.CanHarvest(transform.position))
+            {
+                Debug.Log("Player harvested!");
+                plotlandController.HarvestPlot(transform.position, this);
+                return true;
+            }
         }
 
         return false;
