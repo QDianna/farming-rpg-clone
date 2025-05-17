@@ -26,16 +26,17 @@ public class SeedItem : InventoryItem
     public List<TileBase> growthStageTiles = new(5);
     public CropItem cropItem;
     
-    public override void Use(Vector3 position, PlayerController player)
+    public override void UseItem(PlayerController player)
     {
+        Vector3 position = player.transform.position;
         if (!player.plotlandController.CanPlant(position))
         {
             Debug.Log("Can't plant here.");
             return;
         }
         
-        player.plotlandController.PlantPlot(position, this, player);
-        player.inventory.RemoveItem(this, 1);
+        player.plotlandController.PlantPlot(this, position);
+        player.inventorySystem.RemoveItem(this, 1);
     }
 
     public TileBase GetStageTile(int stage)

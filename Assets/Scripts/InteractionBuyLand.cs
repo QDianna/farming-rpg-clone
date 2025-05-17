@@ -10,30 +10,25 @@ using UnityEngine.Tilemaps;
 
 public class InteractionBuyLand : MonoBehaviour, IInteractable
 {
-    private Tilemap expansionTilemap;
-
-    private void Start()
-    {
-        expansionTilemap = GetComponent<Tilemap>();
-    }
+    [SerializeField] private Tilemap expansionTilemap;
     
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerController controller = other.GetComponent<PlayerController>();
-        if (controller != null)
+        PlayerController player = other.GetComponent<PlayerController>();
+        if (player != null)
         {
             Debug.Log("Press E to buy this land!");
-            controller.CurrentInteractable = this;
+            player.interactionSystem.SetInteractable(this);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    public void OnTriggerExit2D(Collider2D other)
     {
-        PlayerController controller = other.GetComponent<PlayerController>();
-        if (controller != null)
+        PlayerController player = other.GetComponent<PlayerController>();
+        if (player != null)
         {
             Debug.Log("exited interaction");
-            controller.CurrentInteractable = null;
+            player.interactionSystem.SetInteractable(null);
         }
     }
 
@@ -41,6 +36,5 @@ public class InteractionBuyLand : MonoBehaviour, IInteractable
     {
         PlotlandController plotlandController = player.plotlandController;
         plotlandController.UnlockPlot(expansionTilemap);
-
     }
 }

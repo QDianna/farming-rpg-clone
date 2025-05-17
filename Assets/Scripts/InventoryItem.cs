@@ -11,7 +11,7 @@ public class InventoryItem : ScriptableObject
     public string itemName;
     // public Sprite itemSpriteIcon;  // for the future, to render in a UI of the inventar
 
-    public virtual void Use(Vector3 position, PlayerController player)
+    public virtual void UseItem(PlayerController player)
     {
         Debug.Log("This item does nothing!");
     }

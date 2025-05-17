@@ -15,12 +15,12 @@ public class CropItem : InventoryItem
     // prefab used to visually represent the dropped item after harvesting
     [SerializeField] private GameObject droppedItemPrefab;
     
-    public override void Use(Vector3 position, PlayerController player)
+    public override void UseItem(PlayerController player)
     {
         Debug.Log("Do you want to eat " + this.itemName + "?");
         
         // TODO - eating crop, feeding crop to husband
-        player.inventory.RemoveItem(this, 1);
+        player.inventorySystem.RemoveItem(this, 1);
     }
 
     /// <summary>
@@ -39,23 +39,19 @@ public class CropItem : InventoryItem
             SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
             
             if (itemSprite != null && sr != null)
-            {
                 sr.sprite = itemSprite;
-            }
-            else {
+            else
                 Debug.Log("Error - cant find sprite");
-            }
 
             if (obj.TryGetComponent(out DroppedItem dropped))
-            {
                 dropped.Initialize(player);
-            }
-
+            else
+                Debug.Log("Error - cant find scriptable object");
         }
+        
         else
         {
             Debug.Log("Error displaying harvested crop sprite");
         }
     }
-    
 }

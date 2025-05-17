@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 /// <summary>
@@ -30,53 +32,45 @@ public enum ToolType
 public class ToolSystem : MonoBehaviour
 {
     [SerializeField] private PlotlandController plotlandController;
-    [SerializeField] private GameObject hoeObject;
-    // [SerializeField] private GameObject axeObject;
-    
+    [SerializeField] private GameObject hoePrefab;
+    // [SerializeField] private GameObject axePrefab;
+
+    private GameObject currentToolObject = null;
     public ToolType currentTool = ToolType.None;
-
-    void Start()
+    
+    // keyboard key - ToolType mapping
+    private Dictionary<int, ToolType> toolBindings = new Dictionary<int, ToolType>
     {
-        UpdateToolVisibility(); // Hide all tools at start
+        { 0, ToolType.None },
+        { 1, ToolType.Hoe },
+        { 2, ToolType.Axe }
+    };
+
+    public void SetTool(int toolKey, PlayerController player)
+    {
+        if (!toolBindings.ContainsKey(toolKey))
+        {
+            Debug.Log("Tool not in dictonary: " + toolKey);
+            return;
+        }
+        
+        currentTool = toolBindings[toolKey];
+        Debug.Log("Tool changed to: " + currentTool);
+
+        if (currentToolObject != null)
+        {
+            Destroy(currentToolObject);
+            currentToolObject = null;
+        }
+
+        if (currentTool == ToolType.Hoe && hoePrefab != null)
+        {
+            currentToolObject = Instantiate(hoePrefab, player.toolPivot);
+            currentToolObject.transform.localPosition = Vector3.zero;
+        }
     }
     
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SetTool(ToolType.Hoe);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SetTool(ToolType.Axe);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            SetTool(ToolType.None);
-        }
-    }
-
-    private void SetTool(ToolType newTool)
-    {
-        currentTool = newTool;
-        Debug.Log("Tool changed to: " + currentTool);
-        
-        UpdateToolVisibility();
-    }
-
-    private void UpdateToolVisibility()
-    {
-        if (hoeObject != null)
-        {
-            hoeObject.SetActive(currentTool == ToolType.Hoe);
-        }
-        
-        // if (axeObject != null) {
-        //    axeObject.SetActive(currentTool == ToolType.Axe);
-        // }
-    }
-
-    public void ToolAction(PlayerController player)
+    public void UseTool(PlayerController player)
     {
         switch (currentTool)
         {
@@ -90,5 +84,4 @@ public class ToolSystem : MonoBehaviour
                 break;
         }
     }
-    
 }

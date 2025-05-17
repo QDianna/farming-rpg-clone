@@ -12,23 +12,23 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
     [SerializeField] private CinemachineConfiner2D cameraConfiner;
     [SerializeField] private Zone targetZone;
     
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerController controller = other.GetComponent<PlayerController>();
-        if (controller != null)
+        PlayerController player = other.GetComponent<PlayerController>();
+        if (player != null)
         {
             Debug.Log("Press E to open the door!");
-            controller.CurrentInteractable = this;
+            player.interactionSystem.SetInteractable(this);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    public void OnTriggerExit2D(Collider2D other)
     {
-        PlayerController controller = other.GetComponent<PlayerController>();
-        if (controller != null)
+        PlayerController player = other.GetComponent<PlayerController>();
+        if (player != null)
         {
             Debug.Log("exited interaction");
-            controller.CurrentInteractable = null;
+            player.interactionSystem.SetInteractable(null);
         }
     }
 
@@ -36,6 +36,7 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
     /// Teleports the player to the specified target zone and updates the Cinemachine camera confiner accordingly.
     /// Ensures a seamless transition by adjusting the camera bounds and syncing the camera position after the move.
     /// </summary>
+    
     public void Interact(PlayerController player)
     {
         if (targetZone == null || cameraConfiner == null)
@@ -51,7 +52,8 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
         }
         
         var playerRb = player.GetComponent<Rigidbody2D>();
-        if (playerRb == null) return;
+        if (playerRb == null)
+            return;
 
         Vector3 oldPos = playerRb.transform.position;
         Vector3 newPos = targetZone.defaultSpawnPoint.position;
@@ -74,7 +76,7 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
 
         Debug.Log($"Player teleported to zone: {targetZone.zoneName}");
         
-        // delete? since the player is teleporting the 'OnTriggerExit' method won't be able to reset this
-        // player.CurrentInteractable = null;
+        // since the player is teleporting the 'OnTriggerExit2D' method won't be able to reset this
+        player.interactionSystem.SetInteractable(null);
     }
 }

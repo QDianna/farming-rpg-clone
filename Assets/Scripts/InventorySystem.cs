@@ -23,6 +23,7 @@ public class InventoryEntry
 /// Designed to be lightweight, stack-based, and scalable for future features like UI or item categories.
 /// Items are stored as InventoryEntry instances containing item data and quantity.
 /// </summary>
+
 public class InventorySystem : MonoBehaviour
 {
     private List<InventoryEntry> items = new();
@@ -32,13 +33,23 @@ public class InventorySystem : MonoBehaviour
     {
         selected = -2;
     }
+
+    public void UseCurrentItem(PlayerController player)
+    {
+        var item = GetSelectedItem();
+        if (item == null)
+        {
+            Debug.Log("No item to use.");
+            return;
+        }
+
+        item.UseItem(player);
+    }
     public InventoryItem GetSelectedItem()
     {
         if (items.Count == 0 || selected < 0 || selected > items.Count - 1)
-        {
             return null;
-        }
-
+        
         return items[selected].item;
     }
     
@@ -64,14 +75,11 @@ public class InventorySystem : MonoBehaviour
     public void AddItem(InventoryItem item, int amount)
     {
         var entry = items.Find(i => i.item == item);
+        
         if (entry != null)
-        {
             entry.quantity += amount;
-        }
         else
-        {
             items.Add(new InventoryEntry(item, amount));
-        }
     }
 
     public void RemoveItem(InventoryItem item, int amount)
@@ -80,6 +88,7 @@ public class InventorySystem : MonoBehaviour
         if (entry != null)
         {
             entry.quantity -= amount;
+            
             if (entry.quantity <= 0)
             {
                 items.Remove(entry);
@@ -87,7 +96,7 @@ public class InventorySystem : MonoBehaviour
                 if (items.Count == 0)
                 {
                     // deleted all inventory
-                    selected = -2;
+                    selected = -1;
                     return;
                 }
                 
@@ -103,7 +112,6 @@ public class InventorySystem : MonoBehaviour
             {
                 Debug.Log("You've used item: " + items[selected].item + " - remaining: " + items[selected].quantity);
             }
-
         }
     }
 }

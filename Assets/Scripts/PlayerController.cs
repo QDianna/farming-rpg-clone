@@ -22,35 +22,32 @@ public class PlayerController : MonoBehaviour
     private Vector2 move;
     private Vector2 moveDirection = new Vector2(0, -1);
     private float unitsPerSecond = 4.0f;
+    
+    [Header("Animation Settings")] 
+    private Animator animator;
 
     [Header("Interaction Settings")]
     [SerializeField] private InputAction InteractAction;
-    private IInteractable currentInteractable = null;   // for the IInteractable interface
-    public IInteractable CurrentInteractable
-    {
-        get => currentInteractable;
-        set => currentInteractable = value;
-    }
+    [HideInInspector] public InteractionSystem interactionSystem;
     
     [Header("Tool Settings")]
     [SerializeField] private InputAction ToolAction;
-    [SerializeField] private Transform toolPivot;       // for positioning and animation of tools
-    private ToolSystem tools;
-
-    [Header("Animation Settings")] 
-    private Animator animator;
+    private ToolSystem toolSystem;
+    public Transform toolPivot;  // used for positioning and animation of tools
 
     [Header("Inventory Settings")]
     [SerializeField] private InputAction InventoryAction;
     [SerializeField] private InputAction UseItemAction;
-    [HideInInspector] public InventorySystem inventory;
+    [HideInInspector] public InventorySystem inventorySystem;
     
+    [Header("Farming Settings")]
     public PlotlandController plotlandController;
     
     // debug / starter items
     public InventoryItem seed1;
     public InventoryItem seed2;
     public InventoryItem seed3;
+    
     
     #region Unity Methods
     
@@ -64,12 +61,13 @@ public class PlayerController : MonoBehaviour
         
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        tools = GetComponent<ToolSystem>();
-        inventory = GetComponent<InventorySystem>();
+        toolSystem = GetComponent<ToolSystem>();
+        inventorySystem = GetComponent<InventorySystem>();
+        interactionSystem = GetComponent<InteractionSystem>();
         
-        inventory.AddItem(seed1, 5);
-        inventory.AddItem(seed2, 3);
-        inventory.AddItem(seed3, 3);
+        inventorySystem.AddItem(seed1, 5);
+        inventorySystem.AddItem(seed2, 3);
+        inventorySystem.AddItem(seed3, 3);
     }
 
     private void Update()
@@ -88,15 +86,10 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", move.magnitude);
         UpdateToolDirection(moveDirection);
         
-        HandleToolInput();
-        HandleInventoryInput();
-        
-        // using the same keybinding
-        // prioritise interaction handling over use of inventory items
-        if (HandleInteractInput() == false)
-        {
-            HandleUseItemInput();
-        }
+        HandleInteractInput();  // check if the player is interacting with IInteractables or Tilemaps
+        HandleToolInput();  // check if the player is using tools
+        HandleInventoryInput();  // check if the player is selecting items from inventory
+        HandleUseItemInput();  // check if the player is using an inventory item
     }
 
     private void FixedUpdate()
@@ -104,40 +97,32 @@ public class PlayerController : MonoBehaviour
         Vector2 position = (Vector2)rigidbody2d.position + unitsPerSecond * Time.deltaTime * move;
         rigidbody2d.MovePosition(position);
     }
-
+    
     #endregion
 
+    
     #region Input Handling
 
-    private bool HandleInteractInput()
+    private void HandleInteractInput()
     {
         if (InteractAction.triggered)
-        {
-            // check if player can interact with an IInteractable object
-            if (currentInteractable != null)
-            {
-                Debug.Log("Player interacted!");
-                currentInteractable.Interact(this);
-                return true;
-            }
-            
-            // check if player can interact with the crops and harvest them
-            if (plotlandController.CanHarvest(transform.position))
-            {
-                Debug.Log("Player harvested!");
-                plotlandController.HarvestPlot(transform.position, this);
-                return true;
-            }
-        }
-
-        return false;
+            interactionSystem.TryInteract(this);
     }
 
     private void HandleToolInput()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            toolSystem.SetTool(1, this);
+        
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+            toolSystem.SetTool(2, this);
+        
+        else if (Input.GetKeyDown(KeyCode.Alpha0))
+            toolSystem.SetTool(0, this);
+        
         if (ToolAction.triggered)
         {
-            tools.ToolAction(this);
+            toolSystem.UseTool(this);
             animator.SetTrigger("UseTool");
         }
     }
@@ -145,31 +130,20 @@ public class PlayerController : MonoBehaviour
     private void HandleInventoryInput()
     {
         if (InventoryAction.triggered)
-        {
-            inventory.GetNextItem();
-        }
+            inventorySystem.GetNextItem();
     }
     
     private void HandleUseItemInput()
     {
         if (UseItemAction.triggered)
-        {
-            var item = inventory.GetSelectedItem();
-            if (item == null)
-            {
-                Debug.Log("No item to use.");
-                return;
-            }
-
-            item.Use(transform.position, this);
-        }
-        
+            inventorySystem.UseCurrentItem(this);
     }
-
     
     #endregion
 
-    #region Update-related methods
+    
+    #region Aux methods
+    
     private void UpdateToolDirection(Vector2 direction)
     {
         Vector3 positionOffset = new Vector3(-0.45f, 0.6f, 0);
@@ -210,9 +184,6 @@ public class PlayerController : MonoBehaviour
     }
     
     #endregion
-
-    
-    
     
     
 }

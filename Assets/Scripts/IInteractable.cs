@@ -1,3 +1,5 @@
+using UnityEngine;
+
 /// <summary>
 /// Interface for all interactable objects in the game world.
 /// Enables modular interaction logic by allowing any object to define its own Interact behavior
@@ -6,5 +8,8 @@
 
 public interface IInteractable
 {
+    void OnTriggerEnter2D(Collider2D other);
+    void OnTriggerExit2D(Collider2D other);
+    
     void Interact(PlayerController player);
 }

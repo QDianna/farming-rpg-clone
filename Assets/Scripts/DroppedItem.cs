@@ -15,7 +15,6 @@ public class DroppedItem : MonoBehaviour
     private PlayerController target;
     private float speed = 2.5f;
     private float stopDistance = 0.1f;
-
     
     public void Initialize(PlayerController player)
     {
@@ -25,10 +24,14 @@ public class DroppedItem : MonoBehaviour
     
     void FixedUpdate()
     {
-        if (target == null) return;
+        if (target == null)
+            return;
 
         Vector3 targetPos = target.transform.position;
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(
+            transform.position, 
+            targetPos, 
+            speed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, targetPos) <= stopDistance)
         {
