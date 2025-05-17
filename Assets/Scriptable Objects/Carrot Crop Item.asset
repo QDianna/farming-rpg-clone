@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Carrot Crop Item
   m_EditorClassIdentifier: 
   itemName: carrot_crop
-  itemSpriteIcon: {fileID: -769834404, guid: 4038e15739dd2be498076e728299f386, type: 3}
   itemSprite: {fileID: -769834404, guid: 4038e15739dd2be498076e728299f386, type: 3}
   droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}
+  hungerRestoreValue: 10

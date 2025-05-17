@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 596685181290690568}
   - component: {fileID: 603208962506915739}
   - component: {fileID: 8349207872864668176}
+  - component: {fileID: 2133682642818215000}
   - component: {fileID: 1001675679381337709}
   - component: {fileID: 2283150326571705030}
   - component: {fileID: 279568774838252289}
@@ -219,7 +220,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: e1f21f3c-ca7b-42a3-ab55-3ca82794292c
-      m_Path: <Keyboard>/e
+      m_Path: <Keyboard>/q
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -228,6 +229,7 @@ MonoBehaviour:
     m_Flags: 0
   inventorySystem: {fileID: 0}
   plotlandController: {fileID: 0}
+  playerStats: {fileID: 0}
   seed1: {fileID: 11400000, guid: 39e095594afaa0e47b0e217ed5359e37, type: 2}
   seed2: {fileID: 11400000, guid: 262f4fb811249cb4c880ef14b14d1900, type: 2}
   seed3: {fileID: 11400000, guid: 8a7a3847ff4a2b84381109364acc8a5a, type: 2}
@@ -243,9 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649da2a9be5d4e60884d3b8485371348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plotlandController: {fileID: 0}
-  hoePrefab: {fileID: 2706849120192767872, guid: c3ef5017a601ed94ba453babab88f681, type: 3}
   currentTool: 0
+  hoePrefab: {fileID: 2706849120192767872, guid: c3ef5017a601ed94ba453babab88f681, type: 3}
 --- !u!114 &603208962506915739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,7 +271,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b154f1ce5a244178b116efd5e5699f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plotlandController: {fileID: 0}
+--- !u!114 &2133682642818215000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7794502562995452509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57550d6d1c6b46f4881933ef4600bb12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &1001675679381337709
 Rigidbody2D:
   serializedVersion: 5

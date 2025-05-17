@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: forsale02
       objectReference: {fileID: 0}
+    - target: {fileID: 4659586871319981448, guid: 802cc18386070684ebb53f65e1b89800, type: 3}
+      propertyPath: expansionTilemap
+      value: 
+      objectReference: {fileID: 1188213394}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4504,7 +4508,6 @@ GameObject:
   - component: {fileID: 1188213392}
   - component: {fileID: 1188213394}
   - component: {fileID: 1188213393}
-  - component: {fileID: 1188213395}
   - component: {fileID: 1188213398}
   - component: {fileID: 1188213397}
   - component: {fileID: 1188213396}
@@ -4925,18 +4928,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1188213395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188213391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ec3bd94392d489c88502010f6cd0ee5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!66 &1188213396
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -5072,7 +5063,6 @@ GameObject:
   - component: {fileID: 1190150867}
   - component: {fileID: 1190150869}
   - component: {fileID: 1190150868}
-  - component: {fileID: 1190150870}
   - component: {fileID: 1190150873}
   - component: {fileID: 1190150872}
   - component: {fileID: 1190150871}
@@ -5457,18 +5447,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1190150870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190150866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ec3bd94392d489c88502010f6cd0ee5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!66 &1190150871
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -5645,6 +5623,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: forsale01
       objectReference: {fileID: 0}
+    - target: {fileID: 4659586871319981448, guid: 802cc18386070684ebb53f65e1b89800, type: 3}
+      propertyPath: expansionTilemap
+      value: 
+      objectReference: {fileID: 1190150869}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -49707,7 +49689,6 @@ GameObject:
   - component: {fileID: 2022335783}
   - component: {fileID: 2022335782}
   - component: {fileID: 2022335781}
-  - component: {fileID: 2022335780}
   - component: {fileID: 2022335779}
   - component: {fileID: 2022335778}
   - component: {fileID: 2022335777}
@@ -49860,18 +49841,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!114 &2022335780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022335775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aaf74f4d924c3247b8c75d73904f657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2022335781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49885,8 +49854,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropTilemap: {fileID: 404075759}
-  expansion1Tilemap: {fileID: 1190150869}
-  expansion2Tilemap: {fileID: 1188213394}
+  expansionTilemaps:
+  - {fileID: 1190150869}
+  - {fileID: 1188213394}
   lockedTile: {fileID: 11400000, guid: d5556fad56f5a9744b637ebf1c115941, type: 2}
   emptyTile: {fileID: 11400000, guid: 1c6684315827e1340bf66279b505e1c4, type: 2}
   tilledTile: {fileID: 11400000, guid: c340559392f752044922acbf8e70043a, type: 2}
@@ -51461,22 +51431,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 596685181290690568, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: plotlandController
-      value: 
-      objectReference: {fileID: 2022335781}
-    - target: {fileID: 3894650541190145971, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99332255
-      objectReference: {fileID: 0}
-    - target: {fileID: 3894650541190145971, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.11537064
-      objectReference: {fileID: 0}
-    - target: {fileID: 3894650541190145971, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 13.25
-      objectReference: {fileID: 0}
     - target: {fileID: 5657702628253418783, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -51517,30 +51471,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: seed1
-      value: 
-      objectReference: {fileID: 11400000, guid: 39e095594afaa0e47b0e217ed5359e37, type: 2}
-    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: seed2
-      value: 
-      objectReference: {fileID: 11400000, guid: 262f4fb811249cb4c880ef14b14d1900, type: 2}
-    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: seed3
-      value: 
-      objectReference: {fileID: 11400000, guid: 8a7a3847ff4a2b84381109364acc8a5a, type: 2}
-    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: testSeedItem
-      value: 
-      objectReference: {fileID: 11400000, guid: bb8d10a6962f00b4bb534708b2ec2b43, type: 2}
-    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: testSeedItem1
-      value: 
-      objectReference: {fileID: 11400000, guid: 262f4fb811249cb4c880ef14b14d1900, type: 2}
-    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-      propertyPath: testSeedItem2
-      value: 
-      objectReference: {fileID: 11400000, guid: bb8d10a6962f00b4bb534708b2ec2b43, type: 2}
     - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
       propertyPath: plotlandController
       value: 

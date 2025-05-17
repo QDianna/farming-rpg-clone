@@ -16,32 +16,35 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Movement Settings")]
+    [Header("Movement")]
     [SerializeField] private InputAction MoveAction;
     private Rigidbody2D rigidbody2d;
     private Vector2 move;
     private Vector2 moveDirection = new Vector2(0, -1);
     private float unitsPerSecond = 4.0f;
     
-    [Header("Animation Settings")] 
+    [Header("Animation")] 
     private Animator animator;
 
-    [Header("Interaction Settings")]
+    [Header("Interaction")]
     [SerializeField] private InputAction InteractAction;
     [HideInInspector] public InteractionSystem interactionSystem;
     
-    [Header("Tool Settings")]
+    [Header("Tool")]
     [SerializeField] private InputAction ToolAction;
     private ToolSystem toolSystem;
     public Transform toolPivot;  // used for positioning and animation of tools
 
-    [Header("Inventory Settings")]
+    [Header("Inventory")]
     [SerializeField] private InputAction InventoryAction;
     [SerializeField] private InputAction UseItemAction;
     [HideInInspector] public InventorySystem inventorySystem;
     
-    [Header("Farming Settings")]
+    [Header("Farming")]
     public PlotlandController plotlandController;
+
+    [Header("Stats")]
+    public PlayerStats playerStats;
     
     // debug / starter items
     public InventoryItem seed1;
@@ -64,6 +67,7 @@ public class PlayerController : MonoBehaviour
         toolSystem = GetComponent<ToolSystem>();
         inventorySystem = GetComponent<InventorySystem>();
         interactionSystem = GetComponent<InteractionSystem>();
+        playerStats = GetComponent<PlayerStats>();
         
         inventorySystem.AddItem(seed1, 5);
         inventorySystem.AddItem(seed2, 3);

@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class InteractionSystem : MonoBehaviour
 {
-    [SerializeField] private PlotlandController plotlandController;  // for direct interaction with terrain
-
     private IInteractable currentInteractable = null;   // for the IInteractable objects
+    
     public void SetInteractable(IInteractable interactable)
     {
         currentInteractable = interactable;
@@ -21,9 +20,9 @@ public class InteractionSystem : MonoBehaviour
 
         // Direct terrain interaction
         Vector3 playerPosition = player.transform.position;
-        if (plotlandController.CanHarvest(playerPosition))
+        if (player.plotlandController.CanHarvest(playerPosition))
         {
-            plotlandController.HarvestPlot(playerPosition, player);
+            player.plotlandController.HarvestPlot(playerPosition, player);
             return;
         }
     }

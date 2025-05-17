@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Onion Crop Item
   m_EditorClassIdentifier: 
   itemName: onion_crop
-  itemSpriteIcon: {fileID: -707816501, guid: 4038e15739dd2be498076e728299f386, type: 3}
   itemSprite: {fileID: -707816501, guid: 4038e15739dd2be498076e728299f386, type: 3}
   droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}
+  hungerRestoreValue: 5

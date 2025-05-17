@@ -35,7 +35,7 @@ public class DroppedItem : MonoBehaviour
 
         if (Vector3.Distance(transform.position, targetPos) <= stopDistance)
         {
-            Debug.Log("Dropped item reached target");
+            // Debug.Log("Dropped item reached target");
             Destroy(gameObject);
         }
     }

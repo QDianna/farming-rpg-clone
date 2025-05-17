@@ -31,12 +31,10 @@ public enum ToolType
 
 public class ToolSystem : MonoBehaviour
 {
-    [SerializeField] private PlotlandController plotlandController;
-    [SerializeField] private GameObject hoePrefab;
-    // [SerializeField] private GameObject axePrefab;
-
     private GameObject currentToolObject = null;
     public ToolType currentTool = ToolType.None;
+    [SerializeField] private GameObject hoePrefab;
+    // [SerializeField] private GameObject axePrefab;
     
     // keyboard key - ToolType mapping
     private Dictionary<int, ToolType> toolBindings = new Dictionary<int, ToolType>
@@ -76,7 +74,7 @@ public class ToolSystem : MonoBehaviour
         {
             case ToolType.Hoe:
                 
-                plotlandController.TillPlot(player.transform.position);
+                player.plotlandController.TillPlot(player.transform.position);
                 break;
 
             case ToolType.Axe:

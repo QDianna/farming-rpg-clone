@@ -14,12 +14,13 @@ public class CropItem : InventoryItem
     public Sprite itemSprite;
     // prefab used to visually represent the dropped item after harvesting
     [SerializeField] private GameObject droppedItemPrefab;
+    // hunger restore value
+    [SerializeField] private float hungerRestoreValue;
     
     public override void UseItem(PlayerController player)
     {
-        Debug.Log("Do you want to eat " + this.itemName + "?");
-        
-        // TODO - eating crop, feeding crop to husband
+        Debug.Log("Eating " + this);
+        player.playerStats.RestoreHunger(hungerRestoreValue);
         player.inventorySystem.RemoveItem(this, 1);
     }
 
