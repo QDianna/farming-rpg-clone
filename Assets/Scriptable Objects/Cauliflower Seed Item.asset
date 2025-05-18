@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cauliflower Seed Item
   m_EditorClassIdentifier: 
   itemName: cauliflower_seed
-  itemSpriteIcon: {fileID: 0}
+  itemSprite: {fileID: 3808273280442274367, guid: 4038e15739dd2be498076e728299f386, type: 3}
   growthTime: 60
   growthStageTiles:
   - {fileID: 11400000, guid: c1970f76ffbb63c4fb53dde442f93118, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Carrot Seed Item
   m_EditorClassIdentifier: 
   itemName: carrot_seed
-  itemSpriteIcon: {fileID: 0}
+  itemSprite: {fileID: 9191730558843939209, guid: 4038e15739dd2be498076e728299f386, type: 3}
   growthTime: 10
   growthStageTiles:
   - {fileID: 11400000, guid: f5780b054e859e6479feb5b305b27a76, type: 2}

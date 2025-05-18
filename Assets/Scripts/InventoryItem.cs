@@ -9,8 +9,8 @@ using UnityEngine;
 public class InventoryItem : ScriptableObject
 {
     public string itemName;
-    // public Sprite itemSpriteIcon;  // for the future, to render in a UI of the inventar
-
+    public Sprite itemSprite;  // image that represents the object
+    
     public virtual void UseItem(PlayerController player)
     {
         Debug.Log("This item does nothing!");

@@ -10,9 +10,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/CropItem")]
 public class CropItem : InventoryItem
 {
-    // image that represents the crop (ex: carrot image)
-    public Sprite itemSprite;
-    // prefab used to visually represent the dropped item after harvesting
+    // prefab used to visually represent the dropped item and mimic picking it up after harvesting
     [SerializeField] private GameObject droppedItemPrefab;
     // hunger restore value
     [SerializeField] private float hungerRestoreValue;

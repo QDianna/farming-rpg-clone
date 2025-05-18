@@ -5,40 +5,42 @@ public class InventorySystemHUD : MonoBehaviour
 {
     [SerializeField] private InventorySystem inventorySystem;
 
-    private VisualElement inventoryPanel;
-    private ScrollView itemList;
+    private VisualElement selectedItemIcon;
+    private Label selectedItemCount;
 
     private void OnEnable()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
-        inventoryPanel = root.Q<VisualElement>("InventoryPanel");
-        itemList = root.Q<ScrollView>("ItemList");
 
-        inventoryPanel.style.display = DisplayStyle.None; // Hide by default
+        selectedItemIcon = root.Q<VisualElement>("SelectedItem");
+        selectedItemCount = root.Q<Label>("SelectedItemCount");
 
-        // inventorySystem.OnInventoryChanged += RefreshInventoryDisplay;
+        inventorySystem.OnSelectedItemChange += UpdateDisplay;
+        UpdateDisplay();
     }
-
+    
     private void OnDisable()
     {
-        // inventorySystem.OnInventoryChanged -= RefreshInventoryDisplay;
+        inventorySystem.OnSelectedItemChange -= UpdateDisplay;
     }
 
-    public void ToggleInventoryDisplay()
+    private void Update()
     {
-        bool isVisible = inventoryPanel.style.display == DisplayStyle.Flex;
-        inventoryPanel.style.display = isVisible ? DisplayStyle.None : DisplayStyle.Flex;
-        if (!isVisible)
-            RefreshInventoryDisplay();
+        UpdateDisplay();
     }
 
-    private void RefreshInventoryDisplay()
+    private void UpdateDisplay()
     {
-        itemList.Clear();
-        /*foreach (var entry in inventorySystem.GetEntries())
+        var selectedItem = inventorySystem.GetSelectedItem();
+        if (selectedItem != null && selectedItem.itemSprite != null)
         {
-            var label = new Label($"{entry.item.name} x{entry.quantity}");
-            itemList.Add(label);
-        }*/
+            selectedItemIcon.style.backgroundImage = new StyleBackground(selectedItem.itemSprite);
+            selectedItemCount.text = "x" + inventorySystem.GetSelectedItemQuantity();
+        }
+        else
+        {
+            selectedItemIcon.style.backgroundImage = null;
+            selectedItemCount.text = "";
+        }
     }
 }

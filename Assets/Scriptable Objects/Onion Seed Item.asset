@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Onion Seed Item
   m_EditorClassIdentifier: 
   itemName: onion_seed
-  itemSpriteIcon: {fileID: 0}
+  itemSprite: {fileID: 2056528120, guid: 4038e15739dd2be498076e728299f386, type: 3}
   growthTime: 120
   growthStageTiles:
   - {fileID: 11400000, guid: 18a0be23bbd2cf64d81422a8d3644622, type: 2}

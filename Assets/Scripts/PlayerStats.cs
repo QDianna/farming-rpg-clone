@@ -14,7 +14,8 @@ public class PlayerStats : MonoBehaviour
 
     private float hunger = 100f;
     private float health = 100f; 
-    private float hungerLossRate = 5f; // 5 units per minute
+    private float hungerLossRate = 5f;          // 5 units per minute
+    private float hungerHealthLossRate = 10f;   // 10 units per minute
     
     public void SetHunger(float hunger)
     {
@@ -44,9 +45,9 @@ public class PlayerStats : MonoBehaviour
         float hungerLoss = hungerLossRate / 60f * Time.deltaTime;
         SetHunger(hunger - hungerLoss);
 
-        if (hunger < 0f)
+        if (hunger <= 0f)
         {
-            float healthLoss = 5f / 60f * Time.deltaTime;
+            float healthLoss = hungerHealthLossRate / 60f * Time.deltaTime;
             SetHealth(health - healthLoss);
         }
     }

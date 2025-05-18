@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 /// <summary>
@@ -31,13 +30,15 @@ public enum ToolType
 
 public class ToolSystem : MonoBehaviour
 {
-    private GameObject currentToolObject = null;
-    public ToolType currentTool = ToolType.None;
     [SerializeField] private GameObject hoePrefab;
     // [SerializeField] private GameObject axePrefab;
     
+    public event System.Action OnSelectedToolChange;
+    public ToolType selectedTool = ToolType.None;
+    private GameObject selectedToolPrefab;
+    
     // keyboard key - ToolType mapping
-    private Dictionary<int, ToolType> toolBindings = new Dictionary<int, ToolType>
+    private Dictionary<int, ToolType> toolBindings = new()
     {
         { 0, ToolType.None },
         { 1, ToolType.Hoe },
@@ -52,25 +53,27 @@ public class ToolSystem : MonoBehaviour
             return;
         }
         
-        currentTool = toolBindings[toolKey];
-        Debug.Log("Tool changed to: " + currentTool);
+        selectedTool = toolBindings[toolKey];
+        Debug.Log("Tool changed to: " + selectedTool);
 
-        if (currentToolObject != null)
+        if (selectedToolPrefab != null)
         {
-            Destroy(currentToolObject);
-            currentToolObject = null;
+            Destroy(selectedToolPrefab);
+            selectedToolPrefab = null;
         }
 
-        if (currentTool == ToolType.Hoe && hoePrefab != null)
+        if (selectedTool == ToolType.Hoe && hoePrefab != null)
         {
-            currentToolObject = Instantiate(hoePrefab, player.toolPivot);
-            currentToolObject.transform.localPosition = Vector3.zero;
+            selectedToolPrefab = Instantiate(hoePrefab, player.toolPivot);
+            selectedToolPrefab.transform.localPosition = Vector3.zero;
         }
+        
+        OnSelectedToolChange?.Invoke();  // notify HUD
     }
     
     public void UseTool(PlayerController player)
     {
-        switch (currentTool)
+        switch (selectedTool)
         {
             case ToolType.Hoe:
                 
@@ -81,5 +84,24 @@ public class ToolSystem : MonoBehaviour
                 // TODO
                 break;
         }
+    }
+
+    public Sprite GetSelectedToolSprite()
+    {
+        if (selectedTool == ToolType.None || selectedToolPrefab == null)
+            return null;
+
+        var spriteRenderer = selectedToolPrefab.GetComponentInChildren<SpriteRenderer>();
+        if (spriteRenderer != null)
+            return spriteRenderer.sprite;
+
+        return null;
+
+    }
+    
+    public ToolType GetSelectedToolType()
+    {
+        return selectedTool;
+
     }
 }

@@ -27,11 +27,12 @@ public class InventoryEntry
 public class InventorySystem : MonoBehaviour
 {
     private List<InventoryEntry> items = new();
-    private int selected = -2;
+    public event System.Action OnSelectedItemChange;
+    private int selectedItem = -2;
 
     void Awake()
     {
-        selected = -2;
+        selectedItem = -2;
     }
 
     public void UseCurrentItem(PlayerController player)
@@ -45,20 +46,29 @@ public class InventorySystem : MonoBehaviour
 
         item.UseItem(player);
     }
+    
     public InventoryItem GetSelectedItem()
     {
-        if (items.Count == 0 || selected < 0 || selected > items.Count - 1)
+        if (items.Count == 0 || selectedItem < 0 || selectedItem > items.Count - 1)
             return null;
         
-        return items[selected].item;
+        return items[selectedItem].item;
+    }
+
+    public int GetSelectedItemQuantity()
+    {
+        if (items.Count == 0 || selectedItem < 0 || selectedItem > items.Count - 1)
+            return 0;
+        
+        return items[selectedItem].quantity;
     }
     
     public void GetNextItem()
     {
-        if (selected == -2)
+        if (selectedItem == -2)
         {
             Debug.Log("Opening inventory");
-            selected = -1;
+            selectedItem = -1;
             return;
         }
         
@@ -68,8 +78,10 @@ public class InventorySystem : MonoBehaviour
             return;
         }
 
-        selected = (selected + 1) % items.Count;
-        Debug.Log("You've selected item: " + items[selected].item + " - count: " + items[selected].quantity);
+        selectedItem = (selectedItem + 1) % items.Count;
+        
+        Debug.Log("You've selected item: " + items[selectedItem].item + " - count: " + items[selectedItem].quantity);
+        OnSelectedItemChange?.Invoke();
     }
 
     public void AddItem(InventoryItem item, int amount)
@@ -85,33 +97,25 @@ public class InventorySystem : MonoBehaviour
     public void RemoveItem(InventoryItem item, int amount)
     {
         var entry = items.Find(i => i.item == item);
-        if (entry != null)
+        if (entry == null)
         {
-            entry.quantity -= amount;
-            
-            if (entry.quantity <= 0)
-            {
-                items.Remove(entry);
-
-                if (items.Count == 0)
-                {
-                    // deleted all inventory
-                    selected = -1;
-                    return;
-                }
-                
-                if (selected >= items.Count)
-                {
-                    // deleted last position item of inventory
-                    selected = 0;  // reset to first item
-                    Debug.Log("You've selected item: " + items[selected].item + " - count: " + items[selected].quantity);
-                }
-            }
-
-            else
-            {
-                Debug.Log("You've used item: " + items[selected].item + " - remaining: " + items[selected].quantity);
-            }
+            Debug.Log("Error - no item to remove");
+            return;
         }
+        
+        entry.quantity -= amount;
+        
+        if (entry.quantity <= 0)                // no more quantity, whole entry needs removing
+        {
+            items.Remove(entry);
+
+            if (items.Count == 0)               // no more items in the inventory, reset inventory
+                selectedItem = -1;
+                
+            if (selectedItem >= items.Count)    // deleted item in last position, reset cursor
+                selectedItem = 0;
+        }
+        
+        OnSelectedItemChange?.Invoke();        // notify the HUD
     }
 }
