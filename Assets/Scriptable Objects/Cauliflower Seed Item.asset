@@ -15,8 +15,8 @@ MonoBehaviour:
   itemName: cauliflower_seed
   itemSprite: {fileID: 3808273280442274367, guid: 4038e15739dd2be498076e728299f386, type: 3}
   growthTime: 60
+  seedTile: {fileID: 11400000, guid: c1970f76ffbb63c4fb53dde442f93118, type: 2}
   growthStageTiles:
-  - {fileID: 11400000, guid: c1970f76ffbb63c4fb53dde442f93118, type: 2}
   - {fileID: 11400000, guid: b3c3fa28c69a2ae4e97b429aac43d639, type: 2}
   - {fileID: 11400000, guid: 25a4f4f3eefab0b4daa9307da6804308, type: 2}
   - {fileID: 11400000, guid: ed5b20df53aa4b542abf7a478afb3868, type: 2}

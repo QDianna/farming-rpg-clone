@@ -15,8 +15,8 @@ MonoBehaviour:
   itemName: carrot_seed
   itemSprite: {fileID: 9191730558843939209, guid: 4038e15739dd2be498076e728299f386, type: 3}
   growthTime: 10
+  seedTile: {fileID: 11400000, guid: f5780b054e859e6479feb5b305b27a76, type: 2}
   growthStageTiles:
-  - {fileID: 11400000, guid: f5780b054e859e6479feb5b305b27a76, type: 2}
   - {fileID: 11400000, guid: 37c824742b5a33b4fad8aa66a164cc14, type: 2}
   - {fileID: 11400000, guid: 426baecafd189ef49bffe05d8aacb7c7, type: 2}
   - {fileID: 11400000, guid: e4551e53488e6ac4d9f0f5708912739a, type: 2}

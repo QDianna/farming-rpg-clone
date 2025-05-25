@@ -27,7 +27,7 @@ public class TimeSystemHUD : MonoBehaviour
 
     private void UpdateDisplay()
     { 
-        time.text = "Day " + TimeSystem.Instance.currentDay + " - " 
+        time.text = TimeSystem.Instance.GetSeason() + " Day " + TimeSystem.Instance.GetDay() + "\n" 
                   + TimeSystem.Instance.GetHour() + ":" 
                   + TimeSystem.Instance.GetMinute();
     }

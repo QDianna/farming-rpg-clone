@@ -23,21 +23,24 @@ using UnityEngine.Tilemaps;
 public class SeedItem : InventoryItem
 {
     public float growthTime;
-    public List<TileBase> growthStageTiles = new(5);
+    public TileBase seedTile;
+    public List<TileBase> growthStageTiles = new(4);
     public CropItem cropItem;
     
     public override void UseItem(PlayerController player)
     {
-        Vector3 position = player.transform.position;
-        if (!player.plotlandController.CanPlant(position))
+        Vector3 worldPos = player.transform.position;
+
+        if (player.plotlandController.CanPlant(worldPos))
         {
-            Debug.Log("Can't plant here.");
-            return;
+            player.animator.SetTrigger("Plant");
+            player.plotlandController.PlantPlot(this, worldPos);
+            player.inventorySystem.RemoveItem(this, 1);
         }
-        
-        player.animator.SetTrigger("Plant");
-        player.plotlandController.PlantPlot(this, position);
-        player.inventorySystem.RemoveItem(this, 1);
+        else
+        {
+            Debug.Log("Can't plant here!");
+        }
     }
 
     public TileBase GetStageTile(int stage)

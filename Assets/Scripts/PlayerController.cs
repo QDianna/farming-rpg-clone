@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     public InventoryItem seed1;
     public InventoryItem seed2;
     public InventoryItem seed3;
+    public InventoryItem strengthSolution;
     
     
     #region Unity Methods
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
         inventorySystem.AddItem(seed1, 5);
         inventorySystem.AddItem(seed2, 3);
         inventorySystem.AddItem(seed3, 3);
+        inventorySystem.AddItem(strengthSolution, 3);
     }
 
     private void Update()
@@ -118,6 +120,9 @@ public class PlayerController : MonoBehaviour
         
         else if (Input.GetKeyDown(KeyCode.Alpha2))
             toolSystem.SetTool(2);
+        
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+            toolSystem.SetTool(3);
         
         else if (Input.GetKeyDown(KeyCode.Alpha0))
             toolSystem.SetTool(0);

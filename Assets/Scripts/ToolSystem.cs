@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -25,7 +24,8 @@ public enum ToolType
 {
     None,
     Hoe,
-    Axe
+    Axe,
+    WateringCan
 }
 
 public class Tool
@@ -46,10 +46,12 @@ public class ToolSystem : MonoBehaviour
 {
     [SerializeField] private Sprite hoeSprite;
     [SerializeField] private Sprite axeSprite;
+    [SerializeField] private Sprite wateringCanSprite;
+    public static int toolCount = 3;
     
     public event System.Action OnSelectedToolChange;
 
-    private Tool[] tools = new Tool[3];
+    private Tool[] tools = new Tool[toolCount + 1];
     private int selected = 0;
     
     private void Awake()
@@ -57,6 +59,7 @@ public class ToolSystem : MonoBehaviour
         tools[0] = new Tool(ToolType.None, null, 0);
         tools[1] = new Tool(ToolType.Hoe, hoeSprite, 1);
         tools[2] = new Tool(ToolType.Axe, axeSprite, 2);
+        tools[3] = new Tool(ToolType.WateringCan, wateringCanSprite, 3);
     }
 
     public void SetTool(int toolKey)
@@ -71,26 +74,6 @@ public class ToolSystem : MonoBehaviour
         Debug.Log("Tool changed to: " + tools[selected]);
         
         OnSelectedToolChange?.Invoke();  // notify HUD
-    }
-    
-    public void UseTool(PlayerController player)
-    {
-        
-        switch (selected)
-        {
-            case 0:
-                break;
-            
-            case 1:
-                player.animator.SetTrigger("Use Hoe");
-                player.plotlandController.TillPlot(player.transform.position);
-                break;
-
-            case 2:
-                player.animator.SetTrigger("Use Axe");
-                // TODO
-                break;
-        }
     }
 
     public Sprite GetSelectedToolSprite()
@@ -107,6 +90,62 @@ public class ToolSystem : MonoBehaviour
             return tools[selected].type;
 
         return ToolType.None;
+    }
+    
+    public void UseTool(PlayerController player)
+    {
+        switch (selected)
+        {
+            case 0:
+                break;
+            
+            case 1:
+                UseHoe(player);
+                break;
+
+            case 2:
+                UseAxe(player);
+                break;
+            
+            case 3:
+                UseWateringCan(player);
+                break;
+        }
+    }
+
+    private void UseHoe(PlayerController player)
+    {
+        if (player.plotlandController.CanTill(player.transform.position))
+        {
+            player.animator.SetTrigger("Use Hoe");
+            player.plotlandController.TillPlot(player.transform.position);
+        }
+
+        else
+        {
+            Debug.Log("You can only till the plotland!");
+        }
+    }
+
+    private void UseAxe(PlayerController player)
+    {
+        player.animator.SetTrigger("Use Axe");
+        // TODO
+    }
+
+    private void UseWateringCan(PlayerController player)
+    {
+        if (player.plotlandController.CanAttendPlot(player.transform.position) == false)
+            return;
+        
+        if (TimeSystem.Instance.isWarmSeason() == false)
+        {
+            Debug.Log("Plant doesnt need watering in cold season");
+            return;
+        }
+
+        player.animator.SetTrigger("Use Watering Can");
+        player.plotlandController.AttendPlot(player.transform.position);
     }
     
 }

@@ -15,8 +15,8 @@ MonoBehaviour:
   itemName: onion_seed
   itemSprite: {fileID: 2056528120, guid: 4038e15739dd2be498076e728299f386, type: 3}
   growthTime: 120
+  seedTile: {fileID: 11400000, guid: 18a0be23bbd2cf64d81422a8d3644622, type: 2}
   growthStageTiles:
-  - {fileID: 11400000, guid: 18a0be23bbd2cf64d81422a8d3644622, type: 2}
   - {fileID: 11400000, guid: e2e0c1d25f113fb43afb58f2b70f88ca, type: 2}
   - {fileID: 11400000, guid: 6461e5a78b8cad84c926663edcf26d4e, type: 2}
   - {fileID: 11400000, guid: 6693becbf5593cc4184e78a9938e025a, type: 2}

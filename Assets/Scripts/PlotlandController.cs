@@ -16,7 +16,6 @@ public enum PlotState
     Grown
 }
 
-
 /// <summary>
 /// Represents an entry in the plotStates dictionary of the plotland controller.
 /// </summary>
@@ -24,10 +23,10 @@ public class PlotData
 {
     public PlotState state;
     public SeedItem seedData;
-    public float growthTimer = 0;
-    public int currentGrowthStage = 0;
+    public float growthTimer;
+    public int currentGrowthStage;
+    public bool canStartGrowing;
 }
-
 
 /// <summary>
 /// Centralized system for managing the state and behavior of all farming plots in the game.
@@ -51,8 +50,7 @@ public class PlotlandController : MonoBehaviour
 {
     private Tilemap plotTilemap;                            // tilemap plotland
     public Tilemap cropTilemap;                             // tilemap randare plante peste pamant
-    // public Tilemap expansion1Tilemap;                       // tilemap zona 1 extindere plotland
-    // public Tilemap expansion2Tilemap;                       // tilemap zona 2 extindere plotland
+    
     [SerializeField] private List<Tilemap> expansionTilemaps;
 
     public TileBase lockedTile;
@@ -88,88 +86,144 @@ public class PlotlandController : MonoBehaviour
             }
         }
     }
-
-    public bool CanTill(Vector3 worldPosition)
+    
+    private void Update()
     {
-        Vector3Int pos = plotTilemap.WorldToCell(worldPosition);
-        return plotStates.ContainsKey(pos) && plotStates[pos].state == PlotState.Empty;
+        UpdateCropGrowth();
+    }
+
+    public bool CanTill(Vector3 worldPos)
+    {
+        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        return plotStates.ContainsKey(tilePos) && plotStates[tilePos].state == PlotState.Empty;
     }
     
-    public void TillPlot(Vector3 worldPosition)
+    public void TillPlot(Vector3 worldPos)
     {
-        Vector3Int pos = plotTilemap.WorldToCell(worldPosition);
+        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
         
-        if (CanTill(worldPosition))
-        {
-            plotTilemap.SetTile(pos, tilledTile);
-            plotStates[pos].state = PlotState.Tilled;
-        }
+        plotStates[tilePos].state = PlotState.Tilled;
+        plotTilemap.SetTile(tilePos, tilledTile);
+        
+        Debug.Log($"Tilled the ground at {tilePos}");
     }
 
-    public bool CanPlant(Vector3 worldPosition)
+    public bool CanPlant(Vector3 worldPos)
     {
-        Vector3Int pos = plotTilemap.WorldToCell(worldPosition);
-        return plotStates.ContainsKey(pos) && plotStates[pos].state == PlotState.Tilled;
+        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        return plotStates.ContainsKey(tilePos) && plotStates[tilePos].state == PlotState.Tilled;
     }
 
-
-    public void PlantPlot(InventoryItem seed, Vector3 worldPosition)
+    public void PlantPlot(InventoryItem seed, Vector3 worldPos)
     {
-        Vector3Int pos = plotTilemap.WorldToCell(worldPosition);
-
-        // if (!CanPlant(worldPosition)) return;  // already called this in method that calls PlantPlot
+        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
 
         // Render planted sprite in crop tilemap
         SeedItem seedItem = seed as SeedItem;
-        
-        if (seedItem != null && seedItem.growthStageTiles[0] != null)
-        {
-            cropTilemap.SetTile(pos, seedItem.growthStageTiles[0]);
-        
-            plotStates[pos].state = PlotState.Planted;
-            plotStates[pos].seedData = seed as SeedItem;
-            plotStates[pos].growthTimer = 0;
-
-            Debug.Log($"Planted {seed.itemName} at {pos}");
+        if (seedItem == null)
             return;
-        }
         
-        Debug.Log("Error - couldn't plant");
+        plotStates[tilePos].state = PlotState.Planted;
+        plotStates[tilePos].seedData = seed as SeedItem;
+        plotStates[tilePos].currentGrowthStage = -1;
+        plotStates[tilePos].canStartGrowing = false;
+
+        cropTilemap.SetTile(tilePos, seedItem.seedTile);
+        
+        Debug.Log($"Planted {seed.itemName} at {tilePos}");
     }
     
-    public bool CanHarvest(Vector3 worldPosition)
+    public bool CanHarvest(Vector3 worldPos)
     {
-        Vector3Int pos = plotTilemap.WorldToCell(worldPosition);
-        return plotStates.ContainsKey(pos) && plotStates[pos].state == PlotState.Grown;
+        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        return plotStates.ContainsKey(tilePos) && plotStates[tilePos].state == PlotState.Grown;
     }
     
-    public void HarvestPlot(Vector3 worldPosition, PlayerController player)
+    public void HarvestPlot(Vector3 worldPos, PlayerController player)
     {
-        Vector3Int pos = plotTilemap.WorldToCell(worldPosition);
+        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
 
-        if (!CanHarvest(worldPosition)) return;  // already called in method that calls HarvestPlot
-
-        PlotData data = plotStates[pos];
+        PlotData data = plotStates[tilePos];
         CropItem cropItem = data.seedData.cropItem;
 
         player.inventorySystem.AddItem(data.seedData, Random.Range(1, 3));    // get 1 or 2 seeds back
         player.inventorySystem.AddItem(cropItem, Random.Range(1, 3));         // get 1 or 2 crops from harvest
         
         // display sprite of crop item into the world to mimic harvesting
-        cropItem.DisplayCrop(worldPosition, player);
+        cropItem.DisplayCrop(worldPos, player);
         
-        Debug.Log($"Harvested {data.seedData.cropItem} at {pos}");
+        Debug.Log($"Harvested {data.seedData.cropItem} at {tilePos}");
         
         // reset crop tilemap
-        cropTilemap.SetTile(pos, null);
+        cropTilemap.SetTile(tilePos, null);
         
         // reset plotland tilemap
-        plotTilemap.SetTile(pos, emptyTile);
+        plotTilemap.SetTile(tilePos, emptyTile);
+        
         data.state = PlotState.Empty;
         data.seedData = null;
         data.growthTimer = 0;
         data.currentGrowthStage = 0;
+        data.canStartGrowing = false;
     }
+
+    public bool CanAttendPlot(Vector3 worldPos)
+    {
+        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        if (plotStates.ContainsKey(tilePos) &&
+            plotStates[tilePos].state == PlotState.Planted &&
+            plotStates[tilePos].canStartGrowing == false)
+            return true;
+        
+        return false;
+    }
+    public void AttendPlot(Vector3 worldPos)
+    {
+        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+
+        plotStates[tilePos].canStartGrowing = true;
+        plotStates[tilePos].growthTimer = 0;
+        UpdateCropGrowth();
+    }
+    
+    public void UpdateCropGrowth()
+    {
+        foreach (var kvp in plotStates)
+        {
+            Vector3Int pos = kvp.Key;
+            PlotData data = kvp.Value;
+
+            if (data.state != PlotState.Planted || data.seedData == null || data.canStartGrowing == false)
+                continue;
+
+            data.growthTimer += Time.deltaTime;
+
+            var growthPercent = Mathf.Clamp01(data.growthTimer / data.seedData.growthTime);
+            var maxStage = data.seedData.growthStageTiles.Count - 1;
+            var newStage = Mathf.FloorToInt(growthPercent * maxStage);
+
+            if (newStage <= data.currentGrowthStage)
+                continue;
+
+            TileBase currentTile = data.seedData.GetStageTile(newStage);
+            if (currentTile == null)
+            {
+                Debug.Log("Error updating crop growth");
+                return;
+            }
+
+            data.currentGrowthStage = newStage;
+            cropTilemap.SetTile(pos, currentTile);
+
+            if (newStage == maxStage)
+            {
+                data.state = PlotState.Grown;
+                Debug.Log("Crop " + data.seedData.itemName + " at pos " + pos + " is fully grown and ready to harvest!");
+            }
+        }
+    }
+
+    
 
     // this method is called by the player controller when the player executes an interaction - buy
     public void UnlockPlot(Tilemap expansionTilemap)
@@ -190,43 +244,5 @@ public class PlotlandController : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-        foreach (var kvp in plotStates)
-        {
-            Vector3Int pos = kvp.Key;
-            PlotData data = kvp.Value;
 
-            if (data.state != PlotState.Planted || data.seedData == null)
-                continue;
-            
-            data.growthTimer += Time.deltaTime;
-
-            var growthPercent = Mathf.Clamp01(data.growthTimer / data.seedData.growthTime);
-            var maxStage = data.seedData.growthStageTiles.Count - 1;
-            var newStage = Mathf.FloorToInt(growthPercent * maxStage);
-
-            if (newStage <= data.currentGrowthStage)
-                continue;
-                
-            TileBase currentTile = data.seedData.GetStageTile(newStage);
-            if (currentTile == null)
-            {
-                Debug.Log("Error updating crop growth");
-                return;
-            }
-                    
-            data.currentGrowthStage = newStage;
-            // Debug.Log("New stage for " + data.seedData.itemName + " at pos " + pos + " is " + newStage);
-                    
-            cropTilemap.SetTile(pos, currentTile);
-                
-            if (newStage != maxStage)
-                continue;
-            
-            // max stage reaached, mark as grown
-            data.state = PlotState.Grown;
-            Debug.Log("Crop " + data.seedData.itemName + " at pos " + pos + " is fully grown and ready to harvest!");
-        }
-    }
 }
