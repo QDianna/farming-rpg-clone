@@ -1,0 +1,1521 @@
+fileFormatVersion: 2
+guid: d481ca1136b06de46ab98207aec5ec1f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3882182243109997531
+    second: 7_Pickup_Items_32x32_0
+  - first:
+      213: -7798312720817319269
+    second: 7_Pickup_Items_32x32_1
+  - first:
+      213: -4879852974620556047
+    second: 7_Pickup_Items_32x32_2
+  - first:
+      213: -920793693183051977
+    second: 7_Pickup_Items_32x32_3
+  - first:
+      213: 547955823377610325
+    second: 7_Pickup_Items_32x32_4
+  - first:
+      213: 179002244563558252
+    second: 7_Pickup_Items_32x32_5
+  - first:
+      213: -5297988402152441698
+    second: 7_Pickup_Items_32x32_6
+  - first:
+      213: 8181922424232872867
+    second: 7_Pickup_Items_32x32_7
+  - first:
+      213: -1546660480115057273
+    second: 7_Pickup_Items_32x32_8
+  - first:
+      213: 6406493840747849827
+    second: 7_Pickup_Items_32x32_9
+  - first:
+      213: 4810359651328115840
+    second: 7_Pickup_Items_32x32_10
+  - first:
+      213: 8080621555017626388
+    second: 7_Pickup_Items_32x32_11
+  - first:
+      213: 7238461667309326831
+    second: 7_Pickup_Items_32x32_12
+  - first:
+      213: 3305559024742772414
+    second: 7_Pickup_Items_32x32_13
+  - first:
+      213: -6329031560478530441
+    second: 7_Pickup_Items_32x32_14
+  - first:
+      213: 4799099361781853607
+    second: 7_Pickup_Items_32x32_15
+  - first:
+      213: 3349511598875299672
+    second: 7_Pickup_Items_32x32_16
+  - first:
+      213: 9223160199905786027
+    second: 7_Pickup_Items_32x32_17
+  - first:
+      213: -3610075242581877028
+    second: 7_Pickup_Items_32x32_18
+  - first:
+      213: 4922659367177084662
+    second: 7_Pickup_Items_32x32_19
+  - first:
+      213: -7900729897274602619
+    second: 7_Pickup_Items_32x32_20
+  - first:
+      213: -4416392357904392142
+    second: 7_Pickup_Items_32x32_21
+  - first:
+      213: 3407924595937607041
+    second: 7_Pickup_Items_32x32_22
+  - first:
+      213: -7661779384590790390
+    second: 7_Pickup_Items_32x32_23
+  - first:
+      213: 7813741561130283341
+    second: 7_Pickup_Items_32x32_24
+  - first:
+      213: 4957206988584412671
+    second: 7_Pickup_Items_32x32_25
+  - first:
+      213: -4102651238607120700
+    second: 7_Pickup_Items_32x32_26
+  - first:
+      213: -9080532026305028567
+    second: 7_Pickup_Items_32x32_27
+  - first:
+      213: 5278990211091774740
+    second: 7_Pickup_Items_32x32_28
+  - first:
+      213: 5627964066834839288
+    second: 7_Pickup_Items_32x32_29
+  - first:
+      213: -3572037610712965058
+    second: 7_Pickup_Items_32x32_30
+  - first:
+      213: -368303835099435427
+    second: 7_Pickup_Items_32x32_31
+  - first:
+      213: -4019330236691606589
+    second: 7_Pickup_Items_32x32_32
+  - first:
+      213: 5877485183218542244
+    second: 7_Pickup_Items_32x32_33
+  - first:
+      213: -3453867465372676802
+    second: 7_Pickup_Items_32x32_34
+  - first:
+      213: -6137167743281925669
+    second: 7_Pickup_Items_32x32_35
+  - first:
+      213: 737662239316792931
+    second: 7_Pickup_Items_32x32_36
+  - first:
+      213: -7367342812989467495
+    second: 7_Pickup_Items_32x32_37
+  - first:
+      213: -9138403609794097515
+    second: 7_Pickup_Items_32x32_38
+  - first:
+      213: -2275156059643079717
+    second: 7_Pickup_Items_32x32_39
+  - first:
+      213: -3275146247076272341
+    second: 7_Pickup_Items_32x32_40
+  - first:
+      213: -926153255792607611
+    second: 7_Pickup_Items_32x32_41
+  - first:
+      213: 1413085776177451561
+    second: 7_Pickup_Items_32x32_42
+  - first:
+      213: -1883332241635843174
+    second: 7_Pickup_Items_32x32_43
+  - first:
+      213: 3324203112666470930
+    second: 7_Pickup_Items_32x32_44
+  - first:
+      213: -1430714845550507910
+    second: 7_Pickup_Items_32x32_45
+  - first:
+      213: 908820424921490574
+    second: 7_Pickup_Items_32x32_46
+  - first:
+      213: 6499365552616847068
+    second: 7_Pickup_Items_32x32_47
+  - first:
+      213: 3660097501384367684
+    second: 7_Pickup_Items_32x32_48
+  - first:
+      213: 5774488061679389218
+    second: 7_Pickup_Items_32x32_49
+  - first:
+      213: -1127392626612453477
+    second: 7_Pickup_Items_32x32_50
+  - first:
+      213: 7838531555664983953
+    second: 7_Pickup_Items_32x32_51
+  - first:
+      213: -7858656760731467941
+    second: 7_Pickup_Items_32x32_52
+  - first:
+      213: 7515283060425000841
+    second: 7_Pickup_Items_32x32_53
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 289
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdb86e17e2840e530800000000000000
+      internalID: 3882182243109997531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 289
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b92164cc5e3d6c390800000000000000
+      internalID: -7798312720817319269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 289
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f4cb9bf297474cb0800000000000000
+      internalID: -4879852974620556047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 289
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 737776eb30fa833f0800000000000000
+      internalID: -920793693183051977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 289
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 556770d0beaba9700800000000000000
+      internalID: 547955823377610325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 289
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6f5531d791fb7200800000000000000
+      internalID: 179002244563558252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 293
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9870914e93c976b0800000000000000
+      internalID: -5297988402152441698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 293
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ab043c58170c8170800000000000000
+      internalID: 8181922424232872867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 291
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d5b96ec78298ae0800000000000000
+      internalID: -1546660480115057273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 291
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368e081843078e850800000000000000
+      internalID: 6406493840747849827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 291
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 084c843dd94d1c240800000000000000
+      internalID: 4810359651328115840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 291
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 413b037cd72242070800000000000000
+      internalID: 8080621555017626388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 291
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe11140198e247460800000000000000
+      internalID: 7238461667309326831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 291
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebe21ed5b64bfdd20800000000000000
+      internalID: 3305559024742772414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 259
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 774e0711453ca28a0800000000000000
+      internalID: -6329031560478530441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 259
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7adafcc5173d99240800000000000000
+      internalID: 4799099361781853607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 259
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f430e7d0bdb7e20800000000000000
+      internalID: 3349511598875299672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 259
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba8b7edd55f3fff70800000000000000
+      internalID: 9223160199905786027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 259
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde9971a1bf66edc0800000000000000
+      internalID: -3610075242581877028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 259
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fed6d2fc9cc05440800000000000000
+      internalID: 4922659367177084662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 259
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58b83aea408fa5290800000000000000
+      internalID: -7900729897274602619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 259
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230eb5eac82d5b2c0800000000000000
+      internalID: -4416392357904392142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 259
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18d7d223d516b4f20800000000000000
+      internalID: 3407924595937607041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 259
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a011e0a5e34eba590800000000000000
+      internalID: -7661779384590790390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 259
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4170e50d8cff6c60800000000000000
+      internalID: 7813741561130283341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 259
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff568a0ed798bc440800000000000000
+      internalID: 4957206988584412671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 261
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c6918d6f647017c0800000000000000
+      internalID: -4102651238607120700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 261
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92ed7889b387bf180800000000000000
+      internalID: -9080532026305028567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 229
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41db3e0b0adb24940800000000000000
+      internalID: 5278990211091774740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 229
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f67a54208b8a1e40800000000000000
+      internalID: 5627964066834839288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 225
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e306e11f7b29d6ec0800000000000000
+      internalID: -3572037610712965058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 225
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5eeb730d9583eaf0800000000000000
+      internalID: -368303835099435427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 223
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c3920fe1787838c0800000000000000
+      internalID: -4019330236691606589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 223
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a6ec5642a5019150800000000000000
+      internalID: 5877485183218542244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 225
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3dce21f6d56110d0800000000000000
+      internalID: -3453867465372676802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 225
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd1f1be147664daa0800000000000000
+      internalID: -6137167743281925669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 225
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36652baf5e3bc3a00800000000000000
+      internalID: 737662239316792931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 225
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9945c35deb0f1c990800000000000000
+      internalID: -7367342812989467495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 163
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59e4310955edd2180800000000000000
+      internalID: -9138403609794097515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 163
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd395683e950d60e0800000000000000
+      internalID: -2275156059643079717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 167
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b27a09b37d75c82d0800000000000000
+      internalID: -3275146247076272341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 165
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ef8e45584a523f0800000000000000
+      internalID: -926153255792607611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 165
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 922d63ec60a4c9310800000000000000
+      internalID: 1413085776177451561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 167
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a936147fd4f0dd5e0800000000000000
+      internalID: -1883332241635843174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 167
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21a9bbb5e11f12e20800000000000000
+      internalID: 3324203112666470930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 97
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a788510ad64152ce0800000000000000
+      internalID: -1430714845550507910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 99
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e84a0108c57cc9c00800000000000000
+      internalID: 908820424921490574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 97
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd63325f882623a50800000000000000
+      internalID: 6499365552616847068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 99
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44e5f4519474bc230800000000000000
+      internalID: 3660097501384367684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 97
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a422c2c4a132050800000000000000
+      internalID: 5774488061679389218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 97
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9fbe581162ba50f0800000000000000
+      internalID: -1127392626612453477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 97
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197f9186bee08cc60800000000000000
+      internalID: 7838531555664983953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 39
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5ff0e4205170f290800000000000000
+      internalID: -7858656760731467941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_Pickup_Items_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 37
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98784233026ab4860800000000000000
+      internalID: 7515283060425000841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      7_Pickup_Items_32x32_0: 3882182243109997531
+      7_Pickup_Items_32x32_1: -7798312720817319269
+      7_Pickup_Items_32x32_10: 4810359651328115840
+      7_Pickup_Items_32x32_11: 8080621555017626388
+      7_Pickup_Items_32x32_12: 7238461667309326831
+      7_Pickup_Items_32x32_13: 3305559024742772414
+      7_Pickup_Items_32x32_14: -6329031560478530441
+      7_Pickup_Items_32x32_15: 4799099361781853607
+      7_Pickup_Items_32x32_16: 3349511598875299672
+      7_Pickup_Items_32x32_17: 9223160199905786027
+      7_Pickup_Items_32x32_18: -3610075242581877028
+      7_Pickup_Items_32x32_19: 4922659367177084662
+      7_Pickup_Items_32x32_2: -4879852974620556047
+      7_Pickup_Items_32x32_20: -7900729897274602619
+      7_Pickup_Items_32x32_21: -4416392357904392142
+      7_Pickup_Items_32x32_22: 3407924595937607041
+      7_Pickup_Items_32x32_23: -7661779384590790390
+      7_Pickup_Items_32x32_24: 7813741561130283341
+      7_Pickup_Items_32x32_25: 4957206988584412671
+      7_Pickup_Items_32x32_26: -4102651238607120700
+      7_Pickup_Items_32x32_27: -9080532026305028567
+      7_Pickup_Items_32x32_28: 5278990211091774740
+      7_Pickup_Items_32x32_29: 5627964066834839288
+      7_Pickup_Items_32x32_3: -920793693183051977
+      7_Pickup_Items_32x32_30: -3572037610712965058
+      7_Pickup_Items_32x32_31: -368303835099435427
+      7_Pickup_Items_32x32_32: -4019330236691606589
+      7_Pickup_Items_32x32_33: 5877485183218542244
+      7_Pickup_Items_32x32_34: -3453867465372676802
+      7_Pickup_Items_32x32_35: -6137167743281925669
+      7_Pickup_Items_32x32_36: 737662239316792931
+      7_Pickup_Items_32x32_37: -7367342812989467495
+      7_Pickup_Items_32x32_38: -9138403609794097515
+      7_Pickup_Items_32x32_39: -2275156059643079717
+      7_Pickup_Items_32x32_4: 547955823377610325
+      7_Pickup_Items_32x32_40: -3275146247076272341
+      7_Pickup_Items_32x32_41: -926153255792607611
+      7_Pickup_Items_32x32_42: 1413085776177451561
+      7_Pickup_Items_32x32_43: -1883332241635843174
+      7_Pickup_Items_32x32_44: 3324203112666470930
+      7_Pickup_Items_32x32_45: -1430714845550507910
+      7_Pickup_Items_32x32_46: 908820424921490574
+      7_Pickup_Items_32x32_47: 6499365552616847068
+      7_Pickup_Items_32x32_48: 3660097501384367684
+      7_Pickup_Items_32x32_49: 5774488061679389218
+      7_Pickup_Items_32x32_5: 179002244563558252
+      7_Pickup_Items_32x32_50: -1127392626612453477
+      7_Pickup_Items_32x32_51: 7838531555664983953
+      7_Pickup_Items_32x32_52: -7858656760731467941
+      7_Pickup_Items_32x32_53: 7515283060425000841
+      7_Pickup_Items_32x32_6: -5297988402152441698
+      7_Pickup_Items_32x32_7: 8181922424232872867
+      7_Pickup_Items_32x32_8: -1546660480115057273
+      7_Pickup_Items_32x32_9: 6406493840747849827
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

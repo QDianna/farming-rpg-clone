@@ -16,17 +16,12 @@ public class InventorySystemHUD : MonoBehaviour
         selectedItemCount = root.Q<Label>("SelectedItemCount");
 
         inventorySystem.OnSelectedItemChange += UpdateDisplay;
-        UpdateDisplay();
+        UpdateDisplay();  // remove initial (test) values from ui builder
     }
     
     private void OnDisable()
     {
         inventorySystem.OnSelectedItemChange -= UpdateDisplay;
-    }
-
-    private void Update()
-    {
-        UpdateDisplay();
     }
 
     private void UpdateDisplay()

@@ -35,6 +35,7 @@ public class SeedItem : InventoryItem
             return;
         }
         
+        player.animator.SetTrigger("Plant");
         player.plotlandController.PlantPlot(this, position);
         player.inventorySystem.RemoveItem(this, 1);
     }

@@ -1,0 +1,6799 @@
+fileFormatVersion: 2
+guid: 5049acac7815c0246a8bba70a515d31f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4544584606962439510
+    second: Farmer_2_Fishing_128_frames_32x32_0
+  - first:
+      213: -3853900202129530080
+    second: Farmer_2_Fishing_128_frames_32x32_1
+  - first:
+      213: 2694882331265823060
+    second: Farmer_2_Fishing_128_frames_32x32_2
+  - first:
+      213: 4697507164456552317
+    second: Farmer_2_Fishing_128_frames_32x32_3
+  - first:
+      213: 3791814418208797349
+    second: Farmer_2_Fishing_128_frames_32x32_4
+  - first:
+      213: -8127148684436586326
+    second: Farmer_2_Fishing_128_frames_32x32_5
+  - first:
+      213: -6653670044005694350
+    second: Farmer_2_Fishing_128_frames_32x32_6
+  - first:
+      213: -1596849772353756356
+    second: Farmer_2_Fishing_128_frames_32x32_7
+  - first:
+      213: -3597044855389355653
+    second: Farmer_2_Fishing_128_frames_32x32_8
+  - first:
+      213: -7296487212344431062
+    second: Farmer_2_Fishing_128_frames_32x32_9
+  - first:
+      213: -8186690132682943356
+    second: Farmer_2_Fishing_128_frames_32x32_10
+  - first:
+      213: -8040348060599514465
+    second: Farmer_2_Fishing_128_frames_32x32_11
+  - first:
+      213: 4090490892654998791
+    second: Farmer_2_Fishing_128_frames_32x32_12
+  - first:
+      213: -1642801419824751251
+    second: Farmer_2_Fishing_128_frames_32x32_13
+  - first:
+      213: 7958867622558480594
+    second: Farmer_2_Fishing_128_frames_32x32_14
+  - first:
+      213: 1223579126841618209
+    second: Farmer_2_Fishing_128_frames_32x32_15
+  - first:
+      213: 2554800148687406608
+    second: Farmer_2_Fishing_128_frames_32x32_16
+  - first:
+      213: 1095697905246150959
+    second: Farmer_2_Fishing_128_frames_32x32_17
+  - first:
+      213: 4581831936118317338
+    second: Farmer_2_Fishing_128_frames_32x32_18
+  - first:
+      213: 9169780393533641607
+    second: Farmer_2_Fishing_128_frames_32x32_19
+  - first:
+      213: -5200941175846628769
+    second: Farmer_2_Fishing_128_frames_32x32_20
+  - first:
+      213: 2260651623983889261
+    second: Farmer_2_Fishing_128_frames_32x32_21
+  - first:
+      213: -4344379474977932652
+    second: Farmer_2_Fishing_128_frames_32x32_22
+  - first:
+      213: 1366247768123889865
+    second: Farmer_2_Fishing_128_frames_32x32_23
+  - first:
+      213: 6590969340067739574
+    second: Farmer_2_Fishing_128_frames_32x32_24
+  - first:
+      213: -7919106489875554055
+    second: Farmer_2_Fishing_128_frames_32x32_25
+  - first:
+      213: 7652021443456321926
+    second: Farmer_2_Fishing_128_frames_32x32_26
+  - first:
+      213: 7993823162536868981
+    second: Farmer_2_Fishing_128_frames_32x32_27
+  - first:
+      213: -3643061526190213003
+    second: Farmer_2_Fishing_128_frames_32x32_28
+  - first:
+      213: 3360811637549832544
+    second: Farmer_2_Fishing_128_frames_32x32_29
+  - first:
+      213: -2035026571201182234
+    second: Farmer_2_Fishing_128_frames_32x32_30
+  - first:
+      213: -2309602212716662229
+    second: Farmer_2_Fishing_128_frames_32x32_31
+  - first:
+      213: -155631058312861438
+    second: Farmer_2_Fishing_128_frames_32x32_32
+  - first:
+      213: -1543210217156724801
+    second: Farmer_2_Fishing_128_frames_32x32_33
+  - first:
+      213: -8734011098078167137
+    second: Farmer_2_Fishing_128_frames_32x32_34
+  - first:
+      213: -1184964093651520001
+    second: Farmer_2_Fishing_128_frames_32x32_35
+  - first:
+      213: -5511937583248945241
+    second: Farmer_2_Fishing_128_frames_32x32_36
+  - first:
+      213: -1132835175971761229
+    second: Farmer_2_Fishing_128_frames_32x32_37
+  - first:
+      213: -1462333869787843995
+    second: Farmer_2_Fishing_128_frames_32x32_38
+  - first:
+      213: 3470525740461813993
+    second: Farmer_2_Fishing_128_frames_32x32_39
+  - first:
+      213: 6027990555912185313
+    second: Farmer_2_Fishing_128_frames_32x32_40
+  - first:
+      213: 6287739729107537525
+    second: Farmer_2_Fishing_128_frames_32x32_41
+  - first:
+      213: -1370171999409641077
+    second: Farmer_2_Fishing_128_frames_32x32_42
+  - first:
+      213: 7912012630690756220
+    second: Farmer_2_Fishing_128_frames_32x32_43
+  - first:
+      213: 5386789070280658807
+    second: Farmer_2_Fishing_128_frames_32x32_44
+  - first:
+      213: -889808327097227228
+    second: Farmer_2_Fishing_128_frames_32x32_45
+  - first:
+      213: -5393332919910509022
+    second: Farmer_2_Fishing_128_frames_32x32_46
+  - first:
+      213: 308929634802406705
+    second: Farmer_2_Fishing_128_frames_32x32_47
+  - first:
+      213: -3407634601100464419
+    second: Farmer_2_Fishing_128_frames_32x32_48
+  - first:
+      213: 7611143247229322421
+    second: Farmer_2_Fishing_128_frames_32x32_49
+  - first:
+      213: -7143671508047666760
+    second: Farmer_2_Fishing_128_frames_32x32_50
+  - first:
+      213: 710458621492497132
+    second: Farmer_2_Fishing_128_frames_32x32_51
+  - first:
+      213: -4985178104878700106
+    second: Farmer_2_Fishing_128_frames_32x32_52
+  - first:
+      213: 664803821084955200
+    second: Farmer_2_Fishing_128_frames_32x32_53
+  - first:
+      213: 1562085711681839858
+    second: Farmer_2_Fishing_128_frames_32x32_54
+  - first:
+      213: 891955094045164087
+    second: Farmer_2_Fishing_128_frames_32x32_55
+  - first:
+      213: -5760930463456601043
+    second: Farmer_2_Fishing_128_frames_32x32_56
+  - first:
+      213: 3348285339052887546
+    second: Farmer_2_Fishing_128_frames_32x32_57
+  - first:
+      213: -9174380978677449184
+    second: Farmer_2_Fishing_128_frames_32x32_58
+  - first:
+      213: 2172604517880700805
+    second: Farmer_2_Fishing_128_frames_32x32_59
+  - first:
+      213: -6131038087013719648
+    second: Farmer_2_Fishing_128_frames_32x32_60
+  - first:
+      213: 4794595149201125615
+    second: Farmer_2_Fishing_128_frames_32x32_61
+  - first:
+      213: -5620520495905861456
+    second: Farmer_2_Fishing_128_frames_32x32_62
+  - first:
+      213: 5830894238511371705
+    second: Farmer_2_Fishing_128_frames_32x32_63
+  - first:
+      213: -610996227906075393
+    second: Farmer_2_Fishing_128_frames_32x32_64
+  - first:
+      213: 5438593551958287247
+    second: Farmer_2_Fishing_128_frames_32x32_65
+  - first:
+      213: -4476139714204270861
+    second: Farmer_2_Fishing_128_frames_32x32_66
+  - first:
+      213: 8423123033278936164
+    second: Farmer_2_Fishing_128_frames_32x32_67
+  - first:
+      213: -6487546151425727445
+    second: Farmer_2_Fishing_128_frames_32x32_68
+  - first:
+      213: -9122106746097158138
+    second: Farmer_2_Fishing_128_frames_32x32_69
+  - first:
+      213: -1940400238288930085
+    second: Farmer_2_Fishing_128_frames_32x32_70
+  - first:
+      213: -7585739009670998166
+    second: Farmer_2_Fishing_128_frames_32x32_71
+  - first:
+      213: 7264119217420753687
+    second: Farmer_2_Fishing_128_frames_32x32_72
+  - first:
+      213: -923200598134273699
+    second: Farmer_2_Fishing_128_frames_32x32_73
+  - first:
+      213: 9002371132279246534
+    second: Farmer_2_Fishing_128_frames_32x32_74
+  - first:
+      213: -4076272279070772421
+    second: Farmer_2_Fishing_128_frames_32x32_75
+  - first:
+      213: 8498195380352810185
+    second: Farmer_2_Fishing_128_frames_32x32_76
+  - first:
+      213: -2434908699623767829
+    second: Farmer_2_Fishing_128_frames_32x32_77
+  - first:
+      213: 7822918348749711916
+    second: Farmer_2_Fishing_128_frames_32x32_78
+  - first:
+      213: -1325242499786129648
+    second: Farmer_2_Fishing_128_frames_32x32_79
+  - first:
+      213: 7438460505708977407
+    second: Farmer_2_Fishing_128_frames_32x32_80
+  - first:
+      213: -1264654417053309033
+    second: Farmer_2_Fishing_128_frames_32x32_81
+  - first:
+      213: 8904987323971489092
+    second: Farmer_2_Fishing_128_frames_32x32_82
+  - first:
+      213: -1836193269235059271
+    second: Farmer_2_Fishing_128_frames_32x32_83
+  - first:
+      213: -8293459202402224214
+    second: Farmer_2_Fishing_128_frames_32x32_84
+  - first:
+      213: -7034195965843306005
+    second: Farmer_2_Fishing_128_frames_32x32_85
+  - first:
+      213: 6430464657597875731
+    second: Farmer_2_Fishing_128_frames_32x32_86
+  - first:
+      213: 5306397459777373817
+    second: Farmer_2_Fishing_128_frames_32x32_87
+  - first:
+      213: -2489902072272031818
+    second: Farmer_2_Fishing_128_frames_32x32_88
+  - first:
+      213: 2151220169155696267
+    second: Farmer_2_Fishing_128_frames_32x32_89
+  - first:
+      213: 6610237490502389042
+    second: Farmer_2_Fishing_128_frames_32x32_90
+  - first:
+      213: 3116161406745850236
+    second: Farmer_2_Fishing_128_frames_32x32_91
+  - first:
+      213: -8265879658257866578
+    second: Farmer_2_Fishing_128_frames_32x32_92
+  - first:
+      213: 3789537121127042981
+    second: Farmer_2_Fishing_128_frames_32x32_93
+  - first:
+      213: 3190707373469358607
+    second: Farmer_2_Fishing_128_frames_32x32_94
+  - first:
+      213: -5083698915167909281
+    second: Farmer_2_Fishing_128_frames_32x32_95
+  - first:
+      213: 4725028038648058585
+    second: Farmer_2_Fishing_128_frames_32x32_96
+  - first:
+      213: -1085022664936157177
+    second: Farmer_2_Fishing_128_frames_32x32_97
+  - first:
+      213: -5942952310630038486
+    second: Farmer_2_Fishing_128_frames_32x32_98
+  - first:
+      213: -2578929889634600095
+    second: Farmer_2_Fishing_128_frames_32x32_99
+  - first:
+      213: -2734758661200722861
+    second: Farmer_2_Fishing_128_frames_32x32_100
+  - first:
+      213: 1556176759742532717
+    second: Farmer_2_Fishing_128_frames_32x32_101
+  - first:
+      213: 4187437075230096006
+    second: Farmer_2_Fishing_128_frames_32x32_102
+  - first:
+      213: 1080065196404043997
+    second: Farmer_2_Fishing_128_frames_32x32_103
+  - first:
+      213: 2000035934997305913
+    second: Farmer_2_Fishing_128_frames_32x32_104
+  - first:
+      213: -8366971479813526758
+    second: Farmer_2_Fishing_128_frames_32x32_105
+  - first:
+      213: 8644967427277057888
+    second: Farmer_2_Fishing_128_frames_32x32_106
+  - first:
+      213: 1001713599957218067
+    second: Farmer_2_Fishing_128_frames_32x32_107
+  - first:
+      213: -7627232325666954442
+    second: Farmer_2_Fishing_128_frames_32x32_108
+  - first:
+      213: -775633809331832466
+    second: Farmer_2_Fishing_128_frames_32x32_109
+  - first:
+      213: -8489865229868979122
+    second: Farmer_2_Fishing_128_frames_32x32_110
+  - first:
+      213: -8378341534267147228
+    second: Farmer_2_Fishing_128_frames_32x32_111
+  - first:
+      213: 1919744459614078104
+    second: Farmer_2_Fishing_128_frames_32x32_112
+  - first:
+      213: -4507545718456861157
+    second: Farmer_2_Fishing_128_frames_32x32_113
+  - first:
+      213: -3620682303864050161
+    second: Farmer_2_Fishing_128_frames_32x32_114
+  - first:
+      213: 6631285738292848298
+    second: Farmer_2_Fishing_128_frames_32x32_115
+  - first:
+      213: -5340649358374621641
+    second: Farmer_2_Fishing_128_frames_32x32_116
+  - first:
+      213: -2063600768508402782
+    second: Farmer_2_Fishing_128_frames_32x32_117
+  - first:
+      213: 8169649816607804820
+    second: Farmer_2_Fishing_128_frames_32x32_118
+  - first:
+      213: -8106438962635569840
+    second: Farmer_2_Fishing_128_frames_32x32_119
+  - first:
+      213: 2262883439768849833
+    second: Farmer_2_Fishing_128_frames_32x32_120
+  - first:
+      213: -6774896793693990675
+    second: Farmer_2_Fishing_128_frames_32x32_121
+  - first:
+      213: 6662215100080044794
+    second: Farmer_2_Fishing_128_frames_32x32_122
+  - first:
+      213: -9044163176726891265
+    second: Farmer_2_Fishing_128_frames_32x32_123
+  - first:
+      213: -2412450606042060699
+    second: Farmer_2_Fishing_128_frames_32x32_124
+  - first:
+      213: -3595916778037765619
+    second: Farmer_2_Fishing_128_frames_32x32_125
+  - first:
+      213: 5031726538646608030
+    second: Farmer_2_Fishing_128_frames_32x32_126
+  - first:
+      213: 5769090552195169962
+    second: Farmer_2_Fishing_128_frames_32x32_127
+  - first:
+      213: 1473884291648233599
+    second: Farmer_2_Fishing_128_frames_32x32_128
+  - first:
+      213: -8953225847347563725
+    second: Farmer_2_Fishing_128_frames_32x32_129
+  - first:
+      213: 2255734376564568617
+    second: Farmer_2_Fishing_128_frames_32x32_130
+  - first:
+      213: -6378369576620273212
+    second: Farmer_2_Fishing_128_frames_32x32_131
+  - first:
+      213: 5360105282816840490
+    second: Farmer_2_Fishing_128_frames_32x32_132
+  - first:
+      213: -3294158976514584328
+    second: Farmer_2_Fishing_128_frames_32x32_133
+  - first:
+      213: 13455295416896959
+    second: Farmer_2_Fishing_128_frames_32x32_134
+  - first:
+      213: 2380507964022902787
+    second: Farmer_2_Fishing_128_frames_32x32_135
+  - first:
+      213: 9067891771765782716
+    second: Farmer_2_Fishing_128_frames_32x32_136
+  - first:
+      213: -4656773121623219817
+    second: Farmer_2_Fishing_128_frames_32x32_137
+  - first:
+      213: -7102311966201890351
+    second: Farmer_2_Fishing_128_frames_32x32_138
+  - first:
+      213: -5308893401825566120
+    second: Farmer_2_Fishing_128_frames_32x32_139
+  - first:
+      213: 6591878925381401935
+    second: Farmer_2_Fishing_128_frames_32x32_140
+  - first:
+      213: 3152925722005607979
+    second: Farmer_2_Fishing_128_frames_32x32_141
+  - first:
+      213: 200108544340568079
+    second: Farmer_2_Fishing_128_frames_32x32_142
+  - first:
+      213: 8620124120293629644
+    second: Farmer_2_Fishing_128_frames_32x32_143
+  - first:
+      213: -7572231511914917585
+    second: Farmer_2_Fishing_128_frames_32x32_144
+  - first:
+      213: -961762443457330160
+    second: Farmer_2_Fishing_128_frames_32x32_145
+  - first:
+      213: 8248761540747488605
+    second: Farmer_2_Fishing_128_frames_32x32_146
+  - first:
+      213: 8954204504705388775
+    second: Farmer_2_Fishing_128_frames_32x32_147
+  - first:
+      213: 868005084592379777
+    second: Farmer_2_Fishing_128_frames_32x32_148
+  - first:
+      213: -5098305424952190526
+    second: Farmer_2_Fishing_128_frames_32x32_149
+  - first:
+      213: 4742352328372249950
+    second: Farmer_2_Fishing_128_frames_32x32_150
+  - first:
+      213: 6058728971107147933
+    second: Farmer_2_Fishing_128_frames_32x32_151
+  - first:
+      213: -7508047035897261847
+    second: Farmer_2_Fishing_128_frames_32x32_152
+  - first:
+      213: -4558706994171494029
+    second: Farmer_2_Fishing_128_frames_32x32_153
+  - first:
+      213: -825178736138182439
+    second: Farmer_2_Fishing_128_frames_32x32_154
+  - first:
+      213: 6125958087143325414
+    second: Farmer_2_Fishing_128_frames_32x32_155
+  - first:
+      213: 186183397363989319
+    second: Farmer_2_Fishing_128_frames_32x32_156
+  - first:
+      213: 1246358814159543254
+    second: Farmer_2_Fishing_128_frames_32x32_157
+  - first:
+      213: 5509200231716467914
+    second: Farmer_2_Fishing_128_frames_32x32_158
+  - first:
+      213: -2931412465804950257
+    second: Farmer_2_Fishing_128_frames_32x32_159
+  - first:
+      213: 8733517097339144497
+    second: Farmer_2_Fishing_128_frames_32x32_160
+  - first:
+      213: 8725648038749292764
+    second: Farmer_2_Fishing_128_frames_32x32_161
+  - first:
+      213: 3263194226521938066
+    second: Farmer_2_Fishing_128_frames_32x32_162
+  - first:
+      213: -477473273175102944
+    second: Farmer_2_Fishing_128_frames_32x32_163
+  - first:
+      213: -1623738866101868826
+    second: Farmer_2_Fishing_128_frames_32x32_164
+  - first:
+      213: 926174782731209835
+    second: Farmer_2_Fishing_128_frames_32x32_165
+  - first:
+      213: -4105486071698284910
+    second: Farmer_2_Fishing_128_frames_32x32_166
+  - first:
+      213: 1759854511009812260
+    second: Farmer_2_Fishing_128_frames_32x32_167
+  - first:
+      213: 9195147653635990339
+    second: Farmer_2_Fishing_128_frames_32x32_168
+  - first:
+      213: 8194755628569348374
+    second: Farmer_2_Fishing_128_frames_32x32_169
+  - first:
+      213: -1949356868647867518
+    second: Farmer_2_Fishing_128_frames_32x32_170
+  - first:
+      213: 2153261158872780533
+    second: Farmer_2_Fishing_128_frames_32x32_171
+  - first:
+      213: -1217005044809839361
+    second: Farmer_2_Fishing_128_frames_32x32_172
+  - first:
+      213: 1875092944832518778
+    second: Farmer_2_Fishing_128_frames_32x32_173
+  - first:
+      213: -1070407173185302654
+    second: Farmer_2_Fishing_128_frames_32x32_174
+  - first:
+      213: 8018054352532103710
+    second: Farmer_2_Fishing_128_frames_32x32_175
+  - first:
+      213: 7780857597299654543
+    second: Farmer_2_Fishing_128_frames_32x32_176
+  - first:
+      213: 820923923175595171
+    second: Farmer_2_Fishing_128_frames_32x32_177
+  - first:
+      213: -793272123125474137
+    second: Farmer_2_Fishing_128_frames_32x32_178
+  - first:
+      213: -7911258294008558910
+    second: Farmer_2_Fishing_128_frames_32x32_179
+  - first:
+      213: 63847737344580049
+    second: Farmer_2_Fishing_128_frames_32x32_180
+  - first:
+      213: -6670285428657182435
+    second: Farmer_2_Fishing_128_frames_32x32_181
+  - first:
+      213: -4134944549249362531
+    second: Farmer_2_Fishing_128_frames_32x32_182
+  - first:
+      213: -6396635841557504338
+    second: Farmer_2_Fishing_128_frames_32x32_183
+  - first:
+      213: -2421589963353823109
+    second: Farmer_2_Fishing_128_frames_32x32_184
+  - first:
+      213: 2619130241785103728
+    second: Farmer_2_Fishing_128_frames_32x32_185
+  - first:
+      213: 6110057302342595389
+    second: Farmer_2_Fishing_128_frames_32x32_186
+  - first:
+      213: 4658754915851957981
+    second: Farmer_2_Fishing_128_frames_32x32_187
+  - first:
+      213: 3532788685176503149
+    second: Farmer_2_Fishing_128_frames_32x32_188
+  - first:
+      213: -7209354411667498845
+    second: Farmer_2_Fishing_128_frames_32x32_189
+  - first:
+      213: -5293989345359983923
+    second: Farmer_2_Fishing_128_frames_32x32_190
+  - first:
+      213: -3098599339561252316
+    second: Farmer_2_Fishing_128_frames_32x32_191
+  - first:
+      213: 5629226030308439294
+    second: Farmer_2_Fishing_128_frames_32x32_192
+  - first:
+      213: -8177020406555982449
+    second: Farmer_2_Fishing_128_frames_32x32_193
+  - first:
+      213: -6301714115778862302
+    second: Farmer_2_Fishing_128_frames_32x32_194
+  - first:
+      213: 7190877255222702787
+    second: Farmer_2_Fishing_128_frames_32x32_195
+  - first:
+      213: -6257672545410429827
+    second: Farmer_2_Fishing_128_frames_32x32_196
+  - first:
+      213: -5943125947540464213
+    second: Farmer_2_Fishing_128_frames_32x32_197
+  - first:
+      213: 8631956572910753033
+    second: Farmer_2_Fishing_128_frames_32x32_198
+  - first:
+      213: 4355278435340154767
+    second: Farmer_2_Fishing_128_frames_32x32_199
+  - first:
+      213: -2179571631374218780
+    second: Farmer_2_Fishing_128_frames_32x32_200
+  - first:
+      213: -2836303153336324030
+    second: Farmer_2_Fishing_128_frames_32x32_201
+  - first:
+      213: -7139448336895541503
+    second: Farmer_2_Fishing_128_frames_32x32_202
+  - first:
+      213: 6114562391388033530
+    second: Farmer_2_Fishing_128_frames_32x32_203
+  - first:
+      213: 3150358492771512582
+    second: Farmer_2_Fishing_128_frames_32x32_204
+  - first:
+      213: -4523775117140901548
+    second: Farmer_2_Fishing_128_frames_32x32_205
+  - first:
+      213: -2492210647796870988
+    second: Farmer_2_Fishing_128_frames_32x32_206
+  - first:
+      213: -8865802828203472231
+    second: Farmer_2_Fishing_128_frames_32x32_207
+  - first:
+      213: 3102235029248412339
+    second: Farmer_2_Fishing_128_frames_32x32_208
+  - first:
+      213: 5839758636041389594
+    second: Farmer_2_Fishing_128_frames_32x32_209
+  - first:
+      213: 3509652514292051426
+    second: Farmer_2_Fishing_128_frames_32x32_210
+  - first:
+      213: -4619440652198027806
+    second: Farmer_2_Fishing_128_frames_32x32_211
+  - first:
+      213: 5508694577586830981
+    second: Farmer_2_Fishing_128_frames_32x32_212
+  - first:
+      213: -8557709356685918245
+    second: Farmer_2_Fishing_128_frames_32x32_213
+  - first:
+      213: 5936322955478848265
+    second: Farmer_2_Fishing_128_frames_32x32_214
+  - first:
+      213: 5454686624769252222
+    second: Farmer_2_Fishing_128_frames_32x32_215
+  - first:
+      213: -9050532071420138082
+    second: Farmer_2_Fishing_128_frames_32x32_216
+  - first:
+      213: 5613529371760328339
+    second: Farmer_2_Fishing_128_frames_32x32_217
+  - first:
+      213: -2126139722180566028
+    second: Farmer_2_Fishing_128_frames_32x32_218
+  - first:
+      213: -3034501264576590245
+    second: Farmer_2_Fishing_128_frames_32x32_219
+  - first:
+      213: 3728831946963451214
+    second: Farmer_2_Fishing_128_frames_32x32_220
+  - first:
+      213: -8962892316086985126
+    second: Farmer_2_Fishing_128_frames_32x32_221
+  - first:
+      213: -7378718901800225097
+    second: Farmer_2_Fishing_128_frames_32x32_222
+  - first:
+      213: 1023647202720039105
+    second: Farmer_2_Fishing_128_frames_32x32_223
+  - first:
+      213: 4221894562799765477
+    second: Farmer_2_Fishing_128_frames_32x32_224
+  - first:
+      213: -5148910348698717306
+    second: Farmer_2_Fishing_128_frames_32x32_225
+  - first:
+      213: 5750357762291174146
+    second: Farmer_2_Fishing_128_frames_32x32_226
+  - first:
+      213: 358860210406621678
+    second: Farmer_2_Fishing_128_frames_32x32_227
+  - first:
+      213: 3149067998928176049
+    second: Farmer_2_Fishing_128_frames_32x32_228
+  - first:
+      213: 1311147859889836510
+    second: Farmer_2_Fishing_128_frames_32x32_229
+  - first:
+      213: 6160215912416704097
+    second: Farmer_2_Fishing_128_frames_32x32_230
+  - first:
+      213: -4406463886383283608
+    second: Farmer_2_Fishing_128_frames_32x32_231
+  - first:
+      213: -2340458474290122121
+    second: Farmer_2_Fishing_128_frames_32x32_232
+  - first:
+      213: 7560812198492486426
+    second: Farmer_2_Fishing_128_frames_32x32_233
+  - first:
+      213: -1990248786468063251
+    second: Farmer_2_Fishing_128_frames_32x32_234
+  - first:
+      213: -3030652108138805917
+    second: Farmer_2_Fishing_128_frames_32x32_235
+  - first:
+      213: -4912817588649336393
+    second: Farmer_2_Fishing_128_frames_32x32_236
+  - first:
+      213: 4130860863954344696
+    second: Farmer_2_Fishing_128_frames_32x32_237
+  - first:
+      213: -144297430379528150
+    second: Farmer_2_Fishing_128_frames_32x32_238
+  - first:
+      213: -6619283275623114516
+    second: Farmer_2_Fishing_128_frames_32x32_239
+  - first:
+      213: -1899647557473120908
+    second: Farmer_2_Fishing_128_frames_32x32_240
+  - first:
+      213: -2065111907421463837
+    second: Farmer_2_Fishing_128_frames_32x32_241
+  - first:
+      213: 2059610464832133090
+    second: Farmer_2_Fishing_128_frames_32x32_242
+  - first:
+      213: 7012830668269759895
+    second: Farmer_2_Fishing_128_frames_32x32_243
+  - first:
+      213: -6273818471739044773
+    second: Farmer_2_Fishing_128_frames_32x32_244
+  - first:
+      213: -7200072529334316670
+    second: Farmer_2_Fishing_128_frames_32x32_245
+  - first:
+      213: 3327455915745500845
+    second: Farmer_2_Fishing_128_frames_32x32_246
+  - first:
+      213: 4824246085542019855
+    second: Farmer_2_Fishing_128_frames_32x32_247
+  - first:
+      213: -4277162114075317715
+    second: Farmer_2_Fishing_128_frames_32x32_248
+  - first:
+      213: 6713672571539064987
+    second: Farmer_2_Fishing_128_frames_32x32_249
+  - first:
+      213: -7565373505250117706
+    second: Farmer_2_Fishing_128_frames_32x32_250
+  - first:
+      213: 7346115988614377728
+    second: Farmer_2_Fishing_128_frames_32x32_251
+  - first:
+      213: -4986188658031212322
+    second: Farmer_2_Fishing_128_frames_32x32_252
+  - first:
+      213: 344225496191855214
+    second: Farmer_2_Fishing_128_frames_32x32_253
+  - first:
+      213: -7756116022883714446
+    second: Farmer_2_Fishing_128_frames_32x32_254
+  - first:
+      213: 7751872749660437847
+    second: Farmer_2_Fishing_128_frames_32x32_255
+  - first:
+      213: -8668462110600785897
+    second: Farmer_2_Fishing_128_frames_32x32_256
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 145
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65554bd2f9b911f30800000000000000
+      internalID: 4544584606962439510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 147
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 023634c5f22348ac0800000000000000
+      internalID: -3853900202129530080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 147
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4517392c335266520800000000000000
+      internalID: 2694882331265823060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 147
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d77094ba0e5e03140800000000000000
+      internalID: 4697507164456552317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 147
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a23a8b9f1b3f9430800000000000000
+      internalID: 3791814418208797349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 147
+        width: 72
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa0cf5bb451963f80800000000000000
+      internalID: -8127148684436586326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 147
+        width: 72
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 274026ef85a69a3a0800000000000000
+      internalID: -6653670044005694350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 147
+        width: 78
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c33e03fa799d6d9e0800000000000000
+      internalID: -1596849772353756356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 143
+        width: 90
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b710f5113cab41ec0800000000000000
+      internalID: -3597044855389355653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 131
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2ea700f98badba90800000000000000
+      internalID: -7296487212344431062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 131
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 484dc3303b8036e80800000000000000
+      internalID: -8186690132682943356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 129
+        width: 90
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9a0779d902fa6090800000000000000
+      internalID: -8040348060599514465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 129
+        width: 92
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 705fba56bc754c830800000000000000
+      internalID: 4090490892654998791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 129
+        width: 94
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6d96d600d89339e0800000000000000
+      internalID: -1642801419824751251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 127
+        width: 96
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d8b4f05fe3937e60800000000000000
+      internalID: 7958867622558480594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 131
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12f2af9abb60bf010800000000000000
+      internalID: 1223579126841618209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 131
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 016c0a60339747320800000000000000
+      internalID: 2554800148687406608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 131
+        width: 90
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2126578073b43f00800000000000000
+      internalID: 1095697905246150959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 131
+        width: 90
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a116fdccedfe59f30800000000000000
+      internalID: 4581831936118317338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 131
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7831ae03faa914f70800000000000000
+      internalID: 9169780393533641607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 131
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5295fb6e8b82d7b0800000000000000
+      internalID: -5200941175846628769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 2017
+        y: 131
+        width: 90
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b3870bca27f5f10800000000000000
+      internalID: 2260651623983889261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 133
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49a317092e9a5b3c0800000000000000
+      internalID: -4344379474977932652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 137
+        width: 86
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c8d13e3b13e5f210800000000000000
+      internalID: 1366247768123889865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 2305
+        y: 147
+        width: 78
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b77a30c1b3d77b50800000000000000
+      internalID: 6590969340067739574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 147
+        width: 62
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f02a7cca9ea91290800000000000000
+      internalID: -7919106489875554055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 147
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689c2eee5f0713a60800000000000000
+      internalID: 7652021443456321926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 2593
+        y: 147
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57cbc4030d3cfee60800000000000000
+      internalID: 7993823162536868981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 2689
+        y: 147
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5783a8cf7de317dc0800000000000000
+      internalID: -3643061526190213003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 2785
+        y: 147
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0691825c06004ae20800000000000000
+      internalID: 3360811637549832544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 2881
+        y: 147
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e582139d1222c3e0800000000000000
+      internalID: -2035026571201182234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 2977
+        y: 147
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22319a3605a2ffd0800000000000000
+      internalID: -2309602212716662229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 3487
+        y: 127
+        width: 42
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2096e35806617ddf0800000000000000
+      internalID: -155631058312861438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 3583
+        y: 127
+        width: 38
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb7be98db7a659ae0800000000000000
+      internalID: -1543210217156724801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 3679
+        y: 127
+        width: 34
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f3bba5e2f8ac680800000000000000
+      internalID: -8734011098078167137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 3775
+        y: 127
+        width: 34
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff5fe4e5f692e8fe0800000000000000
+      internalID: -1184964093651520001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 3871
+        y: 127
+        width: 34
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7af4256b8f9a183b0800000000000000
+      internalID: -5511937583248945241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 3967
+        y: 127
+        width: 34
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b3d223d86c5740f0800000000000000
+      internalID: -1132835175971761229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 4063
+        y: 127
+        width: 34
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 562f54cd71fb4bbe0800000000000000
+      internalID: -1462333869787843995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 4159
+        y: 127
+        width: 34
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e07318f5c8c92030800000000000000
+      internalID: 3470525740461813993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 4255
+        y: 127
+        width: 34
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e52e821979b7a350800000000000000
+      internalID: 6027990555912185313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 4351
+        y: 127
+        width: 34
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57ec09148f9824750800000000000000
+      internalID: 6287739729107537525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 4447
+        y: 127
+        width: 34
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b89600673db2cfce0800000000000000
+      internalID: -1370171999409641077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 4543
+        y: 127
+        width: 34
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76f9b6619d1dcd60800000000000000
+      internalID: 7912012630690756220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 4639
+        y: 127
+        width: 34
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77f09067e18b1ca40800000000000000
+      internalID: 5386789070280658807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 4735
+        y: 127
+        width: 34
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4286f297a04c6a3f0800000000000000
+      internalID: -889808327097227228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 4831
+        y: 127
+        width: 34
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2265051d8480725b0800000000000000
+      internalID: -5393332919910509022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 4927
+        y: 127
+        width: 34
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1351df6bdd9894400800000000000000
+      internalID: 308929634802406705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 5023
+        y: 127
+        width: 34
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddea31d7266a5b0d0800000000000000
+      internalID: -3407634601100464419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 5119
+        y: 127
+        width: 36
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b487b1357630a960800000000000000
+      internalID: 7611143247229322421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 5215
+        y: 127
+        width: 36
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b16dbabc949cdc90800000000000000
+      internalID: -7143671508047666760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 5305
+        y: 127
+        width: 40
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cea8ca12a5e0cd900800000000000000
+      internalID: 710458621492497132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 5393
+        y: 127
+        width: 48
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b966ac1de611dab0800000000000000
+      internalID: -4985178104878700106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 5483
+        y: 127
+        width: 54
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04257119d8bd93900800000000000000
+      internalID: 664803821084955200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 5579
+        y: 127
+        width: 54
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f26281bda4ada510800000000000000
+      internalID: 1562085711681839858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 6205
+        y: 145
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7328928ae6cd06c00800000000000000
+      internalID: 891955094045164087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 6301
+        y: 147
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2c51f524401d00b0800000000000000
+      internalID: -5760930463456601043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 6397
+        y: 147
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afd45e0a6cf777e20800000000000000
+      internalID: 3348285339052887546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 6487
+        y: 147
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02e74db9b1d0ea080800000000000000
+      internalID: -9174380978677449184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 6563
+        y: 147
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58f10bd4c44a62e10800000000000000
+      internalID: 2172604517880700805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 6647
+        y: 147
+        width: 72
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a1282fe75d2aeaa0800000000000000
+      internalID: -6131038087013719648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 6743
+        y: 147
+        width: 72
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe0b1f5a2e2d98240800000000000000
+      internalID: 4794595149201125615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 6833
+        y: 147
+        width: 78
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b09ab44366eff1b0800000000000000
+      internalID: -5620520495905861456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 6917
+        y: 143
+        width: 90
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b59751aa6f7be050800000000000000
+      internalID: 5830894238511371705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 7013
+        y: 131
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff40e8cfa2e4587f0800000000000000
+      internalID: -610996227906075393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 7109
+        y: 131
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8324364504c97b40800000000000000
+      internalID: 5438593551958287247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 7205
+        y: 129
+        width: 90
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fef5d145ae81e1c0800000000000000
+      internalID: -4476139714204270861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 7299
+        y: 129
+        width: 92
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 464700a65c1f4e470800000000000000
+      internalID: 8423123033278936164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 7393
+        y: 129
+        width: 94
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b242154d52b97f5a0800000000000000
+      internalID: -6487546151425727445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 7487
+        y: 127
+        width: 96
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6083fa3de34c76180800000000000000
+      internalID: -9122106746097158138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 7589
+        y: 131
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bda74b293405215e0800000000000000
+      internalID: -1940400238288930085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 7685
+        y: 131
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a679cb9cf8a0ab690800000000000000
+      internalID: -7585739009670998166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 7781
+        y: 131
+        width: 90
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71bd378f0f55fc460800000000000000
+      internalID: 7264119217420753687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 7877
+        y: 131
+        width: 90
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5947c382f12033f0800000000000000
+      internalID: -923200598134273699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 7973
+        y: 131
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ce4cb329d8deec70800000000000000
+      internalID: 9002371132279246534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 8069
+        y: 131
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33f63e85fb2e67c0800000000000000
+      internalID: -4076272279070772421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 8165
+        y: 131
+        width: 90
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc7bcd4ca7afe570800000000000000
+      internalID: 8498195380352810185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 8261
+        y: 133
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be0ca6a3077753ed0800000000000000
+      internalID: -2434908699623767829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 8361
+        y: 137
+        width: 86
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2aac146ac6909c60800000000000000
+      internalID: 7822918348749711916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 8465
+        y: 147
+        width: 78
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f3ff6c7facb9de0800000000000000
+      internalID: -1325242499786129648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 8577
+        y: 147
+        width: 62
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc5e865b68ba3760800000000000000
+      internalID: 7438460505708977407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 8677
+        y: 147
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 797a8e3128b037ee0800000000000000
+      internalID: -1264654417053309033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 8787
+        y: 147
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44d4dae5aced49b70800000000000000
+      internalID: 8904987323971489092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 8893
+        y: 147
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b5f74043f78486e0800000000000000
+      internalID: -1836193269235059271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 8989
+        y: 147
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa7fe99cbc6b7ec80800000000000000
+      internalID: -8293459202402224214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 9085
+        y: 147
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be98c6fa904816e90800000000000000
+      internalID: -7034195965843306005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 9181
+        y: 147
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31643d839899d3950800000000000000
+      internalID: 6430464657597875731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 9239
+        y: 187
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 976c01b006c14a940800000000000000
+      internalID: 5306397459777373817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 9335
+        y: 189
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf67b0e147127dd0800000000000000
+      internalID: -2489902072272031818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_89
+      rect:
+        serializedVersion: 2
+        x: 9431
+        y: 191
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b865e20a85baadd10800000000000000
+      internalID: 2151220169155696267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_90
+      rect:
+        serializedVersion: 2
+        x: 9533
+        y: 181
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23d4d5e99f74cbb50800000000000000
+      internalID: 6610237490502389042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_91
+      rect:
+        serializedVersion: 2
+        x: 9631
+        y: 169
+        width: 34
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c713edf0a44de3b20800000000000000
+      internalID: 3116161406745850236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_92
+      rect:
+        serializedVersion: 2
+        x: 9727
+        y: 163
+        width: 34
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea0a96dce32b94d80800000000000000
+      internalID: -8265879658257866578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_93
+      rect:
+        serializedVersion: 2
+        x: 9823
+        y: 149
+        width: 34
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5af0fef0fe3279430800000000000000
+      internalID: 3789537121127042981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_94
+      rect:
+        serializedVersion: 2
+        x: 9919
+        y: 131
+        width: 34
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a5cd9737ba74c20800000000000000
+      internalID: 3190707373469358607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_95
+      rect:
+        serializedVersion: 2
+        x: 10015
+        y: 131
+        width: 34
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5ac06075c21379b0800000000000000
+      internalID: -5083698915167909281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_96
+      rect:
+        serializedVersion: 2
+        x: 10111
+        y: 131
+        width: 34
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d2d06587fba29140800000000000000
+      internalID: 4725028038648058585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_97
+      rect:
+        serializedVersion: 2
+        x: 10207
+        y: 131
+        width: 34
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7009b3b82a931f0f0800000000000000
+      internalID: -1085022664936157177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_98
+      rect:
+        serializedVersion: 2
+        x: 10303
+        y: 129
+        width: 34
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a244fcf4c54668da0800000000000000
+      internalID: -5942952310630038486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_99
+      rect:
+        serializedVersion: 2
+        x: 10399
+        y: 129
+        width: 34
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16b31bbddecc53cd0800000000000000
+      internalID: -2578929889634600095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_100
+      rect:
+        serializedVersion: 2
+        x: 10495
+        y: 129
+        width: 34
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35445bcac7f2c0ad0800000000000000
+      internalID: -2734758661200722861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_101
+      rect:
+        serializedVersion: 2
+        x: 10591
+        y: 131
+        width: 34
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6c0c2c9486a89510800000000000000
+      internalID: 1556176759742532717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_102
+      rect:
+        serializedVersion: 2
+        x: 10687
+        y: 131
+        width: 34
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68af36c75d3cc1a30800000000000000
+      internalID: 4187437075230096006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_103
+      rect:
+        serializedVersion: 2
+        x: 10783
+        y: 131
+        width: 34
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd0fcedd2992dfe00800000000000000
+      internalID: 1080065196404043997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_104
+      rect:
+        serializedVersion: 2
+        x: 10879
+        y: 131
+        width: 34
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93ad783161e81cb10800000000000000
+      internalID: 2000035934997305913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_105
+      rect:
+        serializedVersion: 2
+        x: 10975
+        y: 131
+        width: 34
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1be3ebe4cb82eb80800000000000000
+      internalID: -8366971479813526758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_106
+      rect:
+        serializedVersion: 2
+        x: 11071
+        y: 131
+        width: 34
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06feba5721819f770800000000000000
+      internalID: 8644967427277057888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_107
+      rect:
+        serializedVersion: 2
+        x: 11167
+        y: 131
+        width: 34
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 313b02c363dc6ed00800000000000000
+      internalID: 1001713599957218067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_108
+      rect:
+        serializedVersion: 2
+        x: 11261
+        y: 131
+        width: 36
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 633ae315c90a62690800000000000000
+      internalID: -7627232325666954442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_109
+      rect:
+        serializedVersion: 2
+        x: 11357
+        y: 133
+        width: 36
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e693efee8256c35f0800000000000000
+      internalID: -775633809331832466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_110
+      rect:
+        serializedVersion: 2
+        x: 11455
+        y: 149
+        width: 34
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c28befd80fd2a80800000000000000
+      internalID: -8489865229868979122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_111
+      rect:
+        serializedVersion: 2
+        x: 11541
+        y: 189
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42cfa13d3c62abb80800000000000000
+      internalID: -8378341534267147228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_112
+      rect:
+        serializedVersion: 2
+        x: 11643
+        y: 191
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89442de2a6d44aa10800000000000000
+      internalID: 1919744459614078104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_113
+      rect:
+        serializedVersion: 2
+        x: 11743
+        y: 191
+        width: 36
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1ebb821d0bf171c0800000000000000
+      internalID: -4507545718456861157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_114
+      rect:
+        serializedVersion: 2
+        x: 11839
+        y: 191
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ee3a9b0a0c0cdc0800000000000000
+      internalID: -3620682303864050161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_115
+      rect:
+        serializedVersion: 2
+        x: 11935
+        y: 191
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa62f03be3f070c50800000000000000
+      internalID: 6631285738292848298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_116
+      rect:
+        serializedVersion: 2
+        x: 12031
+        y: 189
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73ea92c54b332e5b0800000000000000
+      internalID: -5340649358374621641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_117
+      rect:
+        serializedVersion: 2
+        x: 12127
+        y: 189
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a365d2d80e9c53e0800000000000000
+      internalID: -2063600768508402782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_118
+      rect:
+        serializedVersion: 2
+        x: 12223
+        y: 189
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49d4e3a393d606170800000000000000
+      internalID: 8169649816607804820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_119
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 95
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05588b696b4208f80800000000000000
+      internalID: -8106438962635569840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_120
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ad498bcf70676f10800000000000000
+      internalID: 2262883439768849833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_121
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de0dfe5d24bbaf1a0800000000000000
+      internalID: -6774896793693990675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_122
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afab389e551f47c50800000000000000
+      internalID: 6662215100080044794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_123
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff47680428dac7280800000000000000
+      internalID: -9044163176726891265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_124
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 95
+        width: 504
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 568efac94f0458ed0800000000000000
+      internalID: -2412450606042060699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_125
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0a113b0ebcb81ec0800000000000000
+      internalID: -3595916778037765619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_126
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e98dfeea0a844d540800000000000000
+      internalID: 5031726538646608030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_127
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaeb7a09a4def0050800000000000000
+      internalID: 5769090552195169962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_128
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 95
+        width: 506
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f70a8bb44f9447410800000000000000
+      internalID: 1473884291648233599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_129
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 95
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 333b00f2780cfb380800000000000000
+      internalID: -8953225847347563725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_130
+      rect:
+        serializedVersion: 2
+        x: 2305
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 922b4cec67afd4f10800000000000000
+      internalID: 2255734376564568617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_131
+      rect:
+        serializedVersion: 2
+        x: 2327
+        y: 95
+        width: 714
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c1d3630aaa7b77a0800000000000000
+      internalID: -6378369576620273212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_132
+      rect:
+        serializedVersion: 2
+        x: 3071
+        y: 95
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a231efc0b5be26a40800000000000000
+      internalID: 5360105282816840490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_133
+      rect:
+        serializedVersion: 2
+        x: 3095
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f01f233ddbc842d0800000000000000
+      internalID: -3294158976514584328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_134
+      rect:
+        serializedVersion: 2
+        x: 3103
+        y: 127
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd0ca7158dcf2000800000000000000
+      internalID: 13455295416896959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_135
+      rect:
+        serializedVersion: 2
+        x: 3199
+        y: 127
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 300d29c7163490120800000000000000
+      internalID: 2380507964022902787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_136
+      rect:
+        serializedVersion: 2
+        x: 3295
+        y: 127
+        width: 38
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb879cdc58f97dd70800000000000000
+      internalID: 9067891771765782716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_137
+      rect:
+        serializedVersion: 2
+        x: 3391
+        y: 127
+        width: 46
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 791af0eb481df5fb0800000000000000
+      internalID: -4656773121623219817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_138
+      rect:
+        serializedVersion: 2
+        x: 3937
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d9b78a75e48f6d90800000000000000
+      internalID: -7102311966201890351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_139
+      rect:
+        serializedVersion: 2
+        x: 3947
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 852a5c924950356b0800000000000000
+      internalID: -5308893401825566120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_140
+      rect:
+        serializedVersion: 2
+        x: 3971
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4dfdb515fe0b7b50800000000000000
+      internalID: 6591878925381401935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_141
+      rect:
+        serializedVersion: 2
+        x: 4009
+        y: 95
+        width: 504
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b26165f3d3171cb20800000000000000
+      internalID: 3152925722005607979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_142
+      rect:
+        serializedVersion: 2
+        x: 4513
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08a0fd29ade6c200800000000000000
+      internalID: 200108544340568079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_143
+      rect:
+        serializedVersion: 2
+        x: 4523
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cced0ed4735d0a770800000000000000
+      internalID: 8620124120293629644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_144
+      rect:
+        serializedVersion: 2
+        x: 4547
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f21da4f2f870ae690800000000000000
+      internalID: -7572231511914917585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_145
+      rect:
+        serializedVersion: 2
+        x: 4583
+        y: 95
+        width: 506
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0140a6f372227a2f0800000000000000
+      internalID: -961762443457330160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_146
+      rect:
+        serializedVersion: 2
+        x: 5281
+        y: 95
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5d6821eaec797270800000000000000
+      internalID: 8248761540747488605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_147
+      rect:
+        serializedVersion: 2
+        x: 5377
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e0da2d3e89b34c70800000000000000
+      internalID: 8954204504705388775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_148
+      rect:
+        serializedVersion: 2
+        x: 5399
+        y: 95
+        width: 714
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1879c5a8606cb0c00800000000000000
+      internalID: 868005084592379777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_149
+      rect:
+        serializedVersion: 2
+        x: 5681
+        y: 127
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c9174d5a3e2f39b0800000000000000
+      internalID: -5098305424952190526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_150
+      rect:
+        serializedVersion: 2
+        x: 5781
+        y: 127
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e55ef5c015830d140800000000000000
+      internalID: 4742352328372249950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_151
+      rect:
+        serializedVersion: 2
+        x: 5879
+        y: 127
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d90a53116ede41450800000000000000
+      internalID: 6058728971107147933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_152
+      rect:
+        serializedVersion: 2
+        x: 5977
+        y: 127
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e05b6c000f0ec790800000000000000
+      internalID: -7508047035897261847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_153
+      rect:
+        serializedVersion: 2
+        x: 6073
+        y: 127
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 371c15154283cb0c0800000000000000
+      internalID: -4558706994171494029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_154
+      rect:
+        serializedVersion: 2
+        x: 6143
+        y: 95
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0274cbf406c84f0800000000000000
+      internalID: -825178736138182439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_155
+      rect:
+        serializedVersion: 2
+        x: 6167
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eefb1d6c66c30550800000000000000
+      internalID: 6125958087143325414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_156
+      rect:
+        serializedVersion: 2
+        x: 7009
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74bb4fe30d4759200800000000000000
+      internalID: 186183397363989319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_157
+      rect:
+        serializedVersion: 2
+        x: 7019
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6db18acecb4fb4110800000000000000
+      internalID: 1246358814159543254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_158
+      rect:
+        serializedVersion: 2
+        x: 7043
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac4b5f7fb6c947c40800000000000000
+      internalID: 5509200231716467914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_159
+      rect:
+        serializedVersion: 2
+        x: 7081
+        y: 95
+        width: 504
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f054b85c4e78157d0800000000000000
+      internalID: -2931412465804950257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_160
+      rect:
+        serializedVersion: 2
+        x: 7585
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13943b2278fa33970800000000000000
+      internalID: 8733517097339144497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_161
+      rect:
+        serializedVersion: 2
+        x: 7595
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd84cb829aab71970800000000000000
+      internalID: 8725648038749292764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_162
+      rect:
+        serializedVersion: 2
+        x: 7619
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29812f02cd1394d20800000000000000
+      internalID: 3263194226521938066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_163
+      rect:
+        serializedVersion: 2
+        x: 7655
+        y: 95
+        width: 506
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02aa7aa769caf59f0800000000000000
+      internalID: -477473273175102944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_164
+      rect:
+        serializedVersion: 2
+        x: 8353
+        y: 95
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e6a00eaa125779e0800000000000000
+      internalID: -1623738866101868826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_165
+      rect:
+        serializedVersion: 2
+        x: 8449
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6c4e9cce0f6adc00800000000000000
+      internalID: 926174782731209835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_166
+      rect:
+        serializedVersion: 2
+        x: 8471
+        y: 95
+        width: 714
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29e1c1a6b226607c0800000000000000
+      internalID: -4105486071698284910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_167
+      rect:
+        serializedVersion: 2
+        x: 9215
+        y: 95
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42fcb198a524c6810800000000000000
+      internalID: 1759854511009812260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_168
+      rect:
+        serializedVersion: 2
+        x: 9239
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3436d30b21abb9f70800000000000000
+      internalID: 9195147653635990339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_169
+      rect:
+        serializedVersion: 2
+        x: 10081
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 619420693de99b170800000000000000
+      internalID: 8194755628569348374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_170
+      rect:
+        serializedVersion: 2
+        x: 10091
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28ba6cf814e72f4e0800000000000000
+      internalID: -1949356868647867518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_171
+      rect:
+        serializedVersion: 2
+        x: 10115
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fe02439d9be1ed10800000000000000
+      internalID: 2153261158872780533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_172
+      rect:
+        serializedVersion: 2
+        x: 10153
+        y: 95
+        width: 504
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc40461c545c1fe0800000000000000
+      internalID: -1217005044809839361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_173
+      rect:
+        serializedVersion: 2
+        x: 10601
+        y: 127
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7a5591491ba50a10800000000000000
+      internalID: 1875092944832518778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_174
+      rect:
+        serializedVersion: 2
+        x: 10657
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28f8245e8562521f0800000000000000
+      internalID: -1070407173185302654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_175
+      rect:
+        serializedVersion: 2
+        x: 10667
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e126370c3f9d54f60800000000000000
+      internalID: 8018054352532103710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_176
+      rect:
+        serializedVersion: 2
+        x: 10691
+        y: 95
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8ff1fe82c82bfb60800000000000000
+      internalID: 7780857597299654543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_177
+      rect:
+        serializedVersion: 2
+        x: 10727
+        y: 95
+        width: 506
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ac508c65f1846b00800000000000000
+      internalID: 820923923175595171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_178
+      rect:
+        serializedVersion: 2
+        x: 11425
+        y: 95
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7acd2eaf43bbdf4f0800000000000000
+      internalID: -793272123125474137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_179
+      rect:
+        serializedVersion: 2
+        x: 11521
+        y: 95
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cac14b4f70953290800000000000000
+      internalID: -7911258294008558910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_180
+      rect:
+        serializedVersion: 2
+        x: 11543
+        y: 95
+        width: 714
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d9d228cd25d2e000800000000000000
+      internalID: 63847737344580049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_181
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 95
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d19ac6a4eb26e63a0800000000000000
+      internalID: -6670285428657182435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_182
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 95
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d95dd0027d9bd96c0800000000000000
+      internalID: -4134944549249362531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_183
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 95
+        width: 780
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaede6ac7959a37a0800000000000000
+      internalID: -6396635841557504338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_184
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 95
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b78e4aa22c8c46ed0800000000000000
+      internalID: -2421589963353823109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_185
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 95
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07585120415095420800000000000000
+      internalID: 2619130241785103728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_186
+      rect:
+        serializedVersion: 2
+        x: 2015
+        y: 95
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3379677eb84bc450800000000000000
+      internalID: 6110057302342595389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_187
+      rect:
+        serializedVersion: 2
+        x: 2029
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd6f5fea9e837a040800000000000000
+      internalID: 4658754915851957981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_188
+      rect:
+        serializedVersion: 2
+        x: 2043
+        y: 95
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6bf676779cf60130800000000000000
+      internalID: 3532788685176503149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_189
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a8d9a00c5a33fb90800000000000000
+      internalID: -7209354411667498845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_190
+      rect:
+        serializedVersion: 2
+        x: 2087
+        y: 95
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dca8d193db8f786b0800000000000000
+      internalID: -5293989345359983923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_191
+      rect:
+        serializedVersion: 2
+        x: 2097
+        y: 95
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42a013851509ff4d0800000000000000
+      internalID: -3098599339561252316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_192
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef4bae8ef370f1e40800000000000000
+      internalID: 5629226030308439294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_193
+      rect:
+        serializedVersion: 2
+        x: 2131
+        y: 95
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f854c129343658e80800000000000000
+      internalID: -8177020406555982449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_194
+      rect:
+        serializedVersion: 2
+        x: 2145
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 223afec4660db88a0800000000000000
+      internalID: -6301714115778862302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_195
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 95
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c23cf4c3c02bc360800000000000000
+      internalID: 7190877255222702787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_196
+      rect:
+        serializedVersion: 2
+        x: 2165
+        y: 95
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7cc81a79f74829a0800000000000000
+      internalID: -6257672545410429827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_197
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 95
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bad91715076c58da0800000000000000
+      internalID: -5943125947540464213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_198
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 95
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90591fcd4cedac770800000000000000
+      internalID: 8631956572910753033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_199
+      rect:
+        serializedVersion: 2
+        x: 2281
+        y: 87
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f877e5469ae017c30800000000000000
+      internalID: 4355278435340154767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_200
+      rect:
+        serializedVersion: 2
+        x: 3119
+        y: 95
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e9cb6d262b90c1e0800000000000000
+      internalID: -2179571631374218780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_201
+      rect:
+        serializedVersion: 2
+        x: 3135
+        y: 95
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24071163f4d63a8d0800000000000000
+      internalID: -2836303153336324030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_202
+      rect:
+        serializedVersion: 2
+        x: 3157
+        y: 95
+        width: 780
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10f761360959bec90800000000000000
+      internalID: -7139448336895541503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_203
+      rect:
+        serializedVersion: 2
+        x: 3983
+        y: 95
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af195af391a4bd450800000000000000
+      internalID: 6114562391388033530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_204
+      rect:
+        serializedVersion: 2
+        x: 4559
+        y: 95
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 601f7cc9b5258bb20800000000000000
+      internalID: 3150358492771512582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_205
+      rect:
+        serializedVersion: 2
+        x: 5087
+        y: 95
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 451c01bbf725831c0800000000000000
+      internalID: -4523775117140901548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_206
+      rect:
+        serializedVersion: 2
+        x: 5101
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b01f90ce93e96dd0800000000000000
+      internalID: -2492210647796870988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_207
+      rect:
+        serializedVersion: 2
+        x: 5115
+        y: 95
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99a47400d4756f480800000000000000
+      internalID: -8865802828203472231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_208
+      rect:
+        serializedVersion: 2
+        x: 5141
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba0020a25a5d0b20800000000000000
+      internalID: 3102235029248412339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_209
+      rect:
+        serializedVersion: 2
+        x: 5159
+        y: 95
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1644430a8dfa0150800000000000000
+      internalID: 5839758636041389594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_210
+      rect:
+        serializedVersion: 2
+        x: 5169
+        y: 95
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ed2f67ed5ac4b030800000000000000
+      internalID: 3509652514292051426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_211
+      rect:
+        serializedVersion: 2
+        x: 5183
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eddcb0a33374efb0800000000000000
+      internalID: -4619440652198027806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_212
+      rect:
+        serializedVersion: 2
+        x: 5203
+        y: 95
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58efe213880d27c40800000000000000
+      internalID: 5508694577586830981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_213
+      rect:
+        serializedVersion: 2
+        x: 5217
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdff2b74ea8ec3980800000000000000
+      internalID: -8557709356685918245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_214
+      rect:
+        serializedVersion: 2
+        x: 5231
+        y: 95
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9035059a64e026250800000000000000
+      internalID: 5936322955478848265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_215
+      rect:
+        serializedVersion: 2
+        x: 5237
+        y: 95
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7b1276c590f2bb40800000000000000
+      internalID: 5454686624769252222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_216
+      rect:
+        serializedVersion: 2
+        x: 5309
+        y: 95
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9de8b6680d066280800000000000000
+      internalID: -9050532071420138082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_217
+      rect:
+        serializedVersion: 2
+        x: 5331
+        y: 95
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39efefbc83347ed40800000000000000
+      internalID: 5613529371760328339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_218
+      rect:
+        serializedVersion: 2
+        x: 5353
+        y: 87
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f3649cff2f6e72e0800000000000000
+      internalID: -2126139722180566028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_219
+      rect:
+        serializedVersion: 2
+        x: 6191
+        y: 95
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e40766d2943e5d0800000000000000
+      internalID: -3034501264576590245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_220
+      rect:
+        serializedVersion: 2
+        x: 6207
+        y: 95
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4d72e946e87fb330800000000000000
+      internalID: 3728831946963451214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_221
+      rect:
+        serializedVersion: 2
+        x: 6229
+        y: 95
+        width: 780
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e9e8b0de86d9380800000000000000
+      internalID: -8962892316086985126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_222
+      rect:
+        serializedVersion: 2
+        x: 7055
+        y: 95
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b6bcb0c046899990800000000000000
+      internalID: -7378718901800225097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_223
+      rect:
+        serializedVersion: 2
+        x: 7631
+        y: 95
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c0437515b9b43e00800000000000000
+      internalID: 1023647202720039105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_224
+      rect:
+        serializedVersion: 2
+        x: 8159
+        y: 95
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e745de7cbe279a30800000000000000
+      internalID: 4221894562799765477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_225
+      rect:
+        serializedVersion: 2
+        x: 8173
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 683fa7561556b88b0800000000000000
+      internalID: -5148910348698717306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_226
+      rect:
+        serializedVersion: 2
+        x: 8187
+        y: 95
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b86c80bef5dcf40800000000000000
+      internalID: 5750357762291174146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_227
+      rect:
+        serializedVersion: 2
+        x: 8213
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee10f45c57deaf400800000000000000
+      internalID: 358860210406621678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_228
+      rect:
+        serializedVersion: 2
+        x: 8231
+        y: 95
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b30aa919acb3bb20800000000000000
+      internalID: 3149067998928176049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_229
+      rect:
+        serializedVersion: 2
+        x: 8241
+        y: 95
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed15fb42802223210800000000000000
+      internalID: 1311147859889836510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_230
+      rect:
+        serializedVersion: 2
+        x: 8255
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1667e4febbb7d7550800000000000000
+      internalID: 6160215912416704097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_231
+      rect:
+        serializedVersion: 2
+        x: 8275
+        y: 95
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8628988117819d2c0800000000000000
+      internalID: -4406463886383283608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_232
+      rect:
+        serializedVersion: 2
+        x: 8289
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 772726cfa65058fd0800000000000000
+      internalID: -2340458474290122121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_233
+      rect:
+        serializedVersion: 2
+        x: 8303
+        y: 95
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1bb598b2a66de860800000000000000
+      internalID: 7560812198492486426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_234
+      rect:
+        serializedVersion: 2
+        x: 8309
+        y: 95
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de73be306473164e0800000000000000
+      internalID: -1990248786468063251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_235
+      rect:
+        serializedVersion: 2
+        x: 8381
+        y: 95
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3650998f6f5f0f5d0800000000000000
+      internalID: -3030652108138805917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_236
+      rect:
+        serializedVersion: 2
+        x: 8403
+        y: 95
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b1e34eae6a22dbb0800000000000000
+      internalID: -4912817588649336393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_237
+      rect:
+        serializedVersion: 2
+        x: 8425
+        y: 87
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fadf8cc114c35930800000000000000
+      internalID: 4130860863954344696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_238
+      rect:
+        serializedVersion: 2
+        x: 9263
+        y: 95
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a200a38604a5ffdf0800000000000000
+      internalID: -144297430379528150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_239
+      rect:
+        serializedVersion: 2
+        x: 9279
+        y: 95
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce8dcc86ee49324a0800000000000000
+      internalID: -6619283275623114516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_240
+      rect:
+        serializedVersion: 2
+        x: 9301
+        y: 95
+        width: 780
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47d406a7c9813a5e0800000000000000
+      internalID: -1899647557473120908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_241
+      rect:
+        serializedVersion: 2
+        x: 10127
+        y: 95
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ead6b069af3753e0800000000000000
+      internalID: -2065111907421463837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_242
+      rect:
+        serializedVersion: 2
+        x: 10703
+        y: 95
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e71ff33ec4359c10800000000000000
+      internalID: 2059610464832133090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_243
+      rect:
+        serializedVersion: 2
+        x: 11231
+        y: 95
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79d2f245654925160800000000000000
+      internalID: 7012830668269759895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_244
+      rect:
+        serializedVersion: 2
+        x: 11245
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5cc5be075beee8a0800000000000000
+      internalID: -6273818471739044773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_245
+      rect:
+        serializedVersion: 2
+        x: 11259
+        y: 95
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281daf3ae24341c90800000000000000
+      internalID: -7200072529334316670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_246
+      rect:
+        serializedVersion: 2
+        x: 11285
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dae58c7968f7d2e20800000000000000
+      internalID: 3327455915745500845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_247
+      rect:
+        serializedVersion: 2
+        x: 11303
+        y: 95
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f030dcd314a23f240800000000000000
+      internalID: 4824246085542019855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_248
+      rect:
+        serializedVersion: 2
+        x: 11313
+        y: 95
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2a28c7f7b774a4c0800000000000000
+      internalID: -4277162114075317715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_249
+      rect:
+        serializedVersion: 2
+        x: 11327
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b988edc12a1cb2d50800000000000000
+      internalID: 6713672571539064987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_250
+      rect:
+        serializedVersion: 2
+        x: 11347
+        y: 95
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b73a6a41e4620790800000000000000
+      internalID: -7565373505250117706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_251
+      rect:
+        serializedVersion: 2
+        x: 11361
+        y: 95
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0017d2cf195a2f560800000000000000
+      internalID: 7346115988614377728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_252
+      rect:
+        serializedVersion: 2
+        x: 11375
+        y: 95
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8c7fe55df7dcab0800000000000000
+      internalID: -4986188658031212322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_253
+      rect:
+        serializedVersion: 2
+        x: 11381
+        y: 95
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6ae527d34fe6c400800000000000000
+      internalID: 344225496191855214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_254
+      rect:
+        serializedVersion: 2
+        x: 11453
+        y: 95
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27afc43229dbc5490800000000000000
+      internalID: -7756116022883714446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_255
+      rect:
+        serializedVersion: 2
+        x: 11475
+        y: 95
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75d7a83d13f249b60800000000000000
+      internalID: 7751872749660437847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_Fishing_128_frames_32x32_256
+      rect:
+        serializedVersion: 2
+        x: 11497
+        y: 87
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71015bc43af63b780800000000000000
+      internalID: -8668462110600785897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Farmer_2_Fishing_128_frames_32x32_0: 4544584606962439510
+      Farmer_2_Fishing_128_frames_32x32_1: -3853900202129530080
+      Farmer_2_Fishing_128_frames_32x32_10: -8186690132682943356
+      Farmer_2_Fishing_128_frames_32x32_100: -2734758661200722861
+      Farmer_2_Fishing_128_frames_32x32_101: 1556176759742532717
+      Farmer_2_Fishing_128_frames_32x32_102: 4187437075230096006
+      Farmer_2_Fishing_128_frames_32x32_103: 1080065196404043997
+      Farmer_2_Fishing_128_frames_32x32_104: 2000035934997305913
+      Farmer_2_Fishing_128_frames_32x32_105: -8366971479813526758
+      Farmer_2_Fishing_128_frames_32x32_106: 8644967427277057888
+      Farmer_2_Fishing_128_frames_32x32_107: 1001713599957218067
+      Farmer_2_Fishing_128_frames_32x32_108: -7627232325666954442
+      Farmer_2_Fishing_128_frames_32x32_109: -775633809331832466
+      Farmer_2_Fishing_128_frames_32x32_11: -8040348060599514465
+      Farmer_2_Fishing_128_frames_32x32_110: -8489865229868979122
+      Farmer_2_Fishing_128_frames_32x32_111: -8378341534267147228
+      Farmer_2_Fishing_128_frames_32x32_112: 1919744459614078104
+      Farmer_2_Fishing_128_frames_32x32_113: -4507545718456861157
+      Farmer_2_Fishing_128_frames_32x32_114: -3620682303864050161
+      Farmer_2_Fishing_128_frames_32x32_115: 6631285738292848298
+      Farmer_2_Fishing_128_frames_32x32_116: -5340649358374621641
+      Farmer_2_Fishing_128_frames_32x32_117: -2063600768508402782
+      Farmer_2_Fishing_128_frames_32x32_118: 8169649816607804820
+      Farmer_2_Fishing_128_frames_32x32_119: -8106438962635569840
+      Farmer_2_Fishing_128_frames_32x32_12: 4090490892654998791
+      Farmer_2_Fishing_128_frames_32x32_120: 2262883439768849833
+      Farmer_2_Fishing_128_frames_32x32_121: -6774896793693990675
+      Farmer_2_Fishing_128_frames_32x32_122: 6662215100080044794
+      Farmer_2_Fishing_128_frames_32x32_123: -9044163176726891265
+      Farmer_2_Fishing_128_frames_32x32_124: -2412450606042060699
+      Farmer_2_Fishing_128_frames_32x32_125: -3595916778037765619
+      Farmer_2_Fishing_128_frames_32x32_126: 5031726538646608030
+      Farmer_2_Fishing_128_frames_32x32_127: 5769090552195169962
+      Farmer_2_Fishing_128_frames_32x32_128: 1473884291648233599
+      Farmer_2_Fishing_128_frames_32x32_129: -8953225847347563725
+      Farmer_2_Fishing_128_frames_32x32_13: -1642801419824751251
+      Farmer_2_Fishing_128_frames_32x32_130: 2255734376564568617
+      Farmer_2_Fishing_128_frames_32x32_131: -6378369576620273212
+      Farmer_2_Fishing_128_frames_32x32_132: 5360105282816840490
+      Farmer_2_Fishing_128_frames_32x32_133: -3294158976514584328
+      Farmer_2_Fishing_128_frames_32x32_134: 13455295416896959
+      Farmer_2_Fishing_128_frames_32x32_135: 2380507964022902787
+      Farmer_2_Fishing_128_frames_32x32_136: 9067891771765782716
+      Farmer_2_Fishing_128_frames_32x32_137: -4656773121623219817
+      Farmer_2_Fishing_128_frames_32x32_138: -7102311966201890351
+      Farmer_2_Fishing_128_frames_32x32_139: -5308893401825566120
+      Farmer_2_Fishing_128_frames_32x32_14: 7958867622558480594
+      Farmer_2_Fishing_128_frames_32x32_140: 6591878925381401935
+      Farmer_2_Fishing_128_frames_32x32_141: 3152925722005607979
+      Farmer_2_Fishing_128_frames_32x32_142: 200108544340568079
+      Farmer_2_Fishing_128_frames_32x32_143: 8620124120293629644
+      Farmer_2_Fishing_128_frames_32x32_144: -7572231511914917585
+      Farmer_2_Fishing_128_frames_32x32_145: -961762443457330160
+      Farmer_2_Fishing_128_frames_32x32_146: 8248761540747488605
+      Farmer_2_Fishing_128_frames_32x32_147: 8954204504705388775
+      Farmer_2_Fishing_128_frames_32x32_148: 868005084592379777
+      Farmer_2_Fishing_128_frames_32x32_149: -5098305424952190526
+      Farmer_2_Fishing_128_frames_32x32_15: 1223579126841618209
+      Farmer_2_Fishing_128_frames_32x32_150: 4742352328372249950
+      Farmer_2_Fishing_128_frames_32x32_151: 6058728971107147933
+      Farmer_2_Fishing_128_frames_32x32_152: -7508047035897261847
+      Farmer_2_Fishing_128_frames_32x32_153: -4558706994171494029
+      Farmer_2_Fishing_128_frames_32x32_154: -825178736138182439
+      Farmer_2_Fishing_128_frames_32x32_155: 6125958087143325414
+      Farmer_2_Fishing_128_frames_32x32_156: 186183397363989319
+      Farmer_2_Fishing_128_frames_32x32_157: 1246358814159543254
+      Farmer_2_Fishing_128_frames_32x32_158: 5509200231716467914
+      Farmer_2_Fishing_128_frames_32x32_159: -2931412465804950257
+      Farmer_2_Fishing_128_frames_32x32_16: 2554800148687406608
+      Farmer_2_Fishing_128_frames_32x32_160: 8733517097339144497
+      Farmer_2_Fishing_128_frames_32x32_161: 8725648038749292764
+      Farmer_2_Fishing_128_frames_32x32_162: 3263194226521938066
+      Farmer_2_Fishing_128_frames_32x32_163: -477473273175102944
+      Farmer_2_Fishing_128_frames_32x32_164: -1623738866101868826
+      Farmer_2_Fishing_128_frames_32x32_165: 926174782731209835
+      Farmer_2_Fishing_128_frames_32x32_166: -4105486071698284910
+      Farmer_2_Fishing_128_frames_32x32_167: 1759854511009812260
+      Farmer_2_Fishing_128_frames_32x32_168: 9195147653635990339
+      Farmer_2_Fishing_128_frames_32x32_169: 8194755628569348374
+      Farmer_2_Fishing_128_frames_32x32_17: 1095697905246150959
+      Farmer_2_Fishing_128_frames_32x32_170: -1949356868647867518
+      Farmer_2_Fishing_128_frames_32x32_171: 2153261158872780533
+      Farmer_2_Fishing_128_frames_32x32_172: -1217005044809839361
+      Farmer_2_Fishing_128_frames_32x32_173: 1875092944832518778
+      Farmer_2_Fishing_128_frames_32x32_174: -1070407173185302654
+      Farmer_2_Fishing_128_frames_32x32_175: 8018054352532103710
+      Farmer_2_Fishing_128_frames_32x32_176: 7780857597299654543
+      Farmer_2_Fishing_128_frames_32x32_177: 820923923175595171
+      Farmer_2_Fishing_128_frames_32x32_178: -793272123125474137
+      Farmer_2_Fishing_128_frames_32x32_179: -7911258294008558910
+      Farmer_2_Fishing_128_frames_32x32_18: 4581831936118317338
+      Farmer_2_Fishing_128_frames_32x32_180: 63847737344580049
+      Farmer_2_Fishing_128_frames_32x32_181: -6670285428657182435
+      Farmer_2_Fishing_128_frames_32x32_182: -4134944549249362531
+      Farmer_2_Fishing_128_frames_32x32_183: -6396635841557504338
+      Farmer_2_Fishing_128_frames_32x32_184: -2421589963353823109
+      Farmer_2_Fishing_128_frames_32x32_185: 2619130241785103728
+      Farmer_2_Fishing_128_frames_32x32_186: 6110057302342595389
+      Farmer_2_Fishing_128_frames_32x32_187: 4658754915851957981
+      Farmer_2_Fishing_128_frames_32x32_188: 3532788685176503149
+      Farmer_2_Fishing_128_frames_32x32_189: -7209354411667498845
+      Farmer_2_Fishing_128_frames_32x32_19: 9169780393533641607
+      Farmer_2_Fishing_128_frames_32x32_190: -5293989345359983923
+      Farmer_2_Fishing_128_frames_32x32_191: -3098599339561252316
+      Farmer_2_Fishing_128_frames_32x32_192: 5629226030308439294
+      Farmer_2_Fishing_128_frames_32x32_193: -8177020406555982449
+      Farmer_2_Fishing_128_frames_32x32_194: -6301714115778862302
+      Farmer_2_Fishing_128_frames_32x32_195: 7190877255222702787
+      Farmer_2_Fishing_128_frames_32x32_196: -6257672545410429827
+      Farmer_2_Fishing_128_frames_32x32_197: -5943125947540464213
+      Farmer_2_Fishing_128_frames_32x32_198: 8631956572910753033
+      Farmer_2_Fishing_128_frames_32x32_199: 4355278435340154767
+      Farmer_2_Fishing_128_frames_32x32_2: 2694882331265823060
+      Farmer_2_Fishing_128_frames_32x32_20: -5200941175846628769
+      Farmer_2_Fishing_128_frames_32x32_200: -2179571631374218780
+      Farmer_2_Fishing_128_frames_32x32_201: -2836303153336324030
+      Farmer_2_Fishing_128_frames_32x32_202: -7139448336895541503
+      Farmer_2_Fishing_128_frames_32x32_203: 6114562391388033530
+      Farmer_2_Fishing_128_frames_32x32_204: 3150358492771512582
+      Farmer_2_Fishing_128_frames_32x32_205: -4523775117140901548
+      Farmer_2_Fishing_128_frames_32x32_206: -2492210647796870988
+      Farmer_2_Fishing_128_frames_32x32_207: -8865802828203472231
+      Farmer_2_Fishing_128_frames_32x32_208: 3102235029248412339
+      Farmer_2_Fishing_128_frames_32x32_209: 5839758636041389594
+      Farmer_2_Fishing_128_frames_32x32_21: 2260651623983889261
+      Farmer_2_Fishing_128_frames_32x32_210: 3509652514292051426
+      Farmer_2_Fishing_128_frames_32x32_211: -4619440652198027806
+      Farmer_2_Fishing_128_frames_32x32_212: 5508694577586830981
+      Farmer_2_Fishing_128_frames_32x32_213: -8557709356685918245
+      Farmer_2_Fishing_128_frames_32x32_214: 5936322955478848265
+      Farmer_2_Fishing_128_frames_32x32_215: 5454686624769252222
+      Farmer_2_Fishing_128_frames_32x32_216: -9050532071420138082
+      Farmer_2_Fishing_128_frames_32x32_217: 5613529371760328339
+      Farmer_2_Fishing_128_frames_32x32_218: -2126139722180566028
+      Farmer_2_Fishing_128_frames_32x32_219: -3034501264576590245
+      Farmer_2_Fishing_128_frames_32x32_22: -4344379474977932652
+      Farmer_2_Fishing_128_frames_32x32_220: 3728831946963451214
+      Farmer_2_Fishing_128_frames_32x32_221: -8962892316086985126
+      Farmer_2_Fishing_128_frames_32x32_222: -7378718901800225097
+      Farmer_2_Fishing_128_frames_32x32_223: 1023647202720039105
+      Farmer_2_Fishing_128_frames_32x32_224: 4221894562799765477
+      Farmer_2_Fishing_128_frames_32x32_225: -5148910348698717306
+      Farmer_2_Fishing_128_frames_32x32_226: 5750357762291174146
+      Farmer_2_Fishing_128_frames_32x32_227: 358860210406621678
+      Farmer_2_Fishing_128_frames_32x32_228: 3149067998928176049
+      Farmer_2_Fishing_128_frames_32x32_229: 1311147859889836510
+      Farmer_2_Fishing_128_frames_32x32_23: 1366247768123889865
+      Farmer_2_Fishing_128_frames_32x32_230: 6160215912416704097
+      Farmer_2_Fishing_128_frames_32x32_231: -4406463886383283608
+      Farmer_2_Fishing_128_frames_32x32_232: -2340458474290122121
+      Farmer_2_Fishing_128_frames_32x32_233: 7560812198492486426
+      Farmer_2_Fishing_128_frames_32x32_234: -1990248786468063251
+      Farmer_2_Fishing_128_frames_32x32_235: -3030652108138805917
+      Farmer_2_Fishing_128_frames_32x32_236: -4912817588649336393
+      Farmer_2_Fishing_128_frames_32x32_237: 4130860863954344696
+      Farmer_2_Fishing_128_frames_32x32_238: -144297430379528150
+      Farmer_2_Fishing_128_frames_32x32_239: -6619283275623114516
+      Farmer_2_Fishing_128_frames_32x32_24: 6590969340067739574
+      Farmer_2_Fishing_128_frames_32x32_240: -1899647557473120908
+      Farmer_2_Fishing_128_frames_32x32_241: -2065111907421463837
+      Farmer_2_Fishing_128_frames_32x32_242: 2059610464832133090
+      Farmer_2_Fishing_128_frames_32x32_243: 7012830668269759895
+      Farmer_2_Fishing_128_frames_32x32_244: -6273818471739044773
+      Farmer_2_Fishing_128_frames_32x32_245: -7200072529334316670
+      Farmer_2_Fishing_128_frames_32x32_246: 3327455915745500845
+      Farmer_2_Fishing_128_frames_32x32_247: 4824246085542019855
+      Farmer_2_Fishing_128_frames_32x32_248: -4277162114075317715
+      Farmer_2_Fishing_128_frames_32x32_249: 6713672571539064987
+      Farmer_2_Fishing_128_frames_32x32_25: -7919106489875554055
+      Farmer_2_Fishing_128_frames_32x32_250: -7565373505250117706
+      Farmer_2_Fishing_128_frames_32x32_251: 7346115988614377728
+      Farmer_2_Fishing_128_frames_32x32_252: -4986188658031212322
+      Farmer_2_Fishing_128_frames_32x32_253: 344225496191855214
+      Farmer_2_Fishing_128_frames_32x32_254: -7756116022883714446
+      Farmer_2_Fishing_128_frames_32x32_255: 7751872749660437847
+      Farmer_2_Fishing_128_frames_32x32_256: -8668462110600785897
+      Farmer_2_Fishing_128_frames_32x32_26: 7652021443456321926
+      Farmer_2_Fishing_128_frames_32x32_27: 7993823162536868981
+      Farmer_2_Fishing_128_frames_32x32_28: -3643061526190213003
+      Farmer_2_Fishing_128_frames_32x32_29: 3360811637549832544
+      Farmer_2_Fishing_128_frames_32x32_3: 4697507164456552317
+      Farmer_2_Fishing_128_frames_32x32_30: -2035026571201182234
+      Farmer_2_Fishing_128_frames_32x32_31: -2309602212716662229
+      Farmer_2_Fishing_128_frames_32x32_32: -155631058312861438
+      Farmer_2_Fishing_128_frames_32x32_33: -1543210217156724801
+      Farmer_2_Fishing_128_frames_32x32_34: -8734011098078167137
+      Farmer_2_Fishing_128_frames_32x32_35: -1184964093651520001
+      Farmer_2_Fishing_128_frames_32x32_36: -5511937583248945241
+      Farmer_2_Fishing_128_frames_32x32_37: -1132835175971761229
+      Farmer_2_Fishing_128_frames_32x32_38: -1462333869787843995
+      Farmer_2_Fishing_128_frames_32x32_39: 3470525740461813993
+      Farmer_2_Fishing_128_frames_32x32_4: 3791814418208797349
+      Farmer_2_Fishing_128_frames_32x32_40: 6027990555912185313
+      Farmer_2_Fishing_128_frames_32x32_41: 6287739729107537525
+      Farmer_2_Fishing_128_frames_32x32_42: -1370171999409641077
+      Farmer_2_Fishing_128_frames_32x32_43: 7912012630690756220
+      Farmer_2_Fishing_128_frames_32x32_44: 5386789070280658807
+      Farmer_2_Fishing_128_frames_32x32_45: -889808327097227228
+      Farmer_2_Fishing_128_frames_32x32_46: -5393332919910509022
+      Farmer_2_Fishing_128_frames_32x32_47: 308929634802406705
+      Farmer_2_Fishing_128_frames_32x32_48: -3407634601100464419
+      Farmer_2_Fishing_128_frames_32x32_49: 7611143247229322421
+      Farmer_2_Fishing_128_frames_32x32_5: -8127148684436586326
+      Farmer_2_Fishing_128_frames_32x32_50: -7143671508047666760
+      Farmer_2_Fishing_128_frames_32x32_51: 710458621492497132
+      Farmer_2_Fishing_128_frames_32x32_52: -4985178104878700106
+      Farmer_2_Fishing_128_frames_32x32_53: 664803821084955200
+      Farmer_2_Fishing_128_frames_32x32_54: 1562085711681839858
+      Farmer_2_Fishing_128_frames_32x32_55: 891955094045164087
+      Farmer_2_Fishing_128_frames_32x32_56: -5760930463456601043
+      Farmer_2_Fishing_128_frames_32x32_57: 3348285339052887546
+      Farmer_2_Fishing_128_frames_32x32_58: -9174380978677449184
+      Farmer_2_Fishing_128_frames_32x32_59: 2172604517880700805
+      Farmer_2_Fishing_128_frames_32x32_6: -6653670044005694350
+      Farmer_2_Fishing_128_frames_32x32_60: -6131038087013719648
+      Farmer_2_Fishing_128_frames_32x32_61: 4794595149201125615
+      Farmer_2_Fishing_128_frames_32x32_62: -5620520495905861456
+      Farmer_2_Fishing_128_frames_32x32_63: 5830894238511371705
+      Farmer_2_Fishing_128_frames_32x32_64: -610996227906075393
+      Farmer_2_Fishing_128_frames_32x32_65: 5438593551958287247
+      Farmer_2_Fishing_128_frames_32x32_66: -4476139714204270861
+      Farmer_2_Fishing_128_frames_32x32_67: 8423123033278936164
+      Farmer_2_Fishing_128_frames_32x32_68: -6487546151425727445
+      Farmer_2_Fishing_128_frames_32x32_69: -9122106746097158138
+      Farmer_2_Fishing_128_frames_32x32_7: -1596849772353756356
+      Farmer_2_Fishing_128_frames_32x32_70: -1940400238288930085
+      Farmer_2_Fishing_128_frames_32x32_71: -7585739009670998166
+      Farmer_2_Fishing_128_frames_32x32_72: 7264119217420753687
+      Farmer_2_Fishing_128_frames_32x32_73: -923200598134273699
+      Farmer_2_Fishing_128_frames_32x32_74: 9002371132279246534
+      Farmer_2_Fishing_128_frames_32x32_75: -4076272279070772421
+      Farmer_2_Fishing_128_frames_32x32_76: 8498195380352810185
+      Farmer_2_Fishing_128_frames_32x32_77: -2434908699623767829
+      Farmer_2_Fishing_128_frames_32x32_78: 7822918348749711916
+      Farmer_2_Fishing_128_frames_32x32_79: -1325242499786129648
+      Farmer_2_Fishing_128_frames_32x32_8: -3597044855389355653
+      Farmer_2_Fishing_128_frames_32x32_80: 7438460505708977407
+      Farmer_2_Fishing_128_frames_32x32_81: -1264654417053309033
+      Farmer_2_Fishing_128_frames_32x32_82: 8904987323971489092
+      Farmer_2_Fishing_128_frames_32x32_83: -1836193269235059271
+      Farmer_2_Fishing_128_frames_32x32_84: -8293459202402224214
+      Farmer_2_Fishing_128_frames_32x32_85: -7034195965843306005
+      Farmer_2_Fishing_128_frames_32x32_86: 6430464657597875731
+      Farmer_2_Fishing_128_frames_32x32_87: 5306397459777373817
+      Farmer_2_Fishing_128_frames_32x32_88: -2489902072272031818
+      Farmer_2_Fishing_128_frames_32x32_89: 2151220169155696267
+      Farmer_2_Fishing_128_frames_32x32_9: -7296487212344431062
+      Farmer_2_Fishing_128_frames_32x32_90: 6610237490502389042
+      Farmer_2_Fishing_128_frames_32x32_91: 3116161406745850236
+      Farmer_2_Fishing_128_frames_32x32_92: -8265879658257866578
+      Farmer_2_Fishing_128_frames_32x32_93: 3789537121127042981
+      Farmer_2_Fishing_128_frames_32x32_94: 3190707373469358607
+      Farmer_2_Fishing_128_frames_32x32_95: -5083698915167909281
+      Farmer_2_Fishing_128_frames_32x32_96: 4725028038648058585
+      Farmer_2_Fishing_128_frames_32x32_97: -1085022664936157177
+      Farmer_2_Fishing_128_frames_32x32_98: -5942952310630038486
+      Farmer_2_Fishing_128_frames_32x32_99: -2578929889634600095
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

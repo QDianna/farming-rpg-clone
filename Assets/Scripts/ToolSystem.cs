@@ -28,59 +28,66 @@ public enum ToolType
     Axe
 }
 
+public class Tool
+{
+    public ToolType type;
+    public Sprite icon;
+    public int keybind;
+    
+    public Tool(ToolType type, Sprite icon, int keybind)
+    {
+        this.type = type;
+        this.icon = icon;
+        this.keybind = keybind;
+    }
+}
+
 public class ToolSystem : MonoBehaviour
 {
-    [SerializeField] private GameObject hoePrefab;
-    // [SerializeField] private GameObject axePrefab;
+    [SerializeField] private Sprite hoeSprite;
+    [SerializeField] private Sprite axeSprite;
     
     public event System.Action OnSelectedToolChange;
-    public ToolType selectedTool = ToolType.None;
-    private GameObject selectedToolPrefab;
-    
-    // keyboard key - ToolType mapping
-    private Dictionary<int, ToolType> toolBindings = new()
-    {
-        { 0, ToolType.None },
-        { 1, ToolType.Hoe },
-        { 2, ToolType.Axe }
-    };
 
-    public void SetTool(int toolKey, PlayerController player)
+    private Tool[] tools = new Tool[3];
+    private int selected = 0;
+    
+    private void Awake()
     {
-        if (!toolBindings.ContainsKey(toolKey))
+        tools[0] = new Tool(ToolType.None, null, 0);
+        tools[1] = new Tool(ToolType.Hoe, hoeSprite, 1);
+        tools[2] = new Tool(ToolType.Axe, axeSprite, 2);
+    }
+
+    public void SetTool(int toolKey)
+    {
+        if (toolKey >= tools.Length)
         {
             Debug.Log("Tool not in dictonary: " + toolKey);
             return;
         }
         
-        selectedTool = toolBindings[toolKey];
-        Debug.Log("Tool changed to: " + selectedTool);
-
-        if (selectedToolPrefab != null)
-        {
-            Destroy(selectedToolPrefab);
-            selectedToolPrefab = null;
-        }
-
-        if (selectedTool == ToolType.Hoe && hoePrefab != null)
-        {
-            selectedToolPrefab = Instantiate(hoePrefab, player.toolPivot);
-            selectedToolPrefab.transform.localPosition = Vector3.zero;
-        }
+        selected = toolKey;
+        Debug.Log("Tool changed to: " + tools[selected]);
         
         OnSelectedToolChange?.Invoke();  // notify HUD
     }
     
     public void UseTool(PlayerController player)
     {
-        switch (selectedTool)
+        
+        switch (selected)
         {
-            case ToolType.Hoe:
-                
+            case 0:
+                break;
+            
+            case 1:
+                player.animator.SetTrigger("Use Hoe");
                 player.plotlandController.TillPlot(player.transform.position);
                 break;
 
-            case ToolType.Axe:
+            case 2:
+                player.animator.SetTrigger("Use Axe");
                 // TODO
                 break;
         }
@@ -88,20 +95,18 @@ public class ToolSystem : MonoBehaviour
 
     public Sprite GetSelectedToolSprite()
     {
-        if (selectedTool == ToolType.None || selectedToolPrefab == null)
-            return null;
-
-        var spriteRenderer = selectedToolPrefab.GetComponentInChildren<SpriteRenderer>();
-        if (spriteRenderer != null)
-            return spriteRenderer.sprite;
+        if (selected > 0 && selected < tools.Length)
+            return tools[selected].icon;
 
         return null;
-
     }
     
     public ToolType GetSelectedToolType()
     {
-        return selectedTool;
+        if (selected > 0 && selected < tools.Length)
+            return tools[selected].type;
 
+        return ToolType.None;
     }
+    
 }

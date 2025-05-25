@@ -22,6 +22,7 @@ public class InteractionSystem : MonoBehaviour
         Vector3 playerPosition = player.transform.position;
         if (player.plotlandController.CanHarvest(playerPosition))
         {
+            player.animator.SetTrigger("Harvest");
             player.plotlandController.HarvestPlot(playerPosition, player);
             return;
         }

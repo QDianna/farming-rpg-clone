@@ -1,0 +1,7792 @@
+fileFormatVersion: 2
+guid: cf5718218d8f762469de74342744e279
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8176115189755669724
+    second: 3_Props_and_Buildings_32x32_0
+  - first:
+      213: -1913767047708850053
+    second: 3_Props_and_Buildings_32x32_1
+  - first:
+      213: 711156303315165060
+    second: 3_Props_and_Buildings_32x32_2
+  - first:
+      213: -7959468832907669719
+    second: 3_Props_and_Buildings_32x32_3
+  - first:
+      213: 8829488874686930195
+    second: 3_Props_and_Buildings_32x32_4
+  - first:
+      213: -4145949210842557748
+    second: 3_Props_and_Buildings_32x32_5
+  - first:
+      213: -8211935578687922025
+    second: 3_Props_and_Buildings_32x32_6
+  - first:
+      213: -2026293671378766357
+    second: 3_Props_and_Buildings_32x32_7
+  - first:
+      213: -6640444822657078327
+    second: 3_Props_and_Buildings_32x32_8
+  - first:
+      213: 4322987342391408544
+    second: 3_Props_and_Buildings_32x32_9
+  - first:
+      213: 8103756912912168191
+    second: 3_Props_and_Buildings_32x32_10
+  - first:
+      213: 5276386626885660309
+    second: 3_Props_and_Buildings_32x32_11
+  - first:
+      213: 3413217523306437447
+    second: 3_Props_and_Buildings_32x32_12
+  - first:
+      213: 9168002335254789387
+    second: 3_Props_and_Buildings_32x32_13
+  - first:
+      213: 3880486483727998528
+    second: 3_Props_and_Buildings_32x32_14
+  - first:
+      213: 4968216884448663014
+    second: 3_Props_and_Buildings_32x32_15
+  - first:
+      213: -2661459945524987085
+    second: 3_Props_and_Buildings_32x32_16
+  - first:
+      213: 2193453512652421316
+    second: 3_Props_and_Buildings_32x32_17
+  - first:
+      213: -5756124897625375959
+    second: 3_Props_and_Buildings_32x32_18
+  - first:
+      213: 1813448069984956539
+    second: 3_Props_and_Buildings_32x32_19
+  - first:
+      213: 964589776631404747
+    second: 3_Props_and_Buildings_32x32_20
+  - first:
+      213: -5690661734239005609
+    second: 3_Props_and_Buildings_32x32_21
+  - first:
+      213: -1215385132162371051
+    second: 3_Props_and_Buildings_32x32_22
+  - first:
+      213: 3444499025212128418
+    second: 3_Props_and_Buildings_32x32_23
+  - first:
+      213: -7148097542936725348
+    second: 3_Props_and_Buildings_32x32_24
+  - first:
+      213: 1684011080317832634
+    second: 3_Props_and_Buildings_32x32_25
+  - first:
+      213: 8259626311501116136
+    second: 3_Props_and_Buildings_32x32_26
+  - first:
+      213: -5847055951584489241
+    second: 3_Props_and_Buildings_32x32_27
+  - first:
+      213: 3876174649916604628
+    second: 3_Props_and_Buildings_32x32_28
+  - first:
+      213: -319255086619563658
+    second: 3_Props_and_Buildings_32x32_29
+  - first:
+      213: -2412680266779556331
+    second: 3_Props_and_Buildings_32x32_30
+  - first:
+      213: 445119465305508754
+    second: 3_Props_and_Buildings_32x32_31
+  - first:
+      213: -8979159833042241931
+    second: 3_Props_and_Buildings_32x32_32
+  - first:
+      213: -4544457086719781135
+    second: 3_Props_and_Buildings_32x32_33
+  - first:
+      213: 353617703579486029
+    second: 3_Props_and_Buildings_32x32_34
+  - first:
+      213: -5112068560825011600
+    second: 3_Props_and_Buildings_32x32_35
+  - first:
+      213: -8206315153058251266
+    second: 3_Props_and_Buildings_32x32_36
+  - first:
+      213: -5631888744573146794
+    second: 3_Props_and_Buildings_32x32_37
+  - first:
+      213: -2272844696108482054
+    second: 3_Props_and_Buildings_32x32_38
+  - first:
+      213: -6935322402096256485
+    second: 3_Props_and_Buildings_32x32_39
+  - first:
+      213: -664827318809268879
+    second: 3_Props_and_Buildings_32x32_40
+  - first:
+      213: 5363551753197101008
+    second: 3_Props_and_Buildings_32x32_41
+  - first:
+      213: 7790558300044173000
+    second: 3_Props_and_Buildings_32x32_42
+  - first:
+      213: -2301730048160060399
+    second: 3_Props_and_Buildings_32x32_43
+  - first:
+      213: 6281801867619598230
+    second: 3_Props_and_Buildings_32x32_44
+  - first:
+      213: -178217196411576417
+    second: 3_Props_and_Buildings_32x32_45
+  - first:
+      213: 6266068261658216033
+    second: 3_Props_and_Buildings_32x32_46
+  - first:
+      213: -2178738475117496387
+    second: 3_Props_and_Buildings_32x32_47
+  - first:
+      213: -2017530075644451593
+    second: 3_Props_and_Buildings_32x32_48
+  - first:
+      213: 4253122759192791057
+    second: 3_Props_and_Buildings_32x32_49
+  - first:
+      213: 6918478711910700203
+    second: 3_Props_and_Buildings_32x32_50
+  - first:
+      213: -588016763126169593
+    second: 3_Props_and_Buildings_32x32_51
+  - first:
+      213: -8260928098457014517
+    second: 3_Props_and_Buildings_32x32_52
+  - first:
+      213: -2318712497767025106
+    second: 3_Props_and_Buildings_32x32_53
+  - first:
+      213: 7512868211063597994
+    second: 3_Props_and_Buildings_32x32_54
+  - first:
+      213: 4034667430380386976
+    second: 3_Props_and_Buildings_32x32_55
+  - first:
+      213: 1122441657526381583
+    second: 3_Props_and_Buildings_32x32_56
+  - first:
+      213: -2410982209369816689
+    second: 3_Props_and_Buildings_32x32_57
+  - first:
+      213: 5004930937404395217
+    second: 3_Props_and_Buildings_32x32_58
+  - first:
+      213: 3773785792309616081
+    second: 3_Props_and_Buildings_32x32_59
+  - first:
+      213: -5148504976912800862
+    second: 3_Props_and_Buildings_32x32_60
+  - first:
+      213: -3680370191242331259
+    second: 3_Props_and_Buildings_32x32_61
+  - first:
+      213: -1994971056396746691
+    second: 3_Props_and_Buildings_32x32_62
+  - first:
+      213: 4908716631936749553
+    second: 3_Props_and_Buildings_32x32_63
+  - first:
+      213: -7933103266498507977
+    second: 3_Props_and_Buildings_32x32_64
+  - first:
+      213: -6687695781300965744
+    second: 3_Props_and_Buildings_32x32_65
+  - first:
+      213: -4101430113007077984
+    second: 3_Props_and_Buildings_32x32_66
+  - first:
+      213: -3308143067241293334
+    second: 3_Props_and_Buildings_32x32_67
+  - first:
+      213: 4808667398229387346
+    second: 3_Props_and_Buildings_32x32_68
+  - first:
+      213: -1444642185879455196
+    second: 3_Props_and_Buildings_32x32_69
+  - first:
+      213: 8075159362670479168
+    second: 3_Props_and_Buildings_32x32_70
+  - first:
+      213: -3934602757689879176
+    second: 3_Props_and_Buildings_32x32_71
+  - first:
+      213: 999298288539908200
+    second: 3_Props_and_Buildings_32x32_72
+  - first:
+      213: -1143750928109084370
+    second: 3_Props_and_Buildings_32x32_73
+  - first:
+      213: -5685751464111405385
+    second: 3_Props_and_Buildings_32x32_74
+  - first:
+      213: 2317655584516956093
+    second: 3_Props_and_Buildings_32x32_75
+  - first:
+      213: 2924625293091834940
+    second: 3_Props_and_Buildings_32x32_76
+  - first:
+      213: 1525328134126333539
+    second: 3_Props_and_Buildings_32x32_77
+  - first:
+      213: 5315786958864837455
+    second: 3_Props_and_Buildings_32x32_78
+  - first:
+      213: 1600585746638213830
+    second: 3_Props_and_Buildings_32x32_79
+  - first:
+      213: -7194661679956873923
+    second: 3_Props_and_Buildings_32x32_80
+  - first:
+      213: -2362464866565624129
+    second: 3_Props_and_Buildings_32x32_81
+  - first:
+      213: -909833900763050674
+    second: 3_Props_and_Buildings_32x32_82
+  - first:
+      213: 7930398989518722180
+    second: 3_Props_and_Buildings_32x32_83
+  - first:
+      213: -5888952801619794544
+    second: 3_Props_and_Buildings_32x32_84
+  - first:
+      213: -2201375040298775358
+    second: 3_Props_and_Buildings_32x32_85
+  - first:
+      213: 339146933042591607
+    second: 3_Props_and_Buildings_32x32_86
+  - first:
+      213: -85604905066414712
+    second: 3_Props_and_Buildings_32x32_87
+  - first:
+      213: 7165434097795155503
+    second: 3_Props_and_Buildings_32x32_88
+  - first:
+      213: -3784468366705484484
+    second: 3_Props_and_Buildings_32x32_89
+  - first:
+      213: -7298461957760459653
+    second: 3_Props_and_Buildings_32x32_90
+  - first:
+      213: -4357774927368857430
+    second: 3_Props_and_Buildings_32x32_91
+  - first:
+      213: 7874508292284070482
+    second: 3_Props_and_Buildings_32x32_92
+  - first:
+      213: -1357309388986690221
+    second: 3_Props_and_Buildings_32x32_93
+  - first:
+      213: 6336589546244042331
+    second: 3_Props_and_Buildings_32x32_94
+  - first:
+      213: -2145935924538003006
+    second: 3_Props_and_Buildings_32x32_95
+  - first:
+      213: 7302578533614102966
+    second: 3_Props_and_Buildings_32x32_96
+  - first:
+      213: 7247612740403110389
+    second: 3_Props_and_Buildings_32x32_97
+  - first:
+      213: -2362501337337235060
+    second: 3_Props_and_Buildings_32x32_98
+  - first:
+      213: 3280759626001241251
+    second: 3_Props_and_Buildings_32x32_99
+  - first:
+      213: -5376132489938476541
+    second: 3_Props_and_Buildings_32x32_100
+  - first:
+      213: 3936367209042220368
+    second: 3_Props_and_Buildings_32x32_101
+  - first:
+      213: -8729434967241132807
+    second: 3_Props_and_Buildings_32x32_102
+  - first:
+      213: -7108148123731126067
+    second: 3_Props_and_Buildings_32x32_103
+  - first:
+      213: 3587844045616042032
+    second: 3_Props_and_Buildings_32x32_104
+  - first:
+      213: 6539835463869019424
+    second: 3_Props_and_Buildings_32x32_105
+  - first:
+      213: 254350555184751700
+    second: 3_Props_and_Buildings_32x32_106
+  - first:
+      213: -485772603856816294
+    second: 3_Props_and_Buildings_32x32_107
+  - first:
+      213: 693784941033254970
+    second: 3_Props_and_Buildings_32x32_108
+  - first:
+      213: -7875037458982151171
+    second: 3_Props_and_Buildings_32x32_109
+  - first:
+      213: -8886299484311401787
+    second: 3_Props_and_Buildings_32x32_110
+  - first:
+      213: -267134153851322063
+    second: 3_Props_and_Buildings_32x32_111
+  - first:
+      213: 7153010272628774812
+    second: 3_Props_and_Buildings_32x32_112
+  - first:
+      213: -45324230842593051
+    second: 3_Props_and_Buildings_32x32_113
+  - first:
+      213: 8601360837576162625
+    second: 3_Props_and_Buildings_32x32_114
+  - first:
+      213: -5896101825831048318
+    second: 3_Props_and_Buildings_32x32_115
+  - first:
+      213: -1085299347579876314
+    second: 3_Props_and_Buildings_32x32_116
+  - first:
+      213: -417980773287521280
+    second: 3_Props_and_Buildings_32x32_117
+  - first:
+      213: 4055298392421547480
+    second: 3_Props_and_Buildings_32x32_118
+  - first:
+      213: 4148956662671171144
+    second: 3_Props_and_Buildings_32x32_119
+  - first:
+      213: -7050089924020049563
+    second: 3_Props_and_Buildings_32x32_120
+  - first:
+      213: 4049397511540791310
+    second: 3_Props_and_Buildings_32x32_121
+  - first:
+      213: -5272536392880692784
+    second: 3_Props_and_Buildings_32x32_122
+  - first:
+      213: -8486015174307867127
+    second: 3_Props_and_Buildings_32x32_123
+  - first:
+      213: -5185203132358231590
+    second: 3_Props_and_Buildings_32x32_124
+  - first:
+      213: 2224981255568740309
+    second: 3_Props_and_Buildings_32x32_125
+  - first:
+      213: 1966539528055138033
+    second: 3_Props_and_Buildings_32x32_126
+  - first:
+      213: 5319199670998548256
+    second: 3_Props_and_Buildings_32x32_127
+  - first:
+      213: 1258092830589029285
+    second: 3_Props_and_Buildings_32x32_128
+  - first:
+      213: -5181814502100154120
+    second: 3_Props_and_Buildings_32x32_129
+  - first:
+      213: -8675355228941373958
+    second: 3_Props_and_Buildings_32x32_130
+  - first:
+      213: -898006342569125214
+    second: 3_Props_and_Buildings_32x32_131
+  - first:
+      213: -4618679257053628956
+    second: 3_Props_and_Buildings_32x32_132
+  - first:
+      213: 5737889021311705247
+    second: 3_Props_and_Buildings_32x32_133
+  - first:
+      213: 4664264528425261911
+    second: 3_Props_and_Buildings_32x32_134
+  - first:
+      213: 2760962116038887696
+    second: 3_Props_and_Buildings_32x32_135
+  - first:
+      213: 7602418140379875967
+    second: 3_Props_and_Buildings_32x32_136
+  - first:
+      213: -8573165939139440372
+    second: 3_Props_and_Buildings_32x32_137
+  - first:
+      213: -724124519269086195
+    second: 3_Props_and_Buildings_32x32_138
+  - first:
+      213: 1863520622235868550
+    second: 3_Props_and_Buildings_32x32_139
+  - first:
+      213: 7810142975639437962
+    second: 3_Props_and_Buildings_32x32_140
+  - first:
+      213: 6336426750531000666
+    second: 3_Props_and_Buildings_32x32_141
+  - first:
+      213: 6970346564074471520
+    second: 3_Props_and_Buildings_32x32_142
+  - first:
+      213: -352970996202796511
+    second: 3_Props_and_Buildings_32x32_143
+  - first:
+      213: -181256696361552208
+    second: 3_Props_and_Buildings_32x32_144
+  - first:
+      213: -7231585823736790435
+    second: 3_Props_and_Buildings_32x32_145
+  - first:
+      213: 4874542894635467778
+    second: 3_Props_and_Buildings_32x32_146
+  - first:
+      213: 4100168042686464959
+    second: 3_Props_and_Buildings_32x32_147
+  - first:
+      213: -5665121168175932205
+    second: 3_Props_and_Buildings_32x32_148
+  - first:
+      213: 7597748877769713210
+    second: 3_Props_and_Buildings_32x32_149
+  - first:
+      213: -8610855472797065170
+    second: 3_Props_and_Buildings_32x32_150
+  - first:
+      213: -4934862987749996183
+    second: 3_Props_and_Buildings_32x32_151
+  - first:
+      213: -5170959985961039270
+    second: 3_Props_and_Buildings_32x32_152
+  - first:
+      213: -7946332192915353640
+    second: 3_Props_and_Buildings_32x32_153
+  - first:
+      213: 1690090967219689031
+    second: 3_Props_and_Buildings_32x32_154
+  - first:
+      213: -4363214517108425216
+    second: 3_Props_and_Buildings_32x32_155
+  - first:
+      213: 4546371681421907156
+    second: 3_Props_and_Buildings_32x32_156
+  - first:
+      213: -442331309711675198
+    second: 3_Props_and_Buildings_32x32_157
+  - first:
+      213: -799029716461373639
+    second: 3_Props_and_Buildings_32x32_158
+  - first:
+      213: -6706348440838717818
+    second: 3_Props_and_Buildings_32x32_159
+  - first:
+      213: 6790909300737799040
+    second: 3_Props_and_Buildings_32x32_160
+  - first:
+      213: 3659509274661054661
+    second: 3_Props_and_Buildings_32x32_161
+  - first:
+      213: 4002831396970268199
+    second: 3_Props_and_Buildings_32x32_162
+  - first:
+      213: -5956296077927093830
+    second: 3_Props_and_Buildings_32x32_163
+  - first:
+      213: 1480979752486257396
+    second: 3_Props_and_Buildings_32x32_164
+  - first:
+      213: -8996566031147280105
+    second: 3_Props_and_Buildings_32x32_165
+  - first:
+      213: -1087620962641174468
+    second: 3_Props_and_Buildings_32x32_166
+  - first:
+      213: -5508768967789867398
+    second: 3_Props_and_Buildings_32x32_167
+  - first:
+      213: 4113235616680703722
+    second: 3_Props_and_Buildings_32x32_168
+  - first:
+      213: -4648689118517891816
+    second: 3_Props_and_Buildings_32x32_169
+  - first:
+      213: -5583841209711900152
+    second: 3_Props_and_Buildings_32x32_170
+  - first:
+      213: -325820954670610820
+    second: 3_Props_and_Buildings_32x32_171
+  - first:
+      213: 7407832555595068679
+    second: 3_Props_and_Buildings_32x32_172
+  - first:
+      213: -797164722138093041
+    second: 3_Props_and_Buildings_32x32_173
+  - first:
+      213: 4035311866363085238
+    second: 3_Props_and_Buildings_32x32_174
+  - first:
+      213: -2351272390534754861
+    second: 3_Props_and_Buildings_32x32_175
+  - first:
+      213: -8529360404084535793
+    second: 3_Props_and_Buildings_32x32_176
+  - first:
+      213: 5845319093476263392
+    second: 3_Props_and_Buildings_32x32_177
+  - first:
+      213: 1844225042998538947
+    second: 3_Props_and_Buildings_32x32_178
+  - first:
+      213: 8012366542907944084
+    second: 3_Props_and_Buildings_32x32_179
+  - first:
+      213: -3972248447350255959
+    second: 3_Props_and_Buildings_32x32_180
+  - first:
+      213: 7716338500138032327
+    second: 3_Props_and_Buildings_32x32_181
+  - first:
+      213: 8408159429099594674
+    second: 3_Props_and_Buildings_32x32_182
+  - first:
+      213: 8523320317665191466
+    second: 3_Props_and_Buildings_32x32_183
+  - first:
+      213: -5772581034957473716
+    second: 3_Props_and_Buildings_32x32_184
+  - first:
+      213: -1779156303909006791
+    second: 3_Props_and_Buildings_32x32_185
+  - first:
+      213: 6168680323179820326
+    second: 3_Props_and_Buildings_32x32_186
+  - first:
+      213: 7286961676507874727
+    second: 3_Props_and_Buildings_32x32_187
+  - first:
+      213: 7884248399520450504
+    second: 3_Props_and_Buildings_32x32_188
+  - first:
+      213: 1261844710377947781
+    second: 3_Props_and_Buildings_32x32_189
+  - first:
+      213: 1889119282931889982
+    second: 3_Props_and_Buildings_32x32_190
+  - first:
+      213: 3830546375860819120
+    second: 3_Props_and_Buildings_32x32_191
+  - first:
+      213: 3099007570305274148
+    second: 3_Props_and_Buildings_32x32_192
+  - first:
+      213: 3314530943215608395
+    second: 3_Props_and_Buildings_32x32_193
+  - first:
+      213: -3753743764723498926
+    second: 3_Props_and_Buildings_32x32_194
+  - first:
+      213: -1621786364764943414
+    second: 3_Props_and_Buildings_32x32_195
+  - first:
+      213: -6295036157337375388
+    second: 3_Props_and_Buildings_32x32_196
+  - first:
+      213: -3350740745316454846
+    second: 3_Props_and_Buildings_32x32_197
+  - first:
+      213: -2817618450095075406
+    second: 3_Props_and_Buildings_32x32_198
+  - first:
+      213: 1793177003365367490
+    second: 3_Props_and_Buildings_32x32_199
+  - first:
+      213: -8319149867460157641
+    second: 3_Props_and_Buildings_32x32_200
+  - first:
+      213: 2448829669820869037
+    second: 3_Props_and_Buildings_32x32_201
+  - first:
+      213: -5985379119054324606
+    second: 3_Props_and_Buildings_32x32_202
+  - first:
+      213: 4847296266393021685
+    second: 3_Props_and_Buildings_32x32_203
+  - first:
+      213: 9192479284241323357
+    second: 3_Props_and_Buildings_32x32_204
+  - first:
+      213: 4716573013003056044
+    second: 3_Props_and_Buildings_32x32_205
+  - first:
+      213: -1286980497174065048
+    second: 3_Props_and_Buildings_32x32_206
+  - first:
+      213: 2193948402119921786
+    second: 3_Props_and_Buildings_32x32_207
+  - first:
+      213: 8637030900433275736
+    second: 3_Props_and_Buildings_32x32_208
+  - first:
+      213: 7722323672440627875
+    second: 3_Props_and_Buildings_32x32_209
+  - first:
+      213: -9134613829445263757
+    second: 3_Props_and_Buildings_32x32_210
+  - first:
+      213: 3242930625653073476
+    second: 3_Props_and_Buildings_32x32_211
+  - first:
+      213: 6515351416636869957
+    second: 3_Props_and_Buildings_32x32_212
+  - first:
+      213: 3928531572537691863
+    second: 3_Props_and_Buildings_32x32_213
+  - first:
+      213: 4880264379743004149
+    second: 3_Props_and_Buildings_32x32_214
+  - first:
+      213: -2783991090987526742
+    second: 3_Props_and_Buildings_32x32_215
+  - first:
+      213: -6731257885108972171
+    second: 3_Props_and_Buildings_32x32_216
+  - first:
+      213: -8480759878128298035
+    second: 3_Props_and_Buildings_32x32_217
+  - first:
+      213: -5372498602842576692
+    second: 3_Props_and_Buildings_32x32_218
+  - first:
+      213: 384116983647403399
+    second: 3_Props_and_Buildings_32x32_219
+  - first:
+      213: -5399650468821644587
+    second: 3_Props_and_Buildings_32x32_220
+  - first:
+      213: 8063899014959121551
+    second: 3_Props_and_Buildings_32x32_221
+  - first:
+      213: -8176979997461416805
+    second: 3_Props_and_Buildings_32x32_222
+  - first:
+      213: 3584299417086927482
+    second: 3_Props_and_Buildings_32x32_223
+  - first:
+      213: -6514655948256098769
+    second: 3_Props_and_Buildings_32x32_224
+  - first:
+      213: -7986005690074872823
+    second: 3_Props_and_Buildings_32x32_225
+  - first:
+      213: 5718743774690521034
+    second: 3_Props_and_Buildings_32x32_226
+  - first:
+      213: -4848282698191800931
+    second: 3_Props_and_Buildings_32x32_227
+  - first:
+      213: -1349534155013084759
+    second: 3_Props_and_Buildings_32x32_228
+  - first:
+      213: 4567269230688378675
+    second: 3_Props_and_Buildings_32x32_229
+  - first:
+      213: -911520541464479539
+    second: 3_Props_and_Buildings_32x32_230
+  - first:
+      213: -3471076137249113172
+    second: 3_Props_and_Buildings_32x32_231
+  - first:
+      213: 3291299862073833835
+    second: 3_Props_and_Buildings_32x32_232
+  - first:
+      213: -7209784106079938700
+    second: 3_Props_and_Buildings_32x32_233
+  - first:
+      213: 1220841744801123343
+    second: 3_Props_and_Buildings_32x32_234
+  - first:
+      213: -8996328395700797400
+    second: 3_Props_and_Buildings_32x32_235
+  - first:
+      213: -1174037443033251944
+    second: 3_Props_and_Buildings_32x32_236
+  - first:
+      213: -9061195899388021995
+    second: 3_Props_and_Buildings_32x32_237
+  - first:
+      213: -14728990400921941
+    second: 3_Props_and_Buildings_32x32_238
+  - first:
+      213: -4995684257510982232
+    second: 3_Props_and_Buildings_32x32_239
+  - first:
+      213: -3297129999536713932
+    second: 3_Props_and_Buildings_32x32_240
+  - first:
+      213: -1951446942799052637
+    second: 3_Props_and_Buildings_32x32_241
+  - first:
+      213: -2781104243832524563
+    second: 3_Props_and_Buildings_32x32_242
+  - first:
+      213: -3925422378277828774
+    second: 3_Props_and_Buildings_32x32_243
+  - first:
+      213: -811534983738672788
+    second: 3_Props_and_Buildings_32x32_244
+  - first:
+      213: 4034697654989780656
+    second: 3_Props_and_Buildings_32x32_245
+  - first:
+      213: 8560838286243637235
+    second: 3_Props_and_Buildings_32x32_246
+  - first:
+      213: 4867263417771324475
+    second: 3_Props_and_Buildings_32x32_247
+  - first:
+      213: 2262859538870556387
+    second: 3_Props_and_Buildings_32x32_248
+  - first:
+      213: -8226220540710141275
+    second: 3_Props_and_Buildings_32x32_249
+  - first:
+      213: -5339872467344554670
+    second: 3_Props_and_Buildings_32x32_250
+  - first:
+      213: 633130973828050219
+    second: 3_Props_and_Buildings_32x32_251
+  - first:
+      213: -1869816662852381335
+    second: 3_Props_and_Buildings_32x32_252
+  - first:
+      213: -1741098017169149962
+    second: 3_Props_and_Buildings_32x32_253
+  - first:
+      213: -7073263202244890509
+    second: 3_Props_and_Buildings_32x32_254
+  - first:
+      213: 474699689506129414
+    second: 3_Props_and_Buildings_32x32_255
+  - first:
+      213: 6003926445683477250
+    second: 3_Props_and_Buildings_32x32_256
+  - first:
+      213: 6461914376967301189
+    second: 3_Props_and_Buildings_32x32_257
+  - first:
+      213: 8345782675113139349
+    second: 3_Props_and_Buildings_32x32_258
+  - first:
+      213: 1793558958732315252
+    second: 3_Props_and_Buildings_32x32_259
+  - first:
+      213: -1254848999296316298
+    second: 3_Props_and_Buildings_32x32_260
+  - first:
+      213: -5199258861798433150
+    second: 3_Props_and_Buildings_32x32_261
+  - first:
+      213: -8027689523623547643
+    second: 3_Props_and_Buildings_32x32_262
+  - first:
+      213: 6816881810458313699
+    second: 3_Props_and_Buildings_32x32_263
+  - first:
+      213: 4215077690942046799
+    second: 3_Props_and_Buildings_32x32_264
+  - first:
+      213: -5426669897650941796
+    second: 3_Props_and_Buildings_32x32_265
+  - first:
+      213: -4660984941470556852
+    second: 3_Props_and_Buildings_32x32_266
+  - first:
+      213: 4787721261717001395
+    second: 3_Props_and_Buildings_32x32_267
+  - first:
+      213: 9198826503847678820
+    second: 3_Props_and_Buildings_32x32_268
+  - first:
+      213: -2230961568253747864
+    second: 3_Props_and_Buildings_32x32_269
+  - first:
+      213: -3293875760785583129
+    second: 3_Props_and_Buildings_32x32_270
+  - first:
+      213: -7872699728287838782
+    second: 3_Props_and_Buildings_32x32_271
+  - first:
+      213: -2284972490293069046
+    second: 3_Props_and_Buildings_32x32_272
+  - first:
+      213: -8886348792578417048
+    second: 3_Props_and_Buildings_32x32_273
+  - first:
+      213: -2725615197719147596
+    second: 3_Props_and_Buildings_32x32_274
+  - first:
+      213: 3408376811002243638
+    second: 3_Props_and_Buildings_32x32_275
+  - first:
+      213: -6407191675094820114
+    second: 3_Props_and_Buildings_32x32_276
+  - first:
+      213: -8070010116228490837
+    second: 3_Props_and_Buildings_32x32_277
+  - first:
+      213: 77302292469544974
+    second: 3_Props_and_Buildings_32x32_278
+  - first:
+      213: -8084413533475609653
+    second: 3_Props_and_Buildings_32x32_279
+  - first:
+      213: 254613513767568179
+    second: 3_Props_and_Buildings_32x32_280
+  - first:
+      213: -1326342101143648750
+    second: 3_Props_and_Buildings_32x32_281
+  - first:
+      213: -2852212862240940312
+    second: 3_Props_and_Buildings_32x32_282
+  - first:
+      213: -2315971627359513508
+    second: 3_Props_and_Buildings_32x32_283
+  - first:
+      213: 1005072987106377781
+    second: 3_Props_and_Buildings_32x32_284
+  - first:
+      213: 6845944806679995369
+    second: 3_Props_and_Buildings_32x32_285
+  - first:
+      213: -1330326200322830447
+    second: 3_Props_and_Buildings_32x32_286
+  - first:
+      213: -3386055454368083356
+    second: 3_Props_and_Buildings_32x32_287
+  - first:
+      213: 4961069616507375738
+    second: 3_Props_and_Buildings_32x32_288
+  - first:
+      213: -7628941360201246423
+    second: 3_Props_and_Buildings_32x32_289
+  - first:
+      213: -6369793943407092568
+    second: 3_Props_and_Buildings_32x32_290
+  - first:
+      213: -5653916156783965635
+    second: 3_Props_and_Buildings_32x32_291
+  - first:
+      213: -1349440322879677038
+    second: 3_Props_and_Buildings_32x32_292
+  - first:
+      213: -6740255346030406642
+    second: 3_Props_and_Buildings_32x32_293
+  - first:
+      213: -2949541656532244400
+    second: 3_Props_and_Buildings_32x32_294
+  - first:
+      213: -351679130557290760
+    second: 3_Props_and_Buildings_32x32_295
+  - first:
+      213: 8893898827998035758
+    second: 3_Props_and_Buildings_32x32_296
+  - first:
+      213: 4045597905758637599
+    second: 3_Props_and_Buildings_32x32_297
+  - first:
+      213: 1836495745692283120
+    second: 3_Props_and_Buildings_32x32_298
+  - first:
+      213: -7826872751097855607
+    second: 3_Props_and_Buildings_32x32_299
+  - first:
+      213: 8587306053127434661
+    second: 3_Props_and_Buildings_32x32_300
+  - first:
+      213: 4371832634111833708
+    second: 3_Props_and_Buildings_32x32_301
+  - first:
+      213: 1776906083632108896
+    second: 3_Props_and_Buildings_32x32_302
+  - first:
+      213: -924867020514485175
+    second: 3_Props_and_Buildings_32x32_303
+  - first:
+      213: 2025295119181542448
+    second: 3_Props_and_Buildings_32x32_304
+  - first:
+      213: 2406548523322287817
+    second: 3_Props_and_Buildings_32x32_305
+  - first:
+      213: -1228558433419098837
+    second: 3_Props_and_Buildings_32x32_306
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 4457
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdcef083275677170800000000000000
+      internalID: 8176115189755669724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 4459
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b78477a720fe075e0800000000000000
+      internalID: -1913767047708850053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 4457
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f51e6d3e88ed900800000000000000
+      internalID: 711156303315165060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 4457
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92fcebd74494a8190800000000000000
+      internalID: -7959468832907669719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 4459
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31d5af3d955a88a70800000000000000
+      internalID: 8829488874686930195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 4459
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc21beea821a676c0800000000000000
+      internalID: -4145949210842557748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 4455
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7902ae19918590e80800000000000000
+      internalID: -8211935578687922025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 4451
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be5b8d244a821e3e0800000000000000
+      internalID: -2026293671378766357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 4449
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb61facd9668d3a0800000000000000
+      internalID: -6640444822657078327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 4459
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a7ffbf65165efb30800000000000000
+      internalID: 4322987342391408544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4351
+        width: 65
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff4fe3c0af3567070800000000000000
+      internalID: 8103756912912168191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 4383
+        width: 30
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59e24218ead793940800000000000000
+      internalID: 5276386626885660309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 4425
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74b91d1e04f2e5f20800000000000000
+      internalID: 3413217523306437447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 4423
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0d30dcbc894b3f70800000000000000
+      internalID: 9168002335254789387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 4421
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04edf42b5e14ad530800000000000000
+      internalID: 3880486483727998528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 4419
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e519a40fe6a2f440800000000000000
+      internalID: 4968216884448663014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 4423
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b7d03d748901bd0800000000000000
+      internalID: -2661459945524987085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 4383
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c8fafc2956b07e10800000000000000
+      internalID: 2193453512652421316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 4383
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92bf14227e22e10b0800000000000000
+      internalID: -5756124897625375959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 4423
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b70321e5969aa2910800000000000000
+      internalID: 1813448069984956539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 4419
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc8961e8a49e26d00800000000000000
+      internalID: 964589776631404747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 4417
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75496c99d45b601b0800000000000000
+      internalID: -5690661734239005609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 4427
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 512bb2469a5122fe0800000000000000
+      internalID: -1215385132162371051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 4427
+        width: 20
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2acb2fa1d915dcf20800000000000000
+      internalID: 3444499025212128418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 4423
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c98f96d282bdccc90800000000000000
+      internalID: -7148097542936725348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 4425
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abd8a20c72fce5710800000000000000
+      internalID: 1684011080317832634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 4423
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e27e727e5610a270800000000000000
+      internalID: 8259626311501116136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 4421
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e019ff47951bdea0800000000000000
+      internalID: -5847055951584489241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 4383
+        width: 98
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d047a7ae40fac530800000000000000
+      internalID: 3876174649916604628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 4419
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 679ed41b037c19bf0800000000000000
+      internalID: -319255086619563658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 4419
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 516820e8410748ed0800000000000000
+      internalID: -2412680266779556331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 4419
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29b852c9bc16d2600800000000000000
+      internalID: 445119465305508754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 4419
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 576bf0a94bd936380800000000000000
+      internalID: -8979159833042241931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 4417
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f69f017b58dee0c0800000000000000
+      internalID: -4544457086719781135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 4417
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4705288d6d48e400800000000000000
+      internalID: 353617703579486029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 4393
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07235949ab84e09b0800000000000000
+      internalID: -5112068560825011600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 4391
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efdbe03e8df4d1e80800000000000000
+      internalID: -8206315153058251266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 4389
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 659623d960387d1b0800000000000000
+      internalID: -5631888744573146794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 4387
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af1c2da7acb3570e0800000000000000
+      internalID: -2272844696108482054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 4391
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a6e3c2509c0cf90800000000000000
+      internalID: -6935322402096256485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 4351
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17de561731f06c6f0800000000000000
+      internalID: -664827318809268879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 4383
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df9cb7f6e92f6a40800000000000000
+      internalID: 5363551753197101008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 4393
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ce9a1c6f7f9d1c60800000000000000
+      internalID: 7790558300044173000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 4391
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11ca39e57bc9e00e0800000000000000
+      internalID: -2301730048160060399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 4393
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ff9d424817d2750800000000000000
+      internalID: 6281801867619598230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 4391
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f95037768d68df0800000000000000
+      internalID: -178217196411576417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 4389
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 166cc7a82eb85f650800000000000000
+      internalID: 6266068261658216033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 4391
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db7352c76e093c1e0800000000000000
+      internalID: -2178738475117496387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 4395
+        width: 20
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f4ab85e51b4004e0800000000000000
+      internalID: -2017530075644451593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 4391
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 118c0df8d90260b30800000000000000
+      internalID: 4253122759192791057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 4393
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba41a899bbf530060800000000000000
+      internalID: 6918478711910700203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 4391
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700c3ef8ed1f6d7f0800000000000000
+      internalID: -588016763126169593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 4391
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0f2d68a9a94b5d80800000000000000
+      internalID: -8260928098457014517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 4389
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e267652b44742dfd0800000000000000
+      internalID: -2318712497767025106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 4387
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aab25c445d1134860800000000000000
+      internalID: 7512868211063597994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 4387
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa39aeb6a40ef730800000000000000
+      internalID: 4034667430380386976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 4357
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ce5f59db6b39f00800000000000000
+      internalID: 1122441657526381583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 4355
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f81c9ba54787a8ed0800000000000000
+      internalID: -2410982209369816689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 4359
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1de0a599b26157540800000000000000
+      internalID: 5004930937404395217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 4319
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ddd7090f2e2f5430800000000000000
+      internalID: 3773785792309616081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 4319
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a328ce5006dc88b0800000000000000
+      internalID: -5148504976912800862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 4353
+        width: 34
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58b701d7fc2bcecc0800000000000000
+      internalID: -3680370191242331259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 4357
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d30494ed4607054e0800000000000000
+      internalID: -1994971056396746691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 4367
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff44ade4c34f1440800000000000000
+      internalID: 4908716631936749553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 4351
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b8dd94c94f7e190800000000000000
+      internalID: -7933103266498507977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 4351
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09e6dadae188033a0800000000000000
+      internalID: -6687695781300965744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 4353
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a57f13ea0bc417c0800000000000000
+      internalID: -4101430113007077984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 4357
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae959ea586d1712d0800000000000000
+      internalID: -3308143067241293334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 4361
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 258e6727581dbb240800000000000000
+      internalID: 4808667398229387346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 4361
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42a7c13069993fbe0800000000000000
+      internalID: -1444642185879455196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 4361
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 047c4a408aab01070800000000000000
+      internalID: 8075159362670479168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 4355
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8755f9763ab7569c0800000000000000
+      internalID: -3934602757689879176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 4371
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 868b319bf783edd00800000000000000
+      internalID: 999298288539908200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 4355
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e21e88a37949020f0800000000000000
+      internalID: -1143750928109084370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 4371
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b68b74fa272811b0800000000000000
+      internalID: -5685751464111405385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 4355
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbf55d28977f92020800000000000000
+      internalID: 2317655584516956093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 4371
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c8cdf653b569820800000000000000
+      internalID: 2924625293091834940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 4355
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36e62804bdd0b2510800000000000000
+      internalID: 1525328134126333539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 4371
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4beac8231875c940800000000000000
+      internalID: 5315786958864837455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 4355
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c29cec914c663610800000000000000
+      internalID: 1600585746638213830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 4355
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d2e0f225d672c90800000000000000
+      internalID: -7194661679956873923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 4357
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbee30288b6d63fd0800000000000000
+      internalID: -2362464866565624129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 4361
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4d096443ee9f53f0800000000000000
+      internalID: -909833900763050674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 4361
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48451692ddf6e0e60800000000000000
+      internalID: 7930398989518722180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 4361
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0952960c0ac364ea0800000000000000
+      internalID: -5888952801619794544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 4361
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cc849170152371e0800000000000000
+      internalID: -2201375040298775358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 4361
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 777baa6b654e4b400800000000000000
+      internalID: 339146933042591607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 4319
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d3c7adacedfcef0800000000000000
+      internalID: -85604905066414712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 4319
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f264d8c095cb07360800000000000000
+      internalID: 7165434097795155503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_89
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 4319
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3d11da421eda7bc0800000000000000
+      internalID: -3784468366705484484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_90
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 4319
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c5cf0b487a6ba90800000000000000
+      internalID: -7298461957760459653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_91
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 4095
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa85313cac21683c0800000000000000
+      internalID: -4357774927368857430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_92
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 4287
+        width: 26
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25ab576229fd74d60800000000000000
+      internalID: 7874508292284070482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_93
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 4287
+        width: 28
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35555235d4ed92de0800000000000000
+      internalID: -1357309388986690221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_94
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 4321
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e645f9e9610f750800000000000000
+      internalID: 6336589546244042331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_95
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 4287
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c1b92375aa1832e0800000000000000
+      internalID: -2145935924538003006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_96
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 4287
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b926705c78f75560800000000000000
+      internalID: 7302578533614102966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_97
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 4223
+        width: 60
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f1a25d4361b49460800000000000000
+      internalID: 7247612740403110389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_98
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 4287
+        width: 66
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c89f0aefc85b63fd0800000000000000
+      internalID: -2362501337337235060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_99
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 4289
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a45f356f79978d20800000000000000
+      internalID: 3280759626001241251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_100
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 4289
+        width: 63
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 302e7cffbf32465b0800000000000000
+      internalID: -5376132489938476541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_101
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 4289
+        width: 96
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0551570fe19c0a630800000000000000
+      internalID: 3936367209042220368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_102
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 4223
+        width: 226
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f4f7b7d521dad680800000000000000
+      internalID: -8729434967241132807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_103
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 4257
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc8952a21f8ca5d90800000000000000
+      internalID: -7108148123731126067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_104
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 4261
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 030d17876259ac130800000000000000
+      internalID: 3587844045616042032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_105
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 4261
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0253a6174b922ca50800000000000000
+      internalID: 6539835463869019424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_106
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 4261
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 454e53a7b72a78300800000000000000
+      internalID: 254350555184751700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_107
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 4261
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a577f79f3603249f0800000000000000
+      internalID: -485772603856816294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_108
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 4257
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a307dc06ab1d0a900800000000000000
+      internalID: 693784941033254970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_109
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 4223
+        width: 98
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb5970a72f36b290800000000000000
+      internalID: -7875037458982151171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_110
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 4255
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cac1ed53b58da480800000000000000
+      internalID: -8886299484311401787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_111
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 4223
+        width: 33
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 131415407e2fa4cf0800000000000000
+      internalID: -267134153851322063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_112
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 4223
+        width: 20
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9712c6d1f8944360800000000000000
+      internalID: 7153010272628774812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_113
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 4229
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e0d8e82ad9fe5ff0800000000000000
+      internalID: -45324230842593051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_114
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 4229
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14dfeac1c1c2e5770800000000000000
+      internalID: 8601360837576162625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_115
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 4229
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28beec7d0a6dc2ea0800000000000000
+      internalID: -5896101825831048318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_116
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 4229
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62cc9885efd30f0f0800000000000000
+      internalID: -1085299347579876314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_117
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 4231
+        width: 52
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004114583b8033af0800000000000000
+      internalID: -417980773287521280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_118
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 4231
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ddbf7ae660574830800000000000000
+      internalID: 4055298392421547480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_119
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 4225
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84e51034a1e049930800000000000000
+      internalID: 4148956662671171144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_120
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 4129
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 569693c219c092e90800000000000000
+      internalID: -7050089924020049563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_121
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 4191
+        width: 162
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e085db50599523830800000000000000
+      internalID: 4049397511540791310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_122
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 4129
+        width: 64
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d1e605f51034d6b0800000000000000
+      internalID: -5272536392880692784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_123
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 4199
+        width: 52
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9061ec8e82e9b3a80800000000000000
+      internalID: -8486015174307867127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_124
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 4199
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad97b8739357a08b0800000000000000
+      internalID: -5185203132358231590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_125
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 4095
+        width: 58
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dfc31ad9a8b0ee10800000000000000
+      internalID: 2224981255568740309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_126
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 4031
+        width: 72
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f6ad76184d8a4b10800000000000000
+      internalID: 1966539528055138033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_127
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 4193
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02f3e3f1be791d940800000000000000
+      internalID: 5319199670998548256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_128
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 4193
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ab89b583c4a57110800000000000000
+      internalID: 1258092830589029285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_129
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3999
+        width: 223
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f84a5e2a2f7618b0800000000000000
+      internalID: -5181814502100154120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_130
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 4159
+        width: 162
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afd2f9e1262fa9780800000000000000
+      internalID: -8675355228941373958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_131
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 4129
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa9e114df3a983f0800000000000000
+      internalID: -898006342569125214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_132
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 4135
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e57adfbfa727efb0800000000000000
+      internalID: -4618679257053628956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_133
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 4135
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f90e5eb0aa311af40800000000000000
+      internalID: 5737889021311705247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_134
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 4095
+        width: 65
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b1e3350ebcab040800000000000000
+      internalID: 4664264528425261911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_135
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 4095
+        width: 64
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0190fc49a68e05620800000000000000
+      internalID: 2760962116038887696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_136
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 3539
+        width: 226
+        height: 590
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7a0453f407318960800000000000000
+      internalID: 7602418140379875967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_137
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 4101
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c019d1d300ff50980800000000000000
+      internalID: -8573165939139440372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_138
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 4103
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0cc0d7169463f5f0800000000000000
+      internalID: -724124519269086195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_139
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 4101
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68ddbffe12e8cd910800000000000000
+      internalID: 1863520622235868550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_140
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 4057
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a82400c08a3336c60800000000000000
+      internalID: 7810142975639437962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_141
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 4071
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59deaace828fe750800000000000000
+      internalID: 6336426750531000666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_142
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 4069
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06006010545abb060800000000000000
+      internalID: 6970346564074471520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_143
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 4031
+        width: 62
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12a0153cfbef91bf0800000000000000
+      internalID: -352970996202796511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_144
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3857
+        width: 128
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b67538befb0c7df0800000000000000
+      internalID: -181256696361552208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_145
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 3871
+        width: 96
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d520b65020f34ab90800000000000000
+      internalID: -7231585823736790435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_146
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 3871
+        width: 128
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204c62dafead5a340800000000000000
+      internalID: 4874542894635467778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_147
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 3679
+        width: 158
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb34cb77c19b6e830800000000000000
+      internalID: 4100168042686464959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_148
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 3903
+        width: 258
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dcd35900527161b0800000000000000
+      internalID: -5665121168175932205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_149
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 3903
+        width: 65
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3626188950a07960800000000000000
+      internalID: 7597748877769713210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_150
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 3775
+        width: 280
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e20e3bbd198108880800000000000000
+      internalID: -8610855472797065170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_151
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 3871
+        width: 64
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96940f73248d38bb0800000000000000
+      internalID: -4934862987749996183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_152
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 3775
+        width: 50
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a88092a4f0d38b0800000000000000
+      internalID: -5170959985961039270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_153
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 3775
+        width: 46
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8df8706d8f4f8b190800000000000000
+      internalID: -7946332192915353640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_154
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 3779
+        width: 90
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 746d93bb7c8647710800000000000000
+      internalID: 1690090967219689031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_155
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 3779
+        width: 122
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00ebce4938fb273c0800000000000000
+      internalID: -4363214517108425216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_156
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 3743
+        width: 65
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d45c00e4f4f71f30800000000000000
+      internalID: 4546371681421907156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_157
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3711
+        width: 33
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c03a9374068cd9f0800000000000000
+      internalID: -442331309711675198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_158
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 3713
+        width: 18
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 937b651d4b649e4f0800000000000000
+      internalID: -799029716461373639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_159
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 3747
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e30d3ff934ee2a0800000000000000
+      internalID: -6706348440838717818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_160
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 3747
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0837f5c77082e3e50800000000000000
+      internalID: 6790909300737799040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_161
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 3711
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c86b60eb4039c230800000000000000
+      internalID: 3659509274661054661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_162
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 3711
+        width: 46
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 726813892f9ec8730800000000000000
+      internalID: 4002831396970268199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_163
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 3753
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab96a12664cf65da0800000000000000
+      internalID: -5956296077927093830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_164
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 3749
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f24d720d3f7d8410800000000000000
+      internalID: 1480979752486257396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_165
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 3747
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 719de1b4cd6c52380800000000000000
+      internalID: -8996566031147280105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_166
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 3747
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3021873f7ef7e0f0800000000000000
+      internalID: -1087620962641174468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_167
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 3713
+        width: 36
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7e803d7fcbec83b0800000000000000
+      internalID: -5508768967789867398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_168
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 3715
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae6fcb12006251930800000000000000
+      internalID: 4113235616680703722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_169
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 3715
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81d648360e98c7fb0800000000000000
+      internalID: -4648689118517891816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_170
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 3647
+        width: 162
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a4fe411063282b0800000000000000
+      internalID: -5583841209711900152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_171
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 3685
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76ca7861937a7bf0800000000000000
+      internalID: -325820954670610820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_172
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 3685
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70571dff578edc660800000000000000
+      internalID: 7407832555595068679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_173
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 3649
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a6c75a8e6efe4f0800000000000000
+      internalID: -797164722138093041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_174
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 3681
+        width: 36
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b18d7033ce400830800000000000000
+      internalID: 4035311866363085238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_175
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 3647
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dd0ef7e73a9e5fd0800000000000000
+      internalID: -2351272390534754861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_176
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 3647
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e424927ef91a980800000000000000
+      internalID: -8529360404084535793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_177
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 3681
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e50675eebebe1150800000000000000
+      internalID: 5845319093476263392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_178
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 3689
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c2becdc7e0089910800000000000000
+      internalID: 1844225042998538947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_179
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 3685
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49ca0406be4a13f60800000000000000
+      internalID: 8012366542907944084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_180
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 3649
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae4710451dbfd8c0800000000000000
+      internalID: -3972248447350255959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_181
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 3623
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ccd563abf0f51b60800000000000000
+      internalID: 7716338500138032327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_182
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 3647
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b32552d378cfa470800000000000000
+      internalID: 8408159429099594674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_183
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 3657
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a26ad41abaae84670800000000000000
+      internalID: 8523320317665191466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_184
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 3653
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48f336122ca3efa0800000000000000
+      internalID: -5772581034957473716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_185
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 3651
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9325b9994ca2f47e0800000000000000
+      internalID: -1779156303909006791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_186
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 3651
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6253314221e8b9550800000000000000
+      internalID: 6168680323179820326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_187
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 3649
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a5032c690d702560800000000000000
+      internalID: 7286961676507874727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_188
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3587
+        width: 58
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c7cb56952a7a6d60800000000000000
+      internalID: 7884248399520450504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_189
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 3587
+        width: 58
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58288cb1419f28110800000000000000
+      internalID: 1261844710377947781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_190
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 3583
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e37fe759aff773a10800000000000000
+      internalID: 1889119282931889982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_191
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 3583
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b418dc32a5d82530800000000000000
+      internalID: 3830546375860819120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_192
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 3615
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 421da4847f2e10b20800000000000000
+      internalID: 3099007570305274148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_193
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 3619
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b42286be4549ffd20800000000000000
+      internalID: 3314530943215608395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_194
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 3487
+        width: 140
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25081d52fe508ebc0800000000000000
+      internalID: -3753743764723498926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_195
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 3519
+        width: 140
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acb0d92d4e14e79e0800000000000000
+      internalID: -1621786364764943414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_196
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3359
+        width: 257
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46d6aa9a7f983a8a0800000000000000
+      internalID: -6295036157337375388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_197
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 3553
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24e2cfc8b07cf71d0800000000000000
+      internalID: -3350740745316454846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_198
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 3553
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bf0f71b2fec5e8d0800000000000000
+      internalID: -2817618450095075406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_199
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 3553
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cefdf0ebf4a2e810800000000000000
+      internalID: 1793177003365367490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_200
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 3423
+        width: 98
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73f9cc4b5417c8c80800000000000000
+      internalID: -8319149867460157641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_201
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 3423
+        width: 98
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da92c193c9dfbf120800000000000000
+      internalID: 2448829669820869037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_202
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 3455
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28cf9b23769afeca0800000000000000
+      internalID: -5985379119054324606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_203
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 3461
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fcee6fa54e054340800000000000000
+      internalID: 4847296266393021685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_204
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 3457
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d555756843f329f70800000000000000
+      internalID: 9192479284241323357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_205
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 3459
+        width: 34
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca3bd357a22a47140800000000000000
+      internalID: 4716573013003056044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_206
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 3465
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86095197e0ab32ee0800000000000000
+      internalID: -1286980497174065048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_207
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 3463
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a70d4eb9278727e10800000000000000
+      internalID: 2193948402119921786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_208
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 3425
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85bc56ec7d5ecd770800000000000000
+      internalID: 8637030900433275736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_209
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 3425
+        width: 42
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a2e96827743b2b60800000000000000
+      internalID: 7722323672440627875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_210
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 3429
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e5b8f8e155b3180800000000000000
+      internalID: -9134613829445263757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_211
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 3429
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4466945e834310d20800000000000000
+      internalID: 3242930625653073476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_212
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 3431
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54d8a77f79d2b6a50800000000000000
+      internalID: 6515351416636869957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_213
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 3431
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de0406a6a2f48630800000000000000
+      internalID: 3928531572537691863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_214
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 3363
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f5e29cb89e2ab340800000000000000
+      internalID: 4880264379743004149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_215
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 3363
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa516db5ad64d59d0800000000000000
+      internalID: -2783991090987526742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_216
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 3363
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57558820e94c592a0800000000000000
+      internalID: -6731257885108972171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_217
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 3359
+        width: 26
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc717c6e2d94e4a80800000000000000
+      internalID: -8480759878128298035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_218
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 3359
+        width: 26
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc829454cfc0175b0800000000000000
+      internalID: -5372498602842576692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_219
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3039
+        width: 250
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d7f7a8c58a45500800000000000000
+      internalID: 384116983647403399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_220
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 3039
+        width: 318
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da4d96d1869015b0800000000000000
+      internalID: -5399650468821644587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_221
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 3039
+        width: 242
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f84c2430e69b8ef60800000000000000
+      internalID: 8063899014959121551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_222
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2687
+        width: 481
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9476db0408858e80800000000000000
+      internalID: -8176979997461416805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_223
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 2335
+        width: 482
+        height: 674
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a722b14545dfdb130800000000000000
+      internalID: 3584299417086927482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_224
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2591
+        width: 481
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f264f426eea4795a0800000000000000
+      internalID: -6514655948256098769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_225
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2335
+        width: 481
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 904c6d4f2220c2190800000000000000
+      internalID: -7986005690074872823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_226
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2047
+        width: 481
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acfa7e3f92f0d5f40800000000000000
+      internalID: 5718743774690521034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_227
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1759
+        width: 482
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d95fa93c29077bcb0800000000000000
+      internalID: -4848282698191800931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_228
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1951
+        width: 481
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a9203e06dd754de0800000000000000
+      internalID: -1349534155013084759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_229
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1759
+        width: 481
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33f90c8ba23326f30800000000000000
+      internalID: 4567269230688378675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_230
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1631
+        width: 65
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc8b980a5e0a953f0800000000000000
+      internalID: -911520541464479539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_231
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1631
+        width: 62
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cab7eeac4a244dfc0800000000000000
+      internalID: -3471076137249113172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_232
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 1279
+        width: 218
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b69f33859cb0dad20800000000000000
+      internalID: 3291299862073833835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_233
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 1279
+        width: 144
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47719d9fd83b1fb90800000000000000
+      internalID: -7209784106079938700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_234
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1279
+        width: 161
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0cc6dd391d41f010800000000000000
+      internalID: 1220841744801123343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_235
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 1293
+        width: 98
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8208e7b1dfe962380800000000000000
+      internalID: -8996328395700797400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_236
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 1279
+        width: 162
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89fbef67a2bf4bfe0800000000000000
+      internalID: -1174037443033251944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_237
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 1291
+        width: 104
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51330c8765a204280800000000000000
+      internalID: -9061195899388021995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_238
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 1215
+        width: 130
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baeb04faf0cabcff0800000000000000
+      internalID: -14728990400921941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_239
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1215
+        width: 130
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8adfb05d2a3cbaab0800000000000000
+      internalID: -4995684257510982232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_240
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 1215
+        width: 130
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43f845ffbbd3e32d0800000000000000
+      internalID: -3297129999536713932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_241
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1087
+        width: 98
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a0c07048511be4e0800000000000000
+      internalID: -1951446942799052637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_242
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1087
+        width: 98
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de0f707dc688769d0800000000000000
+      internalID: -2781104243832524563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_243
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 1087
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a57816d05291689c0800000000000000
+      internalID: -3925422378277828774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_244
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1087
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6934736b39dcb4f0800000000000000
+      internalID: -811534983738672788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_245
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1133
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b674c5f3202ef730800000000000000
+      internalID: 4034697654989780656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_246
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1119
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f7ad1760153ec670800000000000000
+      internalID: 8560838286243637235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_247
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 1119
+        width: 34
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3473846a4efb8340800000000000000
+      internalID: 4867263417771324475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_248
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1087
+        width: 98
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e6dbfee2ca476f10800000000000000
+      internalID: 2262859538870556387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_249
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 1023
+        width: 162
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a243faa00896dd80800000000000000
+      internalID: -8226220540710141275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_250
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 1023
+        width: 65
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2550a066846f4e5b0800000000000000
+      internalID: -5339872467344554670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_251
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1023
+        width: 98
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2d6157244559c800800000000000000
+      internalID: 633130973828050219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_252
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1023
+        width: 98
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 965d39fd6a31d06e0800000000000000
+      internalID: -1869816662852381335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_253
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 1023
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ffee7ff39066d7e0800000000000000
+      internalID: -1741098017169149962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_254
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1023
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 370f953e798b6dd90800000000000000
+      internalID: -7073263202244890509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_255
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 1023
+        width: 32
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60640004ad8769600800000000000000
+      internalID: 474699689506129414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_256
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 959
+        width: 66
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b898cca4b325350800000000000000
+      internalID: 6003926445683477250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_257
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1023
+        width: 34
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5482020a3e45da950800000000000000
+      internalID: 6461914376967301189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_258
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1023
+        width: 98
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59c5aba002d22d370800000000000000
+      internalID: 8345782675113139349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_259
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 959
+        width: 98
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47a85face5004e810800000000000000
+      internalID: 1793558958732315252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_260
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 959
+        width: 98
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67c403ecb71e59ee0800000000000000
+      internalID: -1254848999296316298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_261
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 959
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28ed33fac9588d7b0800000000000000
+      internalID: -5199258861798433150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_262
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 959
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50d2b4929eae79090800000000000000
+      internalID: -8027689523623547643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_263
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 973
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e38034a3ed6a9e50800000000000000
+      internalID: 6816881810458313699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_264
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 959
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f424645d3d6fe7a30800000000000000
+      internalID: 4215077690942046799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_265
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 927
+        width: 98
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c90d535da7890b4b0800000000000000
+      internalID: -5426669897650941796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_266
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 863
+        width: 162
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4dd33404ead05fb0800000000000000
+      internalID: -4660984941470556852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_267
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 863
+        width: 65
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b41a300f17617240800000000000000
+      internalID: 4787721261717001395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_268
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 863
+        width: 98
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4631a40c7fbc8af70800000000000000
+      internalID: 9198826503847678820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_269
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 863
+        width: 98
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86ddfa816480a01e0800000000000000
+      internalID: -2230961568253747864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_270
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 863
+        width: 34
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e31b10827dc942d0800000000000000
+      internalID: -3293875760785583129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_271
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 863
+        width: 34
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cdc618fe4d8eb290800000000000000
+      internalID: -7872699728287838782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_272
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 863
+        width: 32
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0bba8a50a52a40e0800000000000000
+      internalID: -2284972490293069046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_273
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 863
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86e5424ead85da480800000000000000
+      internalID: -8886348792578417048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_274
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 863
+        width: 34
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bb4b892b6bac2ad0800000000000000
+      internalID: -2725615197719147596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_275
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 799
+        width: 226
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63aa778b6acfc4f20800000000000000
+      internalID: 3408376811002243638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_276
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 703
+        width: 66
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eea12264e151517a0800000000000000
+      internalID: -6407191675094820114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_277
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 703
+        width: 65
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba954685e80910090800000000000000
+      internalID: -8070010116228490837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_278
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 607
+        width: 192
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0878f28602a21100800000000000000
+      internalID: 77302292469544974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_279
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 703
+        width: 94
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc363df69b46ecf80800000000000000
+      internalID: -8084413533475609653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_280
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 575
+        width: 190
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 333412b44a1988300800000000000000
+      internalID: 254613513767568179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_281
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 703
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21600b2e2e2e79de0800000000000000
+      internalID: -1326342101143648750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_282
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 703
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee14527387ea68d0800000000000000
+      internalID: -2852212862240940312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_283
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 575
+        width: 66
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c545a5153140cdfd0800000000000000
+      internalID: -2315971627359513508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_284
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 607
+        width: 16
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53001d18e8cb2fd00800000000000000
+      internalID: 1005072987106377781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_285
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 639
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e36712c78ea10f50800000000000000
+      internalID: 6845944806679995369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_286
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 639
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19fcc528e5bb98de0800000000000000
+      internalID: -1330326200322830447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_287
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 479
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 462dd9c11805201d0800000000000000
+      internalID: -3386055454368083356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_288
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 575
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a70d7e5088249d440800000000000000
+      internalID: 4961069616507375738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_289
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 575
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9295be4b04e802690800000000000000
+      internalID: -7628941360201246423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_290
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 383
+        width: 192
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ac19c63822f997a0800000000000000
+      internalID: -6369793943407092568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_291
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 351
+        width: 190
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3acc0d06314981b0800000000000000
+      internalID: -5653916156783965635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_292
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 479
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d1b2d0d23d54de0800000000000000
+      internalID: -1349440322879677038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_293
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 479
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e041e64697dc572a0800000000000000
+      internalID: -6740255346030406642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_294
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 133
+        width: 84
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 058ad20ad7f1117d0800000000000000
+      internalID: -2949541656532244400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_295
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 351
+        width: 66
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6e63ca1b59e1bf0800000000000000
+      internalID: -351679130557290760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_296
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 383
+        width: 16
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2ff517bcd97d6b70800000000000000
+      internalID: 8893898827998035758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_297
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 415
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1ececc5cd9d42830800000000000000
+      internalID: 4045597905758637599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_298
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 415
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f03189862b8c7910800000000000000
+      internalID: 1836495745692283120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_299
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 287
+        width: 290
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 981c0a093bc516390800000000000000
+      internalID: -7826872751097855607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_300
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 351
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a1f83a9b5d3c2770800000000000000
+      internalID: 8587306053127434661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_301
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 351
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6632b52e9edbac30800000000000000
+      internalID: 4371832634111833708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_302
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 287
+        width: 258
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0655f1a2ba6d8a810800000000000000
+      internalID: 1776906083632108896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_303
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 0
+        width: 322
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c92c158563a23f0800000000000000
+      internalID: -924867020514485175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_304
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 0
+        width: 322
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 034f5203e2b4b1c10800000000000000
+      internalID: 2025295119181542448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_305
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 103
+        width: 28
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c6ad5ba127c56120800000000000000
+      internalID: 2406548523322287817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_Props_and_Buildings_32x32_306
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 95
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b258e3e2d9843fee0800000000000000
+      internalID: -1228558433419098837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

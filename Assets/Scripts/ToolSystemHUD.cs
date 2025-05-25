@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ToolSystemHUUD : MonoBehaviour
+public class ToolSystemHUD : MonoBehaviour
 {
     [SerializeField] private ToolSystem toolSystem;
 
@@ -16,18 +16,14 @@ public class ToolSystemHUUD : MonoBehaviour
         selectedToolName = root.Q<Label>("SelectedToolName");
 
         toolSystem.OnSelectedToolChange += UpdateDisplay;
-        UpdateDisplay();
+        UpdateDisplay();  // remove initial (test) values from ui builder
     }
     
     private void OnDisable()
     {
         toolSystem.OnSelectedToolChange -= UpdateDisplay;
     }
-
-    private void Update()
-    {
-        UpdateDisplay();
-    }
+    
 
     private void UpdateDisplay()
     {

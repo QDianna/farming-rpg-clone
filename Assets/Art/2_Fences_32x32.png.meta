@@ -1,0 +1,1892 @@
+fileFormatVersion: 2
+guid: 77a9c9ad4951b4c458ece7a9adf5c80a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 946272038965354408
+    second: 2_Fences_32x32_0
+  - first:
+      213: -3276029477381613457
+    second: 2_Fences_32x32_1
+  - first:
+      213: 7325096762797501250
+    second: 2_Fences_32x32_2
+  - first:
+      213: -6377787532305144354
+    second: 2_Fences_32x32_3
+  - first:
+      213: 2276795800483469204
+    second: 2_Fences_32x32_4
+  - first:
+      213: 8077426416872036040
+    second: 2_Fences_32x32_5
+  - first:
+      213: 7011072885355735667
+    second: 2_Fences_32x32_6
+  - first:
+      213: -6134315007947444603
+    second: 2_Fences_32x32_7
+  - first:
+      213: -6095042994118105990
+    second: 2_Fences_32x32_8
+  - first:
+      213: -4257787445262467615
+    second: 2_Fences_32x32_9
+  - first:
+      213: -7600704577566652734
+    second: 2_Fences_32x32_10
+  - first:
+      213: 8638069140705708627
+    second: 2_Fences_32x32_11
+  - first:
+      213: -224520556203219636
+    second: 2_Fences_32x32_12
+  - first:
+      213: -5892397770526210474
+    second: 2_Fences_32x32_13
+  - first:
+      213: -498101329444628449
+    second: 2_Fences_32x32_14
+  - first:
+      213: 5053104943942189721
+    second: 2_Fences_32x32_15
+  - first:
+      213: 7509776501752231855
+    second: 2_Fences_32x32_16
+  - first:
+      213: -5377035961405847887
+    second: 2_Fences_32x32_17
+  - first:
+      213: 4415637994228608684
+    second: 2_Fences_32x32_18
+  - first:
+      213: -6878958165258460596
+    second: 2_Fences_32x32_19
+  - first:
+      213: -3817007553545569205
+    second: 2_Fences_32x32_20
+  - first:
+      213: 8801922877788685219
+    second: 2_Fences_32x32_21
+  - first:
+      213: 3189579893608260977
+    second: 2_Fences_32x32_22
+  - first:
+      213: 1058648838443116255
+    second: 2_Fences_32x32_23
+  - first:
+      213: 8128535940444710104
+    second: 2_Fences_32x32_24
+  - first:
+      213: 3980185444363507700
+    second: 2_Fences_32x32_25
+  - first:
+      213: -6460868054336929750
+    second: 2_Fences_32x32_26
+  - first:
+      213: -7684637186254022087
+    second: 2_Fences_32x32_27
+  - first:
+      213: 4408107374235372162
+    second: 2_Fences_32x32_28
+  - first:
+      213: -5501577206125760547
+    second: 2_Fences_32x32_29
+  - first:
+      213: -8009275402598825786
+    second: 2_Fences_32x32_30
+  - first:
+      213: -3952159278309601762
+    second: 2_Fences_32x32_31
+  - first:
+      213: -4870739736364180842
+    second: 2_Fences_32x32_32
+  - first:
+      213: -2824388546273048369
+    second: 2_Fences_32x32_33
+  - first:
+      213: 8562035870039219897
+    second: 2_Fences_32x32_34
+  - first:
+      213: -2139968770068260219
+    second: 2_Fences_32x32_35
+  - first:
+      213: -1237083132579284002
+    second: 2_Fences_32x32_36
+  - first:
+      213: 6259372665884595809
+    second: 2_Fences_32x32_37
+  - first:
+      213: -7785183268519614091
+    second: 2_Fences_32x32_38
+  - first:
+      213: -2144296714446226098
+    second: 2_Fences_32x32_39
+  - first:
+      213: 3827084275620299377
+    second: 2_Fences_32x32_40
+  - first:
+      213: 5688254681899857107
+    second: 2_Fences_32x32_41
+  - first:
+      213: -1367852481515047716
+    second: 2_Fences_32x32_42
+  - first:
+      213: -456813743229282906
+    second: 2_Fences_32x32_43
+  - first:
+      213: 8009013945640184624
+    second: 2_Fences_32x32_44
+  - first:
+      213: -3890979654788540982
+    second: 2_Fences_32x32_45
+  - first:
+      213: -2128410856861647518
+    second: 2_Fences_32x32_46
+  - first:
+      213: 8889003935818846546
+    second: 2_Fences_32x32_47
+  - first:
+      213: 4755809652889965295
+    second: 2_Fences_32x32_48
+  - first:
+      213: 6555532952388537940
+    second: 2_Fences_32x32_49
+  - first:
+      213: -5157554610929163040
+    second: 2_Fences_32x32_50
+  - first:
+      213: -9124175797447603405
+    second: 2_Fences_32x32_51
+  - first:
+      213: 5837840675632853221
+    second: 2_Fences_32x32_52
+  - first:
+      213: 2525960438994187018
+    second: 2_Fences_32x32_53
+  - first:
+      213: -6089005435872380788
+    second: 2_Fences_32x32_54
+  - first:
+      213: 6012052231920235780
+    second: 2_Fences_32x32_55
+  - first:
+      213: 7092665066910972819
+    second: 2_Fences_32x32_56
+  - first:
+      213: 3686860442568500387
+    second: 2_Fences_32x32_57
+  - first:
+      213: 7113966918605700399
+    second: 2_Fences_32x32_58
+  - first:
+      213: 6071649846368922180
+    second: 2_Fences_32x32_59
+  - first:
+      213: -2380631208291092078
+    second: 2_Fences_32x32_60
+  - first:
+      213: -7353275534538572616
+    second: 2_Fences_32x32_61
+  - first:
+      213: -2472200906237928431
+    second: 2_Fences_32x32_62
+  - first:
+      213: -7086575546880067222
+    second: 2_Fences_32x32_63
+  - first:
+      213: -3518634404141608522
+    second: 2_Fences_32x32_64
+  - first:
+      213: -3934421960295385035
+    second: 2_Fences_32x32_65
+  - first:
+      213: -4542389602936433171
+    second: 2_Fences_32x32_66
+  - first:
+      213: -1368926687620841706
+    second: 2_Fences_32x32_67
+  - first:
+      213: 709790509681045665
+    second: 2_Fences_32x32_68
+  - first:
+      213: -5134568882359581960
+    second: 2_Fences_32x32_69
+  - first:
+      213: 1999103251335900653
+    second: 2_Fences_32x32_70
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 2_Fences_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 415
+        width: 95
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8af1a67e765d12d00800000000000000
+      internalID: 946272038965354408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 447
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f68d5f62c843982d0800000000000000
+      internalID: -3276029477381613457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 463
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24ba8eb12b8f7a560800000000000000
+      internalID: 7325096762797501250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 415
+        width: 96
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed56904c70c8d77a0800000000000000
+      internalID: -6377787532305144354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 447
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4971be1b7bdc89f10800000000000000
+      internalID: 2276795800483469204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 463
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c69305b788c81070800000000000000
+      internalID: 8077426416872036040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 415
+        width: 96
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37a600a94a55c4160800000000000000
+      internalID: 7011072885355735667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 447
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ee1f250098edaa0800000000000000
+      internalID: -6134315007947444603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 463
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a746bd490be0a6ba0800000000000000
+      internalID: -6095042994118105990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 449
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ed330490ec49e4c0800000000000000
+      internalID: -4257787445262467615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 415
+        width: 96
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c6447bf47fd48690800000000000000
+      internalID: -7600704577566652734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 447
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35a0705fd1690e770800000000000000
+      internalID: 8638069140705708627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 463
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c45ebb26eb752ecf0800000000000000
+      internalID: -224520556203219636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 449
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6564b7c627ff93ea0800000000000000
+      internalID: -5892397770526210474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 417
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f189d4cda736619f0800000000000000
+      internalID: -498101329444628449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 383
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 992c17c8c2c302640800000000000000
+      internalID: 5053104943942189721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 417
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa7748990f5183860800000000000000
+      internalID: 7509776501752231855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 383
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b647e7284ee065b0800000000000000
+      internalID: -5377035961405847887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 417
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caee6b65c5f774d30800000000000000
+      internalID: 4415637994228608684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 383
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c422ff6bef70980a0800000000000000
+      internalID: -6878958165258460596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 417
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4cfee97ad3470bc0800000000000000
+      internalID: -3817007553545569205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 383
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a38af60936b62a70800000000000000
+      internalID: 8801922877788685219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 383
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 175af3d930aa34c20800000000000000
+      internalID: 3189579893608260977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 383
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd62845728311be00800000000000000
+      internalID: 1058648838443116255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 383
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4e33afe5c5ec070800000000000000
+      internalID: 8128535940444710104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 383
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f7977fd2957c3730800000000000000
+      internalID: 3980185444363507700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 383
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2004985cb26656a0800000000000000
+      internalID: -6460868054336929750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 383
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93a529da13faa5590800000000000000
+      internalID: -7684637186254022087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 383
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a441d3d4ebc2d30800000000000000
+      internalID: 4408107374235372162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 383
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddfec7cfda876a3b0800000000000000
+      internalID: -5501577206125760547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 255
+        width: 65
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c0c2dfc47659d090800000000000000
+      internalID: -8009275402598825786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 255
+        width: 66
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1e8798631c1729c0800000000000000
+      internalID: -3952159278309601762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 255
+        width: 66
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a12ac1408a76cb0800000000000000
+      internalID: -4870739736364180842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 255
+        width: 66
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc886b7d491cdc8d0800000000000000
+      internalID: -2824388546273048369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 255
+        width: 66
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be17db924672d670800000000000000
+      internalID: 8562035870039219897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 255
+        width: 66
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ad6adddbd4d42e0800000000000000
+      internalID: -2139968770068260219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 31
+        width: 208
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edbfbfcf17ff4dee0800000000000000
+      internalID: -1237083132579284002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 319
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16657daa642cdd650800000000000000
+      internalID: 6259372665884595809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 255
+        width: 84
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579e290a01975f390800000000000000
+      internalID: -7785183268519614091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 255
+        width: 18
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4d356acf7ded32e0800000000000000
+      internalID: -2144296714446226098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 287
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 172c4d53fd88c1530800000000000000
+      internalID: 3827084275620299377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 255
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d4f79ade7db0fe40800000000000000
+      internalID: 5688254681899857107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 255
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd4b82e4a69640de0800000000000000
+      internalID: -1367852481515047716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 127
+        width: 66
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a55d42225219a9f0800000000000000
+      internalID: -456813743229282906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 223
+        width: 40
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b680fffbbb52f60800000000000000
+      internalID: 8009013945640184624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 223
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac59e088e96700ac0800000000000000
+      internalID: -3890979654788540982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 223
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26d3dac3a9d5672e0800000000000000
+      internalID: -2128410856861647518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 223
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2511881dbf51c5b70800000000000000
+      internalID: 8889003935818846546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 223
+        width: 66
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe251e39ea7000240800000000000000
+      internalID: 4755809652889965295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 225
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45e8c7ccc7ee9fa50800000000000000
+      internalID: 6555532952388537940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 139
+        width: 52
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e4a3e1486fac68b0800000000000000
+      internalID: -5157554610929163040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 129
+        width: 42
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b4be4447a606180800000000000000
+      internalID: -9124175797447603405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 159
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e03c6e0a2d240150800000000000000
+      internalID: 5837840675632853221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 95
+        width: 98
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0330fad2a30e0320800000000000000
+      internalID: 2525960438994187018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 159
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c88776721d18f7ba0800000000000000
+      internalID: -6089005435872380788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 159
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40533b6d6a91f6350800000000000000
+      internalID: 6012052231920235780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 159
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39bfc00cc453e6260800000000000000
+      internalID: 7092665066910972819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 191
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a42cb7e90c5a2330800000000000000
+      internalID: 3686860442568500387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 191
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2d7f579833e9b260800000000000000
+      internalID: 7113966918605700399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 193
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44aef55cd55d24450800000000000000
+      internalID: 6071649846368922180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 191
+        width: 97
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 299b998778c46fed0800000000000000
+      internalID: -2380631208291092078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 167
+        width: 90
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bcf1445cdae3f990800000000000000
+      internalID: -7353275534538572616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 97
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11c1a42cf5af0bdd0800000000000000
+      internalID: -2472200906237928431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 95
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a697e3e161d67ad90800000000000000
+      internalID: -7086575546880067222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 95
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b1dba6e6ac4b2fc0800000000000000
+      internalID: -3518634404141608522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 95
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 538f81492102669c0800000000000000
+      internalID: -3934421960295385035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 71
+        width: 16
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de5db8509b036f0c0800000000000000
+      internalID: -4542389602936433171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 71
+        width: 14
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61fbec43e68900de0800000000000000
+      internalID: -1368926687620841706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 31
+        width: 98
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a07b7a35bea9d900800000000000000
+      internalID: 709790509681045665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 31
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f2ce2c3ec85eb8b0800000000000000
+      internalID: -5134568882359581960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_Fences_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 31
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded643db0dd3ebb10800000000000000
+      internalID: 1999103251335900653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

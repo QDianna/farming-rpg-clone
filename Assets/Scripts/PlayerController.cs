@@ -21,10 +21,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidbody2d;
     private Vector2 move;
     private Vector2 moveDirection = new Vector2(0, -1);
-    private float unitsPerSecond = 4.0f;
+    public float speed = 6.0f;  // units per second
     
     [Header("Animation")] 
-    private Animator animator;
+    [HideInInspector] public Animator animator;
 
     [Header("Interaction")]
     [SerializeField] private InputAction InteractAction;
@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
     [Header("Tool")]
     [SerializeField] private InputAction ToolAction;
     private ToolSystem toolSystem;
-    public Transform toolPivot;  // used for positioning and animation of tools
 
     [Header("Inventory")]
     [SerializeField] private InputAction InventoryAction;
@@ -44,7 +43,7 @@ public class PlayerController : MonoBehaviour
     public PlotlandController plotlandController;
 
     [Header("Stats")]
-    public PlayerStats playerStats;
+    [HideInInspector] public PlayerStats playerStats;
     
     // debug / starter items
     public InventoryItem seed1;
@@ -88,7 +87,6 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Move X", moveDirection.x);
         animator.SetFloat("Move Y", moveDirection.y);
         animator.SetFloat("Speed", move.magnitude);
-        UpdateToolDirection(moveDirection);
         
         HandleInteractInput();  // check if the player is interacting with IInteractables or Tilemaps
         HandleToolInput();  // check if the player is using tools
@@ -98,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 position = (Vector2)rigidbody2d.position + unitsPerSecond * Time.deltaTime * move;
+        Vector2 position = rigidbody2d.position + speed * Time.deltaTime * move;
         rigidbody2d.MovePosition(position);
     }
     
@@ -116,18 +114,17 @@ public class PlayerController : MonoBehaviour
     private void HandleToolInput()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            toolSystem.SetTool(1, this);
+            toolSystem.SetTool(1);
         
         else if (Input.GetKeyDown(KeyCode.Alpha2))
-            toolSystem.SetTool(2, this);
+            toolSystem.SetTool(2);
         
         else if (Input.GetKeyDown(KeyCode.Alpha0))
-            toolSystem.SetTool(0, this);
+            toolSystem.SetTool(0);
         
         if (ToolAction.triggered)
         {
             toolSystem.UseTool(this);
-            animator.SetTrigger("UseTool");
         }
     }
     
@@ -144,50 +141,5 @@ public class PlayerController : MonoBehaviour
     }
     
     #endregion
-
-    
-    #region Aux methods
-    
-    private void UpdateToolDirection(Vector2 direction)
-    {
-        Vector3 positionOffset = new Vector3(-0.45f, 0.6f, 0);
-        // float rotationAngle = 13.25f;  // bug? rotation doesn't work
-        
-        if (direction.y < 0 && Mathf.Abs(direction.y) > Mathf.Abs(direction.x))          // down
-        {
-            toolPivot.localPosition = positionOffset;
-            // toolPivot.localRotation = Quaternion.Euler(0, 0, rotationAngle);
-        }
-        else if (direction.y > 0 && Mathf.Abs(direction.y) > Mathf.Abs(direction.x))     // up
-        {
-            toolPivot.localPosition = new Vector3(
-                -positionOffset.x,
-                positionOffset.y,
-                -positionOffset.z
-            );
-            // toolPivot.localRotation = Quaternion.Euler(0, 0, -rotationAngle);;
-        }
-        else if (direction.x < 0)                                                          // left
-        {
-            toolPivot.localPosition = new Vector3(
-                0.0f * positionOffset.x,
-                positionOffset.y,
-                positionOffset.z
-            );
-            // toolPivot.localRotation = Quaternion.Euler(0, 0, -rotationAngle);
-        }
-        else if (direction.x > 0)                                                         // right
-        {
-            toolPivot.localPosition = new Vector3(
-                0.0f * positionOffset.x,
-                positionOffset.y,
-                positionOffset.z
-            );
-            // toolPivot.localRotation = Quaternion.Euler(0, 0, rotationAngle);
-        }
-    }
-    
-    #endregion
-    
     
 }

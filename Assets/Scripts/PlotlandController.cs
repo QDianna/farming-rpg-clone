@@ -57,7 +57,7 @@ public class PlotlandController : MonoBehaviour
 
     public TileBase lockedTile;
     public TileBase emptyTile;
-    public TileBase tilledTile;                             // tile pamant arat
+    public TileBase tilledTile;
 
     private Dictionary<Vector3Int, PlotData> plotStates = new();
     
