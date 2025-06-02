@@ -1,0 +1,1469 @@
+fileFormatVersion: 2
+guid: f06bcf7a4a809ff4faa17e2729e8ca40
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8414946874860091191
+    second: Farmer_2_32x32_idle_walking_0
+  - first:
+      213: 8683477359928721263
+    second: Farmer_2_32x32_idle_walking_1
+  - first:
+      213: -852091984582717235
+    second: Farmer_2_32x32_idle_walking_2
+  - first:
+      213: 7891772418502533835
+    second: Farmer_2_32x32_idle_walking_3
+  - first:
+      213: 280569173002449938
+    second: Farmer_2_32x32_idle_walking_4
+  - first:
+      213: 8141413813371123252
+    second: Farmer_2_32x32_idle_walking_5
+  - first:
+      213: 5848840872440638695
+    second: Farmer_2_32x32_idle_walking_6
+  - first:
+      213: -5060865002502128569
+    second: Farmer_2_32x32_idle_walking_7
+  - first:
+      213: 784896237264000746
+    second: Farmer_2_32x32_idle_walking_8
+  - first:
+      213: 1039483969887888261
+    second: Farmer_2_32x32_idle_walking_9
+  - first:
+      213: -385611951929893201
+    second: Farmer_2_32x32_idle_walking_10
+  - first:
+      213: -8868692189638733259
+    second: Farmer_2_32x32_idle_walking_11
+  - first:
+      213: 6313010568893799836
+    second: Farmer_2_32x32_idle_walking_12
+  - first:
+      213: -5553619302064342337
+    second: Farmer_2_32x32_idle_walking_13
+  - first:
+      213: -5138353825652284120
+    second: Farmer_2_32x32_idle_walking_14
+  - first:
+      213: -360869616003986289
+    second: Farmer_2_32x32_idle_walking_15
+  - first:
+      213: -4333740324512908391
+    second: Farmer_2_32x32_idle_walking_16
+  - first:
+      213: -7054771815626101850
+    second: Farmer_2_32x32_idle_walking_17
+  - first:
+      213: 7073629603776228463
+    second: Farmer_2_32x32_idle_walking_18
+  - first:
+      213: -7313940341001510466
+    second: Farmer_2_32x32_idle_walking_19
+  - first:
+      213: 2471435848240278942
+    second: Farmer_2_32x32_idle_walking_20
+  - first:
+      213: 8082155685684777063
+    second: Farmer_2_32x32_idle_walking_21
+  - first:
+      213: -2278240077370673116
+    second: Farmer_2_32x32_idle_walking_22
+  - first:
+      213: 9217904178809884045
+    second: Farmer_2_32x32_idle_walking_23
+  - first:
+      213: -9137405822442150781
+    second: Farmer_2_32x32_idle_walking_24
+  - first:
+      213: 1055419313445772674
+    second: Farmer_2_32x32_idle_walking_25
+  - first:
+      213: -3455487800779928720
+    second: Farmer_2_32x32_idle_walking_26
+  - first:
+      213: -6404558865345297132
+    second: Farmer_2_32x32_idle_walking_27
+  - first:
+      213: 3134424010931690553
+    second: Farmer_2_32x32_idle_walking_28
+  - first:
+      213: -1521311631656693264
+    second: Farmer_2_32x32_idle_walking_29
+  - first:
+      213: 4308794402724267270
+    second: Farmer_2_32x32_idle_walking_30
+  - first:
+      213: -1432431284477133544
+    second: Farmer_2_32x32_idle_walking_31
+  - first:
+      213: 8350010386038919461
+    second: Farmer_2_32x32_idle_walking_32
+  - first:
+      213: 4930600708818811339
+    second: Farmer_2_32x32_idle_walking_33
+  - first:
+      213: 6068968960601275577
+    second: Farmer_2_32x32_idle_walking_34
+  - first:
+      213: -4671769924302776415
+    second: Farmer_2_32x32_idle_walking_35
+  - first:
+      213: -3053481631190294247
+    second: Farmer_2_32x32_idle_walking_36
+  - first:
+      213: 6427373517291433459
+    second: Farmer_2_32x32_idle_walking_37
+  - first:
+      213: -3077932192220957316
+    second: Farmer_2_32x32_idle_walking_38
+  - first:
+      213: 2645610555538185980
+    second: Farmer_2_32x32_idle_walking_39
+  - first:
+      213: 765646242532798943
+    second: Farmer_2_32x32_idle_walking_40
+  - first:
+      213: 986550445553008302
+    second: Farmer_2_32x32_idle_walking_41
+  - first:
+      213: -6987769578497087242
+    second: Farmer_2_32x32_idle_walking_42
+  - first:
+      213: -5510722504211202286
+    second: Farmer_2_32x32_idle_walking_43
+  - first:
+      213: 2513919074070058971
+    second: Farmer_2_32x32_idle_walking_44
+  - first:
+      213: -1560689696151248705
+    second: Farmer_2_32x32_idle_walking_45
+  - first:
+      213: -5395236132629100419
+    second: Farmer_2_32x32_idle_walking_46
+  - first:
+      213: 4408906790840756568
+    second: Farmer_2_32x32_idle_walking_47
+  - first:
+      213: 900171229355318803
+    second: Farmer_2_32x32_idle_walking_48
+  - first:
+      213: 3636967271941324562
+    second: Farmer_2_32x32_idle_walking_49
+  - first:
+      213: -638799122911602473
+    second: Farmer_2_32x32_idle_walking_50
+  - first:
+      213: -5237216986660308121
+    second: Farmer_2_32x32_idle_walking_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 298
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 737b1df2995e7c470800000000000000
+      internalID: 8414946874860091191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 298
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6fb2bdd6a8e18870800000000000000
+      internalID: 8683477359928721263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_2
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 298
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc05df6cad2cc24f0800000000000000
+      internalID: -852091984582717235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_3
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 298
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc2a115c335358d60800000000000000
+      internalID: 7891772418502533835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_4
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2147cb32d28c4e300800000000000000
+      internalID: 280569173002449938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_5
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 436b17b6abc1cf070800000000000000
+      internalID: 8141413813371123252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_6
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 170
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ec2c95f8c14b2150800000000000000
+      internalID: 5848840872440638695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_7
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 170
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74c77a5081234c9b0800000000000000
+      internalID: -5060865002502128569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_8
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae659af18f284ea00800000000000000
+      internalID: 784896237264000746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_9
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58361e6c92dfc6e00800000000000000
+      internalID: 1039483969887888261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_10
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faed21809f706aaf0800000000000000
+      internalID: -385611951929893201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_11
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5325d4e11731ce480800000000000000
+      internalID: -8868692189638733259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_12
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 170
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d93362aa15c9750800000000000000
+      internalID: 6313010568893799836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_13
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 170
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbab3ba4ba49de2b0800000000000000
+      internalID: -5553619302064342337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_14
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 825e9b37b66e0b8b0800000000000000
+      internalID: -5138353825652284120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_15
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8cc9d70ffeedfaf0800000000000000
+      internalID: -360869616003986289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_16
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99b3f90d2267bd3c0800000000000000
+      internalID: -4333740324512908391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_17
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ab2b26596a681e90800000000000000
+      internalID: -7054771815626101850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_18
+      rect:
+        serializedVersion: 2
+        x: 1373
+        y: 170
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6ce4cd95a49a2260800000000000000
+      internalID: 7073629603776228463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_19
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 170
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb1a432c20aaf7a90800000000000000
+      internalID: -7313940341001510466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_20
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9d278b4fcd4c4220800000000000000
+      internalID: 2471435848240278942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_21
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76015a866c5992070800000000000000
+      internalID: 8082155685684777063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_22
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 428334368b01260e0800000000000000
+      internalID: -2278240077370673116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_23
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d4d8713039cef70800000000000000
+      internalID: 9217904178809884045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_24
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 170
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 384efb801d9613180800000000000000
+      internalID: -9137405822442150781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_25
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 170
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28d9503164a95ae00800000000000000
+      internalID: 1055419313445772674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_26
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b01d43724ab00d0800000000000000
+      internalID: -3455487800779928720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_27
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 170
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 415c30015af6e17a0800000000000000
+      internalID: -6404558865345297132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_28
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 42
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93cd903f706bf7b20800000000000000
+      internalID: 3134424010931690553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_29
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 44
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f1de6a912733eae0800000000000000
+      internalID: -1521311631656693264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_30
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 42
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60542982ea9ebcb30800000000000000
+      internalID: 4308794402724267270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_31
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 42
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81d759b065bfe1ce0800000000000000
+      internalID: -1432431284477133544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_32
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 44
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5211ca2b43231e370800000000000000
+      internalID: 8350010386038919461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_33
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 42
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc93f62a8330d6440800000000000000
+      internalID: 4930600708818811339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_34
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 42
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bcb2896d1f493450800000000000000
+      internalID: 6068968960601275577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_35
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 42
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a75495810a8a2fb0800000000000000
+      internalID: -4671769924302776415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_36
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 42
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 911e8bc62aadf95d0800000000000000
+      internalID: -3053481631190294247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_37
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 42
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fda8e8092e923950800000000000000
+      internalID: 6427373517291433459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_38
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 42
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c753eef8afcf845d0800000000000000
+      internalID: -3077932192220957316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_39
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 42
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfe90e088c817b420800000000000000
+      internalID: 2645610555538185980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_40
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 42
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd1b7c5733f10aa00800000000000000
+      internalID: 765646242532798943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_41
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 44
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaeb03c376ee0bd00800000000000000
+      internalID: 986550445553008302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_42
+      rect:
+        serializedVersion: 2
+        x: 1373
+        y: 42
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f866655794760f90800000000000000
+      internalID: -6987769578497087242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_43
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 42
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21f7db8541bf583b0800000000000000
+      internalID: -5510722504211202286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_44
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 44
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd7560c141c33e220800000000000000
+      internalID: 2513919074070058971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_45
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 42
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb0ea408df0575ae0800000000000000
+      internalID: -1560689696151248705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_46
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 44
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d784a4392554025b0800000000000000
+      internalID: -5395236132629100419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_47
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 42
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 859eedbed559f2d30800000000000000
+      internalID: 4408906790840756568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_48
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 44
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e10cab6fc0e7c00800000000000000
+      internalID: 900171229355318803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_49
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 44
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21fb8cfd67a197230800000000000000
+      internalID: 3636967271941324562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_50
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 42
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8d50c05978227f0800000000000000
+      internalID: -638799122911602473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer_2_32x32_idle_walking_51
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 44
+        width: 32
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76b787a06eaa157b0800000000000000
+      internalID: -5237216986660308121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 818c76bbaf6942841a04812e8613a9e7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Farmer_2_32x32_idle_walking_0: 8414946874860091191
+      Farmer_2_32x32_idle_walking_1: 8683477359928721263
+      Farmer_2_32x32_idle_walking_10: -385611951929893201
+      Farmer_2_32x32_idle_walking_11: -8868692189638733259
+      Farmer_2_32x32_idle_walking_12: 6313010568893799836
+      Farmer_2_32x32_idle_walking_13: -5553619302064342337
+      Farmer_2_32x32_idle_walking_14: -5138353825652284120
+      Farmer_2_32x32_idle_walking_15: -360869616003986289
+      Farmer_2_32x32_idle_walking_16: -4333740324512908391
+      Farmer_2_32x32_idle_walking_17: -7054771815626101850
+      Farmer_2_32x32_idle_walking_18: 7073629603776228463
+      Farmer_2_32x32_idle_walking_19: -7313940341001510466
+      Farmer_2_32x32_idle_walking_2: -852091984582717235
+      Farmer_2_32x32_idle_walking_20: 2471435848240278942
+      Farmer_2_32x32_idle_walking_21: 8082155685684777063
+      Farmer_2_32x32_idle_walking_22: -2278240077370673116
+      Farmer_2_32x32_idle_walking_23: 9217904178809884045
+      Farmer_2_32x32_idle_walking_24: -9137405822442150781
+      Farmer_2_32x32_idle_walking_25: 1055419313445772674
+      Farmer_2_32x32_idle_walking_26: -3455487800779928720
+      Farmer_2_32x32_idle_walking_27: -6404558865345297132
+      Farmer_2_32x32_idle_walking_28: 3134424010931690553
+      Farmer_2_32x32_idle_walking_29: -1521311631656693264
+      Farmer_2_32x32_idle_walking_3: 7891772418502533835
+      Farmer_2_32x32_idle_walking_30: 4308794402724267270
+      Farmer_2_32x32_idle_walking_31: -1432431284477133544
+      Farmer_2_32x32_idle_walking_32: 8350010386038919461
+      Farmer_2_32x32_idle_walking_33: 4930600708818811339
+      Farmer_2_32x32_idle_walking_34: 6068968960601275577
+      Farmer_2_32x32_idle_walking_35: -4671769924302776415
+      Farmer_2_32x32_idle_walking_36: -3053481631190294247
+      Farmer_2_32x32_idle_walking_37: 6427373517291433459
+      Farmer_2_32x32_idle_walking_38: -3077932192220957316
+      Farmer_2_32x32_idle_walking_39: 2645610555538185980
+      Farmer_2_32x32_idle_walking_4: 280569173002449938
+      Farmer_2_32x32_idle_walking_40: 765646242532798943
+      Farmer_2_32x32_idle_walking_41: 986550445553008302
+      Farmer_2_32x32_idle_walking_42: -6987769578497087242
+      Farmer_2_32x32_idle_walking_43: -5510722504211202286
+      Farmer_2_32x32_idle_walking_44: 2513919074070058971
+      Farmer_2_32x32_idle_walking_45: -1560689696151248705
+      Farmer_2_32x32_idle_walking_46: -5395236132629100419
+      Farmer_2_32x32_idle_walking_47: 4408906790840756568
+      Farmer_2_32x32_idle_walking_48: 900171229355318803
+      Farmer_2_32x32_idle_walking_49: 3636967271941324562
+      Farmer_2_32x32_idle_walking_5: 8141413813371123252
+      Farmer_2_32x32_idle_walking_50: -638799122911602473
+      Farmer_2_32x32_idle_walking_51: -5237216986660308121
+      Farmer_2_32x32_idle_walking_6: 5848840872440638695
+      Farmer_2_32x32_idle_walking_7: -5060865002502128569
+      Farmer_2_32x32_idle_walking_8: 784896237264000746
+      Farmer_2_32x32_idle_walking_9: 1039483969887888261
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

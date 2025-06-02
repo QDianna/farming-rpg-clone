@@ -29,7 +29,7 @@ public class CropItem : InventoryItem
     /// </summary>
     public void DisplayCrop(Vector3 playerPosition, PlayerController player)
     {
-        Vector2 offset = Random.insideUnitCircle;
+        Vector2 offset = 1.4f * Random.insideUnitCircle;
         Vector3 cropSpawnPosition = playerPosition + new Vector3(offset.x, offset.y, 0);
 
         if (droppedItemPrefab != null)

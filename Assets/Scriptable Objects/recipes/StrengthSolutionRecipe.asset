@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: StrengthSolutionRecipe
+  m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
+  recipeName: StrengthSolutionRecipe
+  result: {fileID: 11400000, guid: 2241858d540146b418611ebffd97d3a0, type: 2}
+  resultQuantity: 1
+  ingredients:
+  - item: {fileID: 11400000, guid: bb69fbc96e57eee4aa0f78539332d899, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 6f4601b4ff94fae4b98a57b009f13da7, type: 2}
+    quantity: 1
+  prerequisiteRecipes: []
+  isUnlocked: 1
+  startsUnlocked: 1

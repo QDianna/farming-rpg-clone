@@ -8,7 +8,7 @@ public class InteractionSleep : MonoBehaviour, IInteractable
         if (player != null)
         {
             Debug.Log("Press E to sleep!");
-            player.interactionSystem.SetInteractable(this);
+            InteractionSystem.Instance.SetCurrentInteractable(this);
         }
     }
 
@@ -18,7 +18,7 @@ public class InteractionSleep : MonoBehaviour, IInteractable
         if (player != null)
         {
             Debug.Log("exited interaction");
-            player.interactionSystem.SetInteractable(null);
+            InteractionSystem.Instance.SetCurrentInteractable(null);
         }
     }
 

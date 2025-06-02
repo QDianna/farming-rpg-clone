@@ -13,7 +13,7 @@ using UnityEngine;
 public class DroppedItem : MonoBehaviour
 {
     private PlayerController target;
-    private float speed = 4.5f;
+    private float speed = 4.0f;
     private float stopDistance = 0.1f;
     
     public void Initialize(PlayerController player)

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a679d765daf249b4b6c1fea94226ca57, type: 3}
-  m_Name: Carrot Seed Item
+  m_Name: CarrotSeed
   m_EditorClassIdentifier: 
-  itemName: carrot_seed
+  itemName: CarrotSeed
   itemSprite: {fileID: 9191730558843939209, guid: 4038e15739dd2be498076e728299f386, type: 3}
   growthTime: 10
   seedTile: {fileID: 11400000, guid: f5780b054e859e6479feb5b305b27a76, type: 2}

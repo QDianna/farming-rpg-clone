@@ -26,13 +26,38 @@ public class InventoryEntry
 
 public class InventorySystem : MonoBehaviour
 {
+    public static InventorySystem Instance { get; private set; }
+    
     private List<InventoryEntry> items = new();
     public event System.Action OnSelectedItemChange;
+    public event System.Action OnInventoryChanged;  // NEW - when items added/removed
+    public event System.Action<InventoryItem> OnInventoryItemClicked;  // NEW - when item clicked
+    
     private int selectedItem = -2;
 
-    void Awake()
+    private void Awake()
     {
+        // Singleton pattern
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
         selectedItem = -2;
+    }
+
+    public bool HasItem(InventoryItem item, int quantity)
+    {
+        foreach (var entry in items)
+            if (entry.item == item && entry.quantity >= quantity)
+                return true;
+
+        return false;
     }
 
     public void UseCurrentItem(PlayerController player)
@@ -92,6 +117,8 @@ public class InventorySystem : MonoBehaviour
             entry.quantity += amount;
         else
             items.Add(new InventoryEntry(item, amount));
+        
+        OnInventoryChanged?.Invoke();  // Notify UI
     }
 
     public void RemoveItem(InventoryItem item, int amount)
@@ -117,5 +144,18 @@ public class InventorySystem : MonoBehaviour
         }
         
         OnSelectedItemChange?.Invoke();        // notify the HUD
+        OnInventoryChanged?.Invoke();          // notify inventory UI
+    }
+    
+    // NEW METHODS for UI
+    public List<InventoryEntry> GetAllItems()
+    {
+        return new List<InventoryEntry>(items);  // Return copy to prevent external modification
+    }
+    
+    public void TriggerItemClick(InventoryItem item)
+    {
+        OnInventoryItemClicked?.Invoke(item);
+        Debug.Log($"Player clicked on {item.name}");
     }
 }

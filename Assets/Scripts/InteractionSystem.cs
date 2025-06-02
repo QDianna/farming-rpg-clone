@@ -2,9 +2,24 @@ using UnityEngine;
 
 public class InteractionSystem : MonoBehaviour
 {
+    public static InteractionSystem Instance { get; private set; }
+    
     private IInteractable currentInteractable = null;   // for the IInteractable objects
     
-    public void SetInteractable(IInteractable interactable)
+    private void Awake()
+    {
+        // Singleton pattern
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    
+    public void SetCurrentInteractable(IInteractable interactable)
     {
         currentInteractable = interactable;
     }
@@ -24,7 +39,6 @@ public class InteractionSystem : MonoBehaviour
         {
             player.animator.SetTrigger("Harvest");
             player.plotlandController.HarvestPlot(playerPosition, player);
-            return;
         }
     }
 }

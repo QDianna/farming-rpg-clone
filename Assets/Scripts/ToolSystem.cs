@@ -1,33 +1,22 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Manages the player's equipped tool and tool-based interactions such as tilling.
-/// 
-/// Responsibilities:
-/// - Tracks the currently selected tool (Hoe, Axe, etc.)
-/// - Handles visual activation of tool GameObjects
-/// - Executes tool-specific actions (e.g., tilling the soil when using a hoe)
-/// 
-/// Usage:
-/// - Tools are switched using number key shortcuts (1 = Hoe, 2 = Axe, 0 = None)
-/// - The ToolAction() method is called by the player controller when the tool input is triggered
-/// 
-/// Design Considerations:
-/// - Tool switching and action logic are encapsulated in one place for modularity
-/// - Easily extendable: new tools and behaviors can be added without modifying other systems
-/// - References external systems (e.g., PlotlandController) to perform context-sensitive actions
-/// 
-/// Part of the modular gameplay system enabling flexible player actions through tool types.
+/// Defines the different types of tools available in the game.
+/// These correspond to player abilities like tilling, chopping, or watering.
 /// </summary>
-
 public enum ToolType
 {
     None,
     Hoe,
     Axe,
-    WateringCan
+    WaterCan
 }
 
+/// <summary>
+/// Represents a tool the player can equip and use.
+/// Holds metadata such as its type, icon for HUD display, and assigned hotkey.
+/// </summary>
 public class Tool
 {
     public ToolType type;
@@ -42,72 +31,66 @@ public class Tool
     }
 }
 
+/// <summary>
+/// Controls the player's equipped tool and handles tool-based interactions.
+/// 
+/// Responsibilities:
+/// - Stores and switches between available tools (by keybind)
+/// - Executes context-sensitive tool actions (e.g., tilling a tile or watering a plant)
+/// - Triggers animation and updates the plotland state through PlotlandController
+/// 
+/// Tools are accessed via number keys and applied to the tile the player is facing.
+/// The system is extendable with new ToolTypes and custom actions.
+/// </summary>
 public class ToolSystem : MonoBehaviour
 {
-    [SerializeField] private Sprite hoeSprite;
-    [SerializeField] private Sprite axeSprite;
-    [SerializeField] private Sprite wateringCanSprite;
-    public static int toolCount = 3;
-    
-    public event System.Action OnSelectedToolChange;
+    public Sprite hoeSprite;
+    public Sprite axeSprite;
+    public Sprite waterCanSprite;
 
-    private Tool[] tools = new Tool[toolCount + 1];
-    private int selected = 0;
+    public Dictionary<ToolType, Tool> tools = new();
+    public ToolType selectedTool = ToolType.None;
+    public event System.Action OnSelectedToolChange;
     
     private void Awake()
     {
-        tools[0] = new Tool(ToolType.None, null, 0);
-        tools[1] = new Tool(ToolType.Hoe, hoeSprite, 1);
-        tools[2] = new Tool(ToolType.Axe, axeSprite, 2);
-        tools[3] = new Tool(ToolType.WateringCan, wateringCanSprite, 3);
+        tools[ToolType.None] = new Tool(ToolType.None, null, 0);
+        tools[ToolType.Hoe] = new Tool(ToolType.Hoe, hoeSprite, 1);
+        tools[ToolType.Axe] = new Tool(ToolType.Axe, axeSprite, 2);
+        tools[ToolType.WaterCan] = new Tool(ToolType.WaterCan, waterCanSprite, 3);
     }
 
     public void SetTool(int toolKey)
     {
-        if (toolKey >= tools.Length)
+        foreach (var tool in tools.Values)
         {
-            Debug.Log("Tool not in dictonary: " + toolKey);
-            return;
+            if (tool.keybind == toolKey)
+            {
+                selectedTool = tool.type;
+                Debug.Log("Tool changed to: " + selectedTool);
+                OnSelectedToolChange?.Invoke();  // notify HUD
+                return;
+            }
         }
-        
-        selected = toolKey;
-        Debug.Log("Tool changed to: " + tools[selected]);
-        
-        OnSelectedToolChange?.Invoke();  // notify HUD
-    }
-
-    public Sprite GetSelectedToolSprite()
-    {
-        if (selected > 0 && selected < tools.Length)
-            return tools[selected].icon;
-
-        return null;
-    }
-    
-    public ToolType GetSelectedToolType()
-    {
-        if (selected > 0 && selected < tools.Length)
-            return tools[selected].type;
-
-        return ToolType.None;
+        Debug.Log("Error - no tool configured for this key.");
     }
     
     public void UseTool(PlayerController player)
     {
-        switch (selected)
+        switch (selectedTool)
         {
-            case 0:
+            case ToolType.None:
                 break;
             
-            case 1:
+            case ToolType.Hoe:
                 UseHoe(player);
                 break;
 
-            case 2:
+            case ToolType.Axe:
                 UseAxe(player);
                 break;
             
-            case 3:
+            case ToolType.WaterCan:
                 UseWateringCan(player);
                 break;
         }
@@ -144,7 +127,7 @@ public class ToolSystem : MonoBehaviour
             return;
         }
 
-        player.animator.SetTrigger("Use Watering Can");
+        player.animator.SetTrigger("Use Water Can");
         player.plotlandController.AttendPlot(player.transform.position);
     }
     

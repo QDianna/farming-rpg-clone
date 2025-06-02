@@ -18,7 +18,7 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
         if (player != null)
         {
             Debug.Log("Press E to open the door!");
-            player.interactionSystem.SetInteractable(this);
+            InteractionSystem.Instance.SetCurrentInteractable(this);
         }
     }
 
@@ -28,7 +28,7 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
         if (player != null)
         {
             Debug.Log("exited interaction");
-            player.interactionSystem.SetInteractable(null);
+            InteractionSystem.Instance.SetCurrentInteractable(null);
         }
     }
 
@@ -77,6 +77,6 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
         Debug.Log($"Player teleported to zone: {targetZone.zoneName}");
         
         // since the player is teleporting the 'OnTriggerExit2D' method won't be able to reset this
-        player.interactionSystem.SetInteractable(null);
+        InteractionSystem.Instance.SetCurrentInteractable(null);
     }
 }

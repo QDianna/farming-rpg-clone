@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a679d765daf249b4b6c1fea94226ca57, type: 3}
-  m_Name: Cauliflower Seed Item
+  m_Name: CauliflowerSeed
   m_EditorClassIdentifier: 
-  itemName: cauliflower_seed
+  itemName: CauliflowerSeed
   itemSprite: {fileID: 3808273280442274367, guid: 4038e15739dd2be498076e728299f386, type: 3}
   growthTime: 60
   seedTile: {fileID: 11400000, guid: c1970f76ffbb63c4fb53dde442f93118, type: 2}
