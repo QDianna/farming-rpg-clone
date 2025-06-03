@@ -85,7 +85,7 @@ public class CraftingSystemHUD : MonoBehaviour
     {
         craftingBenchContainer.style.display = DisplayStyle.Flex;
         
-        Debug.Log("Crafting Bench UI opened!");
+        //Debug.Log("Crafting Bench UI opened!");
         Debug.Log("Click on your inventory items to add them to crafting slots");
         Debug.Log("Click on input slots to remove items");
         Debug.Log("Click on output slot to take crafted items");
@@ -97,7 +97,7 @@ public class CraftingSystemHUD : MonoBehaviour
     {
         craftingBenchContainer.style.display = DisplayStyle.None;
         
-        Debug.Log("Crafting Bench UI closed!");
+        //Debug.Log("Crafting Bench UI closed!");
     }
     
     public bool IsCraftingBenchOpen()

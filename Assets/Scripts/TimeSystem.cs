@@ -12,15 +12,19 @@ public class TimeSystem : MonoBehaviour
 {
     public static TimeSystem Instance { get; private set; }
     
-    [Header("Time Settings")]
-    public float currentTime = 6f;          // Start at 6:00 AM
-    public float timeSpeed = 0.5f;          // 1 real second = 30 in-game minutes
-    
-    private int currentDay = 1;
-    private int hour = 6;
-    private int minute = 0;
     private static List<Season> seasons = new() { Season.Spring, Season.Summer, Season.Autumn, Season.Winter };
-    private int currentSeasonId = 0;
+    
+    [Header("Time Settings")]
+    // game starts on day 1 of Spring at 6:00 AM
+    public int currentSeasonId = 0;
+    private int currentDay = 1;
+    private float currentTime = 6f;         // current time as float
+    
+    public float secondToHourRatio = 1f;    // 1 real second = secondToHourRatio in-game hours
+    public int daysPerSeason = 4;           // how many days a season has
+    private int hour = 6;                   // current hour as int
+    private int minute = 0;                 // current minute as int
+    
     public event System.Action OnDayChange;
     public event System.Action OnHourChange;
     public event System.Action OnMinuteChange;
@@ -39,13 +43,16 @@ public class TimeSystem : MonoBehaviour
     
     private void Update()
     {
-        currentTime += Time.deltaTime * timeSpeed;
+        currentTime += Time.deltaTime * secondToHourRatio;
 
+        // day change
         if (currentTime >= 24f)
         {
             currentTime = 0f;
             currentDay++;
-            if (currentDay % 2 == 0)
+            
+            // season change
+            if (currentDay % daysPerSeason == 0)
                 currentSeasonId = (currentSeasonId + 1) % seasons.Count;
             
             OnDayChange?.Invoke();

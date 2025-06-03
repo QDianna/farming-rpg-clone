@@ -35,36 +35,59 @@ public class PlotData
 /// - Tracks tile-based plot states (locked, empty, tilled, planted, grown)
 /// - Handles tilling, planting, crop growth updates, and harvesting
 /// - Manages multiple tilemaps: plotland, crop visuals, and expansion zones
+/// - Responds to weather events for dynamic crop interactions
 /// 
 /// Design considerations:
 /// - Uses a dictionary (plotStates) to efficiently track and update individual plot data
 /// - Supports expansion of the farming area through UnlockPlot() tied to interactive zones
 /// - Decouples visual updates (cropTilemap) from gameplay logic (plotTilemap)
-/// - Designed for scalability: adding new crops, zones, or stages requires minimal changes
-/// 
-/// Crop growth is animated over time using stage-based tiles, and harvests are visually represented
-/// by temporary dropped items that move toward the player. Tile-based interactions avoid unnecessary
-/// collider overhead, favoring performant grid checks.
+/// - Event-driven weather integration for clean separation of concerns
 /// </summary>
 public class PlotlandController : MonoBehaviour
 {
-    private Tilemap plotTilemap;                            // tilemap plotland
-    public Tilemap cropTilemap;                             // tilemap randare plante peste pamant
+    #region Fields and Properties
     
-    [SerializeField] private List<Tilemap> expansionTilemaps;
-
+    [Header("Tilemaps")]
+    private Tilemap plotTilemap;                            // Main plotland tilemap
+    public Tilemap cropTilemap;                             // Crop visuals rendered above ground
+    [SerializeField] private List<Tilemap> expansionTilemaps; // Expansion zone tilemaps
+    
+    [Header("Tile Assets")]
     public TileBase lockedTile;
     public TileBase emptyTile;
     public TileBase tilledTile;
-
+    
     private Dictionary<Vector3Int, PlotData> plotStates = new();
     
+    #endregion
+    
+    #region Unity Lifecycle
     
     private void Start()
     {
+        InitializePlotData();
+        SubscribeToWeatherEvents();
+    }
+    
+    private void Update()
+    {
+        UpdateCropGrowth();
+    }
+    
+    private void OnDestroy()
+    {
+        UnsubscribeFromWeatherEvents();
+    }
+    
+    #endregion
+    
+    #region Initialization
+    
+    private void InitializePlotData()
+    {
         plotTilemap = GetComponent<Tilemap>();
         
-        // load all tiles from Tilemap_plotland into dictionary and assign Empty state
+        // Load all tiles from main plotland tilemap and assign Empty state
         foreach (Vector3Int pos in plotTilemap.cellBounds.allPositionsWithin)
         {
             TileBase tile = plotTilemap.GetTile(pos);
@@ -72,11 +95,10 @@ public class PlotlandController : MonoBehaviour
                 plotStates[pos] = new PlotData { state = PlotState.Empty };
         }
         
-        // assign Locked state to all tiles from Tilemap_plotland_extension1 and Tilemap_plotland_extension2
+        // Assign Locked state to all tiles from expansion tilemaps
         foreach (Tilemap expansionTilemap in expansionTilemaps)
         {
-            if (expansionTilemap == null)
-                continue;
+            if (expansionTilemap == null) continue;
 
             foreach (Vector3Int pos in expansionTilemap.cellBounds.allPositionsWithin)
             {
@@ -87,16 +109,57 @@ public class PlotlandController : MonoBehaviour
         }
     }
     
-    private void Update()
+    private void SubscribeToWeatherEvents()
     {
-        UpdateCropGrowth();
+        if (WeatherSystem.Instance != null)
+        {
+            WeatherSystem.Instance.OnBeneficialRain += HandleBeneficialRain;
+            WeatherSystem.Instance.OnStorm += HandleStorm;
+        }
     }
-
+    
+    private void UnsubscribeFromWeatherEvents()
+    {
+        if (WeatherSystem.Instance != null)
+        {
+            WeatherSystem.Instance.OnBeneficialRain -= HandleBeneficialRain;
+            WeatherSystem.Instance.OnStorm -= HandleStorm;
+        }
+    }
+    
+    #endregion
+    
+    #region Plot State Checks
+    
     public bool CanTill(Vector3 worldPos)
     {
         Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
         return plotStates.ContainsKey(tilePos) && plotStates[tilePos].state == PlotState.Empty;
     }
+    
+    public bool CanPlant(Vector3 worldPos)
+    {
+        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        return plotStates.ContainsKey(tilePos) && plotStates[tilePos].state == PlotState.Tilled;
+    }
+    
+    public bool CanHarvest(Vector3 worldPos)
+    {
+        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        return plotStates.ContainsKey(tilePos) && plotStates[tilePos].state == PlotState.Grown;
+    }
+    
+    public bool CanAttendPlot(Vector3 worldPos)
+    {
+        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        return plotStates.ContainsKey(tilePos) &&
+               plotStates[tilePos].state == PlotState.Planted &&
+               plotStates[tilePos].canStartGrowing == false;
+    }
+    
+    #endregion
+    
+    #region Plot Actions
     
     public void TillPlot(Vector3 worldPos)
     {
@@ -107,24 +170,16 @@ public class PlotlandController : MonoBehaviour
         
         Debug.Log($"Tilled the ground at {tilePos}");
     }
-
-    public bool CanPlant(Vector3 worldPos)
-    {
-        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
-        return plotStates.ContainsKey(tilePos) && plotStates[tilePos].state == PlotState.Tilled;
-    }
-
+    
     public void PlantPlot(InventoryItem seed, Vector3 worldPos)
     {
         Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
-
-        // Render planted sprite in crop tilemap
         SeedItem seedItem = seed as SeedItem;
-        if (seedItem == null)
-            return;
+        
+        if (seedItem == null) return;
         
         plotStates[tilePos].state = PlotState.Planted;
-        plotStates[tilePos].seedData = seed as SeedItem;
+        plotStates[tilePos].seedData = seedItem;
         plotStates[tilePos].currentGrowthStage = -1;
         plotStates[tilePos].canStartGrowing = false;
 
@@ -133,50 +188,6 @@ public class PlotlandController : MonoBehaviour
         Debug.Log($"Planted {seed.itemName} at {tilePos}");
     }
     
-    public bool CanHarvest(Vector3 worldPos)
-    {
-        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
-        return plotStates.ContainsKey(tilePos) && plotStates[tilePos].state == PlotState.Grown;
-    }
-    
-    public void HarvestPlot(Vector3 worldPos, PlayerController player)
-    {
-        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
-
-        PlotData data = plotStates[tilePos];
-        CropItem cropItem = data.seedData.cropItem;
-
-        player.inventorySystem.AddItem(data.seedData, Random.Range(1, 3));    // get 1 or 2 seeds back
-        player.inventorySystem.AddItem(cropItem, Random.Range(1, 3));         // get 1 or 2 crops from harvest
-        
-        // display sprite of crop item into the world to mimic harvesting
-        cropItem.DisplayCrop(worldPos, player);
-        
-        Debug.Log($"Harvested {data.seedData.cropItem} at {tilePos}");
-        
-        // reset crop tilemap
-        cropTilemap.SetTile(tilePos, null);
-        
-        // reset plotland tilemap
-        plotTilemap.SetTile(tilePos, emptyTile);
-        
-        data.state = PlotState.Empty;
-        data.seedData = null;
-        data.growthTimer = 0;
-        data.currentGrowthStage = 0;
-        data.canStartGrowing = false;
-    }
-
-    public bool CanAttendPlot(Vector3 worldPos)
-    {
-        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
-        if (plotStates.ContainsKey(tilePos) &&
-            plotStates[tilePos].state == PlotState.Planted &&
-            plotStates[tilePos].canStartGrowing == false)
-            return true;
-        
-        return false;
-    }
     public void AttendPlot(Vector3 worldPos)
     {
         Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
@@ -186,63 +197,176 @@ public class PlotlandController : MonoBehaviour
         UpdateCropGrowth();
     }
     
+    public void HarvestPlot(Vector3 worldPos, PlayerController player)
+    {
+        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        PlotData data = plotStates[tilePos];
+        CropItem cropItem = data.seedData.cropItem;
+
+        // Give items to player
+        player.inventorySystem.AddItem(data.seedData, Random.Range(1, 3));    // 1-2 seeds back
+        player.inventorySystem.AddItem(cropItem, Random.Range(1, 3));         // 1-2 crops from harvest
+        
+        // Display harvest animation
+        cropItem.DisplayCrop(worldPos, player);
+        
+        Debug.Log($"Harvested {data.seedData.cropItem} at {tilePos}");
+        
+        // Reset plot to empty state
+        ResetPlotToEmpty(tilePos, data);
+    }
+    
+    private void ResetPlotToEmpty(Vector3Int tilePos, PlotData data)
+    {
+        cropTilemap.SetTile(tilePos, null);
+        plotTilemap.SetTile(tilePos, emptyTile);
+        
+        data.state = PlotState.Empty;
+        data.seedData = null;
+        data.growthTimer = 0;
+        data.currentGrowthStage = 0;
+        data.canStartGrowing = false;
+    }
+    
+    #endregion
+    
+    #region Crop Growth System
+    
     public void UpdateCropGrowth()
     {
+        // Get winter growth modifier (0.5x in winter, 1x otherwise)
+        float growthModifier = WeatherSystem.Instance != null ? WeatherSystem.Instance.GetGrowthModifier() : 1f;
+        
         foreach (var kvp in plotStates)
         {
             Vector3Int pos = kvp.Key;
             PlotData data = kvp.Value;
 
-            if (data.state != PlotState.Planted || data.seedData == null || data.canStartGrowing == false)
+            if (data.state != PlotState.Planted || data.seedData == null || !data.canStartGrowing)
                 continue;
 
-            data.growthTimer += Time.deltaTime;
+            // Apply growth with weather modifier
+            data.growthTimer += Time.deltaTime * growthModifier;
 
             var growthPercent = Mathf.Clamp01(data.growthTimer / data.seedData.growthTime);
             var maxStage = data.seedData.growthStageTiles.Count - 1;
             var newStage = Mathf.FloorToInt(growthPercent * maxStage);
 
-            if (newStage <= data.currentGrowthStage)
-                continue;
+            if (newStage <= data.currentGrowthStage) continue;
 
             TileBase currentTile = data.seedData.GetStageTile(newStage);
             if (currentTile == null)
             {
-                Debug.Log("Error updating crop growth");
-                return;
+                Debug.LogError("Error updating crop growth - missing tile for stage " + newStage);
+                continue;
             }
 
+            // Update growth stage
             data.currentGrowthStage = newStage;
             cropTilemap.SetTile(pos, currentTile);
 
+            // Check if fully grown
             if (newStage == maxStage)
             {
                 data.state = PlotState.Grown;
-                Debug.Log("Crop " + data.seedData.itemName + " at pos " + pos + " is fully grown and ready to harvest!");
+                Debug.Log($"Crop {data.seedData.itemName} at {pos} is fully grown and ready to harvest!");
             }
         }
     }
-
     
+    #endregion
+    
+    #region Weather Event Handlers
+    
+    private void HandleBeneficialRain()
+    {
+        foreach (var kvp in plotStates)
+        {
+            PlotData plotData = kvp.Value;
+        
+            if (plotData.state == PlotState.Planted && plotData.canStartGrowing && plotData.seedData != null)
+            {
+                // Skip one growth stage due to beneficial rain
+                int maxStage = plotData.seedData.growthStageTiles.Count - 1;
+                int newStage = Mathf.Min(plotData.currentGrowthStage + 1, maxStage);
+            
+                if (newStage > plotData.currentGrowthStage)
+                {
+                    plotData.currentGrowthStage = newStage;
+                    cropTilemap.SetTile(kvp.Key, plotData.seedData.GetStageTile(newStage));
+                
+                    if (newStage == maxStage)
+                    {
+                        plotData.state = PlotState.Grown;
+                    }
+                }
+            }
+        }
+        
+        Debug.Log("Beneficial rain accelerated crop growth!");
+    }
 
-    // this method is called by the player controller when the player executes an interaction - buy
+    private void HandleStorm()
+    {
+        var plantedPlots = new List<Vector3Int>();
+    
+        // Find all planted or grown plots
+        foreach (var kvp in plotStates)
+        {
+            if (kvp.Value.state == PlotState.Planted || kvp.Value.state == PlotState.Grown)
+            {
+                plantedPlots.Add(kvp.Key);
+            }
+        }
+    
+        if (plantedPlots.Count == 0) return;
+    
+        // Destroy 0-3 random plants
+        int plantsToDestroy = Random.Range(0, Mathf.Min(4, plantedPlots.Count + 1));
+    
+        for (int i = 0; i < plantsToDestroy; i++)
+        {
+            int randomIndex = Random.Range(0, plantedPlots.Count);
+            Vector3Int plotPos = plantedPlots[randomIndex];
+            plantedPlots.RemoveAt(randomIndex);
+        
+            // Destroy the plant (return to tilled state)
+            PlotData plotData = plotStates[plotPos];
+            plotData.state = PlotState.Tilled;
+            plotData.seedData = null;
+            plotData.growthTimer = 0;
+            plotData.currentGrowthStage = 0;
+            plotData.canStartGrowing = false;
+        
+            cropTilemap.SetTile(plotPos, null);
+        }
+        
+        Debug.Log($"Storm destroyed {plantsToDestroy} crops!");
+    }
+    
+    #endregion
+    
+    #region Plot Expansion
+    
+    /// <summary>
+    /// Unlocks plots in the specified expansion tilemap, called by player interaction system.
+    /// </summary>
     public void UnlockPlot(Tilemap expansionTilemap)
     {
         foreach (Vector3Int pos in expansionTilemap.cellBounds.allPositionsWithin)
         {
             TileBase tile = expansionTilemap.GetTile(pos);
             
-            if (tile == lockedTile && plotStates.ContainsKey(pos) && plotStates[pos].state == PlotState.Locked)  // it should be all true
+            if (tile == lockedTile && plotStates.ContainsKey(pos) && plotStates[pos].state == PlotState.Locked)
             {
                 plotStates[pos].state = PlotState.Empty;
                 plotTilemap.SetTile(pos, emptyTile);
-                expansionTilemap.SetTile(pos, null);    // Optionally clear from expansion map
+                expansionTilemap.SetTile(pos, null);    // Clear from expansion map
             }
         }
         
         Debug.Log($"Unlocked {expansionTilemap.name}");
     }
-
-
-
+    
+    #endregion
 }

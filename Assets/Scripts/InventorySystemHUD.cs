@@ -117,7 +117,7 @@ public class InventorySystemHUD : MonoBehaviour
     public void HideFullInventory()
     {
         InventoryContainer.style.display = DisplayStyle.None;
-        Debug.Log("Full inventory closed!");
+        // Debug.Log("Full inventory closed!");
     }
     
     private void UpdateFullInventoryDisplay()
