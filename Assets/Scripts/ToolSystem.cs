@@ -2,20 +2,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Defines the different types of tools available in the game.
-/// These correspond to player abilities like tilling, chopping, or watering.
+/// Available tool types for player actions.
 /// </summary>
 public enum ToolType
 {
-    None,
-    Hoe,
-    Axe,
-    WaterCan
+    None, Hoe, Axe, WaterCan
 }
 
 /// <summary>
-/// Represents a tool the player can equip and use.
-/// Holds metadata such as its type, icon for HUD display, and assigned hotkey.
+/// Tool data container with type, icon, and keybind information.
 /// </summary>
 public class Tool
 {
@@ -32,18 +27,12 @@ public class Tool
 }
 
 /// <summary>
-/// Controls the player's equipped tool and handles tool-based interactions.
-/// 
-/// Responsibilities:
-/// - Stores and switches between available tools (by keybind)
-/// - Executes context-sensitive tool actions (e.g., tilling a tile or watering a plant)
-/// - Triggers animation and updates the plotland state through PlotlandController
-/// 
-/// Tools are accessed via number keys and applied to the tile the player is facing.
-/// The system is extendable with new ToolTypes and custom actions.
+/// Manages player tool selection and usage with context-sensitive actions.
+/// Handles tilling, watering, and other tool-based interactions.
 /// </summary>
 public class ToolSystem : MonoBehaviour
 {
+    [Header("Tool Sprites")]
     public Sprite hoeSprite;
     public Sprite axeSprite;
     public Sprite waterCanSprite;
@@ -53,6 +42,11 @@ public class ToolSystem : MonoBehaviour
     public event System.Action OnSelectedToolChange;
     
     private void Awake()
+    {
+        InitializeTools();
+    }
+    
+    private void InitializeTools()
     {
         tools[ToolType.None] = new Tool(ToolType.None, null, 0);
         tools[ToolType.Hoe] = new Tool(ToolType.Hoe, hoeSprite, 1);
@@ -67,29 +61,23 @@ public class ToolSystem : MonoBehaviour
             if (tool.keybind == toolKey)
             {
                 selectedTool = tool.type;
-                Debug.Log("Tool changed to: " + selectedTool);
-                OnSelectedToolChange?.Invoke();  // notify HUD
+                OnSelectedToolChange?.Invoke();
+                NotificationSystem.ShowNotification($"Selected: {selectedTool}");
                 return;
             }
         }
-        Debug.Log("Error - no tool configured for this key.");
     }
     
     public void UseTool(PlayerController player)
     {
         switch (selectedTool)
         {
-            case ToolType.None:
-                break;
-            
             case ToolType.Hoe:
                 UseHoe(player);
                 break;
-
             case ToolType.Axe:
                 UseAxe(player);
                 break;
-            
             case ToolType.WaterCan:
                 UseWateringCan(player);
                 break;
@@ -103,32 +91,34 @@ public class ToolSystem : MonoBehaviour
             player.animator.SetTrigger("Use Hoe");
             player.plotlandController.TillPlot(player.transform.position);
         }
-
         else
         {
-            Debug.Log("You can only till the plotland!");
+            NotificationSystem.ShowNotification("Can't till here!");
         }
     }
 
     private void UseAxe(PlayerController player)
     {
         player.animator.SetTrigger("Use Axe");
-        // TODO
+        NotificationSystem.ShowNotification("Axe functionality coming soon!");
     }
 
     private void UseWateringCan(PlayerController player)
     {
-        if (player.plotlandController.CanAttendPlot(player.transform.position) == false)
-            return;
-        
-        if (TimeSystem.Instance.isWarmSeason() == false)
+        if (!player.plotlandController.CanAttendPlot(player.transform.position))
         {
-            Debug.Log("Plant doesnt need watering in cold season");
+            NotificationSystem.ShowNotification("No plants here need watering");
+            return;
+        }
+        
+        if (!TimeSystem.Instance.isWarmSeason())
+        {
+            NotificationSystem.ShowNotification("Plants don't need watering in cold season");
             return;
         }
 
         player.animator.SetTrigger("Use Water Can");
         player.plotlandController.AttendPlot(player.transform.position);
+        NotificationSystem.ShowNotification("Watered plants");
     }
-    
 }

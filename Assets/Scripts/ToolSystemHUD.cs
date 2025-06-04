@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+/// <summary>
+/// Displays tool selection UI with visual feedback for the currently selected tool.
+/// </summary>
 public class ToolSystemHUD : MonoBehaviour
 {
     [SerializeField] private ToolSystem toolSystem;
@@ -9,65 +12,74 @@ public class ToolSystemHUD : MonoBehaviour
     private Dictionary<ToolType, VisualElement> toolContainers = new();
     private Dictionary<ToolType, VisualElement> toolIcons = new();
 
-    private bool renderTools = true;
-
-    private void OnEnable()
+    private void Awake()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
 
-        toolContainers[ToolType.None]       = root.Q<VisualElement>("NoneContainer");
-        toolContainers[ToolType.Hoe]        = root.Q<VisualElement>("HoeContainer");
-        toolContainers[ToolType.Axe]        = root.Q<VisualElement>("AxeContainer");
-        toolContainers[ToolType.WaterCan]   = root.Q<VisualElement>("WaterCanContainer");
+        // Initialize containers
+        toolContainers[ToolType.None] = root.Q<VisualElement>("NoneContainer");
+        toolContainers[ToolType.Hoe] = root.Q<VisualElement>("HoeContainer");
+        toolContainers[ToolType.Axe] = root.Q<VisualElement>("AxeContainer");
+        toolContainers[ToolType.WaterCan] = root.Q<VisualElement>("WaterContainer");
 
-        toolIcons[ToolType.None]     = root.Q<VisualElement>("None");
-        toolIcons[ToolType.Hoe]      = root.Q<VisualElement>("Hoe");
-        toolIcons[ToolType.Axe]      = root.Q<VisualElement>("Axe");
-        toolIcons[ToolType.WaterCan] = root.Q<VisualElement>("WaterCan");
+        // Initialize icons
+        foreach (var kvp in toolContainers)
+        {
+            toolIcons[kvp.Key] = kvp.Value?.Q<VisualElement>("ToolIcon");
+        }
         
-        toolSystem.OnSelectedToolChange += UpdateDisplay;
+        InitializeToolSprites();
         UpdateDisplay();
+    }
+
+    private void OnEnable()
+    {
+        if (toolSystem != null)
+        {
+            toolSystem.OnSelectedToolChange += UpdateDisplay;
+        }
     }
     
     private void OnDisable()
     {
-        toolSystem.OnSelectedToolChange -= UpdateDisplay;
+        if (toolSystem != null)
+        {
+            toolSystem.OnSelectedToolChange -= UpdateDisplay;
+        }
+    }
+
+    private void InitializeToolSprites()
+    {
+        if (toolSystem == null) return;
+        
+        SetToolSprite(ToolType.Hoe, toolSystem.hoeSprite);
+        SetToolSprite(ToolType.Axe, toolSystem.axeSprite);
+        SetToolSprite(ToolType.WaterCan, toolSystem.waterCanSprite);
     }
     
+    private void SetToolSprite(ToolType toolType, Sprite sprite)
+    {
+        if (toolIcons.ContainsKey(toolType) && toolIcons[toolType] != null && sprite != null)
+        {
+            toolIcons[toolType].style.backgroundImage = new StyleBackground(sprite);
+        }
+    }
 
     private void UpdateDisplay()
     {
-        if (renderTools)
+        if (toolSystem == null) return;
+        
+        // Clear all selected states
+        foreach (var container in toolContainers.Values)
         {
-            foreach (var kvp in toolIcons)
-            {
-                ToolType type = kvp.Key;
-                VisualElement icon = kvp.Value;
-                Sprite sprite = null;
-
-                switch (type)
-                {
-                    case ToolType.Hoe:       sprite = toolSystem.hoeSprite; break;
-                    case ToolType.Axe:       sprite = toolSystem.axeSprite; break;
-                    case ToolType.WaterCan:  sprite = toolSystem.waterCanSprite; break;
-                }
-
-                if (sprite != null)
-                    icon.style.backgroundImage = new StyleBackground(sprite);
-            }
-
-            renderTools = false;
+            container?.RemoveFromClassList("selected");
         }
 
-        
-        // TODO - get selected tool type and mark the tool as selected visually somehow
-        foreach (var container in toolContainers.Values)
-            container.RemoveFromClassList("selected");
-
-        ToolType selected = toolSystem.selectedTool;
-        if (toolContainers.ContainsKey(selected))
-            toolContainers[selected].AddToClassList("selected");
-
-        
+        // Highlight selected tool
+        ToolType selectedTool = toolSystem.selectedTool;
+        if (toolContainers.ContainsKey(selectedTool) && toolContainers[selectedTool] != null)
+        {
+            toolContainers[selectedTool].AddToClassList("selected");
+        }
     }
 }

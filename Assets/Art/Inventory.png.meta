@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
+    maxTextureSize: 1024
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Inventory_0
+      name: Inventory_09
       rect:
         serializedVersion: 2
-        x: 0
-        y: 369
-        width: 190
-        height: 45
+        x: 90
+        y: 5
+        width: 27
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,13 +122,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Inventory_1
+      name: Inventory_11
       rect:
         serializedVersion: 2
-        x: 293
-        y: 75
-        width: 45
-        height: 45
+        x: 171
+        y: 5
+        width: 22
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,13 +144,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Inventory_2
+      name: Inventory_10
       rect:
         serializedVersion: 2
-        x: 336
-        y: 363
-        width: 33
-        height: 34
+        x: 303
+        y: 5
+        width: 22
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,6 +161,204 @@ TextureImporter:
       bones: []
       spriteID: d57f085da684e8947a5366d738ac8ffa
       internalID: 1622898771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 229
+        width: 190
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3803dd0af375c74fa1acd747e82be58
+      internalID: -2002135172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_01
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 181
+        width: 190
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4acd09e18ab2641be07ba96a8031b4
+      internalID: -680922378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_02
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 312
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12dd9ab45e0d2124685da53faab3a616
+      internalID: -1063648388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_03
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 124
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d056114d00357df48b408c34a94b7968
+      internalID: 1722035795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_04
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 373
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83fc0eca95df8184eb24b41db141d400
+      internalID: -172437620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_05
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 169
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c41c76f89e83494fa58cd056e3c4500
+      internalID: -237317195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_06
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 401
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b291b3d031ad842ba58e785d46e3cd
+      internalID: 1485896141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_07
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 328
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77eda6f182a128246a2b44279dfa8d1d
+      internalID: 172228532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_08
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 313
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24da92649f8e85f4196362766a77a12d
+      internalID: 237487608
       vertices: []
       indices: 
       edges: []
@@ -179,9 +377,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Inventory_0: -251502227
-      Inventory_1: -1814834919
-      Inventory_2: 1622898771
+      Inventory_00: -2002135172
+      Inventory_01: -680922378
+      Inventory_02: -1063648388
+      Inventory_03: 1722035795
+      Inventory_04: -172437620
+      Inventory_05: -237317195
+      Inventory_06: 1485896141
+      Inventory_07: 172228532
+      Inventory_08: 237487608
+      Inventory_09: -251502227
+      Inventory_10: 1622898771
+      Inventory_11: -1814834919
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

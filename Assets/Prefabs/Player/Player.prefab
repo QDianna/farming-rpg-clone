@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 596685181290690568}
   - component: {fileID: 603208962506915739}
   - component: {fileID: 8349207872864668176}
+  - component: {fileID: 1787799393153828262}
   - component: {fileID: 2133682642818215000}
+  - component: {fileID: 7423412828200520110}
   - component: {fileID: 1001675679381337709}
   - component: {fileID: 2283150326571705030}
   - component: {fileID: 279568774838252289}
@@ -37,8 +39,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3894650541190145971}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4096598973139266459
@@ -85,12 +86,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1352848779, guid: 8948bc25a3a4d354c97293c9dd1cbf13, type: 3}
+  m_Sprite: {fileID: 7891772418502533835, guid: f06bcf7a4a809ff4faa17e2729e8ca40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.5, y: 2}
+  m_Size: {x: 1.0625, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -157,6 +158,8 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     m_Flags: 0
+  speed: 6
+  animator: {fileID: 0}
   InteractAction:
     m_Name: Interact
     m_Type: 0
@@ -192,7 +195,6 @@ MonoBehaviour:
       m_Action: Tool
       m_Flags: 0
     m_Flags: 0
-  toolPivot: {fileID: 3894650541190145971}
   InventoryAction:
     m_Name: Inventory
     m_Type: 0
@@ -220,7 +222,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: e1f21f3c-ca7b-42a3-ab55-3ca82794292c
-      m_Path: <Keyboard>/q
+      m_Path: <Keyboard>/f
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -233,6 +235,7 @@ MonoBehaviour:
   seed1: {fileID: 11400000, guid: 39e095594afaa0e47b0e217ed5359e37, type: 2}
   seed2: {fileID: 11400000, guid: 262f4fb811249cb4c880ef14b14d1900, type: 2}
   seed3: {fileID: 11400000, guid: 8a7a3847ff4a2b84381109364acc8a5a, type: 2}
+  strengthSolution: {fileID: 11400000, guid: 2241858d540146b418611ebffd97d3a0, type: 2}
 --- !u!114 &596685181290690568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,8 +248,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649da2a9be5d4e60884d3b8485371348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTool: 0
-  hoePrefab: {fileID: 2706849120192767872, guid: c3ef5017a601ed94ba453babab88f681, type: 3}
+  hoeSprite: {fileID: 249908233549332648, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  axeSprite: {fileID: 7655413986662893830, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  waterCanSprite: {fileID: 1323920741824349584, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  selectedTool: 0
 --- !u!114 &603208962506915739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,6 +276,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b154f1ce5a244178b116efd5e5699f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1787799393153828262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7794502562995452509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fed33e7e1e8bfa46a552dd7ffb6f15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipes:
+  - {fileID: 11400000, guid: ff1bf7644f3d9f94fa84572d3c8ad054, type: 2}
+  craftedRecipeNames: []
 --- !u!114 &2133682642818215000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +303,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57550d6d1c6b46f4881933ef4600bb12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7423412828200520110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7794502562995452509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12f453b3841a4b1aa25c57337d5504b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingMoney: 500
+  sellPriceModifier: 0.7
+  buyPriceModifier: 1.2
 --- !u!50 &1001675679381337709
 Rigidbody2D:
   serializedVersion: 5
@@ -348,8 +383,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.5, y: 2}
-    newSize: {x: 1.5, y: 2}
+    oldSize: {x: 1, y: 1.4375}
+    newSize: {x: 1.0625, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -378,34 +413,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &8982209113101767293
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3894650541190145971}
-  m_Layer: 0
-  m_Name: ToolAnimationPivot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3894650541190145971
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8982209113101767293}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.11537064, w: 0.99332255}
-  m_LocalPosition: {x: -0.45, y: 0.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5657702628253418783}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.25}

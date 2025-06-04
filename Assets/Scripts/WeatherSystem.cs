@@ -1,42 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public enum WeatherEventType
+/// <summary>
+/// Weather event types for seasonal effects.
+/// </summary>
+public enum WeatherEvent
 {
-    Clear,
-    BeneficialRain,
-    Storm,
-    Freeze
+    Clear, BeneficialRain, Storm, Freeze
 }
 
 /// <summary>
-/// Minimalist weather system that announces seasonal weather events.
-/// 
-/// Responsibilities:
-/// - Determines weather based on current season and random chances
-/// - Announces weather events through a clean event system
-/// - Controls visual particle effects for different weather types
-/// - Provides growth modifiers for temperature-based effects (freeze)
-/// 
-/// Design considerations:
-/// - Event-driven architecture for clean separation of concerns
-/// - Other systems (PlotlandController) listen and respond to weather events
-/// - Seasonal weather patterns create dynamic farming challenges
-/// - Singleton pattern ensures single weather authority
+/// Singleton weather system managing seasonal events and visual effects.
+/// Provides growth modifiers and announces weather changes to other systems.
 /// </summary>
 public class WeatherSystem : MonoBehaviour
 {
-    #region Singleton
-    
     public static WeatherSystem Instance { get; private set; }
     
-    #endregion
-    
-    #region Fields and Properties
-    
-    [Header("Weather Probability Settings")]
+    [Header("Weather Probabilities")]
     [Range(0f, 1f)] public float springAutumnRainChance = 0.25f;
     [Range(0f, 1f)] public float summerStormChance = 0.15f;
     [Range(0f, 1f)] public float winterFreezeChance = 0.3f;
@@ -46,43 +26,14 @@ public class WeatherSystem : MonoBehaviour
     public GameObject stormParticles;
     public GameObject snowParticles;
     
-    private WeatherEventType currentWeather = WeatherEventType.Clear;
+    private WeatherEvent currentWeather = WeatherEvent.Clear;
     
-    #endregion
-    
-    #region Events
-    
-    /// <summary>Events that other systems can subscribe to for weather responses</summary>
     public System.Action OnBeneficialRain;
     public System.Action OnStorm;
     public System.Action OnFreeze;
     public System.Action OnClearWeather;
     
-    #endregion
-    
-    #region Unity Lifecycle
-    
     private void Awake()
-    {
-        InitializeSingleton();
-    }
-    
-    private void Start()
-    {
-        SubscribeToTimeSystem();
-        SetWeather(WeatherEventType.Clear);
-    }
-    
-    private void OnDestroy()
-    {
-        UnsubscribeFromTimeSystem();
-    }
-    
-    #endregion
-    
-    #region Initialization
-    
-    private void InitializeSingleton()
     {
         if (Instance != null && Instance != this)
         {
@@ -90,6 +41,17 @@ public class WeatherSystem : MonoBehaviour
             return;
         }
         Instance = this;
+    }
+    
+    private void Start()
+    {
+        SubscribeToTimeSystem();
+        SetWeather(WeatherEvent.Clear);
+    }
+    
+    private void OnDestroy()
+    {
+        UnsubscribeFromTimeSystem();
     }
     
     private void SubscribeToTimeSystem()
@@ -108,141 +70,91 @@ public class WeatherSystem : MonoBehaviour
         }
     }
     
-    #endregion
-    
-    #region Weather Logic
-    
     private void CheckForWeatherEvents()
     {
         if (TimeSystem.Instance == null) return;
         
         Season currentSeason = TimeSystem.Instance.GetSeason();
-        WeatherEventType newWeather = DetermineWeatherForSeason(currentSeason);
+        WeatherEvent newWeather = DetermineWeatherForSeason(currentSeason);
         
         SetWeather(newWeather);
     }
     
-    private WeatherEventType DetermineWeatherForSeason(Season season)
+    private WeatherEvent DetermineWeatherForSeason(Season season)
     {
         float randomValue = Random.Range(0f, 1f);
         
-        switch (season)
+        return season switch
         {
-            case Season.Spring:
-            case Season.Autumn:
-                if (randomValue <= springAutumnRainChance)
-                    return WeatherEventType.BeneficialRain;
-                break;
-                
-            case Season.Summer:
-                if (randomValue <= summerStormChance)
-                    return WeatherEventType.Storm;
-                break;
-                
-            case Season.Winter:
-                if (randomValue <= winterFreezeChance)
-                    return WeatherEventType.Freeze;
-                break;
-        }
-        
-        return WeatherEventType.Clear;
+            Season.Spring or Season.Autumn when randomValue <= springAutumnRainChance => WeatherEvent.BeneficialRain,
+            Season.Summer when randomValue <= summerStormChance => WeatherEvent.Storm,
+            Season.Winter when randomValue <= winterFreezeChance => WeatherEvent.Freeze,
+            _ => WeatherEvent.Clear
+        };
     }
     
-    private void SetWeather(WeatherEventType weather)
+    private void SetWeather(WeatherEvent weather)
     {
         currentWeather = weather;
-        
         UpdateVisualEffects();
         AnnounceWeatherEvent(weather);
     }
     
-    private void AnnounceWeatherEvent(WeatherEventType weather)
+    private void AnnounceWeatherEvent(WeatherEvent weather)
     {
+        string message = weather switch
+        {
+            WeatherEvent.BeneficialRain => "Gentle rain nourishes your crops!",
+            WeatherEvent.Storm => "Storm warning! Crops may be damaged!",
+            WeatherEvent.Freeze => "Freezing weather slows crop growth!",
+            WeatherEvent.Clear => "Clear sunny weather today!",
+            _ => ""
+        };
+        
+        if (!string.IsNullOrEmpty(message))
+        {
+            NotificationSystem.ShowNotification(message);
+        }
+        
+        // Invoke events
         switch (weather)
         {
-            case WeatherEventType.BeneficialRain:
-                Debug.Log("Weather forecast for today: Beneficial rain is nourishing the crops!");
-                OnBeneficialRain?.Invoke();
-                break;
-                
-            case WeatherEventType.Storm:
-                Debug.Log("Weather forecast for today: A dangerous storm is threatening the crops!");
-                OnStorm?.Invoke();
-                break;
-                
-            case WeatherEventType.Freeze:
-                Debug.Log("Weather forecast for today: Freezing temperatures slow crop growth!");
-                OnFreeze?.Invoke();
-                break;
-                
-            case WeatherEventType.Clear:
-                Debug.Log("Weather forecast for today: Sunny clear sky!");
-                OnClearWeather?.Invoke();
-                break;
+            case WeatherEvent.BeneficialRain: OnBeneficialRain?.Invoke(); break;
+            case WeatherEvent.Storm: OnStorm?.Invoke(); break;
+            case WeatherEvent.Freeze: OnFreeze?.Invoke(); break;
+            case WeatherEvent.Clear: OnClearWeather?.Invoke(); break;
         }
     }
     
-    #endregion
-    
-    #region Visual Effects
-    
     private void UpdateVisualEffects()
     {
-        // Deactivate all particle effects first
-        DeactivateAllParticles();
-        
-        // Activate appropriate effect for current weather
-        ActivateWeatherParticles();
-    }
-    
-    private void DeactivateAllParticles()
-    {
+        // Deactivate all effects
         if (rainParticles) rainParticles.SetActive(false);
         if (stormParticles) stormParticles.SetActive(false);
         if (snowParticles) snowParticles.SetActive(false);
-    }
-    
-    private void ActivateWeatherParticles()
-    {
+        
+        // Activate current weather effect
         switch (currentWeather)
         {
-            case WeatherEventType.BeneficialRain:
+            case WeatherEvent.BeneficialRain:
                 if (rainParticles) rainParticles.SetActive(true);
                 break;
-                
-            case WeatherEventType.Storm:
+            case WeatherEvent.Storm:
                 if (stormParticles) stormParticles.SetActive(true);
                 break;
-            
-            case WeatherEventType.Freeze:
+            case WeatherEvent.Freeze:
                 if (snowParticles) snowParticles.SetActive(true);
                 break;
         }
     }
     
-    #endregion
-    
-    #region Public API
-    
-    /// <summary>
-    /// Returns growth modifier for temperature-based weather effects.
-    /// Other weather effects are handled through events.
-    /// </summary>
     public float GetGrowthModifier()
     {
-        if (currentWeather == WeatherEventType.Freeze)
-            return 0.5f;
-        
-        return 1f;
+        return currentWeather == WeatherEvent.Freeze ? 0.5f : 1f;
     }
     
-    /// <summary>
-    /// Gets the current weather type for external systems.
-    /// </summary>
-    public WeatherEventType GetCurrentWeather()
+    public WeatherEvent GetCurrentWeather()
     {
         return currentWeather;
     }
-    
-    #endregion
 }

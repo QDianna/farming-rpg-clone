@@ -1,18 +1,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// ScriptableObject that defines a crafting recipe with ingredients, result, and unlock requirements.
+/// Handles recipe progression where advanced recipes require crafting prerequisite recipes first.
+/// </summary>
 [CreateAssetMenu(menuName = "Crafting/Recipe")]
 public class CraftingRecipe : ScriptableObject
 {
+    [Header("Recipe Definition")]
     public string recipeName;
     public InventoryItem result;
     public int resultQuantity = 1;
     public List<CraftingIngredient> ingredients;
     
-    [Header("Unlock Requirements")]
-    public List<CraftingRecipe> prerequisiteRecipes; // What recipes must be crafted first
-    public bool isUnlocked = false; // Starts false, becomes true when crafted
-    public bool startsUnlocked = false; // For basic recipes like fertilizer
+    [Header("Unlock System")]
+    public List<CraftingRecipe> prerequisiteRecipes;
+    public bool startsUnlocked = false;
+    
+    [System.NonSerialized]
+    public bool isUnlocked = false;
     
     [System.Serializable]
     public class CraftingIngredient

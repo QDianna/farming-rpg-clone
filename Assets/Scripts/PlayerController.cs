@@ -2,149 +2,117 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// Central controller for player behavior, including movement, interaction, inventory handling,
-/// tool usage, and animation updates. Uses Unity's Input System for modular input mapping.
-/// 
-/// The class also manages interaction logic with the environment through two mechanisms:
-/// 1. Interface-based interaction (IInteractable) for objects like doors or buyable plots
-/// 2. Direct interaction with the tilemap (e.g. harvesting crops) without using IInteractable
-///    to optimize performance and avoid complex collider management.
-///
-/// The system supports modular inventory item usage (via ScriptableObjects), tool actions,
-/// and a scalable interaction pipeline for extensibility.
+/// Main player controller handling movement, interactions, tools, and inventory.
+/// Uses Unity's Input System and integrates with modular game systems.
 /// </summary>
-
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] private InputAction MoveAction;
-    private Rigidbody2D rigidbody2d;
-    private Vector2 move;
-    private Vector2 moveDirection = new Vector2(0, -1);
-    public float speed = 6.0f;  // units per second
+    [SerializeField] private InputAction moveAction;
+    [SerializeField] private float speed = 6.0f;
     
-    [Header("Animation")] 
-    [HideInInspector] public Animator animator;
-
-    [Header("Interaction")]
-    [SerializeField] private InputAction InteractAction;
-    [HideInInspector] public InteractionSystem interactionSystem;
+    [Header("Input Actions")]
+    [SerializeField] private InputAction interactAction;
+    [SerializeField] private InputAction toolAction;
+    [SerializeField] private InputAction inventoryAction;
+    [SerializeField] private InputAction useItemAction;
     
-    [Header("Tool")]
-    [SerializeField] private InputAction ToolAction;
-    private ToolSystem toolSystem;
-
-    [Header("Inventory")]
-    [SerializeField] private InputAction InventoryAction;
-    [SerializeField] private InputAction UseItemAction;
-    [HideInInspector] public InventorySystem inventorySystem;
-    
-    [Header("Farming")]
+    [Header("System References")]
     public PlotlandController plotlandController;
-
-    [Header("Stats")]
+    
+    // Components (assigned in Awake)
+    [HideInInspector] public Animator animator;
+    [HideInInspector] public InventorySystem inventorySystem;
+    [HideInInspector] public InteractionSystem interactionSystem;
     [HideInInspector] public PlayerStats playerStats;
+    [HideInInspector] public PlayerEconomy playerEconomy;
     
-    // debug / starter items
-    public InventoryItem seed1;
-    public InventoryItem seed2;
-    public InventoryItem seed3;
-    public InventoryItem strengthSolution;
+    private Rigidbody2D rb2d;
+    private ToolSystem toolSystem;
+    private Vector2 move;
+    private Vector2 moveDirection = Vector2.down;
     
+    // Debug starter items
+    [Header("Debug Items")]
+    public InventoryItem seed1, seed2, seed3, strengthSolution;
     
-    #region Unity Methods
-    
-    private void Start()
+    private void Awake()
     {
-        MoveAction.Enable();
-        InteractAction.Enable();
-        ToolAction.Enable();
-        InventoryAction.Enable();
-        UseItemAction.Enable();
-        
-        rigidbody2d = GetComponent<Rigidbody2D>();
+        // Get components
+        rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         toolSystem = GetComponent<ToolSystem>();
         inventorySystem = GetComponent<InventorySystem>();
         interactionSystem = GetComponent<InteractionSystem>();
         playerStats = GetComponent<PlayerStats>();
+        playerEconomy = GetComponent<PlayerEconomy>();
         
-        inventorySystem.AddItem(seed1, 5);
-        inventorySystem.AddItem(seed2, 3);
-        inventorySystem.AddItem(seed3, 3);
-        inventorySystem.AddItem(strengthSolution, 3);
+        // Enable input actions
+        moveAction.Enable();
+        interactAction.Enable();
+        toolAction.Enable();
+        inventoryAction.Enable();
+        useItemAction.Enable();
+    }
+
+    private void Start()
+    {
+        // Add debug starter items
+        if (seed1 != null) inventorySystem.AddItem(seed1, 5);
+        if (seed2 != null) inventorySystem.AddItem(seed2, 3);
+        if (seed3 != null) inventorySystem.AddItem(seed3, 3);
+        if (strengthSolution != null) inventorySystem.AddItem(strengthSolution, 3);
     }
 
     private void Update()
     {
-        move = MoveAction.ReadValue<Vector2>();
-
-        if(!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y,0.0f))
-        {
-            moveDirection.Set(move.x, move.y);
-            moveDirection.Normalize();
-        }
-        
-        // update player animation and tools facing direction
-        animator.SetFloat("Move X", moveDirection.x);
-        animator.SetFloat("Move Y", moveDirection.y);
-        animator.SetFloat("Speed", move.magnitude);
-        
-        HandleInteractInput();  // check if the player is interacting with IInteractables or Tilemaps
-        HandleToolInput();  // check if the player is using tools
-        HandleInventoryInput();  // check if the player is selecting items from inventory
-        HandleUseItemInput();  // check if the player is using an inventory item
+        HandleMovement();
+        HandleInputs();
     }
 
     private void FixedUpdate()
     {
-        Vector2 position = rigidbody2d.position + speed * Time.deltaTime * move;
-        rigidbody2d.MovePosition(position);
+        Vector2 position = rb2d.position + speed * Time.deltaTime * move;
+        rb2d.MovePosition(position);
     }
     
-    #endregion
-
-    
-    #region Input Handling
-
-    private void HandleInteractInput()
+    private void HandleMovement()
     {
-        if (InteractAction.triggered)
-            interactionSystem.TryInteract(this);
-    }
+        move = moveAction.ReadValue<Vector2>();
 
-    private void HandleToolInput()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            toolSystem.SetTool(1);
-        
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-            toolSystem.SetTool(2);
-        
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-            toolSystem.SetTool(3);
-        
-        else if (Input.GetKeyDown(KeyCode.Alpha0))
-            toolSystem.SetTool(0);
-        
-        if (ToolAction.triggered)
+        if (move.magnitude > 0.1f)
         {
-            toolSystem.UseTool(this);
+            moveDirection = move.normalized;
         }
+        
+        // Update animation
+        animator.SetFloat("Move X", moveDirection.x);
+        animator.SetFloat("Move Y", moveDirection.y);
+        animator.SetFloat("Speed", move.magnitude);
     }
     
-    private void HandleInventoryInput()
+    private void HandleInputs()
     {
-        if (InventoryAction.triggered)
+        if (interactAction.triggered)
+            interactionSystem.TryInteract(this);
+            
+        if (toolAction.triggered)
+            toolSystem.UseTool(this);
+            
+        if (inventoryAction.triggered)
             inventorySystem.GetNextItem();
-    }
-    
-    private void HandleUseItemInput()
-    {
-        if (UseItemAction.triggered)
+            
+        if (useItemAction.triggered)
             inventorySystem.UseCurrentItem(this);
+            
+        HandleToolSelection();
     }
     
-    #endregion
-    
+    private void HandleToolSelection()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha0)) toolSystem.SetTool(0);
+        else if (Input.GetKeyDown(KeyCode.Alpha1)) toolSystem.SetTool(1);
+        else if (Input.GetKeyDown(KeyCode.Alpha2)) toolSystem.SetTool(2);
+        else if (Input.GetKeyDown(KeyCode.Alpha3)) toolSystem.SetTool(3);
+    }
 }

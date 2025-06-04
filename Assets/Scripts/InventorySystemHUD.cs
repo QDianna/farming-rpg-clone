@@ -2,96 +2,99 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+/// <summary>
+/// Manages inventory UI display with selected item HUD and full inventory overlay.
+/// Automatically shows/hides full inventory when crafting bench or market opens.
+/// </summary>
 public class InventorySystemHUD : MonoBehaviour
 {
-    [Header("Main References")]
-    // [SerializeField] private InventorySystem inventorySystem;
-    [SerializeField] private InteractionCraftRecipe craftingBench;  // Reference to listen to crafting events
+    [Header("System References")]
+    [SerializeField] private InteractionCraftRecipe craftingBench;
+    [SerializeField] private InteractionMarket market;
 
-    [Header("Selected Item UI")] private VisualElement SelectedItemContainer;
-    
-    [Header("Full Inventory UI")]
-    private VisualElement InventoryContainer;           // Container for full inventory (shown during crafting)
-    private VisualElement InventoryItemsContainer;      // Where inventory items will be displayed
-    
-    // Dynamic inventory slots (created at runtime)
-    private List<VisualElement> InventorySlots = new List<VisualElement>();
+    private VisualElement selectedItemContainer;
+    private VisualElement inventoryContainer;
+    private VisualElement inventoryItemsContainer;
+    private List<VisualElement> inventorySlots = new List<VisualElement>();
 
-    private void Start()
+    private void Awake()
     {
         InitializeUI();
-        
-        // Subscribe to inventory system events
-        InventorySystem.Instance.OnSelectedItemChange += UpdateSelectedItemDisplay;
-        InventorySystem.Instance.OnInventoryChanged += UpdateFullInventoryDisplay;
-        
-        // Subscribe to crafting bench events (to auto-open/close full inventory)
-        if (craftingBench != null)
-        {
-            craftingBench.OnCraftingBenchOpened += ShowFullInventory;
-            craftingBench.OnCraftingBenchClosed += HideFullInventory;
-        }
-        
-        // Subscribe to inventory item clicks (for crafting integration)
-        InventorySystem.Instance.OnInventoryItemClicked += OnInventoryItemClicked;
-        
-        UpdateSelectedItemDisplay();  // remove initial (test) values from ui builder
+    }
+    
+    private void Start()
+    {
+        SubscribeToEvents();
+        UpdateSelectedItemDisplay();
     }
     
     private void OnDisable()
     {
-        // Unsubscribe from inventory system events
-        InventorySystem.Instance.OnSelectedItemChange -= UpdateSelectedItemDisplay;
-        if (InventorySystem.Instance != null)
-        {
-            InventorySystem.Instance.OnInventoryChanged -= UpdateFullInventoryDisplay;
-            InventorySystem.Instance.OnInventoryItemClicked -= OnInventoryItemClicked;
-        }
-        
-        // Unsubscribe from crafting bench events
-        if (craftingBench != null)
-        {
-            craftingBench.OnCraftingBenchOpened -= ShowFullInventory;
-            craftingBench.OnCraftingBenchClosed -= HideFullInventory;
-        }
+        UnsubscribeFromEvents();
     }
     
     private void InitializeUI()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
 
-        // Get selected item UI elements
-        SelectedItemContainer = root.Q<VisualElement>("SelectedItemContainer");
+        selectedItemContainer = root.Q<VisualElement>("SelectedItemContainer");
+        inventoryContainer = root.Q<VisualElement>("InventoryContainer");
+        inventoryItemsContainer = inventoryContainer.Q<VisualElement>("InventoryItemsContainer");
         
-        // Container children
-        var selectedItemIcon = SelectedItemContainer.Q<VisualElement>("ItemIcon");
-        var selectedItemQuantity = SelectedItemContainer.Q<Label>("ItemQuantity");
-        
-        // Get inventory container UI elements
-        InventoryContainer = root.Q<VisualElement>("InventoryContainer");
-        
-        // Containter children
-        InventoryItemsContainer = InventoryContainer.Q<VisualElement>("InventoryItemsContainer");
-        
-        // Hide full inventory at start
         HideFullInventory();
     }
 
-    #region Selected Item Display (existing functionality)
+    private void SubscribeToEvents()
+    {
+        if (InventorySystem.Instance != null)
+        {
+            InventorySystem.Instance.OnSelectedItemChange += UpdateSelectedItemDisplay;
+            InventorySystem.Instance.OnInventoryChanged += UpdateFullInventoryDisplay;
+            InventorySystem.Instance.OnInventoryItemClicked += OnInventoryItemClicked;
+        }
+        
+        if (craftingBench != null)
+        {
+            craftingBench.OnCraftingBenchOpened += ShowFullInventory;
+            craftingBench.OnCraftingBenchClosed += HideFullInventory;
+        }
+
+        if (market != null)
+        {
+            market.OnMarketOpened += ShowFullInventory;
+            market.OnMarketClosed += HideFullInventory;
+        }
+    }
+    
+    private void UnsubscribeFromEvents()
+    {
+        if (InventorySystem.Instance != null)
+        {
+            InventorySystem.Instance.OnSelectedItemChange -= UpdateSelectedItemDisplay;
+            InventorySystem.Instance.OnInventoryChanged -= UpdateFullInventoryDisplay;
+            InventorySystem.Instance.OnInventoryItemClicked -= OnInventoryItemClicked;
+        }
+        
+        if (craftingBench != null)
+        {
+            craftingBench.OnCraftingBenchOpened -= ShowFullInventory;
+            craftingBench.OnCraftingBenchClosed -= HideFullInventory;
+        }
+        
+        if (market != null)
+        {
+            market.OnMarketOpened -= ShowFullInventory;
+            market.OnMarketClosed -= HideFullInventory;
+        }
+    }
     
     private void UpdateSelectedItemDisplay()
     {
-        /*var root = GetComponent<UIDocument>().rootVisualElement;
-
-        // Get selected item UI elements (existing)
-        SelectedItemContainer = root.Q<VisualElement>("SelectedItem");*/
-        
-        // Container children
-        var selectedItemIcon = SelectedItemContainer.Q<VisualElement>("ItemIcon");
-        var selectedItemQuantity = SelectedItemContainer.Q<Label>("ItemQuantity");
+        var selectedItemIcon = selectedItemContainer.Q<VisualElement>("ItemIcon");
+        var selectedItemQuantity = selectedItemContainer.Q<Label>("ItemQuantity");
         
         var selectedItem = InventorySystem.Instance.GetSelectedItem();
-        if (selectedItem != null && selectedItem.itemSprite != null)
+        if (selectedItem?.itemSprite != null)
         {
             selectedItemIcon.style.backgroundImage = new StyleBackground(selectedItem.itemSprite);
             selectedItemQuantity.text = "x" + InventorySystem.Instance.GetSelectedItemQuantity();
@@ -103,96 +106,74 @@ public class InventorySystemHUD : MonoBehaviour
         }
     }
     
-    #endregion
-    
-    #region Full Inventory Display (new functionality for crafting)
-    
-    public void ShowFullInventory()
+    private void ShowFullInventory()
     {
-        InventoryContainer.style.display = DisplayStyle.Flex;
-        Debug.Log("Full inventory opened for crafting!");
+        inventoryContainer.style.display = DisplayStyle.Flex;
         UpdateFullInventoryDisplay();
     }
     
-    public void HideFullInventory()
+    private void HideFullInventory()
     {
-        InventoryContainer.style.display = DisplayStyle.None;
-        // Debug.Log("Full inventory closed!");
+        inventoryContainer.style.display = DisplayStyle.None;
     }
     
     private void UpdateFullInventoryDisplay()
     {
-        // Clear existing slots
+        if (InventorySystem.Instance == null) return;
+        
         ClearInventorySlots();
         
-        // Get all items from inventory system
         var allItems = InventorySystem.Instance.GetAllItems();
-        
-        // Create a slot for each inventory entry
         foreach (var entry in allItems)
         {
             CreateInventorySlot(entry);
         }
-        
-        Debug.Log($"Full inventory updated: {allItems.Count} different items");
     }
     
     private void ClearInventorySlots()
     {
-        foreach (var slot in InventorySlots)
+        foreach (var slot in inventorySlots)
         {
-            InventoryItemsContainer.Remove(slot);
+            inventoryItemsContainer.Remove(slot);
         }
-        InventorySlots.Clear();
+        inventorySlots.Clear();
     }
     
     private void CreateInventorySlot(InventoryEntry entry)
     {
-        // Create slot container
+        if (entry?.item == null) return;
+        
         var slotContainer = new VisualElement();
-        slotContainer.AddToClassList("inventory-slot");  // Add CSS class for styling
+        slotContainer.AddToClassList("item-slot");
         
-        // Create inner element for sprite
         var slotIcon = new VisualElement();
-        slotIcon.AddToClassList("inventory-slot-icon");
+        slotIcon.AddToClassList("item-icon");
         
-        // Set background image
         if (entry.item.itemSprite != null)
         {
             slotIcon.style.backgroundImage = new StyleBackground(entry.item.itemSprite);
         }
         
-        // Create quantity label
         var quantityLabel = new Label(entry.quantity.ToString());
-        quantityLabel.AddToClassList("inventory-slot-quantity");
+        quantityLabel.AddToClassList("item-quantity");
         
-        // Set tooltip
-        slotContainer.tooltip = $"{entry.quantity}x {entry.item.name}";
-        
-        // Add click event
+        slotContainer.tooltip = $"{entry.quantity}x {entry.item.itemName ?? "Unknown"}";
         slotContainer.RegisterCallback<ClickEvent>(evt => OnInventorySlotClicked(entry.item));
         
-        // Assemble slot
         slotContainer.Add(slotIcon);
         slotContainer.Add(quantityLabel);
         
-        // Add to container and track
-        InventoryItemsContainer.Add(slotContainer);
-        InventorySlots.Add(slotContainer);
+        inventoryItemsContainer.Add(slotContainer);
+        inventorySlots.Add(slotContainer);
     }
     
     private void OnInventorySlotClicked(InventoryItem item)
     {
-        // Trigger the inventory system's click event
         InventorySystem.Instance.TriggerItemClick(item);
     }
     
-    // This gets called when InventorySystem.OnInventoryItemClicked is triggered
     private void OnInventoryItemClicked(InventoryItem item)
     {
-        Debug.Log($"Inventory item {item.name} was clicked - this will be handled by CraftingSystemHUD");
-        // CraftingSystemHUD will handle the actual crafting logic
+        // Event forwarded to systems that need it (crafting/market)
     }
-    
-    #endregion
 }

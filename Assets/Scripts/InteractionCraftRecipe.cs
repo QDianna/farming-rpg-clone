@@ -1,18 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Interactive crafting bench that allows players to combine ingredients into new items.
+/// Features 3 input slots, 1 output slot, and automatic recipe validation with visual feedback.
+/// </summary>
 public class InteractionCraftRecipe : MonoBehaviour, IInteractable
 {
     [Header("Crafting Bench Settings")]
-    [SerializeField] private int inputSlotCount = 3; // How many ingredient slots
+    [SerializeField] private int inputSlotCount = 3;
     
     [Header("Current Crafting State")]
-    public List<InventoryItemSlot> inputSlots;  // Made public for UI access
-    public InventoryItemSlot outputSlot;        // Made public for UI access
+    public List<InventoryItemSlot> inputSlots;
+    public InventoryItemSlot outputSlot;
     
     private CraftingSystem playerCraftingSystem;
-    private CraftingSystemHUD uiController;
-
     private bool isBenchOpen;
 
     public event System.Action OnCraftingBenchOpened;
@@ -40,7 +42,7 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
         }
     }
     
-    private void Start()
+    private void Awake()
     {
         InitializeSlots();
     }
@@ -59,69 +61,40 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
     {
         playerCraftingSystem = player.GetComponent<CraftingSystem>();
         
+        isBenchOpen = !isBenchOpen;
+        
         if (isBenchOpen)
         {
-            // Close crafting bench
-            isBenchOpen = false;
-            OnCraftingBenchClosed?.Invoke();
+            NotificationSystem.ShowNotification("Crafting bench opened!");
+            OnCraftingBenchOpened?.Invoke();
         }
         else
         {
-            // Open crafting bench
-            isBenchOpen = true;
-            OpenCraftingBench();
+            NotificationSystem.ShowNotification("Crafting bench closed");
+            OnCraftingBenchClosed?.Invoke();
         }
     }
     
-    private void OpenCraftingBench()
-    {
-        Debug.Log("Crafting interaction start...");
-        OnCraftingBenchOpened?.Invoke();
-        
-        // Ask CraftingSystem what recipes are available
-        var availableRecipes = playerCraftingSystem.GetUnlockedRecipes();
-        
-        foreach (var recipe in availableRecipes)
-        {
-            bool canCraft = playerCraftingSystem.CanUnlockRecipe(recipe);
-            if (canCraft)
-                Debug.Log($"Recipe {recipe.recipeName} is available for crafting!");
-            else 
-                Debug.Log($"Recipe {recipe.recipeName} is NOT available for crafting.");
-        }
-    }
-    
-    /// <summary>
-    /// Add item to the first available input slot
-    /// </summary>
     public bool TryAddIngredient(InventoryItem item, int quantity)
     {
-        // Find first empty slot or slot with same item
         foreach (var slot in inputSlots)
         {
             if (slot.IsEmpty)
             {
                 slot.SetItem(item, quantity);
                 CheckForValidRecipe();
-                OnCraftingSlotsChanged?.Invoke();  // Notify UI
                 return true;
             }
             else if (slot.item == item)
             {
                 slot.quantity += quantity;
                 CheckForValidRecipe();
-                OnCraftingSlotsChanged?.Invoke();  // Notify UI
                 return true;
             }
         }
-        
-        Debug.Log("No available slots for ingredient");
         return false;
     }
     
-    /// <summary>
-    /// Remove item from input slot
-    /// </summary>
     public bool TryRemoveIngredient(int slotIndex, int quantity)
     {
         if (slotIndex < 0 || slotIndex >= inputSlots.Count)
@@ -136,47 +109,76 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
             slot.Clear();
         
         CheckForValidRecipe();
-        OnCraftingSlotsChanged?.Invoke();  // Notify UI
         return true;
     }
     
-    /// <summary>
-    /// Check if current ingredients match any recipe
-    /// </summary>
+    public bool TryTakeOutput()
+    {
+        if (outputSlot.IsEmpty) 
+        {
+            NotificationSystem.ShowNotification("No crafted item to take");
+            return false;
+        }
+        
+        var usedRecipe = FindMatchingRecipe();
+        if (usedRecipe == null) return false;
+        
+        // Add result to inventory
+        InventorySystem.Instance.AddItem(outputSlot.item, outputSlot.quantity);
+        
+        // Remove consumed ingredients
+        foreach (var ingredient in usedRecipe.ingredients)
+        {
+            RemoveIngredientsFromSlots(ingredient.item, ingredient.quantity);
+        }
+        
+        // Mark recipe as crafted
+        playerCraftingSystem?.MarkRecipeAsCrafted(usedRecipe);
+        
+        outputSlot.Clear();
+        CheckForValidRecipe();
+        
+        NotificationSystem.ShowNotification($"Crafted {usedRecipe.recipeName}!");
+        return true;
+    }
+    
     private void CheckForValidRecipe()
     {
         outputSlot.Clear();
         
-        // Get available recipes from CraftingSystem
-        var availableRecipes = playerCraftingSystem.GetUnlockedRecipes();
+        var availableRecipes = playerCraftingSystem?.GetUnlockedRecipes();
+        if (availableRecipes == null) return;
         
         foreach (var recipe in availableRecipes)
         {
-            if (playerCraftingSystem != null && !playerCraftingSystem.CanUnlockRecipe(recipe))
-                continue;
-            
-            if (DoIngredientsMatchRecipe(recipe))
+            if (playerCraftingSystem.CanUnlockRecipe(recipe) && DoIngredientsMatchRecipe(recipe))
             {
                 outputSlot.SetItem(recipe.result, recipe.resultQuantity);
-                Debug.Log($"Valid recipe found: {recipe.recipeName}");
-                OnCraftingSlotsChanged?.Invoke();  // Notify UI
-                return;
+                break;
             }
         }
         
-        OnCraftingSlotsChanged?.Invoke();  // Notify UI even if no recipe found
+        OnCraftingSlotsChanged?.Invoke();
     }
     
-    /// <summary>
-    /// Check if current input slots match recipe requirements
-    /// </summary>
+    private CraftingRecipe FindMatchingRecipe()
+    {
+        var availableRecipes = playerCraftingSystem?.GetUnlockedRecipes();
+        if (availableRecipes == null) return null;
+        
+        foreach (var recipe in availableRecipes)
+        {
+            if (recipe.result == outputSlot.item && DoIngredientsMatchRecipe(recipe))
+                return recipe;
+        }
+        return null;
+    }
+    
     private bool DoIngredientsMatchRecipe(CraftingRecipe recipe)
     {
         foreach (var ingredient in recipe.ingredients)
         {
             int totalQuantity = 0;
-            
-            // Count total quantity of this ingredient in input slots
             foreach (var slot in inputSlots)
             {
                 if (slot.item == ingredient.item)
@@ -186,58 +188,6 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
             if (totalQuantity < ingredient.quantity)
                 return false;
         }
-        
-        return true;
-    }
-    
-    /// <summary>
-    /// Take the crafted item from output slot
-    /// </summary>
-    public bool TryTakeOutput()
-    {
-        if (outputSlot.IsEmpty)
-        {
-            Debug.Log("No item to take from output");
-            return false;
-        }
-        
-        // Get available recipes from CraftingSystem
-        var availableRecipes = playerCraftingSystem.GetUnlockedRecipes();
-        
-        // Find which recipe was used
-        CraftingRecipe usedRecipe = null;
-        foreach (var recipe in availableRecipes)
-        {
-            if (recipe.result == outputSlot.item && DoIngredientsMatchRecipe(recipe))
-            {
-                usedRecipe = recipe;
-                break;
-            }
-        }
-        
-        if (usedRecipe == null)
-            return false;
-        
-        // Add item to player inventory
-        InventorySystem.Instance.AddItem(outputSlot.item, outputSlot.quantity);
-        
-        // Remove consumed ingredients
-        foreach (var ingredient in usedRecipe.ingredients)
-        {
-            RemoveIngredientsFromSlots(ingredient.item, ingredient.quantity);
-        }
-        
-        // Unlock recipe if first time crafting
-        if (playerCraftingSystem != null)
-        {
-            playerCraftingSystem.MarkRecipeAsCrafted(usedRecipe);
-        }
-        
-        // Clear output
-        outputSlot.Clear();
-        OnCraftingSlotsChanged?.Invoke();  // Notify UI
-        
-        Debug.Log($"Successfully crafted {usedRecipe.recipeName}");
         return true;
     }
     
@@ -257,24 +207,45 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
         }
     }
     
-    // IInteractable implementation - KEPT!
+    private void RemoveAllIngredients()
+    {
+        bool hadItems = false;
+        foreach (var slot in inputSlots)
+        {
+            if (!slot.IsEmpty)
+            {
+                InventorySystem.Instance.AddItem(slot.item, slot.quantity);
+                slot.Clear();
+                hadItems = true;
+            }
+        }
+        
+        outputSlot.Clear();
+        OnCraftingSlotsChanged?.Invoke();
+        
+        if (hadItems)
+            NotificationSystem.ShowNotification("Items returned to inventory");
+    }
+    
     public void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerController player = other.GetComponent<PlayerController>();
-        if (player != null)
+        if (other.TryGetComponent<PlayerController>(out var player))
         {
-            Debug.Log("Press E to use crafting bench!");
             InteractionSystem.Instance.SetCurrentInteractable(this);
         }
     }
     
     public void OnTriggerExit2D(Collider2D other)
     {
-        PlayerController player = other.GetComponent<PlayerController>();
-        if (player != null)
+        if (other.TryGetComponent<PlayerController>(out var player))
         {
-            Debug.Log("exited interaction");
             InteractionSystem.Instance.SetCurrentInteractable(null);
+            if (isBenchOpen)
+            {
+                isBenchOpen = false;
+                RemoveAllIngredients();
+                OnCraftingBenchClosed?.Invoke();
+            }
         }
     }
 }

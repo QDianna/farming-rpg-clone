@@ -2,10 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Represents a single entry in the player's inventory, storing a reference to an InventoryItem
-/// and the quantity owned. Used internally by the InventorySystem to track item stacks.
+/// Simple data container for inventory items with quantity tracking.
 /// </summary>
-
 public class InventoryEntry
 {
     public InventoryItem item;
@@ -19,36 +17,31 @@ public class InventoryEntry
 }
 
 /// <summary>
-/// Manages the player's inventory, including adding, removing, and selecting items.
-/// Designed to be lightweight, stack-based, and scalable for future features like UI or item categories.
-/// Items are stored as InventoryEntry instances containing item data and quantity.
+/// Singleton inventory system managing player items with selection, stacking, and UI integration.
+/// Supports item cycling, usage, and events for UI synchronization.
 /// </summary>
-
 public class InventorySystem : MonoBehaviour
 {
     public static InventorySystem Instance { get; private set; }
     
     private List<InventoryEntry> items = new();
-    public event System.Action OnSelectedItemChange;
-    public event System.Action OnInventoryChanged;  // NEW - when items added/removed
-    public event System.Action<InventoryItem> OnInventoryItemClicked;  // NEW - when item clicked
-    
     private int selectedItem = -2;
+
+    public event System.Action OnSelectedItemChange;
+    public event System.Action OnInventoryChanged;
+    public event System.Action<InventoryItem> OnInventoryItemClicked;
 
     private void Awake()
     {
-        // Singleton pattern
         if (Instance == null)
         {
             Instance = this;
+            selectedItem = -2;
         }
         else
         {
             Destroy(gameObject);
-            return;
         }
-        
-        selectedItem = -2;
     }
 
     public bool HasItem(InventoryItem item, int quantity)
@@ -56,35 +49,29 @@ public class InventorySystem : MonoBehaviour
         foreach (var entry in items)
             if (entry.item == item && entry.quantity >= quantity)
                 return true;
-
         return false;
     }
 
     public void UseCurrentItem(PlayerController player)
     {
         var item = GetSelectedItem();
-        if (item == null)
+        if (item != null)
         {
-            Debug.Log("No item to use.");
-            return;
+            item.UseItem(player);
         }
-
-        item.UseItem(player);
     }
     
     public InventoryItem GetSelectedItem()
     {
-        if (items.Count == 0 || selectedItem < 0 || selectedItem > items.Count - 1)
+        if (items.Count == 0 || selectedItem < 0 || selectedItem >= items.Count)
             return null;
-        
         return items[selectedItem].item;
     }
 
     public int GetSelectedItemQuantity()
     {
-        if (items.Count == 0 || selectedItem < 0 || selectedItem > items.Count - 1)
+        if (items.Count == 0 || selectedItem < 0 || selectedItem >= items.Count)
             return 0;
-        
         return items[selectedItem].quantity;
     }
     
@@ -92,20 +79,13 @@ public class InventorySystem : MonoBehaviour
     {
         if (selectedItem == -2)
         {
-            Debug.Log("Opening inventory");
             selectedItem = -1;
             return;
         }
         
-        if (items.Count == 0)
-        {
-            Debug.Log("Empty inventory");
-            return;
-        }
+        if (items.Count == 0) return;
 
         selectedItem = (selectedItem + 1) % items.Count;
-        
-        Debug.Log("You've selected item: " + items[selectedItem].item + " - count: " + items[selectedItem].quantity);
         OnSelectedItemChange?.Invoke();
     }
 
@@ -118,44 +98,64 @@ public class InventorySystem : MonoBehaviour
         else
             items.Add(new InventoryEntry(item, amount));
         
-        OnInventoryChanged?.Invoke();  // Notify UI
+        OnInventoryChanged?.Invoke();
     }
 
     public void RemoveItem(InventoryItem item, int amount)
     {
         var entry = items.Find(i => i.item == item);
-        if (entry == null)
-        {
-            Debug.Log("Error - no item to remove");
-            return;
-        }
+        if (entry == null) return;
         
         entry.quantity -= amount;
         
-        if (entry.quantity <= 0)                // no more quantity, whole entry needs removing
+        if (entry.quantity <= 0)
         {
             items.Remove(entry);
 
-            if (items.Count == 0)               // no more items in the inventory, reset inventory
+            if (items.Count == 0)
                 selectedItem = -1;
-                
-            if (selectedItem >= items.Count)    // deleted item in last position, reset cursor
+            else if (selectedItem >= items.Count)
                 selectedItem = 0;
         }
         
-        OnSelectedItemChange?.Invoke();        // notify the HUD
-        OnInventoryChanged?.Invoke();          // notify inventory UI
+        OnSelectedItemChange?.Invoke();
+        OnInventoryChanged?.Invoke();
     }
     
-    // NEW METHODS for UI
     public List<InventoryEntry> GetAllItems()
     {
-        return new List<InventoryEntry>(items);  // Return copy to prevent external modification
+        return new List<InventoryEntry>(items);
     }
     
     public void TriggerItemClick(InventoryItem item)
     {
         OnInventoryItemClicked?.Invoke(item);
-        Debug.Log($"Player clicked on {item.name}");
+    }
+    
+    public int GetItemQuantity(InventoryItem item)
+    {
+        if (item == null) return 0;
+    
+        int totalQuantity = 0;
+        foreach (var entry in items)
+        {
+            if (entry.item == item)
+                totalQuantity += entry.quantity;
+        }
+        return totalQuantity;
+    }
+
+    public List<InventoryItem> GetSellableItems()
+    {
+        var sellableItems = new List<InventoryItem>();
+    
+        foreach (var entry in items)
+        {
+            if (entry.item?.canBeSold == true && entry.quantity > 0 && !sellableItems.Contains(entry.item))
+            {
+                sellableItems.Add(entry.item);
+            }
+        }
+        return sellableItems;
     }
 }

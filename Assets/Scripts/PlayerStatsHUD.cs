@@ -2,45 +2,53 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// Binds player stats to UI Toolkit progress bars, updating the HUD when hunger or health changes.
+/// Updates health and hunger progress bars based on PlayerStats changes.
 /// </summary>
-
 public class PlayerStatsHUD : MonoBehaviour
 {
     [SerializeField] private PlayerStats playerStats;
+    
     private ProgressBar healthBar;
     private ProgressBar hungerBar;
 
-    private void OnEnable()
+    private void Awake()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
-
-        // Link by name from UXML
         healthBar = root.Q<ProgressBar>("HealthBar");
         hungerBar = root.Q<ProgressBar>("HungerBar");
+        
+        if (playerStats != null)
+        {
+            healthBar.value = playerStats.GetHealth();
+            hungerBar.value = playerStats.GetHunger();
+        }
+    }
 
-        // Initialize values
-        healthBar.value = playerStats.GetHealth();
-        hungerBar.value = playerStats.GetHunger();
-
-        // Subscribe to events
-        playerStats.OnHealthChange += UpdateHealthBar;
-        playerStats.OnHungerChange += UpdateHungerBar;
+    private void OnEnable()
+    {
+        if (playerStats != null)
+        {
+            playerStats.OnHealthChange += UpdateHealthBar;
+            playerStats.OnHungerChange += UpdateHungerBar;
+        }
     }
 
     private void OnDisable()
     {
-        playerStats.OnHealthChange -= UpdateHealthBar;
-        playerStats.OnHungerChange -= UpdateHungerBar;
+        if (playerStats != null)
+        {
+            playerStats.OnHealthChange -= UpdateHealthBar;
+            playerStats.OnHungerChange -= UpdateHungerBar;
+        }
     }
 
     private void UpdateHealthBar(float value)
     {
-        healthBar.value = value;
+        if (healthBar != null) healthBar.value = value;
     }
 
     private void UpdateHungerBar(float value)
     {
-        hungerBar.value = value;
+        if (hungerBar != null) hungerBar.value = value;
     }
 }
