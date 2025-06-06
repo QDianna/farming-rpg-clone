@@ -26,7 +26,7 @@ public class CraftingSystem : MonoBehaviour
         foreach (var recipe in recipes)
         {
             // Set unlock status based on startsUnlocked flag or previous crafting
-            recipe.isUnlocked = recipe.startsUnlocked || craftedRecipeNames.Contains(recipe.recipeName);
+            recipe.isUnlocked = craftedRecipeNames.Contains(recipe.recipeName);
             Debug.Log($"initializing {recipe.recipeName} with status {recipe.isUnlocked}");
         }
     }
@@ -68,7 +68,7 @@ public class CraftingSystem : MonoBehaviour
     /// </summary>
     public bool CanUnlockRecipe(CraftingRecipe recipe)
     {
-        if (recipe.isUnlocked || recipe.startsUnlocked) return true;
+        if (recipe.isUnlocked) return true;
         
         // Check prerequisite recipes
         foreach (var prerequisite in recipe.prerequisiteRecipes)
@@ -204,17 +204,5 @@ public class CraftingSystem : MonoBehaviour
             Debug.Log($"- {recipe.recipeName}: {status}{crafted}");
         }
     }
-    
-    [ContextMenu("Reset Crafting Progress")]
-    private void ResetCraftingProgress()
-    {
-        craftedRecipeNames.Clear();
-        foreach (var recipe in recipes)
-        {
-            recipe.isUnlocked = recipe.startsUnlocked;
-        }
-        Debug.Log("Crafting progress reset!");
-    }
-    
     #endregion
 }

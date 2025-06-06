@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a679d765daf249b4b6c1fea94226ca57, type: 3}
+  m_Name: TomatoSeed
+  m_EditorClassIdentifier: 
+  name: tomato seed
+  description: 
+  sprite: {fileID: 1329759279317927152, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  droppedItemPrefab: {fileID: 0}
+  basePrice: 10
+  canBeSold: 1
+  canBeBought: 0
+  maxStackSize: 99
+  growthTime: 10
+  growthStageTiles:
+  - {fileID: 11400000, guid: 0c6cbf29f50cb4c44b8a90b726a73f62, type: 2}
+  - {fileID: 11400000, guid: 881dadffb935c1e4e9be681513b8efe7, type: 2}
+  - {fileID: 11400000, guid: 97e72d22671de394f9049fe19571b400, type: 2}
+  - {fileID: 11400000, guid: 6afb680b249570742a7bc9770cd8b696, type: 2}
+  sickStageTile: {fileID: 11400000, guid: 75464ce65fcd7254581d5479db3e81cc, type: 2}
+  resultedCrop: {fileID: 11400000, guid: d0ddd43881e11f34b89359ea3da33011, type: 2}

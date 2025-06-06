@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0df60484ede4a7e8785768628879c21, type: 3}
   m_Name: Berry
   m_EditorClassIdentifier: 
-  itemName: Berry
-  description: 
-  itemSprite: {fileID: 0}
+  name: berry
+  description: can be eaten, sold or used for crafting
+  sprite: {fileID: 1274812072, guid: 4038e15739dd2be498076e728299f386, type: 3}
+  droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}
   basePrice: 10
   canBeSold: 1
   canBeBought: 0
   maxStackSize: 99
-  droppedItemPrefab: {fileID: 0}

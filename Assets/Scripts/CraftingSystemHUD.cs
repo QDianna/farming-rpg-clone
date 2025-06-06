@@ -150,7 +150,7 @@ public class CraftingSystemHUD : MonoBehaviour
         }
         else
         {
-            slotElement.style.backgroundImage = new StyleBackground(slot.item.itemSprite);
+            slotElement.style.backgroundImage = new StyleBackground(slot.item.sprite);
             quantityLabel.text = slot.quantity.ToString();
             slotElement.tooltip = $"{slot.quantity}x {slot.item.name}";
         }

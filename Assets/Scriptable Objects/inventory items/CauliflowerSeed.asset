@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a679d765daf249b4b6c1fea94226ca57, type: 3}
   m_Name: CauliflowerSeed
   m_EditorClassIdentifier: 
-  itemName: CauliflowerSeed
-  description: 
-  itemSprite: {fileID: 3808273280442274367, guid: 4038e15739dd2be498076e728299f386, type: 3}
+  name: cauliflower seed
+  description: can be planted or used for crafting
+  sprite: {fileID: 7992393800040281542, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  droppedItemPrefab: {fileID: 0}
   basePrice: 10
-  canBeSold: 1
-  canBeBought: 0
+  canBeSold: 0
+  canBeBought: 1
   maxStackSize: 99
   growthTime: 20
-  seedTile: {fileID: 11400000, guid: c1970f76ffbb63c4fb53dde442f93118, type: 2}
   growthStageTiles:
-  - {fileID: 11400000, guid: b3c3fa28c69a2ae4e97b429aac43d639, type: 2}
-  - {fileID: 11400000, guid: 25a4f4f3eefab0b4daa9307da6804308, type: 2}
-  - {fileID: 11400000, guid: ed5b20df53aa4b542abf7a478afb3868, type: 2}
-  - {fileID: 11400000, guid: c0522bfbfe4d9b54ca06cda4614eae87, type: 2}
-  cropItem: {fileID: 11400000, guid: 6f4601b4ff94fae4b98a57b009f13da7, type: 2}
+  - {fileID: 11400000, guid: a3233cbe18bec45458cd9565867d112a, type: 2}
+  - {fileID: 11400000, guid: 983c23985a689394293bcefaee72147b, type: 2}
+  - {fileID: 11400000, guid: df50aeb4082c7cb47b75c4e3012b1855, type: 2}
+  - {fileID: 11400000, guid: 9a7ef3995758d67439bb0d71f80bfec2, type: 2}
+  sickStageTile: {fileID: 11400000, guid: 57867ec0960fda64fa33fa7e056bb7d4, type: 2}
+  resultedCrop: {fileID: 11400000, guid: 6f4601b4ff94fae4b98a57b009f13da7, type: 2}

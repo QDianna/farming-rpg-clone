@@ -6,9 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/ItemTheCureBeneath")]
 public class ItemTheCureBeneath : InventoryItem
 {
-    [SerializeField] private GameObject droppedItemPrefab;
-    [SerializeField] private float hungerRestoreValue;
-    
     public override void UseItem(PlayerController player)
     {
         Debug.Log("THE CURE BENEATH!!!!");

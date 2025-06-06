@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf08809745e46ee907d4ee2b778dde1, type: 3}
   m_Name: OnionCrop
   m_EditorClassIdentifier: 
-  itemName: OnionCrop
-  itemSprite: {fileID: -707816501, guid: 4038e15739dd2be498076e728299f386, type: 3}
+  name: onion
+  description: can be eaten, sold or used for crafting
+  sprite: {fileID: -2878256257206131079, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
   droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}
+  basePrice: 10
+  canBeSold: 1
+  canBeBought: 0
+  maxStackSize: 99
   hungerRestoreValue: 5

@@ -185,7 +185,7 @@ public class MarketSystemHUD : MonoBehaviour
         {
             var icon = new VisualElement();
             icon.AddToClassList("item-icon");
-            icon.style.backgroundImage = new StyleBackground(slot.item.itemSprite);
+            icon.style.backgroundImage = new StyleBackground(slot.item.sprite);
             slotElement.Add(icon);
         
             var quantityLabel = new Label(slot.quantity.ToString());
@@ -193,7 +193,7 @@ public class MarketSystemHUD : MonoBehaviour
             slotElement.Add(quantityLabel);
         
             slotElement.RegisterCallback<ClickEvent>(evt => market.TryRemoveItemFromSell(index, 1));
-            slotElement.tooltip = $"Click to return 1x {slot.item.itemName} to inventory";
+            slotElement.tooltip = $"Click to return 1x {slot.item.name} to inventory";
         }
         else
         {
@@ -210,13 +210,13 @@ public class MarketSystemHUD : MonoBehaviour
         
         var icon = new VisualElement();
         icon.AddToClassList("item-icon");
-        icon.style.backgroundImage = new StyleBackground(item.itemSprite);
+        icon.style.backgroundImage = new StyleBackground(item.sprite);
         itemElement.Add(icon);
         
         itemElement.RegisterCallback<ClickEvent>(evt => market.TryBuyItem(item, 1));
         
         int buyPrice = market.playerEconomy.GetBuyPrice(item);
-        itemElement.tooltip = $"Click to buy 1x {item.itemName} for {buyPrice} coins";
+        itemElement.tooltip = $"Click to buy 1x {item.name} for {buyPrice} coins";
         
         return itemElement;
     }

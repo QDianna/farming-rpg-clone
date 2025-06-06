@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 721b20d37dc248ffadc124dbac080836, type: 3}
   m_Name: PowerSolution
   m_EditorClassIdentifier: 
-  itemName: PowerSolution
+  name: power solution
   description: makes plants invincible to debuffs
-  itemSprite: {fileID: 0}
+  sprite: {fileID: 21300272, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
+  droppedItemPrefab: {fileID: 0}
   basePrice: 10
   canBeSold: 1
   canBeBought: 0
   maxStackSize: 99
-  droppedItemPrefab: {fileID: 0}
-  hungerRestoreValue: 0

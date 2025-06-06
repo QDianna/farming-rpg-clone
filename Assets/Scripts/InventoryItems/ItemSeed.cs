@@ -11,9 +11,9 @@ public class ItemSeed : InventoryItem
 {
     [Header("Growth Properties")]
     public float growthTime;
-    public TileBase seedTile;
     public List<TileBase> growthStageTiles = new(4);
-    public ItemCrop cropItem;
+    public TileBase sickStageTile;
+    public ItemCrop resultedCrop;
     
     public override void UseItem(PlayerController player)
     {
@@ -24,7 +24,7 @@ public class ItemSeed : InventoryItem
             player.animator.SetTrigger("Plant");
             player.plotlandController.PlantPlot(this, worldPos);
             player.inventorySystem.RemoveItem(this, 1);
-            NotificationSystem.ShowNotification($"Planted {itemName}");
+            NotificationSystem.ShowNotification($"Planted {name}");
         }
         else
         {

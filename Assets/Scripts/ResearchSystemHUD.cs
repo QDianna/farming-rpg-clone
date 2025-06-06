@@ -184,10 +184,10 @@ public class ResearchSystemHUD : MonoBehaviour
         else
         {
             // Item in slot
-            if (slotIcon != null) slotIcon.style.backgroundImage = new StyleBackground(item.itemSprite);
+            if (slotIcon != null) slotIcon.style.backgroundImage = new StyleBackground(item.sprite);
             if (slotQuantity != null) slotQuantity.text = "1";
             slotContainer.RemoveFromClassList("empty");
-            slotContainer.tooltip = $"Research {item.itemName} (click to remove)";
+            slotContainer.tooltip = $"Research {item.name} (click to remove)";
         }
     }
     

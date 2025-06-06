@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33b715ee8a984a0f9d95a26025eb8766, type: 3}
   m_Name: SpeedSolution
   m_EditorClassIdentifier: 
-  itemName: SpeedSolution
+  name: speed solution
   description: makes plants grow faster
-  itemSprite: {fileID: 0}
+  sprite: {fileID: 21300220, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
+  droppedItemPrefab: {fileID: 0}
   basePrice: 10
   canBeSold: 1
   canBeBought: 0
   maxStackSize: 99
-  droppedItemPrefab: {fileID: 0}
-  hungerRestoreValue: 0

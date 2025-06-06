@@ -6,9 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/ItemSpeedSolution")]
 public class ItemSpeedSolution : InventoryItem
 {
-    [SerializeField] private GameObject droppedItemPrefab;
-    [SerializeField] private float hungerRestoreValue;
-    
     public override void UseItem(PlayerController player)
     {
         Debug.Log("Use speed solution");

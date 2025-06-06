@@ -145,10 +145,10 @@ public class PlotlandController : MonoBehaviour
         var plotData = plotStates[tilePos];
         plotData.state = PlotState.Planted;
         plotData.seedData = seedItem;
-        plotData.currentGrowthStage = -1;
+        plotData.currentGrowthStage = 0;
         plotData.canStartGrowing = false;
 
-        cropTilemap.SetTile(tilePos, seedItem.seedTile);
+        cropTilemap.SetTile(tilePos, seedItem.growthStageTiles[0]);
     }
     
     public void AttendPlot(Vector3 worldPos)
@@ -156,15 +156,18 @@ public class PlotlandController : MonoBehaviour
         Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
         var plotData = plotStates[tilePos];
         
-        plotData.canStartGrowing = true;
         plotData.growthTimer = 0;
+        plotData.currentGrowthStage = 1;
+        plotData.canStartGrowing = true;
+        
+        cropTilemap.SetTile(tilePos, plotData.seedData.growthStageTiles[1]);
     }
     
     public void HarvestPlot(Vector3 worldPos, PlayerController player)
     {
         Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
         var data = plotStates[tilePos];
-        var cropItem = data.seedData.cropItem;
+        var cropItem = data.seedData.resultedCrop;
 
         // Give harvest rewards
         player.inventorySystem.AddItem(data.seedData, Random.Range(1, 3));
@@ -217,7 +220,7 @@ public class PlotlandController : MonoBehaviour
             if (newStage == maxStage)
             {
                 data.state = PlotState.Grown;
-                NotificationSystem.ShowNotification($"{data.seedData.itemName} is ready to harvest!");
+                NotificationSystem.ShowNotification($"{data.seedData.name} is ready to harvest!");
             }
         }
     }

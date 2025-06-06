@@ -65,7 +65,7 @@ public class PlayerEconomy : MonoBehaviour
         AddMoney(totalPrice);
         OnItemSold?.Invoke(item, quantity, totalPrice);
         
-        NotificationSystem.ShowNotification($"Sold {quantity}x {item.itemName} for {totalPrice} coins");
+        NotificationSystem.ShowNotification($"Sold {quantity}x {item.name} for {totalPrice} coins");
         return true;
     }
     
@@ -89,7 +89,7 @@ public class PlayerEconomy : MonoBehaviour
         InventorySystem.Instance.AddItem(item, quantity);
         OnItemBought?.Invoke(item, quantity, totalPrice);
         
-        NotificationSystem.ShowNotification($"Bought {quantity}x {item.itemName} for {totalPrice} coins");
+        NotificationSystem.ShowNotification($"Bought {quantity}x {item.name} for {totalPrice} coins");
         return true;
     }
     

@@ -6,14 +6,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/ItemCrop")]
 public class ItemCrop : InventoryItem
 {
-    [SerializeField] private GameObject droppedItemPrefab;
     [SerializeField] private float hungerRestoreValue;
     
     public override void UseItem(PlayerController player)
     {
         player.playerStats.RestoreHunger(hungerRestoreValue);
         player.inventorySystem.RemoveItem(this, 1);
-        NotificationSystem.ShowNotification($"Ate {itemName} (+{hungerRestoreValue} hunger)");
+        NotificationSystem.ShowNotification($"Ate {name} (+{hungerRestoreValue} hunger)");
     }
 
     public void DisplayCrop(Vector3 playerPosition, PlayerController player)
@@ -26,9 +25,9 @@ public class ItemCrop : InventoryItem
         GameObject obj = Instantiate(droppedItemPrefab, cropSpawnPosition, Quaternion.identity);
         
         var spriteRenderer = obj.GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null && itemSprite != null)
+        if (spriteRenderer != null && sprite != null)
         {
-            spriteRenderer.sprite = itemSprite;
+            spriteRenderer.sprite = sprite;
         }
 
         var droppedEffect = obj.GetComponent<EffectDroppedItem>();

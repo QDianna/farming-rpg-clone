@@ -57,7 +57,7 @@ public class ResearchSystem : MonoBehaviour
     {
         if (ingredient == null) return null;
         
-        string ingredientName = ingredient.itemName;
+        string ingredientName = ingredient.name;
         bool wasNew = !researchedIngredients.Contains(ingredientName);
         
         // Add to researched
@@ -162,7 +162,7 @@ public class ResearchSystem : MonoBehaviour
     {
         foreach (var ingredient in recipe.ingredients)
         {
-            if (!researchedIngredients.Contains(ingredient.item.itemName))
+            if (!researchedIngredients.Contains(ingredient.item.name))
                 return false;
         }
         return true;
@@ -175,7 +175,7 @@ public class ResearchSystem : MonoBehaviour
         {
             foreach (var ingredient in recipe.ingredients)
             {
-                ingredients.Add(ingredient.item.itemName);
+                ingredients.Add(ingredient.item.name);
             }
         }
         return ingredients;

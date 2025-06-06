@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fe6c4186b04b39843efbf2e963b3ad, type: 3}
   m_Name: FightPotion
   m_EditorClassIdentifier: 
-  itemName: FightPotion
+  name: fight potion
   description: makes plants invincible to weather and animals
-  itemSprite: {fileID: 0}
+  sprite: {fileID: 21300224, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
+  droppedItemPrefab: {fileID: 0}
   basePrice: 10
   canBeSold: 1
   canBeBought: 0
   maxStackSize: 99
-  droppedItemPrefab: {fileID: 0}
-  hungerRestoreValue: 0

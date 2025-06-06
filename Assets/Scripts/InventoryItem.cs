@@ -6,10 +6,11 @@ using UnityEngine;
 /// </summary>
 public abstract class InventoryItem : ScriptableObject
 {
-    [Header("Basic Information")]
-    public string itemName;
+    [Header("General Information")]
+    public string name;
     public string description;
-    public Sprite itemSprite;
+    public Sprite sprite;
+    public GameObject droppedItemPrefab;
     
     [Header("Economic Properties")]
     public int basePrice = 10;

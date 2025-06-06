@@ -32,10 +32,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 move;
     private Vector2 moveDirection = Vector2.down;
     
-    // Debug starter items
-    [Header("Debug Items")]
-    public InventoryItem seed1, seed2, seed3, strengthSolution;
-    
     private void Awake()
     {
         // Get components
@@ -53,15 +49,6 @@ public class PlayerController : MonoBehaviour
         toolAction.Enable();
         inventoryAction.Enable();
         useItemAction.Enable();
-    }
-
-    private void Start()
-    {
-        // Add debug starter items
-        if (seed1 != null) inventorySystem.AddItem(seed1, 5);
-        if (seed2 != null) inventorySystem.AddItem(seed2, 3);
-        if (seed3 != null) inventorySystem.AddItem(seed3, 3);
-        if (strengthSolution != null) inventorySystem.AddItem(strengthSolution, 3);
     }
 
     private void Update()

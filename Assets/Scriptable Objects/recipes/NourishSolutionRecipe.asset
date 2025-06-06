@@ -16,9 +16,11 @@ MonoBehaviour:
   result: {fileID: 11400000, guid: 3d2f3a07d555c454ca123f5aba5767ac, type: 2}
   resultQuantity: 1
   ingredients:
-  - item: {fileID: 11400000, guid: bb69fbc96e57eee4aa0f78539332d899, type: 2}
+  - item: {fileID: 11400000, guid: d1cb36d72f0d9024987188630be0d2d9, type: 2}
     quantity: 2
-  - item: {fileID: 11400000, guid: 6f4601b4ff94fae4b98a57b009f13da7, type: 2}
-    quantity: 2
+  - item: {fileID: 11400000, guid: d0ddd43881e11f34b89359ea3da33011, type: 2}
+    quantity: 3
+  - item: {fileID: 11400000, guid: 062b5afc6c5432a41942a8f29c745942, type: 2}
+    quantity: 3
   prerequisiteRecipes: []
   startsUnlocked: 0

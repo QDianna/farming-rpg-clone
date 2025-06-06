@@ -6,9 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/ItemPowerSolution")]
 public class ItemPowerSolution : InventoryItem
 {
-    [SerializeField] private GameObject droppedItemPrefab;
-    [SerializeField] private float hungerRestoreValue;
-    
     public override void UseItem(PlayerController player)
     {
         Debug.Log("Use power solution");

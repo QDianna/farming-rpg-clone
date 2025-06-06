@@ -4,6 +4,8 @@ using UnityEngine;
 /// <summary>
 /// Simple data container for inventory items with quantity tracking.
 /// </summary>
+
+[System.Serializable]
 public class InventoryEntry
 {
     public InventoryItem item;
@@ -23,8 +25,8 @@ public class InventoryEntry
 public class InventorySystem : MonoBehaviour
 {
     public static InventorySystem Instance { get; private set; }
-    
-    private List<InventoryEntry> items = new();
+
+    [SerializeField] private List<InventoryEntry> items = new List<InventoryEntry>();
     private int selectedItem = -2;
 
     public event System.Action OnSelectedItemChange;

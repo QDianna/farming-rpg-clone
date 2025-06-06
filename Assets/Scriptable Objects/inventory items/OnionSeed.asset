@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a679d765daf249b4b6c1fea94226ca57, type: 3}
   m_Name: OnionSeed
   m_EditorClassIdentifier: 
-  itemName: OnionSeed
-  description: 
-  itemSprite: {fileID: 2056528120, guid: 4038e15739dd2be498076e728299f386, type: 3}
+  name: onion seed
+  description: can be planted
+  sprite: {fileID: -2896264204179490149, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  droppedItemPrefab: {fileID: 0}
   basePrice: 10
   canBeSold: 1
   canBeBought: 0
   maxStackSize: 99
   growthTime: 15
-  seedTile: {fileID: 11400000, guid: 18a0be23bbd2cf64d81422a8d3644622, type: 2}
   growthStageTiles:
-  - {fileID: 11400000, guid: e2e0c1d25f113fb43afb58f2b70f88ca, type: 2}
-  - {fileID: 11400000, guid: 6461e5a78b8cad84c926663edcf26d4e, type: 2}
-  - {fileID: 11400000, guid: 6693becbf5593cc4184e78a9938e025a, type: 2}
-  - {fileID: 11400000, guid: 7c66fc4b75a29d2478bd6f16c2eb6a24, type: 2}
-  cropItem: {fileID: 11400000, guid: d1cb36d72f0d9024987188630be0d2d9, type: 2}
+  - {fileID: 11400000, guid: 5e1ac5e8b0dadfc419f2b53023a1a2c3, type: 2}
+  - {fileID: 11400000, guid: 0d2d0f22a8e8bda40b6c27e4de85d020, type: 2}
+  - {fileID: 11400000, guid: be23c940307381c44886cb812a3b59ea, type: 2}
+  - {fileID: 11400000, guid: 3e170be458c03d54cb6b0e8595ff64c3, type: 2}
+  sickStageTile: {fileID: 11400000, guid: 11c858d6563458148988d43e372e9a32, type: 2}
+  resultedCrop: {fileID: 11400000, guid: d1cb36d72f0d9024987188630be0d2d9, type: 2}

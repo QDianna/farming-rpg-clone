@@ -12,11 +12,10 @@ public class CraftingRecipe : ScriptableObject
     public string recipeName;
     public InventoryItem result;
     public int resultQuantity = 1;
-    public List<CraftingIngredient> ingredients;
     
     [Header("Unlock System")]
+    public List<CraftingIngredient> ingredients;
     public List<CraftingRecipe> prerequisiteRecipes;
-    public bool startsUnlocked = false;
     
     [System.NonSerialized]
     public bool isUnlocked = false;

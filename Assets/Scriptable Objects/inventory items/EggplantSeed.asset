@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a679d765daf249b4b6c1fea94226ca57, type: 3}
+  m_Name: EggplantSeed
+  m_EditorClassIdentifier: 
+  name: eggplant seed
+  description: 
+  sprite: {fileID: -7349652661387508288, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  droppedItemPrefab: {fileID: 0}
+  basePrice: 10
+  canBeSold: 1
+  canBeBought: 0
+  maxStackSize: 99
+  growthTime: 10
+  growthStageTiles:
+  - {fileID: 11400000, guid: cef4069472ac57140b6c9202abd0f6eb, type: 2}
+  - {fileID: 11400000, guid: 630cc057f69e0224fad14bada6526583, type: 2}
+  - {fileID: 11400000, guid: 7b6faae9cdc875348aa485fa1a674406, type: 2}
+  - {fileID: 11400000, guid: 59766943ac3743e40bfff351165f3b92, type: 2}
+  sickStageTile: {fileID: 11400000, guid: 396957f9b236ee64a959badaca92b136, type: 2}
+  resultedCrop: {fileID: 11400000, guid: 8a6382ab547bdda4c95dc1f525c29151, type: 2}

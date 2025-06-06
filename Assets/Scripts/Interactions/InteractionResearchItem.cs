@@ -71,7 +71,7 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
         
         currentResearchItem = item;
         OnSlotChanged?.Invoke();
-        NotificationSystem.ShowNotification($"Added {item.itemName} to research");
+        NotificationSystem.ShowNotification($"Added {item.name} to research");
         return true;
     }
     
@@ -109,9 +109,9 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
             return false;
         }
         
-        if (ResearchSystem.Instance.IsResearched(currentResearchItem.itemName))
+        if (ResearchSystem.Instance.IsResearched(currentResearchItem.name))
         {
-            NotificationSystem.ShowNotification($"Already researched {currentResearchItem.itemName}!");
+            NotificationSystem.ShowNotification($"Already researched {currentResearchItem.name}!");
             return false;
         }
         

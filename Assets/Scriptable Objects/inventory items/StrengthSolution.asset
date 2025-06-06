@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f8fe355cad40bbb12079d296b31c3c, type: 3}
   m_Name: StrengthSolution
   m_EditorClassIdentifier: 
-  itemName: StrengthSolution
+  name: strenght solution
   description: makes plants grow in harsh weather
-  itemSprite: {fileID: 7563326546363640138, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  sprite: {fileID: 21300272, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
+  droppedItemPrefab: {fileID: 0}
   basePrice: 10
   canBeSold: 1
   canBeBought: 0

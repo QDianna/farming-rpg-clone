@@ -6,9 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/ItemFightPotion")]
 public class ItemFightPotion : InventoryItem
 {
-    [SerializeField] private GameObject droppedItemPrefab;
-    [SerializeField] private float hungerRestoreValue;
-    
     public override void UseItem(PlayerController player)
     {
         Debug.Log("Use fight potion");

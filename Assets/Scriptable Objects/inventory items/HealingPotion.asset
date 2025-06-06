@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a52db26fbe84b139e21149b00d7937f, type: 3}
   m_Name: HealingPotion
   m_EditorClassIdentifier: 
-  itemName: HealingPotion
+  name: healiing potion
   description: heals damaged plants
-  itemSprite: {fileID: 0}
+  sprite: {fileID: 21300276, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
+  droppedItemPrefab: {fileID: 0}
   basePrice: 10
   canBeSold: 1
   canBeBought: 0
   maxStackSize: 99
-  droppedItemPrefab: {fileID: 0}
-  hungerRestoreValue: 0

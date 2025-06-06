@@ -107,9 +107,9 @@ public class InventorySystemHUD : MonoBehaviour
         var selectedItemQuantity = selectedItemContainer.Q<Label>("ItemQuantity");
         
         var selectedItem = InventorySystem.Instance.GetSelectedItem();
-        if (selectedItem?.itemSprite != null)
+        if (selectedItem?.sprite != null)
         {
-            selectedItemIcon.style.backgroundImage = new StyleBackground(selectedItem.itemSprite);
+            selectedItemIcon.style.backgroundImage = new StyleBackground(selectedItem.sprite);
             selectedItemQuantity.text = "x" + InventorySystem.Instance.GetSelectedItemQuantity();
         }
         else
@@ -162,19 +162,19 @@ public class InventorySystemHUD : MonoBehaviour
         var slotIcon = new VisualElement();
         slotIcon.AddToClassList("item-icon");
         
-        if (entry.item.itemSprite != null)
+        if (entry.item.sprite != null)
         {
-            slotIcon.style.backgroundImage = new StyleBackground(entry.item.itemSprite);
+            slotIcon.style.backgroundImage = new StyleBackground(entry.item.sprite);
         }
         
         var quantityLabel = new Label(entry.quantity.ToString());
         quantityLabel.AddToClassList("item-quantity");
         
         // Enhanced tooltip with research status
-        string tooltip = $"{entry.quantity}x {entry.item.itemName ?? "Unknown"}";
+        string tooltip = $"{entry.quantity}x {entry.item.name ?? "Unknown"}";
         if (ResearchSystem.Instance != null)
         {
-            bool isResearched = ResearchSystem.Instance.IsResearched(entry.item.itemName);
+            bool isResearched = ResearchSystem.Instance.IsResearched(entry.item.name);
             tooltip += isResearched ? " (researched)" : " (unknown)";
         }
         slotContainer.tooltip = tooltip;
@@ -190,7 +190,7 @@ public class InventorySystemHUD : MonoBehaviour
     
     private void OnInventorySlotClicked(InventoryItem item)
     {
-        Debug.Log($"InventoryHUD: Slot clicked for {item.itemName}");
+        Debug.Log($"InventoryHUD: Slot clicked for {item.name}");
         InventorySystem.Instance.TriggerItemClick(item);
     }
     
