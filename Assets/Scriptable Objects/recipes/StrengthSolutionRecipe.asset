@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: StrengthSolutionRecipe
   m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
-  recipeName: StrengthSolutionRecipe
+  recipeName: StrengthSolution
   result: {fileID: 11400000, guid: 2241858d540146b418611ebffd97d3a0, type: 2}
   resultQuantity: 1
   ingredients:
   - item: {fileID: 11400000, guid: 39e095594afaa0e47b0e217ed5359e37, type: 2}
-    quantity: 1
+    quantity: 2
+  - item: {fileID: 11400000, guid: 8a7a3847ff4a2b84381109364acc8a5a, type: 2}
+    quantity: 2
   prerequisiteRecipes: []
-  isUnlocked: 1
-  startsUnlocked: 1
+  startsUnlocked: 0

@@ -1,0 +1,52 @@
+/* Research System Styles - Only for dynamically created elements */
+
+.empty {
+    border-width: 2px;
+    border-color: #666;
+    opacity: 0.5;
+}
+
+.research-title {
+    font-size: 18px;
+    -unity-font-style: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.research-status-new {
+    color: #00ff00;
+    -unity-font-style: bold;
+    margin-bottom: 10px;
+}
+
+.research-status-known {
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.research-recipes-header {
+    -unity-font-style: bold;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.research-no-recipes {
+    color: #ff6666;
+    -unity-font-style: italic;
+    margin-top: 10px;
+}
+
+.research-recipe-item {
+    margin-bottom: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.recipe-available {
+    color: #00ff00;
+}
+
+.recipe-locked {
+    color: #ffaa00;
+}

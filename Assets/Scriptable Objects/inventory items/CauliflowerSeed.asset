@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: CauliflowerSeed
   m_EditorClassIdentifier: 
   itemName: CauliflowerSeed
+  description: 
   itemSprite: {fileID: 3808273280442274367, guid: 4038e15739dd2be498076e728299f386, type: 3}
-  growthTime: 60
+  basePrice: 10
+  canBeSold: 1
+  canBeBought: 0
+  maxStackSize: 99
+  growthTime: 20
   seedTile: {fileID: 11400000, guid: c1970f76ffbb63c4fb53dde442f93118, type: 2}
   growthStageTiles:
   - {fileID: 11400000, guid: b3c3fa28c69a2ae4e97b429aac43d639, type: 2}

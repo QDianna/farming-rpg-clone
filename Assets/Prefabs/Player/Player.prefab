@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 5657702628253418783}
   - component: {fileID: 4096598973139266459}
   - component: {fileID: 6543060790827308900}
-  - component: {fileID: 596685181290690568}
-  - component: {fileID: 603208962506915739}
-  - component: {fileID: 8349207872864668176}
   - component: {fileID: 1787799393153828262}
-  - component: {fileID: 2133682642818215000}
+  - component: {fileID: 8349207872864668176}
+  - component: {fileID: 603208962506915739}
   - component: {fileID: 7423412828200520110}
+  - component: {fileID: 2133682642818215000}
+  - component: {fileID: 1569651114433440872}
+  - component: {fileID: 596685181290690568}
   - component: {fileID: 1001675679381337709}
   - component: {fileID: 2283150326571705030}
   - component: {fileID: 279568774838252289}
@@ -109,16 +110,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47827a4ff44fd2e4088391b4df26828f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveAction:
+  moveAction:
     m_Name: Move
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 5c720458-dafa-4b0b-b1ed-588d2b06de4a
+    m_Id: 34f4757c-82c4-46b3-9df1-3e4afe75fc60
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
-    - m_Name: wasd binder
-      m_Id: 3b31b6ea-83b2-42bd-8adc-459836b1236b
+    - m_Name: 2D Vector
+      m_Id: f48541bb-2a03-4ef5-bc2d-31fb43ed86a7
       m_Path: 2DVector
       m_Interactions: 
       m_Processors: 
@@ -126,7 +127,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 4
     - m_Name: up
-      m_Id: 5aab6d59-b04e-4ffa-a2fe-74f00543b746
+      m_Id: 9423c9e6-153f-4165-97f9-28e98c35094a
       m_Path: <Keyboard>/w
       m_Interactions: 
       m_Processors: 
@@ -134,7 +135,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: down
-      m_Id: 86905aa2-fd79-4f1b-a5a9-d654e251ed48
+      m_Id: b2173bd6-8622-488e-b74c-d9c56c8815e5
       m_Path: <Keyboard>/s
       m_Interactions: 
       m_Processors: 
@@ -142,7 +143,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: left
-      m_Id: 4b35a53a-0f4b-4e25-a2f0-3ca48bb3a321
+      m_Id: e9481cb1-d368-47ea-8db2-cce3250a765c
       m_Path: <Keyboard>/a
       m_Interactions: 
       m_Processors: 
@@ -150,7 +151,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: right
-      m_Id: 200e4358-8d5e-4bde-bf02-5865f12107f7
+      m_Id: 8ca682c1-72ec-4b23-83ff-59f6d61cbefb
       m_Path: <Keyboard>/d
       m_Interactions: 
       m_Processors: 
@@ -159,17 +160,16 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   speed: 6
-  animator: {fileID: 0}
-  InteractAction:
+  interactAction:
     m_Name: Interact
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: d3e975aa-c2ac-4979-9f27-87f71b35fc1b
+    m_Id: f6603b22-8998-4374-b5d0-3b6dcd4e8275
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 90a0d4ee-a71b-44ec-934e-ae71c0dbff00
+      m_Id: 2afa3846-4d03-4730-8516-e893b7a50b63
       m_Path: <Keyboard>/e
       m_Interactions: 
       m_Processors: 
@@ -177,17 +177,16 @@ MonoBehaviour:
       m_Action: Interact
       m_Flags: 0
     m_Flags: 0
-  interactionSystem: {fileID: 0}
-  ToolAction:
+  toolAction:
     m_Name: Tool
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 1e98bbf4-6629-4e6c-bed6-1ca230d1354b
+    m_Id: 7445bbbb-df32-42c0-a81f-d466f16e2202
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 07ea88de-a64c-4aa0-8c2b-6e31c2735643
+      m_Id: 10b92500-efab-44ce-846d-ae3678170b43
       m_Path: <Keyboard>/space
       m_Interactions: 
       m_Processors: 
@@ -195,16 +194,16 @@ MonoBehaviour:
       m_Action: Tool
       m_Flags: 0
     m_Flags: 0
-  InventoryAction:
+  inventoryAction:
     m_Name: Inventory
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 1cf7602d-e003-4120-bec6-0b1a76be8c6b
+    m_Id: b83d5d2c-ec34-4d65-931f-ccff50a0bd46
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 8330a78c-8b65-4196-9bbf-85b6ddd0194b
+      m_Id: f06d145b-00b5-40d9-8095-699a0e3664c2
       m_Path: <Keyboard>/tab
       m_Interactions: 
       m_Processors: 
@@ -212,16 +211,16 @@ MonoBehaviour:
       m_Action: Inventory
       m_Flags: 0
     m_Flags: 0
-  UseItemAction:
+  useItemAction:
     m_Name: Use Item
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 50c7f181-10da-4761-bff6-bf2b2c04cc85
+    m_Id: 87a9a96c-812a-4b18-956e-c7f833eb68d4
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: e1f21f3c-ca7b-42a3-ab55-3ca82794292c
+      m_Id: 57095eb9-395c-4d6a-8cef-34300bc782bf
       m_Path: <Keyboard>/f
       m_Interactions: 
       m_Processors: 
@@ -229,53 +228,16 @@ MonoBehaviour:
       m_Action: Use Item
       m_Flags: 0
     m_Flags: 0
-  inventorySystem: {fileID: 0}
   plotlandController: {fileID: 0}
+  animator: {fileID: 0}
+  inventorySystem: {fileID: 0}
+  interactionSystem: {fileID: 0}
   playerStats: {fileID: 0}
+  playerEconomy: {fileID: 0}
   seed1: {fileID: 11400000, guid: 39e095594afaa0e47b0e217ed5359e37, type: 2}
   seed2: {fileID: 11400000, guid: 262f4fb811249cb4c880ef14b14d1900, type: 2}
   seed3: {fileID: 11400000, guid: 8a7a3847ff4a2b84381109364acc8a5a, type: 2}
   strengthSolution: {fileID: 11400000, guid: 2241858d540146b418611ebffd97d3a0, type: 2}
---- !u!114 &596685181290690568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7794502562995452509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 649da2a9be5d4e60884d3b8485371348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoeSprite: {fileID: 249908233549332648, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
-  axeSprite: {fileID: 7655413986662893830, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
-  waterCanSprite: {fileID: 1323920741824349584, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
-  selectedTool: 0
---- !u!114 &603208962506915739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7794502562995452509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e71c9548e5ff1c446908753ad3fb172a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8349207872864668176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7794502562995452509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b154f1ce5a244178b116efd5e5699f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1787799393153828262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +253,7 @@ MonoBehaviour:
   recipes:
   - {fileID: 11400000, guid: ff1bf7644f3d9f94fa84572d3c8ad054, type: 2}
   craftedRecipeNames: []
---- !u!114 &2133682642818215000
+--- !u!114 &8349207872864668176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -300,7 +262,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7794502562995452509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57550d6d1c6b46f4881933ef4600bb12, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b154f1ce5a244178b116efd5e5699f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &603208962506915739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7794502562995452509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71c9548e5ff1c446908753ad3fb172a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7423412828200520110
@@ -318,6 +292,47 @@ MonoBehaviour:
   startingMoney: 500
   sellPriceModifier: 0.7
   buyPriceModifier: 1.2
+--- !u!114 &2133682642818215000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7794502562995452509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57550d6d1c6b46f4881933ef4600bb12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1569651114433440872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7794502562995452509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7a4d26c3c9466e84353d9aebed85b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allRecipes: []
+--- !u!114 &596685181290690568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7794502562995452509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649da2a9be5d4e60884d3b8485371348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoeSprite: {fileID: 249908233549332648, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  axeSprite: {fileID: 7655413986662893830, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  waterCanSprite: {fileID: 1323920741824349584, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  selectedTool: 0
 --- !u!50 &1001675679381337709
 Rigidbody2D:
   serializedVersion: 5

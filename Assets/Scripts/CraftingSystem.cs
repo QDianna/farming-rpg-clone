@@ -3,7 +3,7 @@ using UnityEngine;
 
 /// <summary>
 /// Manages crafting recipes, unlock progression, and recipe availability.
-/// Handles recipe unlocking based on prerequisites and tracks crafted recipes for persistence.
+/// Handles recipe unlocking based on research completion and prerequisites.
 /// </summary>
 public class CraftingSystem : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class CraftingSystem : MonoBehaviour
     
     [Header("Save Data")]
     [SerializeField] private List<string> craftedRecipeNames = new List<string>();
-    
+
     private InventorySystem inventorySystem;
     
     private void Awake()
@@ -25,35 +25,93 @@ public class CraftingSystem : MonoBehaviour
     {
         foreach (var recipe in recipes)
         {
+            // Set unlock status based on startsUnlocked flag or previous crafting
             recipe.isUnlocked = recipe.startsUnlocked || craftedRecipeNames.Contains(recipe.recipeName);
+            Debug.Log($"initializing {recipe.recipeName} with status {recipe.isUnlocked}");
         }
     }
     
-    public void MarkRecipeAsCrafted(CraftingRecipe recipe)
+    #region Recipe Unlocking
+    
+    /// <summary>
+    /// Mark a recipe as unlocked (called by ResearchSystem when all ingredients researched)
+    /// </summary>
+    public void MarkRecipeAsUnlocked(CraftingRecipe recipe)
     {
         if (!recipe.isUnlocked)
         {
             recipe.isUnlocked = true;
-            craftedRecipeNames.Add(recipe.recipeName);
-            NotificationSystem.ShowNotification($"New recipe unlocked: {recipe.recipeName}!");
-            CheckForNewUnlocks();
+            NotificationSystem.ShowNotification($"New recipe available: {recipe.recipeName}!");
+            
+            // Check for dependency unlocks
+            CheckForDependencyUnlocks();
         }
     }
     
+    /// <summary>
+    /// Mark a recipe as crafted (called when player successfully crafts it)
+    /// </summary>
+    public void MarkRecipeAsCrafted(CraftingRecipe recipe)
+    {
+        if (!craftedRecipeNames.Contains(recipe.recipeName))
+        {
+            craftedRecipeNames.Add(recipe.recipeName);
+            NotificationSystem.ShowNotification($"Recipe mastered: {recipe.recipeName}!");
+            
+            // Check for dependency unlocks
+            CheckForDependencyUnlocks();
+        }
+    }
+    
+    /// <summary>
+    /// Check if a recipe can be unlocked based on prerequisites
+    /// </summary>
     public bool CanUnlockRecipe(CraftingRecipe recipe)
     {
         if (recipe.isUnlocked || recipe.startsUnlocked) return true;
         
+        // Check prerequisite recipes
         foreach (var prerequisite in recipe.prerequisiteRecipes)
         {
-            if (!prerequisite.isUnlocked) return false;
+            if (!prerequisite.isUnlocked || !craftedRecipeNames.Contains(prerequisite.recipeName))
+                return false;
         }
         return true;
     }
     
+    /// <summary>
+    /// Check if a recipe is currently unlocked
+    /// </summary>
+    public bool IsRecipeUnlocked(CraftingRecipe recipe)
+    {
+        return recipe.isUnlocked && CanUnlockRecipe(recipe);
+    }
+    
+    /// <summary>
+    /// Check for recipes that can be unlocked due to dependencies being met
+    /// </summary>
+    private void CheckForDependencyUnlocks()
+    {
+        foreach (var recipe in recipes)
+        {
+            if (!recipe.isUnlocked && CanUnlockRecipe(recipe))
+            {
+                // This recipe's dependencies are met, but we need ResearchSystem to check ingredients
+                Debug.Log($"Recipe {recipe.recipeName} dependencies met - awaiting ingredient research");
+            }
+        }
+    }
+    
+    #endregion
+    
+    #region Crafting Operations
+    
+    /// <summary>
+    /// Check if a recipe can be crafted (unlocked + has ingredients)
+    /// </summary>
     public bool CanCraft(CraftingRecipe recipe)
     {
-        if (!CanUnlockRecipe(recipe)) return false;
+        if (!IsRecipeUnlocked(recipe)) return false;
         
         foreach (var ingredient in recipe.ingredients)
         {
@@ -63,11 +121,14 @@ public class CraftingSystem : MonoBehaviour
         return true;
     }
     
+    /// <summary>
+    /// Attempt to craft a recipe
+    /// </summary>
     public bool TryCraft(CraftingRecipe recipe)
     {
         if (!CanCraft(recipe))
         {
-            string reason = !CanUnlockRecipe(recipe) ? "recipe locked" : "missing ingredients";
+            string reason = !IsRecipeUnlocked(recipe) ? "recipe locked" : "missing ingredients";
             NotificationSystem.ShowNotification($"Cannot craft {recipe.recipeName} - {reason}");
             return false;
         }
@@ -83,25 +144,77 @@ public class CraftingSystem : MonoBehaviour
         return true;
     }
     
-    private void CheckForNewUnlocks()
+    #endregion
+    
+    #region Public API
+    
+    /// <summary>
+    /// Get all recipes (for ResearchSystem to analyze)
+    /// </summary>
+    public List<CraftingRecipe> GetAllRecipes()
     {
-        foreach (var recipe in recipes)
-        {
-            if (!recipe.isUnlocked && CanUnlockRecipe(recipe))
-                NotificationSystem.ShowNotification($"Recipe discovered: {recipe.recipeName}");
-        }
+        Debug.Log(recipes);
+        return new List<CraftingRecipe>(recipes);
     }
     
+    /// <summary>
+    /// Get only unlocked recipes (for CraftingSystemHUD to display)
+    /// </summary>
     public List<CraftingRecipe> GetUnlockedRecipes()
     {
         List<CraftingRecipe> unlocked = new List<CraftingRecipe>();
         
         foreach (var recipe in recipes)
         {
-            if (CanUnlockRecipe(recipe))
+            if (IsRecipeUnlocked(recipe))
                 unlocked.Add(recipe);
         }
         
         return unlocked;
     }
+    
+    /// <summary>
+    /// Find a recipe by its result item
+    /// </summary>
+    public CraftingRecipe FindRecipeByResult(InventoryItem result)
+    {
+        foreach (var recipe in recipes)
+        {
+            if (recipe.result == result)
+                return recipe;
+        }
+        return null;
+    }
+    
+    #endregion
+    
+    #region Debug Methods
+    
+    [ContextMenu("Debug Crafting State")]
+    private void DebugCraftingState()
+    {
+        Debug.Log($"Total Recipes: {recipes.Count}");
+        Debug.Log($"Unlocked Recipes: {GetUnlockedRecipes().Count}");
+        Debug.Log($"Crafted Recipes: {craftedRecipeNames.Count}");
+        
+        foreach (var recipe in recipes)
+        {
+            string status = recipe.isUnlocked ? "UNLOCKED" : "LOCKED";
+            string crafted = craftedRecipeNames.Contains(recipe.recipeName) ? " (CRAFTED)" : "";
+            Debug.Log($"- {recipe.recipeName}: {status}{crafted}");
+        }
+    }
+    
+    [ContextMenu("Reset Crafting Progress")]
+    private void ResetCraftingProgress()
+    {
+        craftedRecipeNames.Clear();
+        foreach (var recipe in recipes)
+        {
+            recipe.isUnlocked = recipe.startsUnlocked;
+        }
+        Debug.Log("Crafting progress reset!");
+    }
+    
+    #endregion
 }

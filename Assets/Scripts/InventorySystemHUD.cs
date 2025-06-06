@@ -4,13 +4,14 @@ using UnityEngine.UIElements;
 
 /// <summary>
 /// Manages inventory UI display with selected item HUD and full inventory overlay.
-/// Automatically shows/hides full inventory when crafting bench or market opens.
+/// Automatically shows/hides full inventory when crafting bench, market, or research table opens.
 /// </summary>
 public class InventorySystemHUD : MonoBehaviour
 {
     [Header("System References")]
     [SerializeField] private InteractionCraftRecipe craftingBench;
     [SerializeField] private InteractionMarket market;
+    [SerializeField] private InteractionResearchItem researchTable;
 
     private VisualElement selectedItemContainer;
     private VisualElement inventoryContainer;
@@ -64,6 +65,12 @@ public class InventorySystemHUD : MonoBehaviour
             market.OnMarketOpened += ShowFullInventory;
             market.OnMarketClosed += HideFullInventory;
         }
+        
+        if (researchTable != null)
+        {
+            researchTable.OnTableOpened += ShowFullInventory;
+            researchTable.OnTableClosed += HideFullInventory;
+        }
     }
     
     private void UnsubscribeFromEvents()
@@ -85,6 +92,12 @@ public class InventorySystemHUD : MonoBehaviour
         {
             market.OnMarketOpened -= ShowFullInventory;
             market.OnMarketClosed -= HideFullInventory;
+        }
+        
+        if (researchTable != null)
+        {
+            researchTable.OnTableOpened -= ShowFullInventory;
+            researchTable.OnTableClosed -= HideFullInventory;
         }
     }
     
@@ -157,7 +170,15 @@ public class InventorySystemHUD : MonoBehaviour
         var quantityLabel = new Label(entry.quantity.ToString());
         quantityLabel.AddToClassList("item-quantity");
         
-        slotContainer.tooltip = $"{entry.quantity}x {entry.item.itemName ?? "Unknown"}";
+        // Enhanced tooltip with research status
+        string tooltip = $"{entry.quantity}x {entry.item.itemName ?? "Unknown"}";
+        if (ResearchSystem.Instance != null)
+        {
+            bool isResearched = ResearchSystem.Instance.IsResearched(entry.item.itemName);
+            tooltip += isResearched ? " (researched)" : " (unknown)";
+        }
+        slotContainer.tooltip = tooltip;
+        
         slotContainer.RegisterCallback<ClickEvent>(evt => OnInventorySlotClicked(entry.item));
         
         slotContainer.Add(slotIcon);
@@ -169,11 +190,12 @@ public class InventorySystemHUD : MonoBehaviour
     
     private void OnInventorySlotClicked(InventoryItem item)
     {
+        Debug.Log($"InventoryHUD: Slot clicked for {item.itemName}");
         InventorySystem.Instance.TriggerItemClick(item);
     }
     
     private void OnInventoryItemClicked(InventoryItem item)
     {
-        // Event forwarded to systems that need it (crafting/market)
+        // Event forwarded to systems that need it (crafting/market/research)
     }
 }

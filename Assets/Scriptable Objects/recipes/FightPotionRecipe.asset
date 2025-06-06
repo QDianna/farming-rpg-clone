@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1475ce7b6f428ea3c730126bb0896a, type: 3}
+  m_Name: FightPotionRecipe
+  m_EditorClassIdentifier: 
+  recipeName: FightPotion
+  result: {fileID: 11400000, guid: 480e2eecd55df6e49a526439d41f944d, type: 2}
+  resultQuantity: 1
+  ingredients:
+  - item: {fileID: 11400000, guid: 1e842a487638512478fe6c42d6a6973f, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 1b931cb28b715be479bf8831fd82f407, type: 2}
+    quantity: 1
+  prerequisiteRecipes:
+  - {fileID: 11400000, guid: 1433b7e08f65fb94a81528b1c3965abc, type: 2}
+  - {fileID: 11400000, guid: 84d0fd5fd5071e748a888337c60e24e1, type: 2}
+  startsUnlocked: 0
