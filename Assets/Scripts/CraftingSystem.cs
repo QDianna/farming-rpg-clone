@@ -27,7 +27,6 @@ public class CraftingSystem : MonoBehaviour
         {
             // Set unlock status based on startsUnlocked flag or previous crafting
             recipe.isUnlocked = craftedRecipeNames.Contains(recipe.recipeName);
-            Debug.Log($"initializing {recipe.recipeName} with status {recipe.isUnlocked}");
         }
     }
     
@@ -42,9 +41,6 @@ public class CraftingSystem : MonoBehaviour
         {
             recipe.isUnlocked = true;
             NotificationSystem.ShowNotification($"New recipe available: {recipe.recipeName}!");
-            
-            // Check for dependency unlocks
-            CheckForDependencyUnlocks();
         }
     }
     
@@ -57,9 +53,6 @@ public class CraftingSystem : MonoBehaviour
         {
             craftedRecipeNames.Add(recipe.recipeName);
             NotificationSystem.ShowNotification($"Recipe mastered: {recipe.recipeName}!");
-            
-            // Check for dependency unlocks
-            CheckForDependencyUnlocks();
         }
     }
     
@@ -86,22 +79,7 @@ public class CraftingSystem : MonoBehaviour
     {
         return recipe.isUnlocked && CanUnlockRecipe(recipe);
     }
-    
-    /// <summary>
-    /// Check for recipes that can be unlocked due to dependencies being met
-    /// </summary>
-    private void CheckForDependencyUnlocks()
-    {
-        foreach (var recipe in recipes)
-        {
-            if (!recipe.isUnlocked && CanUnlockRecipe(recipe))
-            {
-                // This recipe's dependencies are met, but we need ResearchSystem to check ingredients
-                Debug.Log($"Recipe {recipe.recipeName} dependencies met - awaiting ingredient research");
-            }
-        }
-    }
-    
+
     #endregion
     
     #region Crafting Operations
@@ -188,7 +166,7 @@ public class CraftingSystem : MonoBehaviour
     
     #endregion
     
-    #region Debug Methods
+    /*#region Debug Methods
     
     [ContextMenu("Debug Crafting State")]
     private void DebugCraftingState()
@@ -204,5 +182,22 @@ public class CraftingSystem : MonoBehaviour
             Debug.Log($"- {recipe.recipeName}: {status}{crafted}");
         }
     }
-    #endregion
+    
+        
+    /// <summary>
+    /// Check for recipes that can be unlocked due to dependencies being met
+    /// </summary>
+    private void CheckForDependencyUnlocks()
+    {
+        foreach (var recipe in recipes)
+        {
+            if (!recipe.isUnlocked && CanUnlockRecipe(recipe))
+            {
+                // This recipe's dependencies are met, but we need ResearchSystem to check ingredients
+                Debug.Log($"Recipe {recipe.recipeName} dependencies met - awaiting ingredient research");
+            }
+        }
+    }
+    
+    #endregion*/
 }

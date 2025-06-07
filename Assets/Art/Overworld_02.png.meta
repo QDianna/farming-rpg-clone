@@ -760,15 +760,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tree3
+      name: tree-tall
       rect:
         serializedVersion: 2
         x: 960
         y: 864
         width: 64
         height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -8658,7 +8658,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain_atlas_404
+      name: bush
       rect:
         serializedVersion: 2
         x: 768
@@ -11342,15 +11342,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain_atlas_592
+      name: tree-trunk
       rect:
         serializedVersion: 2
         x: 736
         y: 416
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -13194,9 +13194,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 288
+        y: 256
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -13647,28 +13647,6 @@ TextureImporter:
       bones: []
       spriteID: b94a7514e29526f4fb5ef2dcc992ffd1
       internalID: 1351949062
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: terrain_atlas_733
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 256
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b27b120588913cb4a8fe5c3e74d9ab79
-      internalID: -2095168006
       vertices: []
       indices: 
       edges: []
@@ -15896,7 +15874,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tree1
+      name: tree-big
       rect:
         serializedVersion: 2
         x: 928
@@ -16270,13 +16248,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain_atlas_942
+      name: papura
       rect:
         serializedVersion: 2
         x: 832
-        y: 64
+        y: 32
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -16292,15 +16270,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tree2
+      name: tree-small
       rect:
         serializedVersion: 2
         x: 864
         y: 0
         width: 64
         height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -16683,28 +16661,6 @@ TextureImporter:
       bones: []
       spriteID: 1e1e266c56d83514db964a30aca37c71
       internalID: 1336531995
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: terrain_atlas_974
-      rect:
-        serializedVersion: 2
-        x: 832
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7a6f9490a8974b4e9a54e7c9e453c19
-      internalID: -1452683200
       vertices: []
       indices: 
       edges: []
@@ -17106,7 +17062,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain_atlas_1006
+      name: mushroom
       rect:
         serializedVersion: 2
         x: 832
@@ -17136,7 +17092,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -17163,6 +17119,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      bush: -1896274653
+      mushroom: -652831742
+      papura: 74673794
       terrain_atlas_0: -1751441831678967397
       terrain_atlas_1: -1077401828
       terrain_atlas_10: 378266150
@@ -17173,7 +17132,6 @@ TextureImporter:
       terrain_atlas_1003: 2002869240
       terrain_atlas_1004: -487548164
       terrain_atlas_1005: -1094681142
-      terrain_atlas_1006: -652831742
       terrain_atlas_1007: -1779224928
       terrain_atlas_1008: -534602025
       terrain_atlas_1009: 1392593236
@@ -17514,7 +17472,6 @@ TextureImporter:
       terrain_atlas_401: 430409422
       terrain_atlas_402: 407191254
       terrain_atlas_403: 1693301173
-      terrain_atlas_404: -1896274653
       terrain_atlas_405: 505608220
       terrain_atlas_406: -1823134815
       terrain_atlas_407: 1469432849
@@ -17722,7 +17679,6 @@ TextureImporter:
       terrain_atlas_59: -992275617
       terrain_atlas_590: -1422228698
       terrain_atlas_591: -1319386537
-      terrain_atlas_592: 1415911575
       terrain_atlas_593: -952742840
       terrain_atlas_594: -298609708
       terrain_atlas_595: -1537136406
@@ -18110,7 +18066,6 @@ TextureImporter:
       terrain_atlas_94: -1747012444
       terrain_atlas_940: 1061984628
       terrain_atlas_941: 27463315
-      terrain_atlas_942: 74673794
       terrain_atlas_944: -734034790
       terrain_atlas_945: 1669522837
       terrain_atlas_946: 1736732374
@@ -18172,9 +18127,10 @@ TextureImporter:
       terrain_atlas_997: 2132089316
       terrain_atlas_998: -880512657
       terrain_atlas_999: 1856796619
-      tree1: 1324248737
-      tree2: -1306868223
-      tree3: -998130784
+      tree-big: 1324248737
+      tree-small: -1306868223
+      tree-tall: -998130784
+      tree-trunk: 1415911575
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

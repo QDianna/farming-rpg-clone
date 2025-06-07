@@ -14,23 +14,4 @@ public class ItemCrop : InventoryItem
         player.inventorySystem.RemoveItem(this, 1);
         NotificationSystem.ShowNotification($"Ate {name} (+{hungerRestoreValue} hunger)");
     }
-
-    public void DisplayCrop(Vector3 playerPosition, PlayerController player)
-    {
-        if (droppedItemPrefab == null) return;
-
-        Vector2 offset = 1.4f * Random.insideUnitCircle;
-        Vector3 cropSpawnPosition = playerPosition + new Vector3(offset.x, offset.y, 0);
-
-        GameObject obj = Instantiate(droppedItemPrefab, cropSpawnPosition, Quaternion.identity);
-        
-        var spriteRenderer = obj.GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null && sprite != null)
-        {
-            spriteRenderer.sprite = sprite;
-        }
-
-        var droppedEffect = obj.GetComponent<EffectDroppedItem>();
-        droppedEffect?.Initialize(player);
-    }
 }

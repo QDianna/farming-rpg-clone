@@ -36,9 +36,14 @@ public class ToolSystem : MonoBehaviour
     public Sprite hoeSprite;
     public Sprite axeSprite;
     public Sprite waterCanSprite;
+    
+    [Header("Axe Settings")]
+    public float axeRange = 2f;
+    public LayerMask treeLayer = 1 << 8; // Set trees to layer 8
 
-    public Dictionary<ToolType, Tool> tools = new();
-    public ToolType selectedTool = ToolType.None;
+
+    [HideInInspector] public ToolType selectedTool = ToolType.None;
+    private Dictionary<ToolType, Tool> tools = new();
     public event System.Action OnSelectedToolChange;
     
     private void Awake()
@@ -100,7 +105,42 @@ public class ToolSystem : MonoBehaviour
     private void UseAxe(PlayerController player)
     {
         player.animator.SetTrigger("Use Axe");
-        NotificationSystem.ShowNotification("Axe functionality coming soon!");
+        
+        // Find trees in range
+        Collider2D[] treesInRange = Physics2D.OverlapCircleAll(player.transform.position, axeRange, treeLayer);
+    
+        if (treesInRange.Length == 0)
+        {
+            NotificationSystem.ShowNotification("No trees in range!");
+            return;
+        }
+    
+        // Chop the closest tree
+        TreeController closestTree = null;
+        float closestDistance = float.MaxValue;
+    
+        foreach (Collider2D treeCollider in treesInRange)
+        {
+            TreeController tree = treeCollider.GetComponent<TreeController>();
+            if (tree != null && !tree.isChopped)
+            {
+                float distance = Vector2.Distance(player.transform.position, tree.transform.position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestTree = tree;
+                }
+            }
+        }
+    
+        if (closestTree != null)
+        {
+            closestTree.TakeDamage(1);
+        }
+        else
+        {
+            NotificationSystem.ShowNotification("No trees to chop here!");
+        }
     }
 
     private void UseWateringCan(PlayerController player)

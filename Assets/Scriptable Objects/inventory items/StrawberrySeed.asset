@@ -27,4 +27,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1849868928d52944db8fd5be361e8a86, type: 2}
   - {fileID: 11400000, guid: 74ea9721a89a266458209e9ba4cd8085, type: 2}
   sickStageTile: {fileID: 11400000, guid: 384d38f319b311e4cb4810197a29b1a9, type: 2}
-  resultedCrop: {fileID: 0}
+  resultedCrop: {fileID: 11400000, guid: 5572ee5d9f9eeb04dba85b5fcdbd4c6b, type: 2}

@@ -20,7 +20,7 @@ MonoBehaviour:
   canBeSold: 1
   canBeBought: 0
   maxStackSize: 99
-  growthTime: 15
+  growthTime: 10
   growthStageTiles:
   - {fileID: 11400000, guid: 5e1ac5e8b0dadfc419f2b53023a1a2c3, type: 2}
   - {fileID: 11400000, guid: 0d2d0f22a8e8bda40b6c27e4de85d020, type: 2}

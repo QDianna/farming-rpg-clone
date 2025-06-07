@@ -6,13 +6,14 @@ using UnityEngine;
 /// </summary>
 public class EffectDroppedItem : MonoBehaviour
 {
-    [SerializeField] private float speed = 4.0f;
+    [SerializeField] private float speed = 3.8f;
     [SerializeField] private float stopDistance = 0.1f;
     
     private PlayerController target;
     
     public void Initialize(PlayerController player)
     {
+        Debug.Log("dropped item init method");
         target = player;
     }
     

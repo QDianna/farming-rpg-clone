@@ -174,7 +174,7 @@ public class PlotlandController : MonoBehaviour
         player.inventorySystem.AddItem(cropItem, Random.Range(1, 3));
         
         // Show harvest effect
-        cropItem.DisplayCrop(worldPos, player);
+        cropItem.CollectItem(player);
         
         // Reset plot
         ResetPlotToEmpty(tilePos, data);

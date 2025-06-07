@@ -234,10 +234,6 @@ MonoBehaviour:
   interactionSystem: {fileID: 0}
   playerStats: {fileID: 0}
   playerEconomy: {fileID: 0}
-  seed1: {fileID: 11400000, guid: 39e095594afaa0e47b0e217ed5359e37, type: 2}
-  seed2: {fileID: 11400000, guid: 262f4fb811249cb4c880ef14b14d1900, type: 2}
-  seed3: {fileID: 11400000, guid: 8a7a3847ff4a2b84381109364acc8a5a, type: 2}
-  strengthSolution: {fileID: 11400000, guid: 2241858d540146b418611ebffd97d3a0, type: 2}
 --- !u!114 &1787799393153828262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +247,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipes:
+  - {fileID: 11400000, guid: 500ff4a52d1a35c4f80e9fbd87527fac, type: 2}
+  - {fileID: 11400000, guid: caf9b39f76b74a04b8e04578bf2f894c, type: 2}
+  - {fileID: 11400000, guid: c8f6764e1f07c9a4aa5d59ebe29dde4d, type: 2}
+  - {fileID: 11400000, guid: 1433b7e08f65fb94a81528b1c3965abc, type: 2}
+  - {fileID: 11400000, guid: 84d0fd5fd5071e748a888337c60e24e1, type: 2}
   - {fileID: 11400000, guid: ff1bf7644f3d9f94fa84572d3c8ad054, type: 2}
+  - {fileID: 11400000, guid: 2074ec317df3f2e4991d57f78923d6df, type: 2}
   craftedRecipeNames: []
 --- !u!114 &8349207872864668176
 MonoBehaviour:
@@ -277,6 +279,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71c9548e5ff1c446908753ad3fb172a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items:
+  - item: {fileID: 11400000, guid: 39e095594afaa0e47b0e217ed5359e37, type: 2}
+    quantity: 3
+  - item: {fileID: 11400000, guid: 262f4fb811249cb4c880ef14b14d1900, type: 2}
+    quantity: 3
+  - item: {fileID: 11400000, guid: 8a7a3847ff4a2b84381109364acc8a5a, type: 2}
+    quantity: 3
+  - item: {fileID: 11400000, guid: b9ba550b6bb46384fba2721fed788a5f, type: 2}
+    quantity: 3
+  - item: {fileID: 11400000, guid: 2426096b11d87154eb78bc6f022a920a, type: 2}
+    quantity: 3
 --- !u!114 &7423412828200520110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,6 +345,10 @@ MonoBehaviour:
   hoeSprite: {fileID: 249908233549332648, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
   axeSprite: {fileID: 7655413986662893830, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
   waterCanSprite: {fileID: 1323920741824349584, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  axeRange: 2
+  treeLayer:
+    serializedVersion: 2
+    m_Bits: 256
   selectedTool: 0
 --- !u!50 &1001675679381337709
 Rigidbody2D:

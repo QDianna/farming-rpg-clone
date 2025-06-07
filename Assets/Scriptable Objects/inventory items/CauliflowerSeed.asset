@@ -15,12 +15,12 @@ MonoBehaviour:
   name: cauliflower seed
   description: can be planted or used for crafting
   sprite: {fileID: 7992393800040281542, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
-  droppedItemPrefab: {fileID: 0}
+  droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}
   basePrice: 10
   canBeSold: 0
   canBeBought: 1
   maxStackSize: 99
-  growthTime: 20
+  growthTime: 10
   growthStageTiles:
   - {fileID: 11400000, guid: a3233cbe18bec45458cd9565867d112a, type: 2}
   - {fileID: 11400000, guid: 983c23985a689394293bcefaee72147b, type: 2}

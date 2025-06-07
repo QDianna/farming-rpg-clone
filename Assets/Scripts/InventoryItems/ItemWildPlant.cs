@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Items/ItemWildPlant")]
@@ -7,5 +8,4 @@ public class ItemWildPlant : InventoryItem
     {
         NotificationSystem.ShowNotification($"{this.name} can be used to craft potions!");
     }
-    
 }
