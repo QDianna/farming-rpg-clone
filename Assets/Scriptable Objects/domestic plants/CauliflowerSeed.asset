@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a679d765daf249b4b6c1fea94226ca57, type: 3}
+  m_Name: CauliflowerSeed
+  m_EditorClassIdentifier: 
+  name: cauliflower seed
+  description: buy // plant // research
+  sprite: {fileID: -608043205, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  droppedItemPrefab: {fileID: 0}
+  basePrice: 10
+  canBeSold: 0
+  canBeBought: 1
+  maxStackSize: 99
+  tier: 1
+  season: 1
+  resultedCrop: {fileID: 11400000, guid: 6f4601b4ff94fae4b98a57b009f13da7, type: 2}
+  growthTime: 10
+  growthStageTiles:
+  - {fileID: 11400000, guid: a3233cbe18bec45458cd9565867d112a, type: 2}
+  - {fileID: 11400000, guid: 983c23985a689394293bcefaee72147b, type: 2}
+  - {fileID: 11400000, guid: df50aeb4082c7cb47b75c4e3012b1855, type: 2}
+  - {fileID: 11400000, guid: 9a7ef3995758d67439bb0d71f80bfec2, type: 2}
+  sickStageTile: {fileID: 11400000, guid: 57867ec0960fda64fa33fa7e056bb7d4, type: 2}

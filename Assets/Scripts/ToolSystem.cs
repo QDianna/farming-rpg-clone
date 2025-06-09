@@ -151,7 +151,7 @@ public class ToolSystem : MonoBehaviour
             return;
         }
         
-        if (!TimeSystem.Instance.isWarmSeason())
+        if (!TimeSystem.Instance.isCurrentSeasonWarm())
         {
             NotificationSystem.ShowNotification("Plants don't need watering in cold season");
             return;

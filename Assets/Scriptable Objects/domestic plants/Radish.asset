@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cf08809745e46ee907d4ee2b778dde1, type: 3}
+  m_Name: Radish
+  m_EditorClassIdentifier: 
+  name: radish
+  description: eat // sell // research // craft
+  sprite: {fileID: -1189835313, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}
+  basePrice: 10
+  canBeSold: 1
+  canBeBought: 0
+  maxStackSize: 99
+  hungerRestoreValue: 0

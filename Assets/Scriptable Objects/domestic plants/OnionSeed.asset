@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a679d765daf249b4b6c1fea94226ca57, type: 3}
+  m_Name: OnionSeed
+  m_EditorClassIdentifier: 
+  name: onion seed
+  description: buy // plant // research
+  sprite: {fileID: -912198590, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  droppedItemPrefab: {fileID: 0}
+  basePrice: 10
+  canBeSold: 1
+  canBeBought: 0
+  maxStackSize: 99
+  tier: 2
+  season: 2
+  resultedCrop: {fileID: 11400000, guid: d1cb36d72f0d9024987188630be0d2d9, type: 2}
+  growthTime: 10
+  growthStageTiles:
+  - {fileID: 11400000, guid: 5e1ac5e8b0dadfc419f2b53023a1a2c3, type: 2}
+  - {fileID: 11400000, guid: 0d2d0f22a8e8bda40b6c27e4de85d020, type: 2}
+  - {fileID: 11400000, guid: be23c940307381c44886cb812a3b59ea, type: 2}
+  - {fileID: 11400000, guid: 3e170be458c03d54cb6b0e8595ff64c3, type: 2}
+  sickStageTile: {fileID: 11400000, guid: 11c858d6563458148988d43e372e9a32, type: 2}

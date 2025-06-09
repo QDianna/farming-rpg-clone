@@ -1,52 +1,174 @@
-/* Research System Styles - Only for dynamically created elements */
-
+/* Research System Styles - Unity UI Toolkit Compatible */
 .empty {
-    border-width: 2px;
-    border-color: #666;
     opacity: 0.5;
 }
 
 .research-title {
-    font-size: 18px;
-    -unity-font-style: bold;
-    color: #fff;
-    margin-bottom: 10px;
+    color: #000;
+    padding: 5px;
+    white-space: normal;
+    max-width: 100%;
 }
 
 .research-status-new {
-    color: #00ff00;
-    -unity-font-style: bold;
-    margin-bottom: 10px;
+    color: #043600;
+    padding: 5px;
+    white-space: normal;
+    max-width: 100%;
 }
 
 .research-status-known {
-    color: #888;
-    margin-bottom: 10px;
+    color: #000;
+    padding: 5px;
+    white-space: normal;
+    max-width: 100%;
 }
 
 .research-recipes-header {
-    -unity-font-style: bold;
-    color: #fff;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-.research-no-recipes {
-    color: #ff6666;
-    -unity-font-style: italic;
-    margin-top: 10px;
-}
-
-.research-recipe-item {
-    margin-bottom: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    color: #000;
+    padding: 5px;
+    white-space: normal;
+    max-width: 100%;
 }
 
 .recipe-available {
-    color: #00ff00;
+    color: #000;
+    -unity-font-style: bold;
+    white-space: normal;
+    max-width: 100%;
+    flex-wrap: wrap;
 }
 
 .recipe-locked {
-    color: #ffaa00;
+    color: #000;
+    -unity-font-style: bold;
+    white-space: normal;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.recipe-display {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    white-space: normal;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.recipe-name {
+    color: #000;
+    -unity-font-style: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+    -unity-text-align: middle-center;
+    white-space: normal;
+    max-width: 100%;
+}
+
+.recipe-layout {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.ingredients-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 60%;
+}
+
+.ingredient-slot {
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    height: 60px;
+    background-color: white;
+    padding: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+    flex-shrink: 0;
+}
+
+.ingredient-slot.ingredient-known {
+    background-color: #e8f5e8;
+}
+
+.ingredient-slot.ingredient-unknown {
+    background-color: #ffebee;
+    opacity: 0.7;
+}
+
+.ingredient-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.ingredient-quantity {
+    color: #000;
+    font-size: 10px;
+    -unity-font-style: bold;
+    margin-top: 2px;
+}
+
+.recipe-arrow {
+    color: #000;
+    font-size: 20px;
+    -unity-font-style: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.result-slot {
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    height: 60px;
+    background-color: #e3f2fd;
+    padding: 2px;
+    flex-shrink: 0;
+}
+
+.result-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.result-quantity {
+    color: #000;
+    font-size: 10px;
+    -unity-font-style: bold;
+    margin-top: 2px;
+}
+
+.recipe-unlocked {
+    color: #000;
+    -unity-font-style: bold;
+    background-color: #e8f5e8;
+    padding: 8px;
+    -unity-text-align: middle-center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    white-space: normal;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.recipe-progress {
+    color: #000;
+    -unity-font-style: bold;
+    background-color: #fff3e0;
+    padding: 6px;
+    -unity-text-align: middle-center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    white-space: normal;
+    max-width: 100%;
+    flex-wrap: wrap;
 }

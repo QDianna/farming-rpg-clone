@@ -1,9 +1,8 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// Market UI manager handling buy/sell interface with slot-based item staging.
+/// Market UI manager handling buy/sell interface with seed progression and crafting bench upgrades.
 /// Integrates with inventory clicks to add items to sell slots.
 /// </summary>
 public class MarketSystemHUD : MonoBehaviour
@@ -39,7 +38,7 @@ public class MarketSystemHUD : MonoBehaviour
         
         marketContainer = root.Q<VisualElement>("MarketContainer");
         sellSlotsContainer = root.Q<VisualElement>("SellSlotsContainer");
-        buyItemsContainer = root.Q<VisualElement>("BuyItemsContainer");
+        buyItemsContainer = root.Q<VisualElement>("BuySlotsContainer");
         confirmSale = root.Q<Button>("ConfirmSale");
         totalValue = root.Q<Label>("TotalValue");
         playerMoney = root.Q<Label>("PlayerMoney");
@@ -160,11 +159,70 @@ public class MarketSystemHUD : MonoBehaviour
         
         buyItemsContainer.Clear();
         
-        var availableItems = market.GetAvailableItems();
-        foreach (var item in availableItems)
+        // Add seeds section
+        var seedTitle = new Label("Seeds Available Today:");
+        seedTitle.AddToClassList("market-section-title");
+        buyItemsContainer.Add(seedTitle);
+        
+        // Add current tier info
+        if (ResearchSystem.Instance != null)
         {
-            var itemElement = CreateBuyItemElement(item);
-            buyItemsContainer.Add(itemElement);
+            var tierInfo = new Label($"Current Tier: {ResearchSystem.Instance.currentSeedsTier}");
+            tierInfo.AddToClassList("market-tier-info");
+            buyItemsContainer.Add(tierInfo);
+        }
+        
+        // Add available seeds
+        var availableItems = market.GetAvailableItems();
+        if (availableItems.Count > 0)
+        {
+            var seedsContainer = new VisualElement();
+            seedsContainer.AddToClassList("seeds-grid");
+            
+            foreach (var item in availableItems)
+            {
+                var itemElement = CreateBuyItemElement(item);
+                seedsContainer.Add(itemElement);
+            }
+            
+            buyItemsContainer.Add(seedsContainer);
+        }
+        else
+        {
+            var noSeedsLabel = new Label("No seeds available for current tier/season");
+            noSeedsLabel.AddToClassList("market-no-items");
+            buyItemsContainer.Add(noSeedsLabel);
+        }
+        
+        // Add upgrade section
+        var upgradeTitle = new Label("Upgrades:");
+        upgradeTitle.AddToClassList("market-section-title");
+        buyItemsContainer.Add(upgradeTitle);
+        
+        // Add crafting bench upgrade
+        if (market.IsCraftingBenchUpgradeAvailable())
+        {
+            var upgradeElement = CreateCraftingBenchUpgradeElement();
+            buyItemsContainer.Add(upgradeElement);
+        }
+        else
+        {
+            var upgradedLabel = new Label("Crafting bench already upgraded!");
+            upgradedLabel.AddToClassList("market-upgraded");
+            buyItemsContainer.Add(upgradedLabel);
+        }
+        
+        // Add research progress hint
+        if (ResearchSystem.Instance != null)
+        {
+            var progress = ResearchSystem.Instance.GetProgress();
+            
+            if (progress.currentTier < progress.maxTier)
+            {
+                var progressHint = new Label($"Research more Tier {progress.currentTier} crops to unlock Tier {progress.currentTier + 1} seeds!");
+                progressHint.AddToClassList("market-progress-hint");
+                buyItemsContainer.Add(progressHint);
+            }
         }
     }
     
@@ -213,11 +271,84 @@ public class MarketSystemHUD : MonoBehaviour
         icon.style.backgroundImage = new StyleBackground(item.sprite);
         itemElement.Add(icon);
         
-        itemElement.RegisterCallback<ClickEvent>(evt => market.TryBuyItem(item, 1));
+        // Add item name label
+        var nameLabel = new Label(item.name);
+        nameLabel.AddToClassList("item-name");
+        itemElement.Add(nameLabel);
         
+        // Add tier and season info for seeds
+        if (item is ItemSeed seed)
+        {
+            var infoLabel = new Label($"Tier {seed.tier} | {seed.season}");
+            infoLabel.AddToClassList("seed-info");
+            itemElement.Add(infoLabel);
+        }
+        
+        // Add price and buy button
         int buyPrice = market.playerEconomy.GetBuyPrice(item);
-        itemElement.tooltip = $"Click to buy 1x {item.name} for {buyPrice} coins";
+        var priceLabel = new Label($"{buyPrice} coins");
+        priceLabel.AddToClassList("item-price");
+        itemElement.Add(priceLabel);
+        
+        var buyButton = new Button(() => market.TryBuyItem(item, 1));
+        buyButton.text = "Buy";
+        buyButton.AddToClassList("buy-button");
+        
+        // Disable button if can't afford
+        bool canAfford = market.playerEconomy.CanAfford(buyPrice);
+        buyButton.SetEnabled(canAfford);
+        if (!canAfford)
+        {
+            buyButton.AddToClassList("disabled");
+        }
+        
+        itemElement.Add(buyButton);
+        itemElement.tooltip = $"{item.name} - {buyPrice} coins";
         
         return itemElement;
+    }
+    
+    private VisualElement CreateCraftingBenchUpgradeElement()
+    {
+        var upgradeElement = new VisualElement();
+        upgradeElement.AddToClassList("upgrade-slot");
+        
+        // Add upgrade icon (you can replace this with a proper icon)
+        var icon = new VisualElement();
+        icon.AddToClassList("upgrade-icon");
+        upgradeElement.Add(icon);
+        
+        // Add upgrade name
+        var nameLabel = new Label("Crafting Bench Upgrade");
+        nameLabel.AddToClassList("upgrade-name");
+        upgradeElement.Add(nameLabel);
+        
+        // Add upgrade description
+        var descLabel = new Label("Unlocks 2 additional crafting slots");
+        descLabel.AddToClassList("upgrade-description");
+        upgradeElement.Add(descLabel);
+        
+        // Add price and buy button
+        int upgradeCost = market.GetCraftingBenchUpgradeCost();
+        var priceLabel = new Label($"{upgradeCost} coins");
+        priceLabel.AddToClassList("upgrade-price");
+        upgradeElement.Add(priceLabel);
+        
+        var buyButton = new Button(() => market.TryBuyCraftingBenchUpgrade());
+        buyButton.text = "Buy Upgrade";
+        buyButton.AddToClassList("upgrade-button");
+        
+        // Disable button if can't afford
+        bool canAfford = market.playerEconomy.CanAfford(upgradeCost);
+        buyButton.SetEnabled(canAfford);
+        if (!canAfford)
+        {
+            buyButton.AddToClassList("disabled");
+        }
+        
+        upgradeElement.Add(buyButton);
+        upgradeElement.tooltip = $"Crafting Bench Upgrade - {upgradeCost} coins";
+        
+        return upgradeElement;
     }
 }

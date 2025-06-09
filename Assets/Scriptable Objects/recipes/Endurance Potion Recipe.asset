@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1475ce7b6f428ea3c730126bb0896a, type: 3}
+  m_Name: Endurance Potion Recipe
+  m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
+  recipeName: Endurance Potion
+  result: {fileID: 11400000, guid: 970914d80721aeb429bee6535acef991, type: 2}
+  resultQuantity: 1
+  ingredients:
+  - item: {fileID: 11400000, guid: b44c813d8f1547a458ac3e6dd9cdd296, type: 2}
+    quantity: 2
+  - item: {fileID: 11400000, guid: 23898785bc56ae249ac74ef76d1e553b, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: d2224eea34a255f469b789dc9b905c88, type: 2}
+    quantity: 1
+  prerequisiteRecipes: []

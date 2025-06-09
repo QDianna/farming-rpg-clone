@@ -28,26 +28,27 @@ public class PlotData
 /// </summary>
 public class PlotlandController : MonoBehaviour
 {
-    [Header("Tilemaps")]
-    public Tilemap cropTilemap;
-    [SerializeField] private List<Tilemap> expansionTilemaps;
+    [Header("Tilemaps References")]
+    // used to divide the plotland into 2 sections, contains the actual farming tiles
+    [SerializeField] private List<Tilemap> plotlandTierTilemaps;
+    // used to display crops on top of the plotland
+    [SerializeField] private Tilemap cropTilemap;
     
     [Header("Tile Assets")]
-    public TileBase lockedTile;
-    public TileBase emptyTile;
-    public TileBase tilledTile;
+    [SerializeField] private TileBase lockedTile;
+    [SerializeField] private TileBase emptyTile;
+    [SerializeField] private TileBase tilledTile;
     
-    private Tilemap plotTilemap;
     private Dictionary<Vector3Int, PlotData> plotStates = new();
     
     private void Awake()
     {
-        plotTilemap = GetComponent<Tilemap>();
         InitializePlotData();
     }
     
     private void Start()
     {
+        InitializePlotData();
         SubscribeToWeatherEvents();
     }
     
@@ -63,24 +64,33 @@ public class PlotlandController : MonoBehaviour
     
     private void InitializePlotData()
     {
-        // Initialize main plotland
-        foreach (Vector3Int pos in plotTilemap.cellBounds.allPositionsWithin)
-        {
-            if (plotTilemap.GetTile(pos) == emptyTile)
-                plotStates[pos] = new PlotData { state = PlotState.Empty };
-        }
+        plotStates.Clear();
         
-        // Initialize expansion areas
-        foreach (var expansionTilemap in expansionTilemaps)
+        foreach (var tilemap in plotlandTierTilemaps)
         {
-            if (expansionTilemap == null) continue;
-
-            foreach (Vector3Int pos in expansionTilemap.cellBounds.allPositionsWithin)
+            foreach (Vector3Int pos in tilemap.cellBounds.allPositionsWithin)
             {
-                if (expansionTilemap.GetTile(pos) == lockedTile)
-                    plotStates[pos] = new PlotData { state = PlotState.Locked };
+                var tile = tilemap.GetTile(pos);
+                if (tile != null) // Only process positions that have tiles
+                {
+                    Debug.Log($"init plot on pos {pos}");
+                    
+                    var plotData = new PlotData();
+                    
+                    // Check state from the actual tilemap that displays the tile
+                    if (tile == lockedTile)
+                        plotData.state = PlotState.Locked;
+                    else if (tile == emptyTile)
+                        plotData.state = PlotState.Empty;
+                    else if (tile == tilledTile)
+                        plotData.state = PlotState.Tilled;
+                    
+                    plotStates[pos] = plotData;
+                }
             }
         }
+        
+        Debug.Log($"Initialized {plotStates.Count} plots");
     }
     
     private void SubscribeToWeatherEvents()
@@ -103,25 +113,25 @@ public class PlotlandController : MonoBehaviour
     
     public bool CanTill(Vector3 worldPos)
     {
-        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        Vector3Int tilePos = plotlandTierTilemaps[0].WorldToCell(worldPos);
         return plotStates.ContainsKey(tilePos) && plotStates[tilePos].state == PlotState.Empty;
     }
     
     public bool CanPlant(Vector3 worldPos)
     {
-        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        Vector3Int tilePos = plotlandTierTilemaps[0].WorldToCell(worldPos);
         return plotStates.ContainsKey(tilePos) && plotStates[tilePos].state == PlotState.Tilled;
     }
     
     public bool CanHarvest(Vector3 worldPos)
     {
-        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        Vector3Int tilePos = plotlandTierTilemaps[0].WorldToCell(worldPos);
         return plotStates.ContainsKey(tilePos) && plotStates[tilePos].state == PlotState.Grown;
     }
     
     public bool CanAttendPlot(Vector3 worldPos)
     {
-        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        Vector3Int tilePos = plotlandTierTilemaps[0].WorldToCell(worldPos);
         return plotStates.ContainsKey(tilePos) &&
                plotStates[tilePos].state == PlotState.Planted &&
                plotStates[tilePos].canStartGrowing == false;
@@ -129,18 +139,29 @@ public class PlotlandController : MonoBehaviour
     
     public void TillPlot(Vector3 worldPos)
     {
-        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        Vector3Int tilePos = plotlandTierTilemaps[0].WorldToCell(worldPos);
+        
+        if (!plotStates.ContainsKey(tilePos)) return;
         
         plotStates[tilePos].state = PlotState.Tilled;
-        plotTilemap.SetTile(tilePos, tilledTile);
+        
+        // Find which tilemap has this position and update it
+        foreach (var tilemap in plotlandTierTilemaps)
+        {
+            if (tilemap.GetTile(tilePos) != null)
+            {
+                tilemap.SetTile(tilePos, tilledTile);
+                break;
+            }
+        }
     }
     
     public void PlantPlot(InventoryItem seed, Vector3 worldPos)
     {
-        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        Vector3Int tilePos = plotlandTierTilemaps[0].WorldToCell(worldPos);
         var seedItem = seed as ItemSeed;
         
-        if (seedItem == null) return;
+        if (seedItem == null || !plotStates.ContainsKey(tilePos)) return;
         
         var plotData = plotStates[tilePos];
         plotData.state = PlotState.Planted;
@@ -148,24 +169,37 @@ public class PlotlandController : MonoBehaviour
         plotData.currentGrowthStage = 0;
         plotData.canStartGrowing = false;
 
-        cropTilemap.SetTile(tilePos, seedItem.growthStageTiles[0]);
+        // Display crop on crop tilemap
+        if (cropTilemap != null && seedItem.growthStageTiles.Count > 0)
+        {
+            cropTilemap.SetTile(tilePos, seedItem.growthStageTiles[0]);
+        }
     }
     
     public void AttendPlot(Vector3 worldPos)
     {
-        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
-        var plotData = plotStates[tilePos];
+        Vector3Int tilePos = plotlandTierTilemaps[0].WorldToCell(worldPos);
         
+        if (!plotStates.ContainsKey(tilePos)) return;
+        
+        var plotData = plotStates[tilePos];
         plotData.growthTimer = 0;
         plotData.currentGrowthStage = 1;
         plotData.canStartGrowing = true;
         
-        cropTilemap.SetTile(tilePos, plotData.seedData.growthStageTiles[1]);
+        // Update crop display
+        if (cropTilemap != null && plotData.seedData != null && plotData.seedData.growthStageTiles.Count > 1)
+        {
+            cropTilemap.SetTile(tilePos, plotData.seedData.growthStageTiles[1]);
+        }
     }
     
     public void HarvestPlot(Vector3 worldPos, PlayerController player)
     {
-        Vector3Int tilePos = plotTilemap.WorldToCell(worldPos);
+        Vector3Int tilePos = plotlandTierTilemaps[0].WorldToCell(worldPos);
+        
+        if (!plotStates.ContainsKey(tilePos)) return;
+        
         var data = plotStates[tilePos];
         var cropItem = data.seedData.resultedCrop;
 
@@ -182,9 +216,21 @@ public class PlotlandController : MonoBehaviour
     
     private void ResetPlotToEmpty(Vector3Int tilePos, PlotData data)
     {
-        cropTilemap.SetTile(tilePos, null);
-        plotTilemap.SetTile(tilePos, emptyTile);
+        // Clear crop display
+        if (cropTilemap != null)
+            cropTilemap.SetTile(tilePos, null);
         
+        // Reset plot tile - find which tilemap has this position
+        foreach (var tilemap in plotlandTierTilemaps)
+        {
+            if (tilemap.GetTile(tilePos) != null)
+            {
+                tilemap.SetTile(tilePos, emptyTile);
+                break;
+            }
+        }
+        
+        // Reset data
         data.state = PlotState.Empty;
         data.seedData = null;
         data.growthTimer = 0;
@@ -215,7 +261,10 @@ public class PlotlandController : MonoBehaviour
             if (currentTile == null) continue;
 
             data.currentGrowthStage = newStage;
-            cropTilemap.SetTile(kvp.Key, currentTile);
+            
+            // Update crop display
+            if (cropTilemap != null)
+                cropTilemap.SetTile(kvp.Key, currentTile);
 
             if (newStage == maxStage)
             {
@@ -239,7 +288,9 @@ public class PlotlandController : MonoBehaviour
                 if (newStage > data.currentGrowthStage)
                 {
                     data.currentGrowthStage = newStage;
-                    cropTilemap.SetTile(kvp.Key, data.seedData.GetStageTile(newStage));
+                    
+                    if (cropTilemap != null)
+                        cropTilemap.SetTile(kvp.Key, data.seedData.GetStageTile(newStage));
                 
                     if (newStage == maxStage)
                         data.state = PlotState.Grown;
@@ -271,36 +322,43 @@ public class PlotlandController : MonoBehaviour
             plantedPlots.RemoveAt(randomIndex);
         
             var plotData = plotStates[plotPos];
+            
             plotData.state = PlotState.Tilled;
             plotData.seedData = null;
             plotData.growthTimer = 0;
             plotData.currentGrowthStage = 0;
             plotData.canStartGrowing = false;
         
-            cropTilemap.SetTile(plotPos, null);
+            // Clear crop
+            if (cropTilemap != null)
+                cropTilemap.SetTile(plotPos, null);
+            
+            // Reset plot tile
+            foreach (var tilemap in plotlandTierTilemaps)
+            {
+                if (tilemap.GetTile(plotPos) != null)
+                {
+                    tilemap.SetTile(plotPos, tilledTile);
+                    break;
+                }
+            }
         }
         
         if (plantsToDestroy > 0)
             NotificationSystem.ShowNotification($"Storm destroyed {plantsToDestroy} crops!");
     }
     
-    public bool UnlockPlot(Tilemap expansionTilemap)
+    public void UnlockPlotland(Tilemap tilemap)
     {
-        bool unlockedAny = false;
-        
-        foreach (Vector3Int pos in expansionTilemap.cellBounds.allPositionsWithin)
+        foreach (Vector3Int pos in tilemap.cellBounds.allPositionsWithin)
         {
-            var tile = expansionTilemap.GetTile(pos);
+            var tile = tilemap.GetTile(pos);
             
             if (tile == lockedTile && plotStates.ContainsKey(pos) && plotStates[pos].state == PlotState.Locked)
             {
                 plotStates[pos].state = PlotState.Empty;
-                plotTilemap.SetTile(pos, emptyTile);
-                expansionTilemap.SetTile(pos, null);
-                unlockedAny = true;
+                tilemap.SetTile(pos, emptyTile);
             }
         }
-        
-        return unlockedAny;
     }
 }

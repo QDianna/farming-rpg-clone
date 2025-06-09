@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721b20d37dc248ffadc124dbac080836, type: 3}
+  m_Name: Power Potion
+  m_EditorClassIdentifier: 
+  name: power potion
+  description: helps plants resist harsh weather
+  sprite: {fileID: 737626934, guid: a1f409a1ef3e9654698d16d783c85844, type: 3}
+  droppedItemPrefab: {fileID: 0}
+  basePrice: 10
+  canBeSold: 1
+  canBeBought: 0
+  maxStackSize: 99

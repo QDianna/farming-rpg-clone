@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Items/ItemWildPlant")]
+[CreateAssetMenu(menuName = "Items/WildPlant")]
 public class ItemWildPlant : InventoryItem
 {
     public override void UseItem(PlayerController player)

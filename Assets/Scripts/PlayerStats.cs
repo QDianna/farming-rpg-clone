@@ -11,16 +11,19 @@ public class PlayerStats : MonoBehaviour
 {
     public event Action<float> OnHungerChange;
     public event Action<float> OnHealthChange;
+    public event Action<float> OnEnergyChange; 
 
     private float hunger = 100f;
-    private float health = 100f; 
+    private float health = 100f;
+    private float energy = 100f;
     private float hungerLossRate = 5f;          // 5 units per minute
     private float hungerHealthLossRate = 10f;   // 10 units per minute
+    private float energyLossRate = 5f;
     
     public void SetHunger(float hunger)
     {
         this.hunger = Mathf.Clamp(hunger, 0, 100);
-        OnHungerChange?.Invoke(this.hunger);  // anunta ascultatori (UI)
+        OnHungerChange?.Invoke(this.hunger);
     }
     
     public void SetHealth(float health)
@@ -30,6 +33,12 @@ public class PlayerStats : MonoBehaviour
         
         if (health <= 0f)
             HandleGameOver();
+    }
+
+    public void SetEnergy(float energy)
+    {
+        this.energy = Mathf.Clamp(energy, 0, 100);
+        OnHungerChange?.Invoke(this.energy);
     }
     
     public float GetHunger() => hunger;
@@ -55,7 +64,7 @@ public class PlayerStats : MonoBehaviour
     private void HandleGameOver()
     {
         Debug.Log("Game Over!");
-        Time.timeScale = 0f;  // Oprește timpul (pauzează jocul)
+        Time.timeScale = 0f;
         // TODO: Afișează UI de Game Over
     }
     

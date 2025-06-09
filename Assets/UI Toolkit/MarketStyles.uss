@@ -1,0 +1,207 @@
+/* Dynamic element classes - Unity UI Toolkit compatible */
+
+.market-section-title {
+    font-size: 18px;
+    -unity-font-style: bold;
+    color: white;
+    margin-bottom: 10px;
+    -unity-text-align: middle-center;
+    padding: 8px;
+    background-color: #34495e;
+}
+
+.market-tier-info {
+    font-size: 14px;
+    color: #7f8c8d;
+    -unity-text-align: middle-center;
+    margin-bottom: 15px;
+    background-color: #ecf0f1;
+    padding: 5px 10px;
+}
+
+.seeds-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.buy-slot {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    min-width: 140px;
+    background-color: white;
+    margin: 6px;
+}
+
+.buy-slot:hover {
+    background-color: #ebf3fd;
+}
+
+.buy-slot .item-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+}
+
+.buy-slot .item-name {
+    font-size: 13px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.buy-slot .seed-info {
+    font-size: 11px;
+    color: #7f8c8d;
+    -unity-text-align: middle-center;
+    margin-bottom: 8px;
+}
+
+.buy-slot .item-price {
+    font-size: 12px;
+    color: #e67e22;
+    -unity-font-style: bold;
+    margin-bottom: 8px;
+}
+
+.buy-button {
+    padding: 6px 16px;
+    background-color: #27ae60;
+    color: white;
+    -unity-font-style: bold;
+    font-size: 12px;
+}
+
+.buy-button:hover {
+    background-color: #229954;
+}
+
+.buy-button.disabled {
+    background-color: #bdc3c7;
+    color: #7f8c8d;
+}
+
+.sell-slot {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.sell-slot:hover {
+    background-color: #f8fff9;
+}
+
+.sell-slot.empty {
+    background-color: #f8f9fa;
+    opacity: 0.7;
+}
+
+.sell-slot .item-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.sell-slot .item-quantity {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background-color: #007bff;
+    color: white;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.upgrade-slot {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fdf2e9;
+    margin: 15px 0;
+}
+
+.upgrade-slot:hover {
+    background-color: #fbeee6;
+}
+
+.upgrade-icon {
+    width: 64px;
+    height: 64px;
+    background-color: #e67e22;
+    margin-bottom: 12px;
+}
+
+.upgrade-name {
+    font-size: 16px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    color: #2c3e50;
+    margin-bottom: 6px;
+}
+
+.upgrade-description {
+    font-size: 13px;
+    color: #7f8c8d;
+    -unity-text-align: middle-center;
+    margin-bottom: 12px;
+}
+
+.upgrade-price {
+    font-size: 15px;
+    color: #d4a800;
+    -unity-font-style: bold;
+    margin-bottom: 12px;
+}
+
+.upgrade-button {
+    padding: 10px 24px;
+    background-color: #e67e22;
+    color: white;
+    -unity-font-style: bold;
+    font-size: 14px;
+}
+
+.upgrade-button:hover {
+    background-color: #d35400;
+}
+
+.upgrade-button.disabled {
+    background-color: #bdc3c7;
+    color: #7f8c8d;
+}
+
+.market-no-items {
+    color: #95a5a6;
+    -unity-text-align: middle-center;
+    margin: 25px 0;
+    font-size: 14px;
+    background-color: #ecf0f1;
+    padding: 15px;
+}
+
+.market-upgraded {
+    color: #27ae60;
+    -unity-text-align: middle-center;
+    margin: 15px 0;
+    -unity-font-style: bold;
+    font-size: 14px;
+    background-color: #d5f4e6;
+    padding: 10px;
+}
+
+.market-progress-hint {
+    font-size: 12px;
+    color: #7f8c8d;
+    -unity-text-align: middle-center;
+    margin-top: 20px;
+    padding: 8px 12px;
+    background-color: #f8f9fa;
+}

@@ -99,9 +99,14 @@ public class TimeSystem : MonoBehaviour
     public int GetDay() => currentDay;
     public Season GetSeason() => seasons[currentSeasonId];
     
-    public bool isWarmSeason()
+    public bool isCurrentSeasonWarm()
     {
         var season = seasons[currentSeasonId];
+        return season == Season.Spring || season == Season.Summer;
+    }
+
+    public bool isWarmSeason(Season season)
+    {
         return season == Season.Spring || season == Season.Summer;
     }
 }

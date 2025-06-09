@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a679d765daf249b4b6c1fea94226ca57, type: 3}
+  m_Name: CabbageSeed
+  m_EditorClassIdentifier: 
+  name: cabbage seed
+  description: buy // plant // research
+  sprite: {fileID: 684488515, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  droppedItemPrefab: {fileID: 0}
+  basePrice: 10
+  canBeSold: 1
+  canBeBought: 0
+  maxStackSize: 99
+  tier: 1
+  season: 0
+  resultedCrop: {fileID: 11400000, guid: 062b5afc6c5432a41942a8f29c745942, type: 2}
+  growthTime: 10
+  growthStageTiles:
+  - {fileID: 11400000, guid: eea0a8f891973b04c8e48e04b41abde1, type: 2}
+  - {fileID: 11400000, guid: 46d0784dfbd05f44996398d7e07a05c7, type: 2}
+  - {fileID: 11400000, guid: e0803133f6697f94f85b9eb1b9e9191c, type: 2}
+  - {fileID: 11400000, guid: b94d1dd9bae727f4bacc661afb296ae7, type: 2}
+  sickStageTile: {fileID: 11400000, guid: 297d1a0b81178424a86a1017c75cecf4, type: 2}

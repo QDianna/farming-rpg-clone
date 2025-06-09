@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f8fe355cad40bbb12079d296b31c3c, type: 3}
+  m_Name: Strength Potion
+  m_EditorClassIdentifier: 
+  name: strenght potion
+  description: helps plants sprout in cold weather
+  sprite: {fileID: -195270696, guid: a1f409a1ef3e9654698d16d783c85844, type: 3}
+  droppedItemPrefab: {fileID: 0}
+  basePrice: 10
+  canBeSold: 1
+  canBeBought: 0
+  maxStackSize: 99
+  starsEffectPrefab: {fileID: 7762797338399269062, guid: 75489c9862eb74d498a132336ffba911, type: 3}

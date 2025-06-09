@@ -1,0 +1,4386 @@
+fileFormatVersion: 2
+guid: 717e4089a8b587d48be7e9636c485cc9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8289223194167952255
+    second: 4_Crops_32x32_0
+  - first:
+      213: 8292760798585807618
+    second: 4_Crops_32x32_1
+  - first:
+      213: -1027662779756405659
+    second: 4_Crops_32x32_2
+  - first:
+      213: -179292433442312299
+    second: 4_Crops_32x32_3
+  - first:
+      213: -6953374238207788969
+    second: 4_Crops_32x32_4
+  - first:
+      213: 5608605670672099908
+    second: 4_Crops_32x32_5
+  - first:
+      213: -1251319580118728086
+    second: 4_Crops_32x32_6
+  - first:
+      213: -6506144715078785042
+    second: 4_Crops_32x32_7
+  - first:
+      213: 6101206144743444289
+    second: 4_Crops_32x32_8
+  - first:
+      213: -7742997898620999127
+    second: 4_Crops_32x32_9
+  - first:
+      213: -1549887559127474174
+    second: 4_Crops_32x32_10
+  - first:
+      213: 3685122707690877016
+    second: 4_Crops_32x32_11
+  - first:
+      213: 2809990033720003296
+    second: 4_Crops_32x32_12
+  - first:
+      213: 8838675268628348102
+    second: 4_Crops_32x32_13
+  - first:
+      213: -4903292520345768557
+    second: 4_Crops_32x32_14
+  - first:
+      213: 7695050122168445832
+    second: 4_Crops_32x32_15
+  - first:
+      213: 1848468796654752044
+    second: 4_Crops_32x32_16
+  - first:
+      213: 2750930163389575524
+    second: 4_Crops_32x32_17
+  - first:
+      213: -3090155384079834182
+    second: 4_Crops_32x32_18
+  - first:
+      213: 7237254481806480435
+    second: 4_Crops_32x32_19
+  - first:
+      213: -7905558964101422546
+    second: 4_Crops_32x32_20
+  - first:
+      213: 2949727522585862218
+    second: 4_Crops_32x32_21
+  - first:
+      213: -4326558898563953481
+    second: 4_Crops_32x32_22
+  - first:
+      213: -659759534900921533
+    second: 4_Crops_32x32_23
+  - first:
+      213: 7609944790617016983
+    second: 4_Crops_32x32_24
+  - first:
+      213: -1193760386449055071
+    second: 4_Crops_32x32_25
+  - first:
+      213: 5277267537682550963
+    second: 4_Crops_32x32_26
+  - first:
+      213: 585354114269881560
+    second: 4_Crops_32x32_27
+  - first:
+      213: -4607008055344056384
+    second: 4_Crops_32x32_28
+  - first:
+      213: -526222185575139677
+    second: 4_Crops_32x32_29
+  - first:
+      213: 7926769337159953822
+    second: 4_Crops_32x32_30
+  - first:
+      213: 7101698251258589809
+    second: 4_Crops_32x32_31
+  - first:
+      213: 4816763223582258272
+    second: 4_Crops_32x32_32
+  - first:
+      213: -9181349667957980419
+    second: 4_Crops_32x32_33
+  - first:
+      213: -2688270759780444959
+    second: 4_Crops_32x32_34
+  - first:
+      213: 5675254742254659104
+    second: 4_Crops_32x32_35
+  - first:
+      213: 3786630434436314316
+    second: 4_Crops_32x32_36
+  - first:
+      213: 8834719154163721982
+    second: 4_Crops_32x32_37
+  - first:
+      213: 20981380426464478
+    second: 4_Crops_32x32_38
+  - first:
+      213: -5627830790300631459
+    second: 4_Crops_32x32_39
+  - first:
+      213: 5697800639364687645
+    second: 4_Crops_32x32_40
+  - first:
+      213: 1799355508386638946
+    second: 4_Crops_32x32_41
+  - first:
+      213: -8923162723952231009
+    second: 4_Crops_32x32_42
+  - first:
+      213: -5442832655226523022
+    second: 4_Crops_32x32_43
+  - first:
+      213: 7520055310130005784
+    second: 4_Crops_32x32_44
+  - first:
+      213: 4406095576616914681
+    second: 4_Crops_32x32_45
+  - first:
+      213: -7569410616517976292
+    second: 4_Crops_32x32_46
+  - first:
+      213: -1676526454602321094
+    second: 4_Crops_32x32_47
+  - first:
+      213: -8267707278529657870
+    second: 4_Crops_32x32_48
+  - first:
+      213: 5193709090635121070
+    second: 4_Crops_32x32_49
+  - first:
+      213: 2676172483239307029
+    second: 4_Crops_32x32_50
+  - first:
+      213: -209350680432976409
+    second: 4_Crops_32x32_51
+  - first:
+      213: -6118402615095047703
+    second: 4_Crops_32x32_52
+  - first:
+      213: 6172761576277074030
+    second: 4_Crops_32x32_53
+  - first:
+      213: -9035172531254903072
+    second: 4_Crops_32x32_54
+  - first:
+      213: 8354518034287176490
+    second: 4_Crops_32x32_55
+  - first:
+      213: 189473297013936722
+    second: 4_Crops_32x32_56
+  - first:
+      213: -2010170929154297153
+    second: 4_Crops_32x32_57
+  - first:
+      213: -6601107062996848045
+    second: 4_Crops_32x32_58
+  - first:
+      213: 2055543842208998919
+    second: 4_Crops_32x32_59
+  - first:
+      213: 5636627409515960486
+    second: 4_Crops_32x32_60
+  - first:
+      213: -1590631225816650881
+    second: 4_Crops_32x32_61
+  - first:
+      213: 6819304922782778284
+    second: 4_Crops_32x32_62
+  - first:
+      213: -2340388514686578585
+    second: 4_Crops_32x32_63
+  - first:
+      213: 1560457786112014158
+    second: 4_Crops_32x32_64
+  - first:
+      213: -6022092409007444640
+    second: 4_Crops_32x32_65
+  - first:
+      213: 1520344452154461085
+    second: 4_Crops_32x32_66
+  - first:
+      213: -5136739659859859598
+    second: 4_Crops_32x32_67
+  - first:
+      213: -9127358448026901435
+    second: 4_Crops_32x32_68
+  - first:
+      213: -1740331288151683950
+    second: 4_Crops_32x32_69
+  - first:
+      213: -2453542658056232351
+    second: 4_Crops_32x32_70
+  - first:
+      213: -7028757739441450562
+    second: 4_Crops_32x32_71
+  - first:
+      213: 3276052897392510742
+    second: 4_Crops_32x32_72
+  - first:
+      213: -1385959785214261201
+    second: 4_Crops_32x32_73
+  - first:
+      213: 6947637639343563864
+    second: 4_Crops_32x32_74
+  - first:
+      213: -5663052641572030335
+    second: 4_Crops_32x32_75
+  - first:
+      213: 6759589882385504493
+    second: 4_Crops_32x32_76
+  - first:
+      213: -2360917393062390705
+    second: 4_Crops_32x32_77
+  - first:
+      213: -1122108000566268604
+    second: 4_Crops_32x32_78
+  - first:
+      213: -3021461528758713774
+    second: 4_Crops_32x32_79
+  - first:
+      213: -352502683149569793
+    second: 4_Crops_32x32_80
+  - first:
+      213: 499628127521038902
+    second: 4_Crops_32x32_81
+  - first:
+      213: -1442967975587340443
+    second: 4_Crops_32x32_82
+  - first:
+      213: -1229589994207325319
+    second: 4_Crops_32x32_83
+  - first:
+      213: 7596361715878116745
+    second: 4_Crops_32x32_84
+  - first:
+      213: 6008013679482619937
+    second: 4_Crops_32x32_85
+  - first:
+      213: -3989619940039347096
+    second: 4_Crops_32x32_86
+  - first:
+      213: 3204780769417052158
+    second: 4_Crops_32x32_87
+  - first:
+      213: -1609370259168913780
+    second: 4_Crops_32x32_88
+  - first:
+      213: -6153937023376956056
+    second: 4_Crops_32x32_89
+  - first:
+      213: -9149116988354469708
+    second: 4_Crops_32x32_90
+  - first:
+      213: 8587757481280842362
+    second: 4_Crops_32x32_91
+  - first:
+      213: 9119652983546059178
+    second: 4_Crops_32x32_92
+  - first:
+      213: 5524105196832059684
+    second: 4_Crops_32x32_93
+  - first:
+      213: -2336593848120705560
+    second: 4_Crops_32x32_94
+  - first:
+      213: -2868623526165618877
+    second: 4_Crops_32x32_95
+  - first:
+      213: 174679852720893440
+    second: 4_Crops_32x32_96
+  - first:
+      213: 3099438265383747981
+    second: 4_Crops_32x32_97
+  - first:
+      213: -7158717801065238877
+    second: 4_Crops_32x32_98
+  - first:
+      213: -104204384421490028
+    second: 4_Crops_32x32_99
+  - first:
+      213: -2431163208303413757
+    second: 4_Crops_32x32_100
+  - first:
+      213: 6244561709739922610
+    second: 4_Crops_32x32_101
+  - first:
+      213: 1210281244339698373
+    second: 4_Crops_32x32_102
+  - first:
+      213: 1390447633373961602
+    second: 4_Crops_32x32_103
+  - first:
+      213: -2332305929117031386
+    second: 4_Crops_32x32_104
+  - first:
+      213: -8543001514692473762
+    second: 4_Crops_32x32_105
+  - first:
+      213: 8782852739136937230
+    second: 4_Crops_32x32_106
+  - first:
+      213: 575877807664798057
+    second: 4_Crops_32x32_107
+  - first:
+      213: -3276812697448069139
+    second: 4_Crops_32x32_108
+  - first:
+      213: -6511956299576794499
+    second: 4_Crops_32x32_109
+  - first:
+      213: -4512606879339263899
+    second: 4_Crops_32x32_110
+  - first:
+      213: 4603295376704567861
+    second: 4_Crops_32x32_111
+  - first:
+      213: -3616741220961614259
+    second: 4_Crops_32x32_112
+  - first:
+      213: 2403731305217121677
+    second: 4_Crops_32x32_113
+  - first:
+      213: 7208702424127222750
+    second: 4_Crops_32x32_114
+  - first:
+      213: -7038976447544995004
+    second: 4_Crops_32x32_115
+  - first:
+      213: 2229990818497796870
+    second: 4_Crops_32x32_116
+  - first:
+      213: 1587039720674559442
+    second: 4_Crops_32x32_117
+  - first:
+      213: -1620025995076384946
+    second: 4_Crops_32x32_118
+  - first:
+      213: -492423333634153268
+    second: 4_Crops_32x32_119
+  - first:
+      213: -3474476546386407756
+    second: 4_Crops_32x32_120
+  - first:
+      213: 8301782368227318068
+    second: 4_Crops_32x32_121
+  - first:
+      213: 5467401812200268698
+    second: 4_Crops_32x32_122
+  - first:
+      213: 8996553385432025224
+    second: 4_Crops_32x32_123
+  - first:
+      213: -7656655178469406847
+    second: 4_Crops_32x32_124
+  - first:
+      213: 255514226931628354
+    second: 4_Crops_32x32_125
+  - first:
+      213: -2715739023460003238
+    second: 4_Crops_32x32_126
+  - first:
+      213: 4367786879565128829
+    second: 4_Crops_32x32_127
+  - first:
+      213: -5753805083830230524
+    second: 4_Crops_32x32_128
+  - first:
+      213: 4498722309814833530
+    second: 4_Crops_32x32_129
+  - first:
+      213: 882421483035758845
+    second: 4_Crops_32x32_130
+  - first:
+      213: 3557083316307555405
+    second: 4_Crops_32x32_131
+  - first:
+      213: 4961678001257396981
+    second: 4_Crops_32x32_132
+  - first:
+      213: 6761045501347097740
+    second: 4_Crops_32x32_133
+  - first:
+      213: 5535390392992007335
+    second: 4_Crops_32x32_134
+  - first:
+      213: -8076618360871935612
+    second: 4_Crops_32x32_135
+  - first:
+      213: 4944691537691365706
+    second: 4_Crops_32x32_136
+  - first:
+      213: -8519694048787091652
+    second: 4_Crops_32x32_137
+  - first:
+      213: 2046438987933828977
+    second: 4_Crops_32x32_138
+  - first:
+      213: -1086115517689120436
+    second: 4_Crops_32x32_139
+  - first:
+      213: -8783527052158043687
+    second: 4_Crops_32x32_140
+  - first:
+      213: -2386837595487536291
+    second: 4_Crops_32x32_141
+  - first:
+      213: -5194785834290932767
+    second: 4_Crops_32x32_142
+  - first:
+      213: 6340839861866284001
+    second: 4_Crops_32x32_143
+  - first:
+      213: -1042846589441435559
+    second: 4_Crops_32x32_144
+  - first:
+      213: -1036296952551899680
+    second: 4_Crops_32x32_145
+  - first:
+      213: -7858448564639232257
+    second: 4_Crops_32x32_146
+  - first:
+      213: -901398125050983529
+    second: 4_Crops_32x32_147
+  - first:
+      213: -7410869842758187511
+    second: 4_Crops_32x32_148
+  - first:
+      213: -302531866227885895
+    second: 4_Crops_32x32_149
+  - first:
+      213: 7365895580884160689
+    second: 4_Crops_32x32_150
+  - first:
+      213: 3632743642789123482
+    second: 4_Crops_32x32_151
+  - first:
+      213: -1666914500492181505
+    second: 4_Crops_32x32_152
+  - first:
+      213: -7439819677989539980
+    second: 4_Crops_32x32_153
+  - first:
+      213: 940223217203300138
+    second: 4_Crops_32x32_154
+  - first:
+      213: 5482947432983365936
+    second: 4_Crops_32x32_155
+  - first:
+      213: 4781681962456102662
+    second: 4_Crops_32x32_156
+  - first:
+      213: -4808788450866276973
+    second: 4_Crops_32x32_157
+  - first:
+      213: 5589625658548529670
+    second: 4_Crops_32x32_158
+  - first:
+      213: 9193968909950642405
+    second: 4_Crops_32x32_159
+  - first:
+      213: 7963168908922220775
+    second: 4_Crops_32x32_160
+  - first:
+      213: -4438876215633850788
+    second: 4_Crops_32x32_161
+  - first:
+      213: -2716239549874836594
+    second: 4_Crops_32x32_162
+  - first:
+      213: -5815144540534567243
+    second: 4_Crops_32x32_163
+  - first:
+      213: -6799479504637991728
+    second: 4_Crops_32x32_164
+  - first:
+      213: 6494512941699595039
+    second: 4_Crops_32x32_165
+  - first:
+      213: -1050701651954900135
+    second: 4_Crops_32x32_166
+  - first:
+      213: -3426020058844975486
+    second: 4_Crops_32x32_167
+  - first:
+      213: -3367092779197220597
+    second: 4_Crops_32x32_168
+  - first:
+      213: 5804771500875525474
+    second: 4_Crops_32x32_169
+  - first:
+      213: 7994327769915098811
+    second: 4_Crops_32x32_170
+  - first:
+      213: -8083477973972968527
+    second: 4_Crops_32x32_171
+  - first:
+      213: -5003908815097708838
+    second: 4_Crops_32x32_172
+  - first:
+      213: 3472470490914967861
+    second: 4_Crops_32x32_173
+  - first:
+      213: 1017205890603441721
+    second: 4_Crops_32x32_174
+  - first:
+      213: -287469027998995198
+    second: 4_Crops_32x32_175
+  - first:
+      213: 430749439359264385
+    second: 4_Crops_32x32_176
+  - first:
+      213: -4455388799597587337
+    second: 4_Crops_32x32_177
+  - first:
+      213: -5265806149346942333
+    second: 4_Crops_32x32_178
+  - first:
+      213: -2344329028458738727
+    second: 4_Crops_32x32_179
+  - first:
+      213: 8810485709105992366
+    second: 4_Crops_32x32_180
+  - first:
+      213: -8326964749299061892
+    second: 4_Crops_32x32_181
+  - first:
+      213: 7620899939027958866
+    second: 4_Crops_32x32_182
+  - first:
+      213: -306108349272333841
+    second: 4_Crops_32x32_183
+  - first:
+      213: 7747330913590468530
+    second: 4_Crops_32x32_184
+  - first:
+      213: 4226545954435369005
+    second: 4_Crops_32x32_185
+  - first:
+      213: 5170946121606518084
+    second: 4_Crops_32x32_186
+  - first:
+      213: 4375542669110467240
+    second: 4_Crops_32x32_187
+  - first:
+      213: 2508533950288612516
+    second: 4_Crops_32x32_188
+  - first:
+      213: -6325987957888411703
+    second: 4_Crops_32x32_189
+  - first:
+      213: -268360002163252452
+    second: 4_Crops_32x32_190
+  - first:
+      213: -3237979280931910038
+    second: 4_Crops_32x32_191
+  - first:
+      213: 6167276788183554305
+    second: 4_Crops_32x32_192
+  - first:
+      213: -1050095620189079287
+    second: 4_Crops_32x32_193
+  - first:
+      213: -682489528376417553
+    second: 4_Crops_32x32_194
+  - first:
+      213: -478398267935208758
+    second: 4_Crops_32x32_195
+  - first:
+      213: 6167691790011080121
+    second: 4_Crops_32x32_196
+  - first:
+      213: -8318606411352754570
+    second: 4_Crops_32x32_197
+  - first:
+      213: -9167385870476766416
+    second: 4_Crops_32x32_198
+  - first:
+      213: -1284810258085326975
+    second: 4_Crops_32x32_199
+  - first:
+      213: -1205078750959119404
+    second: 4_Crops_32x32_200
+  - first:
+      213: 5778320478858701000
+    second: 4_Crops_32x32_201
+  - first:
+      213: -9177769335937135709
+    second: 4_Crops_32x32_202
+  - first:
+      213: 567719640081978146
+    second: 4_Crops_32x32_203
+  - first:
+      213: 1472478725730237485
+    second: 4_Crops_32x32_204
+  - first:
+      213: -958632526422384085
+    second: 4_Crops_32x32_205
+  - first:
+      213: -5122077323264621219
+    second: 4_Crops_32x32_206
+  - first:
+      213: 7344482840084563257
+    second: 4_Crops_32x32_207
+  - first:
+      213: -2770995648335200017
+    second: 4_Crops_32x32_208
+  - first:
+      213: 6845404034514335358
+    second: 4_Crops_32x32_209
+  - first:
+      213: 7410165077289510616
+    second: 4_Crops_32x32_210
+  - first:
+      213: 6435126801176440485
+    second: 4_Crops_32x32_211
+  - first:
+      213: -5184323454032873152
+    second: 4_Crops_32x32_212
+  - first:
+      213: 1187074077008715588
+    second: 4_Crops_32x32_213
+  - first:
+      213: 5768720096181682038
+    second: 4_Crops_32x32_214
+  - first:
+      213: 3667466270140212675
+    second: 4_Crops_32x32_215
+  - first:
+      213: -3461068992329810916
+    second: 4_Crops_32x32_216
+  - first:
+      213: -4473910188161593418
+    second: 4_Crops_32x32_217
+  - first:
+      213: 9010033547231160988
+    second: 4_Crops_32x32_218
+  - first:
+      213: 8401754214479581004
+    second: 4_Crops_32x32_219
+  - first:
+      213: -108674900248241642
+    second: 4_Crops_32x32_220
+  - first:
+      213: -735360469861533603
+    second: 4_Crops_32x32_221
+  - first:
+      213: -438737632679063509
+    second: 4_Crops_32x32_222
+  - first:
+      213: -9036690289949862809
+    second: 4_Crops_32x32_223
+  - first:
+      213: 5269508202885645746
+    second: 4_Crops_32x32_224
+  - first:
+      213: -5851078690459059865
+    second: 4_Crops_32x32_225
+  - first:
+      213: 5093137582020851327
+    second: 4_Crops_32x32_226
+  - first:
+      213: 6128929022624239842
+    second: 4_Crops_32x32_227
+  - first:
+      213: -6576667887268637526
+    second: 4_Crops_32x32_228
+  - first:
+      213: 4230755217820521483
+    second: 4_Crops_32x32_229
+  - first:
+      213: 5439844408599989105
+    second: 4_Crops_32x32_230
+  - first:
+      213: -2193923897114645293
+    second: 4_Crops_32x32_231
+  - first:
+      213: 260435550891306720
+    second: 4_Crops_32x32_232
+  - first:
+      213: -3724796518253115124
+    second: 4_Crops_32x32_233
+  - first:
+      213: -6224006161189204880
+    second: 4_Crops_32x32_234
+  - first:
+      213: 5007048719926421434
+    second: 4_Crops_32x32_235
+  - first:
+      213: 565036270658940543
+    second: 4_Crops_32x32_236
+  - first:
+      213: 4406580268055699438
+    second: 4_Crops_32x32_237
+  - first:
+      213: -4381369875589372629
+    second: 4_Crops_32x32_238
+  - first:
+      213: 5935852009098013969
+    second: 4_Crops_32x32_239
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 4_Crops_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 758b54d88f6a08f90800000000000000
+      internalID: -6953374238207788969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1152
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44ae6ad4425c5dd40800000000000000
+      internalID: 5608605670672099908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1152
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a62488eb87b62aee0800000000000000
+      internalID: -1251319580118728086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1152
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee7a1784ad785b5a0800000000000000
+      internalID: -6506144715078785042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1152
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f0ddeb9a6dba450800000000000000
+      internalID: 6101206144743444289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1152
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a69147f685b8490800000000000000
+      internalID: -7742997898620999127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1088
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a406cefad898fe820800000000000000
+      internalID: 2949727522585862218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1088
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bc4a47da99f4f3c0800000000000000
+      internalID: -4326558898563953481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1088
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34bbd05d23018d6f0800000000000000
+      internalID: -659759534900921533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1088
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79acf05c774fb9960800000000000000
+      internalID: 7609944790617016983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1088
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a265cad049ee6fe0800000000000000
+      internalID: -1193760386449055071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1088
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b0d4488dde9c3940800000000000000
+      internalID: 5277267537682550963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1088
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4aed037789f1800800000000000000
+      internalID: 585354114269881560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1088
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c7bad7259e9010c0800000000000000
+      internalID: -4607008055344056384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1088
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a63dd3d5bb72b8f0800000000000000
+      internalID: -526222185575139677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5eff18b6bde5e1b0800000000000000
+      internalID: -5627830790300631459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1763564e77a21f40800000000000000
+      internalID: 5697800639364687645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c270e2d4898f810800000000000000
+      internalID: 1799355508386638946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9df1dd87ce8a2480800000000000000
+      internalID: -8923162723952231009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 272b355998c2774b0800000000000000
+      internalID: -5442832655226523022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 817c69b267a9c5860800000000000000
+      internalID: 7520055310130005784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fecbaa1598952d30800000000000000
+      internalID: 4406095576616914681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1f1063162d04f690800000000000000
+      internalID: -7569410616517976292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3332e87218cbb8e0800000000000000
+      internalID: -1676526454602321094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb2f0f5b0307a14e0800000000000000
+      internalID: -2010170929154297153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35230c1b9182464a0800000000000000
+      internalID: -6601107062996848045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 706eb17db32c68c10800000000000000
+      internalID: 2055543842208998919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8dd6bc3c2593e40800000000000000
+      internalID: 5636627409515960486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7bed80e351fce9e0800000000000000
+      internalID: -1590631225816650881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca34a8172b903ae50800000000000000
+      internalID: 6819304922782778284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 760d3b9bb05458fd0800000000000000
+      internalID: -2340388514686578585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 854e4317f97fa6060800000000000000
+      internalID: 6947637639343563864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 188f2ca60abc861b0800000000000000
+      internalID: -5663052641572030335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de899e62f23eecd50800000000000000
+      internalID: 6759589882385504493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f449972c3265c3fd0800000000000000
+      internalID: -2360917393062390705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25204db7fbc9116d0800000000000000
+      internalID: -3021461528758713774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_89
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 832
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 865ed77d1e2d89aa0800000000000000
+      internalID: -6153937023376956056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_90
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 832
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0e3acb29ec70180800000000000000
+      internalID: -9149116988354469708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_91
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 832
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7aa2f8ede7dd2770800000000000000
+      internalID: 8587757481280842362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_92
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 832
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa9181f02148f8e70800000000000000
+      internalID: 9119652983546059178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_93
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 832
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4217017986099ac40800000000000000
+      internalID: 5524105196832059684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_96
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 832
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00ea8da86669c6200800000000000000
+      internalID: 174679852720893440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4602189501cecdc0800000000000000
+      internalID: -3616741220961614259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_113
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 768
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8dd3f6f2e4cb5120800000000000000
+      internalID: 2403731305217121677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_114
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed3b99159a47a0460800000000000000
+      internalID: 7208702424127222750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_115
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 768
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4435dbd0738805e90800000000000000
+      internalID: -7038976447544995004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_118
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 768
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e47c294d0f28489e0800000000000000
+      internalID: -1620025995076384946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_120
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4be46385dfd28cfc0800000000000000
+      internalID: -3474476546386407756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_121
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 768
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4395ac4441bd53370800000000000000
+      internalID: 8301782368227318068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_136
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4159f361c21f9440800000000000000
+      internalID: 4944691537691365706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_139
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 704
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c49b91fe0b75de0f0800000000000000
+      internalID: -1086115517689120436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_152
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff373fe71eedd8e0800000000000000
+      internalID: -1666914500492181505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_155
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 640
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0390d11f3a7571c40800000000000000
+      internalID: 5482947432983365936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_156
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 607b6111962fb5240800000000000000
+      internalID: 4781681962456102662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_157
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 640
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3955d1ac160c34db0800000000000000
+      internalID: -4808788450866276973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_168
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b09ba2af4fea541d0800000000000000
+      internalID: -3367092779197220597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_171
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb95ab5c97b1df80800000000000000
+      internalID: -8083477973972968527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_172
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adeb7abc17b8e8ab0800000000000000
+      internalID: -5003908815097708838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_173
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53153087381b03030800000000000000
+      internalID: 3472470490914967861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_213
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44fdd2a6595597010800000000000000
+      internalID: 1187074077008715588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_214
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 448
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67ff09d0d5c9e0050800000000000000
+      internalID: 5768720096181682038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_215
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c52f61442575e230800000000000000
+      internalID: 3667466270140212675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_216
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 448
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1cff09c610d7ffc0800000000000000
+      internalID: -3461068992329810916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_241
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab414dfdd8454b44eb2d98b882df9884
+      internalID: -2120126527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_242
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b8a1e946b757448b3541dae8dc5e6c
+      internalID: -1759621334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3322e7fcac2f91346856cf341b1643ab
+      internalID: 1560457786112014158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d758522c8750d7144b30bdcbe384eaf6
+      internalID: -1122108000566268604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69a90e73f1fc7a4b88847825b953718
+      internalID: -352502683149569793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_94
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 832
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d6e534fb565c84cad2e0f8c080b2c2
+      internalID: -2336593848120705560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_95
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 832
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d230ed9a42b934cb3da84c833aba8e
+      internalID: -2868623526165618877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_116
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 768
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebfc8904739679a4ba3722afb33d1b12
+      internalID: 2229990818497796870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_117
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 768
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b115f3c7fdaa25459340d773e54bd7f
+      internalID: 1587039720674559442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_119
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 768
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31cb2fb15f7bbba42b9e3e328ec4497e
+      internalID: -492423333634153268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_137
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 704
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 011dde35e12a5b84d9d408fc55104070
+      internalID: -8519694048787091652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_138
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 704
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6dd465f59c95944f8e344f90cb1bb69
+      internalID: 2046438987933828977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_140
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 704
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61cf7fa6a76c4bf45ac6f64120c947c8
+      internalID: -8783527052158043687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_141
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 704
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 837cb45bd2c351140bbfa66f3c5b619d
+      internalID: -2386837595487536291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_142
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 704
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7976203a2fe834d9676c15e2b00636
+      internalID: -5194785834290932767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_153
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 640
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7926ce0ff03c96a48aa50b9938dc5f07
+      internalID: -7439819677989539980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_154
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 640
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 165da34a5e9554f41b21030ca023e488
+      internalID: 940223217203300138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_167
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1131678f7883d04cb0ebdb5db112851
+      internalID: -3426020058844975486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_169
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1369dd37e00d80244a88fba90dc9d84c
+      internalID: 5804771500875525474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_170
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7664ec04aa0a6a348ab226ae0dd988ae
+      internalID: 7994327769915098811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_190
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c40485bb87c4cb147b4eb706cff2f6d6
+      internalID: -268360002163252452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_191
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 512
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e623fab09df8989418bace3c2939fb0e
+      internalID: -3237979280931910038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_192
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 512
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3b4223a37b84d42bdc03a07617cd2e
+      internalID: 6167276788183554305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_193
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 512
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df238689ab67304485af65e49f6c068
+      internalID: -1050095620189079287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_269
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d758470fda14604e93fa3547861636c
+      internalID: -366293771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_270
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf0c7f0822e8cf4c83eead3b708378f
+      internalID: -1451937417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_271
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb6c3433be446f44898e6a0119b611a
+      internalID: 461424237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_272
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3cc7deeaa613d4d92bb0d842a6f157
+      internalID: -938792795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_289
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cdeb430142cd0448a8092244da8978e
+      internalID: -1209878182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_290
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dea7edb6cbe2e04c99af51ae0f3ca16
+      internalID: 1881669230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_291
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e8abe275257c684abe933be9daad60c
+      internalID: -1252751154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_292
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fadf358fb21065e48807ab69c04a9b00
+      internalID: -273256020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_293
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a811d6616aeae7141906356d1b54a77d
+      internalID: -1324377808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_294
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 256
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0065846d9059ab48b098c2911fb371e
+      internalID: 2021023550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_295
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7868f4c57151a40bcb59dc179418b7
+      internalID: -1588298944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_312
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba465c9d222e46b44b85e5776127a8b9
+      internalID: 175813743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_313
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9378ab42de56d794f97d4b7fcc9841c6
+      internalID: -373622201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_314
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d3481b48072d141a3882a2748a5c8a
+      internalID: 1428783841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_315
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb59dc91e8937ed43985c2ef753997d1
+      internalID: 1222847266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_316
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a0f78826354d654187936090644b3d4
+      internalID: 1340786419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_317
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d387a6058aac6c247a3f5237b145db8a
+      internalID: 1253378953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_318
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e3bb0e6eb7db84ea409472b5c30684
+      internalID: -1578570614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_332
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a046cfb9b2e7bfd4a8efa3e271c1bd1e
+      internalID: 1402756996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_333
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8313b800378633a47938685864518122
+      internalID: 760494366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_334
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d5d3cf9980b14e4db034c8cce750017
+      internalID: -1882926655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_335
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb46c1e34efca04ca38c48f32f415d7
+      internalID: -707959124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_336
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9612c57d86e5024cadc3244a040d8f8
+      internalID: 511384903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_337
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755d8f0ea5623fb408ea319b3ad606c4
+      internalID: 305633530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_338
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e395de414c4b77c43b6ff06cf40785a1
+      internalID: -1973317382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_351
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb4759cb6c7cdf448dc223e3944cc79
+      internalID: 1125242405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_352
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf7755722d0a4e48a4bec851a9f53a4
+      internalID: 99385275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_353
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7222b1b2304f6054b97612e6ee0ed3c6
+      internalID: 2147123913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_354
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010495c272609ba46aabcd5da972b0a7
+      internalID: 537090259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_355
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cfcb195836a7814ab373ab9115162b4
+      internalID: -1626870081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_356
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04554c2954511e245bd09b1bf2e0c1c6
+      internalID: 62527179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_357
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfccef73cfa4e7e4ca82bc0253481b35
+      internalID: -65711012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_369
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f1d70f5e1fbc549868f57b27a90615
+      internalID: 1601873395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_370
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce769b4652f753428db66723bbdf960
+      internalID: -685236735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_371
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b816a62bc19c5a4ea4f82547cdf7e65
+      internalID: -1460515692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_372
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1238c760dfbdc3e438c7ff68fe893105
+      internalID: 1069132952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_373
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb78119f968024e49a5c8ed842eac804
+      internalID: -1441232692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_374
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fbfa82c71a22824687ba236e1ba0d61
+      internalID: 159837511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_375
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81b4665c57cf03848a704e2ed9a94096
+      internalID: -469091888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_194
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6e7c89539b7fe41a1c600689257df5
+      internalID: -682489528376417553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_195
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 512
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ce4eb69afa234408e38d42ec5ad7e6
+      internalID: -478398267935208758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_196
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 512
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 161822e0d4d9b924e947f2b49e85852a
+      internalID: 6167691790011080121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_217
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e75fa8c53db5a24889ca8f51b7aa1c8
+      internalID: -4473910188161593418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_218
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 448
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd116d1d5087c24459d29b97c173aaba
+      internalID: 9010033547231160988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_219
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e3a2c9252900b43a7ca59c1c0d74f4
+      internalID: 8401754214479581004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_243
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbaf97ba0b1912343ad80e39a2acdb71
+      internalID: 2048667962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_244
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 384
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4173882f0e98f34aa65696e6cbcf427
+      internalID: -341474788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_245
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 32
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b39f940c007648341b150f55c5156dbc
+      internalID: -509139012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_246
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 384
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689519a98b9e9594189ae0ea9ceeb428
+      internalID: 749544940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_247
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6538efbf27833d94587f0efdd5d4171e
+      internalID: 1726819162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_248
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 384
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f443321f30924d47834eb9909a4c574
+      internalID: -292072824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_249
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a57a23d31de57f5489dad03b4f5b3ef0
+      internalID: -1206613307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_260
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd1bdf9f71ea82241b4952792c4c72cf
+      internalID: 1377093196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_273
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31cf089c0d1d4743b0c82f9b2f3d8fc
+      internalID: -1466859880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_274
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 320
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 536425e31e7e7cb46acbc1e81896456e
+      internalID: 272308574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_275
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca12701f5a494744f8e18f9a6ab72300
+      internalID: -115230935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Crops_32x32_276
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 320
+        width: 32
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03a867b85ba91d4780a30ce29255474
+      internalID: 1785249666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 843d9dcada3fac2459bd230de1694dd7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      4_Crops_32x32_0: 8289223194167952255
+      4_Crops_32x32_1: 8292760798585807618
+      4_Crops_32x32_10: -1549887559127474174
+      4_Crops_32x32_100: -2431163208303413757
+      4_Crops_32x32_101: 6244561709739922610
+      4_Crops_32x32_102: 1210281244339698373
+      4_Crops_32x32_103: 1390447633373961602
+      4_Crops_32x32_104: -2332305929117031386
+      4_Crops_32x32_105: -8543001514692473762
+      4_Crops_32x32_106: 8782852739136937230
+      4_Crops_32x32_107: 575877807664798057
+      4_Crops_32x32_108: -3276812697448069139
+      4_Crops_32x32_109: -6511956299576794499
+      4_Crops_32x32_11: 3685122707690877016
+      4_Crops_32x32_110: -4512606879339263899
+      4_Crops_32x32_111: 4603295376704567861
+      4_Crops_32x32_112: -3616741220961614259
+      4_Crops_32x32_113: 2403731305217121677
+      4_Crops_32x32_114: 7208702424127222750
+      4_Crops_32x32_115: -7038976447544995004
+      4_Crops_32x32_116: 2229990818497796870
+      4_Crops_32x32_117: 1587039720674559442
+      4_Crops_32x32_118: -1620025995076384946
+      4_Crops_32x32_119: -492423333634153268
+      4_Crops_32x32_12: 2809990033720003296
+      4_Crops_32x32_120: -3474476546386407756
+      4_Crops_32x32_121: 8301782368227318068
+      4_Crops_32x32_122: 5467401812200268698
+      4_Crops_32x32_123: 8996553385432025224
+      4_Crops_32x32_124: -7656655178469406847
+      4_Crops_32x32_125: 255514226931628354
+      4_Crops_32x32_126: -2715739023460003238
+      4_Crops_32x32_127: 4367786879565128829
+      4_Crops_32x32_128: -5753805083830230524
+      4_Crops_32x32_129: 4498722309814833530
+      4_Crops_32x32_13: 8838675268628348102
+      4_Crops_32x32_130: 882421483035758845
+      4_Crops_32x32_131: 3557083316307555405
+      4_Crops_32x32_132: 4961678001257396981
+      4_Crops_32x32_133: 6761045501347097740
+      4_Crops_32x32_134: 5535390392992007335
+      4_Crops_32x32_135: -8076618360871935612
+      4_Crops_32x32_136: 4944691537691365706
+      4_Crops_32x32_137: -8519694048787091652
+      4_Crops_32x32_138: 2046438987933828977
+      4_Crops_32x32_139: -1086115517689120436
+      4_Crops_32x32_14: -4903292520345768557
+      4_Crops_32x32_140: -8783527052158043687
+      4_Crops_32x32_141: -2386837595487536291
+      4_Crops_32x32_142: -5194785834290932767
+      4_Crops_32x32_143: 6340839861866284001
+      4_Crops_32x32_144: -1042846589441435559
+      4_Crops_32x32_145: -1036296952551899680
+      4_Crops_32x32_146: -7858448564639232257
+      4_Crops_32x32_147: -901398125050983529
+      4_Crops_32x32_148: -7410869842758187511
+      4_Crops_32x32_149: -302531866227885895
+      4_Crops_32x32_15: 7695050122168445832
+      4_Crops_32x32_150: 7365895580884160689
+      4_Crops_32x32_151: 3632743642789123482
+      4_Crops_32x32_152: -1666914500492181505
+      4_Crops_32x32_153: -7439819677989539980
+      4_Crops_32x32_154: 940223217203300138
+      4_Crops_32x32_155: 5482947432983365936
+      4_Crops_32x32_156: 4781681962456102662
+      4_Crops_32x32_157: -4808788450866276973
+      4_Crops_32x32_158: 5589625658548529670
+      4_Crops_32x32_159: 9193968909950642405
+      4_Crops_32x32_16: 1848468796654752044
+      4_Crops_32x32_160: 7963168908922220775
+      4_Crops_32x32_161: -4438876215633850788
+      4_Crops_32x32_162: -2716239549874836594
+      4_Crops_32x32_163: -5815144540534567243
+      4_Crops_32x32_164: -6799479504637991728
+      4_Crops_32x32_165: 6494512941699595039
+      4_Crops_32x32_166: -1050701651954900135
+      4_Crops_32x32_167: -3426020058844975486
+      4_Crops_32x32_168: -3367092779197220597
+      4_Crops_32x32_169: 5804771500875525474
+      4_Crops_32x32_17: 2750930163389575524
+      4_Crops_32x32_170: 7994327769915098811
+      4_Crops_32x32_171: -8083477973972968527
+      4_Crops_32x32_172: -5003908815097708838
+      4_Crops_32x32_173: 3472470490914967861
+      4_Crops_32x32_174: 1017205890603441721
+      4_Crops_32x32_175: -287469027998995198
+      4_Crops_32x32_176: 430749439359264385
+      4_Crops_32x32_177: -4455388799597587337
+      4_Crops_32x32_178: -5265806149346942333
+      4_Crops_32x32_179: -2344329028458738727
+      4_Crops_32x32_18: -3090155384079834182
+      4_Crops_32x32_180: 8810485709105992366
+      4_Crops_32x32_181: -8326964749299061892
+      4_Crops_32x32_182: 7620899939027958866
+      4_Crops_32x32_183: -306108349272333841
+      4_Crops_32x32_184: 7747330913590468530
+      4_Crops_32x32_185: 4226545954435369005
+      4_Crops_32x32_186: 5170946121606518084
+      4_Crops_32x32_187: 4375542669110467240
+      4_Crops_32x32_188: 2508533950288612516
+      4_Crops_32x32_189: -6325987957888411703
+      4_Crops_32x32_19: 7237254481806480435
+      4_Crops_32x32_190: -268360002163252452
+      4_Crops_32x32_191: -3237979280931910038
+      4_Crops_32x32_192: 6167276788183554305
+      4_Crops_32x32_193: -1050095620189079287
+      4_Crops_32x32_194: -682489528376417553
+      4_Crops_32x32_195: -478398267935208758
+      4_Crops_32x32_196: 6167691790011080121
+      4_Crops_32x32_197: -8318606411352754570
+      4_Crops_32x32_198: -9167385870476766416
+      4_Crops_32x32_199: -1284810258085326975
+      4_Crops_32x32_2: -1027662779756405659
+      4_Crops_32x32_20: -7905558964101422546
+      4_Crops_32x32_200: -1205078750959119404
+      4_Crops_32x32_201: 5778320478858701000
+      4_Crops_32x32_202: -9177769335937135709
+      4_Crops_32x32_203: 567719640081978146
+      4_Crops_32x32_204: 1472478725730237485
+      4_Crops_32x32_205: -958632526422384085
+      4_Crops_32x32_206: -5122077323264621219
+      4_Crops_32x32_207: 7344482840084563257
+      4_Crops_32x32_208: -2770995648335200017
+      4_Crops_32x32_209: 6845404034514335358
+      4_Crops_32x32_21: 2949727522585862218
+      4_Crops_32x32_210: 7410165077289510616
+      4_Crops_32x32_211: 6435126801176440485
+      4_Crops_32x32_212: -5184323454032873152
+      4_Crops_32x32_213: 1187074077008715588
+      4_Crops_32x32_214: 5768720096181682038
+      4_Crops_32x32_215: 3667466270140212675
+      4_Crops_32x32_216: -3461068992329810916
+      4_Crops_32x32_217: -4473910188161593418
+      4_Crops_32x32_218: 9010033547231160988
+      4_Crops_32x32_219: 8401754214479581004
+      4_Crops_32x32_22: -4326558898563953481
+      4_Crops_32x32_220: -108674900248241642
+      4_Crops_32x32_221: -735360469861533603
+      4_Crops_32x32_222: -438737632679063509
+      4_Crops_32x32_223: -9036690289949862809
+      4_Crops_32x32_224: 5269508202885645746
+      4_Crops_32x32_225: -5851078690459059865
+      4_Crops_32x32_226: 5093137582020851327
+      4_Crops_32x32_227: 6128929022624239842
+      4_Crops_32x32_228: -6576667887268637526
+      4_Crops_32x32_229: 4230755217820521483
+      4_Crops_32x32_23: -659759534900921533
+      4_Crops_32x32_230: 5439844408599989105
+      4_Crops_32x32_231: -2193923897114645293
+      4_Crops_32x32_232: 260435550891306720
+      4_Crops_32x32_233: -3724796518253115124
+      4_Crops_32x32_234: -6224006161189204880
+      4_Crops_32x32_235: 5007048719926421434
+      4_Crops_32x32_236: 565036270658940543
+      4_Crops_32x32_237: 4406580268055699438
+      4_Crops_32x32_238: -4381369875589372629
+      4_Crops_32x32_239: 5935852009098013969
+      4_Crops_32x32_24: 7609944790617016983
+      4_Crops_32x32_240: 2082099302
+      4_Crops_32x32_241: -2120126527
+      4_Crops_32x32_242: -1759621334
+      4_Crops_32x32_243: 2048667962
+      4_Crops_32x32_244: -341474788
+      4_Crops_32x32_245: -509139012
+      4_Crops_32x32_246: 749544940
+      4_Crops_32x32_247: 1726819162
+      4_Crops_32x32_248: -292072824
+      4_Crops_32x32_249: -1206613307
+      4_Crops_32x32_25: -1193760386449055071
+      4_Crops_32x32_250: 1548812135
+      4_Crops_32x32_251: -644465769
+      4_Crops_32x32_252: -152058426
+      4_Crops_32x32_253: -891516428
+      4_Crops_32x32_254: -439812582
+      4_Crops_32x32_255: 1002495278
+      4_Crops_32x32_256: 354424456
+      4_Crops_32x32_257: -1179309543
+      4_Crops_32x32_258: 1606521743
+      4_Crops_32x32_259: -185260017
+      4_Crops_32x32_26: 5277267537682550963
+      4_Crops_32x32_260: 1377093196
+      4_Crops_32x32_261: 1331509235
+      4_Crops_32x32_262: 1617075248
+      4_Crops_32x32_263: -1440634092
+      4_Crops_32x32_264: -1464973788
+      4_Crops_32x32_265: -128347929
+      4_Crops_32x32_266: -1194345998
+      4_Crops_32x32_267: 213010827
+      4_Crops_32x32_268: 1205815869
+      4_Crops_32x32_269: -366293771
+      4_Crops_32x32_27: 585354114269881560
+      4_Crops_32x32_270: -1451937417
+      4_Crops_32x32_271: 461424237
+      4_Crops_32x32_272: -938792795
+      4_Crops_32x32_273: -1466859880
+      4_Crops_32x32_274: 272308574
+      4_Crops_32x32_275: -115230935
+      4_Crops_32x32_276: 1785249666
+      4_Crops_32x32_277: 371687136
+      4_Crops_32x32_278: -78884131
+      4_Crops_32x32_279: 442512869
+      4_Crops_32x32_28: -4607008055344056384
+      4_Crops_32x32_280: 1370237499
+      4_Crops_32x32_281: 651629936
+      4_Crops_32x32_282: 1723071956
+      4_Crops_32x32_283: -597160727
+      4_Crops_32x32_284: -16038735
+      4_Crops_32x32_285: 1756289055
+      4_Crops_32x32_286: -1271434587
+      4_Crops_32x32_287: -1048467971
+      4_Crops_32x32_288: -684465323
+      4_Crops_32x32_289: -1209878182
+      4_Crops_32x32_29: -526222185575139677
+      4_Crops_32x32_290: 1881669230
+      4_Crops_32x32_291: -1252751154
+      4_Crops_32x32_292: -273256020
+      4_Crops_32x32_293: -1324377808
+      4_Crops_32x32_294: 2021023550
+      4_Crops_32x32_295: -1588298944
+      4_Crops_32x32_296: 922209634
+      4_Crops_32x32_297: 480408508
+      4_Crops_32x32_298: 1907689975
+      4_Crops_32x32_299: -1025217905
+      4_Crops_32x32_3: -179292433442312299
+      4_Crops_32x32_30: 7926769337159953822
+      4_Crops_32x32_300: 233384051
+      4_Crops_32x32_301: -1417811814
+      4_Crops_32x32_302: -1823808
+      4_Crops_32x32_303: -1215143711
+      4_Crops_32x32_304: 1274671570
+      4_Crops_32x32_305: 75861532
+      4_Crops_32x32_306: 1236352929
+      4_Crops_32x32_307: 827680356
+      4_Crops_32x32_308: -568271596
+      4_Crops_32x32_309: 1649661698
+      4_Crops_32x32_31: 7101698251258589809
+      4_Crops_32x32_310: -1476451513
+      4_Crops_32x32_311: -339748760
+      4_Crops_32x32_312: 175813743
+      4_Crops_32x32_313: -373622201
+      4_Crops_32x32_314: 1428783841
+      4_Crops_32x32_315: 1222847266
+      4_Crops_32x32_316: 1340786419
+      4_Crops_32x32_317: 1253378953
+      4_Crops_32x32_318: -1578570614
+      4_Crops_32x32_319: 393633479
+      4_Crops_32x32_32: 4816763223582258272
+      4_Crops_32x32_320: -869635483
+      4_Crops_32x32_321: 2114172427
+      4_Crops_32x32_322: -1445336436
+      4_Crops_32x32_323: -1013921003
+      4_Crops_32x32_324: 340026834
+      4_Crops_32x32_325: 1687046825
+      4_Crops_32x32_326: 1280305759
+      4_Crops_32x32_327: -600857501
+      4_Crops_32x32_328: 421576908
+      4_Crops_32x32_329: 1493072871
+      4_Crops_32x32_33: -9181349667957980419
+      4_Crops_32x32_330: -276910087
+      4_Crops_32x32_331: 1644405129
+      4_Crops_32x32_332: 1402756996
+      4_Crops_32x32_333: 760494366
+      4_Crops_32x32_334: -1882926655
+      4_Crops_32x32_335: -707959124
+      4_Crops_32x32_336: 511384903
+      4_Crops_32x32_337: 305633530
+      4_Crops_32x32_338: -1973317382
+      4_Crops_32x32_339: 1385692006
+      4_Crops_32x32_34: -2688270759780444959
+      4_Crops_32x32_340: -638124682
+      4_Crops_32x32_341: -227664499
+      4_Crops_32x32_342: -662933625
+      4_Crops_32x32_343: 997743142
+      4_Crops_32x32_344: -673071450
+      4_Crops_32x32_345: 2050911163
+      4_Crops_32x32_346: 1361178003
+      4_Crops_32x32_347: 71213893
+      4_Crops_32x32_348: -1001816113
+      4_Crops_32x32_349: -748290109
+      4_Crops_32x32_35: 5675254742254659104
+      4_Crops_32x32_350: -580886840
+      4_Crops_32x32_351: 1125242405
+      4_Crops_32x32_352: 99385275
+      4_Crops_32x32_353: 2147123913
+      4_Crops_32x32_354: 537090259
+      4_Crops_32x32_355: -1626870081
+      4_Crops_32x32_356: 62527179
+      4_Crops_32x32_357: -65711012
+      4_Crops_32x32_358: -1102435185
+      4_Crops_32x32_359: 1534761053
+      4_Crops_32x32_36: 3786630434436314316
+      4_Crops_32x32_360: 630096704
+      4_Crops_32x32_361: 225237051
+      4_Crops_32x32_362: -811659637
+      4_Crops_32x32_363: -6581613
+      4_Crops_32x32_364: 1749482812
+      4_Crops_32x32_365: -1895533348
+      4_Crops_32x32_366: -986799917
+      4_Crops_32x32_367: -328186526
+      4_Crops_32x32_368: -1511694322
+      4_Crops_32x32_369: 1601873395
+      4_Crops_32x32_37: 8834719154163721982
+      4_Crops_32x32_370: -685236735
+      4_Crops_32x32_371: -1460515692
+      4_Crops_32x32_372: 1069132952
+      4_Crops_32x32_373: -1441232692
+      4_Crops_32x32_374: 159837511
+      4_Crops_32x32_375: -469091888
+      4_Crops_32x32_376: -161078068
+      4_Crops_32x32_377: 132333536
+      4_Crops_32x32_378: -439608133
+      4_Crops_32x32_379: 157919104
+      4_Crops_32x32_38: 20981380426464478
+      4_Crops_32x32_380: -465262281
+      4_Crops_32x32_39: -5627830790300631459
+      4_Crops_32x32_4: -6953374238207788969
+      4_Crops_32x32_40: 5697800639364687645
+      4_Crops_32x32_41: 1799355508386638946
+      4_Crops_32x32_42: -8923162723952231009
+      4_Crops_32x32_43: -5442832655226523022
+      4_Crops_32x32_44: 7520055310130005784
+      4_Crops_32x32_45: 4406095576616914681
+      4_Crops_32x32_46: -7569410616517976292
+      4_Crops_32x32_47: -1676526454602321094
+      4_Crops_32x32_48: -8267707278529657870
+      4_Crops_32x32_49: 5193709090635121070
+      4_Crops_32x32_5: 5608605670672099908
+      4_Crops_32x32_50: 2676172483239307029
+      4_Crops_32x32_51: -209350680432976409
+      4_Crops_32x32_52: -6118402615095047703
+      4_Crops_32x32_53: 6172761576277074030
+      4_Crops_32x32_54: -9035172531254903072
+      4_Crops_32x32_55: 8354518034287176490
+      4_Crops_32x32_56: 189473297013936722
+      4_Crops_32x32_57: -2010170929154297153
+      4_Crops_32x32_58: -6601107062996848045
+      4_Crops_32x32_59: 2055543842208998919
+      4_Crops_32x32_6: -1251319580118728086
+      4_Crops_32x32_60: 5636627409515960486
+      4_Crops_32x32_61: -1590631225816650881
+      4_Crops_32x32_62: 6819304922782778284
+      4_Crops_32x32_63: -2340388514686578585
+      4_Crops_32x32_64: 1560457786112014158
+      4_Crops_32x32_65: -6022092409007444640
+      4_Crops_32x32_66: 1520344452154461085
+      4_Crops_32x32_67: -5136739659859859598
+      4_Crops_32x32_68: -9127358448026901435
+      4_Crops_32x32_69: -1740331288151683950
+      4_Crops_32x32_7: -6506144715078785042
+      4_Crops_32x32_70: -2453542658056232351
+      4_Crops_32x32_71: -7028757739441450562
+      4_Crops_32x32_72: 3276052897392510742
+      4_Crops_32x32_73: -1385959785214261201
+      4_Crops_32x32_74: 6947637639343563864
+      4_Crops_32x32_75: -5663052641572030335
+      4_Crops_32x32_76: 6759589882385504493
+      4_Crops_32x32_77: -2360917393062390705
+      4_Crops_32x32_78: -1122108000566268604
+      4_Crops_32x32_79: -3021461528758713774
+      4_Crops_32x32_8: 6101206144743444289
+      4_Crops_32x32_80: -352502683149569793
+      4_Crops_32x32_81: 499628127521038902
+      4_Crops_32x32_82: -1442967975587340443
+      4_Crops_32x32_83: -1229589994207325319
+      4_Crops_32x32_84: 7596361715878116745
+      4_Crops_32x32_85: 6008013679482619937
+      4_Crops_32x32_86: -3989619940039347096
+      4_Crops_32x32_87: 3204780769417052158
+      4_Crops_32x32_88: -1609370259168913780
+      4_Crops_32x32_89: -6153937023376956056
+      4_Crops_32x32_9: -7742997898620999127
+      4_Crops_32x32_90: -9149116988354469708
+      4_Crops_32x32_91: 8587757481280842362
+      4_Crops_32x32_92: 9119652983546059178
+      4_Crops_32x32_93: 5524105196832059684
+      4_Crops_32x32_94: -2336593848120705560
+      4_Crops_32x32_95: -2868623526165618877
+      4_Crops_32x32_96: 174679852720893440
+      4_Crops_32x32_97: 3099438265383747981
+      4_Crops_32x32_98: -7158717801065238877
+      4_Crops_32x32_99: -104204384421490028
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

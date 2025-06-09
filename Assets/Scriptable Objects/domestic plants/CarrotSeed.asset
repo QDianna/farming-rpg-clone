@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a679d765daf249b4b6c1fea94226ca57, type: 3}
+  m_Name: CarrotSeed
+  m_EditorClassIdentifier: 
+  name: carrot seed
+  description: buy // plant // research
+  sprite: {fileID: 1171097141, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  droppedItemPrefab: {fileID: 0}
+  basePrice: 10
+  canBeSold: 0
+  canBeBought: 1
+  maxStackSize: 99
+  tier: 1
+  season: 3
+  resultedCrop: {fileID: 11400000, guid: bb69fbc96e57eee4aa0f78539332d899, type: 2}
+  growthTime: 10
+  growthStageTiles:
+  - {fileID: 11400000, guid: 724abe58281f89e4c8c15f882c6a0eeb, type: 2}
+  - {fileID: 11400000, guid: a8ca34ae042063144997a25d94518708, type: 2}
+  - {fileID: 11400000, guid: fa445e8aff2e41941972807b07ba3f52, type: 2}
+  - {fileID: 11400000, guid: 96e97e956d679894b91ea693fa26ba7e, type: 2}
+  sickStageTile: {fileID: 11400000, guid: dd32888aa2d852945b8d25d1346c18b2, type: 2}

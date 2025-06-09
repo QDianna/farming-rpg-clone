@@ -7,7 +7,9 @@ using UnityEngine.Tilemaps;
 /// </summary>
 public class InteractionBuyLand : MonoBehaviour, IInteractable
 {
-    [SerializeField] private Tilemap expansionTilemap;
+    [SerializeField] private Tilemap tilemap;
+    [SerializeField] private int requiredTier = 2;
+    [SerializeField] private int cost = 100;
     
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -27,17 +29,26 @@ public class InteractionBuyLand : MonoBehaviour, IInteractable
 
     public void Interact(PlayerController player)
     {
-        bool success = player.playerEconomy.CanAfford(100);
+        // Check if player has unlocked the required tier
+        if (ResearchSystem.Instance.currentSeedsTier < requiredTier)
+        {
+            NotificationSystem.ShowNotification($"Unlock Tier {requiredTier} plants first!");
+            return;
+        }
         
-        if (success)
+        // Check if player can afford it
+        if (!player.playerEconomy.CanAfford(cost))
         {
-            player.playerEconomy.SpendMoney(100);
-            player.plotlandController.UnlockPlot(expansionTilemap);
-            NotificationSystem.ShowNotification("Land purchased! New area unlocked!");
+            NotificationSystem.ShowNotification($"Need {cost} coins to purchase this land!");
+            return;
         }
-        else
-        {
-            NotificationSystem.ShowNotification("Cannot purchase this land");
-        }
+        
+        // Purchase the land
+        player.playerEconomy.SpendMoney(cost);
+        player.plotlandController.UnlockPlotland(tilemap);
+        NotificationSystem.ShowNotification($"Land purchased for {cost} coins! New area unlocked!");
+        
+        // Destroy the buy trigger
+        Destroy(gameObject);
     }
 }

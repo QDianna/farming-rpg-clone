@@ -2,21 +2,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Interactive market system for buying and selling items with temporary sell slots.
-/// Players can stage items for sale and confirm transactions to earn money.
+/// Interactive market system with seed tier progression, daily refreshes, and crafting bench upgrades.
 /// </summary>
 public class InteractionMarket : MonoBehaviour, IInteractable
 {
     [Header("Market Settings")]
-    [SerializeField] private List<InventoryItem> marketItems;
     [SerializeField] private int sellSlotCount = 3;
+    [SerializeField] private int dailySeedVariety = 4; // How many different seeds to show daily
+    
+    [Header("Upgrade Settings")]
+    [SerializeField] private int craftingBenchUpgradeCost = 500;
+    [SerializeField] private CraftingSystemHUD craftingSystemHUD; // Reference to the crafting HUD
     
     [Header("System References")]
     public PlayerEconomy playerEconomy;
     public InventorySystem inventorySystem;
     
+    // Current daily seed selection
+    private List<InventoryItem> currentDailySeeds = new();
     public List<MarketSellSlot> sellSlots;
     private bool isMarketOpen;
+    private bool craftingBenchUpgraded = false;
 
     public event System.Action OnMarketOpened;
     public event System.Action OnMarketClosed;
@@ -52,6 +58,37 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         InitializeSlots();
     }
     
+    private void Start()
+    {
+        // Subscribe to day changes for daily seed refresh
+        if (TimeSystem.Instance != null)
+        {
+            TimeSystem.Instance.OnDayChange += RefreshDailySeeds;
+        }
+        
+        // Subscribe to tier unlocks for immediate seed refresh
+        if (ResearchSystem.Instance != null)
+        {
+            ResearchSystem.Instance.OnTierUnlocked += OnTierUnlocked;
+        }
+        
+        // Initial seed setup
+        RefreshDailySeeds();
+    }
+    
+    private void OnDestroy()
+    {
+        if (TimeSystem.Instance != null)
+        {
+            TimeSystem.Instance.OnDayChange -= RefreshDailySeeds;
+        }
+        
+        if (ResearchSystem.Instance != null)
+        {
+            ResearchSystem.Instance.OnTierUnlocked -= OnTierUnlocked;
+        }
+    }
+    
     private void InitializeSlots()
     {
         sellSlots = new List<MarketSellSlot>();
@@ -59,6 +96,61 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         {
             sellSlots.Add(new MarketSellSlot());
         }
+    }
+    
+    /// <summary>
+    /// Refresh the daily seed selection based on current tier and season
+    /// </summary>
+    private void RefreshDailySeeds()
+    {
+        currentDailySeeds.Clear();
+        
+        if (ResearchSystem.Instance == null)
+        {
+            Debug.LogWarning("ResearchSystem not found - cannot refresh seeds");
+            return;
+        }
+        
+        // Get available seeds for current tier and season
+        var availableSeeds = ResearchSystem.Instance.GetAvailableSeeds();
+        
+        if (availableSeeds.Count == 0)
+        {
+            Debug.Log("No seeds available for current tier/season");
+            return;
+        }
+        
+        // Randomly select seeds for today (or show all if fewer than dailySeedVariety)
+        int seedsToShow = Mathf.Min(dailySeedVariety, availableSeeds.Count);
+        
+        // Shuffle and take the first seedsToShow items
+        for (int i = 0; i < seedsToShow; i++)
+        {
+            int randomIndex = Random.Range(i, availableSeeds.Count);
+            var temp = availableSeeds[i];
+            availableSeeds[i] = availableSeeds[randomIndex];
+            availableSeeds[randomIndex] = temp;
+        }
+        
+        // Add to current daily selection
+        for (int i = 0; i < seedsToShow; i++)
+        {
+            currentDailySeeds.Add(availableSeeds[i]);
+        }
+        
+        Debug.Log($"Market: Refreshed daily seeds - {currentDailySeeds.Count} seeds available");
+        
+        // Notify UI to update if market is open
+        OnTransactionCompleted?.Invoke();
+    }
+    
+    /// <summary>
+    /// Called when a new tier is unlocked - immediately refresh seeds
+    /// </summary>
+    private void OnTierUnlocked(int newTier)
+    {
+        RefreshDailySeeds();
+        NotificationSystem.ShowNotification($"New Tier {newTier} seeds now available in market!");
     }
     
     public void Interact(PlayerController player)
@@ -173,6 +265,42 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         return playerEconomy.BuyItem(item, quantity);
     }
     
+    /// <summary>
+    /// Try to purchase crafting bench upgrade
+    /// </summary>
+    public bool TryBuyCraftingBenchUpgrade()
+    {
+        if (craftingBenchUpgraded)
+        {
+            NotificationSystem.ShowNotification("Crafting bench already upgraded!");
+            return false;
+        }
+        
+        if (!playerEconomy.CanAfford(craftingBenchUpgradeCost))
+        {
+            NotificationSystem.ShowNotification($"Need {craftingBenchUpgradeCost} coins to upgrade crafting bench!");
+            return false;
+        }
+        
+        if (craftingSystemHUD == null)
+        {
+            NotificationSystem.ShowNotification("Crafting system not found!");
+            return false;
+        }
+        
+        // Purchase the upgrade
+        playerEconomy.SpendMoney(craftingBenchUpgradeCost);
+        craftingBenchUpgraded = true;
+        
+        // Unlock the slots
+        craftingSystemHUD.UnlockAllUpgradeSlots();
+        
+        NotificationSystem.ShowNotification($"Crafting bench upgraded for {craftingBenchUpgradeCost} coins!");
+        OnTransactionCompleted?.Invoke(); // Refresh UI
+        
+        return true;
+    }
+    
     private void ReturnSellItems()
     {
         foreach (var slot in sellSlots)
@@ -186,14 +314,36 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         OnMarketSlotsChanged?.Invoke();
     }
     
+    /// <summary>
+    /// Check if item is available for purchase (in today's seed selection)
+    /// </summary>
     public bool IsItemAvailableForPurchase(InventoryItem item)
     {
-        return marketItems.Contains(item);
+        return currentDailySeeds.Contains(item);
     }
     
+    /// <summary>
+    /// Get today's available seeds for purchase
+    /// </summary>
     public List<InventoryItem> GetAvailableItems()
     {
-        return new List<InventoryItem>(marketItems);
+        return new List<InventoryItem>(currentDailySeeds);
+    }
+    
+    /// <summary>
+    /// Check if crafting bench upgrade is available for purchase
+    /// </summary>
+    public bool IsCraftingBenchUpgradeAvailable()
+    {
+        return !craftingBenchUpgraded;
+    }
+    
+    /// <summary>
+    /// Get the cost of the crafting bench upgrade
+    /// </summary>
+    public int GetCraftingBenchUpgradeCost()
+    {
+        return craftingBenchUpgradeCost;
     }
     
     public int GetTotalSellValue()

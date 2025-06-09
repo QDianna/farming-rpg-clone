@@ -7,6 +7,24 @@ using UnityEngine;
 /// </summary>
 public class CraftingSystem : MonoBehaviour
 {
+    #region Singleton
+    public static CraftingSystem Instance { get; private set; }
+    
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            InitializeRecipeUnlocks();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    #endregion
+    
     [Header("Crafting Recipes")]
     [SerializeField] private List<CraftingRecipe> recipes;
     
@@ -15,10 +33,14 @@ public class CraftingSystem : MonoBehaviour
 
     private InventorySystem inventorySystem;
     
-    private void Awake()
+    private void Start()
     {
+        // Get InventorySystem reference - could also be singleton if needed
         inventorySystem = GetComponent<InventorySystem>();
-        InitializeRecipeUnlocks();
+        if (inventorySystem == null)
+        {
+            inventorySystem = FindFirstObjectByType<InventorySystem>();
+        }
     }
     
     private void InitializeRecipeUnlocks()
@@ -91,6 +113,8 @@ public class CraftingSystem : MonoBehaviour
     {
         if (!IsRecipeUnlocked(recipe)) return false;
         
+        if (inventorySystem == null) return false;
+        
         foreach (var ingredient in recipe.ingredients)
         {
             if (!inventorySystem.HasItem(ingredient.item, ingredient.quantity))
@@ -110,6 +134,8 @@ public class CraftingSystem : MonoBehaviour
             NotificationSystem.ShowNotification($"Cannot craft {recipe.recipeName} - {reason}");
             return false;
         }
+        
+        if (inventorySystem == null) return false;
         
         // Remove ingredients and add result
         foreach (var ingredient in recipe.ingredients)
@@ -131,7 +157,6 @@ public class CraftingSystem : MonoBehaviour
     /// </summary>
     public List<CraftingRecipe> GetAllRecipes()
     {
-        Debug.Log(recipes);
         return new List<CraftingRecipe>(recipes);
     }
     
@@ -166,38 +191,4 @@ public class CraftingSystem : MonoBehaviour
     
     #endregion
     
-    /*#region Debug Methods
-    
-    [ContextMenu("Debug Crafting State")]
-    private void DebugCraftingState()
-    {
-        Debug.Log($"Total Recipes: {recipes.Count}");
-        Debug.Log($"Unlocked Recipes: {GetUnlockedRecipes().Count}");
-        Debug.Log($"Crafted Recipes: {craftedRecipeNames.Count}");
-        
-        foreach (var recipe in recipes)
-        {
-            string status = recipe.isUnlocked ? "UNLOCKED" : "LOCKED";
-            string crafted = craftedRecipeNames.Contains(recipe.recipeName) ? " (CRAFTED)" : "";
-            Debug.Log($"- {recipe.recipeName}: {status}{crafted}");
-        }
-    }
-    
-        
-    /// <summary>
-    /// Check for recipes that can be unlocked due to dependencies being met
-    /// </summary>
-    private void CheckForDependencyUnlocks()
-    {
-        foreach (var recipe in recipes)
-        {
-            if (!recipe.isUnlocked && CanUnlockRecipe(recipe))
-            {
-                // This recipe's dependencies are met, but we need ResearchSystem to check ingredients
-                Debug.Log($"Recipe {recipe.recipeName} dependencies met - awaiting ingredient research");
-            }
-        }
-    }
-    
-    #endregion*/
 }

@@ -3,11 +3,10 @@ using UnityEngine;
 /// <summary>
 /// Crop item that can be consumed to restore hunger and spawns visual drops when harvested.
 /// </summary>
-[CreateAssetMenu(menuName = "Items/ItemCrop")]
+[CreateAssetMenu(menuName = "Items/Crop")]
 public class ItemCrop : InventoryItem
 {
     [SerializeField] private float hungerRestoreValue;
-    
     public override void UseItem(PlayerController player)
     {
         player.playerStats.RestoreHunger(hungerRestoreValue);
