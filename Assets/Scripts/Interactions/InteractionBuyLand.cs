@@ -46,7 +46,7 @@ public class InteractionBuyLand : MonoBehaviour, IInteractable
         // Purchase the land
         player.playerEconomy.SpendMoney(cost);
         player.plotlandController.UnlockPlotland(tilemap);
-        NotificationSystem.ShowNotification($"Land purchased for {cost} coins! New area unlocked!");
+        NotificationSystem.ShowNotification($"Land purchased for {cost} coins! You can start planting!");
         
         // Destroy the buy trigger
         Destroy(gameObject);

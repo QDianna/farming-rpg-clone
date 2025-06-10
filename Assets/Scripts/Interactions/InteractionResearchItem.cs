@@ -2,7 +2,6 @@ using UnityEngine;
 
 /// <summary>
 /// Bridge between HUD and ResearchSystem. Handles interaction, costs, and slot management.
-/// NO complex logic - just coordination.
 /// </summary>
 public class InteractionResearchItem : MonoBehaviour, IInteractable
 {
@@ -17,11 +16,11 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
     public InventoryItem currentResearchItem;
     private bool isOpen;
     
-    // Events - clean and simple
+    // Simple events
     public event System.Action OnTableOpened;
     public event System.Action OnTableClosed;
     public event System.Action OnSlotChanged;
-    public event System.Action<ResearchResult> OnResearchCompleted;
+    public event System.Action<string> OnResearchCompleted; // Just pass item name
     
     #region Interaction
     
@@ -29,7 +28,7 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
     {
         if (!isUnlocked)
         {
-            NotificationSystem.ShowNotification("Research Table is locked!");
+            Debug.Log("Research Table is locked!");
             return;
         }
         
@@ -46,7 +45,7 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
     {
         isOpen = true;
         OnTableOpened?.Invoke();
-        NotificationSystem.ShowNotification($"Research Table opened - Cost: {GetCost()} coins");
+        Debug.Log($"Research Table opened");
     }
     
     private void CloseTable()
@@ -54,7 +53,7 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
         isOpen = false;
         ReturnItemToInventory();
         OnTableClosed?.Invoke();
-        NotificationSystem.ShowNotification("Research Table closed");
+        Debug.Log("Research Table closed");
     }
     
     #endregion
@@ -65,13 +64,13 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
     {
         if (currentResearchItem != null)
         {
-            NotificationSystem.ShowNotification("Research slot is occupied!");
+            Debug.Log("Research slot occupied");
             return false;
         }
         
         currentResearchItem = item;
         OnSlotChanged?.Invoke();
-        NotificationSystem.ShowNotification($"Added {item.name} to research");
+        Debug.Log($"Added {item.name} to research");
         return true;
     }
     
@@ -82,7 +81,7 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
         InventorySystem.Instance.AddItem(currentResearchItem, 1);
         currentResearchItem = null;
         OnSlotChanged?.Invoke();
-        NotificationSystem.ShowNotification("Item returned to inventory");
+        Debug.Log("Item returned to inventory");
         return true;
     }
     
@@ -105,13 +104,13 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
         // Basic checks
         if (currentResearchItem == null)
         {
-            NotificationSystem.ShowNotification("No item to research!");
+            Debug.Log("No item to research!");
             return false;
         }
         
         if (ResearchSystem.Instance.IsResearched(currentResearchItem.name))
         {
-            NotificationSystem.ShowNotification($"Already researched {currentResearchItem.name}!");
+            NotificationSystem.ShowNotification($"You already researched {currentResearchItem.name}!");
             return false;
         }
         
@@ -119,7 +118,7 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
         int cost = GetCost();
         if (playerEconomy != null && !playerEconomy.CanAfford(cost))
         {
-            NotificationSystem.ShowNotification($"Need {cost} coins!");
+            NotificationSystem.ShowNotification($"You need {cost} coins!");
             return false;
         }
         
@@ -127,14 +126,15 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
         if (playerEconomy != null)
             playerEconomy.SpendMoney(cost);
         
-        var result = ResearchSystem.Instance.DoResearch(currentResearchItem);
+        string itemName = currentResearchItem.name;
+        bool success = ResearchSystem.Instance.DoResearch(currentResearchItem);
         
-        if (result != null)
+        if (success)
         {
             currentResearchItem = null; // Item consumed
             OnSlotChanged?.Invoke();
-            OnResearchCompleted?.Invoke(result);
-            NotificationSystem.ShowNotification($"Research complete! (Cost: {cost} coins)");
+            OnResearchCompleted?.Invoke(itemName);
+            Debug.Log($"Research complete! (Cost: {cost} coins)");
             return true;
         }
         
@@ -151,7 +151,7 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
     
     private int GetCost()
     {
-        return baseResearchCost + (ResearchSystem.Instance?.GetProgress().researchedIngredients * 10 ?? 0);
+        return baseResearchCost + (ResearchSystem.Instance?.GetProgress().researchedCount * 10 ?? 0);
     }
     
     #endregion
@@ -163,7 +163,7 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
         if (other.GetComponent<PlayerController>() != null)
         {
             InteractionSystem.Instance.SetCurrentInteractable(this);
-            NotificationSystem.ShowNotification($"Press E to use Research Table! (Cost: {GetCost()} coins)");
+            NotificationSystem.ShowNotification($"Press E to use Research Table!");
         }
     }
     

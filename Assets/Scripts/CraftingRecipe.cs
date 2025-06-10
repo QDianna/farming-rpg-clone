@@ -15,7 +15,6 @@ public class CraftingRecipe : ScriptableObject
     
     [Header("Unlock System")]
     public List<CraftingIngredient> ingredients;
-    public List<CraftingRecipe> prerequisiteRecipes;
     
     [System.NonSerialized]
     public bool isUnlocked = false;

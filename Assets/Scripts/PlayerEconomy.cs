@@ -51,29 +51,11 @@ public class PlayerEconomy : MonoBehaviour
         return currentMoney >= amount;
     }
     
-    public bool SellItem(InventoryItem item, int quantity)
-    {
-        if (item == null || quantity <= 0 || !InventorySystem.Instance.HasItem(item, quantity))
-        {
-            NotificationSystem.ShowNotification("Cannot sell this item");
-            return false;
-        }
-        
-        int totalPrice = GetTotalSellValue(item, quantity);
-        
-        InventorySystem.Instance.RemoveItem(item, quantity);
-        AddMoney(totalPrice);
-        OnItemSold?.Invoke(item, quantity, totalPrice);
-        
-        NotificationSystem.ShowNotification($"Sold {quantity}x {item.name} for {totalPrice} coins");
-        return true;
-    }
-    
     public bool BuyItem(InventoryItem item, int quantity)
     {
         if (item == null || quantity <= 0)
         {
-            NotificationSystem.ShowNotification("Invalid purchase");
+            Debug.Log("ERROR - invalid purchase was available");
             return false;
         }
         
@@ -81,15 +63,14 @@ public class PlayerEconomy : MonoBehaviour
         
         if (!CanAfford(totalPrice))
         {
-            NotificationSystem.ShowNotification($"Not enough money! Need {totalPrice} coins");
+            NotificationSystem.ShowNotification($"You don't have enough money for this, " +
+                                                $"try selling some of your harvest!");
             return false;
         }
         
         SpendMoney(totalPrice);
         InventorySystem.Instance.AddItem(item, quantity);
         OnItemBought?.Invoke(item, quantity, totalPrice);
-        
-        NotificationSystem.ShowNotification($"Bought {quantity}x {item.name} for {totalPrice} coins");
         return true;
     }
     

@@ -4,18 +4,17 @@ using UnityEngine.UIElements;
 
 /// <summary>
 /// UI handler for displaying notifications with fade in/out animations.
-/// Manages notification display timing and visual transitions.
+/// Just displays what NotificationSystem tells it to display.
 /// </summary>
 public class NotificationSystemHUD : MonoBehaviour
 {
     [Header("Display Settings")]
-    [SerializeField] private float displayDuration = 4f;
-    [SerializeField] private float fadeInDuration = 0.2f;
-    [SerializeField] private float fadeOutDuration = 0.4f;
+    [SerializeField] private float displayDuration = 2f;
+    [SerializeField] private float fadeInDuration = 0.1f;
+    [SerializeField] private float fadeOutDuration = 0.2f;
     
     private VisualElement infoContainer;
     private Label infoTextField;
-    private Coroutine currentNotificationCoroutine;
 
     private void Awake()
     {
@@ -27,33 +26,23 @@ public class NotificationSystemHUD : MonoBehaviour
         {
             infoContainer.style.display = DisplayStyle.None;
         }
+        
+        NotificationSystem.OnShowNotification += ShowNotification;
     }
 
-    private void Start()
-    {
-        NotificationSystem.OnNotificationRequested += ShowNotification;
-    }
+
 
     private void OnDisable()
     {
-        NotificationSystem.OnNotificationRequested -= ShowNotification;
-        
-        if (currentNotificationCoroutine != null)
-        {
-            StopCoroutine(currentNotificationCoroutine);
-        }
+        NotificationSystem.OnShowNotification -= ShowNotification;
     }
 
     private void ShowNotification(string message)
     {
-        if (currentNotificationCoroutine != null)
-        {
-            StopCoroutine(currentNotificationCoroutine);
-        }
-        
-        currentNotificationCoroutine = StartCoroutine(DisplayNotificationCoroutine(message));
+        Debug.Log("Entered show notification");
+        StartCoroutine(DisplayNotificationCoroutine(message));
     }
-
+    
     private IEnumerator DisplayNotificationCoroutine(string message)
     {
         if (infoTextField != null)
@@ -72,7 +61,9 @@ public class NotificationSystemHUD : MonoBehaviour
             infoContainer.style.display = DisplayStyle.None;
         }
         
-        currentNotificationCoroutine = null;
+        // When done, tell system to show next
+        Debug.Log("notif done, call finished");
+        NotificationSystem.Instance?.NotificationFinished();
     }
 
     private IEnumerator FadeCoroutine(float startAlpha, float endAlpha, float duration)

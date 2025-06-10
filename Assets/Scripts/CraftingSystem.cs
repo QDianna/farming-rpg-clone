@@ -13,85 +13,27 @@ public class CraftingSystem : MonoBehaviour
     private void Awake()
     {
         if (Instance == null)
-        {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-            InitializeRecipeUnlocks();
-        }
         else
-        {
             Destroy(gameObject);
-        }
     }
     #endregion
     
-    [Header("Crafting Recipes")]
+    [Header("Crafting System Data")]
     [SerializeField] private List<CraftingRecipe> recipes;
     
-    [Header("Save Data")]
-    [SerializeField] private List<string> craftedRecipeNames = new List<string>();
-
-    private InventorySystem inventorySystem;
-    
-    private void Start()
-    {
-        // Get InventorySystem reference - could also be singleton if needed
-        inventorySystem = GetComponent<InventorySystem>();
-        if (inventorySystem == null)
-        {
-            inventorySystem = FindFirstObjectByType<InventorySystem>();
-        }
-    }
-    
-    private void InitializeRecipeUnlocks()
-    {
-        foreach (var recipe in recipes)
-        {
-            // Set unlock status based on startsUnlocked flag or previous crafting
-            recipe.isUnlocked = craftedRecipeNames.Contains(recipe.recipeName);
-        }
-    }
     
     #region Recipe Unlocking
     
     /// <summary>
-    /// Mark a recipe as unlocked (called by ResearchSystem when all ingredients researched)
+    /// Mark a recipe as unlocked - called by ResearchSystem when all ingredients researched
     /// </summary>
     public void MarkRecipeAsUnlocked(CraftingRecipe recipe)
     {
         if (!recipe.isUnlocked)
         {
             recipe.isUnlocked = true;
-            NotificationSystem.ShowNotification($"New recipe available: {recipe.recipeName}!");
         }
-    }
-    
-    /// <summary>
-    /// Mark a recipe as crafted (called when player successfully crafts it)
-    /// </summary>
-    public void MarkRecipeAsCrafted(CraftingRecipe recipe)
-    {
-        if (!craftedRecipeNames.Contains(recipe.recipeName))
-        {
-            craftedRecipeNames.Add(recipe.recipeName);
-            NotificationSystem.ShowNotification($"Recipe mastered: {recipe.recipeName}!");
-        }
-    }
-    
-    /// <summary>
-    /// Check if a recipe can be unlocked based on prerequisites
-    /// </summary>
-    public bool CanUnlockRecipe(CraftingRecipe recipe)
-    {
-        if (recipe.isUnlocked) return true;
-        
-        // Check prerequisite recipes
-        foreach (var prerequisite in recipe.prerequisiteRecipes)
-        {
-            if (!prerequisite.isUnlocked || !craftedRecipeNames.Contains(prerequisite.recipeName))
-                return false;
-        }
-        return true;
     }
     
     /// <summary>
@@ -99,56 +41,11 @@ public class CraftingSystem : MonoBehaviour
     /// </summary>
     public bool IsRecipeUnlocked(CraftingRecipe recipe)
     {
-        return recipe.isUnlocked && CanUnlockRecipe(recipe);
+        return recipe.isUnlocked;
     }
 
     #endregion
     
-    #region Crafting Operations
-    
-    /// <summary>
-    /// Check if a recipe can be crafted (unlocked + has ingredients)
-    /// </summary>
-    public bool CanCraft(CraftingRecipe recipe)
-    {
-        if (!IsRecipeUnlocked(recipe)) return false;
-        
-        if (inventorySystem == null) return false;
-        
-        foreach (var ingredient in recipe.ingredients)
-        {
-            if (!inventorySystem.HasItem(ingredient.item, ingredient.quantity))
-                return false;
-        }
-        return true;
-    }
-    
-    /// <summary>
-    /// Attempt to craft a recipe
-    /// </summary>
-    public bool TryCraft(CraftingRecipe recipe)
-    {
-        if (!CanCraft(recipe))
-        {
-            string reason = !IsRecipeUnlocked(recipe) ? "recipe locked" : "missing ingredients";
-            NotificationSystem.ShowNotification($"Cannot craft {recipe.recipeName} - {reason}");
-            return false;
-        }
-        
-        if (inventorySystem == null) return false;
-        
-        // Remove ingredients and add result
-        foreach (var ingredient in recipe.ingredients)
-            inventorySystem.RemoveItem(ingredient.item, ingredient.quantity);
-        
-        inventorySystem.AddItem(recipe.result, recipe.resultQuantity);
-        MarkRecipeAsCrafted(recipe);
-        
-        NotificationSystem.ShowNotification($"Crafted {recipe.resultQuantity}x {recipe.recipeName}!");
-        return true;
-    }
-    
-    #endregion
     
     #region Public API
     
@@ -174,19 +71,6 @@ public class CraftingSystem : MonoBehaviour
         }
         
         return unlocked;
-    }
-    
-    /// <summary>
-    /// Find a recipe by its result item
-    /// </summary>
-    public CraftingRecipe FindRecipeByResult(InventoryItem result)
-    {
-        foreach (var recipe in recipes)
-        {
-            if (recipe.result == result)
-                return recipe;
-        }
-        return null;
     }
     
     #endregion

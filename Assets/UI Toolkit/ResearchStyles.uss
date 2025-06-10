@@ -31,14 +31,6 @@
     max-width: 100%;
 }
 
-.recipe-available {
-    color: #000;
-    -unity-font-style: bold;
-    white-space: normal;
-    max-width: 100%;
-    flex-wrap: wrap;
-}
-
 .recipe-locked {
     color: #000;
     -unity-font-style: bold;
@@ -48,13 +40,12 @@
 }
 
 .recipe-display {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
+    margin: 20px;
     background-color: #f8f9fa;
     white-space: normal;
     max-width: 100%;
     flex-wrap: wrap;
+    align-self: center;
 }
 
 .recipe-name {
@@ -152,19 +143,6 @@
     -unity-font-style: bold;
     background-color: #e8f5e8;
     padding: 8px;
-    -unity-text-align: middle-center;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    white-space: normal;
-    max-width: 100%;
-    flex-wrap: wrap;
-}
-
-.recipe-progress {
-    color: #000;
-    -unity-font-style: bold;
-    background-color: #fff3e0;
-    padding: 6px;
     -unity-text-align: middle-center;
     margin-top: 5px;
     margin-bottom: 5px;

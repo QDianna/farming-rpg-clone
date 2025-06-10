@@ -77,10 +77,7 @@ public class TimeSystem : MonoBehaviour
     public void skipNight()
     {
         if (!isNight())
-        {
-            NotificationSystem.ShowNotification("You can only sleep at night (6PM - 6AM)");
             return;
-        }
         
         if (currentTime <= 24f)
             currentDay++;

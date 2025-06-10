@@ -4,9 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 /// <summary>
-/// Pure data and logic system. Handles what's researched, what recipes exist, unlocking logic.
-/// NOW ALSO handles tier progression for seeds/plants.
-/// NO UI, NO interaction handling - just the brain of research.
+/// Pure data and logic system. Handles what's researched and unlocks recipes/tiers.
 /// </summary>
 public class ResearchSystem : MonoBehaviour
 {
@@ -28,78 +26,57 @@ public class ResearchSystem : MonoBehaviour
     #endregion
     
     #region Data
-    [SerializeField] private List<CraftingRecipe> allRecipes = new();
-    [SerializeField] private List<ItemSeed> allSeeds = new(); // ADD THIS - drag your 21 seeds here
+    [SerializeField] private List<ItemSeed> allSeeds = new();
     
     private HashSet<string> researchedIngredients = new();
-    [HideInInspector] public int currentSeedsTier = 1; // ADD THIS - tracks unlocked tier
+    private List<CraftingRecipe> allRecipes = new();
+    [HideInInspector] public int currentSeedsTier = 1;
     #endregion
     
     #region Events
-    public event Action<ResearchResult> OnResearchCompleted;
     public event Action OnResearchDataChanged;
-    public event Action<int> OnTierUnlocked; // ADD THIS - for market system
+    public event Action<int> OnTierUnlocked;
     #endregion
     
     #region Initialization
     private void Start()
     {
-        // Get recipes from CraftingSystem singleton
         if (CraftingSystem.Instance != null)
         {
             allRecipes = CraftingSystem.Instance.GetAllRecipes();
-            Debug.Log($"ResearchSystem: Found {allRecipes.Count} recipes");
         }
-        
-        Debug.Log($"ResearchSystem: Found {allSeeds.Count} seeds across {GetMaxTier()} tiers");
     }
     #endregion
     
-    #region Public API - Simple and Clear
+    #region Core API
     
     /// <summary>
-    /// Research an ingredient. Returns result with what was discovered.
+    /// Research an ingredient and handle unlocks
     /// </summary>
-    public ResearchResult DoResearch(InventoryItem ingredient)
+    public bool DoResearch(InventoryItem ingredient)
     {
-        if (ingredient == null) return null;
-        
-        string ingredientName = ingredient.name;
-        bool wasNew = !researchedIngredients.Contains(ingredientName);
+        if (ingredient == null || IsResearched(ingredient.name)) 
+            return false;
         
         // Add to researched
-        researchedIngredients.Add(ingredientName);
+        researchedIngredients.Add(ingredient.name);
         
-        var result = new ResearchResult
-        {
-            ingredientName = ingredientName,
-            wasNewResearch = wasNew,
-            availableRecipes = new List<ResearchFeedback>(),
-            newlyUnlockedRecipes = new List<CraftingRecipe>()
-        };
-        
-        // Check if this is a seed - handle tier progression
+        // Handle unlocks based on item type
         if (ingredient is ItemSeed)
         {
             CheckTierProgression();
-            // Don't show recipe information for seeds
         }
         else
         {
-            // For non-seeds, find recipes and check unlocks
-            result.availableRecipes = GetRecipesUsingIngredient(ingredient);
-            result.newlyUnlockedRecipes = CheckAndUnlockRecipes();
+            CheckRecipeUnlocks();
         }
         
-        // Fire events
-        OnResearchCompleted?.Invoke(result);
         OnResearchDataChanged?.Invoke();
-        
-        return result;
+        return true;
     }
     
     /// <summary>
-    /// Check if ingredient is already researched
+    /// Check if ingredient is researched
     /// </summary>
     public bool IsResearched(string ingredientName)
     {
@@ -107,74 +84,22 @@ public class ResearchSystem : MonoBehaviour
     }
     
     /// <summary>
-    /// Get research progress stats
+    /// Get current research stats
     /// </summary>
     public ResearchProgress GetProgress()
     {
         return new ResearchProgress
         {
-            researchedIngredients = researchedIngredients.Count,
-            totalIngredients = GetAllIngredients().Count,
+            researchedCount = researchedIngredients.Count,
             unlockedRecipes = CraftingSystem.Instance?.GetUnlockedRecipes().Count ?? 0,
             totalRecipes = allRecipes.Count,
             currentTier = currentSeedsTier,
-            maxTier = GetMaxTier()
+            maxTier = allSeeds.Count > 0 ? allSeeds.Max(s => s.tier) : 1
         };
     }
     
-    #endregion
-    
-    #region Tier Progression Logic - ADD THIS SECTION
-    
     /// <summary>
-    /// Check if we can unlock the next tier based on current tier research completion
-    /// </summary>
-    private void CheckTierProgression()
-    {
-        int maxTier = GetMaxTier();
-        
-        // Don't check if we're already at max tier
-        if (currentSeedsTier >= maxTier) return;
-        
-        // Get all seeds from current tier
-        var currentTierSeeds = GetSeedsForTier(currentSeedsTier);
-        
-        // Check if ALL seeds of current tier are researched
-        bool allCurrentTierResearched = currentTierSeeds.All(seed => 
-            researchedIngredients.Contains(seed.name));
-        
-        if (allCurrentTierResearched && currentTierSeeds.Count > 0)
-        {
-            currentSeedsTier++;
-            OnTierUnlocked?.Invoke(currentSeedsTier);
-            NotificationSystem.ShowNotification($"Tier {currentSeedsTier} seeds unlocked in market!");
-            
-            Debug.Log($"ResearchSystem: Tier {currentSeedsTier} unlocked! " +
-                     $"Researched all {currentTierSeeds.Count} seeds from tier {currentSeedsTier - 1}");
-        }
-    }
-    
-    /// <summary>
-    /// Get all seeds of a specific tier
-    /// </summary>
-    private List<ItemSeed> GetSeedsForTier(int tier)
-    {
-        return allSeeds
-            .Where(seed => seed.tier == tier)
-            .ToList();
-    }
-    
-    /// <summary>
-    /// Get the maximum tier available in the game
-    /// </summary>
-    private int GetMaxTier()
-    {
-        if (allSeeds.Count == 0) return 1;
-        return allSeeds.Max(seed => seed.tier);
-    }
-    
-    /// <summary>
-    /// Get seeds available for current season and unlocked tier
+    /// Get available seeds for market (current tier + season)
     /// </summary>
     public List<ItemSeed> GetAvailableSeeds()
     {
@@ -189,108 +114,47 @@ public class ResearchSystem : MonoBehaviour
     
     #endregion
     
-    #region Helper Methods
+    #region Private Logic
     
-    private List<ResearchFeedback> GetRecipesUsingIngredient(InventoryItem ingredient)
+    private void CheckRecipeUnlocks()
     {
-        var results = new List<ResearchFeedback>();
+        if (CraftingSystem.Instance == null) return;
         
         foreach (var recipe in allRecipes)
         {
-            if (RecipeUsesIngredient(recipe, ingredient))
-            {
-                results.Add(new ResearchFeedback
-                {
-                    recipeName = recipe.recipeName,
-                    canCraftNow = CraftingSystem.Instance?.CanCraft(recipe) ?? false,
-                    isRecipeUnlocked = CraftingSystem.Instance?.IsRecipeUnlocked(recipe) ?? false
-                });
-            }
-        }
-        
-        return results;
-    }
-    
-    private bool RecipeUsesIngredient(CraftingRecipe recipe, InventoryItem ingredient)
-    {
-        foreach (var recipeIngredient in recipe.ingredients)
-        {
-            if (recipeIngredient.item == ingredient)
-                return true;
-        }
-        return false;
-    }
-    
-    private List<CraftingRecipe> CheckAndUnlockRecipes()
-    {
-        var newlyUnlocked = new List<CraftingRecipe>();
-        
-        if (CraftingSystem.Instance == null) return newlyUnlocked;
-        
-        foreach (var recipe in allRecipes)
-        {
-            if (!CraftingSystem.Instance.IsRecipeUnlocked(recipe) && AllIngredientsResearched(recipe))
+            if (!CraftingSystem.Instance.IsRecipeUnlocked(recipe) && 
+                recipe.ingredients.All(ing => IsResearched(ing.item.name)))
             {
                 CraftingSystem.Instance.MarkRecipeAsUnlocked(recipe);
-                newlyUnlocked.Add(recipe);
             }
         }
+    }
+    
+    private void CheckTierProgression()
+    {
+        var currentTierSeeds = allSeeds.Where(s => s.tier == currentSeedsTier).ToList();
         
-        return newlyUnlocked;
-    }
-    
-    private bool AllIngredientsResearched(CraftingRecipe recipe)
-    {
-        foreach (var ingredient in recipe.ingredients)
+        if (currentTierSeeds.Count > 0 && 
+            currentTierSeeds.All(seed => IsResearched(seed.name)))
         {
-            if (!researchedIngredients.Contains(ingredient.item.name))
-                return false;
+            currentSeedsTier++;
+            OnTierUnlocked?.Invoke(currentSeedsTier);
+            NotificationSystem.ShowNotification($"Congratulations, " +
+                                                $"you've unlocked tier {currentSeedsTier} seeds!");
         }
-        return true;
-    }
-    
-    private HashSet<string> GetAllIngredients()
-    {
-        var ingredients = new HashSet<string>();
-        foreach (var recipe in allRecipes)
-        {
-            foreach (var ingredient in recipe.ingredients)
-            {
-                ingredients.Add(ingredient.item.name);
-            }
-        }
-        return ingredients;
     }
     
     #endregion
 }
 
-#region Data Structures
-[Serializable]
-public class ResearchResult
-{
-    public string ingredientName;
-    public bool wasNewResearch;
-    public List<ResearchFeedback> availableRecipes;
-    public List<CraftingRecipe> newlyUnlockedRecipes;
-}
-
-[Serializable]
-public class ResearchFeedback
-{
-    public string recipeName;
-    public bool canCraftNow;
-    public bool isRecipeUnlocked;
-}
-
+#region Simple Data Structures
 [Serializable]
 public class ResearchProgress
 {
-    public int researchedIngredients;
-    public int totalIngredients;
+    public int researchedCount;
     public int unlockedRecipes;
     public int totalRecipes;
-    public int currentTier;     // ADD THIS
-    public int maxTier;         // ADD THIS
+    public int currentTier;
+    public int maxTier;
 }
 #endregion

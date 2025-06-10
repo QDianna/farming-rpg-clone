@@ -67,7 +67,7 @@ public class ToolSystem : MonoBehaviour
             {
                 selectedTool = tool.type;
                 OnSelectedToolChange?.Invoke();
-                NotificationSystem.ShowNotification($"Selected: {selectedTool}");
+                Debug.Log($"Selected: {selectedTool}");
                 return;
             }
         }
@@ -96,10 +96,6 @@ public class ToolSystem : MonoBehaviour
             player.animator.SetTrigger("Use Hoe");
             player.plotlandController.TillPlot(player.transform.position);
         }
-        else
-        {
-            NotificationSystem.ShowNotification("Can't till here!");
-        }
     }
 
     private void UseAxe(PlayerController player)
@@ -111,7 +107,7 @@ public class ToolSystem : MonoBehaviour
     
         if (treesInRange.Length == 0)
         {
-            NotificationSystem.ShowNotification("No trees in range!");
+            Debug.Log("No trees in range!");
             return;
         }
     
@@ -137,17 +133,13 @@ public class ToolSystem : MonoBehaviour
         {
             closestTree.TakeDamage(1);
         }
-        else
-        {
-            NotificationSystem.ShowNotification("No trees to chop here!");
-        }
     }
 
     private void UseWateringCan(PlayerController player)
     {
         if (!player.plotlandController.CanAttendPlot(player.transform.position))
         {
-            NotificationSystem.ShowNotification("No plants here need watering");
+            NotificationSystem.ShowNotification("You can water plants in the warm season to help them sprout");
             return;
         }
         
@@ -159,6 +151,5 @@ public class ToolSystem : MonoBehaviour
 
         player.animator.SetTrigger("Use Water Can");
         player.plotlandController.AttendPlot(player.transform.position);
-        NotificationSystem.ShowNotification("Watered plants");
     }
 }

@@ -34,11 +34,11 @@ public class ItemSeed : InventoryItem
             player.animator.SetTrigger("Plant");
             player.plotlandController.PlantPlot(this, worldPos);
             player.inventorySystem.RemoveItem(this, 1);
-            NotificationSystem.ShowNotification($"Planted {name}");
         }
         else
         {
-            NotificationSystem.ShowNotification("Can't plant here!");
+            NotificationSystem.ShowNotification("You can only plant on the plot land," +
+                                                "after you've tilled the ground");
         }
     }
 

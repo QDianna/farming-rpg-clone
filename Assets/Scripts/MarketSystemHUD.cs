@@ -60,7 +60,7 @@ public class MarketSystemHUD : MonoBehaviour
         {
             market.OnMarketOpened += OnMarketOpened;
             market.OnMarketClosed += OnMarketClosed;
-            market.OnMarketSlotsChanged += UpdateSellSlotsDisplay;
+            market.OnSellSlotsChanged += UpdateSellSlotsDisplay; // Updated event name
             market.OnTransactionCompleted += OnTransactionCompleted;
         }
         
@@ -76,7 +76,7 @@ public class MarketSystemHUD : MonoBehaviour
         {
             market.OnMarketOpened -= OnMarketOpened;
             market.OnMarketClosed -= OnMarketClosed;
-            market.OnMarketSlotsChanged -= UpdateSellSlotsDisplay;
+            market.OnSellSlotsChanged -= UpdateSellSlotsDisplay; // Updated event name
             market.OnTransactionCompleted -= OnTransactionCompleted;
         }
         
@@ -144,7 +144,7 @@ public class MarketSystemHUD : MonoBehaviour
         if (totalValue != null)
         {
             int value = market.GetTotalSellValue();
-            totalValue.text = $"Sell all for: {value} coins";
+            totalValue.text = $"Sell for {value}";
         }
         
         if (confirmSale != null)
@@ -160,19 +160,19 @@ public class MarketSystemHUD : MonoBehaviour
         buyItemsContainer.Clear();
         
         // Add seeds section
-        var seedTitle = new Label("Seeds Available Today:");
+        var seedTitle = new Label("Seeds Available Today");
         seedTitle.AddToClassList("market-section-title");
         buyItemsContainer.Add(seedTitle);
         
         // Add current tier info
         if (ResearchSystem.Instance != null)
         {
-            var tierInfo = new Label($"Current Tier: {ResearchSystem.Instance.currentSeedsTier}");
+            var tierInfo = new Label($"Current Seeds Tier {ResearchSystem.Instance.currentSeedsTier}");
             tierInfo.AddToClassList("market-tier-info");
             buyItemsContainer.Add(tierInfo);
         }
         
-        // Add available seeds
+        // Add available seeds - Updated to use new API
         var availableItems = market.GetAvailableItems();
         if (availableItems.Count > 0)
         {
@@ -193,13 +193,8 @@ public class MarketSystemHUD : MonoBehaviour
             noSeedsLabel.AddToClassList("market-no-items");
             buyItemsContainer.Add(noSeedsLabel);
         }
-        
-        // Add upgrade section
-        var upgradeTitle = new Label("Upgrades:");
-        upgradeTitle.AddToClassList("market-section-title");
-        buyItemsContainer.Add(upgradeTitle);
-        
-        // Add crafting bench upgrade
+
+        // Add crafting bench upgrade - Updated to use new API
         if (market.IsCraftingBenchUpgradeAvailable())
         {
             var upgradeElement = CreateCraftingBenchUpgradeElement();
@@ -207,22 +202,9 @@ public class MarketSystemHUD : MonoBehaviour
         }
         else
         {
-            var upgradedLabel = new Label("Crafting bench already upgraded!");
+            var upgradedLabel = new Label("No more upgrades available");
             upgradedLabel.AddToClassList("market-upgraded");
             buyItemsContainer.Add(upgradedLabel);
-        }
-        
-        // Add research progress hint
-        if (ResearchSystem.Instance != null)
-        {
-            var progress = ResearchSystem.Instance.GetProgress();
-            
-            if (progress.currentTier < progress.maxTier)
-            {
-                var progressHint = new Label($"Research more Tier {progress.currentTier} crops to unlock Tier {progress.currentTier + 1} seeds!");
-                progressHint.AddToClassList("market-progress-hint");
-                buyItemsContainer.Add(progressHint);
-            }
         }
     }
     
@@ -230,11 +212,11 @@ public class MarketSystemHUD : MonoBehaviour
     {
         if (playerMoney != null && market?.playerEconomy != null)
         {
-            playerMoney.text = $"Money: {market.playerEconomy.CurrentMoney} coins";
+            playerMoney.text = $"You have {market.playerEconomy.CurrentMoney} coins";
         }
     }
     
-    private VisualElement CreateSellSlotElement(InteractionMarket.MarketSellSlot slot, int index)
+    private VisualElement CreateSellSlotElement(MarketSellSlot slot, int index) // Updated class name
     {
         var slotElement = new VisualElement();
         slotElement.AddToClassList("sell-slot");
@@ -271,38 +253,14 @@ public class MarketSystemHUD : MonoBehaviour
         icon.style.backgroundImage = new StyleBackground(item.sprite);
         itemElement.Add(icon);
         
-        // Add item name label
-        var nameLabel = new Label(item.name);
-        nameLabel.AddToClassList("item-name");
-        itemElement.Add(nameLabel);
-        
-        // Add tier and season info for seeds
-        if (item is ItemSeed seed)
-        {
-            var infoLabel = new Label($"Tier {seed.tier} | {seed.season}");
-            infoLabel.AddToClassList("seed-info");
-            itemElement.Add(infoLabel);
-        }
-        
-        // Add price and buy button
+        // Add price
         int buyPrice = market.playerEconomy.GetBuyPrice(item);
-        var priceLabel = new Label($"{buyPrice} coins");
+        var priceLabel = new Label($"{buyPrice}");
         priceLabel.AddToClassList("item-price");
         itemElement.Add(priceLabel);
         
-        var buyButton = new Button(() => market.TryBuyItem(item, 1));
-        buyButton.text = "Buy";
-        buyButton.AddToClassList("buy-button");
-        
-        // Disable button if can't afford
-        bool canAfford = market.playerEconomy.CanAfford(buyPrice);
-        buyButton.SetEnabled(canAfford);
-        if (!canAfford)
-        {
-            buyButton.AddToClassList("disabled");
-        }
-        
-        itemElement.Add(buyButton);
+        // Click to buy
+        itemElement.RegisterCallback<ClickEvent>(evt => market.TryBuyItem(item, 1));
         itemElement.tooltip = $"{item.name} - {buyPrice} coins";
         
         return itemElement;
@@ -312,11 +270,6 @@ public class MarketSystemHUD : MonoBehaviour
     {
         var upgradeElement = new VisualElement();
         upgradeElement.AddToClassList("upgrade-slot");
-        
-        // Add upgrade icon (you can replace this with a proper icon)
-        var icon = new VisualElement();
-        icon.AddToClassList("upgrade-icon");
-        upgradeElement.Add(icon);
         
         // Add upgrade name
         var nameLabel = new Label("Crafting Bench Upgrade");
@@ -328,14 +281,14 @@ public class MarketSystemHUD : MonoBehaviour
         descLabel.AddToClassList("upgrade-description");
         upgradeElement.Add(descLabel);
         
-        // Add price and buy button
+        // Add price and buy button - Updated to use new API
         int upgradeCost = market.GetCraftingBenchUpgradeCost();
         var priceLabel = new Label($"{upgradeCost} coins");
         priceLabel.AddToClassList("upgrade-price");
         upgradeElement.Add(priceLabel);
         
-        var buyButton = new Button(() => market.TryBuyCraftingBenchUpgrade());
-        buyButton.text = "Buy Upgrade";
+        var buyButton = new Button(() => market.TryBuyUpgrade()); // Updated method call
+        buyButton.text = "buy";
         buyButton.AddToClassList("upgrade-button");
         
         // Disable button if can't afford
@@ -347,7 +300,7 @@ public class MarketSystemHUD : MonoBehaviour
         }
         
         upgradeElement.Add(buyButton);
-        upgradeElement.tooltip = $"Crafting Bench Upgrade - {upgradeCost} coins";
+        upgradeElement.tooltip = $"Crafting Bench Upgrade for {upgradeCost} coins";
         
         return upgradeElement;
     }

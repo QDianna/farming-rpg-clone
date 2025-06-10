@@ -11,12 +11,10 @@ GameObject:
   - component: {fileID: 5657702628253418783}
   - component: {fileID: 4096598973139266459}
   - component: {fileID: 6543060790827308900}
-  - component: {fileID: 1787799393153828262}
   - component: {fileID: 8349207872864668176}
   - component: {fileID: 603208962506915739}
   - component: {fileID: 7423412828200520110}
   - component: {fileID: 2133682642818215000}
-  - component: {fileID: 1569651114433440872}
   - component: {fileID: 596685181290690568}
   - component: {fileID: 1001675679381337709}
   - component: {fileID: 2283150326571705030}
@@ -234,27 +232,6 @@ MonoBehaviour:
   interactionSystem: {fileID: 0}
   playerStats: {fileID: 0}
   playerEconomy: {fileID: 0}
---- !u!114 &1787799393153828262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7794502562995452509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fed33e7e1e8bfa46a552dd7ffb6f15f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  recipes:
-  - {fileID: 11400000, guid: 500ff4a52d1a35c4f80e9fbd87527fac, type: 2}
-  - {fileID: 11400000, guid: caf9b39f76b74a04b8e04578bf2f894c, type: 2}
-  - {fileID: 11400000, guid: c8f6764e1f07c9a4aa5d59ebe29dde4d, type: 2}
-  - {fileID: 11400000, guid: 1433b7e08f65fb94a81528b1c3965abc, type: 2}
-  - {fileID: 11400000, guid: 84d0fd5fd5071e748a888337c60e24e1, type: 2}
-  - {fileID: 11400000, guid: ff1bf7644f3d9f94fa84572d3c8ad054, type: 2}
-  - {fileID: 11400000, guid: 2074ec317df3f2e4991d57f78923d6df, type: 2}
-  craftedRecipeNames: []
 --- !u!114 &8349207872864668176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,19 +294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57550d6d1c6b46f4881933ef4600bb12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1569651114433440872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7794502562995452509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd7a4d26c3c9466e84353d9aebed85b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allRecipes: []
 --- !u!114 &596685181290690568
 MonoBehaviour:
   m_ObjectHideFlags: 0

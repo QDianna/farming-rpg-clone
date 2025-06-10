@@ -16,7 +16,7 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
     {
         if (targetZone?.defaultSpawnPoint == null || targetZone?.cameraBounds == null || cameraConfiner == null)
         {
-            NotificationSystem.ShowNotification("This door is currently unavailable");
+            Debug.Log("ERROR - spawn, camera bounds or camera confiner are null");
             return;
         }
 
@@ -48,7 +48,7 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
             vcam.OnTargetObjectWarped(player.transform, delta);
         }
 
-        NotificationSystem.ShowNotification($"Entered {targetZone.zoneName}");
+        NotificationSystem.ShowNotification($"You entered {targetZone.zoneName}");
         InteractionSystem.Instance.SetCurrentInteractable(null);
     }
     

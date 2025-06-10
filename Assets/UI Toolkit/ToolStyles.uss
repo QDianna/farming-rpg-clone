@@ -1,7 +1,0 @@
-.selected {
-    scale: 1.2;
-    border-width: 2px;
-    border-color: white;
-    border-radius: 4px;
-    transition: scale 0.1s ease-in-out;
-}

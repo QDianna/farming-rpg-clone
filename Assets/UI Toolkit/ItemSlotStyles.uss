@@ -1,0 +1,125 @@
+/* Item Slot Styles */
+
+.item-slot {
+    flex-grow: 0;
+    width: 80px;
+    height: 80px;
+    background-image: url("project://database/Assets/Art/Inventory.png?fileID=1485896141&guid=8beae8c2e1c15f8428345f3df6e1c708&type=3#Inventory_06");
+    align-content: auto;
+    align-items: center;
+    justify-content: center;
+    align-self: auto;
+    flex-shrink: 0;
+    margin: 4px;
+    font-size: 20px;
+    -unity-font-style: bold;
+    -unity-font-definition: url("project://database/Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Fonts/PerfectDOSVGA437.ttf?fileID=12800000&guid=74a5091d8707f334b9a5c31ef71a64ba&type=3#PerfectDOSVGA437");
+    -unity-text-align: middle-center;
+}
+
+.item-slot .item-icon {
+    flex-shrink: 0;
+    width: 60%;
+    height: 60%;
+    align-items: center;
+    align-content: auto;
+    justify-content: center;
+}
+
+.item-slot .item-quantity {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    top: 56px;
+    left: 56px;
+    margin: 0;
+    padding: 0;
+}
+
+.buy-slot {
+    flex-grow: 0;
+    width: 80px;
+    height: 80px;
+    background-image: url("project://database/Assets/Art/Inventory.png?fileID=1485896141&guid=8beae8c2e1c15f8428345f3df6e1c708&type=3#Inventory_06");
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 4px;
+    border-width: 2px;
+    border-radius: 100px;
+    border-color: rgba(50, 255, 0, 0.5);
+}
+
+.buy-slot .item-icon {
+    flex-shrink: 0;
+    width: 60%;
+    height: 60%;
+    align-items: center;
+    align-content: auto;
+    justify-content: center;
+}
+
+.buy-slot .item-name {
+    color: white;
+    font-size: 10px;
+    -unity-font-style: bold;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.buy-slot .item-price {
+    color: white;
+    font-size: 10px;
+    -unity-font-style: bold;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+
+.sell-slot {
+    flex-grow: 0;
+    width: 80px;
+    height: 80px;
+    background-image: url("project://database/Assets/Art/Inventory.png?fileID=1485896141&guid=8beae8c2e1c15f8428345f3df6e1c708&type=3#Inventory_06");
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 4px;
+    border-width: 2px;
+    border-radius: 100px;
+    border-color: rgba(255, 0, 0, 0.5);
+}
+
+.sell-slot .item-icon {
+    flex-shrink: 0;
+    width: 60%;
+    height: 60%;
+    align-items: center;
+    align-content: auto;
+    justify-content: center;
+}
+
+.sell-slot .item-quantity {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    top: 55px;
+    left: 56px;
+    -unity-font-style: bold;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    -unity-text-align: middle-center;
+    color: white;
+}
+
+.selected {
+    scale: 1.2;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 4px;
+    transition: scale 0.1s ease-in-out;
+}

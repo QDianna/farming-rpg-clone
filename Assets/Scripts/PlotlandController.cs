@@ -73,8 +73,6 @@ public class PlotlandController : MonoBehaviour
                 var tile = tilemap.GetTile(pos);
                 if (tile != null) // Only process positions that have tiles
                 {
-                    Debug.Log($"init plot on pos {pos}");
-                    
                     var plotData = new PlotData();
                     
                     // Check state from the actual tilemap that displays the tile
@@ -89,8 +87,6 @@ public class PlotlandController : MonoBehaviour
                 }
             }
         }
-        
-        Debug.Log($"Initialized {plotStates.Count} plots");
     }
     
     private void SubscribeToWeatherEvents()
@@ -267,10 +263,7 @@ public class PlotlandController : MonoBehaviour
                 cropTilemap.SetTile(kvp.Key, currentTile);
 
             if (newStage == maxStage)
-            {
                 data.state = PlotState.Grown;
-                NotificationSystem.ShowNotification($"{data.seedData.name} is ready to harvest!");
-            }
         }
     }
     

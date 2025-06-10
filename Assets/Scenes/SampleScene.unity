@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455ab871365a20747bc595a9731a023f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneName: Forest
+  zoneName: farm
   cameraBounds: {fileID: 1843876588}
   defaultSpawnPoint: {fileID: 536237428}
 --- !u!1001 &160819723
@@ -626,9 +626,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 187454838}
+  - component: {fileID: 187454844}
+  - component: {fileID: 187454841}
+  - component: {fileID: 187454843}
+  - component: {fileID: 187454842}
   - component: {fileID: 187454839}
   - component: {fileID: 187454840}
-  - component: {fileID: 187454841}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -663,8 +666,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e327d740fec51e846857a6d62cd4ceba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondToHourRatio: 0.5
-  daysPerSeason: 10
+  secondToHourRatio: 1
+  daysPerSeason: 1
 --- !u!114 &187454840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,9 +680,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b98390386394b8aa7e77165103c2457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springAutumnRainChance: 0.096
-  summerStormChance: 0.101
-  winterFreezeChance: 0.112
+  springAutumnRainChance: 0.35
+  summerStormChance: 0.3
+  winterFreezeChance: 0.4
   rainParticles: {fileID: 902526042}
   stormParticles: {fileID: 1046261722}
   snowParticles: {fileID: 1800164048}
@@ -695,6 +698,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8adb75e6044f3e9c0a316cb60954e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &187454842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187454836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7a4d26c3c9466e84353d9aebed85b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allSeeds:
+  - {fileID: 11400000, guid: 2426096b11d87154eb78bc6f022a920a, type: 2}
+  - {fileID: 11400000, guid: 39e095594afaa0e47b0e217ed5359e37, type: 2}
+  - {fileID: 11400000, guid: 262f4fb811249cb4c880ef14b14d1900, type: 2}
+  - {fileID: 11400000, guid: b9ba550b6bb46384fba2721fed788a5f, type: 2}
+  - {fileID: 11400000, guid: 0bd609fcb62ed7347910701f63e9fb53, type: 2}
+  - {fileID: 11400000, guid: 8a7a3847ff4a2b84381109364acc8a5a, type: 2}
+  - {fileID: 11400000, guid: 14d541439c7396b41804f5f786718d67, type: 2}
+  - {fileID: 11400000, guid: 4d9c183b7ef9f1e4ea5036cf480761df, type: 2}
+  currentSeedsTier: 1
+--- !u!114 &187454843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187454836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f38329d95d442339b12f0331846ecdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dailySeedVariety: 3
+  seedQuantityPerType: 2
+  craftingBenchUpgradeCost: 1500
+--- !u!114 &187454844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187454836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fed33e7e1e8bfa46a552dd7ffb6f15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipes:
+  - {fileID: 11400000, guid: 500ff4a52d1a35c4f80e9fbd87527fac, type: 2}
+  - {fileID: 11400000, guid: caf9b39f76b74a04b8e04578bf2f894c, type: 2}
+  - {fileID: 11400000, guid: c8f6764e1f07c9a4aa5d59ebe29dde4d, type: 2}
+  - {fileID: 11400000, guid: 1433b7e08f65fb94a81528b1c3965abc, type: 2}
+  - {fileID: 11400000, guid: 84d0fd5fd5071e748a888337c60e24e1, type: 2}
+  - {fileID: 11400000, guid: ff1bf7644f3d9f94fa84572d3c8ad054, type: 2}
+  - {fileID: 11400000, guid: 2074ec317df3f2e4991d57f78923d6df, type: 2}
 --- !u!1 &188398762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3383,7 +3443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455ab871365a20747bc595a9731a023f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneName: InsideHouse
+  zoneName: home
   cameraBounds: {fileID: 2021788455}
   defaultSpawnPoint: {fileID: 1416747263}
 --- !u!4 &361877132 stripped
@@ -4253,12 +4313,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a131f0c0b5f94e0dbfcce9dd76a61fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sellSlotCount: 3
-  dailySeedVariety: 4
-  craftingBenchUpgradeCost: 500
+  sellSlotCount: 5
   craftingSystemHUD: {fileID: 730694402}
   playerEconomy: {fileID: 6013774020607531941}
-  inventorySystem: {fileID: 7958783538501771961}
   sellSlots: []
 --- !u!61 &574122788
 BoxCollider2D:
@@ -4995,9 +5052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b6c90adc5f47c98d4002c27f98c5ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayDuration: 4
-  fadeInDuration: 0.2
-  fadeOutDuration: 0.4
+  displayDuration: 2
+  fadeInDuration: 0.1
+  fadeOutDuration: 0.2
 --- !u!114 &730694404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5186,10 +5243,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095cdde1bb9348b0ac7d1a633f475e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputSlots: []
-  outputSlot:
-    item: {fileID: 0}
-    quantity: 0
 --- !u!61 &863684585
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59025,7 +59078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455ab871365a20747bc595a9731a023f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneName: Forest
+  zoneName: forest
   cameraBounds: {fileID: 1123290433}
   defaultSpawnPoint: {fileID: 492060913}
 --- !u!4 &1382798812 stripped
@@ -59326,7 +59379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455ab871365a20747bc595a9731a023f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneName: OutsideHouse
+  zoneName: house garden
   cameraBounds: {fileID: 1843876588}
   defaultSpawnPoint: {fileID: 724590539}
 --- !u!1 &1636193715
@@ -147185,7 +147238,7 @@ PrefabInstance:
     - target: {fileID: 1569651114433440872, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
       propertyPath: craftingSystem
       value: 
-      objectReference: {fileID: 7958783538501771967}
+      objectReference: {fileID: 0}
     - target: {fileID: 1569651114433440872, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
       propertyPath: allSeeds.Array.size
       value: 8
@@ -147376,28 +147429,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 649da2a9be5d4e60884d3b8485371348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7958783538501771961 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 603208962506915739, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-  m_PrefabInstance: {fileID: 6013774020607531940}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e71c9548e5ff1c446908753ad3fb172a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7958783538501771967 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1787799393153828262, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
-  m_PrefabInstance: {fileID: 6013774020607531940}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fed33e7e1e8bfa46a552dd7ffb6f15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8768094808161036586

@@ -2,167 +2,46 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Interactive market system with seed tier progression, daily refreshes, and crafting bench upgrades.
+/// Handles player interactions with the market - buying, selling, and upgrades.
+/// Bridges between MarketSystem and UI.
 /// </summary>
 public class InteractionMarket : MonoBehaviour, IInteractable
 {
-    [Header("Market Settings")]
-    [SerializeField] private int sellSlotCount = 3;
-    [SerializeField] private int dailySeedVariety = 4; // How many different seeds to show daily
+    #region Settings
+    [Header("Sell Settings")]
+    [SerializeField] private int sellSlotCount = 5;
     
-    [Header("Upgrade Settings")]
-    [SerializeField] private int craftingBenchUpgradeCost = 500;
-    [SerializeField] private CraftingSystemHUD craftingSystemHUD; // Reference to the crafting HUD
-    
-    [Header("System References")]
+    [Header("References")]
+    [SerializeField] private CraftingSystemHUD craftingSystemHUD; // For upgrades
     public PlayerEconomy playerEconomy;
-    public InventorySystem inventorySystem;
+    #endregion
     
-    // Current daily seed selection
-    private List<InventoryItem> currentDailySeeds = new();
+    #region Current State
     public List<MarketSellSlot> sellSlots;
     private bool isMarketOpen;
-    private bool craftingBenchUpgraded = false;
-
+    #endregion
+    
+    #region Events
     public event System.Action OnMarketOpened;
     public event System.Action OnMarketClosed;
-    public event System.Action OnMarketSlotsChanged;
+    public event System.Action OnSellSlotsChanged;
     public event System.Action OnTransactionCompleted;
-
-    [System.Serializable]
-    public class MarketSellSlot
-    {
-        public InventoryItem item;
-        public int quantity;
-        public int totalValue;
-        
-        public bool IsEmpty => item == null || quantity <= 0;
-        
-        public void SetItem(InventoryItem newItem, int newQuantity, int value)
-        {
-            item = newItem;
-            quantity = newQuantity;
-            totalValue = value;
-        }
-        
-        public void Clear()
-        {
-            item = null;
-            quantity = 0;
-            totalValue = 0;
-        }
-    }
+    #endregion
     
+    #region Unity Lifecycle
     private void Awake()
     {
-        InitializeSlots();
+        InitializeSellSlots();
     }
+    #endregion
     
-    private void Start()
-    {
-        // Subscribe to day changes for daily seed refresh
-        if (TimeSystem.Instance != null)
-        {
-            TimeSystem.Instance.OnDayChange += RefreshDailySeeds;
-        }
-        
-        // Subscribe to tier unlocks for immediate seed refresh
-        if (ResearchSystem.Instance != null)
-        {
-            ResearchSystem.Instance.OnTierUnlocked += OnTierUnlocked;
-        }
-        
-        // Initial seed setup
-        RefreshDailySeeds();
-    }
-    
-    private void OnDestroy()
-    {
-        if (TimeSystem.Instance != null)
-        {
-            TimeSystem.Instance.OnDayChange -= RefreshDailySeeds;
-        }
-        
-        if (ResearchSystem.Instance != null)
-        {
-            ResearchSystem.Instance.OnTierUnlocked -= OnTierUnlocked;
-        }
-    }
-    
-    private void InitializeSlots()
-    {
-        sellSlots = new List<MarketSellSlot>();
-        for (int i = 0; i < sellSlotCount; i++)
-        {
-            sellSlots.Add(new MarketSellSlot());
-        }
-    }
-    
-    /// <summary>
-    /// Refresh the daily seed selection based on current tier and season
-    /// </summary>
-    private void RefreshDailySeeds()
-    {
-        currentDailySeeds.Clear();
-        
-        if (ResearchSystem.Instance == null)
-        {
-            Debug.LogWarning("ResearchSystem not found - cannot refresh seeds");
-            return;
-        }
-        
-        // Get available seeds for current tier and season
-        var availableSeeds = ResearchSystem.Instance.GetAvailableSeeds();
-        
-        if (availableSeeds.Count == 0)
-        {
-            Debug.Log("No seeds available for current tier/season");
-            return;
-        }
-        
-        // Randomly select seeds for today (or show all if fewer than dailySeedVariety)
-        int seedsToShow = Mathf.Min(dailySeedVariety, availableSeeds.Count);
-        
-        // Shuffle and take the first seedsToShow items
-        for (int i = 0; i < seedsToShow; i++)
-        {
-            int randomIndex = Random.Range(i, availableSeeds.Count);
-            var temp = availableSeeds[i];
-            availableSeeds[i] = availableSeeds[randomIndex];
-            availableSeeds[randomIndex] = temp;
-        }
-        
-        // Add to current daily selection
-        for (int i = 0; i < seedsToShow; i++)
-        {
-            currentDailySeeds.Add(availableSeeds[i]);
-        }
-        
-        Debug.Log($"Market: Refreshed daily seeds - {currentDailySeeds.Count} seeds available");
-        
-        // Notify UI to update if market is open
-        OnTransactionCompleted?.Invoke();
-    }
-    
-    /// <summary>
-    /// Called when a new tier is unlocked - immediately refresh seeds
-    /// </summary>
-    private void OnTierUnlocked(int newTier)
-    {
-        RefreshDailySeeds();
-        NotificationSystem.ShowNotification($"New Tier {newTier} seeds now available in market!");
-    }
-    
+    #region Interaction
     public void Interact(PlayerController player)
     {
         if (isMarketOpen)
-        {
             CloseMarket();
-        }
         else
-        {
             OpenMarket(player);
-        }
     }
     
     private void OpenMarket(PlayerController player)
@@ -172,56 +51,64 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         if (playerEconomy == null)
             playerEconomy = player.GetComponent<PlayerEconomy>();
         
-        NotificationSystem.ShowNotification("Market opened!");
         OnMarketOpened?.Invoke();
+        Debug.Log("Market opened!");
     }
     
     private void CloseMarket()
     {
         isMarketOpen = false;
-        ReturnSellItems();
-        NotificationSystem.ShowNotification("Market closed");
+        ReturnAllSellItems();
         OnMarketClosed?.Invoke();
+        Debug.Log("Market closed");
     }
+    #endregion
+    
+    #region Selling Operations
     
     public bool TryAddItemToSell(InventoryItem item, int quantity)
     {
-        if (item == null || quantity <= 0 || !inventorySystem.HasItem(item, quantity))
-            return false;
+        if (item == null || quantity <= 0) return false;
+        if (!InventorySystem.Instance.HasItem(item, quantity)) return false;
         
+        // Try to stack with existing item
+        foreach (var slot in sellSlots)
+        {
+            if (!slot.IsEmpty && slot.item == item)
+            {
+                slot.quantity += quantity;
+                slot.totalValue = playerEconomy.GetTotalSellValue(item, slot.quantity);
+                InventorySystem.Instance.RemoveItem(item, quantity);
+                OnSellSlotsChanged?.Invoke();
+                return true;
+            }
+        }
+        
+        // Try to find empty slot
         foreach (var slot in sellSlots)
         {
             if (slot.IsEmpty)
             {
                 int sellValue = playerEconomy.GetTotalSellValue(item, quantity);
                 slot.SetItem(item, quantity, sellValue);
-                inventorySystem.RemoveItem(item, quantity);
-                OnMarketSlotsChanged?.Invoke();
-                return true;
-            }
-            else if (slot.item == item)
-            {
-                int additionalValue = playerEconomy.GetTotalSellValue(item, quantity);
-                slot.quantity += quantity;
-                slot.totalValue += additionalValue;
-                inventorySystem.RemoveItem(item, quantity);
-                OnMarketSlotsChanged?.Invoke();
+                InventorySystem.Instance.RemoveItem(item, quantity);
+                OnSellSlotsChanged?.Invoke();
                 return true;
             }
         }
+        
+        NotificationSystem.ShowNotification("No more empty slots, sell or remove some of the items.");
         return false;
     }
     
     public bool TryRemoveItemFromSell(int slotIndex, int quantity)
     {
-        if (slotIndex < 0 || slotIndex >= sellSlots.Count)
-            return false;
+        if (slotIndex < 0 || slotIndex >= sellSlots.Count) return false;
         
         var slot = sellSlots[slotIndex];
-        if (slot.IsEmpty || slot.quantity < quantity)
-            return false;
+        if (slot.IsEmpty || slot.quantity < quantity) return false;
         
-        inventorySystem.AddItem(slot.item, quantity);
+        InventorySystem.Instance.AddItem(slot.item, quantity);
         
         slot.quantity -= quantity;
         if (slot.quantity > 0)
@@ -233,7 +120,7 @@ public class InteractionMarket : MonoBehaviour, IInteractable
             slot.Clear();
         }
         
-        OnMarketSlotsChanged?.Invoke();
+        OnSellSlotsChanged?.Invoke();
         return true;
     }
     
@@ -241,110 +128,67 @@ public class InteractionMarket : MonoBehaviour, IInteractable
     {
         int totalEarnings = GetTotalSellValue();
         if (totalEarnings <= 0) 
-        {
-            NotificationSystem.ShowNotification("No items to sell");
             return false;
-        }
         
         playerEconomy.AddMoney(totalEarnings);
+        ClearAllSellSlots();
         
-        foreach (var slot in sellSlots)
-            slot.Clear();
-        
-        OnMarketSlotsChanged?.Invoke();
+        OnSellSlotsChanged?.Invoke();
         OnTransactionCompleted?.Invoke();
         NotificationSystem.ShowNotification($"Sold items for {totalEarnings} coins!");
         return true;
     }
     
+    #endregion
+    
+    #region Buying Operations
+    
     public bool TryBuyItem(InventoryItem item, int quantity)
     {
-        if (item == null || quantity <= 0 || !IsItemAvailableForPurchase(item))
-            return false;
+        if (item == null || quantity <= 0) return false;
+        if (MarketSystem.Instance == null) return false;
         
-        return playerEconomy.BuyItem(item, quantity);
-    }
-    
-    /// <summary>
-    /// Try to purchase crafting bench upgrade
-    /// </summary>
-    public bool TryBuyCraftingBenchUpgrade()
-    {
-        if (craftingBenchUpgraded)
+        if (!MarketSystem.Instance.IsItemAvailable(item))
         {
-            NotificationSystem.ShowNotification("Crafting bench already upgraded!");
+            Debug.Log("Item not available today!");
             return false;
         }
         
-        if (!playerEconomy.CanAfford(craftingBenchUpgradeCost))
+        bool success = playerEconomy.BuyItem(item, quantity);
+        if (success)
         {
-            NotificationSystem.ShowNotification($"Need {craftingBenchUpgradeCost} coins to upgrade crafting bench!");
+            OnTransactionCompleted?.Invoke();
+        }
+        return success;
+    }
+    
+    public bool TryBuyUpgrade()
+    {
+        if (MarketSystem.Instance == null) return false;
+
+        if (ResearchSystem.Instance.currentSeedsTier < 2)
+        {
+            NotificationSystem.ShowNotification("Unlock tier 2 seeds first!");
             return false;
         }
+        bool success = MarketSystem.Instance.PurchaseCraftingBenchUpgrade(playerEconomy);
         
-        if (craftingSystemHUD == null)
+        if (success && craftingSystemHUD != null)
         {
-            NotificationSystem.ShowNotification("Crafting system not found!");
-            return false;
+            craftingSystemHUD.UnlockAllUpgradeSlots();
+            NotificationSystem.ShowNotification("Crafting bench was upgraded, check it out!");
+            OnTransactionCompleted?.Invoke();
         }
         
-        // Purchase the upgrade
-        playerEconomy.SpendMoney(craftingBenchUpgradeCost);
-        craftingBenchUpgraded = true;
-        
-        // Unlock the slots
-        craftingSystemHUD.UnlockAllUpgradeSlots();
-        
-        NotificationSystem.ShowNotification($"Crafting bench upgraded for {craftingBenchUpgradeCost} coins!");
-        OnTransactionCompleted?.Invoke(); // Refresh UI
-        
-        return true;
+        return success;
     }
     
-    private void ReturnSellItems()
-    {
-        foreach (var slot in sellSlots)
-        {
-            if (!slot.IsEmpty)
-            {
-                inventorySystem.AddItem(slot.item, slot.quantity);
-                slot.Clear();
-            }
-        }
-        OnMarketSlotsChanged?.Invoke();
-    }
+    #endregion
     
-    /// <summary>
-    /// Check if item is available for purchase (in today's seed selection)
-    /// </summary>
-    public bool IsItemAvailableForPurchase(InventoryItem item)
-    {
-        return currentDailySeeds.Contains(item);
-    }
+    #region Getters
     
-    /// <summary>
-    /// Get today's available seeds for purchase
-    /// </summary>
-    public List<InventoryItem> GetAvailableItems()
-    {
-        return new List<InventoryItem>(currentDailySeeds);
-    }
-    
-    /// <summary>
-    /// Check if crafting bench upgrade is available for purchase
-    /// </summary>
-    public bool IsCraftingBenchUpgradeAvailable()
-    {
-        return !craftingBenchUpgraded;
-    }
-    
-    /// <summary>
-    /// Get the cost of the crafting bench upgrade
-    /// </summary>
-    public int GetCraftingBenchUpgradeCost()
-    {
-        return craftingBenchUpgradeCost;
-    }
+    public bool IsOpen() => isMarketOpen;
+    public bool HasItemsToSell() => sellSlots.Exists(slot => !slot.IsEmpty);
     
     public int GetTotalSellValue()
     {
@@ -357,14 +201,58 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         return total;
     }
     
-    public bool HasItemsToSell()
+    public List<InventoryItem> GetAvailableItems()
+    {
+        return MarketSystem.Instance?.GetAvailableSeeds() ?? new List<InventoryItem>();
+    }
+    
+    public bool IsCraftingBenchUpgradeAvailable()
+    {
+        return MarketSystem.Instance?.IsCraftingBenchUpgradeAvailable() ?? false;
+    }
+    
+    public int GetCraftingBenchUpgradeCost()
+    {
+        return MarketSystem.Instance?.GetCraftingBenchUpgradeCost() ?? 0;
+    }
+    
+    #endregion
+    
+    #region Private Helpers
+    
+    private void InitializeSellSlots()
+    {
+        sellSlots = new List<MarketSellSlot>();
+        for (int i = 0; i < sellSlotCount; i++)
+        {
+            sellSlots.Add(new MarketSellSlot());
+        }
+    }
+    
+    private void ReturnAllSellItems()
     {
         foreach (var slot in sellSlots)
         {
-            if (!slot.IsEmpty) return true;
+            if (!slot.IsEmpty)
+            {
+                InventorySystem.Instance.AddItem(slot.item, slot.quantity);
+                slot.Clear();
+            }
         }
-        return false;
+        OnSellSlotsChanged?.Invoke();
     }
+    
+    private void ClearAllSellSlots()
+    {
+        foreach (var slot in sellSlots)
+        {
+            slot.Clear();
+        }
+    }
+    
+    #endregion
+    
+    #region IInteractable
     
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -383,4 +271,32 @@ public class InteractionMarket : MonoBehaviour, IInteractable
                 CloseMarket();
         }
     }
+    
+    #endregion
 }
+
+#region Data Structures
+[System.Serializable]
+public class MarketSellSlot
+{
+    public InventoryItem item;
+    public int quantity;
+    public int totalValue;
+    
+    public bool IsEmpty => item == null || quantity <= 0;
+    
+    public void SetItem(InventoryItem newItem, int newQuantity, int value)
+    {
+        item = newItem;
+        quantity = newQuantity;
+        totalValue = value;
+    }
+    
+    public void Clear()
+    {
+        item = null;
+        quantity = 0;
+        totalValue = 0;
+    }
+}
+#endregion
