@@ -106,14 +106,13 @@ MonoBehaviour:
   maxHealth: 3
   trunkToSmallTime: 10
   smallToBigTime: 20
+  wood: {fileID: 11400000, guid: caa5995ef372893458671a2c00b504fc, type: 2}
+  smallTreeSprite: {fileID: -1306868223, guid: d3f81775dc9319a408a3c845e1a19a3d, type: 3}
+  bigTreeSprite: {fileID: 1324248737, guid: d3f81775dc9319a408a3c845e1a19a3d, type: 3}
+  trunkSprite: {fileID: 1415911575, guid: d3f81775dc9319a408a3c845e1a19a3d, type: 3}
   currentHealth: 0
   isChopped: 0
-  stage: 0
-  wood: {fileID: 11400000, guid: caa5995ef372893458671a2c00b504fc, type: 2}
-  droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}
-  smallTree: {fileID: -1306868223, guid: d3f81775dc9319a408a3c845e1a19a3d, type: 3}
-  bigTree: {fileID: 1324248737, guid: d3f81775dc9319a408a3c845e1a19a3d, type: 3}
-  trunk: {fileID: 1415911575, guid: d3f81775dc9319a408a3c845e1a19a3d, type: 3}
+  treeStage: 0
 --- !u!61 &8534598226138842176
 BoxCollider2D:
   m_ObjectHideFlags: 0

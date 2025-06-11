@@ -17,6 +17,7 @@ public class InteractionBuyLand : MonoBehaviour, IInteractable
         if (other.TryGetComponent<PlayerController>(out _))
         {
             InteractionSystem.Instance.SetCurrentInteractable(this);
+            NotificationSystem.ShowNotification("Press E to buy this land!");
         }
     }
 

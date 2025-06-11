@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648c96b9f842b04c986ffe2a6c2dd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: b44c813d8f1547a458ac3e6dd9cdd296, type: 2}
+  harvestableItem: {fileID: 11400000, guid: b44c813d8f1547a458ac3e6dd9cdd296, type: 2}
   collectAmount: 1
   readyStageSprite: {fileID: -1180235823, guid: 4038e15739dd2be498076e728299f386, type: 3}
   growingStageSprite: {fileID: -711640029, guid: 4038e15739dd2be498076e728299f386, type: 3}

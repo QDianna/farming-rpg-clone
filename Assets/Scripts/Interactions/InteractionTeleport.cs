@@ -15,6 +15,7 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
     {
         if (other.TryGetComponent<PlayerController>(out _))
             InteractionSystem.Instance.SetCurrentInteractable(this);
+        NotificationSystem.ShowNotification("Press E to use go through!");
     }
 
     public void OnTriggerExit2D(Collider2D other)

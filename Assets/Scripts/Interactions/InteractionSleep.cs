@@ -10,6 +10,7 @@ public class InteractionSleep : MonoBehaviour, IInteractable
     {
         if (other.TryGetComponent<PlayerController>(out _))
         {
+            NotificationSystem.ShowNotification("Press E to sleep and skip this night!");
             InteractionSystem.Instance.SetCurrentInteractable(this);
         }
     }

@@ -44,6 +44,16 @@ public class InventorySystem : MonoBehaviour
                 return true;
         return false;
     }
+    
+    public bool HasItemByName(string itemName, int quantity)
+    {
+        foreach (var entry in items)
+        {
+            if (entry.item != null && entry.item.newName == itemName && entry.quantity >= quantity)
+                return true;
+        }
+        return false;
+    }
 
     public void UseCurrentItem(PlayerController player)
     {
@@ -115,6 +125,28 @@ public class InventorySystem : MonoBehaviour
         }
         
         TriggerInventoryEvents();
+    }
+    
+    public void RemoveItemByName(string itemName, int amount)
+    {
+        foreach (var entry in items)
+        {
+            if (entry.item != null && entry.item.newName == itemName && entry.quantity >= amount)
+            {
+                entry.quantity -= amount;
+                return;
+            }
+        }
+    }
+    
+    public InventoryItem FindItemByName(string itemName)
+    {
+        foreach (var entry in items)
+        {
+            if (entry.item != null && string.Equals(entry.item.newName, itemName))
+                return entry.item;
+        }
+        return null;
     }
     
     public List<InventoryEntry> GetAllItems()

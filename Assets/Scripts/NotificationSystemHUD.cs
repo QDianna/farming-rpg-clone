@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 public class NotificationSystemHUD : MonoBehaviour
 {
     [Header("Animation Settings")]
-    [SerializeField] private float displayDuration = 2f;
+    [SerializeField] private float displayDuration = 2.5f;
     [SerializeField] private float fadeInDuration = 0.1f;
     [SerializeField] private float fadeOutDuration = 0.2f;
     
