@@ -2,9 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Simple data container for inventory items with quantity tracking.
+/// Data container for inventory items with quantity tracking.
 /// </summary>
-
 [System.Serializable]
 public class InventoryEntry
 {
@@ -20,14 +19,14 @@ public class InventoryEntry
 
 /// <summary>
 /// Singleton inventory system managing player items with selection, stacking, and UI integration.
-/// Supports item cycling, usage, and events for UI synchronization.
+/// Handles item cycling, usage, quantity tracking, and provides events for UI synchronization.
 /// </summary>
 public class InventorySystem : MonoBehaviour
 {
     public static InventorySystem Instance { get; private set; }
 
     [SerializeField] private List<InventoryEntry> items = new List<InventoryEntry>();
-    private int selectedItem = -2;
+    private int selectedItemIndex = -2;
 
     public event System.Action OnSelectedItemChange;
     public event System.Action OnInventoryChanged;
@@ -35,15 +34,7 @@ public class InventorySystem : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            selectedItem = -2;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        InitializeSingleton();
     }
 
     public bool HasItem(InventoryItem item, int quantity)
@@ -57,46 +48,53 @@ public class InventorySystem : MonoBehaviour
     public void UseCurrentItem(PlayerController player)
     {
         var item = GetSelectedItem();
-        if (item != null)
-        {
-            item.UseItem(player);
-        }
+        item?.UseItem(player);
     }
     
     public InventoryItem GetSelectedItem()
     {
-        if (items.Count == 0 || selectedItem < 0 || selectedItem >= items.Count)
-            return null;
-        return items[selectedItem].item;
+        if (IsValidSelection())
+            return items[selectedItemIndex].item;
+        return null;
     }
 
     public int GetSelectedItemQuantity()
     {
-        if (items.Count == 0 || selectedItem < 0 || selectedItem >= items.Count)
-            return 0;
-        return items[selectedItem].quantity;
+        if (IsValidSelection())
+            return items[selectedItemIndex].quantity;
+        return 0;
     }
     
     public void GetNextItem()
     {
-        if (selectedItem == -2)
-        {
-            selectedItem = -1;
+        if (HandleEmptySelection()) 
             return;
-        }
         
-        if (items.Count == 0) return;
+        if (items.Count == 0) 
+            return;
 
-        selectedItem = (selectedItem + 1) % items.Count;
+        selectedItemIndex = (selectedItemIndex + 1) % items.Count;
+        OnSelectedItemChange?.Invoke();
+    }
+    
+    public void GetPreviousItem()
+    {
+        if (HandleEmptySelection()) 
+            return;
+    
+        if (items.Count == 0) 
+            return;
+
+        selectedItemIndex = (selectedItemIndex - 1 + items.Count) % items.Count;
         OnSelectedItemChange?.Invoke();
     }
 
     public void AddItem(InventoryItem item, int amount)
     {
-        var entry = items.Find(i => i.item == item);
+        var existingEntry = FindItemEntry(item);
         
-        if (entry != null)
-            entry.quantity += amount;
+        if (existingEntry != null)
+            existingEntry.quantity += amount;
         else
             items.Add(new InventoryEntry(item, amount));
         
@@ -105,23 +103,18 @@ public class InventorySystem : MonoBehaviour
 
     public void RemoveItem(InventoryItem item, int amount)
     {
-        var entry = items.Find(i => i.item == item);
-        if (entry == null) return;
+        var entry = FindItemEntry(item);
+        if (entry == null) 
+            return;
         
         entry.quantity -= amount;
         
         if (entry.quantity <= 0)
         {
-            items.Remove(entry);
-
-            if (items.Count == 0)
-                selectedItem = -1;
-            else if (selectedItem >= items.Count)
-                selectedItem = 0;
+            RemoveEntryAndUpdateSelection(entry);
         }
         
-        OnSelectedItemChange?.Invoke();
-        OnInventoryChanged?.Invoke();
+        TriggerInventoryEvents();
     }
     
     public List<InventoryEntry> GetAllItems()
@@ -136,7 +129,8 @@ public class InventorySystem : MonoBehaviour
     
     public int GetItemQuantity(InventoryItem item)
     {
-        if (item == null) return 0;
+        if (item == null) 
+            return 0;
     
         int totalQuantity = 0;
         foreach (var entry in items)
@@ -153,11 +147,72 @@ public class InventorySystem : MonoBehaviour
     
         foreach (var entry in items)
         {
-            if (entry.item?.canBeSold == true && entry.quantity > 0 && !sellableItems.Contains(entry.item))
+            if (IsSellableItem(entry) && !sellableItems.Contains(entry.item))
             {
                 sellableItems.Add(entry.item);
             }
         }
         return sellableItems;
+    }
+    
+    // Sets up singleton instance
+    private void InitializeSingleton()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            selectedItemIndex = -2;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    
+    // Checks if current selection index is valid
+    private bool IsValidSelection()
+    {
+        return items.Count > 0 && selectedItemIndex >= 0 && selectedItemIndex < items.Count;
+    }
+    
+    // Handles navigation when no item is selected
+    private bool HandleEmptySelection()
+    {
+        if (selectedItemIndex == -2)
+        {
+            selectedItemIndex = -1;
+            return true;
+        }
+        return false;
+    }
+    
+    // Finds inventory entry for specific item
+    private InventoryEntry FindItemEntry(InventoryItem item)
+    {
+        return items.Find(entry => entry.item == item);
+    }
+    
+    // Removes entry and updates selection index
+    private void RemoveEntryAndUpdateSelection(InventoryEntry entry)
+    {
+        items.Remove(entry);
+
+        if (items.Count == 0)
+            selectedItemIndex = -1;
+        else if (selectedItemIndex >= items.Count)
+            selectedItemIndex = 0;
+    }
+    
+    // Triggers both selection and inventory change events
+    private void TriggerInventoryEvents()
+    {
+        OnSelectedItemChange?.Invoke();
+        OnInventoryChanged?.Invoke();
+    }
+    
+    // Checks if inventory entry represents a sellable item
+    private bool IsSellableItem(InventoryEntry entry)
+    {
+        return entry.item?.canBeSold == true && entry.quantity > 0;
     }
 }

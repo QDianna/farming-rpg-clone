@@ -3,112 +3,143 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// Pure UI layer. Handles display, clicks, and visual updates.
+/// Research table UI system managing item slots, progress display, and recipe visualization.
+/// Handles research interface interactions and displays detailed recipe unlocking information.
 /// </summary>
 public class ResearchSystemHUD : MonoBehaviour
 {
-    [Header("References")]
+    [Header("System References")]
     [SerializeField] private InteractionResearchItem researchTable;
     
-    // UI Elements - keeping all original names
     private VisualElement tableContainer;
     private VisualElement slotContainer;
     private VisualElement slotIcon;
     private Label slotQuantity;
     private Button researchButton;
     private Label progressLabel;
-    private VisualElement resultsContainer; // Restored!
-    
-    #region Unity Lifecycle
+    private VisualElement resultsContainer;
     
     private void Start()
     {
-        SetupUI();
-        SubscribeEvents();
+        InitializeUI();
+        SubscribeToEvents();
     }
     
     private void OnDisable()
     {
-        UnsubscribeEvents();
+        UnsubscribeFromEvents();
     }
     
-    #endregion
-    
-    #region UI Setup
-    
-    private void SetupUI()
+    // Sets up UI element references and initial state
+    private void InitializeUI()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
         
-        // Find UI elements - keeping exact same names
+        CacheUIElements(root);
+        SetupEventHandlers();
+        HideTableInitially();
+    }
+    
+    // Caches all UI element references
+    private void CacheUIElements(VisualElement root)
+    {
         tableContainer = root.Q<VisualElement>("ResearchTableContainer");
         slotContainer = tableContainer?.Q<VisualElement>("ResearchSlotContainer");
         slotIcon = slotContainer?.Q<VisualElement>("ItemIcon");
         slotQuantity = slotContainer?.Q<Label>("ItemQuantity");
         researchButton = tableContainer?.Q<Button>("ConfirmResearch");
         progressLabel = tableContainer?.Q<Label>("ResearchProgress");
-        resultsContainer = tableContainer?.Q<VisualElement>("ResearchResultsContainer"); // Restored!
-        
-        // Setup button click
+        resultsContainer = tableContainer?.Q<VisualElement>("ResearchResultsContainer");
+    }
+    
+    // Sets up UI event handlers
+    private void SetupEventHandlers()
+    {
         if (researchButton != null)
             researchButton.clicked += OnResearchButtonClicked;
         
-        // Setup slot click (for removing items)
         if (slotContainer != null)
         {
             slotContainer.RegisterCallback<ClickEvent>(OnSlotClicked);
         }
-        
-        // Hide initially
+    }
+    
+    // Hides table container initially
+    private void HideTableInitially()
+    {
         if (tableContainer != null)
             tableContainer.style.display = DisplayStyle.None;
     }
     
-    #endregion
-    
-    #region Event Management
-    
-    private void SubscribeEvents()
+    // Sets up all event subscriptions
+    private void SubscribeToEvents()
     {
-        // Research table events
+        SubscribeToResearchTableEvents();
+        SubscribeToInventoryEvents();
+        SubscribeToResearchSystemEvents();
+    }
+    
+    // Subscribes to research table events
+    private void SubscribeToResearchTableEvents()
+    {
         if (researchTable != null)
         {
             researchTable.OnTableOpened += ShowTable;
             researchTable.OnTableClosed += HideTable;
             researchTable.OnSlotChanged += UpdateAllDisplays;
-            researchTable.OnResearchCompleted += ShowResults; // Restored!
+            researchTable.OnResearchCompleted += ShowResults;
         }
-        
-        // Inventory events
+    }
+    
+    // Subscribes to inventory events
+    private void SubscribeToInventoryEvents()
+    {
         if (InventorySystem.Instance != null)
             InventorySystem.Instance.OnInventoryItemClicked += OnInventoryItemClicked;
-        
-        // Research system events
+    }
+    
+    // Subscribes to research system events
+    private void SubscribeToResearchSystemEvents()
+    {
         if (ResearchSystem.Instance != null)
             ResearchSystem.Instance.OnResearchDataChanged += UpdateProgress;
     }
     
-    private void UnsubscribeEvents()
+    // Removes all event subscriptions
+    private void UnsubscribeFromEvents()
+    {
+        UnsubscribeFromResearchTableEvents();
+        UnsubscribeFromInventoryEvents();
+        UnsubscribeFromResearchSystemEvents();
+    }
+    
+    // Unsubscribes from research table events
+    private void UnsubscribeFromResearchTableEvents()
     {
         if (researchTable != null)
         {
             researchTable.OnTableOpened -= ShowTable;
             researchTable.OnTableClosed -= HideTable;
             researchTable.OnSlotChanged -= UpdateAllDisplays;
-            researchTable.OnResearchCompleted -= ShowResults; // Restored!
+            researchTable.OnResearchCompleted -= ShowResults;
         }
-        
+    }
+    
+    // Unsubscribes from inventory events
+    private void UnsubscribeFromInventoryEvents()
+    {
         if (InventorySystem.Instance != null)
             InventorySystem.Instance.OnInventoryItemClicked -= OnInventoryItemClicked;
-        
+    }
+    
+    // Unsubscribes from research system events
+    private void UnsubscribeFromResearchSystemEvents()
+    {
         if (ResearchSystem.Instance != null)
             ResearchSystem.Instance.OnResearchDataChanged -= UpdateProgress;
     }
     
-    #endregion
-    
-    #region Event Handlers
-    
+    // Shows research table interface
     private void ShowTable()
     {
         if (tableContainer != null)
@@ -117,36 +148,38 @@ public class ResearchSystemHUD : MonoBehaviour
         UpdateAllDisplays();
     }
     
+    // Hides research table interface
     private void HideTable()
     {
         if (tableContainer != null)
             tableContainer.style.display = DisplayStyle.None;
         
-        if (resultsContainer != null) // Restored!
+        if (resultsContainer != null)
             resultsContainer.Clear();
     }
     
+    // Handles inventory item clicks when research table is open
     private void OnInventoryItemClicked(InventoryItem item)
     {
-        // Only handle if table is open
-        if (researchTable == null || !researchTable.IsOpen()) return;
+        if (researchTable == null || !researchTable.IsOpen()) 
+            return;
         
-        // Try to add item to research slot
         if (researchTable.TryAddItem(item))
         {
             InventorySystem.Instance.RemoveItem(item, 1);
         }
     }
     
+    // Handles research slot clicks to remove items
     private void OnSlotClicked(ClickEvent evt)
     {
-        // Left click to remove item
         if (evt.button == 0 && researchTable != null)
         {
             researchTable.TryRemoveItem();
         }
     }
     
+    // Handles research button clicks
     private void OnResearchButtonClicked()
     {
         if (researchTable != null)
@@ -155,60 +188,43 @@ public class ResearchSystemHUD : MonoBehaviour
         }
     }
     
-    // Restored and adapted to work with simplified data
-    private void ShowResults(string itemName)
+    // Shows research results with recipe information
+    private void ShowResults(string itemName, bool wasAlreadyResearched)
     {
-        if (resultsContainer == null || string.IsNullOrEmpty(itemName)) return;
+        if (resultsContainer == null || string.IsNullOrEmpty(itemName)) 
+            return;
         
         resultsContainer.Clear();
         
-        // Title
-        var title = new Label($"Research Complete: {itemName}");
-        title.AddToClassList("research-title");
-        resultsContainer.Add(title);
-        
-        // Status - we can check if it was already researched
-        bool wasAlreadyResearched = ResearchSystem.Instance.IsResearched(itemName);
-        var statusText = "This ingredient has been added to your research notes.";
-        var status = new Label(statusText);
-        status.AddToClassList("research-status-new");
-        resultsContainer.Add(status);
-        
-        // Show recipes that use this ingredient
+        CreateResultsHeader(itemName, wasAlreadyResearched);
         ShowRecipesForIngredient(itemName);
-        
-        // Show tier progression hints
-        var progress = ResearchSystem.Instance.GetProgress();
-        if (progress.currentTier < progress.maxTier)
-        {
-            var hint = new Label($"Keep researching Tier {progress.currentTier} ingredients to unlock Tier {progress.currentTier + 1} seeds in the market!");
-            hint.AddToClassList("research-status-known");
-            resultsContainer.Add(hint);
-        }
         
         UpdateAllDisplays();
     }
     
-    // New simplified method to show recipes
+    // Creates header for research results
+    private void CreateResultsHeader(string itemName, bool wasAlreadyResearched)
+    {
+        var title = new Label($"Research: {itemName}");
+        title.AddToClassList("research-title");
+        resultsContainer.Add(title);
+        
+        string statusText = wasAlreadyResearched ? 
+            "Already researched this plant! These are the notes from you research book." : 
+            "Research complete! This ingredient has been added to your notes.";
+            
+        var status = new Label(statusText);
+        status.AddToClassList(wasAlreadyResearched ? "research-status-known" : "research-status-new");
+        resultsContainer.Add(status);
+    }
+    
+    // Shows recipes that use the researched ingredient
     private void ShowRecipesForIngredient(string itemName)
     {
-        if (CraftingSystem.Instance == null) return;
+        if (CraftingSystem.Instance == null) 
+            return;
     
-        var allRecipes = CraftingSystem.Instance.GetAllRecipes();
-        var recipesUsingItem = new List<CraftingRecipe>();
-    
-        // Find recipes that use this ingredient
-        foreach (var recipe in allRecipes)
-        {
-            foreach (var ingredient in recipe.ingredients)
-            {
-                if (ingredient.item.name == itemName)
-                {
-                    recipesUsingItem.Add(recipe);
-                    break; // Found it, no need to check other ingredients in this recipe
-                }
-            }
-        }
+        var recipesUsingItem = FindRecipesUsingIngredient(itemName);
     
         if (recipesUsingItem.Count > 0)
         {
@@ -229,12 +245,42 @@ public class ResearchSystemHUD : MonoBehaviour
         }
     }
     
-    // Restored recipe display methods
+    // Finds all recipes that use the specified ingredient
+    private List<CraftingRecipe> FindRecipesUsingIngredient(string itemName)
+    {
+        var allRecipes = CraftingSystem.Instance.GetAllRecipes();
+        var recipesUsingItem = new List<CraftingRecipe>();
+    
+        foreach (var recipe in allRecipes)
+        {
+            foreach (var ingredient in recipe.ingredients)
+            {
+                if (ingredient.item.name == itemName)
+                {
+                    recipesUsingItem.Add(recipe);
+                    break;
+                }
+            }
+        }
+        
+        return recipesUsingItem;
+    }
+    
+    // Creates visual display for a recipe
     private void CreateVisualRecipeDisplay(CraftingRecipe recipe)
     {
-        if (recipe == null) return;
+        if (recipe == null) 
+            return;
         
-        // Check if all ingredients are researched
+        var (allIngredientsResearched, researchedCount) = CheckRecipeResearchStatus(recipe);
+        
+        var recipeContainer = CreateRecipeContainer(recipe, allIngredientsResearched, researchedCount);
+        resultsContainer.Add(recipeContainer);
+    }
+    
+    // Checks research status of recipe ingredients
+    private (bool allResearched, int researchedCount) CheckRecipeResearchStatus(CraftingRecipe recipe)
+    {
         bool allIngredientsResearched = true;
         int researchedCount = 0;
         
@@ -250,34 +296,40 @@ public class ResearchSystemHUD : MonoBehaviour
             }
         }
         
-        // Main recipe container
+        return (allIngredientsResearched, researchedCount);
+    }
+    
+    // Creates complete recipe container with all elements
+    private VisualElement CreateRecipeContainer(CraftingRecipe recipe, bool allIngredientsResearched, int researchedCount)
+    {
         var recipeContainer = new VisualElement();
         recipeContainer.AddToClassList("recipe-display");
-        resultsContainer.Add(recipeContainer);
         
         // Recipe name
         var recipeName = new Label(recipe.recipeName);
         recipeName.AddToClassList("recipe-name");
         recipeContainer.Add(recipeName);
         
-        // Ingredients and result layout
-        var recipeLayout = new VisualElement();
-        recipeLayout.AddToClassList("recipe-layout");
+        // Recipe layout (ingredients + result)
+        var recipeLayout = CreateRecipeLayout(recipe);
         recipeContainer.Add(recipeLayout);
         
-        // Ingredients section
-        var ingredientsContainer = new VisualElement();
-        ingredientsContainer.AddToClassList("ingredients-container");
-        recipeLayout.Add(ingredientsContainer);
+        // Status message
+        var statusLabel = CreateRecipeStatusLabel(recipe, allIngredientsResearched, researchedCount);
+        recipeContainer.Add(statusLabel);
         
-        foreach (var ingredient in recipe.ingredients)
-        {
-            var ingredientSlot = CreateIngredientSlot(ingredient);
-            if (ingredientSlot != null)
-            {
-                ingredientsContainer.Add(ingredientSlot);
-            }
-        }
+        return recipeContainer;
+    }
+    
+    // Creates recipe layout with ingredients and result
+    private VisualElement CreateRecipeLayout(CraftingRecipe recipe)
+    {
+        var recipeLayout = new VisualElement();
+        recipeLayout.AddToClassList("recipe-layout");
+        
+        // Ingredients section
+        var ingredientsContainer = CreateIngredientsContainer(recipe);
+        recipeLayout.Add(ingredientsContainer);
         
         // Arrow
         var arrow = new Label("→");
@@ -291,19 +343,45 @@ public class ResearchSystemHUD : MonoBehaviour
             recipeLayout.Add(resultSlot);
         }
         
-        // Status message
+        return recipeLayout;
+    }
+    
+    // Creates ingredients container
+    private VisualElement CreateIngredientsContainer(CraftingRecipe recipe)
+    {
+        var ingredientsContainer = new VisualElement();
+        ingredientsContainer.AddToClassList("ingredients-container");
+        
+        foreach (var ingredient in recipe.ingredients)
+        {
+            var ingredientSlot = CreateIngredientSlot(ingredient);
+            if (ingredientSlot != null)
+            {
+                ingredientsContainer.Add(ingredientSlot);
+            }
+        }
+        
+        return ingredientsContainer;
+    }
+    
+    // Creates status label for recipe
+    private Label CreateRecipeStatusLabel(CraftingRecipe recipe, bool allIngredientsResearched, int researchedCount)
+    {
         string statusText = allIngredientsResearched ? 
-            "All ingredients researched. You can try crafting this recipe!" :
+            "All ingredients researched.\nYou can now craft this recipe!" :
             $"Research {recipe.ingredients.Count - researchedCount} more ingredient(s) to unlock this recipe.";
         
         var statusLabel = new Label(statusText);
         statusLabel.AddToClassList(allIngredientsResearched ? "recipe-unlocked" : "recipe-locked");
-        recipeContainer.Add(statusLabel);
+        
+        return statusLabel;
     }
     
-    private VisualElement CreateIngredientSlot(CraftingRecipe.CraftingIngredient ingredient)
+    // Creates ingredient slot display
+    private VisualElement CreateIngredientSlot(CraftingIngredient ingredient)
     {
-        if (ingredient?.item == null) return null;
+        if (ingredient?.item == null) 
+            return null;
         
         var slot = new VisualElement();
         slot.AddToClassList("ingredient-slot");
@@ -324,23 +402,16 @@ public class ResearchSystemHUD : MonoBehaviour
         
         // Research status indicator
         bool isResearched = ResearchSystem.Instance.IsResearched(ingredient.item.name);
-        if (isResearched)
-        {
-            slot.AddToClassList("ingredient-known");
-            slot.tooltip = $"{ingredient.item.name} (researched)";
-        }
-        else
-        {
-            slot.AddToClassList("ingredient-unknown");
-            slot.tooltip = $"{ingredient.item.name} (not researched yet)";
-        }
-        
+        slot.AddToClassList(isResearched ? "ingredient-known" : "ingredient-unknown");
+
         return slot;
     }
     
+    // Creates result slot display
     private VisualElement CreateResultSlot(CraftingRecipe recipe)
     {
-        if (recipe?.result == null) return null;
+        if (recipe?.result == null) 
+            return null;
         
         var slot = new VisualElement();
         slot.AddToClassList("result-slot");
@@ -355,19 +426,14 @@ public class ResearchSystemHUD : MonoBehaviour
         slot.Add(icon);
         
         // Result quantity
-        var quantity = new Label($"x{recipe.resultQuantity}");
+        var quantity = new Label("x" + recipe.resultQuantity);
         quantity.AddToClassList("result-quantity");
         slot.Add(quantity);
-        
-        slot.tooltip = $"Crafts: {recipe.result.name}";
         
         return slot;
     }
     
-    #endregion
-    
-    #region Display Updates
-    
+    // Updates all display components
     private void UpdateAllDisplays()
     {
         UpdateSlotDisplay();
@@ -375,33 +441,48 @@ public class ResearchSystemHUD : MonoBehaviour
         UpdateButtonState();
     }
     
+    // Updates research slot display
     private void UpdateSlotDisplay()
     {
-        if (slotContainer == null || researchTable == null) return;
+        if (slotContainer == null || researchTable == null) 
+            return;
         
         var item = researchTable.GetCurrentItem();
         
         if (item == null)
         {
-            // Empty slot
-            if (slotIcon != null) slotIcon.style.backgroundImage = null;
-            if (slotQuantity != null) slotQuantity.text = "";
-            slotContainer.AddToClassList("empty");
-            slotContainer.tooltip = "Click an item in your inventory to place it here for research";
+            ShowEmptySlot();
         }
         else
         {
-            // Item in slot
-            if (slotIcon != null) slotIcon.style.backgroundImage = new StyleBackground(item.sprite);
-            if (slotQuantity != null) slotQuantity.text = "1";
-            slotContainer.RemoveFromClassList("empty");
-            slotContainer.tooltip = $"Researching: {item.name} (click to remove)";
+            ShowItemInSlot(item);
         }
+
+        if (slotQuantity != null)
+            slotQuantity.text = "";
     }
     
+    // Shows empty slot state
+    private void ShowEmptySlot()
+    {
+        if (slotIcon != null) 
+            slotIcon.style.backgroundImage = null;
+        slotContainer.AddToClassList("empty");
+    }
+    
+    // Shows item in slot state
+    private void ShowItemInSlot(InventoryItem item)
+    {
+        if (slotIcon != null) 
+            slotIcon.style.backgroundImage = new StyleBackground(item.sprite);
+        slotContainer.RemoveFromClassList("empty");
+    }
+    
+    // Updates research progress display
     private void UpdateProgress()
     {
-        if (progressLabel == null || ResearchSystem.Instance == null) return;
+        if (progressLabel == null || ResearchSystem.Instance == null) 
+            return;
         
         var progress = ResearchSystem.Instance.GetProgress();
         progressLabel.text = $"Research Progress: {progress.researchedCount} items studied\n" +
@@ -409,14 +490,14 @@ public class ResearchSystemHUD : MonoBehaviour
                             $"Current seeds tier: {progress.currentTier}/{progress.maxTier}";
     }
     
+    // Updates research button state and text
     private void UpdateButtonState()
     {
-        if (researchButton == null || researchTable == null) return;
+        if (researchButton == null || researchTable == null) 
+            return;
         
         bool hasItem = researchTable.HasItem();
         researchButton.SetEnabled(hasItem);
         researchButton.text = "go";
     }
-    
-    #endregion
 }

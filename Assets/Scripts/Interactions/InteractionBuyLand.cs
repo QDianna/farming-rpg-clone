@@ -2,18 +2,19 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 /// <summary>
-/// Allows players to purchase and unlock expansion land areas.
-/// Attach to a tilemap with trigger collider representing purchasable land.
+/// Handles land expansion purchases with tier and cost requirements.
+/// Manages player interaction triggers and validates purchase conditions before unlocking tilemap areas.
 /// </summary>
 public class InteractionBuyLand : MonoBehaviour, IInteractable
 {
-    [SerializeField] private Tilemap tilemap;
+    [Header("Land Settings")]
+    [SerializeField] private Tilemap targetTilemap;
     [SerializeField] private int requiredTier = 2;
-    [SerializeField] private int cost = 100;
+    [SerializeField] private int purchaseCost = 100;
     
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<PlayerController>(out var player))
+        if (other.TryGetComponent<PlayerController>(out _))
         {
             InteractionSystem.Instance.SetCurrentInteractable(this);
         }
@@ -21,7 +22,7 @@ public class InteractionBuyLand : MonoBehaviour, IInteractable
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        if (other.TryGetComponent<PlayerController>(out var player))
+        if (other.TryGetComponent<PlayerController>(out _))
         {
             InteractionSystem.Instance.SetCurrentInteractable(null);
         }
@@ -29,26 +30,37 @@ public class InteractionBuyLand : MonoBehaviour, IInteractable
 
     public void Interact(PlayerController player)
     {
-        // Check if player has unlocked the required tier
+        if (!CanPurchaseLand(player))
+            return;
+            
+        CompletePurchase(player);
+    }
+
+    // Validates tier requirements and player funds
+    private bool CanPurchaseLand(PlayerController player)
+    {
         if (ResearchSystem.Instance.currentSeedsTier < requiredTier)
         {
             NotificationSystem.ShowNotification($"Unlock Tier {requiredTier} plants first!");
-            return;
+            return false;
         }
         
-        // Check if player can afford it
-        if (!player.playerEconomy.CanAfford(cost))
+        if (!player.playerEconomy.CanAfford(purchaseCost))
         {
-            NotificationSystem.ShowNotification($"Need {cost} coins to purchase this land!");
-            return;
+            NotificationSystem.ShowNotification($"Need {purchaseCost} coins to purchase this land!");
+            return false;
         }
         
-        // Purchase the land
-        player.playerEconomy.SpendMoney(cost);
-        player.plotlandController.UnlockPlotland(tilemap);
-        NotificationSystem.ShowNotification($"Land purchased for {cost} coins! You can start planting!");
+        return true;
+    }
+
+    // Processes the land purchase and unlocks the area
+    private void CompletePurchase(PlayerController player)
+    {
+        player.playerEconomy.SpendMoney(purchaseCost);
+        player.plotlandController.UnlockPlotland(targetTilemap);
+        NotificationSystem.ShowNotification($"Land purchased for {purchaseCost} coins! You can start planting!");
         
-        // Destroy the buy trigger
         Destroy(gameObject);
     }
 }

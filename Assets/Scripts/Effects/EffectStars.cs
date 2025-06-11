@@ -1,30 +1,44 @@
 using UnityEngine;
 
 /// <summary>
-/// Star effect that smoothly moves from spawn position with an offset before self-destructing.
-/// Useful for harvest, crafting, or other positive action feedback.
+/// Star particle effect that smoothly animates from spawn position with offset movement.
+/// Self-destructs after specified lifetime. Used for positive feedback like harvesting or crafting.
 /// </summary>
 public class EffectStars : MonoBehaviour
 {
-    [SerializeField] private float lifetime = 1.2f;
-    [SerializeField] private Vector3 offset = new Vector3(0.2f, -0.2f, 0f);
+    [Header("Animation Settings")]
+    [SerializeField] private float effectDuration = 1.2f;
+    [SerializeField] private Vector3 movementOffset = new Vector3(0.2f, -0.2f, 0f);
 
-    private float timer;
-    private Vector3 startPos;
+    private float elapsedTime;
+    private Vector3 startPosition;
 
     private void Awake()
     {
-        startPos = transform.position;
+        startPosition = transform.position;
     }
 
     private void Update()
     {
-        timer += Time.deltaTime;
-        
-        float t = timer / lifetime;
-        transform.position = startPos + offset * Mathf.SmoothStep(0f, 1.2f, t);
+        UpdateAnimation();
+        CheckForDestruction();
+    }
 
-        if (timer >= lifetime)
+    // Updates the smooth movement animation based on elapsed time
+    private void UpdateAnimation()
+    {
+        elapsedTime += Time.deltaTime;
+        
+        float normalizedTime = elapsedTime / effectDuration;
+        Vector3 currentOffset = movementOffset * Mathf.SmoothStep(0f, 1.2f, normalizedTime);
+        
+        transform.position = startPosition + currentOffset;
+    }
+
+    // Destroys the effect when lifetime expires
+    private void CheckForDestruction()
+    {
+        if (elapsedTime >= effectDuration)
             Destroy(gameObject);
     }
 }

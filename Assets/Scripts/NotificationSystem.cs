@@ -3,18 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Singleton notification system for displaying player messages.
-/// Use NotificationSystem.ShowNotification() from anywhere to display messages.
+/// Singleton notification system for queued player message display.
+/// Provides static ShowNotification() method for global message broadcasting with sequential processing.
 /// </summary>
 public class NotificationSystem : MonoBehaviour
 {
     public static NotificationSystem Instance { get; private set; }
     
     private Queue<string> notificationQueue = new Queue<string>();
+    private bool isProcessingNotification;
+    
     public static event Action<string> OnShowNotification;
-    private bool isProcessing = false;
 
     private void Awake()
+    {
+        InitializeSingleton();
+    }
+
+    public static void ShowNotification(string message)
+    {
+        Instance?.QueueNotification(message);
+    }
+    
+    public void NotificationFinished()
+    {
+        // Called by HUD when notification display completes
+        isProcessingNotification = false;
+        ProcessNextNotification();
+    }
+    
+    // Sets up singleton instance with persistence
+    private void InitializeSingleton()
     {
         if (Instance == null)
         {
@@ -26,40 +45,26 @@ public class NotificationSystem : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public static void ShowNotification(string message)
-    {
-        Instance?.QueueNotification(message);
-    }
     
+    // Adds notification to queue and starts processing if idle
     private void QueueNotification(string message)
     {
-        Debug.Log("enqueue element - " + message + " - can begin processing? " + !isProcessing);
         notificationQueue.Enqueue(message);
         
-        // Start processing if not already
-        if (!isProcessing)
+        if (!isProcessingNotification)
         {
-            ProcessQueue();
+            ProcessNextNotification();
         }
     }
     
-    private void ProcessQueue()
+    // Processes next notification in queue if available
+    private void ProcessNextNotification()
     {
-        if (notificationQueue.Count > 0 && !isProcessing)
+        if (notificationQueue.Count > 0 && !isProcessingNotification)
         {
-            isProcessing = true;
+            isProcessingNotification = true;
             string message = notificationQueue.Dequeue();
-            Debug.Log("process queue element - " + message);
-            Debug.Log($"is event null? {OnShowNotification == null}");
             OnShowNotification?.Invoke(message);
         }
-    }
-    
-    public void NotificationFinished()
-    {
-        // Called by HUD when done displaying
-        isProcessing = false;
-        ProcessQueue(); // Show next one if any
     }
 }

@@ -1,13 +1,14 @@
 using UnityEngine;
 
 /// <summary>
-/// Sleep interaction that allows players to skip to the next day via TimeSystem.
+/// Sleep interaction that skips time to the next day when activated.
+/// Provides time progression functionality for day/night cycle management.
 /// </summary>
 public class InteractionSleep : MonoBehaviour, IInteractable
 {
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<PlayerController>(out var player))
+        if (other.TryGetComponent<PlayerController>(out _))
         {
             InteractionSystem.Instance.SetCurrentInteractable(this);
         }
@@ -15,7 +16,7 @@ public class InteractionSleep : MonoBehaviour, IInteractable
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        if (other.TryGetComponent<PlayerController>(out var player))
+        if (other.TryGetComponent<PlayerController>(out _))
         {
             InteractionSystem.Instance.SetCurrentInteractable(null);
         }
@@ -23,14 +24,15 @@ public class InteractionSleep : MonoBehaviour, IInteractable
 
     public void Interact(PlayerController player)
     {
-        if (TimeSystem.Instance != null)
+        // Attempts to skip to next day through time system
+        if (TimeSystem.Instance != null && TimeSystem.Instance.CanSleep())
         {
-            TimeSystem.Instance.skipNight();
+            TimeSystem.Instance.SkipNight();
             NotificationSystem.ShowNotification("Good night! Skipping to next day...");
         }
         else
         {
-            NotificationSystem.ShowNotification("You can only sleep between 18pm and 6am");
+            NotificationSystem.ShowNotification("You can only sleep between 6pm and 6am");
         }
     }
 }

@@ -1,12 +1,12 @@
 using UnityEngine;
 
 /// <summary>
-/// Zone data container for area transitions and camera management.
-/// Defines spawn points and camera bounds for teleportation systems.
+/// Zone configuration for area transitions and camera management.
+/// Defines teleportation spawn points and camera boundary constraints.
 /// </summary>
 public class Zone : MonoBehaviour
 {
-    [Header("Zone Settings")]
+    [Header("Zone Configuration")]
     public string zoneName;
     public Collider2D cameraBounds;
     public Transform defaultSpawnPoint;

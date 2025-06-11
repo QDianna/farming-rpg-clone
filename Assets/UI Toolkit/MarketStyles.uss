@@ -1,7 +1,5 @@
-/* Market System Styles - Using Inventory Slot Style */
-
 .market-section-title {
-    color: #000;
+    color: rgb(0, 0, 0);
     -unity-font-style: bold;
     font-size: 20px;
     padding: 5px;
@@ -10,9 +8,8 @@
     flex-wrap: wrap;
 }
 
-
 .market-tier-info {
-    color: #000;
+    color: rgb(0, 0, 0);
     -unity-font-style: bold;
     font-size: 20px;
     padding: 5px;
@@ -28,7 +25,6 @@
     margin-bottom: 10px;
 }
 
-/* Updated upgrade styles to match your button */
 .upgrade-slot {
     margin: 4px;
     background-color: rgba(55, 55, 55, 0.5);
@@ -74,7 +70,7 @@
     height: 30px;
     width: 100px;
     margin: 4px;
-    color: #000000;
+    color: rgb(0, 0, 0);
     font-size: 16px;
     -unity-font-style: bold;
 }
@@ -88,11 +84,10 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
-
 .market-no-items {
-    color: #000;
+    color: rgb(0, 0, 0);
     padding: 10px;
-    background-color: #f8f9fa;
+    background-color: rgb(248, 249, 250);
 }
 
 .market-upgraded {
@@ -114,9 +109,9 @@
 }
 
 .market-progress-hint {
-    color: #000;
+    color: rgb(0, 0, 0);
     padding: 5px;
-    background-color: #fff3e0;
+    background-color: rgb(255, 243, 224);
     white-space: normal;
     max-width: 100%;
     flex-wrap: wrap;

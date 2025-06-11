@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// Manages inventory UI display with selected item HUD and full inventory overlay.
-/// Automatically shows/hides full inventory when crafting bench, market, or research table opens.
+/// Inventory UI manager handling selected item HUD and full inventory overlay.
+/// Automatically displays full inventory when interacting with crafting, market, or research systems.
 /// </summary>
 public class InventorySystemHUD : MonoBehaviour
 {
@@ -16,7 +16,7 @@ public class InventorySystemHUD : MonoBehaviour
     private VisualElement selectedItemContainer;
     private VisualElement inventoryContainer;
     private VisualElement inventoryItemsContainer;
-    private List<VisualElement> inventorySlots = new List<VisualElement>();
+    private readonly List<VisualElement> inventorySlots = new List<VisualElement>();
 
     private void Awake()
     {
@@ -34,6 +34,7 @@ public class InventorySystemHUD : MonoBehaviour
         UnsubscribeFromEvents();
     }
     
+    // Sets up UI element references
     private void InitializeUI()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
@@ -45,7 +46,22 @@ public class InventorySystemHUD : MonoBehaviour
         HideFullInventory();
     }
 
+    // Sets up all event subscriptions for inventory and interaction systems
     private void SubscribeToEvents()
+    {
+        SubscribeToInventoryEvents();
+        SubscribeToInteractionEvents();
+    }
+    
+    // Removes all event subscriptions
+    private void UnsubscribeFromEvents()
+    {
+        UnsubscribeFromInventoryEvents();
+        UnsubscribeFromInteractionEvents();
+    }
+    
+    // Subscribes to inventory system events
+    private void SubscribeToInventoryEvents()
     {
         if (InventorySystem.Instance != null)
         {
@@ -53,7 +69,11 @@ public class InventorySystemHUD : MonoBehaviour
             InventorySystem.Instance.OnInventoryChanged += UpdateFullInventoryDisplay;
             InventorySystem.Instance.OnInventoryItemClicked += OnInventoryItemClicked;
         }
-        
+    }
+    
+    // Subscribes to interaction system events
+    private void SubscribeToInteractionEvents()
+    {
         if (craftingBench != null)
         {
             craftingBench.OnCraftingBenchOpened += ShowFullInventory;
@@ -73,7 +93,8 @@ public class InventorySystemHUD : MonoBehaviour
         }
     }
     
-    private void UnsubscribeFromEvents()
+    // Unsubscribes from inventory system events
+    private void UnsubscribeFromInventoryEvents()
     {
         if (InventorySystem.Instance != null)
         {
@@ -81,7 +102,11 @@ public class InventorySystemHUD : MonoBehaviour
             InventorySystem.Instance.OnInventoryChanged -= UpdateFullInventoryDisplay;
             InventorySystem.Instance.OnInventoryItemClicked -= OnInventoryItemClicked;
         }
-        
+    }
+    
+    // Unsubscribes from interaction system events
+    private void UnsubscribeFromInteractionEvents()
+    {
         if (craftingBench != null)
         {
             craftingBench.OnCraftingBenchOpened -= ShowFullInventory;
@@ -101,6 +126,7 @@ public class InventorySystemHUD : MonoBehaviour
         }
     }
     
+    // Updates selected item HUD with current selection
     private void UpdateSelectedItemDisplay()
     {
         var selectedItemIcon = selectedItemContainer.Q<VisualElement>("ItemIcon");
@@ -119,20 +145,24 @@ public class InventorySystemHUD : MonoBehaviour
         }
     }
     
+    // Shows full inventory overlay
     private void ShowFullInventory()
     {
         inventoryContainer.style.display = DisplayStyle.Flex;
         UpdateFullInventoryDisplay();
     }
     
+    // Hides full inventory overlay
     private void HideFullInventory()
     {
         inventoryContainer.style.display = DisplayStyle.None;
     }
     
+    // Rebuilds full inventory display with current items
     private void UpdateFullInventoryDisplay()
     {
-        if (InventorySystem.Instance == null) return;
+        if (InventorySystem.Instance == null) 
+            return;
         
         ClearInventorySlots();
         
@@ -143,6 +173,7 @@ public class InventorySystemHUD : MonoBehaviour
         }
     }
     
+    // Removes all existing inventory slot UI elements
     private void ClearInventorySlots()
     {
         foreach (var slot in inventorySlots)
@@ -152,34 +183,17 @@ public class InventorySystemHUD : MonoBehaviour
         inventorySlots.Clear();
     }
     
+    // Creates UI slot for inventory entry
     private void CreateInventorySlot(InventoryEntry entry)
     {
-        if (entry?.item == null) return;
+        if (entry?.item == null) 
+            return;
         
-        var slotContainer = new VisualElement();
-        slotContainer.AddToClassList("item-slot");
+        var slotContainer = CreateSlotContainer();
+        var slotIcon = CreateSlotIcon(entry.item);
+        var quantityLabel = CreateQuantityLabel(entry.quantity);
         
-        var slotIcon = new VisualElement();
-        slotIcon.AddToClassList("item-icon");
-        
-        if (entry.item.sprite != null)
-        {
-            slotIcon.style.backgroundImage = new StyleBackground(entry.item.sprite);
-        }
-        
-        var quantityLabel = new Label(entry.quantity.ToString());
-        quantityLabel.AddToClassList("item-quantity");
-        
-        // Enhanced tooltip with research status
-        string tooltip = $"{entry.quantity}x {entry.item.name ?? "Unknown"}";
-        if (ResearchSystem.Instance != null)
-        {
-            bool isResearched = ResearchSystem.Instance.IsResearched(entry.item.name);
-            tooltip += isResearched ? " (researched)" : " (unknown)";
-        }
-        slotContainer.tooltip = tooltip;
-        
-        slotContainer.RegisterCallback<ClickEvent>(evt => OnInventorySlotClicked(entry.item));
+        slotContainer.RegisterCallback<ClickEvent>(_ => OnInventorySlotClicked(entry.item));
         
         slotContainer.Add(slotIcon);
         slotContainer.Add(quantityLabel);
@@ -188,12 +202,43 @@ public class InventorySystemHUD : MonoBehaviour
         inventorySlots.Add(slotContainer);
     }
     
+    // Creates the main slot container element
+    private VisualElement CreateSlotContainer()
+    {
+        var slotContainer = new VisualElement();
+        slotContainer.AddToClassList("item-slot");
+        return slotContainer;
+    }
+    
+    // Creates the item icon element
+    private VisualElement CreateSlotIcon(InventoryItem item)
+    {
+        var slotIcon = new VisualElement();
+        slotIcon.AddToClassList("item-icon");
+        
+        if (item.sprite != null)
+        {
+            slotIcon.style.backgroundImage = new StyleBackground(item.sprite);
+        }
+        
+        return slotIcon;
+    }
+    
+    // Creates the quantity label element
+    private Label CreateQuantityLabel(int quantity)
+    {
+        var quantityLabel = new Label("x" + quantity);
+        quantityLabel.AddToClassList("item-quantity");
+        return quantityLabel;
+    }
+    
+    // Handles inventory slot click events
     private void OnInventorySlotClicked(InventoryItem item)
     {
-        Debug.Log($"InventoryHUD: Slot clicked for {item.name}");
         InventorySystem.Instance.TriggerItemClick(item);
     }
     
+    // Handles forwarded inventory item click events
     private void OnInventoryItemClicked(InventoryItem item)
     {
         // Event forwarded to systems that need it (crafting/market/research)

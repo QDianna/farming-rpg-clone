@@ -17,7 +17,7 @@ public class ItemStrengthPotion : InventoryItem
             return;
         }
         
-        if (TimeSystem.Instance.isCurrentSeasonWarm())
+        if (TimeSystem.Instance.IsCurrentSeasonWarm())
         {
             NotificationSystem.ShowNotification("Plants don't need strength potion in warm season");
             return;

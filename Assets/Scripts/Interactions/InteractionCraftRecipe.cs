@@ -2,8 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Represents an entry into the crafting bench.
-/// Used for input and output slots.
+/// Represents a single slot in the crafting interface for holding items and quantities.
 /// </summary>
 public class InventoryItemSlot
 {
@@ -26,28 +25,47 @@ public class InventoryItemSlot
 }
 
 /// <summary>
-/// Interactive crafting bench that allows players to combine ingredients into new items.
-/// Features 5 input slots (3 base + 2 upgradeable), 1 output slot, and automatic recipe validation.
+/// Interactive crafting bench with 5 input slots and 1 output slot.
+/// Handles recipe validation, ingredient consumption, and automatic UI updates.
 /// </summary>
 public class InteractionCraftRecipe : MonoBehaviour, IInteractable
 {
-    [Header("Crafting Bench Settings")]
-    private static int inputSlotCount = 5;
-    private bool isBenchOpen;
+    [Header("Crafting Settings")]
+    private static readonly int InputSlotCount = 5;
     
     [HideInInspector] public List<InventoryItemSlot> inputSlots;
     [HideInInspector] public InventoryItemSlot outputSlot;
-
-    public event System.Action OnCraftingBenchOpened, OnCraftingBenchClosed, OnCraftingSlotsChanged;
+    
+    private bool isBenchOpen;
+    
+    public event System.Action OnCraftingBenchOpened;
+    public event System.Action OnCraftingBenchClosed;
+    public event System.Action OnCraftingSlotsChanged;
     
     private void Awake()
     {
-        inputSlots = new List<InventoryItemSlot>();
-        for (int i = 0; i < inputSlotCount; i++)
+        InitializeSlots();
+    }
+    
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.TryGetComponent<PlayerController>(out _))
         {
-            inputSlots.Add(new InventoryItemSlot());
+            InteractionSystem.Instance.SetCurrentInteractable(this);
         }
-        outputSlot = new InventoryItemSlot();
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.TryGetComponent<PlayerController>(out _))
+        {
+            InteractionSystem.Instance.SetCurrentInteractable(null);
+            
+            if (isBenchOpen)
+            {
+                CloseBench();
+            }
+        }
     }
     
     public void Interact(PlayerController player)
@@ -60,13 +78,14 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
         }
         else
         {
-            OnCraftingBenchClosed?.Invoke();
+            CloseBench();
         }
     }
     
     public bool TryAddIngredientToSlot(InventoryItem item, int quantity, int slotIndex)
     {
-        if (slotIndex < 0 || slotIndex >= inputSlots.Count) return false;
+        if (!IsValidSlotIndex(slotIndex)) 
+            return false;
         
         var slot = inputSlots[slotIndex];
         
@@ -80,7 +99,7 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
         }
         else
         {
-            return false; // Slot occupied with different item
+            return false;
         }
         
         UpdateRecipe();
@@ -89,10 +108,12 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
     
     public bool TryRemoveIngredient(int slotIndex, int quantity)
     {
-        if (slotIndex < 0 || slotIndex >= inputSlots.Count) return false;
+        if (!IsValidSlotIndex(slotIndex)) 
+            return false;
         
         var slot = inputSlots[slotIndex];
-        if (slot.IsEmpty || slot.quantity < quantity) return false;
+        if (slot.IsEmpty || slot.quantity < quantity) 
+            return false;
         
         slot.quantity -= quantity;
         if (slot.quantity <= 0)
@@ -104,30 +125,39 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
     
     public bool TryTakeOutput()
     {
-        if (outputSlot.IsEmpty) return false;
+        if (outputSlot.IsEmpty) 
+            return false;
         
-        // Add result to inventory
-        InventorySystem.Instance.AddItem(outputSlot.item, outputSlot.quantity);
-        
-        // Find recipe and consume ingredients
-        var recipe = FindMatchingRecipe();
-        if (recipe != null)
-        {
-            foreach (var ingredient in recipe.ingredients)
-            {
-                ConsumeIngredient(ingredient.item, ingredient.quantity);
-            }
-        }
-        
-        // Clear output and update
-        string craftedItemName = outputSlot.item.name;
-        outputSlot.Clear();
-        UpdateRecipe();
-        
-        NotificationSystem.ShowNotification($"Crafted {craftedItemName}!");
+        ProcessCraftingResult();
         return true;
     }
     
+    // Creates all input and output slots
+    private void InitializeSlots()
+    {
+        inputSlots = new List<InventoryItemSlot>();
+        for (int i = 0; i < InputSlotCount; i++)
+        {
+            inputSlots.Add(new InventoryItemSlot());
+        }
+        outputSlot = new InventoryItemSlot();
+    }
+    
+    // Closes the bench and returns ingredients to player
+    private void CloseBench()
+    {
+        isBenchOpen = false;
+        ReturnAllIngredients();
+        OnCraftingBenchClosed?.Invoke();
+    }
+    
+    // Validates slot index bounds
+    private bool IsValidSlotIndex(int slotIndex)
+    {
+        return slotIndex >= 0 && slotIndex < inputSlots.Count;
+    }
+    
+    // Updates output slot based on current ingredients
     private void UpdateRecipe()
     {
         outputSlot.Clear();
@@ -141,14 +171,13 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
         OnCraftingSlotsChanged?.Invoke();
     }
     
+    // Finds recipe that matches current ingredients
     private CraftingRecipe FindMatchingRecipe()
     {
-        if (CraftingSystem.Instance == null) return null;
+        if (CraftingSystem.Instance?.GetUnlockedRecipes() == null) 
+            return null;
         
-        var unlockedRecipes = CraftingSystem.Instance.GetUnlockedRecipes();
-        if (unlockedRecipes == null) return null;
-        
-        foreach (var recipe in unlockedRecipes)
+        foreach (var recipe in CraftingSystem.Instance.GetUnlockedRecipes())
         {
             if (HasAllIngredients(recipe))
                 return recipe;
@@ -156,32 +185,61 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
         return null;
     }
     
+    // Checks if all recipe ingredients are available in slots
     private bool HasAllIngredients(CraftingRecipe recipe)
     {
         foreach (var ingredient in recipe.ingredients)
         {
-            int totalQuantity = 0;
-            foreach (var slot in inputSlots)
-            {
-                if (slot.item == ingredient.item)
-                    totalQuantity += slot.quantity;
-            }
-            
+            int totalQuantity = GetTotalQuantityInSlots(ingredient.item);
             if (totalQuantity < ingredient.quantity)
                 return false;
         }
         return true;
     }
     
+    // Counts total quantity of specific item across all slots
+    private int GetTotalQuantityInSlots(InventoryItem item)
+    {
+        int total = 0;
+        foreach (var slot in inputSlots)
+        {
+            if (slot.item == item)
+                total += slot.quantity;
+        }
+        return total;
+    }
+    
+    // Completes crafting by adding result and consuming ingredients
+    private void ProcessCraftingResult()
+    {
+        InventorySystem.Instance.AddItem(outputSlot.item, outputSlot.quantity);
+        
+        var recipe = FindMatchingRecipe();
+        if (recipe != null)
+        {
+            foreach (var ingredient in recipe.ingredients)
+            {
+                ConsumeIngredient(ingredient.item, ingredient.quantity);
+            }
+        }
+        
+        string craftedItemName = outputSlot.item.name;
+        outputSlot.Clear();
+        UpdateRecipe();
+        
+        NotificationSystem.ShowNotification($"Crafted {craftedItemName}!");
+    }
+    
+    // Removes specified quantity of item from input slots
     private void ConsumeIngredient(InventoryItem item, int quantityToRemove)
     {
         foreach (var slot in inputSlots)
         {
             if (slot.item == item && quantityToRemove > 0)
             {
-                int removeFromThisSlot = Mathf.Min(slot.quantity, quantityToRemove);
-                slot.quantity -= removeFromThisSlot;
-                quantityToRemove -= removeFromThisSlot;
+                int removeFromSlot = Mathf.Min(slot.quantity, quantityToRemove);
+                slot.quantity -= removeFromSlot;
+                quantityToRemove -= removeFromSlot;
                 
                 if (slot.quantity <= 0)
                     slot.Clear();
@@ -189,6 +247,7 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
         }
     }
     
+    // Returns all ingredients to player inventory when closing bench
     private void ReturnAllIngredients()
     {
         foreach (var slot in inputSlots)
@@ -202,27 +261,5 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
         
         outputSlot.Clear();
         OnCraftingSlotsChanged?.Invoke();
-    }
-    
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.TryGetComponent<PlayerController>(out var player))
-        {
-            InteractionSystem.Instance.SetCurrentInteractable(this);
-        }
-    }
-    
-    public void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.TryGetComponent<PlayerController>(out var player))
-        {
-            InteractionSystem.Instance.SetCurrentInteractable(null);
-            if (isBenchOpen)
-            {
-                isBenchOpen = false;
-                ReturnAllIngredients();
-                OnCraftingBenchClosed?.Invoke();
-            }
-        }
     }
 }

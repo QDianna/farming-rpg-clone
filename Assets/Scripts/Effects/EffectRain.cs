@@ -1,28 +1,43 @@
 using UnityEngine;
 
 /// <summary>
-/// Rain effect that follows the camera with a fixed offset to create seamless weather coverage.
+/// Rain particle effect that follows the camera with configurable offset.
+/// Maintains seamless weather coverage by tracking camera movement.
 /// </summary>
 public class EffectRain : MonoBehaviour
 { 
-    [SerializeField] private Vector2 offset = new Vector2(3, 10);
+    [Header("Position Settings")]
+    [SerializeField] private Vector2 cameraOffset = new Vector2(3f, 10f);
     
-    private Camera cam;
+    private Camera targetCamera;
+    private float originalZ;
 
     private void Awake()
     {
-        cam = Camera.main;
+        targetCamera = Camera.main;
+        originalZ = transform.position.z;
+        
+        if (targetCamera == null)
+            Debug.LogWarning("EffectRain: No main camera found. Rain effect will not follow camera.");
     }
     
-    private void Update()
+    private void LateUpdate()
     {
-        if (cam != null)
-        {
-            transform.position = new Vector3(
-                cam.transform.position.x + offset.x,
-                cam.transform.position.y + offset.y,
-                transform.position.z
-            );
-        }
+        if (targetCamera == null) 
+            return;
+
+        FollowCamera();
+    }
+    
+    // Updates position to follow the camera with the specified offset
+    private void FollowCamera()
+    {
+        Vector3 cameraPosition = targetCamera.transform.position;
+        
+        transform.position = new Vector3(
+            cameraPosition.x + cameraOffset.x,
+            cameraPosition.y + cameraOffset.y,
+            originalZ
+        );
     }
 }

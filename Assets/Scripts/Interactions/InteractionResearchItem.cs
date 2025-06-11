@@ -1,90 +1,132 @@
 using UnityEngine;
 
 /// <summary>
-/// Bridge between HUD and ResearchSystem. Handles interaction, costs, and slot management.
+/// Interactive research table for unlocking new content with items and coins.
+/// Manages single-slot research interface with escalating costs based on progress.
 /// </summary>
 public class InteractionResearchItem : MonoBehaviour, IInteractable
 {
-    [Header("Settings")]
+    [Header("Research Settings")]
     [SerializeField] private int baseResearchCost = 50;
     [SerializeField] private bool isUnlocked = true;
     
     [Header("References")]
     [SerializeField] private PlayerEconomy playerEconomy;
     
-    // Current state
     public InventoryItem currentResearchItem;
-    private bool isOpen;
+    private bool isTableOpen;
     
-    // Simple events
     public event System.Action OnTableOpened;
     public event System.Action OnTableClosed;
     public event System.Action OnSlotChanged;
-    public event System.Action<string> OnResearchCompleted; // Just pass item name
+    public event System.Action<string, bool> OnResearchCompleted; // item name, was already researched
     
-    #region Interaction
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponent<PlayerController>() != null)
+        {
+            InteractionSystem.Instance.SetCurrentInteractable(this);
+            NotificationSystem.ShowNotification("Press E to use Research Table!");
+        }
+    }
+    
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.GetComponent<PlayerController>() != null)
+        {
+            InteractionSystem.Instance.SetCurrentInteractable(null);
+            if (isTableOpen) 
+                CloseTable();
+        }
+    }
     
     public void Interact(PlayerController player)
     {
         if (!isUnlocked)
-        {
-            Debug.Log("Research Table is locked!");
             return;
-        }
         
         if (playerEconomy == null)
             playerEconomy = player.GetComponent<PlayerEconomy>();
         
-        if (isOpen)
+        if (isTableOpen)
             CloseTable();
         else
             OpenTable();
     }
     
-    private void OpenTable()
-    {
-        isOpen = true;
-        OnTableOpened?.Invoke();
-        Debug.Log($"Research Table opened");
-    }
-    
-    private void CloseTable()
-    {
-        isOpen = false;
-        ReturnItemToInventory();
-        OnTableClosed?.Invoke();
-        Debug.Log("Research Table closed");
-    }
-    
-    #endregion
-    
-    #region Slot Management
-    
     public bool TryAddItem(InventoryItem item)
     {
         if (currentResearchItem != null)
-        {
-            Debug.Log("Research slot occupied");
             return false;
-        }
         
         currentResearchItem = item;
         OnSlotChanged?.Invoke();
-        Debug.Log($"Added {item.name} to research");
         return true;
     }
     
     public bool TryRemoveItem()
     {
-        if (currentResearchItem == null) return false;
+        if (currentResearchItem == null) 
+            return false;
         
         InventorySystem.Instance.AddItem(currentResearchItem, 1);
         currentResearchItem = null;
         OnSlotChanged?.Invoke();
-        Debug.Log("Item returned to inventory");
         return true;
     }
     
+    public bool TryResearch()
+    {
+        if (!CanResearch())
+            return false;
+        
+        string itemName = currentResearchItem.name;
+        bool wasAlreadyResearched = ResearchSystem.Instance.IsResearched(itemName);
+    
+        // Only charge for new research
+        if (!wasAlreadyResearched)
+        {
+            int cost = GetResearchCost();
+            playerEconomy?.SpendMoney(cost);
+        }
+    
+        bool success = ResearchSystem.Instance.DoResearch(currentResearchItem);
+    
+        if (success)
+        {
+            // Only consume item for new research
+            if (!wasAlreadyResearched)
+            {
+                currentResearchItem = null;
+            }
+            OnSlotChanged?.Invoke();
+            OnResearchCompleted?.Invoke(itemName, wasAlreadyResearched); // Pass both parameters!
+        }
+    
+        return success;
+    }
+    
+    // State getters
+    public bool IsOpen() => isTableOpen;
+    public bool HasItem() => currentResearchItem != null;
+    public InventoryItem GetCurrentItem() => currentResearchItem;
+    
+    // Opens the research table interface
+    private void OpenTable()
+    {
+        isTableOpen = true;
+        OnTableOpened?.Invoke();
+    }
+    
+    // Closes table and returns any item to inventory
+    private void CloseTable()
+    {
+        isTableOpen = false;
+        ReturnItemToInventory();
+        OnTableClosed?.Invoke();
+    }
+    
+    // Returns current research item to player inventory
     private void ReturnItemToInventory()
     {
         if (currentResearchItem != null)
@@ -95,86 +137,32 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
         }
     }
     
-    #endregion
-    
-    #region Research Action
-    
-    public bool TryResearch()
+    // Validates if research can be performed
+    private bool CanResearch()
     {
-        // Basic checks
         if (currentResearchItem == null)
-        {
-            Debug.Log("No item to research!");
             return false;
-        }
         
+        // Allow research of already researched items (for recipe viewing)
         if (ResearchSystem.Instance.IsResearched(currentResearchItem.name))
         {
-            NotificationSystem.ShowNotification($"You already researched {currentResearchItem.name}!");
-            return false;
+            return true; // No cost for already researched items
         }
         
-        // Cost check
-        int cost = GetCost();
+        int cost = GetResearchCost();
         if (playerEconomy != null && !playerEconomy.CanAfford(cost))
         {
             NotificationSystem.ShowNotification($"You need {cost} coins!");
             return false;
         }
         
-        // Pay and research
-        if (playerEconomy != null)
-            playerEconomy.SpendMoney(cost);
-        
-        string itemName = currentResearchItem.name;
-        bool success = ResearchSystem.Instance.DoResearch(currentResearchItem);
-        
-        if (success)
-        {
-            currentResearchItem = null; // Item consumed
-            OnSlotChanged?.Invoke();
-            OnResearchCompleted?.Invoke(itemName);
-            Debug.Log($"Research complete! (Cost: {cost} coins)");
-            return true;
-        }
-        
-        return false;
+        return true;
     }
     
-    #endregion
-    
-    #region Simple Getters
-    
-    public bool IsOpen() => isOpen;
-    public bool HasItem() => currentResearchItem != null;
-    public InventoryItem GetCurrentItem() => currentResearchItem;
-    
-    private int GetCost()
+    // Calculates research cost based on progress
+    private int GetResearchCost()
     {
-        return baseResearchCost + (ResearchSystem.Instance?.GetProgress().researchedCount * 10 ?? 0);
+        int researchedCount = ResearchSystem.Instance?.GetProgress().researchedCount ?? 0;
+        return baseResearchCost + (researchedCount * 10);
     }
-    
-    #endregion
-    
-    #region IInteractable
-    
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.GetComponent<PlayerController>() != null)
-        {
-            InteractionSystem.Instance.SetCurrentInteractable(this);
-            NotificationSystem.ShowNotification($"Press E to use Research Table!");
-        }
-    }
-    
-    public void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.GetComponent<PlayerController>() != null)
-        {
-            InteractionSystem.Instance.SetCurrentInteractable(null);
-            if (isOpen) CloseTable();
-        }
-    }
-    
-    #endregion
 }

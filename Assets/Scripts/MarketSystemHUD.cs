@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// Market UI manager handling buy/sell interface with seed progression and crafting bench upgrades.
-/// Integrates with inventory clicks to add items to sell slots.
+/// Market UI system managing buy/sell interface with inventory integration.
+/// Handles daily seed display, sell slot management, and crafting bench upgrade purchases.
 /// </summary>
 public class MarketSystemHUD : MonoBehaviour
 {
@@ -32,6 +32,7 @@ public class MarketSystemHUD : MonoBehaviour
         UnsubscribeFromEvents();
     }
     
+    // Sets up UI element references and initial state
     private void SetupUIReferences()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
@@ -54,13 +55,14 @@ public class MarketSystemHUD : MonoBehaviour
         }
     }
     
+    // Sets up event subscriptions for market and inventory systems
     private void SubscribeToEvents()
     {
         if (market != null)
         {
             market.OnMarketOpened += OnMarketOpened;
             market.OnMarketClosed += OnMarketClosed;
-            market.OnSellSlotsChanged += UpdateSellSlotsDisplay; // Updated event name
+            market.OnSellSlotsChanged += UpdateSellSlotsDisplay;
             market.OnTransactionCompleted += OnTransactionCompleted;
         }
         
@@ -70,13 +72,14 @@ public class MarketSystemHUD : MonoBehaviour
         }
     }
     
+    // Removes event subscriptions
     private void UnsubscribeFromEvents()
     {
         if (market != null)
         {
             market.OnMarketOpened -= OnMarketOpened;
             market.OnMarketClosed -= OnMarketClosed;
-            market.OnSellSlotsChanged -= UpdateSellSlotsDisplay; // Updated event name
+            market.OnSellSlotsChanged -= UpdateSellSlotsDisplay;
             market.OnTransactionCompleted -= OnTransactionCompleted;
         }
         
@@ -86,6 +89,7 @@ public class MarketSystemHUD : MonoBehaviour
         }
     }
     
+    // Shows market interface and updates all displays
     private void OnMarketOpened()
     {
         if (marketContainer != null)
@@ -95,6 +99,7 @@ public class MarketSystemHUD : MonoBehaviour
         UpdateAllDisplays();
     }
     
+    // Hides market interface
     private void OnMarketClosed()
     {
         if (marketContainer != null)
@@ -103,24 +108,34 @@ public class MarketSystemHUD : MonoBehaviour
         }
     }
     
+    // Updates displays after transaction completion
     private void OnTransactionCompleted()
     {
         UpdateAllDisplays();
     }
     
+    // Handles confirm sale button clicks
     private void OnConfirmSaleClicked()
     {
         market?.ConfirmSale();
     }
     
+    // Handles inventory item clicks when market is open
     private void OnInventoryItemClicked(InventoryItem item)
     {
-        if (market != null && marketContainer != null && marketContainer.style.display == DisplayStyle.Flex)
+        if (IsMarketOpen())
         {
             market.TryAddItemToSell(item, 1);
         }
     }
     
+    // Checks if market interface is currently open
+    private bool IsMarketOpen()
+    {
+        return market != null && marketContainer != null && marketContainer.style.display == DisplayStyle.Flex;
+    }
+    
+    // Updates all market display components
     private void UpdateAllDisplays()
     {
         UpdateSellSlotsDisplay();
@@ -128,9 +143,11 @@ public class MarketSystemHUD : MonoBehaviour
         UpdateMoneyDisplay();
     }
     
+    // Updates sell slots with current items and total value
     private void UpdateSellSlotsDisplay()
     {
-        if (sellSlotsContainer == null || market == null) return;
+        if (sellSlotsContainer == null || market == null) 
+            return;
         
         sellSlotsContainer.Clear();
         
@@ -141,10 +158,16 @@ public class MarketSystemHUD : MonoBehaviour
             sellSlotsContainer.Add(slotElement);
         }
         
+        UpdateSellTotalAndButton();
+    }
+    
+    // Updates total sell value and confirm button state
+    private void UpdateSellTotalAndButton()
+    {
         if (totalValue != null)
         {
             int value = market.GetTotalSellValue();
-            totalValue.text = $"Sell for {value}";
+            totalValue.text = $"{value}g";
         }
         
         if (confirmSale != null)
@@ -153,26 +176,43 @@ public class MarketSystemHUD : MonoBehaviour
         }
     }
     
+    // Rebuilds buy items display with seeds and upgrades
     private void UpdateBuyItemsDisplay()
     {
-        if (buyItemsContainer == null || market == null) return;
+        if (buyItemsContainer == null || market == null) 
+            return;
         
         buyItemsContainer.Clear();
         
-        // Add seeds section
+        AddSeedsSection();
+        AddUpgradeSection();
+    }
+    
+    // Adds seeds section to buy display
+    private void AddSeedsSection()
+    {
         var seedTitle = new Label("Seeds Available Today");
         seedTitle.AddToClassList("market-section-title");
         buyItemsContainer.Add(seedTitle);
         
-        // Add current tier info
+        AddTierInfo();
+        AddAvailableSeeds();
+    }
+    
+    // Adds current tier information
+    private void AddTierInfo()
+    {
         if (ResearchSystem.Instance != null)
         {
             var tierInfo = new Label($"Current Seeds Tier {ResearchSystem.Instance.currentSeedsTier}");
             tierInfo.AddToClassList("market-tier-info");
             buyItemsContainer.Add(tierInfo);
         }
-        
-        // Add available seeds - Updated to use new API
+    }
+    
+    // Adds available seeds or no seeds message
+    private void AddAvailableSeeds()
+    {
         var availableItems = market.GetAvailableItems();
         if (availableItems.Count > 0)
         {
@@ -193,8 +233,11 @@ public class MarketSystemHUD : MonoBehaviour
             noSeedsLabel.AddToClassList("market-no-items");
             buyItemsContainer.Add(noSeedsLabel);
         }
-
-        // Add crafting bench upgrade - Updated to use new API
+    }
+    
+    // Adds upgrade section to buy display
+    private void AddUpgradeSection()
+    {
         if (market.IsCraftingBenchUpgradeAvailable())
         {
             var upgradeElement = CreateCraftingBenchUpgradeElement();
@@ -208,32 +251,24 @@ public class MarketSystemHUD : MonoBehaviour
         }
     }
     
+    // Updates player money display
     private void UpdateMoneyDisplay()
     {
         if (playerMoney != null && market?.playerEconomy != null)
         {
-            playerMoney.text = $"You have {market.playerEconomy.CurrentMoney} coins";
+            playerMoney.text = $"You have {market.playerEconomy.CurrentMoney} gold";
         }
     }
     
-    private VisualElement CreateSellSlotElement(MarketSellSlot slot, int index) // Updated class name
+    // Creates UI element for sell slot
+    private VisualElement CreateSellSlotElement(MarketSellSlot slot, int index)
     {
         var slotElement = new VisualElement();
         slotElement.AddToClassList("sell-slot");
     
         if (!slot.IsEmpty)
         {
-            var icon = new VisualElement();
-            icon.AddToClassList("item-icon");
-            icon.style.backgroundImage = new StyleBackground(slot.item.sprite);
-            slotElement.Add(icon);
-        
-            var quantityLabel = new Label(slot.quantity.ToString());
-            quantityLabel.AddToClassList("item-quantity");
-            slotElement.Add(quantityLabel);
-        
-            slotElement.RegisterCallback<ClickEvent>(evt => market.TryRemoveItemFromSell(index, 1));
-            slotElement.tooltip = $"Click to return 1x {slot.item.name} to inventory";
+            AddSellSlotContent(slotElement, slot, index);
         }
         else
         {
@@ -243,6 +278,22 @@ public class MarketSystemHUD : MonoBehaviour
         return slotElement;
     }
     
+    // Adds content to sell slot element
+    private void AddSellSlotContent(VisualElement slotElement, MarketSellSlot slot, int index)
+    {
+        var icon = new VisualElement();
+        icon.AddToClassList("item-icon");
+        icon.style.backgroundImage = new StyleBackground(slot.item.sprite);
+        slotElement.Add(icon);
+    
+        var quantityLabel = new Label("x" + slot.quantity);
+        quantityLabel.AddToClassList("item-quantity");
+        slotElement.Add(quantityLabel);
+    
+        slotElement.RegisterCallback<ClickEvent>(_ => market.TryRemoveItemFromSell(index, 1));
+    }
+    
+    // Creates UI element for buy-able item
     private VisualElement CreateBuyItemElement(InventoryItem item)
     {
         var itemElement = new VisualElement();
@@ -253,45 +304,54 @@ public class MarketSystemHUD : MonoBehaviour
         icon.style.backgroundImage = new StyleBackground(item.sprite);
         itemElement.Add(icon);
         
-        // Add price
         int buyPrice = market.playerEconomy.GetBuyPrice(item);
-        var priceLabel = new Label($"{buyPrice}");
+        var priceLabel = new Label($"{buyPrice}g");
         priceLabel.AddToClassList("item-price");
         itemElement.Add(priceLabel);
         
-        // Click to buy
-        itemElement.RegisterCallback<ClickEvent>(evt => market.TryBuyItem(item, 1));
-        itemElement.tooltip = $"{item.name} - {buyPrice} coins";
-        
+        itemElement.RegisterCallback<ClickEvent>(_ => market.TryBuyItem(item, 1));
         return itemElement;
     }
     
+    // Creates UI element for crafting bench upgrade
     private VisualElement CreateCraftingBenchUpgradeElement()
     {
         var upgradeElement = new VisualElement();
         upgradeElement.AddToClassList("upgrade-slot");
         
-        // Add upgrade name
+        AddUpgradeLabels(upgradeElement);
+        AddUpgradePurchaseButton(upgradeElement);
+        
+        return upgradeElement;
+    }
+    
+    // Adds labels to upgrade element
+    private void AddUpgradeLabels(VisualElement upgradeElement)
+    {
         var nameLabel = new Label("Crafting Bench Upgrade");
         nameLabel.AddToClassList("upgrade-name");
         upgradeElement.Add(nameLabel);
         
-        // Add upgrade description
         var descLabel = new Label("Unlocks 2 additional crafting slots");
         descLabel.AddToClassList("upgrade-description");
         upgradeElement.Add(descLabel);
         
-        // Add price and buy button - Updated to use new API
         int upgradeCost = market.GetCraftingBenchUpgradeCost();
         var priceLabel = new Label($"{upgradeCost} coins");
         priceLabel.AddToClassList("upgrade-price");
         upgradeElement.Add(priceLabel);
-        
-        var buyButton = new Button(() => market.TryBuyUpgrade()); // Updated method call
-        buyButton.text = "buy";
+    }
+    
+    // Adds purchase button to upgrade element
+    private void AddUpgradePurchaseButton(VisualElement upgradeElement)
+    {
+        int upgradeCost = market.GetCraftingBenchUpgradeCost();
+        var buyButton = new Button(() => market.TryBuyUpgrade())
+        {
+            text = "buy"
+        };
         buyButton.AddToClassList("upgrade-button");
         
-        // Disable button if can't afford
         bool canAfford = market.playerEconomy.CanAfford(upgradeCost);
         buyButton.SetEnabled(canAfford);
         if (!canAfford)
@@ -300,8 +360,5 @@ public class MarketSystemHUD : MonoBehaviour
         }
         
         upgradeElement.Add(buyButton);
-        upgradeElement.tooltip = $"Crafting Bench Upgrade for {upgradeCost} coins";
-        
-        return upgradeElement;
     }
 }

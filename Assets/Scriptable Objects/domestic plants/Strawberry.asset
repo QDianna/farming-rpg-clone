@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf08809745e46ee907d4ee2b778dde1, type: 3}
   m_Name: Strawberry
   m_EditorClassIdentifier: 
-  name: strawberry
+  newName: strawberry
   description: eat // sell // research // craft
   sprite: {fileID: -146649628, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
   droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}

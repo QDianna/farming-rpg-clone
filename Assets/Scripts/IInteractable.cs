@@ -1,8 +1,8 @@
 using UnityEngine;
 
 /// <summary>
-/// Interface for objects that can be interacted with by the player.
-/// Implementers define their own interaction behavior and trigger detection.
+/// Interface for player-interactable objects with trigger detection and custom behavior.
+/// Implementers handle their own proximity detection and define specific interaction actions.
 /// </summary>
 public interface IInteractable
 {

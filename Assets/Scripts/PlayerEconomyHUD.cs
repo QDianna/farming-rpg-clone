@@ -1,10 +1,9 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// Displays player money in the UI with visual feedback for transactions.
-/// Shows green flash for income and red flash for expenses.
+/// Player money display UI with real-time updates.
+/// Shows current money amount and responds to economy changes through event system.
 /// </summary>
 public class PlayerEconomyHUD : MonoBehaviour
 {
@@ -15,6 +14,22 @@ public class PlayerEconomyHUD : MonoBehaviour
     
     private void Awake()
     {
+        InitializeUI();
+    }
+    
+    private void OnEnable()
+    {
+        SubscribeToEvents();
+    }
+    
+    private void OnDisable()
+    {
+        UnsubscribeFromEvents();
+    }
+    
+    // Sets up UI element references and initial display
+    private void InitializeUI()
+    {
         var root = GetComponent<UIDocument>().rootVisualElement;
         moneyLabel = root.Q<Label>("Money");
         
@@ -24,52 +39,26 @@ public class PlayerEconomyHUD : MonoBehaviour
         }
     }
     
-    private void OnEnable()
+    // Subscribes to economy change events
+    private void SubscribeToEvents()
     {
         if (playerEconomy != null)
-        {
             playerEconomy.OnMoneyChanged += UpdateMoneyDisplay;
-            playerEconomy.OnItemSold += OnItemSold;
-            playerEconomy.OnItemBought += OnItemBought;
-        }
     }
     
-    private void OnDisable()
+    // Unsubscribes from economy change events
+    private void UnsubscribeFromEvents()
     {
         if (playerEconomy != null)
-        {
             playerEconomy.OnMoneyChanged -= UpdateMoneyDisplay;
-            playerEconomy.OnItemSold -= OnItemSold;
-            playerEconomy.OnItemBought -= OnItemBought;
-        }
     }
     
+    // Updates money display with current amount
     private void UpdateMoneyDisplay(int amount)
     {
         if (moneyLabel != null)
         {
             moneyLabel.text = $"{amount}g";
-        }
-    }
-    
-    private void OnItemSold(InventoryItem item, int quantity, int totalPrice)
-    {
-        StartCoroutine(FlashMoney(Color.green));
-    }
-    
-    private void OnItemBought(InventoryItem item, int quantity, int totalPrice)
-    {
-        StartCoroutine(FlashMoney(Color.red));
-    }
-    
-    private IEnumerator FlashMoney(Color flashColor)
-    {
-        if (moneyLabel != null)
-        {
-            var originalColor = moneyLabel.style.color;
-            moneyLabel.style.color = flashColor;
-            yield return new WaitForSeconds(0.5f);
-            moneyLabel.style.color = originalColor;
         }
     }
 }

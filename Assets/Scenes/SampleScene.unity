@@ -666,7 +666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e327d740fec51e846857a6d62cd4ceba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondToHourRatio: 1
+  timeProgressionSpeed: 1
   daysPerSeason: 1
 --- !u!114 &187454840
 MonoBehaviour:
@@ -747,13 +747,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fed33e7e1e8bfa46a552dd7ffb6f15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipes:
-  - {fileID: 11400000, guid: 500ff4a52d1a35c4f80e9fbd87527fac, type: 2}
+  allRecipes:
+  - {fileID: 11400000, guid: ff1bf7644f3d9f94fa84572d3c8ad054, type: 2}
   - {fileID: 11400000, guid: caf9b39f76b74a04b8e04578bf2f894c, type: 2}
   - {fileID: 11400000, guid: c8f6764e1f07c9a4aa5d59ebe29dde4d, type: 2}
   - {fileID: 11400000, guid: 1433b7e08f65fb94a81528b1c3965abc, type: 2}
   - {fileID: 11400000, guid: 84d0fd5fd5071e748a888337c60e24e1, type: 2}
-  - {fileID: 11400000, guid: ff1bf7644f3d9f94fa84572d3c8ad054, type: 2}
+  - {fileID: 11400000, guid: 500ff4a52d1a35c4f80e9fbd87527fac, type: 2}
   - {fileID: 11400000, guid: 2074ec317df3f2e4991d57f78923d6df, type: 2}
 --- !u!1 &188398762
 GameObject:
@@ -10312,7 +10312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31644258d32b6194d88c651b7200c3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 3, y: 10}
+  cameraOffset: {x: 3, y: 10}
 --- !u!4 &917484770 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 787832309524278174, guid: feb0b103061db7e45b925250d842cd52, type: 3}
@@ -21084,7 +21084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31644258d32b6194d88c651b7200c3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 3, y: 10}
+  cameraOffset: {x: 3, y: 10}
 --- !u!199 &1046261724
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -140885,7 +140885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31644258d32b6194d88c651b7200c3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 3, y: 10}
+  cameraOffset: {x: 3, y: 10}
 --- !u!199 &1800164050
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -147319,6 +147319,74 @@ PrefabInstance:
       propertyPath: plotlandController
       value: 
       objectReference: {fileID: 2022335781}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_Name
+      value: Inventory Navigation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: f26ce118-b801-4166-850c-50d04588ef0e
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 7c02dce4-59fc-478d-a35f-8484bc1f037f
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[2].m_Id
+      value: c3f0b464-ff6b-46f9-9326-e3796a77715a
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[0].m_Name
+      value: 1D Axis
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: 1DAxis
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[1].m_Name
+      value: negative
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/z
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[2].m_Name
+      value: positive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[2].m_Path
+      value: <Keyboard>/x
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[0].m_Flags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[1].m_Flags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[2].m_Flags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Inventory Navigation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Inventory Navigation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543060790827308900, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
+      propertyPath: inventoryNavigationAction.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Inventory Navigation
+      objectReference: {fileID: 0}
     - target: {fileID: 7423412828200520110, guid: 05a196e6d73c4004bb821d039c4827a6, type: 3}
       propertyPath: startingMoney
       value: 9999

@@ -2,8 +2,8 @@ using System;
 using UnityEngine;
 
 /// <summary>
-/// Manages player money, item trading, and price calculations.
-/// Handles buy/sell transactions with configurable price modifiers.
+/// Player economy system managing money, item trading, and price calculations.
+/// Handles buy/sell transactions with configurable price modifiers and event notifications.
 /// </summary>
 public class PlayerEconomy : MonoBehaviour
 {
@@ -19,18 +19,16 @@ public class PlayerEconomy : MonoBehaviour
     public int CurrentMoney => currentMoney;
     
     public event Action<int> OnMoneyChanged;
-    public event Action<InventoryItem, int, int> OnItemSold;
-    public event Action<InventoryItem, int, int> OnItemBought;
     
     private void Awake()
     {
-        currentMoney = startingMoney;
-        OnMoneyChanged?.Invoke(currentMoney);
+        InitializeEconomy();
     }
     
     public void AddMoney(int amount)
     {
-        if (amount <= 0) return;
+        if (amount <= 0) 
+            return;
         
         currentMoney += amount;
         OnMoneyChanged?.Invoke(currentMoney);
@@ -53,36 +51,33 @@ public class PlayerEconomy : MonoBehaviour
     
     public bool BuyItem(InventoryItem item, int quantity)
     {
-        if (item == null || quantity <= 0)
-        {
-            Debug.Log("ERROR - invalid purchase was available");
+        if (!IsValidPurchase(item, quantity))
             return false;
-        }
         
         int totalPrice = GetTotalBuyValue(item, quantity);
         
         if (!CanAfford(totalPrice))
         {
-            NotificationSystem.ShowNotification($"You don't have enough money for this, " +
-                                                $"try selling some of your harvest!");
+            ShowInsufficientFundsMessage();
             return false;
         }
         
-        SpendMoney(totalPrice);
-        InventorySystem.Instance.AddItem(item, quantity);
-        OnItemBought?.Invoke(item, quantity, totalPrice);
+        CompletePurchase(item, quantity, totalPrice);
         return true;
     }
     
+    // Price calculation methods
     public int GetSellPrice(InventoryItem item)
     {
-        if (item == null) return 0;
+        if (item == null) 
+            return 0;
         return Mathf.RoundToInt(item.basePrice * sellPriceModifier);
     }
     
     public int GetBuyPrice(InventoryItem item)
     {
-        if (item == null) return 0;
+        if (item == null) 
+            return 0;
         return Mathf.RoundToInt(item.basePrice * buyPriceModifier);
     }
     
@@ -94,6 +89,32 @@ public class PlayerEconomy : MonoBehaviour
     public int GetTotalBuyValue(InventoryItem item, int quantity)
     {
         return GetBuyPrice(item) * quantity;
+    }
+    
+    // Sets up initial money amount and triggers change event
+    private void InitializeEconomy()
+    {
+        currentMoney = startingMoney;
+        OnMoneyChanged?.Invoke(currentMoney);
+    }
+    
+    // Validates purchase parameters
+    private bool IsValidPurchase(InventoryItem item, int quantity)
+    {
+        return item != null && quantity > 0;
+    }
+    
+    // Shows insufficient funds notification
+    private void ShowInsufficientFundsMessage()
+    {
+        NotificationSystem.ShowNotification("You don't have enough money for this, try selling some of your harvest!");
+    }
+    
+    // Processes successful purchase transaction
+    private void CompletePurchase(InventoryItem item, int quantity, int totalPrice)
+    {
+        SpendMoney(totalPrice);
+        InventorySystem.Instance.AddItem(item, quantity);
     }
     
     [ContextMenu("Add 100 Coins")]

@@ -2,58 +2,70 @@ using UnityEngine;
 using System;
 
 /// <summary>
-/// Manages the player's hunger and health, applying gradual hunger loss over time,
-/// triggering health loss when starving, and notifying UI through events.
-/// Also handles Game Over when health reaches zero.
+/// Player vital statistics system managing hunger, health, and energy with automatic degradation.
+/// Handles starvation effects, health loss, and game over conditions with UI event notifications.
 /// </summary>
-
 public class PlayerStats : MonoBehaviour
 {
-    public event Action<float> OnHungerChange;
-    public event Action<float> OnHealthChange;
-    public event Action<float> OnEnergyChange; 
+    [Header("Stat Configuration")]
+    [SerializeField] private float hungerLossRate = 5f;
+    [SerializeField] private float hungerHealthLossRate = 10f;
+    [SerializeField] private float energyLossRate = 5f;
 
     private float hunger = 100f;
     private float health = 100f;
     private float energy = 100f;
-    private float hungerLossRate = 5f;          // 5 units per minute
-    private float hungerHealthLossRate = 10f;   // 10 units per minute
-    private float energyLossRate = 5f;
     
-    public void SetHunger(float hunger)
+    public event Action<float> OnHungerChange;
+    public event Action<float> OnHealthChange;
+    public event Action<float> OnEnergyChange;
+
+    private void Update()
     {
-        this.hunger = Mathf.Clamp(hunger, 0, 100);
-        OnHungerChange?.Invoke(this.hunger);
+        UpdateHungerDegradation();
+        UpdateStarvationEffects();
     }
-    
-    public void SetHealth(float health)
+
+    private void SetHunger(float newHunger)
     {
-        this.health = Mathf.Clamp(health, 0, 100);
+        hunger = Mathf.Clamp(newHunger, 0, 100);
+        OnHungerChange?.Invoke(hunger);
+    }
+
+    private void SetHealth(float newHealth)
+    {
+        health = Mathf.Clamp(newHealth, 0, 100);
         OnHealthChange?.Invoke(health);
         
         if (health <= 0f)
             HandleGameOver();
     }
 
-    public void SetEnergy(float energy)
+    public void SetEnergy(float newEnergy)
     {
-        this.energy = Mathf.Clamp(energy, 0, 100);
-        OnHungerChange?.Invoke(this.energy);
+        energy = Mathf.Clamp(newEnergy, 0, 100);
+        OnEnergyChange?.Invoke(energy);
     }
     
     public float GetHunger() => hunger;
     public float GetHealth() => health;
+    public float GetEnergy() => energy;
 
     public void RestoreHunger(float amount)
     {
         SetHunger(hunger + amount);
     }
     
-    void Update()
+    // Applies gradual hunger loss over time
+    private void UpdateHungerDegradation()
     {
         float hungerLoss = hungerLossRate / 60f * Time.deltaTime;
         SetHunger(hunger - hungerLoss);
-
+    }
+    
+    // Applies health loss when starving
+    private void UpdateStarvationEffects()
+    {
         if (hunger <= 0f)
         {
             float healthLoss = hungerHealthLossRate / 60f * Time.deltaTime;
@@ -61,12 +73,11 @@ public class PlayerStats : MonoBehaviour
         }
     }
     
+    // Handles game over condition when health reaches zero
     private void HandleGameOver()
     {
         Debug.Log("Game Over!");
         Time.timeScale = 0f;
-        // TODO: Afișează UI de Game Over
+        // TODO: Display Game Over UI
     }
-    
-    
 }

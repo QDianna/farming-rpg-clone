@@ -10,25 +10,23 @@ public enum ToolType
 }
 
 /// <summary>
-/// Tool data container with type, icon, and keybind information.
+/// Tool data container with type, icon, and key-bind information.
 /// </summary>
 public class Tool
 {
-    public ToolType type;
-    public Sprite icon;
-    public int keybind;
+    public readonly ToolType type;
+    public readonly int keyBind;
     
-    public Tool(ToolType type, Sprite icon, int keybind)
+    public Tool(ToolType type, int keyBind)
     {
         this.type = type;
-        this.icon = icon;
-        this.keybind = keybind;
+        this.keyBind = keyBind;
     }
 }
 
 /// <summary>
-/// Manages player tool selection and usage with context-sensitive actions.
-/// Handles tilling, watering, and other tool-based interactions.
+/// Player tool system managing selection and context-sensitive actions.
+/// Handles tilling, tree chopping, watering, and other tool-based interactions with range detection.
 /// </summary>
 public class ToolSystem : MonoBehaviour
 {
@@ -37,13 +35,13 @@ public class ToolSystem : MonoBehaviour
     public Sprite axeSprite;
     public Sprite waterCanSprite;
     
-    [Header("Axe Settings")]
+    [Header("Axe Configuration")]
     public float axeRange = 2f;
-    public LayerMask treeLayer = 1 << 8; // Set trees to layer 8
-
+    public LayerMask treeLayer = 1 << 8;
 
     [HideInInspector] public ToolType selectedTool = ToolType.None;
     private Dictionary<ToolType, Tool> tools = new();
+    
     public event System.Action OnSelectedToolChange;
     
     private void Awake()
@@ -51,23 +49,14 @@ public class ToolSystem : MonoBehaviour
         InitializeTools();
     }
     
-    private void InitializeTools()
-    {
-        tools[ToolType.None] = new Tool(ToolType.None, null, 0);
-        tools[ToolType.Hoe] = new Tool(ToolType.Hoe, hoeSprite, 1);
-        tools[ToolType.Axe] = new Tool(ToolType.Axe, axeSprite, 2);
-        tools[ToolType.WaterCan] = new Tool(ToolType.WaterCan, waterCanSprite, 3);
-    }
-
     public void SetTool(int toolKey)
     {
         foreach (var tool in tools.Values)
         {
-            if (tool.keybind == toolKey)
+            if (tool.keyBind == toolKey)
             {
                 selectedTool = tool.type;
                 OnSelectedToolChange?.Invoke();
-                Debug.Log($"Selected: {selectedTool}");
                 return;
             }
         }
@@ -88,7 +77,17 @@ public class ToolSystem : MonoBehaviour
                 break;
         }
     }
+    
+    // Creates tool dictionary with sprites and key-binds
+    private void InitializeTools()
+    {
+        tools[ToolType.None] = new Tool(ToolType.None, 0);
+        tools[ToolType.Hoe] = new Tool(ToolType.Hoe, 1);
+        tools[ToolType.Axe] = new Tool(ToolType.Axe, 2);
+        tools[ToolType.WaterCan] = new Tool(ToolType.WaterCan, 3);
+    }
 
+    // Uses hoe to till empty plot land
     private void UseHoe(PlayerController player)
     {
         if (player.plotlandController.CanTill(player.transform.position))
@@ -98,20 +97,37 @@ public class ToolSystem : MonoBehaviour
         }
     }
 
+    // Uses axe to chop trees within range
     private void UseAxe(PlayerController player)
     {
         player.animator.SetTrigger("Use Axe");
         
-        // Find trees in range
-        Collider2D[] treesInRange = Physics2D.OverlapCircleAll(player.transform.position, axeRange, treeLayer);
+        var closestTree = FindClosestTree(player.transform.position);
+        
+        if (closestTree != null)
+        {
+            closestTree.TakeDamage();
+        }
+    }
+
+    // Uses watering can to help planted crops grow
+    private void UseWateringCan(PlayerController player)
+    {
+        if (!CanWaterPlants(player))
+            return;
+
+        player.animator.SetTrigger("Use Water Can");
+        player.plotlandController.AttendPlot(player.transform.position);
+    }
+    
+    // Finds closest tree within axe range that can be chopped
+    private TreeController FindClosestTree(Vector3 playerPosition)
+    {
+        Collider2D[] treesInRange = Physics2D.OverlapCircleAll(playerPosition, axeRange, treeLayer);
     
         if (treesInRange.Length == 0)
-        {
-            Debug.Log("No trees in range!");
-            return;
-        }
+            return null;
     
-        // Chop the closest tree
         TreeController closestTree = null;
         float closestDistance = float.MaxValue;
     
@@ -120,7 +136,7 @@ public class ToolSystem : MonoBehaviour
             TreeController tree = treeCollider.GetComponent<TreeController>();
             if (tree != null && !tree.isChopped)
             {
-                float distance = Vector2.Distance(player.transform.position, tree.transform.position);
+                float distance = Vector2.Distance(playerPosition, tree.transform.position);
                 if (distance < closestDistance)
                 {
                     closestDistance = distance;
@@ -128,28 +144,25 @@ public class ToolSystem : MonoBehaviour
                 }
             }
         }
-    
-        if (closestTree != null)
-        {
-            closestTree.TakeDamage(1);
-        }
+        
+        return closestTree;
     }
-
-    private void UseWateringCan(PlayerController player)
+    
+    // Validates watering conditions and shows appropriate messages
+    private bool CanWaterPlants(PlayerController player)
     {
         if (!player.plotlandController.CanAttendPlot(player.transform.position))
         {
             NotificationSystem.ShowNotification("You can water plants in the warm season to help them sprout");
-            return;
+            return false;
         }
         
-        if (!TimeSystem.Instance.isCurrentSeasonWarm())
+        if (!TimeSystem.Instance.IsCurrentSeasonWarm())
         {
             NotificationSystem.ShowNotification("Plants don't need watering in cold season");
-            return;
+            return false;
         }
-
-        player.animator.SetTrigger("Use Water Can");
-        player.plotlandController.AttendPlot(player.transform.position);
+        
+        return true;
     }
 }

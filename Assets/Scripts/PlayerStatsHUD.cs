@@ -2,10 +2,12 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// Updates health and hunger progress bars based on PlayerStats changes.
+/// Player stats UI display managing health and hunger progress bars.
+/// Updates visual indicators in real-time based on PlayerStats changes through event system.
 /// </summary>
 public class PlayerStatsHUD : MonoBehaviour
 {
+    [Header("System References")]
     [SerializeField] private PlayerStats playerStats;
     
     private ProgressBar healthBar;
@@ -13,18 +15,44 @@ public class PlayerStatsHUD : MonoBehaviour
 
     private void Awake()
     {
+        InitializeUI();
+    }
+
+    private void OnEnable()
+    {
+        SubscribeToEvents();
+    }
+
+    private void OnDisable()
+    {
+        UnsubscribeFromEvents();
+    }
+
+    // Sets up UI element references and initial values
+    private void InitializeUI()
+    {
         var root = GetComponent<UIDocument>().rootVisualElement;
         healthBar = root.Q<ProgressBar>("HealthBar");
         hungerBar = root.Q<ProgressBar>("HungerBar");
         
         if (playerStats != null)
         {
-            healthBar.value = playerStats.GetHealth();
-            hungerBar.value = playerStats.GetHunger();
+            SetInitialValues();
         }
     }
-
-    private void OnEnable()
+    
+    // Sets initial progress bar values from current stats
+    private void SetInitialValues()
+    {
+        if (healthBar != null)
+            healthBar.value = playerStats.GetHealth();
+            
+        if (hungerBar != null)
+            hungerBar.value = playerStats.GetHunger();
+    }
+    
+    // Subscribes to player stats change events
+    private void SubscribeToEvents()
     {
         if (playerStats != null)
         {
@@ -32,8 +60,9 @@ public class PlayerStatsHUD : MonoBehaviour
             playerStats.OnHungerChange += UpdateHungerBar;
         }
     }
-
-    private void OnDisable()
+    
+    // Unsubscribes from player stats change events
+    private void UnsubscribeFromEvents()
     {
         if (playerStats != null)
         {
@@ -42,13 +71,17 @@ public class PlayerStatsHUD : MonoBehaviour
         }
     }
 
+    // Updates health progress bar display
     private void UpdateHealthBar(float value)
     {
-        if (healthBar != null) healthBar.value = value;
+        if (healthBar != null) 
+            healthBar.value = value;
     }
 
+    // Updates hunger progress bar display
     private void UpdateHungerBar(float value)
     {
-        if (hungerBar != null) hungerBar.value = value;
+        if (hungerBar != null) 
+            hungerBar.value = value;
     }
 }

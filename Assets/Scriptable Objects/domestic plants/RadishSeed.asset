@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a679d765daf249b4b6c1fea94226ca57, type: 3}
   m_Name: RadishSeed
   m_EditorClassIdentifier: 
-  name: radish seed
+  newName: radish seeds
   description: buy // plant // research
   sprite: {fileID: -1241740860, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
   droppedItemPrefab: {fileID: 0}

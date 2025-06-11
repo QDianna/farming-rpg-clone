@@ -11,29 +11,75 @@ public enum Season
 
 /// <summary>
 /// Singleton time system managing day/night cycles, seasons, and time progression.
-/// Supports sleep functionality and seasonal weather effects.
+/// Handles sleep functionality and provides seasonal weather information.
 /// </summary>
 public class TimeSystem : MonoBehaviour
 {
     public static TimeSystem Instance { get; private set; }
     
     [Header("Time Settings")]
-    [SerializeField] private float secondToHourRatio = 1f;
+    [SerializeField] private float timeProgressionSpeed = 1f;
     [SerializeField] private int daysPerSeason = 4;
     
-    private static readonly List<Season> seasons = new() { Season.Spring, Season.Summer, Season.Autumn, Season.Winter };
+    private static readonly List<Season> Seasons = new() { Season.Spring, Season.Summer, Season.Autumn, Season.Winter };
     
-    private int currentSeasonId = 0;
+    private int currentSeasonIndex;
     private int currentDay = 1;
     private float currentTime = 6f;
-    private int hour = 6;
-    private int minute = 0;
+    private int cachedHour = 6;
+    private int cachedMinute;
 
     public event System.Action OnDayChange;
     public event System.Action OnHourChange;
     public event System.Action OnMinuteChange;
 
     private void Awake()
+    {
+        InitializeSingleton();
+    }
+    
+    private void Update()
+    {
+        UpdateTime();
+        UpdateTimeEvents();
+    }
+
+    public void SkipNight()
+    {
+        if (currentTime <= 24f)
+            currentDay++;
+        
+        currentTime = 6f;
+        OnDayChange?.Invoke();
+    }
+
+    // Checks if player can sleep during night hours (6pm to 6am)
+    public bool CanSleep()
+    {
+        return currentTime >= 18f || currentTime <= 6f;
+    }
+    
+    // Time getters
+    public int GetHour() => Mathf.FloorToInt(currentTime);
+    public int GetMinute() => Mathf.FloorToInt((currentTime % 1f) * 60f);
+    public int GetDay() => currentDay;
+    public Season GetSeason() => Seasons[currentSeasonIndex];
+    
+    // Checks if current season is warm (spring or summer)
+    public bool IsCurrentSeasonWarm()
+    {
+        var season = Seasons[currentSeasonIndex];
+        return season == Season.Spring || season == Season.Summer;
+    }
+
+    // Checks if specified season is warm
+    public bool IsWarmSeason(Season season)
+    {
+        return season == Season.Spring || season == Season.Summer;
+    }
+    
+    // Sets up singleton instance
+    private void InitializeSingleton()
     {
         if (Instance != null && Instance != this)
         {
@@ -44,66 +90,44 @@ public class TimeSystem : MonoBehaviour
         Instance = this;
     }
     
-    private void Update()
+    // Updates current time and handles day progression
+    private void UpdateTime()
     {
-        currentTime += Time.deltaTime * secondToHourRatio;
+        currentTime += Time.deltaTime * timeProgressionSpeed;
 
         if (currentTime >= 24f)
         {
-            currentTime = 0f;
-            currentDay++;
-            
-            if (currentDay % daysPerSeason == 0)
-                currentSeasonId = (currentSeasonId + 1) % seasons.Count;
-            
-            OnDayChange?.Invoke();
+            AdvanceToNextDay();
         }
-
+    }
+    
+    // Advances to next day and handles season changes
+    private void AdvanceToNextDay()
+    {
+        currentTime = 0f;
+        currentDay++;
+        
+        if (currentDay % daysPerSeason == 0)
+            currentSeasonIndex = (currentSeasonIndex + 1) % Seasons.Count;
+        
+        OnDayChange?.Invoke();
+    }
+    
+    // Triggers events when time values change
+    private void UpdateTimeEvents()
+    {
         int newHour = GetHour();
-        if (hour != newHour)
+        if (cachedHour != newHour)
         {
-            hour = newHour;
+            cachedHour = newHour;
             OnHourChange?.Invoke();
         }
 
         int newMinute = GetMinute();
-        if (minute != newMinute)
+        if (cachedMinute != newMinute)
         {
-            minute = newMinute;
+            cachedMinute = newMinute;
             OnMinuteChange?.Invoke();
         }
-    }
-
-    public void skipNight()
-    {
-        if (!isNight())
-            return;
-        
-        if (currentTime <= 24f)
-            currentDay++;
-        
-        currentTime = 6f;
-        OnDayChange?.Invoke();
-    }
-
-    public bool isNight()
-    {
-        return currentTime >= 18f || currentTime <= 6f;
-    }
-    
-    public int GetHour() => Mathf.FloorToInt(currentTime);
-    public int GetMinute() => Mathf.FloorToInt((currentTime % 1f) * 60f);
-    public int GetDay() => currentDay;
-    public Season GetSeason() => seasons[currentSeasonId];
-    
-    public bool isCurrentSeasonWarm()
-    {
-        var season = seasons[currentSeasonId];
-        return season == Season.Spring || season == Season.Summer;
-    }
-
-    public bool isWarmSeason(Season season)
-    {
-        return season == Season.Spring || season == Season.Summer;
     }
 }

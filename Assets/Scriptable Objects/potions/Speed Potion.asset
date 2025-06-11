@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fe6c4186b04b39843efbf2e963b3ad, type: 3}
   m_Name: Speed Potion
   m_EditorClassIdentifier: 
-  name: speed potion
+  newName: speed potion
   description: helps you run faster
   sprite: {fileID: 1564499956, guid: a1f409a1ef3e9654698d16d783c85844, type: 3}
   droppedItemPrefab: {fileID: 0}

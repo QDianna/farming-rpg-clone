@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f620ced6627428288f6d41171096a0a, type: 3}
   m_Name: The Cure Beneath
   m_EditorClassIdentifier: 
-  name: The Cure Beneath
+  newName: The Cure Beneath
   description: brings life to all
   sprite: {fileID: 2807716563117960152, guid: 2023ac7a27bdcfb42860cd4546cb626e, type: 3}
   droppedItemPrefab: {fileID: 0}

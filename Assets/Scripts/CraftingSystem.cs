@@ -2,32 +2,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Manages crafting recipes, unlock progression, and recipe availability.
-/// Handles recipe unlocking based on research completion and prerequisites.
+/// Singleton crafting system managing recipe unlocking and availability.
+/// Integrates with research system to progressively unlock recipes based on ingredient knowledge.
 /// </summary>
 public class CraftingSystem : MonoBehaviour
 {
-    #region Singleton
     public static CraftingSystem Instance { get; private set; }
+    
+    [Header("Recipe Database")]
+    [SerializeField] private List<CraftingRecipe> allRecipes;
     
     private void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
+        InitializeSingleton();
     }
-    #endregion
     
-    [Header("Crafting System Data")]
-    [SerializeField] private List<CraftingRecipe> recipes;
-    
-    
-    #region Recipe Unlocking
-    
-    /// <summary>
-    /// Mark a recipe as unlocked - called by ResearchSystem when all ingredients researched
-    /// </summary>
+    // Marks recipe as unlocked when research requirements are met
     public void MarkRecipeAsUnlocked(CraftingRecipe recipe)
     {
         if (!recipe.isUnlocked)
@@ -36,43 +26,38 @@ public class CraftingSystem : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Check if a recipe is currently unlocked
-    /// </summary>
+    // Checks if specific recipe is currently unlocked
     public bool IsRecipeUnlocked(CraftingRecipe recipe)
     {
         return recipe.isUnlocked;
     }
-
-    #endregion
     
-    
-    #region Public API
-    
-    /// <summary>
-    /// Get all recipes (for ResearchSystem to analyze)
-    /// </summary>
+    // Returns complete recipe collection for research system analysis
     public List<CraftingRecipe> GetAllRecipes()
     {
-        return new List<CraftingRecipe>(recipes);
+        return new List<CraftingRecipe>(allRecipes);
     }
     
-    /// <summary>
-    /// Get only unlocked recipes (for CraftingSystemHUD to display)
-    /// </summary>
+    // Returns only unlocked recipes for crafting interface display
     public List<CraftingRecipe> GetUnlockedRecipes()
     {
-        List<CraftingRecipe> unlocked = new List<CraftingRecipe>();
+        List<CraftingRecipe> unlockedRecipes = new List<CraftingRecipe>();
         
-        foreach (var recipe in recipes)
+        foreach (var recipe in allRecipes)
         {
             if (IsRecipeUnlocked(recipe))
-                unlocked.Add(recipe);
+                unlockedRecipes.Add(recipe);
         }
         
-        return unlocked;
+        return unlockedRecipes;
     }
     
-    #endregion
-    
+    // Sets up singleton instance
+    private void InitializeSingleton()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 }
