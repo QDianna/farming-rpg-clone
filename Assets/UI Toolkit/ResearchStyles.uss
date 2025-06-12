@@ -33,7 +33,7 @@
 }
 
 .recipe-display {
-    margin: 10px;
+    margin: 5px;
     background-color: rgba(255, 255, 255, 0.4);
     font-size: 20px;
     width: 100%;
@@ -53,7 +53,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 10px;
+    margin: 5px;
     flex-wrap: wrap;
     max-width: 100%;
 }
@@ -61,7 +61,7 @@
 .ingredients-container {
     flex-direction: row;
     flex-wrap: wrap;
-    max-width: 60%;
+    max-width: 80%;
 }
 
 .ingredient-slot {

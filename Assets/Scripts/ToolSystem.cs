@@ -153,7 +153,7 @@ public class ToolSystem : MonoBehaviour
     {
         if (!player.plotlandController.CanAttendPlot(player.transform.position))
         {
-            NotificationSystem.ShowNotification("You can water plants in the warm season to help them sprout");
+           // NotificationSystem.ShowNotification("You can water plants in the warm season to help them sprout");
             return false;
         }
         

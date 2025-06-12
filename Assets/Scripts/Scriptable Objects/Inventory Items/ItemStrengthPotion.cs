@@ -13,7 +13,7 @@ public class ItemStrengthPotion : InventoryItem
     {
         if (!player.plotlandController.CanAttendPlot(player.transform.position))
         {
-            NotificationSystem.ShowNotification("No plants here that need strength potion");
+            // NotificationSystem.ShowNotification("No plants here that need strength potion");
             return;
         }
         
@@ -32,7 +32,7 @@ public class ItemStrengthPotion : InventoryItem
         
         player.plotlandController.AttendPlot(player.transform.position);
         player.inventorySystem.RemoveItem(this, 1);
-        NotificationSystem.ShowNotification("Applied strength potion to plants, " +
-                                            "now they will grow even in this harsh weather");
+        // NotificationSystem.ShowNotification("Applied strength potion to plants, " +
+         //                                   "now they will grow even in this harsh weather");
     }
 }

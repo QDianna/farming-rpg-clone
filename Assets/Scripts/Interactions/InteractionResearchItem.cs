@@ -26,7 +26,7 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
         if (other.GetComponent<PlayerController>() != null)
         {
             InteractionSystem.Instance.SetCurrentInteractable(this);
-            NotificationSystem.ShowNotification("Press E to use the Research Table!");
+            // NotificationSystem.ShowNotification("Press E to use the Research Table!");
         }
     }
     

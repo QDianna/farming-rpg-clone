@@ -46,7 +46,6 @@ public class InteractionBuildBridge : MonoBehaviour, IInteractable
     {
         if (bridgeBuilt)
         {
-            NotificationSystem.ShowNotification("Bridge already built!");
             return;
         }
         

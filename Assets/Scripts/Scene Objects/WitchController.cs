@@ -3,6 +3,7 @@ using UnityEngine;
 /// <summary>
 /// Witch NPC that manages the main quest storyline about the earth's illness.
 /// Handles multi-stage dialogue and potion collection mission progression.
+/// Also unlocks the research table for purchase after first interaction.
 /// </summary>
 public class WitchController : MonoBehaviour, IInteractable
 {
@@ -61,12 +62,33 @@ public class WitchController : MonoBehaviour, IInteractable
    // Shows the initial story dialogue about the illness
    private void ShowFirstMeetingDialogue()
    {
+       // Mark that player has met the witch
+       if (QuestsSystem.Instance != null)
+       {
+           QuestsSystem.Instance.SetWitchMet();
+       }
+       
        NotificationSystem.ShowNotification("Witch: A terrible illness has overcome our earth...");
+       
+       // Unlock research table for purchase
+       UnlockStructures();
        
        // You can expand this with a proper dialogue system
        // For now, using notifications in sequence
        Invoke(nameof(ContinueFirstDialogue), 3f);
    }
+   
+   // Unlocks the research table for purchase in the market
+   private void UnlockStructures()
+   {
+       if (MarketSystem.Instance != null)
+       {
+           MarketSystem.Instance.UnlockResearchTable();
+           MarketSystem.Instance.UnlockCraftingBench();
+           NotificationSystem.ShowNotification("Research Table and Crafting Bench are now available in the market!");
+       }
+   }
+
    
    // Continues the first meeting dialogue
    private void ContinueFirstDialogue()
@@ -144,6 +166,12 @@ public class WitchController : MonoBehaviour, IInteractable
        NotificationSystem.ShowNotification("Witch: Now you can craft the final potion to save us all!");
        
        currentState = WitchQuestState.QuestComplete;
+       
+       // Mark quest as completed
+       if (QuestsSystem.Instance != null)
+       {
+           QuestsSystem.Instance.SetWitchQuestCompleted();
+       }
    }
    
    // Shows what potions are still missing

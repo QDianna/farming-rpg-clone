@@ -338,7 +338,7 @@ public class PlotlandController : MonoBehaviour
             AdvanceCropFromRain(kvp.Key, kvp.Value);
         }
         
-        NotificationSystem.ShowNotification("Rain helped your crops grow!");
+        // NotificationSystem.ShowNotification("Rain helped your crops grow!");
     }
     
     // Advances individual crop due to rain
@@ -371,8 +371,8 @@ public class PlotlandController : MonoBehaviour
             DestroyRandomPlot(plantedPlots);
         }
         
-        if (plantsToDestroy > 0)
-            NotificationSystem.ShowNotification($"Storm destroyed {plantsToDestroy} crops!");
+        // if (plantsToDestroy > 0)
+            // NotificationSystem.ShowNotification($"Storm destroyed {plantsToDestroy} crops!");
     }
     
     // Gets list of all planted plot positions

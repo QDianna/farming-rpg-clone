@@ -33,10 +33,6 @@ public class ItemSeed : InventoryItem
         {
             PlantSeed(player, plantPosition);
         }
-        else
-        {
-            NotificationSystem.ShowNotification("You can only plant on tilled plot land!");
-        }
     }
 
     // Gets tile sprite for specific growth stage

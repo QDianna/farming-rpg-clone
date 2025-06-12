@@ -129,7 +129,8 @@ public class WeatherSystem : MonoBehaviour
         
         if (!string.IsNullOrEmpty(message))
         {
-            NotificationSystem.ShowNotification(message);
+            Debug.Log(message);
+            // NotificationSystem.ShowNotification(message);
         }
         
         TriggerWeatherEvent(weather);
