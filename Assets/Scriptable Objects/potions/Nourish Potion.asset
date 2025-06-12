@@ -20,3 +20,5 @@ MonoBehaviour:
   canBeSold: 1
   canBeBought: 0
   maxStackSize: 99
+  starsEffectPrefab: {fileID: 7762797338399269062, guid: 75489c9862eb74d498a132336ffba911, type: 3}
+  bonusYieldMultiplier: 1.5

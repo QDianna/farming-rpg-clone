@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: Heal Potion
   result: {fileID: 11400000, guid: 7f570cc80bcc7804bba792fbf98bf38e, type: 2}
-  resultQuantity: 1
+  resultQuantity: 3
   ingredients:
   - item: {fileID: 11400000, guid: d1cb36d72f0d9024987188630be0d2d9, type: 2}
     quantity: 2
@@ -22,5 +22,3 @@ MonoBehaviour:
     quantity: 2
   - item: {fileID: 11400000, guid: 7c8b2d413fa771f4d895682e3636b20d, type: 2}
     quantity: 1
-  prerequisiteRecipes:
-  - {fileID: 11400000, guid: c8f6764e1f07c9a4aa5d59ebe29dde4d, type: 2}

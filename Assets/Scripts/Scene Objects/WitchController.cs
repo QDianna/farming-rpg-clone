@@ -14,6 +14,10 @@ public class WitchController : MonoBehaviour, IInteractable
    [SerializeField] private InventoryItem endurancePotion;
    [SerializeField] private InventoryItem rareFlower;
    
+   [Header("Dialogue Settings")]
+   [SerializeField] private float dialogueDelay = 4f;
+   private float originalDelay;
+   
    private enum WitchQuestState
    {
        FirstMeeting,
@@ -68,51 +72,55 @@ public class WitchController : MonoBehaviour, IInteractable
            QuestsSystem.Instance.SetWitchMet();
        }
        
-       NotificationSystem.ShowNotification("Witch: A terrible illness has overcome our earth...");
+       // Store original delay and set dialogue delay
+       originalDelay = NotificationSystem.Instance.displayDuration;
+       NotificationSystem.Instance.displayDuration = dialogueDelay;
+       
+       // Show first meeting dialogue
+       NotificationSystem.ShowNotification("Witch: Ah... I've been waiting for you. I know about your spouse... their illness... it's the same that has begun to wither me as well.");
+       NotificationSystem.ShowNotification("Witch: This is no ordinary sickness. Something has spread across this land... corrupting the plants, the air, even us.");
+       NotificationSystem.ShowNotification("Witch: I've spent my life gathering herbs and crafting potions... but now, I can no longer venture out. My body grows weaker each day.");
+       NotificationSystem.ShowNotification("Witch: You must help me. There may still be hope, but I can no longer gather nor prepare the ingredients myself.");
        
        // Unlock research table for purchase
-       UnlockStructures();
+       UnlockResearchTable();
        
-       // You can expand this with a proper dialogue system
-       // For now, using notifications in sequence
-       Invoke(nameof(ContinueFirstDialogue), 3f);
+       // Wait for dialogue to finish, then give quest
+       Invoke(nameof(GiveQuestDialogue), dialogueDelay * 3 + 1f);
+   }
+   
+   // Shows the quest dialogue
+   private void GiveQuestDialogue()
+   {
+       // Quest dialogue
+       NotificationSystem.ShowNotification("Witch: First, you must learn to understand the plants around us. Study them well — only through knowledge can you hope to craft what we need.");
+       NotificationSystem.ShowNotification("Witch: You will need to prepare four potions: one to heal, one to strengthen, one to hasten the body, and one to endure what is to come.");
+       NotificationSystem.ShowNotification("Witch: Study, gather, craft... and bring them to me. Our lives may depend on it.");
+       
+       currentState = WitchQuestState.QuestGiven;
+       
+       // Wait for quest dialogue to finish, then restore delay and change state
+       Invoke(nameof(CompleteDialogueSetup), dialogueDelay * 3 + 3f);
+   }
+   
+   // Restores original delay and changes state
+   private void CompleteDialogueSetup()
+   {
+       // Restore original delay
+       NotificationSystem.Instance.displayDuration = originalDelay;
+       currentState = WitchQuestState.WaitingForPotions;
+       
+       NotificationSystem.ShowNotification("New structures are now available in the market!");
    }
    
    // Unlocks the research table for purchase in the market
-   private void UnlockStructures()
+   private void UnlockResearchTable()
    {
        if (MarketSystem.Instance != null)
        {
            MarketSystem.Instance.UnlockResearchTable();
            MarketSystem.Instance.UnlockCraftingBench();
-           NotificationSystem.ShowNotification("Research Table and Crafting Bench are now available in the market!");
        }
-   }
-
-   
-   // Continues the first meeting dialogue
-   private void ContinueFirstDialogue()
-   {
-       NotificationSystem.ShowNotification("Witch: Your wife... she suffers from it, as do I...");
-       Invoke(nameof(GiveQuest), 3f);
-   }
-   
-   // Gives the potion collection quest
-   private void GiveQuest()
-   {
-       NotificationSystem.ShowNotification("Witch: Bring me 4 potions: Power, Nourish, Speed, and Endurance.");
-       NotificationSystem.ShowNotification("Witch: Only then can I give you the final ingredient...");
-       
-       currentState = WitchQuestState.QuestGiven;
-       
-       // Wait a moment then change to waiting state
-       Invoke(nameof(StartWaitingForPotions), 2f);
-   }
-   
-   // Changes state to waiting for potions
-   private void StartWaitingForPotions()
-   {
-       currentState = WitchQuestState.WaitingForPotions;
    }
    
    // Shows quest reminder if player talks again
@@ -162,8 +170,10 @@ public class WitchController : MonoBehaviour, IInteractable
        InventorySystem.Instance.AddItem(rareFlower, 1);
        rareFlower.CollectItem(player);
        
-       NotificationSystem.ShowNotification("Witch: Perfect! Here is the final ingredient - the Last Flower.");
-       NotificationSystem.ShowNotification("Witch: Now you can craft the final potion to save us all!");
+       NotificationSystem.ShowNotification("Witch: Perfect... thanks to you, I can finally prepare the cure.");
+       NotificationSystem.ShowNotification("Witch: I needed you to learn, as well — so that you can save your spouse.");
+       NotificationSystem.ShowNotification("Witch: Take this rare flower. It is the final ingredient... " +
+                                           "add it to your potions, and it will complete the cure.");
        
        currentState = WitchQuestState.QuestComplete;
        
@@ -198,6 +208,6 @@ public class WitchController : MonoBehaviour, IInteractable
    // Shows dialogue when quest is complete
    private void ShowQuestCompleteDialogue()
    {
-       NotificationSystem.ShowNotification("Witch: Go now, craft the final potion and save your wife!");
+       NotificationSystem.ShowNotification("Witch: Go now, craft the final potion and save your spouse!");
    }
 }

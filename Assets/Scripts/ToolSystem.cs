@@ -26,7 +26,7 @@ public class Tool
 
 /// <summary>
 /// Player tool system managing selection and context-sensitive actions.
-/// Handles tilling, tree chopping, watering, and other tool-based interactions with range detection.
+/// Handles tilling, tree chopping, watering, and other tool-based interactions with range detection and energy consumption.
 /// </summary>
 public class ToolSystem : MonoBehaviour
 {
@@ -38,6 +38,11 @@ public class ToolSystem : MonoBehaviour
     [Header("Axe Configuration")]
     public float axeRange = 2f;
     public LayerMask treeLayer = 1 << 8;
+    
+    [Header("Energy Consumption")]
+    [SerializeField] private float hoeEnergyCost = 5f;
+    [SerializeField] private float axeEnergyCost = 8f;
+    [SerializeField] private float waterCanEnergyCost = 3f;
 
     [HideInInspector] public ToolType selectedTool = ToolType.None;
     private Dictionary<ToolType, Tool> tools = new();
@@ -64,6 +69,13 @@ public class ToolSystem : MonoBehaviour
     
     public void UseTool(PlayerController player)
     {
+        // Check if player has enough energy for any tool action
+        if (!HasEnoughEnergyForTool(player))
+        {
+            NotificationSystem.ShowNotification("Too tired to use tools. Rest or eat something.");
+            return;
+        }
+        
         switch (selectedTool)
         {
             case ToolType.Hoe:
@@ -87,17 +99,18 @@ public class ToolSystem : MonoBehaviour
         tools[ToolType.WaterCan] = new Tool(ToolType.WaterCan, 3);
     }
 
-    // Uses hoe to till empty plot land
+    // Uses hoe to till empty plot land and consumes energy
     private void UseHoe(PlayerController player)
     {
         if (player.plotlandController.CanTill(player.transform.position))
         {
             player.animator.SetTrigger("Use Hoe");
             player.plotlandController.TillPlot(player.transform.position);
+            player.playerStats.ConsumeEnergy(hoeEnergyCost);
         }
     }
 
-    // Uses axe to chop trees within range
+    // Uses axe to chop trees within range and consumes energy
     private void UseAxe(PlayerController player)
     {
         player.animator.SetTrigger("Use Axe");
@@ -107,10 +120,11 @@ public class ToolSystem : MonoBehaviour
         if (closestTree != null)
         {
             closestTree.TakeDamage();
+            player.playerStats.ConsumeEnergy(axeEnergyCost);
         }
     }
 
-    // Uses watering can to help planted crops grow
+    // Uses watering can to help planted crops grow and consumes energy
     private void UseWateringCan(PlayerController player)
     {
         if (!CanWaterPlants(player))
@@ -118,6 +132,21 @@ public class ToolSystem : MonoBehaviour
 
         player.animator.SetTrigger("Use Water Can");
         player.plotlandController.AttendPlot(player.transform.position);
+        player.playerStats.ConsumeEnergy(waterCanEnergyCost);
+    }
+    
+    // Checks if player has enough energy for the selected tool
+    private bool HasEnoughEnergyForTool(PlayerController player)
+    {
+        float requiredEnergy = selectedTool switch
+        {
+            ToolType.Hoe => hoeEnergyCost,
+            ToolType.Axe => axeEnergyCost,
+            ToolType.WaterCan => waterCanEnergyCost,
+            _ => 0f
+        };
+        
+        return player.playerStats.GetEnergy() >= requiredEnergy;
     }
     
     // Finds closest tree within axe range that can be chopped

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// Player stats UI display managing health and hunger progress bars.
+/// Player stats UI display managing health, hunger, and energy progress bars.
 /// Updates visual indicators in real-time based on PlayerStats changes through event system.
 /// </summary>
 public class PlayerStatsHUD : MonoBehaviour
@@ -12,6 +12,7 @@ public class PlayerStatsHUD : MonoBehaviour
     
     private ProgressBar healthBar;
     private ProgressBar hungerBar;
+    private ProgressBar energyBar;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class PlayerStatsHUD : MonoBehaviour
         var root = GetComponent<UIDocument>().rootVisualElement;
         healthBar = root.Q<ProgressBar>("HealthBar");
         hungerBar = root.Q<ProgressBar>("HungerBar");
+        energyBar = root.Q<ProgressBar>("EnergyBar");
         
         if (playerStats != null)
         {
@@ -49,6 +51,9 @@ public class PlayerStatsHUD : MonoBehaviour
             
         if (hungerBar != null)
             hungerBar.value = playerStats.GetHunger();
+            
+        if (energyBar != null)
+            energyBar.value = playerStats.GetEnergy();
     }
     
     // Subscribes to player stats change events
@@ -58,6 +63,7 @@ public class PlayerStatsHUD : MonoBehaviour
         {
             playerStats.OnHealthChange += UpdateHealthBar;
             playerStats.OnHungerChange += UpdateHungerBar;
+            playerStats.OnEnergyChange += UpdateEnergyBar;
         }
     }
     
@@ -68,6 +74,7 @@ public class PlayerStatsHUD : MonoBehaviour
         {
             playerStats.OnHealthChange -= UpdateHealthBar;
             playerStats.OnHungerChange -= UpdateHungerBar;
+            playerStats.OnEnergyChange -= UpdateEnergyBar;
         }
     }
 
@@ -83,5 +90,12 @@ public class PlayerStatsHUD : MonoBehaviour
     {
         if (hungerBar != null) 
             hungerBar.value = value;
+    }
+
+    // Updates energy progress bar display
+    private void UpdateEnergyBar(float value)
+    {
+        if (energyBar != null) 
+            energyBar.value = value;
     }
 }

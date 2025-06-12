@@ -9,8 +9,8 @@ public class QuestsSystem : MonoBehaviour
     public static QuestsSystem Instance { get; private set; }
     
     [Header("Quest Progress")]
-    [SerializeField] private bool hasMetWitch = false;
-    [SerializeField] private bool hasCompletedWitchQuest = false;
+    [SerializeField] private bool hasMetWitch ;
+    [SerializeField] private bool hasCompletedWitchQuest ;
     
     public event System.Action OnWitchFirstMet;
     public event System.Action OnWitchQuestCompleted;
@@ -58,14 +58,5 @@ public class QuestsSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-    
-    // Reset quest progress (for testing/new game)
-    [ContextMenu("Reset All Quest Progress")]
-    public void ResetQuestProgress()
-    {
-        hasMetWitch = false;
-        hasCompletedWitchQuest = false;
-        Debug.Log("Quest progress reset!");
     }
 }

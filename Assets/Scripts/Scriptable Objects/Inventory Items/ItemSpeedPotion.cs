@@ -1,15 +1,24 @@
 using UnityEngine;
 
 /// <summary>
-/// Crop item that can be consumed to restore hunger and spawns visual drops when harvested.
 /// </summary>
 [CreateAssetMenu(menuName = "Items/SpeedPotion")]
 public class ItemSpeedPotion : InventoryItem
 {
+    [SerializeField] private float speedMultiplier = 1.5f;
+    
     public override void UseItem(PlayerController player)
     {
-        Debug.Log("Use fight potion");
-        player.inventorySystem.RemoveItem(this, 1);
+        if (player.hasSpeedBuff == false)
+        {
+            NotificationSystem.ShowNotification("Drank speed potion, you will be running faster today!");
+            player.ApplySpeedBuff(speedMultiplier);
+            player.inventorySystem.RemoveItem(this, 1);
+        }
+        else
+        {
+            NotificationSystem.ShowNotification("Already drank speed potion today.");
+        }
     }
     
 }

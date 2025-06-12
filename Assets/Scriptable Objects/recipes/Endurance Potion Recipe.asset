@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
   recipeName: Endurance Potion
   result: {fileID: 11400000, guid: 970914d80721aeb429bee6535acef991, type: 2}
-  resultQuantity: 1
+  resultQuantity: 3
   ingredients:
-  - item: {fileID: 11400000, guid: b44c813d8f1547a458ac3e6dd9cdd296, type: 2}
+  - item: {fileID: 11400000, guid: bdcae7569a6f40b41a9d87e7fc28eaf7, type: 2}
     quantity: 2
-  - item: {fileID: 11400000, guid: 23898785bc56ae249ac74ef76d1e553b, type: 2}
+  - item: {fileID: 11400000, guid: b543d8921206d3e46854f8a8c5cd5c08, type: 2}
     quantity: 1
-  - item: {fileID: 11400000, guid: d2224eea34a255f469b789dc9b905c88, type: 2}
+  - item: {fileID: 11400000, guid: 8f1be1fd45326944787156bc5c9b44ce, type: 2}
     quantity: 1
-  prerequisiteRecipes: []

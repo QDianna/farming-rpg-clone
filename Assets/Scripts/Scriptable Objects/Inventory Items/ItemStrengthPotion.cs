@@ -4,6 +4,7 @@ using UnityEngine;
 /// Strength solution item that helps plants survive cold seasons.
 /// Can only be used on valid plots during cold weather.
 /// </summary>
+
 [CreateAssetMenu(menuName = "Items/StrengthPotion")]
 public class ItemStrengthPotion : InventoryItem
 {
@@ -11,20 +12,14 @@ public class ItemStrengthPotion : InventoryItem
     
     public override void UseItem(PlayerController player)
     {
-        if (!player.plotlandController.CanAttendPlot(player.transform.position))
+        if (!player.plotlandController.CanAttendPlot(player.transform.position) || TimeSystem.Instance.IsCurrentSeasonWarm())
         {
-            // NotificationSystem.ShowNotification("No plants here that need strength potion");
-            return;
-        }
-        
-        if (TimeSystem.Instance.IsCurrentSeasonWarm())
-        {
-            NotificationSystem.ShowNotification("Plants don't need strength potion in warm season");
+            NotificationSystem.ShowNotification("You need to apply this potion to your crops in the cold time " +
+                                                "for them to sprout");
             return;
         }
         
         player.animator.SetTrigger("Plant");
-        
         if (starsEffectPrefab != null)
         {
             Instantiate(starsEffectPrefab, player.transform.position, Quaternion.identity);
@@ -32,7 +27,5 @@ public class ItemStrengthPotion : InventoryItem
         
         player.plotlandController.AttendPlot(player.transform.position);
         player.inventorySystem.RemoveItem(this, 1);
-        // NotificationSystem.ShowNotification("Applied strength potion to plants, " +
-         //                                   "now they will grow even in this harsh weather");
     }
 }

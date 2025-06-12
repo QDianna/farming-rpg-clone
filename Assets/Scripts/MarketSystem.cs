@@ -132,11 +132,14 @@ public class MarketSystem : MonoBehaviour
     // CRAFTING BENCH UPGRADE METHODS
     
     /// <summary>
-    /// Checks if crafting bench upgrade can be purchased (only after bench is purchased)
+    /// Checks if crafting bench upgrade can be purchased (only after bench is purchased and witch quest completed)
     /// </summary>
     public bool IsCraftingBenchUpgradeAvailable()
     {
-        return isCraftingBenchPurchased && !isCraftingBenchUpgraded;
+        return isCraftingBenchPurchased && 
+               !isCraftingBenchUpgraded && 
+               QuestsSystem.Instance != null && 
+               QuestsSystem.Instance.HasCompletedWitchQuest;
     }
     
     /// <summary>
@@ -266,6 +269,12 @@ public class MarketSystem : MonoBehaviour
         {
             ResearchSystem.Instance.OnTierUnlocked += OnTierUnlocked;
         }
+        
+        if (QuestsSystem.Instance != null)
+        {
+            QuestsSystem.Instance.OnWitchFirstMet += OnWitchFirstMet;
+            QuestsSystem.Instance.OnWitchQuestCompleted += OnWitchQuestCompleted;
+        }
     }
     
     /// <summary>
@@ -281,6 +290,12 @@ public class MarketSystem : MonoBehaviour
         if (ResearchSystem.Instance != null)
         {
             ResearchSystem.Instance.OnTierUnlocked -= OnTierUnlocked;
+        }
+        
+        if (QuestsSystem.Instance != null)
+        {
+            QuestsSystem.Instance.OnWitchFirstMet -= OnWitchFirstMet;
+            QuestsSystem.Instance.OnWitchQuestCompleted -= OnWitchQuestCompleted;
         }
     }
     
@@ -329,5 +344,28 @@ public class MarketSystem : MonoBehaviour
     private void OnTierUnlocked(int newTier)
     {
         RefreshDailyItems();
+    }
+    
+    /// <summary>
+    /// Handles witch first meeting event by unlocking structures
+    /// </summary>
+    private void OnWitchFirstMet()
+    {
+        UnlockResearchTable();
+        UnlockCraftingBench();
+    }
+    
+    /// <summary>
+    /// Handles witch quest completion event by unlocking crafting bench upgrade
+    /// </summary>
+    private void OnWitchQuestCompleted()
+    {
+        // Crafting bench upgrade becomes available after quest completion
+        // (But only if the bench has been purchased)
+        if (isCraftingBenchPurchased)
+        {
+            OnMarketDataChanged?.Invoke();
+            NotificationSystem.ShowNotification("Crafting bench upgrade is now available!");
+        }
     }
 }

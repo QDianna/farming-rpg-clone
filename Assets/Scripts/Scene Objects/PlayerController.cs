@@ -9,12 +9,16 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
     [SerializeField] private InputAction moveAction;
-    [SerializeField] private float movementSpeed = 6.0f;
+    [SerializeField] private float baseMovementSpeed = 6.0f;
+    [HideInInspector] public bool hasSpeedBuff;
+    private float speedMultiplier = 2f;
+    private float movementSpeed;
     
     [Header("Input Actions")]
     [SerializeField] private InputAction interactAction;
     [SerializeField] private InputAction toolAction;
     [SerializeField] private InputAction inventoryNavigationAction;
+    // [SerializeField] private InputAction inventoryOpenAction;
     [SerializeField] private InputAction useItemAction;
     
     [Header("System References")]
@@ -36,6 +40,26 @@ public class PlayerController : MonoBehaviour
     {
         InitializeComponents();
         EnableInputActions();
+    }
+    
+    private void Start()
+    {
+        movementSpeed = baseMovementSpeed;
+    
+        // Subscribe to day change event
+        if (TimeSystem.Instance != null)
+        {
+            TimeSystem.Instance.OnDayChange += RemoveSpeedBuff;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from events
+        if (TimeSystem.Instance != null)
+        {
+            TimeSystem.Instance.OnDayChange -= RemoveSpeedBuff;
+        }
     }
 
     private void Update()
@@ -99,6 +123,28 @@ public class PlayerController : MonoBehaviour
         playerRigidbody.MovePosition(newPosition);
     }
     
+    // Method to apply speed buff
+    public void ApplySpeedBuff(float multiplier)
+    {
+        speedMultiplier = multiplier;
+        movementSpeed = baseMovementSpeed * speedMultiplier;
+        hasSpeedBuff = true;
+    
+        NotificationSystem.ShowNotification($"Speed increased by {(multiplier - 1f) * 100f:F0}% for the rest of the day!");
+    }
+
+    // Method to remove speed buff (called on day change)
+    private void RemoveSpeedBuff()
+    {
+        if (hasSpeedBuff)
+        {
+            speedMultiplier = 1f;
+            movementSpeed = baseMovementSpeed;
+            hasSpeedBuff = false;
+            NotificationSystem.ShowNotification("Speed boost expired.");
+        }
+    }
+    
     // Processes all action inputs (interact, tool use, inventory)
     private void HandleActionInputs()
     {
@@ -110,6 +156,8 @@ public class PlayerController : MonoBehaviour
         
         if (useItemAction.triggered)
             inventorySystem.UseCurrentItem(this);
+
+        
             
         HandleInventoryNavigation();
         HandleToolSelection();
@@ -118,14 +166,20 @@ public class PlayerController : MonoBehaviour
     // Handles inventory scrolling with input action
     private void HandleInventoryNavigation()
     {
-        if (!inventoryNavigationAction.triggered)
+        /*if (inventoryOpenAction.triggered)
+        {
+            inventorySystem.ShowAllItems();
             return;
-            
-        float navigationInput = inventoryNavigationAction.ReadValue<float>();
-        if (navigationInput > 0.5f)
-            inventorySystem.GetNextItem();
-        else if (navigationInput < -0.5f)
-            inventorySystem.GetPreviousItem();
+        }*/
+
+        if (inventoryNavigationAction.triggered)
+        {
+            float navigationInput = inventoryNavigationAction.ReadValue<float>();
+            if (navigationInput > 0.5f)
+                inventorySystem.GetNextItem();
+            else if (navigationInput < -0.5f)
+                inventorySystem.GetPreviousItem();
+        }
     }
     
     // Handles numeric key tool selection

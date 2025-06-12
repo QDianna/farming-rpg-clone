@@ -12,7 +12,7 @@ public class NotificationSystem : MonoBehaviour
     
     private Queue<string> notificationQueue = new Queue<string>();
     private bool isProcessingNotification;
-    public float displayDuration = 2.5f;    
+    public float displayDuration = 2f;    
     public static event Action<string> OnShowNotification;
 
     private void Awake()

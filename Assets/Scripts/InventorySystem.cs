@@ -26,7 +26,7 @@ public class InventorySystem : MonoBehaviour
     public static InventorySystem Instance { get; private set; }
 
     [SerializeField] private List<InventoryEntry> items = new List<InventoryEntry>();
-    private int selectedItemIndex = -2;
+    [HideInInspector] public int selectedItemIndex = -2;
 
     public event System.Action OnSelectedItemChange;
     public event System.Action OnInventoryChanged;
@@ -99,6 +99,14 @@ public class InventorySystem : MonoBehaviour
         OnSelectedItemChange?.Invoke();
     }
 
+    /*public void ShowAllItems()
+    {
+        if (items.Count == 0) 
+        return;
+
+        OnInventoryOpened?.Invoke();
+    }*/
+
     public void AddItem(InventoryItem item, int amount)
     {
         var existingEntry = FindItemEntry(item);
@@ -159,34 +167,6 @@ public class InventorySystem : MonoBehaviour
         OnInventoryItemClicked?.Invoke(item);
     }
     
-    public int GetItemQuantity(InventoryItem item)
-    {
-        if (item == null) 
-            return 0;
-    
-        int totalQuantity = 0;
-        foreach (var entry in items)
-        {
-            if (entry.item == item)
-                totalQuantity += entry.quantity;
-        }
-        return totalQuantity;
-    }
-
-    public List<InventoryItem> GetSellableItems()
-    {
-        var sellableItems = new List<InventoryItem>();
-    
-        foreach (var entry in items)
-        {
-            if (IsSellableItem(entry) && !sellableItems.Contains(entry.item))
-            {
-                sellableItems.Add(entry.item);
-            }
-        }
-        return sellableItems;
-    }
-    
     // Sets up singleton instance
     private void InitializeSingleton()
     {
@@ -240,11 +220,5 @@ public class InventorySystem : MonoBehaviour
     {
         OnSelectedItemChange?.Invoke();
         OnInventoryChanged?.Invoke();
-    }
-    
-    // Checks if inventory entry represents a sellable item
-    private bool IsSellableItem(InventoryEntry entry)
-    {
-        return entry.item?.canBeSold == true && entry.quantity > 0;
     }
 }

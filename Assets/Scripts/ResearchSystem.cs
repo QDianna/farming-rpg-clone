@@ -44,6 +44,7 @@ public class ResearchSystem : MonoBehaviour
     private void Start()
     {
         LoadCraftingRecipes();
+        researchedIngredients.Add("Rare Flower"); // Pre-research rare flower
     }
     
     // Researches ingredient and processes unlocks, or shows existing research

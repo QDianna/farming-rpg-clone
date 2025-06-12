@@ -10,7 +10,7 @@ public class InteractionSleep : MonoBehaviour, IInteractable
     {
         if (other.TryGetComponent<PlayerController>(out _))
         {
-            // NotificationSystem.ShowNotification("Press E to sleep and skip this night!");
+            NotificationSystem.ShowNotification("Press E to sleep and skip this night!");
             InteractionSystem.Instance.SetCurrentInteractable(this);
         }
     }
@@ -26,14 +26,9 @@ public class InteractionSleep : MonoBehaviour, IInteractable
     public void Interact(PlayerController player)
     {
         // Attempts to skip to next day through time system
-        if (TimeSystem.Instance != null && TimeSystem.Instance.CanSleep())
-        {
-            TimeSystem.Instance.SkipNight();
-            NotificationSystem.ShowNotification("Good night! Skipping to next day...");
-        }
-        else
-        {
-            NotificationSystem.ShowNotification("You can only sleep between 6pm and 6am");
-        }
+        if (TimeSystem.Instance == null) return;
+        
+        TimeSystem.Instance.SkipNight();
+        NotificationSystem.ShowNotification("Good night! Skipping to next day...");
     }
 }

@@ -78,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 272308574, guid: 717e4089a8b587d48be7e9636c485cc9, type: 3}
+  m_Sprite: {fileID: 272308574, guid: ba1d418f7060a98428edbf6f0d36aa64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 1}
+  m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -103,9 +103,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   harvestableItem: {fileID: 11400000, guid: b543d8921206d3e46854f8a8c5cd5c08, type: 2}
   collectAmount: 1
-  readyStageSprite: {fileID: -115230935, guid: c339f8b7b3af8e042ace4c4cd3d39708, type: 3}
-  growingStageSprite: {fileID: -783504806, guid: 4038e15739dd2be498076e728299f386, type: 3}
+  readyStageSprite: {fileID: 272308574, guid: ba1d418f7060a98428edbf6f0d36aa64, type: 3}
+  growingStageSprite: {fileID: -115230935, guid: ba1d418f7060a98428edbf6f0d36aa64, type: 3}
   regrowthTime: 10
+  season: 1
 --- !u!61 &4288967050750866361
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,9 +144,9 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.8}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1, y: 2}
-    newSize: {x: 0.5, y: 1}
+    newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

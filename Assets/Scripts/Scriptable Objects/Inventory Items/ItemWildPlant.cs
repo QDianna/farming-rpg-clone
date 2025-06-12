@@ -3,8 +3,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/WildPlant")]
 public class ItemWildPlant : InventoryItem
 {
+    [Header("Wild Plant Properties")]
+    [SerializeField] private float energyRestoreAmount = 20f;
     public override void UseItem(PlayerController player)
     {
-        NotificationSystem.ShowNotification($"{this.name} can be used to craft potions!");
+        if (!player || !player.playerStats) return;
+        
+        player.playerStats.RestoreEnergy(energyRestoreAmount);
+        player.inventorySystem.RemoveItem(this, 1);
+        NotificationSystem.ShowNotification($"Ate {name} (+{energyRestoreAmount} energy)");
     }
 }

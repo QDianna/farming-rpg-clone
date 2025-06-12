@@ -49,6 +49,9 @@ public class TimeSystem : MonoBehaviour
         if (currentTime <= 24f)
             currentDay++;
         
+        if (currentDay % daysPerSeason == 0)
+            currentSeasonIndex = (currentSeasonIndex + 1) % Seasons.Count;
+        
         currentTime = 6f;
         OnDayChange?.Invoke();
     }

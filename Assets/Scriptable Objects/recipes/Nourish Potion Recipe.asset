@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: Nourish Potion
   result: {fileID: 11400000, guid: 7c8b2d413fa771f4d895682e3636b20d, type: 2}
-  resultQuantity: 3
+  resultQuantity: 12
   ingredients:
   - item: {fileID: 11400000, guid: bb69fbc96e57eee4aa0f78539332d899, type: 2}
     quantity: 2
   - item: {fileID: 11400000, guid: 8a6382ab547bdda4c95dc1f525c29151, type: 2}
     quantity: 2
-  prerequisiteRecipes: []

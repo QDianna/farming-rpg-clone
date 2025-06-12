@@ -9,8 +9,9 @@ public class PlayerStats : MonoBehaviour
 {
     [Header("Stat Configuration")]
     [SerializeField] private float hungerLossRate = 5f;
-    [SerializeField] private float hungerHealthLossRate = 10f;
-    [SerializeField] private float energyLossRate = 5f;
+    [SerializeField] private float starvingHealthLossRate = 10f;
+    [HideInInspector] public bool hasEnduranceBuff;
+    private float energyMultiplier = 1f;
 
     private float hunger = 100f;
     private float health = 100f;
@@ -20,6 +21,24 @@ public class PlayerStats : MonoBehaviour
     public event Action<float> OnHealthChange;
     public event Action<float> OnEnergyChange;
 
+    private void Start()
+    {
+        // Subscribe to day change event
+        if (TimeSystem.Instance != null)
+        {
+            TimeSystem.Instance.OnDayChange += RemoveEnduranceBuff;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from events
+        if (TimeSystem.Instance != null)
+        {
+            TimeSystem.Instance.OnDayChange -= RemoveEnduranceBuff;
+        }
+    }
+    
     private void Update()
     {
         UpdateHungerDegradation();
@@ -55,6 +74,11 @@ public class PlayerStats : MonoBehaviour
     {
         SetHunger(hunger + amount);
     }
+
+    public void RestoreEnergy(float amount)
+    {
+        SetEnergy(energy + amount);
+    }
     
     // Applies gradual hunger loss over time
     private void UpdateHungerDegradation()
@@ -68,9 +92,36 @@ public class PlayerStats : MonoBehaviour
     {
         if (hunger <= 0f)
         {
-            float healthLoss = hungerHealthLossRate / 60f * Time.deltaTime;
+            float healthLoss = starvingHealthLossRate / 60f * Time.deltaTime;
             SetHealth(health - healthLoss);
         }
+    }
+    
+    // Method to apply endurance buff
+    public void ApplyEnduranceBuff(float multiplier)
+    {
+        energyMultiplier = multiplier;
+        hasEnduranceBuff = true;
+    
+        NotificationSystem.ShowNotification($"Energy consumption reduced by {(1f - multiplier) * 100f:F0}% for the rest of the day!");
+    }
+    
+    // Method to remove endurance buff (called on day change)
+    private void RemoveEnduranceBuff()
+    {
+        if (hasEnduranceBuff)
+        {
+            energyMultiplier = 1f;
+            hasEnduranceBuff = false;
+            NotificationSystem.ShowNotification("Endurance boost expired.");
+        }
+    }
+    
+    // Method to consume energy with endurance buff consideration
+    public void ConsumeEnergy(float amount)
+    {
+        float actualConsumption = amount * energyMultiplier;
+        SetEnergy(energy - actualConsumption);
     }
     
     // Handles game over condition when health reaches zero

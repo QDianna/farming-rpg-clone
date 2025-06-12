@@ -13,6 +13,8 @@ public class ItemCrop : InventoryItem
     public override void UseItem(PlayerController player)
     {
         // Restore hunger and consume item
+        if (!player || !player.playerStats) return;
+        
         player.playerStats.RestoreHunger(hungerRestoreValue);
         player.inventorySystem.RemoveItem(this, 1);
         NotificationSystem.ShowNotification($"Ate {name} (+{hungerRestoreValue} hunger)");

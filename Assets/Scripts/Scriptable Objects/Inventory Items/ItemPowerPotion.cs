@@ -6,9 +6,19 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/PowerPotion")]
 public class ItemPowerPotion : InventoryItem
 {
+    [SerializeField] private GameObject starsEffectPrefab;
+    
     public override void UseItem(PlayerController player)
     {
-        Debug.Log("Use power solution");
+        player.animator.SetTrigger("Plant"); // Application animation
+        
+        if (starsEffectPrefab != null)
+        {
+            Instantiate(starsEffectPrefab, player.transform.position, Quaternion.identity);
+        }
+        
+        // Apply farm-wide protection
+        player.plotlandController.ApplyFarmProtection();
         player.inventorySystem.RemoveItem(this, 1);
     }
     

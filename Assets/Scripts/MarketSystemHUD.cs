@@ -389,7 +389,7 @@ public class MarketSystemHUD : MonoBehaviour
         {
             // Show message if no structures available (but only if witch has been met)
             var noStructuresLabel = new Label("No structures available");
-            noStructuresLabel.AddToClassList("market-upgraded");
+            noStructuresLabel.AddToClassList("market-section-title");
             buyItemsContainer.Add(noStructuresLabel);
         }
     }
@@ -449,7 +449,7 @@ public class MarketSystemHUD : MonoBehaviour
         nameLabel.AddToClassList("upgrade-name");
         benchElement.Add(nameLabel);
         
-        var descLabel = new Label("Essential crafting station");
+        var descLabel = new Label("Unlocks crafting potion recipes");
         descLabel.AddToClassList("upgrade-description");
         benchElement.Add(descLabel);
         

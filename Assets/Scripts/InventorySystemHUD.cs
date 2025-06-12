@@ -13,10 +13,12 @@ public class InventorySystemHUD : MonoBehaviour
     [SerializeField] private InteractionMarket market;
     [SerializeField] private InteractionResearchItem researchTable;
 
+    private Label tooltipsLabel;
     private VisualElement selectedItemContainer;
     private VisualElement inventoryContainer;
     private VisualElement inventoryItemsContainer;
     private readonly List<VisualElement> inventorySlots = new List<VisualElement>();
+    private bool isInventoryOpenForTab = false;
 
     private void Awake()
     {
@@ -42,6 +44,8 @@ public class InventorySystemHUD : MonoBehaviour
         selectedItemContainer = root.Q<VisualElement>("SelectedItemContainer");
         inventoryContainer = root.Q<VisualElement>("InventoryContainer");
         inventoryItemsContainer = inventoryContainer.Q<VisualElement>("InventoryItemsContainer");
+        tooltipsLabel = root.Q<Label>("Tooltips");
+        tooltipsLabel.style.display = DisplayStyle.None;
         
         HideFullInventory();
     }
@@ -125,6 +129,27 @@ public class InventorySystemHUD : MonoBehaviour
             researchTable.OnTableClosed -= HideFullInventory;
         }
     }
+    private void RegisterTooltip(VisualElement target, string text)
+    {
+        target.RegisterCallback<MouseEnterEvent>(evt =>
+        {
+            tooltipsLabel.text = text;
+            tooltipsLabel.style.display = DisplayStyle.Flex;
+        });
+
+        target.RegisterCallback<MouseLeaveEvent>(evt =>
+        {
+            tooltipsLabel.style.display = DisplayStyle.None;
+        });
+
+        target.RegisterCallback<MouseMoveEvent>(evt =>
+        {
+            tooltipsLabel.style.left = evt.mousePosition.x + 10;
+            tooltipsLabel.style.top = evt.mousePosition.y + 10;
+        });
+    }
+
+    
     
     // Updates selected item HUD with current selection
     private void UpdateSelectedItemDisplay()
@@ -137,6 +162,9 @@ public class InventorySystemHUD : MonoBehaviour
         {
             selectedItemIcon.style.backgroundImage = new StyleBackground(selectedItem.sprite);
             selectedItemQuantity.text = "x" + InventorySystem.Instance.GetSelectedItemQuantity();
+            
+            RegisterTooltip(selectedItemContainer, selectedItem.newName);
+            
         }
         else
         {
@@ -200,6 +228,9 @@ public class InventorySystemHUD : MonoBehaviour
         
         inventoryItemsContainer.Add(slotContainer);
         inventorySlots.Add(slotContainer);
+        
+        RegisterTooltip(slotContainer, entry.item.newName);
+
     }
     
     // Creates the main slot container element
