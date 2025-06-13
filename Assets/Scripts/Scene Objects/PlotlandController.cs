@@ -128,6 +128,12 @@ public class PlotlandController : MonoBehaviour
         
         SetupPlantedPlot(tilePos, seedItem);
         DisplayCropStage(tilePos, seedItem, 0);
+        
+        // Apply protection to new plants if farm is currently protected
+        if (farmProtected)
+        {
+            plotStates[tilePos].isProtected = true;
+        }
     }
     
     // Applies strength potion effect to planted crop
@@ -182,7 +188,7 @@ public class PlotlandController : MonoBehaviour
         plotData.nourishMultiplier = multiplier;
     }
     
-    // Applies power potion protection to entire farm
+    // Applies power potion protection to entire farm until next weather event
     public void ApplyFarmProtection()
     {
         farmProtected = true;
@@ -196,8 +202,9 @@ public class PlotlandController : MonoBehaviour
         }
         
         NotificationSystem.ShowDialogue("Farm-wide protection active! " +
-                                        "The land is shielded against corruption for today.", 2f);
-
+                                        "The land is shielded against the next corruption event.", 2f);
+        
+        Debug.Log("[PlotlandController] Farm protection applied");
     }
     
     // Heals all infected plants across the farm with heal potion
@@ -225,6 +232,20 @@ public class PlotlandController : MonoBehaviour
                                             $"The corruption has been cleansed.", 2f);
         else
             NotificationSystem.ShowHelp("No infected plants found to heal.");
+    }
+    
+    // Removes farm protection after it has been used
+    private void RemoveFarmProtection()
+    {
+        farmProtected = false;
+        
+        foreach (var plotData in plotStates.Values)
+        {
+            plotData.isProtected = false;
+        }
+        
+        NotificationSystem.ShowHelp("Farm protection has been consumed.");
+        Debug.Log("[PlotlandController] Farm protection consumed by weather event");
     }
     
     // Scans all tilemaps and creates plot data entries
@@ -273,11 +294,6 @@ public class PlotlandController : MonoBehaviour
             WeatherSystem.Instance.OnFreeze += HandleFreeze;
             WeatherSystem.Instance.OnDisease += HandleDisease;
         }
-        
-        if (TimeSystem.Instance != null)
-        {
-            TimeSystem.Instance.OnDayChange += ResetFarmProtection;
-        }
     }
     
     private void UnsubscribeFromWeatherEvents()
@@ -288,37 +304,15 @@ public class PlotlandController : MonoBehaviour
             WeatherSystem.Instance.OnFreeze -= HandleFreeze;
             WeatherSystem.Instance.OnDisease -= HandleDisease;
         }
-    
-        if (TimeSystem.Instance != null)
-        {
-            TimeSystem.Instance.OnDayChange -= ResetFarmProtection;
-        }
     }
     
-    // Resets farm protection at the end of each day
-    private void ResetFarmProtection()
-    {
-        if (farmProtected)
-        {
-            farmProtected = false;
-            
-            foreach (var plotData in plotStates.Values)
-            {
-                plotData.isProtected = false;
-            }
-            
-            NotificationSystem.ShowHelp("Farm protection expired.");
-        }
-    }
-    
-// Update only the weather event handlers in PlotlandController:
-
-// Handles storm weather event with protection checks
+    // Handles storm weather event with protection checks
     private void HandleStorm()
     {
         if (farmProtected)
         {
-            NotificationSystem.ShowHelp("Power Potion shields the land from the storm’s corruption!");
+            NotificationSystem.ShowHelp("Power Potion shields the land from the storm's corruption!");
+            RemoveFarmProtection(); // Consume the protection
             return;
         }
     
@@ -336,12 +330,13 @@ public class PlotlandController : MonoBehaviour
             NotificationSystem.ShowDialogue($"Corrupted storm destroyed {plantsToDestroy} crops!", 2f);
     }
 
-// Handles freeze weather event with protection checks  
+    // Handles freeze weather event with protection checks  
     private void HandleFreeze()
     {
         if (farmProtected)
         {
             NotificationSystem.ShowHelp("Power Potion shields the crops from the unnatural cold!");
+            RemoveFarmProtection(); // Consume the protection
             return;
         }
     
@@ -359,7 +354,7 @@ public class PlotlandController : MonoBehaviour
             NotificationSystem.ShowDialogue($"Corrupted frost damaged {plantsToFreeze} crops!", 2f);
     }
 
-// Handles disease outbreak, infecting 30-60% of planted crops
+    // Handles disease outbreak, infecting 30-60% of planted crops
     private void HandleDisease()
     {
         var plantedPlots = GetPlantedPlots();

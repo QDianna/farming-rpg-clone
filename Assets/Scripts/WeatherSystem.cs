@@ -188,7 +188,7 @@ public class WeatherSystem : MonoBehaviour
     private WeatherEvent GenerateWeatherForSeason(Season season, int currentDay)
     {
         // First 3 days are always clear for tutorial
-        if (currentDay <= 2) // Tomorrow will be day 2, 3, or 4
+        if (currentDay <= 1)
         {
             Debug.Log($"[Weather] Protection period - Clear weather for tomorrow (Day {currentDay + 1})");
             return WeatherEvent.Clear;

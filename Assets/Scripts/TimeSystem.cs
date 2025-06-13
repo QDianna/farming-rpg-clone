@@ -18,12 +18,12 @@ public class TimeSystem : MonoBehaviour
     public static TimeSystem Instance { get; private set; }
     
     [Header("Time Settings")]
-    [SerializeField] private float timeProgressionSpeed = 1f;
-    [SerializeField] private int daysPerSeason = 4;
+    [SerializeField] private float timeProgressionSpeed ;
+    [SerializeField] private int daysPerSeason;
+    [SerializeField] private int currentSeasonIndex;
     
     private static readonly List<Season> Seasons = new() { Season.Spring, Season.Summer, Season.Autumn, Season.Winter };
     
-    private int currentSeasonIndex;
     private int currentDay = 1;
     private float currentTime = 6f; // Start at 6 AM
     private int cachedHour = 6;
