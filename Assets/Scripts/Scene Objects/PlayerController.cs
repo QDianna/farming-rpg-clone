@@ -130,7 +130,8 @@ public class PlayerController : MonoBehaviour
         movementSpeed = baseMovementSpeed * speedMultiplier;
         hasSpeedBuff = true;
     
-        NotificationSystem.ShowNotification($"Speed increased by {(multiplier - 1f) * 100f:F0}% for the rest of the day!");
+        NotificationSystem.ShowDialogue($"Speed increased by {(multiplier - 1f) * 100f:F0}% " +
+                                        $"for the rest of the day!", 1f);
     }
 
     // Method to remove speed buff (called on day change)
@@ -141,7 +142,7 @@ public class PlayerController : MonoBehaviour
             speedMultiplier = 1f;
             movementSpeed = baseMovementSpeed;
             hasSpeedBuff = false;
-            NotificationSystem.ShowNotification("Speed boost expired.");
+            NotificationSystem.ShowHelp("Speed boost expired.");
         }
     }
     

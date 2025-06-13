@@ -23,7 +23,7 @@ public class ItemSeed : InventoryItem
     {
         if (!CanPlantInCurrentSeason())
         {
-            NotificationSystem.ShowNotification($"Cannot plant {name} in this season!");
+            NotificationSystem.ShowHelp($"Cannot plant {name} in this season!");
             return;
         }
         

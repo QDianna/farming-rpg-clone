@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// Market UI system managing buy/sell interface with inventory integration.
-/// Handles daily seed display, sell slot management, crafting bench upgrade, and research table purchases.
+/// Market UI system managing buy/sell interface display only.
+/// Pure UI layer - no business logic, just displays data from MarketSystem and InteractionMarket.
 /// </summary>
 public class MarketSystemHUD : MonoBehaviour
 {
@@ -34,9 +34,6 @@ public class MarketSystemHUD : MonoBehaviour
     
     // SETUP AND EVENT HANDLING
     
-    /// <summary>
-    /// Sets up UI element references and initial state
-    /// </summary>
     private void SetupUIReferences()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
@@ -59,9 +56,6 @@ public class MarketSystemHUD : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Sets up event subscriptions for market and inventory systems
-    /// </summary>
     private void SubscribeToEvents()
     {
         if (market != null)
@@ -76,11 +70,13 @@ public class MarketSystemHUD : MonoBehaviour
         {
             InventorySystem.Instance.OnInventoryItemClicked += OnInventoryItemClicked;
         }
+        
+        if (MarketSystem.Instance != null)
+        {
+            MarketSystem.Instance.OnMarketDataChanged += UpdateBuyItemsDisplay;
+        }
     }
     
-    /// <summary>
-    /// Removes event subscriptions
-    /// </summary>
     private void UnsubscribeFromEvents()
     {
         if (market != null)
@@ -95,13 +91,15 @@ public class MarketSystemHUD : MonoBehaviour
         {
             InventorySystem.Instance.OnInventoryItemClicked -= OnInventoryItemClicked;
         }
+        
+        if (MarketSystem.Instance != null)
+        {
+            MarketSystem.Instance.OnMarketDataChanged -= UpdateBuyItemsDisplay;
+        }
     }
     
     // EVENT HANDLERS
     
-    /// <summary>
-    /// Shows market interface and updates all displays
-    /// </summary>
     private void OnMarketOpened()
     {
         if (marketContainer != null)
@@ -111,9 +109,6 @@ public class MarketSystemHUD : MonoBehaviour
         UpdateAllDisplays();
     }
     
-    /// <summary>
-    /// Hides market interface
-    /// </summary>
     private void OnMarketClosed()
     {
         if (marketContainer != null)
@@ -122,25 +117,17 @@ public class MarketSystemHUD : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Updates displays after transaction completion
-    /// </summary>
     private void OnTransactionCompleted()
     {
         UpdateAllDisplays();
     }
     
-    /// <summary>
-    /// Handles confirm sale button clicks
-    /// </summary>
     private void OnConfirmSaleClicked()
     {
         market?.ConfirmSale();
     }
     
-    /// <summary>
-    /// Handles inventory item clicks when market is open
-    /// </summary>
+    // Handle inventory clicks when market is open
     private void OnInventoryItemClicked(InventoryItem item)
     {
         if (IsMarketOpen())
@@ -151,17 +138,11 @@ public class MarketSystemHUD : MonoBehaviour
     
     // UTILITY METHODS
     
-    /// <summary>
-    /// Checks if market interface is currently open
-    /// </summary>
     private bool IsMarketOpen()
     {
         return market != null && marketContainer != null && marketContainer.style.display == DisplayStyle.Flex;
     }
     
-    /// <summary>
-    /// Updates all market display components
-    /// </summary>
     private void UpdateAllDisplays()
     {
         UpdateSellSlotsDisplay();
@@ -169,11 +150,8 @@ public class MarketSystemHUD : MonoBehaviour
         UpdateMoneyDisplay();
     }
     
-    // SELL SECTION METHODS
+    // SELL SECTION
     
-    /// <summary>
-    /// Updates sell slots with current items and total value
-    /// </summary>
     private void UpdateSellSlotsDisplay()
     {
         if (sellSlotsContainer == null || market == null) 
@@ -191,9 +169,6 @@ public class MarketSystemHUD : MonoBehaviour
         UpdateSellTotalAndButton();
     }
     
-    /// <summary>
-    /// Updates total sell value and confirm button state
-    /// </summary>
     private void UpdateSellTotalAndButton()
     {
         if (totalValue != null)
@@ -208,9 +183,6 @@ public class MarketSystemHUD : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Creates UI element for sell slot
-    /// </summary>
     private VisualElement CreateSellSlotElement(MarketSellSlot slot, int index)
     {
         var slotElement = new VisualElement();
@@ -228,9 +200,6 @@ public class MarketSystemHUD : MonoBehaviour
         return slotElement;
     }
     
-    /// <summary>
-    /// Adds content to sell slot element
-    /// </summary>
     private void AddSellSlotContent(VisualElement slotElement, MarketSellSlot slot, int index)
     {
         var icon = new VisualElement();
@@ -245,11 +214,8 @@ public class MarketSystemHUD : MonoBehaviour
         slotElement.RegisterCallback<ClickEvent>(_ => market.TryRemoveItemFromSell(index, 1));
     }
     
-    // BUY SECTION METHODS
+    // BUY SECTION
     
-    /// <summary>
-    /// Rebuilds buy items display with seeds and upgrades
-    /// </summary>
     private void UpdateBuyItemsDisplay()
     {
         if (buyItemsContainer == null || market == null) 
@@ -261,12 +227,9 @@ public class MarketSystemHUD : MonoBehaviour
         AddStructuresSection();
     }
     
-    /// <summary>
-    /// Adds seeds section to buy display
-    /// </summary>
     private void AddSeedsSection()
     {
-        // Create combined title with tier info
+        // Create title with tier info
         var seedTitleWithTier = "";
         if (ResearchSystem.Instance != null)
         {
@@ -284,9 +247,6 @@ public class MarketSystemHUD : MonoBehaviour
         AddAvailableSeeds();
     }
     
-    /// <summary>
-    /// Adds available seeds or no seeds message
-    /// </summary>
     private void AddAvailableSeeds()
     {
         var availableItems = market.GetAvailableItems();
@@ -311,9 +271,6 @@ public class MarketSystemHUD : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Creates UI element for buy-able item
-    /// </summary>
     private VisualElement CreateBuyItemElement(InventoryItem item)
     {
         var itemElement = new VisualElement();
@@ -329,56 +286,53 @@ public class MarketSystemHUD : MonoBehaviour
         priceLabel.AddToClassList("item-price");
         itemElement.Add(priceLabel);
         
+        // Just trigger the action - let InteractionMarket handle the logic
         itemElement.RegisterCallback<ClickEvent>(_ => market.TryBuyItem(item, 1));
         return itemElement;
     }
     
-    // STRUCTURES SECTION METHODS
+    // STRUCTURES SECTION
     
-    /// <summary>
-    /// Adds structures section to buy display
-    /// </summary>
+    // Only show structures if player has met the witch
     private void AddStructuresSection()
     {
-        // Only show structures if player has met the witch
         if (QuestsSystem.Instance == null || !QuestsSystem.Instance.HasMetWitch)
         {
-            return; // Don't show any structures if witch hasn't been met
+            return;
         }
         
-        // Create structures section header
         var structuresTitle = new Label("Structures Available");
         structuresTitle.AddToClassList("market-section-title");
         buyItemsContainer.Add(structuresTitle);
         
-        // Create container for structures
         var structuresContainer = new VisualElement();
         structuresContainer.AddToClassList("structures-container");
         
         bool hasStructures = false;
         
-        // Add crafting bench purchase if available
-        if (market.IsCraftingBenchAvailable())
+        // Use MarketSystem directly for availability checks
+        if (MarketSystem.Instance != null)
         {
-            var craftingBenchElement = CreateCraftingBenchElement();
-            structuresContainer.Add(craftingBenchElement);
-            hasStructures = true;
-        }
-        
-        // Add crafting bench upgrade if available (only after bench is purchased)
-        if (market.IsCraftingBenchUpgradeAvailable())
-        {
-            var upgradeElement = CreateCraftingBenchUpgradeElement();
-            structuresContainer.Add(upgradeElement);
-            hasStructures = true;
-        }
-        
-        // Add research table if available
-        if (market.IsResearchTableAvailable())
-        {
-            var researchTableElement = CreateResearchTableElement();
-            structuresContainer.Add(researchTableElement);
-            hasStructures = true;
+            if (MarketSystem.Instance.IsCraftingBenchAvailable())
+            {
+                var craftingBenchElement = CreateCraftingBenchElement();
+                structuresContainer.Add(craftingBenchElement);
+                hasStructures = true;
+            }
+            
+            if (MarketSystem.Instance.IsCraftingBenchUpgradeAvailable())
+            {
+                var upgradeElement = CreateCraftingBenchUpgradeElement();
+                structuresContainer.Add(upgradeElement);
+                hasStructures = true;
+            }
+            
+            if (MarketSystem.Instance.IsResearchTableAvailable())
+            {
+                var researchTableElement = CreateResearchTableElement();
+                structuresContainer.Add(researchTableElement);
+                hasStructures = true;
+            }
         }
         
         if (hasStructures)
@@ -387,18 +341,14 @@ public class MarketSystemHUD : MonoBehaviour
         }
         else
         {
-            // Show message if no structures available (but only if witch has been met)
             var noStructuresLabel = new Label("No structures available");
             noStructuresLabel.AddToClassList("market-section-title");
             buyItemsContainer.Add(noStructuresLabel);
         }
     }
     
-    // STRUCTURE ELEMENT CREATION METHODS
+    // STRUCTURE ELEMENT CREATION
     
-    /// <summary>
-    /// Creates UI element for crafting bench purchase
-    /// </summary>
     private VisualElement CreateCraftingBenchElement()
     {
         var benchElement = new VisualElement();
@@ -410,9 +360,6 @@ public class MarketSystemHUD : MonoBehaviour
         return benchElement;
     }
     
-    /// <summary>
-    /// Creates UI element for crafting bench upgrade
-    /// </summary>
     private VisualElement CreateCraftingBenchUpgradeElement()
     {
         var upgradeElement = new VisualElement();
@@ -424,9 +371,6 @@ public class MarketSystemHUD : MonoBehaviour
         return upgradeElement;
     }
     
-    /// <summary>
-    /// Creates UI element for research table purchase
-    /// </summary>
     private VisualElement CreateResearchTableElement()
     {
         var tableElement = new VisualElement();
@@ -438,11 +382,8 @@ public class MarketSystemHUD : MonoBehaviour
         return tableElement;
     }
     
-    // STRUCTURE LABEL METHODS
+    // STRUCTURE LABELS - Pure display, no logic
     
-    /// <summary>
-    /// Adds labels to crafting bench purchase element
-    /// </summary>
     private void AddCraftingBenchLabels(VisualElement benchElement)
     {
         var nameLabel = new Label("Crafting Bench Structure");
@@ -453,15 +394,14 @@ public class MarketSystemHUD : MonoBehaviour
         descLabel.AddToClassList("upgrade-description");
         benchElement.Add(descLabel);
         
-        int benchCost = market.GetCraftingBenchCost();
-        var priceLabel = new Label($"{benchCost} coins");
+        // Just display prices from MarketSystem
+        int benchCost = MarketSystem.Instance.GetCraftingBenchCost();
+        int woodCost = MarketSystem.Instance.GetCraftingBenchWoodCost();
+        var priceLabel = new Label($"{benchCost} coins\n{woodCost} wood");
         priceLabel.AddToClassList("upgrade-price");
         benchElement.Add(priceLabel);
     }
     
-    /// <summary>
-    /// Adds labels to crafting bench upgrade element
-    /// </summary>
     private void AddCraftingBenchUpgradeLabels(VisualElement upgradeElement)
     {
         var nameLabel = new Label("Crafting Bench Upgrade");
@@ -472,15 +412,13 @@ public class MarketSystemHUD : MonoBehaviour
         descLabel.AddToClassList("upgrade-description");
         upgradeElement.Add(descLabel);
         
-        int upgradeCost = market.GetCraftingBenchUpgradeCost();
+        // Just display price from MarketSystem
+        int upgradeCost = MarketSystem.Instance.GetCraftingBenchUpgradeCost();
         var priceLabel = new Label($"{upgradeCost} coins");
         priceLabel.AddToClassList("upgrade-price");
         upgradeElement.Add(priceLabel);
     }
     
-    /// <summary>
-    /// Adds labels to research table element
-    /// </summary>
     private void AddResearchTableLabels(VisualElement tableElement)
     {
         var nameLabel = new Label("Research Table Structure");
@@ -491,85 +429,48 @@ public class MarketSystemHUD : MonoBehaviour
         descLabel.AddToClassList("upgrade-description");
         tableElement.Add(descLabel);
         
-        int tableCost = market.GetResearchTableCost();
-        var priceLabel = new Label($"{tableCost} coins");
+        // Just display prices from MarketSystem
+        int tableCost = MarketSystem.Instance.GetResearchTableCost();
+        int woodCost = MarketSystem.Instance.GetResearchTableWoodCost();
+        var priceLabel = new Label($"{tableCost} coins\n{woodCost} wood");
         priceLabel.AddToClassList("upgrade-price");
         tableElement.Add(priceLabel);
     }
     
-    // STRUCTURE BUTTON METHODS
+    // STRUCTURE BUTTONS - Pure UI, no business logic
     
-    /// <summary>
-    /// Adds purchase button to crafting bench element
-    /// </summary>
     private void AddCraftingBenchPurchaseButton(VisualElement benchElement)
     {
-        int benchCost = market.GetCraftingBenchCost();
         var buyButton = new Button(() => market.TryBuyCraftingBench())
         {
             text = "buy"
         };
         buyButton.AddToClassList("upgrade-button");
-        
-        bool canAfford = market.playerEconomy.CanAfford(benchCost);
-        buyButton.SetEnabled(canAfford);
-        if (!canAfford)
-        {
-            buyButton.AddToClassList("disabled");
-        }
-        
         benchElement.Add(buyButton);
     }
     
-    /// <summary>
-    /// Adds purchase button to crafting bench upgrade element
-    /// </summary>
     private void AddCraftingBenchUpgradePurchaseButton(VisualElement upgradeElement)
     {
-        int upgradeCost = market.GetCraftingBenchUpgradeCost();
         var buyButton = new Button(() => market.TryBuyUpgrade())
         {
             text = "buy"
         };
         buyButton.AddToClassList("upgrade-button");
-        
-        bool canAfford = market.playerEconomy.CanAfford(upgradeCost);
-        buyButton.SetEnabled(canAfford);
-        if (!canAfford)
-        {
-            buyButton.AddToClassList("disabled");
-        }
-        
         upgradeElement.Add(buyButton);
     }
     
-    /// <summary>
-    /// Adds purchase button to research table element
-    /// </summary>
     private void AddResearchTablePurchaseButton(VisualElement tableElement)
     {
-        int tableCost = market.GetResearchTableCost();
         var buyButton = new Button(() => market.TryBuyResearchTable())
         {
             text = "buy"
         };
         buyButton.AddToClassList("upgrade-button");
-        
-        bool canAfford = market.playerEconomy.CanAfford(tableCost);
-        buyButton.SetEnabled(canAfford);
-        if (!canAfford)
-        {
-            buyButton.AddToClassList("disabled");
-        }
-        
         tableElement.Add(buyButton);
     }
     
-    // MONEY DISPLAY METHOD
+    // MONEY DISPLAY
     
-    /// <summary>
-    /// Updates player money display
-    /// </summary>
     private void UpdateMoneyDisplay()
     {
         if (playerMoney != null && market?.playerEconomy != null)

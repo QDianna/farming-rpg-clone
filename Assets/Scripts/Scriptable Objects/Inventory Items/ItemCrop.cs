@@ -17,6 +17,6 @@ public class ItemCrop : InventoryItem
         
         player.playerStats.RestoreHunger(hungerRestoreValue);
         player.inventorySystem.RemoveItem(this, 1);
-        NotificationSystem.ShowNotification($"Ate {name} (+{hungerRestoreValue} hunger)");
+        NotificationSystem.ShowHelp($"Ate {name} (+{hungerRestoreValue} hunger)");
     }
 }

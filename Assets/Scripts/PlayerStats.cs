@@ -103,7 +103,8 @@ public class PlayerStats : MonoBehaviour
         energyMultiplier = multiplier;
         hasEnduranceBuff = true;
     
-        NotificationSystem.ShowNotification($"Energy consumption reduced by {(1f - multiplier) * 100f:F0}% for the rest of the day!");
+        NotificationSystem.ShowDialogue($"Energy consumption reduced by {(1f - multiplier) * 100f:F0}% " +
+                                        $"for the rest of the day!", 1f);
     }
     
     // Method to remove endurance buff (called on day change)
@@ -113,7 +114,7 @@ public class PlayerStats : MonoBehaviour
         {
             energyMultiplier = 1f;
             hasEnduranceBuff = false;
-            NotificationSystem.ShowNotification("Endurance boost expired.");
+            NotificationSystem.ShowHelp("Endurance boost expired.");
         }
     }
     

@@ -25,7 +25,7 @@ public class ItemTheCureBeneath : InventoryItem
             if (distance <= useRange)
             {
                 // Player is close enough - cure worked!
-                NotificationSystem.ShowNotification("You have been cured! Congratulations!");
+                NotificationSystem.ShowDialogue("You have cured your spouse's illness and saved their life!", 4f);
                 player.inventorySystem.RemoveItem(this, 1);
                 
                 // Change bed sprite to empty bed
@@ -45,13 +45,12 @@ public class ItemTheCureBeneath : InventoryItem
             }
             else
             {
-                NotificationSystem.ShowNotification("You need to be closer to the sick spouse to use the cure!");
+                NotificationSystem.ShowHelp("You need to be closer to the sick spouse to use the cure!");
             }
         }
         else
         {
             Debug.LogError("Finish object not found!");
-            NotificationSystem.ShowNotification("Something went wrong...");
         }
     }
 }

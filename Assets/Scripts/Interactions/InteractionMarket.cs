@@ -29,9 +29,8 @@ public class MarketSellSlot
 }
 
 /// <summary>
-/// Interactive market system for buying seeds, selling items, and purchasing crafting upgrades.
-/// Manages sell slots, validates transactions, and integrates with player economy.
-/// Supports crafting bench purchase, upgrade, and research table purchase.
+/// Interactive market system for buying seeds, selling items, and purchasing structures.
+/// Handles all business logic including affordability checks and transaction validation.
 /// </summary>
 public class InteractionMarket : MonoBehaviour, IInteractable
 {
@@ -124,16 +123,19 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         
         OnSellSlotsChanged?.Invoke();
         OnTransactionCompleted?.Invoke();
-        NotificationSystem.ShowNotification($"Sold items for {totalEarnings} coins!");
+        NotificationSystem.ShowHelp($"Sold items for {totalEarnings} coins!");
         return true;
     }
     
-    // BUY METHODS
+    // BUY METHODS WITH BUSINESS LOGIC
     
     public bool TryBuyItem(InventoryItem item, int quantity)
     {
         if (!CanBuyItem(item, quantity))
+        {
+            NotificationSystem.ShowHelp("You can't afford this item!");
             return false;
+        }
         
         bool success = playerEconomy.BuyItem(item, quantity);
         if (success)
@@ -143,12 +145,31 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         return success;
     }
     
-    // CRAFTING BENCH METHODS
+    // STRUCTURE PURCHASE METHODS WITH AFFORDABILITY CHECKS
     
     public bool TryBuyCraftingBench()
     {
-        if (!CanBuyCraftingBench())
+        if (MarketSystem.Instance == null || !MarketSystem.Instance.IsCraftingBenchAvailable())
+        {
+            NotificationSystem.ShowHelp("Crafting bench is not available!");
             return false;
+        }
+        
+        // Check affordability
+        int benchCost = MarketSystem.Instance.GetCraftingBenchCost();
+        int woodCost = MarketSystem.Instance.GetCraftingBenchWoodCost();
+        
+        if (!playerEconomy.CanAfford(benchCost))
+        {
+            NotificationSystem.ShowHelp($"You need {benchCost} coins!");
+            return false;
+        }
+        
+        if (!InventorySystem.Instance.HasItemByName("wood", woodCost))
+        {
+            NotificationSystem.ShowHelp($"You need {woodCost} wood!");
+            return false;
+        }
         
         bool success = MarketSystem.Instance.PurchaseCraftingBench(playerEconomy);
         
@@ -162,27 +183,56 @@ public class InteractionMarket : MonoBehaviour, IInteractable
     
     public bool TryBuyUpgrade()
     {
-        if (!CanBuyUpgrade())
+        if (MarketSystem.Instance == null || !MarketSystem.Instance.IsCraftingBenchUpgradeAvailable())
+        {
+            NotificationSystem.ShowHelp("Crafting bench upgrade is not available!");
             return false;
+        }
+        
+        // Check affordability
+        int upgradeCost = MarketSystem.Instance.GetCraftingBenchUpgradeCost();
+        
+        if (!playerEconomy.CanAfford(upgradeCost))
+        {
+            NotificationSystem.ShowHelp($"You need {upgradeCost} coins!");
+            return false;
+        }
         
         bool success = MarketSystem.Instance.PurchaseCraftingBenchUpgrade(playerEconomy);
         
         if (success && craftingSystemHUD != null)
         {
             craftingSystemHUD.UnlockAllUpgradeSlots();
-            NotificationSystem.ShowNotification("Crafting bench was upgraded, check it out!");
+            NotificationSystem.ShowDialogue("Crafting bench was upgraded, check it out!", 1f);
             OnTransactionCompleted?.Invoke();
         }
         
         return success;
     }
     
-    // RESEARCH TABLE METHODS
-    
     public bool TryBuyResearchTable()
     {
-        if (!CanBuyResearchTable())
+        if (MarketSystem.Instance == null || !MarketSystem.Instance.IsResearchTableAvailable())
+        {
+            NotificationSystem.ShowHelp("Research table is not available!");
             return false;
+        }
+        
+        // Check affordability
+        int tableCost = MarketSystem.Instance.GetResearchTableCost();
+        int woodCost = MarketSystem.Instance.GetResearchTableWoodCost();
+        
+        if (!playerEconomy.CanAfford(tableCost))
+        {
+            NotificationSystem.ShowHelp($"You need {tableCost} coins!");
+            return false;
+        }
+        
+        if (!InventorySystem.Instance.HasItemByName("wood", woodCost))
+        {
+            NotificationSystem.ShowHelp($"You need {woodCost} wood!");
+            return false;
+        }
         
         bool success = MarketSystem.Instance.PurchaseResearchTable(playerEconomy);
         
@@ -198,6 +248,7 @@ public class InteractionMarket : MonoBehaviour, IInteractable
     
     public bool IsOpen() => isMarketOpen;
     public bool HasItemsToSell() => sellSlots.Exists(slot => !slot.IsEmpty);
+    
     public int GetTotalSellValue()
     {
         int total = 0;
@@ -216,43 +267,9 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         return MarketSystem.Instance?.GetAvailableSeeds() ?? new List<InventoryItem>();
     }
     
-    // Crafting Bench Getters
-    public bool IsCraftingBenchAvailable()
-    {
-        return MarketSystem.Instance?.IsCraftingBenchAvailable() ?? false;
-    }
-    
-    public int GetCraftingBenchCost()
-    {
-        return MarketSystem.Instance?.GetCraftingBenchCost() ?? 0;
-    }
-    
-    public bool IsCraftingBenchUpgradeAvailable()
-    {
-        return MarketSystem.Instance?.IsCraftingBenchUpgradeAvailable() ?? false;
-    }
-    
-    public int GetCraftingBenchUpgradeCost()
-    {
-        return MarketSystem.Instance?.GetCraftingBenchUpgradeCost() ?? 0;
-    }
-    
-    // Research Table Getters
-    public bool IsResearchTableAvailable()
-    {
-        return MarketSystem.Instance?.IsResearchTableAvailable() ?? false;
-    }
-    
-    public int GetResearchTableCost()
-    {
-        return MarketSystem.Instance?.GetResearchTableCost() ?? 0;
-    }
-    
     // PRIVATE METHODS
     
-    /// <summary>
-    /// Opens market interface and caches player economy reference
-    /// </summary>
+    // Opens market interface and caches player economy reference
     private void OpenMarket(PlayerController player)
     {
         isMarketOpen = true;
@@ -263,9 +280,7 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         OnMarketOpened?.Invoke();
     }
     
-    /// <summary>
-    /// Closes market and returns all sell items to inventory
-    /// </summary>
+    // Closes market and returns all sell items to inventory
     private void CloseMarket()
     {
         isMarketOpen = false;
@@ -273,9 +288,6 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         OnMarketClosed?.Invoke();
     }
     
-    /// <summary>
-    /// Creates initial sell slot collection
-    /// </summary>
     private void InitializeSellSlots()
     {
         sellSlots = new List<MarketSellSlot>();
@@ -285,9 +297,7 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         }
     }
     
-    /// <summary>
-    /// Validates if item can be added for selling
-    /// </summary>
+    // Validates if item can be added for selling
     private bool CanAddItemToSell(InventoryItem item, int quantity)
     {
         if (item == null || quantity <= 0)
@@ -296,9 +306,7 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         return InventorySystem.Instance.HasItem(item, quantity);
     }
     
-    /// <summary>
-    /// Attempts to stack item with existing slot
-    /// </summary>
+    // Attempts to stack item with existing slot
     private bool TryStackWithExistingItem(InventoryItem item, int quantity)
     {
         foreach (var slot in sellSlots)
@@ -315,9 +323,7 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         return false;
     }
     
-    /// <summary>
-    /// Attempts to add item to first empty slot
-    /// </summary>
+    // Attempts to add item to first empty slot
     private bool TryAddToEmptySlot(InventoryItem item, int quantity)
     {
         foreach (var slot in sellSlots)
@@ -335,9 +341,7 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         return false;
     }
     
-    /// <summary>
-    /// Updates slot after partial item removal
-    /// </summary>
+    // Updates slot after partial item removal
     private void UpdateSlotAfterRemoval(MarketSellSlot slot, int quantityRemoved)
     {
         slot.quantity -= quantityRemoved;
@@ -351,81 +355,25 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         }
     }
     
-    /// <summary>
-    /// Validates buy item conditions
-    /// </summary>
+    // Validates buy item conditions with affordability check
     private bool CanBuyItem(InventoryItem item, int quantity)
     {
         if (item == null || quantity <= 0 || MarketSystem.Instance == null)
             return false;
         
         if (!MarketSystem.Instance.IsItemAvailable(item))
-        {
             return false;
-        }
         
-        return true;
+        int buyPrice = playerEconomy.GetBuyPrice(item) * quantity;
+        return playerEconomy.CanAfford(buyPrice);
     }
     
-    /// <summary>
-    /// Validates crafting bench purchase conditions
-    /// </summary>
-    private bool CanBuyCraftingBench()
-    {
-        if (MarketSystem.Instance == null)
-            return false;
-        
-        if (!MarketSystem.Instance.IsCraftingBenchAvailable())
-        {
-            return false;
-        }
-        
-        return true;
-    }
-    
-    /// <summary>
-    /// Validates upgrade purchase conditions
-    /// </summary>
-    private bool CanBuyUpgrade()
-    {
-        if (MarketSystem.Instance == null)
-            return false;
-        
-        if (!MarketSystem.Instance.IsCraftingBenchUpgradeAvailable())
-        {
-            return false;
-        }
-        
-        return true;
-    }
-    
-    /// <summary>
-    /// Validates research table purchase conditions
-    /// </summary>
-    private bool CanBuyResearchTable()
-    {
-        if (MarketSystem.Instance == null)
-            return false;
-        
-        if (!MarketSystem.Instance.IsResearchTableAvailable())
-        {
-            return false;
-        }
-        
-        return true;
-    }
-    
-    /// <summary>
-    /// Validates slot index bounds
-    /// </summary>
     private bool IsValidSlotIndex(int slotIndex)
     {
         return slotIndex >= 0 && slotIndex < sellSlots.Count;
     }
     
-    /// <summary>
-    /// Returns all sell items to player inventory
-    /// </summary>
+    // Returns all sell items to player inventory
     private void ReturnAllSellItems()
     {
         foreach (var slot in sellSlots)
@@ -439,9 +387,7 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         OnSellSlotsChanged?.Invoke();
     }
     
-    /// <summary>
-    /// Clears all sell slots without returning items
-    /// </summary>
+    // Clears all sell slots without returning items
     private void ClearAllSellSlots()
     {
         foreach (var slot in sellSlots)

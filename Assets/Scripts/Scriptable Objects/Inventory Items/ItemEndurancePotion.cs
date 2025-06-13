@@ -11,14 +11,14 @@ public class ItemEndurancePotion : InventoryItem
     {
         if (player.playerStats.hasEnduranceBuff == false)
         {
-            NotificationSystem.ShowNotification("Drank endurance potion, you will be using less energy for tasks today!");
+            NotificationSystem.ShowHelp("Drank endurance potion, you will be using less energy for tasks today!");
             player.playerStats.ApplyEnduranceBuff(energyMultiplier);
             player.inventorySystem.RemoveItem(this, 1);
         }
 
         else
         {
-            NotificationSystem.ShowNotification("Already drank endurance potion today.");
+            NotificationSystem.ShowHelp("Already drank endurance potion today.");
         }
     }
     

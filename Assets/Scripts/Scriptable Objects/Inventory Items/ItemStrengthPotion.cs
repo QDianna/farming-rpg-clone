@@ -14,7 +14,7 @@ public class ItemStrengthPotion : InventoryItem
     {
         if (!player.plotlandController.CanAttendPlot(player.transform.position) || TimeSystem.Instance.IsCurrentSeasonWarm())
         {
-            NotificationSystem.ShowNotification("You need to apply this potion to your crops in the cold time " +
+            NotificationSystem.ShowHelp("You need to apply this potion to your crops in the cold time " +
                                                 "for them to sprout");
             return;
         }

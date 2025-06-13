@@ -16,7 +16,7 @@ public class ItemNourishPotion : InventoryItem
     {
         if (!player.plotlandController.CanHarvest(player.transform.position))
         {
-            NotificationSystem.ShowNotification("No ready crops here to nourish");
+            NotificationSystem.ShowHelp("No ready crops here to nourish");
             return;
         }
         
@@ -31,6 +31,6 @@ public class ItemNourishPotion : InventoryItem
         player.plotlandController.ApplyNourishEffect(player.transform.position, bonusYieldMultiplier);
         player.inventorySystem.RemoveItem(this, 1);
         
-        NotificationSystem.ShowNotification("Applied nourish potion - this crop will yield more when harvested!");
+        NotificationSystem.ShowHelp("Applied nourish potion - this crop will yield more when harvested!");
     }
 }

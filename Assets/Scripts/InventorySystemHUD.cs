@@ -44,7 +44,7 @@ public class InventorySystemHUD : MonoBehaviour
         selectedItemContainer = root.Q<VisualElement>("SelectedItemContainer");
         inventoryContainer = root.Q<VisualElement>("InventoryContainer");
         inventoryItemsContainer = inventoryContainer.Q<VisualElement>("InventoryItemsContainer");
-        tooltipsLabel = root.Q<Label>("Tooltips");
+        tooltipsLabel = root.Q<Label>("Tooltip");
         tooltipsLabel.style.display = DisplayStyle.None;
         
         HideFullInventory();

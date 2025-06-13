@@ -14,14 +14,9 @@ public class WitchController : MonoBehaviour, IInteractable
    [SerializeField] private InventoryItem endurancePotion;
    [SerializeField] private InventoryItem rareFlower;
    
-   [Header("Dialogue Settings")]
-   [SerializeField] private float dialogueDelay = 4f;
-   private float originalDelay;
-   
    private enum WitchQuestState
    {
        FirstMeeting,
-       QuestGiven,
        WaitingForPotions,
        QuestComplete
    }
@@ -51,9 +46,6 @@ public class WitchController : MonoBehaviour, IInteractable
            case WitchQuestState.FirstMeeting:
                ShowFirstMeetingDialogue();
                break;
-           case WitchQuestState.QuestGiven:
-               ShowQuestReminderDialogue();
-               break;
            case WitchQuestState.WaitingForPotions:
                CheckPotionCollection(player);
                break;
@@ -62,7 +54,7 @@ public class WitchController : MonoBehaviour, IInteractable
                break;
        }
    }
-   
+
    // Shows the initial story dialogue about the illness
    private void ShowFirstMeetingDialogue()
    {
@@ -71,46 +63,22 @@ public class WitchController : MonoBehaviour, IInteractable
        {
            QuestsSystem.Instance.SetWitchMet();
        }
-       
-       // Store original delay and set dialogue delay
-       originalDelay = NotificationSystem.Instance.displayDuration;
-       NotificationSystem.Instance.displayDuration = dialogueDelay;
-       
-       // Show first meeting dialogue
-       NotificationSystem.ShowNotification("Witch: Ah... I've been waiting for you. I know about your spouse... their illness... it's the same that has begun to wither me as well.");
-       NotificationSystem.ShowNotification("Witch: This is no ordinary sickness. Something has spread across this land... corrupting the plants, the air, even us.");
-       NotificationSystem.ShowNotification("Witch: I've spent my life gathering herbs and crafting potions... but now, I can no longer venture out. My body grows weaker each day.");
-       NotificationSystem.ShowNotification("Witch: You must help me. There may still be hope, but I can no longer gather nor prepare the ingredients myself.");
-       
-       // Unlock research table for purchase
+
+       // Show dialogue sequence
+       NotificationSystem.ShowDialogue("Witch: So... you’ve come. I know why you’re here. The illness that grips your spouse... it is no ordinary sickness.", 4f);
+       NotificationSystem.ShowDialogue("Witch: It is the land itself that is ill. A creeping corruption spreads through the soil, the air... and into us.", 4f);
+       NotificationSystem.ShowDialogue("Witch: I’ve seen it before. It is why I grow weaker each day. Alone, I can no longer fight it.", 4f);
+       NotificationSystem.ShowDialogue("Witch: If we are to stop this, we must study the plants — understand how to craft potions to resist the corruption.", 4f);
+       NotificationSystem.ShowDialogue("Witch: Bring me four potions: Power, Nourish, Speed, and Endurance. They will help us stand against what is poisoning this land.", 4f);
+
+       // Unlock research table and crafting bench
        UnlockResearchTable();
-       
-       // Wait for dialogue to finish, then give quest
-       Invoke(nameof(GiveQuestDialogue), dialogueDelay * 3 + 1f);
-   }
-   
-   // Shows the quest dialogue
-   private void GiveQuestDialogue()
-   {
-       // Quest dialogue
-       NotificationSystem.ShowNotification("Witch: First, you must learn to understand the plants around us. Study them well — only through knowledge can you hope to craft what we need.");
-       NotificationSystem.ShowNotification("Witch: You will need to prepare four potions: one to heal, one to strengthen, one to hasten the body, and one to endure what is to come.");
-       NotificationSystem.ShowNotification("Witch: Study, gather, craft... and bring them to me. Our lives may depend on it.");
-       
-       currentState = WitchQuestState.QuestGiven;
-       
-       // Wait for quest dialogue to finish, then restore delay and change state
-       Invoke(nameof(CompleteDialogueSetup), dialogueDelay * 3 + 3f);
-   }
-   
-   // Restores original delay and changes state
-   private void CompleteDialogueSetup()
-   {
-       // Restore original delay
-       NotificationSystem.Instance.displayDuration = originalDelay;
+
+       // Change state to waiting for potions
        currentState = WitchQuestState.WaitingForPotions;
-       
-       NotificationSystem.ShowNotification("New structures are now available in the market!");
+
+       // Notify player
+       NotificationSystem.ShowHelp("New structures are now available in the market!");
    }
    
    // Unlocks the research table for purchase in the market
@@ -122,17 +90,12 @@ public class WitchController : MonoBehaviour, IInteractable
            MarketSystem.Instance.UnlockCraftingBench();
        }
    }
-   
-   // Shows quest reminder if player talks again
-   private void ShowQuestReminderDialogue()
-   {
-       NotificationSystem.ShowNotification("Witch: Remember - bring me Power, Nourish, Speed, and Endurance potions.");
-       currentState = WitchQuestState.WaitingForPotions;
-   }
-   
+
    // Checks if player has all required potions
    private void CheckPotionCollection(PlayerController player)
    {
+       NotificationSystem.ShowDialogue("Witch: Have you brought the potions? Power, Nourish, Speed, and Endurance.", 4f);
+
        if (HasAllRequiredPotions())
        {
            CollectPotionsAndGiveReward(player);
@@ -170,10 +133,18 @@ public class WitchController : MonoBehaviour, IInteractable
        InventorySystem.Instance.AddItem(rareFlower, 1);
        rareFlower.CollectItem(player);
        
-       NotificationSystem.ShowNotification("Witch: Perfect... thanks to you, I can finally prepare the cure.");
-       NotificationSystem.ShowNotification("Witch: I needed you to learn, as well — so that you can save your spouse.");
-       NotificationSystem.ShowNotification("Witch: Take this rare flower. It is the final ingredient... " +
-                                           "add it to your potions, and it will complete the cure.");
+       ShowCompletionDialogue();
+   }
+   
+   private void ShowCompletionDialogue()
+   {
+       NotificationSystem.ShowDialogue("Witch: Perfect... thanks to you, I can finally prepare the cure.", 4f);
+       Invoke(nameof(ShowFinalDialogue), 5f);
+   }
+   
+   private void ShowFinalDialogue()
+   {
+       NotificationSystem.ShowDialogue("Witch: Take this rare flower. Add it to your potions to complete the cure.", 4f);
        
        currentState = WitchQuestState.QuestComplete;
        
@@ -202,12 +173,12 @@ public class WitchController : MonoBehaviour, IInteractable
        if (missingPotions.Length > 2)
            missingPotions = missingPotions.Substring(0, missingPotions.Length - 2);
        
-       NotificationSystem.ShowNotification($"Witch: You still need: {missingPotions}");
+       NotificationSystem.ShowDialogue($"Witch: You still need: {missingPotions}", 4f);
    }
    
    // Shows dialogue when quest is complete
    private void ShowQuestCompleteDialogue()
    {
-       NotificationSystem.ShowNotification("Witch: Go now, craft the final potion and save your spouse!");
+       NotificationSystem.ShowDialogue("Witch: Go now, craft the final potion and save your spouse!", 4f);
    }
 }

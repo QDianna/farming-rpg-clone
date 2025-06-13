@@ -11,6 +11,6 @@ public class ItemWildPlant : InventoryItem
         
         player.playerStats.RestoreEnergy(energyRestoreAmount);
         player.inventorySystem.RemoveItem(this, 1);
-        NotificationSystem.ShowNotification($"Ate {name} (+{energyRestoreAmount} energy)");
+        NotificationSystem.ShowHelp($"Ate {name} (+{energyRestoreAmount} energy)");
     }
 }

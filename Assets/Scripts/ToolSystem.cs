@@ -72,7 +72,7 @@ public class ToolSystem : MonoBehaviour
         // Check if player has enough energy for any tool action
         if (!HasEnoughEnergyForTool(player))
         {
-            NotificationSystem.ShowNotification("Too tired to use tools. Rest or eat something.");
+            NotificationSystem.ShowHelp("Too tired to use tools. Rest or eat something.");
             return;
         }
         
@@ -188,7 +188,7 @@ public class ToolSystem : MonoBehaviour
         
         if (!TimeSystem.Instance.IsCurrentSeasonWarm())
         {
-            NotificationSystem.ShowNotification("Plants don't need watering in cold season");
+            NotificationSystem.ShowHelp("Plants don't need watering in cold season");
             return false;
         }
         

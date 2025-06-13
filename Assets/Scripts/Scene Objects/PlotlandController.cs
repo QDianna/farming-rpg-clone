@@ -106,7 +106,6 @@ public class PlotlandController : MonoBehaviour
         // Handle infected plants - player loses them
         if (plotData.isInfected)
         {
-            NotificationSystem.ShowNotification("Tilled over infected plant. The corruption spreads to the soil...");
             ClearPlotAndSetTilled(tilePos, plotData);
             return;
         }
@@ -196,7 +195,9 @@ public class PlotlandController : MonoBehaviour
             }
         }
         
-        NotificationSystem.ShowNotification("Farm-wide protection applied! Your crops are shielded from corruption.");
+        NotificationSystem.ShowDialogue("Farm-wide protection active! " +
+                                        "The land is shielded against corruption for today.", 2f);
+
     }
     
     // Heals all infected plants across the farm with heal potion
@@ -219,9 +220,11 @@ public class PlotlandController : MonoBehaviour
             }
         }
 
-        NotificationSystem.ShowNotification(healedCount > 0
-            ? $"Healed {healedCount} infected plants! The corruption has been cleansed."
-            : "No infected plants found to heal.");
+        if (healedCount > 0)
+            NotificationSystem.ShowDialogue($"Healed {healedCount} infected plants! " +
+                                            $"The corruption has been cleansed.", 2f);
+        else
+            NotificationSystem.ShowHelp("No infected plants found to heal.");
     }
     
     // Scans all tilemaps and creates plot data entries
@@ -304,80 +307,79 @@ public class PlotlandController : MonoBehaviour
                 plotData.isProtected = false;
             }
             
-            NotificationSystem.ShowNotification("Farm protection expired.");
+            NotificationSystem.ShowHelp("Farm protection expired.");
         }
     }
     
-    // Handles storm weather event with protection checks
+// Update only the weather event handlers in PlotlandController:
+
+// Handles storm weather event with protection checks
     private void HandleStorm()
     {
         if (farmProtected)
         {
-            NotificationSystem.ShowNotification("Power Potion protects your crops from the corrupted storm!");
+            NotificationSystem.ShowHelp("Power Potion shields the land from the storm’s corruption!");
             return;
         }
-        
+    
         var plantedPlots = GetPlantedPlots();
         if (plantedPlots.Count == 0) return;
 
         int plantsToDestroy = Random.Range(1, Mathf.Min(3, plantedPlots.Count + 1));
-        
+    
         for (int i = 0; i < plantsToDestroy; i++)
         {
             DestroyRandomPlot(plantedPlots);
         }
-        
-        if (plantsToDestroy > 0)
-            NotificationSystem.ShowNotification($"Corrupted storm destroyed {plantsToDestroy} crops! Power Potion could have prevented this.");
-    }
     
-    // Handles freeze weather event with protection checks
+        if (plantsToDestroy > 0)
+            NotificationSystem.ShowDialogue($"Corrupted storm destroyed {plantsToDestroy} crops!", 2f);
+    }
+
+// Handles freeze weather event with protection checks  
     private void HandleFreeze()
     {
         if (farmProtected)
         {
-            NotificationSystem.ShowNotification("Power Potion shields your crops from the unnatural freeze!");
+            NotificationSystem.ShowHelp("Power Potion shields the crops from the unnatural cold!");
             return;
         }
-        
+    
         var plantedPlots = GetPlantedPlots();
         if (plantedPlots.Count == 0) return;
 
         int plantsToFreeze = Random.Range(1, Mathf.Min(2, plantedPlots.Count + 1));
-        
+    
         for (int i = 0; i < plantsToFreeze; i++)
         {
             FreezeRandomPlot(plantedPlots);
         }
-        
-        if (plantsToFreeze > 0)
-            NotificationSystem.ShowNotification($"Twisted cold damaged {plantsToFreeze} crops! Power Potion could have prevented this.");
-    }
     
-    // Handles disease outbreak, infecting 30-60% of planted crops
+        if (plantsToFreeze > 0)
+            NotificationSystem.ShowDialogue($"Corrupted frost damaged {plantsToFreeze} crops!", 2f);
+    }
+
+// Handles disease outbreak, infecting 30-60% of planted crops
     private void HandleDisease()
     {
         var plantedPlots = GetPlantedPlots();
-        
+    
         if (plantedPlots.Count == 0) 
-        {
-            NotificationSystem.ShowNotification("The blight spreads, but finds no crops to infect...");
             return;
-        }
 
         int plantsToInfect = Random.Range(
             Mathf.RoundToInt(plantedPlots.Count * 0.3f), 
             Mathf.RoundToInt(plantedPlots.Count * 0.6f) + 1
         );
-        
+    
         plantsToInfect = Mathf.Max(1, plantsToInfect);
-        
+    
         for (int i = 0; i < plantsToInfect && plantedPlots.Count > 0; i++)
         {
             InfectRandomPlot(plantedPlots);
         }
-        
-        NotificationSystem.ShowNotification($"Mysterious blight infected {plantsToInfect} crops! Use Heal Potion to cure them or till over infected plants.");
+    
+        NotificationSystem.ShowDialogue($"Mysterious blight infected {plantsToInfect} crops!", 2f);
     }
     
     // Freezes random plot, reducing growth stage or destroying early crops
@@ -575,7 +577,8 @@ public class PlotlandController : MonoBehaviour
         {
             seedAmount = Mathf.RoundToInt(seedAmount * plotData.nourishMultiplier);
             cropAmount = Mathf.RoundToInt(cropAmount * plotData.nourishMultiplier);
-            NotificationSystem.ShowNotification($"Nourish potion bonus: +{(plotData.nourishMultiplier - 1f) * 100f:F0}% yield!");
+            NotificationSystem.ShowDialogue($"Nourish potion bonus: +{(plotData.nourishMultiplier - 1f) * 100f:F0}% " +
+                                            $"yield!", 1f);
         }
         
         player.inventorySystem.AddItem(plotData.seedData, seedAmount);

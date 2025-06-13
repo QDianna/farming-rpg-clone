@@ -25,13 +25,15 @@ public class TimeSystem : MonoBehaviour
     
     private int currentSeasonIndex;
     private int currentDay = 1;
-    private float currentTime = 6f;
+    private float currentTime = 6f; // Start at 6 AM
     private int cachedHour = 6;
     private int cachedMinute;
 
     public event System.Action OnDayChange;
     public event System.Action OnHourChange;
     public event System.Action OnMinuteChange;
+    public event System.Action On8AM;
+    public event System.Action On12PM;
 
     private void Awake()
     {
@@ -44,44 +46,59 @@ public class TimeSystem : MonoBehaviour
         UpdateTimeEvents();
     }
 
-    public void SkipNight()
+    /// <summary>
+    /// Skips to the next day when player sleeps. Sets time to 6 AM.
+    /// </summary>
+    public void SkipDay()
     {
-        if (currentTime <= 24f)
-            currentDay++;
+        currentDay++;
+        currentTime = 6f; // Always wake up at 6 AM
         
-        if (currentDay % daysPerSeason == 0)
+        // Check for season change (every daysPerSeason days)
+        if (currentDay > 1 && (currentDay - 1) % daysPerSeason == 0)
+        {
             currentSeasonIndex = (currentSeasonIndex + 1) % Seasons.Count;
+            // Debug.Log($"[TimeSystem] Season changed to: {GetSeason()}");
+        }
         
-        currentTime = 6f;
+        // Debug.Log($"[TimeSystem] Day skipped to: {currentDay}, Time: {GetHour()}:{GetMinute():00}");
+        
         OnDayChange?.Invoke();
     }
-
-    // Checks if player can sleep during night hours (6pm to 6am)
+    
+    /// <summary>
+    /// Checks if player can sleep (not between 6 AM and 2 PM to avoid disrupting forecast system)
+    /// </summary>
     public bool CanSleep()
     {
-        return currentTime >= 18f || currentTime <= 6f;
+        return currentTime < 6f || currentTime >= 14f;
     }
     
-    // Time getters
     public int GetHour() => Mathf.FloorToInt(currentTime);
     public int GetMinute() => Mathf.FloorToInt((currentTime % 1f) * 60f);
     public int GetDay() => currentDay;
     public Season GetSeason() => Seasons[currentSeasonIndex];
     
-    // Checks if current season is warm (spring or summer)
+    /// <summary>
+    /// Checks if current season is warm (spring or summer)
+    /// </summary>
     public bool IsCurrentSeasonWarm()
     {
         var season = Seasons[currentSeasonIndex];
         return season == Season.Spring || season == Season.Summer;
     }
 
-    // Checks if specified season is warm
+    /// <summary>
+    /// Checks if specified season is warm
+    /// </summary>
     public bool IsWarmSeason(Season season)
     {
         return season == Season.Spring || season == Season.Summer;
     }
     
-    // Sets up singleton instance
+    /// <summary>
+    /// Sets up singleton instance
+    /// </summary>
     private void InitializeSingleton()
     {
         if (Instance != null && Instance != this)
@@ -93,7 +110,9 @@ public class TimeSystem : MonoBehaviour
         Instance = this;
     }
     
-    // Updates current time and handles day progression
+    /// <summary>
+    /// Updates current time and handles day progression
+    /// </summary>
     private void UpdateTime()
     {
         currentTime += Time.deltaTime * timeProgressionSpeed;
@@ -104,19 +123,28 @@ public class TimeSystem : MonoBehaviour
         }
     }
     
-    // Advances to next day and handles season changes
+    /// <summary>
+    /// Advances to next day naturally (without sleeping) and handles season changes
+    /// </summary>
     private void AdvanceToNextDay()
     {
         currentTime = 0f;
         currentDay++;
         
-        if (currentDay % daysPerSeason == 0)
+        // Check for season change (every daysPerSeason days)
+        if ((currentDay - 1) % daysPerSeason == 0)
+        {
             currentSeasonIndex = (currentSeasonIndex + 1) % Seasons.Count;
+            // Debug.Log($"[TimeSystem] Season changed to: {GetSeason()}");
+        }
         
+        // Debug.Log($"[TimeSystem] Day advanced naturally to: {currentDay}");
         OnDayChange?.Invoke();
     }
     
-    // Triggers events when time values change
+    /// <summary>
+    /// Triggers events when time values change
+    /// </summary>
     private void UpdateTimeEvents()
     {
         int newHour = GetHour();
@@ -124,6 +152,13 @@ public class TimeSystem : MonoBehaviour
         {
             cachedHour = newHour;
             OnHourChange?.Invoke();
+            
+            // Trigger specific hour events
+            if (newHour == 8)
+                On8AM?.Invoke();
+            
+            if (newHour == 12)
+                On12PM?.Invoke();
         }
 
         int newMinute = GetMinute();

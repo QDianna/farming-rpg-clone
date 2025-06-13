@@ -228,7 +228,7 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
         outputSlot.Clear();
         UpdateRecipe();
         
-        NotificationSystem.ShowNotification($"Crafted {craftedItemName}!");
+        NotificationSystem.ShowHelp($"Crafted {craftedItemName}!");
     }
     
     // Removes specified quantity of item from input slots

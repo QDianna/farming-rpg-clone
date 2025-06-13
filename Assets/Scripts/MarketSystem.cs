@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Singleton market system managing daily seed availability and crafting upgrades.
-/// Handles automatic daily refreshes, tier-based selection, and upgrade purchases.
+/// Singleton market system managing daily seed availability and structure purchases.
+/// Handles automatic daily refreshes, tier-based selection, wood/money costs, and upgrade purchases.
 /// </summary>
 public class MarketSystem : MonoBehaviour
 {
@@ -17,8 +17,12 @@ public class MarketSystem : MonoBehaviour
     [Header("Unlock-able Structures")]
     [SerializeField] private GameObject researchTable;
     [SerializeField] private GameObject craftingBench;
+    
+    [Header("Structure Costs")]
     [SerializeField] private int researchTableCost = 500;
+    [SerializeField] private int researchTableWoodCost = 100;
     [SerializeField] private int craftingBenchCost = 1000;
+    [SerializeField] private int craftingBenchWoodCost = 200;
     [SerializeField] private int craftingBenchUpgradeCost = 1500;
     
     private bool isResearchTableUnlocked;
@@ -44,96 +48,102 @@ public class MarketSystem : MonoBehaviour
         UnsubscribeFromEvents();
     }
     
-    // Returns current daily seed selection
+    // DAILY SEEDS METHODS
+    
     public List<InventoryItem> GetAvailableSeeds()
     {
         return new List<InventoryItem>(currentDailySeeds);
     }
     
-    // Checks if specific item is available today
     public bool IsItemAvailable(InventoryItem item)
     {
         return currentDailySeeds.Contains(item);
     }
     
+    // RESEARCH TABLE METHODS
+    
+    public void UnlockResearchTable()
+    {
+        isResearchTableUnlocked = true;
+        OnMarketDataChanged?.Invoke();
+    }
+
+    public bool IsResearchTableAvailable()
+    {
+        return isResearchTableUnlocked;
+    }
+
+    public int GetResearchTableCost()
+    {
+        return researchTableCost;
+    }
+    
+    public int GetResearchTableWoodCost()
+    {
+        return researchTableWoodCost;
+    }
+
+    // Purchase with money and wood cost verification
+    public bool PurchaseResearchTable(PlayerEconomy playerEconomy)
+    {
+        if (!isResearchTableUnlocked || 
+            !playerEconomy.CanAfford(researchTableCost) || 
+            !HasEnoughWood(researchTableWoodCost))
+            return false;
+        
+        playerEconomy.SpendMoney(researchTableCost);
+        ConsumeWood(researchTableWoodCost);
+        UnhideResearchTableInWorld();
+        
+        isResearchTableUnlocked = false; // One-time purchase
+        OnMarketDataChanged?.Invoke();
+        return true;
+    }
+    
     // CRAFTING BENCH METHODS
     
-    /// <summary>
-    /// Unlocks the crafting bench for purchase in the market
-    /// </summary>
     public void UnlockCraftingBench()
     {
         isCraftingBenchUnlocked = true;
         OnMarketDataChanged?.Invoke();
     }
 
-    /// <summary>
-    /// Checks if the crafting bench is available for purchase
-    /// </summary>
     public bool IsCraftingBenchAvailable()
     {
         return isCraftingBenchUnlocked && !isCraftingBenchPurchased;
     }
 
-    /// <summary>
-    /// Gets the cost of the crafting bench
-    /// </summary>
     public int GetCraftingBenchCost()
     {
         return craftingBenchCost;
     }
+    
+    public int GetCraftingBenchWoodCost()
+    {
+        return craftingBenchWoodCost;
+    }
 
-    /// <summary>
-    /// Processes crafting bench purchase and unhides the world object
-    /// </summary>
+    // Purchase with money and wood cost verification
     public bool PurchaseCraftingBench(PlayerEconomy playerEconomy)
     {
-        if (!isCraftingBenchUnlocked || isCraftingBenchPurchased || !playerEconomy.CanAfford(craftingBenchCost))
+        if (!isCraftingBenchUnlocked || 
+            isCraftingBenchPurchased || 
+            !playerEconomy.CanAfford(craftingBenchCost) || 
+            !HasEnoughWood(craftingBenchWoodCost))
             return false;
         
-        // Process the purchase
         playerEconomy.SpendMoney(craftingBenchCost);
-        
-        // Unhide the crafting bench in the world
+        ConsumeWood(craftingBenchWoodCost);
         UnhideCraftingBenchInWorld();
         
-        // Mark as purchased
         isCraftingBenchPurchased = true;
         OnMarketDataChanged?.Invoke();
         return true;
     }
-
-    /// <summary>
-    /// Finds and unhides the crafting bench GameObject in the world
-    /// </summary>
-    private void UnhideCraftingBenchInWorld()
-    {
-        if (craftingBench != null)
-        {
-            craftingBench.SetActive(true);
-            NotificationSystem.ShowNotification("Crafting Bench has been delivered to your farm!");
-        }
-        else
-        {
-            // Try finding by name as fallback
-            GameObject foundBench = GameObject.Find("CraftingBench");
-            if (foundBench != null)
-            {
-                foundBench.SetActive(true);
-                NotificationSystem.ShowNotification("Crafting Bench has been delivered to your farm!");
-            }
-            else
-            {
-                Debug.LogError("Crafting Bench GameObject not found! Make sure it has the 'CraftingBench' tag or is named 'CraftingBench'");
-            }
-        }
-    }
-
+    
     // CRAFTING BENCH UPGRADE METHODS
     
-    /// <summary>
-    /// Checks if crafting bench upgrade can be purchased (only after bench is purchased and witch quest completed)
-    /// </summary>
+    // Only available after bench is purchased and witch quest completed
     public bool IsCraftingBenchUpgradeAvailable()
     {
         return isCraftingBenchPurchased && 
@@ -142,17 +152,12 @@ public class MarketSystem : MonoBehaviour
                QuestsSystem.Instance.HasCompletedWitchQuest;
     }
     
-    /// <summary>
-    /// Returns crafting bench upgrade cost
-    /// </summary>
     public int GetCraftingBenchUpgradeCost()
     {
         return craftingBenchUpgradeCost;
     }
     
-    /// <summary>
-    /// Processes crafting bench upgrade purchase
-    /// </summary>
+    // Upgrade only costs money, no wood
     public bool PurchaseCraftingBenchUpgrade(PlayerEconomy playerEconomy)
     {
         if (!isCraftingBenchPurchased || isCraftingBenchUpgraded || !playerEconomy.CanAfford(craftingBenchUpgradeCost)) 
@@ -163,85 +168,85 @@ public class MarketSystem : MonoBehaviour
         OnMarketDataChanged?.Invoke();
         return true;
     }
-
-    // RESEARCH TABLE METHODS
-
-    /// <summary>
-    /// Unlocks the research table for purchase in the market
-    /// </summary>
-    public void UnlockResearchTable()
+    
+    // WOOD MANAGEMENT HELPERS
+    
+    // Check if player has enough wood using correct inventory methods
+    private bool HasEnoughWood(int woodCost)
     {
-        isResearchTableUnlocked = true;
-        OnMarketDataChanged?.Invoke();
+        Debug.Log("not enough wood? " +  InventorySystem.Instance.HasItemByName("wood", woodCost));
+        return InventorySystem.Instance != null && 
+               InventorySystem.Instance.HasItemByName("wood", woodCost);
     }
 
-    /// <summary>
-    /// Checks if the research table is available for purchase
-    /// </summary>
-    public bool IsResearchTableAvailable()
+    // Consume wood from inventory using correct methods
+    private void ConsumeWood(int woodCost)
     {
-        return isResearchTableUnlocked;
+        if (InventorySystem.Instance != null)
+        {
+            var woodItem = InventorySystem.Instance.FindItemByName("wood");
+            if (woodItem != null)
+            {
+                InventorySystem.Instance.RemoveItem(woodItem, woodCost);
+            }
+        }
     }
-
-    /// <summary>
-    /// Gets the cost of the research table
-    /// </summary>
-    public int GetResearchTableCost()
-    {
-        return researchTableCost;
-    }
-
-    /// <summary>
-    /// Processes research table purchase and unhides the world object
-    /// </summary>
-    public bool PurchaseResearchTable(PlayerEconomy playerEconomy)
-    {
-        if (!isResearchTableUnlocked || !playerEconomy.CanAfford(researchTableCost))
-            return false;
-        
-        // Process the purchase
-        playerEconomy.SpendMoney(researchTableCost);
-        
-        // Unhide the research table in the world
-        UnhideResearchTableInWorld();
-        
-        // Make it a one-time purchase
-        isResearchTableUnlocked = false;
-        OnMarketDataChanged?.Invoke();
-        return true;
-    }
-
-    /// <summary>
-    /// Finds and unhides the research table GameObject in the world
-    /// </summary>
+    
+    // WORLD OBJECT ACTIVATION
+    
     private void UnhideResearchTableInWorld()
     {
-        if (researchTable != null)
+        if (researchTable == null) return;
+        
+        researchTable.SetActive(true);
+        NotificationSystem.ShowHelp("Research Table has been delivered to your farm!");
+    }
+
+    private void UnhideCraftingBenchInWorld()
+    {
+        if (craftingBench == null) return;
+        
+        craftingBench.SetActive(true);
+        NotificationSystem.ShowHelp("Crafting Bench has been delivered to your farm!");
+    }
+    
+    // DAILY MARKET REFRESH
+    
+    // Refreshes daily seed selection based on current research tier
+    private void RefreshDailyItems()
+    {
+        currentDailySeeds.Clear();
+        
+        if (ResearchSystem.Instance == null) 
+            return;
+        
+        var availableSeeds = ResearchSystem.Instance.GetAvailableSeeds();
+        if (availableSeeds.Count == 0) 
+            return;
+        
+        SelectRandomSeeds(availableSeeds);
+        OnMarketDataChanged?.Invoke();
+    }
+    
+    // Randomly selects seeds using Fisher-Yates shuffle
+    private void SelectRandomSeeds(List<ItemSeed> availableSeeds)
+    {
+        int seedTypesToShow = Mathf.Min(dailySeedVariety, availableSeeds.Count);
+        
+        for (int i = 0; i < seedTypesToShow; i++)
         {
-            researchTable.SetActive(true);
-            NotificationSystem.ShowNotification("Research Table has been delivered to your farm!");
+            int randomIndex = Random.Range(i, availableSeeds.Count);
+            (availableSeeds[i], availableSeeds[randomIndex]) = (availableSeeds[randomIndex], availableSeeds[i]);
         }
-        else
+        
+        for (int i = 0; i < seedTypesToShow; i++)
         {
-            // Try finding by name as fallback
-            GameObject foundTable = GameObject.Find("ResearchTable");
-            if (foundTable != null)
-            {
-                foundTable.SetActive(true);
-                NotificationSystem.ShowNotification("Research Table has been delivered to your farm!");
-            }
-            else
-            {
-                Debug.LogError("Research Table GameObject not found! Make sure it has the 'ResearchTable' tag or is named 'ResearchTable'");
-            }
+            currentDailySeeds.Add(availableSeeds[i]);
         }
     }
     
-    // SYSTEM SETUP METHODS
+    // SYSTEM SETUP AND EVENTS
     
-    /// <summary>
-    /// Sets up singleton instance with persistence
-    /// </summary>
     private void InitializeSingleton()
     {
         if (Instance == null)
@@ -255,9 +260,6 @@ public class MarketSystem : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Sets up event subscriptions for daily and tier updates
-    /// </summary>
     private void SubscribeToEvents()
     {
         if (TimeSystem.Instance != null)
@@ -277,9 +279,6 @@ public class MarketSystem : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Removes event subscriptions
-    /// </summary>
     private void UnsubscribeFromEvents()
     {
         if (TimeSystem.Instance != null)
@@ -299,73 +298,27 @@ public class MarketSystem : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Refreshes daily seed selection based on available research
-    /// </summary>
-    private void RefreshDailyItems()
-    {
-        currentDailySeeds.Clear();
-        
-        if (ResearchSystem.Instance == null) 
-            return;
-        
-        var availableSeeds = ResearchSystem.Instance.GetAvailableSeeds();
-        if (availableSeeds.Count == 0) 
-            return;
-        
-        SelectRandomSeeds(availableSeeds);
-        OnMarketDataChanged?.Invoke();
-    }
+    // EVENT HANDLERS
     
-    /// <summary>
-    /// Randomly selects seeds for daily market
-    /// </summary>
-    private void SelectRandomSeeds(List<ItemSeed> availableSeeds)
-    {
-        int seedTypesToShow = Mathf.Min(dailySeedVariety, availableSeeds.Count);
-        
-        // Shuffle using Fisher-Yates algorithm
-        for (int i = 0; i < seedTypesToShow; i++)
-        {
-            int randomIndex = Random.Range(i, availableSeeds.Count);
-            (availableSeeds[i], availableSeeds[randomIndex]) = (availableSeeds[randomIndex], availableSeeds[i]);
-        }
-        
-        // Add shuffled selection to daily seeds
-        for (int i = 0; i < seedTypesToShow; i++)
-        {
-            currentDailySeeds.Add(availableSeeds[i]);
-        }
-    }
-    
-    /// <summary>
-    /// Handles tier unlock events by refreshing market
-    /// </summary>
     private void OnTierUnlocked(int newTier)
     {
         RefreshDailyItems();
     }
     
-    /// <summary>
-    /// Handles witch first meeting event by unlocking structures
-    /// </summary>
+    // Unlocks both structures when witch is first met
     private void OnWitchFirstMet()
     {
         UnlockResearchTable();
         UnlockCraftingBench();
     }
     
-    /// <summary>
-    /// Handles witch quest completion event by unlocking crafting bench upgrade
-    /// </summary>
+    // Makes upgrade available after quest completion
     private void OnWitchQuestCompleted()
     {
-        // Crafting bench upgrade becomes available after quest completion
-        // (But only if the bench has been purchased)
         if (isCraftingBenchPurchased)
         {
             OnMarketDataChanged?.Invoke();
-            NotificationSystem.ShowNotification("Crafting bench upgrade is now available!");
+            NotificationSystem.ShowHelp("Crafting bench upgrade is now available!");
         }
     }
 }

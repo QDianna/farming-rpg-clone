@@ -3,18 +3,22 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// Notification UI handler with fade animations and sequential display management.
-/// Receives messages from NotificationSystem and handles visual presentation with timing control.
+/// Notification UI handler with separate containers for dialogue and help messages.
+/// Handles both dialogue (custom duration) and help (2s duration) with fade animations.
 /// </summary>
 public class NotificationSystemHUD : MonoBehaviour
 {
     [Header("Animation Settings")]
+    private float fadeInDuration = 0.1f;
+    private float fadeOutDuration = 0.4f;
     
-    [SerializeField] private float fadeInDuration = 0.1f;
-    [SerializeField] private float fadeOutDuration = 0.2f;
+    // Dialogue UI elements
+    private VisualElement dialogueContainer;
+    private Label dialogueTextField;
     
-    private VisualElement infoContainer;
-    private Label infoTextField;
+    // Help UI elements
+    private VisualElement helpContainer;
+    private Label helpTextField;
 
     private void Awake()
     {
@@ -31,84 +35,99 @@ public class NotificationSystemHUD : MonoBehaviour
     private void InitializeUI()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
-        infoContainer = root.Q<VisualElement>("InfoContainer");
-        infoTextField = root.Q<Label>("Info");
         
-        if (infoContainer != null)
+        // Dialogue elements
+        dialogueContainer = root.Q<VisualElement>("DialogueContainer");
+        dialogueTextField = dialogueContainer.Q<Label>("Text"); // Inside DialogueContainer
+        
+        // Help elements
+        helpContainer = root.Q<VisualElement>("HelpContainer");
+        helpTextField = helpContainer.Q<Label>("Text"); // Inside HelpContainer
+        
+        if (dialogueContainer != null)
         {
-            infoContainer.style.display = DisplayStyle.None;
+            dialogueContainer.style.display = DisplayStyle.None;
+        }
+        
+        if (helpContainer != null)
+        {
+            helpContainer.style.display = DisplayStyle.None;
         }
     }
     
     // Subscribes to notification system events
     private void SubscribeToEvents()
     {
-        NotificationSystem.OnShowNotification += ShowNotification;
+        NotificationSystem.OnShowDialogue += ShowDialogue;
+        NotificationSystem.OnShowHelp += ShowHelp;
     }
     
     // Unsubscribes from notification system events
     private void UnsubscribeFromEvents()
     {
-        NotificationSystem.OnShowNotification -= ShowNotification;
+        NotificationSystem.OnShowDialogue -= ShowDialogue;
+        NotificationSystem.OnShowHelp -= ShowHelp;
     }
 
-    // Starts notification display sequence
-    private void ShowNotification(string message)
+    // DIALOGUE METHODS
+    
+    // Starts dialogue display sequence with custom duration
+    private void ShowDialogue(string message, float duration)
     {
-        StartCoroutine(DisplayNotificationSequence(message));
+        StartCoroutine(DisplayDialogueSequence(message, duration));
     }
     
-    // Handles complete notification display cycle with animations
-    private IEnumerator DisplayNotificationSequence(string message)
+    // Handles complete dialogue display cycle with animations and custom duration
+    private IEnumerator DisplayDialogueSequence(string message, float duration)
     {
-        SetNotificationText(message);
-        ShowNotificationContainer();
+        SetDialogueText(message);
+        ShowDialogueContainer();
         
-        yield return FadeAnimation(0, 1, fadeInDuration);
-        yield return new WaitForSeconds(NotificationSystem.Instance.displayDuration);
-        yield return FadeAnimation(1, 0, fadeOutDuration);
+        yield return FadeDialogueAnimation(0, 1, fadeInDuration);
+        yield return new WaitForSeconds(duration);
+        yield return FadeDialogueAnimation(1, 0, fadeOutDuration);
         
-        HideNotificationContainer();
-        NotifyDisplayComplete();
+        HideDialogueContainer();
+        NotifyDialogueComplete();
     }
     
-    // Sets notification text content
-    private void SetNotificationText(string message)
+    // Sets dialogue text content
+    private void SetDialogueText(string message)
     {
-        if (infoTextField != null)
+        if (dialogueTextField != null)
         {
-            infoTextField.text = message;
+            dialogueTextField.text = message;
         }
     }
     
-    // Shows notification container
-    private void ShowNotificationContainer()
+    // Shows dialogue container
+    private void ShowDialogueContainer()
     {
-        if (infoContainer != null)
+        if (dialogueContainer != null)
         {
-            infoContainer.style.display = DisplayStyle.Flex;
+            dialogueContainer.style.display = DisplayStyle.Flex;
         }
     }
     
-    // Hides notification container
-    private void HideNotificationContainer()
+    // Hides dialogue container
+    private void HideDialogueContainer()
     {
-        if (infoContainer != null)
+        if (dialogueContainer != null)
         {
-            infoContainer.style.display = DisplayStyle.None;
+            dialogueContainer.style.display = DisplayStyle.None;
         }
     }
     
-    // Notifies system that display is complete
-    private void NotifyDisplayComplete()
+    // Notifies system that dialogue display is complete
+    private void NotifyDialogueComplete()
     {
-        NotificationSystem.Instance?.NotificationFinished();
+        NotificationSystem.Instance?.DialogueFinished();
     }
 
-    // Handles opacity fade animation between start and end values
-    private IEnumerator FadeAnimation(float startAlpha, float endAlpha, float duration)
+    // Handles opacity fade animation for dialogue container
+    private IEnumerator FadeDialogueAnimation(float startAlpha, float endAlpha, float duration)
     {
-        if (infoContainer == null) 
+        if (dialogueContainer == null) 
             yield break;
         
         float elapsedTime = 0;
@@ -116,11 +135,85 @@ public class NotificationSystemHUD : MonoBehaviour
         while (elapsedTime < duration)
         {
             float alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
-            infoContainer.style.opacity = alpha;
+            dialogueContainer.style.opacity = alpha;
             elapsedTime += Time.deltaTime;
             yield return null;
         }
         
-        infoContainer.style.opacity = endAlpha;
+        dialogueContainer.style.opacity = endAlpha;
+    }
+    
+    // HELP METHODS
+    
+    // Starts help display sequence
+    private void ShowHelp(string message, float duration)
+    {
+        StartCoroutine(DisplayHelpSequence(message, duration));
+    }
+    
+    // Handles complete help display cycle with animations
+    private IEnumerator DisplayHelpSequence(string message, float duration)
+    {
+        SetHelpText(message);
+        ShowHelpContainer();
+        
+        yield return FadeHelpAnimation(0, 1, fadeInDuration);
+        yield return new WaitForSeconds(duration);
+        yield return FadeHelpAnimation(1, 0, fadeOutDuration);
+        
+        HideHelpContainer();
+        NotifyHelpComplete();
+    }
+    
+    // Sets help text content
+    private void SetHelpText(string message)
+    {
+        if (helpTextField != null)
+        {
+            helpTextField.text = message;
+        }
+    }
+    
+    // Shows help container
+    private void ShowHelpContainer()
+    {
+        if (helpContainer != null)
+        {
+            helpContainer.style.display = DisplayStyle.Flex;
+        }
+    }
+    
+    // Hides help container
+    private void HideHelpContainer()
+    {
+        if (helpContainer != null)
+        {
+            helpContainer.style.display = DisplayStyle.None;
+        }
+    }
+    
+    // Notifies system that help display is complete
+    private void NotifyHelpComplete()
+    {
+        NotificationSystem.Instance?.HelpFinished();
+    }
+
+    // Handles opacity fade animation for help container
+    private IEnumerator FadeHelpAnimation(float startAlpha, float endAlpha, float duration)
+    {
+        if (helpContainer == null) 
+            yield break;
+        
+        float elapsedTime = 0;
+        
+        while (elapsedTime < duration)
+        {
+            float alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
+            helpContainer.style.opacity = alpha;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        
+        helpContainer.style.opacity = endAlpha;
     }
 }

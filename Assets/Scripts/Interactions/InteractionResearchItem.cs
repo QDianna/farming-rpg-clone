@@ -152,7 +152,7 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
         int cost = GetResearchCost();
         if (playerEconomy != null && !playerEconomy.CanAfford(cost))
         {
-            NotificationSystem.ShowNotification($"You need {cost} coins!");
+            NotificationSystem.ShowHelp($"You need {cost} coins!");
             return false;
         }
         

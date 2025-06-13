@@ -27,9 +27,9 @@ public class InteractionBuildBridge : MonoBehaviour, IInteractable
     {
         if (other.TryGetComponent<PlayerController>(out var _) && !bridgeBuilt)
         {
-            NotificationSystem.ShowNotification("You could build a bridge to go across! " +
+            NotificationSystem.ShowDialogue("You could build a bridge to go across! " +
                                                 $"Gather {woodRequired} pieces of wood by chopping down trees. " +
-                                                "Press E when you are ready.");
+                                                "Press E when you are ready.", 4f);
             InteractionSystem.Instance.SetCurrentInteractable(this);
         }
     }
@@ -61,14 +61,14 @@ public class InteractionBuildBridge : MonoBehaviour, IInteractable
         // Check energy
         if (player.playerStats.GetEnergy() < energyRequired)
         {
-            NotificationSystem.ShowNotification($"Need {energyRequired} energy to build bridge!");
+            NotificationSystem.ShowHelp($"Need {energyRequired} energy to build bridge!");
             return false;
         }
         
         // Check wood - find by name
         if (!InventorySystem.Instance.HasItemByName("wood", woodRequired))
         {
-            NotificationSystem.ShowNotification($"Need {woodRequired} wood to build bridge!");
+            NotificationSystem.ShowHelp($"Need {woodRequired} wood to build bridge!");
             return false;
         }
         
@@ -91,7 +91,7 @@ public class InteractionBuildBridge : MonoBehaviour, IInteractable
             Destroy(blockerCollider);
             
         bridgeBuilt = true;
-        NotificationSystem.ShowNotification("Bridge built! You can now cross the river.");
+        NotificationSystem.ShowDialogue("Bridge built! You can now cross the river.", 1f);
         
         // Remove interaction
         InteractionSystem.Instance.SetCurrentInteractable(null);

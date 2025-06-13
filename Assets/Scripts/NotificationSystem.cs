@@ -3,33 +3,69 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Singleton notification system for queued player message display.
-/// Provides static ShowNotification() method for global message broadcasting with sequential processing.
+/// Notification data container with message and custom duration.
+/// </summary>
+[System.Serializable]
+public class NotificationData
+{
+    public string message;
+    public float duration;
+    
+    public NotificationData(string message, float duration)
+    {
+        this.message = message;
+        this.duration = duration;
+    }
+}
+
+/// <summary>
+/// Singleton notification system with separate queues for dialogue and help messages.
+/// Provides static methods for both dialogue (custom duration) and help (2s default).
 /// </summary>
 public class NotificationSystem : MonoBehaviour
 {
     public static NotificationSystem Instance { get; private set; }
     
-    private Queue<string> notificationQueue = new Queue<string>();
-    private bool isProcessingNotification;
-    public float displayDuration = 2f;    
-    public static event Action<string> OnShowNotification;
+    private Queue<NotificationData> dialogueQueue = new Queue<NotificationData>();
+    private Queue<string> helpQueue = new Queue<string>();
+    
+    private bool isProcessingDialogue;
+    private bool isProcessingHelp;
+    
+    private const float HELP_DURATION = 2f;
+    
+    public static event Action<string, float> OnShowDialogue;
+    public static event Action<string, float> OnShowHelp;
 
     private void Awake()
     {
         InitializeSingleton();
     }
 
-    public static void ShowNotification(string message)
+    // Show dialogue with custom duration
+    public static void ShowDialogue(string message, float duration)
     {
-        Instance?.QueueNotification(message);
+        Instance?.QueueDialogue(message, duration);
     }
     
-    public void NotificationFinished()
+    // Show help message with default 2s duration
+    public static void ShowHelp(string message)
     {
-        // Called by HUD when notification display completes
-        isProcessingNotification = false;
-        ProcessNextNotification();
+        Instance?.QueueHelp(message);
+    }
+    
+    public void DialogueFinished()
+    {
+        // Called by HUD when dialogue display completes
+        isProcessingDialogue = false;
+        ProcessNextDialogue();
+    }
+    
+    public void HelpFinished()
+    {
+        // Called by HUD when help display completes
+        isProcessingHelp = false;
+        ProcessNextHelp();
     }
     
     // Sets up singleton instance with persistence
@@ -46,25 +82,47 @@ public class NotificationSystem : MonoBehaviour
         }
     }
     
-    // Adds notification to queue and starts processing if idle
-    private void QueueNotification(string message)
+    // Adds dialogue to queue and starts processing if idle
+    private void QueueDialogue(string message, float duration)
     {
-        notificationQueue.Enqueue(message);
+        dialogueQueue.Enqueue(new NotificationData(message, duration));
         
-        if (!isProcessingNotification)
+        if (!isProcessingDialogue)
         {
-            ProcessNextNotification();
+            ProcessNextDialogue();
         }
     }
     
-    // Processes next notification in queue if available
-    private void ProcessNextNotification()
+    // Adds help message to queue and starts processing if idle
+    private void QueueHelp(string message)
     {
-        if (notificationQueue.Count > 0 && !isProcessingNotification)
+        helpQueue.Enqueue(message);
+        
+        if (!isProcessingHelp)
         {
-            isProcessingNotification = true;
-            string message = notificationQueue.Dequeue();
-            OnShowNotification?.Invoke(message);
+            ProcessNextHelp();
+        }
+    }
+    
+    // Processes next dialogue in queue if available
+    private void ProcessNextDialogue()
+    {
+        if (dialogueQueue.Count > 0 && !isProcessingDialogue)
+        {
+            isProcessingDialogue = true;
+            NotificationData data = dialogueQueue.Dequeue();
+            OnShowDialogue?.Invoke(data.message, data.duration);
+        }
+    }
+    
+    // Processes next help message in queue if available
+    private void ProcessNextHelp()
+    {
+        if (helpQueue.Count > 0 && !isProcessingHelp)
+        {
+            isProcessingHelp = true;
+            string message = helpQueue.Dequeue();
+            OnShowHelp?.Invoke(message, HELP_DURATION);
         }
     }
 }

@@ -10,8 +10,7 @@ public enum WeatherEvent
 
 /// <summary>
 /// Singleton weather system managing seasonal events, visual effects, and crop growth modifiers.
-/// Generates random weather based on season probabilities and announces changes to other systems.
-/// Provides tomorrow's forecast so players can prepare with potions.
+/// Weather runs in daily sessions from 8 AM to 8 PM, with forecasts generated at 12 PM for next day.
 /// </summary>
 public class WeatherSystem : MonoBehaviour
 {
@@ -28,7 +27,8 @@ public class WeatherSystem : MonoBehaviour
     public GameObject diseaseParticles; // Miasma/fog effect
     
     private WeatherEvent currentWeather = WeatherEvent.Clear;
-    private WeatherEvent tomorrowWeather = WeatherEvent.Clear;
+    private WeatherEvent tomorrowsWeather = WeatherEvent.Clear;
+    private bool hasForecastForTomorrow = false;
     
     public System.Action OnStorm;
     public System.Action OnFreeze;
@@ -42,16 +42,19 @@ public class WeatherSystem : MonoBehaviour
     private void Start()
     {
         SubscribeToTimeSystem();
-        SetWeather(WeatherEvent.Clear);
-        // Predict tomorrow's weather at start
-        PredictTomorrowWeather();
+        SetCurrentWeather(WeatherEvent.Clear);
+    }
+    
+    private void Update()
+    {
+        CheckWeatherEndTime();
     }
     
     private void OnDestroy()
     {
         UnsubscribeFromTimeSystem();
     }
-    
+
     public float GetGrowthModifier()
     {
         return currentWeather == WeatherEvent.Freeze ? 0.5f : 1f;
@@ -62,12 +65,28 @@ public class WeatherSystem : MonoBehaviour
         return currentWeather;
     }
     
-    public WeatherEvent GetTomorrowWeather()
+    public WeatherEvent GetTomorrowsWeather()
     {
-        return tomorrowWeather;
+        return tomorrowsWeather;
+    }
+
+    public bool HasForecastForTomorrow()
+    {
+        return hasForecastForTomorrow;
     }
     
-    // Sets up singleton instance
+    /// <summary>
+    /// Called when player sleeps to stop current weather immediately
+    /// </summary>
+    public void StopWeatherOnSleep()
+    {
+        if (currentWeather != WeatherEvent.Clear)
+            SetCurrentWeather(WeatherEvent.Clear);
+    }
+    
+    /// <summary>
+    /// Sets up singleton instance
+    /// </summary>
     private void InitializeSingleton()
     {
         if (Instance != null && Instance != this)
@@ -78,62 +97,103 @@ public class WeatherSystem : MonoBehaviour
         Instance = this;
     }
     
-    // Subscribes to time system day change events
+    /// <summary>
+    /// Subscribes to time system events for forecast and weather application
+    /// </summary>
     private void SubscribeToTimeSystem()
     {
         if (TimeSystem.Instance != null)
         {
-            TimeSystem.Instance.OnDayChange += HandleDayChange;
+            TimeSystem.Instance.On12PM += GenerateTomorrowsForecast;
+            TimeSystem.Instance.On8AM += StartForecastedWeather;
         }
     }
     
-    // Unsubscribes from time system events
+    /// <summary>
+    /// Unsubscribes from time system events
+    /// </summary>
     private void UnsubscribeFromTimeSystem()
     {
         if (TimeSystem.Instance != null)
         {
-            TimeSystem.Instance.OnDayChange -= HandleDayChange;
+            TimeSystem.Instance.On12PM -= GenerateTomorrowsForecast;
+            TimeSystem.Instance.On8AM -= StartForecastedWeather;
         }
     }
     
-    // Handles day change: apply tomorrow's weather and predict next day
-    private void HandleDayChange()
+    /// <summary>
+    /// Checks if weather should stop at 8 PM (20:00)
+    /// </summary>
+    private void CheckWeatherEndTime()
     {
-        // Apply tomorrow's weather as today's weather
-        SetWeather(tomorrowWeather);
+        if (TimeSystem.Instance == null) return;
         
-        // Predict new tomorrow weather
-        PredictTomorrowWeather();
+        int currentHour = TimeSystem.Instance.GetHour();
+        
+        // Stop weather at 8 PM if it's currently active
+        if (currentHour >= 20 && currentWeather != WeatherEvent.Clear)
+        {
+            Debug.Log($"[Weather] 8 PM reached - Stopping weather: {currentWeather}");
+            SetCurrentWeather(WeatherEvent.Clear);
+        }
     }
     
-    // Predicts tomorrow's weather and shows forecast
-    private void PredictTomorrowWeather()
+    /// <summary>
+    /// Generates weather forecast at 12 PM for tomorrow
+    /// </summary>
+    private void GenerateTomorrowsForecast()
     {
-        if (TimeSystem.Instance == null) 
-            return;
+        if (TimeSystem.Instance == null) return;
         
-        // First 2 days are always clear to let player learn basics
         int currentDay = TimeSystem.Instance.GetDay();
-        if (currentDay <= 3)
-        {
-            Debug.Log("first 3 days protection");
-            tomorrowWeather = WeatherEvent.Clear;
-            return;
-        }
         
+        // Generate tomorrow's weather
         Season currentSeason = TimeSystem.Instance.GetSeason();
-        tomorrowWeather = DetermineWeatherForSeason(currentSeason);
+        tomorrowsWeather = GenerateWeatherForSeason(currentSeason, currentDay);
+        hasForecastForTomorrow = true;
         
-        // Show forecast if it's not clear weather
-        if (tomorrowWeather != WeatherEvent.Clear)
+        Debug.Log($"[Weather] Forecast: Tomorrow (Day {currentDay + 1}) will have {tomorrowsWeather} weather from 8 AM to 8 PM");
+        
+        // Show forecast notification if weather isn't clear
+        if (tomorrowsWeather != WeatherEvent.Clear)
         {
-            ShowWeatherForecast(tomorrowWeather);
+            ShowWeatherForecast(tomorrowsWeather);
         }
     }
     
-    // Randomly determines weather based on seasonal probabilities
-    private WeatherEvent DetermineWeatherForSeason(Season season)
+    /// <summary>
+    /// Starts forecasted weather at 8 AM
+    /// </summary>
+    private void StartForecastedWeather()
     {
+        if (TimeSystem.Instance == null) return;
+        
+        if (hasForecastForTomorrow)
+        {
+            int currentDay = TimeSystem.Instance.GetDay();
+            Debug.Log($"[Weather] 8 AM Day {currentDay} - Starting forecasted weather: {tomorrowsWeather}");
+            
+            SetCurrentWeather(tomorrowsWeather);
+            ClearForecast();
+        }
+        else
+        {
+            Debug.Log("[Weather] 8 AM - No forecast to apply, weather remains clear");
+        }
+    }
+    
+    /// <summary>
+    /// Generates weather based on season and day
+    /// </summary>
+    private WeatherEvent GenerateWeatherForSeason(Season season, int currentDay)
+    {
+        // First 3 days are always clear for tutorial
+        if (currentDay <= 2) // Tomorrow will be day 2, 3, or 4
+        {
+            Debug.Log($"[Weather] Protection period - Clear weather for tomorrow (Day {currentDay + 1})");
+            return WeatherEvent.Clear;
+        }
+        
         float randomValue = Random.Range(0f, 1f);
         
         // Disease can happen any season
@@ -149,7 +209,9 @@ public class WeatherSystem : MonoBehaviour
         };
     }
     
-    // Shows weather forecast notification with context about the illness
+    /// <summary>
+    /// Shows weather forecast notification with preparation advice
+    /// </summary>
     private void ShowWeatherForecast(WeatherEvent weather)
     {
         bool hasMetWitch = QuestsSystem.Instance?.HasMetWitch ?? false;
@@ -164,7 +226,7 @@ public class WeatherSystem : MonoBehaviour
         
         if (!string.IsNullOrEmpty(forecastMessage))
         {
-            NotificationSystem.ShowNotification(forecastMessage);
+            NotificationSystem.ShowDialogue(forecastMessage, 4f);
         }
     }
     
@@ -172,11 +234,13 @@ public class WeatherSystem : MonoBehaviour
     {
         if (hasMetWitch)
         {
-            return "The air feels unnatural... a violent storm approaches tomorrow. The witch spoke of this corruption. Power Potion might protect your crops from this unnatural fury.";
+            return "The air feels wrong... this isn't just a regular storm.\n" +
+                   "I should prepare a Power Potion — this might harm the crops.";
         }
         else
         {
-            return "Something feels terribly wrong with the air... an unnatural storm is brewing for tomorrow. I need to find someone who understands what's happening...";
+            return "Something's not right with the air... it feels heavier than any storm I've known.\n" +
+                   "I need to find out what's going on — and how to protect the crops.";
         }
     }
     
@@ -184,11 +248,13 @@ public class WeatherSystem : MonoBehaviour
     {
         if (hasMetWitch)
         {
-            return "An unnatural cold spreads tomorrow... this isn't normal winter weather. The witch warned of such corruption. Power Potion could shield your plants from this twisted freeze.";
+            return "This cold... it's not natural. The Witch warned me about such things.\n" +
+                   "A Power Potion might help keep the crops safe.";
         }
         else
         {
-            return "The cold tomorrow feels... wrong. This isn't natural winter weather. I need to learn more about what's causing these strange phenomena...";
+            return "It's colder than it should be... and it doesn't feel normal.\n" +
+                   "I should figure out what's causing this — before it hurts the plants.";
         }
     }
     
@@ -196,56 +262,38 @@ public class WeatherSystem : MonoBehaviour
     {
         if (hasMetWitch)
         {
-            return "I can sense the corruption spreading... the same illness affecting the witch and my spouse will strike the crops tomorrow. Only Heal Potion can cure this blight.";
+            return "The air feels... sick. The Witch said the land itself can be affected.\n" +
+                   "I'll need Heal Potions ready, just in case the crops fall ill.";
         }
         else
         {
-            return "Something sickly lingers in the air... my crops may be in danger tomorrow. This feels connected to my spouse's mysterious illness somehow...";
+            return "Something feels wrong today... it's more than just the air.\n" +
+                   "I should look for answers — this might affect the land itself.";
         }
     }
     
-    // Sets current weather and updates all related systems
-    private void SetWeather(WeatherEvent weather)
+    /// <summary>
+    /// Sets current weather and updates all related systems
+    /// </summary>
+    private void SetCurrentWeather(WeatherEvent weather)
     {
         currentWeather = weather;
         UpdateVisualEffects();
-        AnnounceWeatherEvent(weather);
-    }
-    
-    // Shows notification and triggers weather events with contextual messaging
-    private void AnnounceWeatherEvent(WeatherEvent weather)
-    {
-        string message = GetWeatherMessage(weather);
-        
-        if (!string.IsNullOrEmpty(message))
-        {
-            NotificationSystem.ShowNotification(message);
-        }
-        
         TriggerWeatherEvent(weather);
     }
     
-    // Gets notification message for weather event with illness context
-    private string GetWeatherMessage(WeatherEvent weather)
+    /// <summary>
+    /// Clears the forecast data
+    /// </summary>
+    private void ClearForecast()
     {
-        bool hasMetWitch = QuestsSystem.Instance?.HasMetWitch ?? false;
-        
-        return weather switch
-        {
-            WeatherEvent.Storm => hasMetWitch ? 
-                "The corrupted storm unleashes its fury! Your crops suffer from this unnatural tempest!" :
-                "An unnaturally violent storm rages! This destruction feels wrong... what's causing this?",
-            WeatherEvent.Freeze => hasMetWitch ? 
-                "The twisted cold grips your farm! Plants wither under this corrupted freeze!" :
-                "An unnatural freeze spreads across your land! This cold feels... diseased somehow.",
-            WeatherEvent.Disease => hasMetWitch ? 
-                "The mysterious illness spreads to your crops! The same corruption affecting everything around us!" :
-                "A strange blight infects your plants! This looks like the same sickness affecting my spouse...",
-            _ => ""
-        };
+        tomorrowsWeather = WeatherEvent.Clear;
+        hasForecastForTomorrow = false;
     }
     
-    // Triggers appropriate event for weather type
+    /// <summary>
+    /// Triggers appropriate event for weather type
+    /// </summary>
     private void TriggerWeatherEvent(WeatherEvent weather)
     {
         switch (weather)
@@ -265,14 +313,18 @@ public class WeatherSystem : MonoBehaviour
         }
     }
     
-    // Updates particle effects based on current weather
+    /// <summary>
+    /// Updates particle effects based on current weather
+    /// </summary>
     private void UpdateVisualEffects()
     {
         DeactivateAllEffects();
         ActivateCurrentWeatherEffect();
     }
     
-    // Deactivates all weather particle effects
+    /// <summary>
+    /// Deactivates all weather particle effects
+    /// </summary>
     private void DeactivateAllEffects()
     {
         if (stormParticles) stormParticles.SetActive(false);
@@ -280,7 +332,9 @@ public class WeatherSystem : MonoBehaviour
         if (diseaseParticles) diseaseParticles.SetActive(false);
     }
     
-    // Activates particle effect for current weather
+    /// <summary>
+    /// Activates particle effect for current weather
+    /// </summary>
     private void ActivateCurrentWeatherEffect()
     {
         switch (currentWeather)

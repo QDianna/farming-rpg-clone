@@ -187,16 +187,18 @@ public class ResearchSystem : MonoBehaviour
     {
         currentSeedsTier++;
         OnTierUnlocked?.Invoke(currentSeedsTier);
-        NotificationSystem.ShowNotification($"Congratulations, you've unlocked tier {currentSeedsTier} seeds!");
+        NotificationSystem.ShowDialogue($"Congratulations, you've unlocked tier {currentSeedsTier} " +
+                                        $"seeds!", 1f);
     }
     
     // Shows tier progression message
     private void ShowTierProgressMessage()
     {
         if (currentSeedsTier < maxSeedsTier)
-            NotificationSystem.ShowNotification($"Keep researching more tier {currentSeedsTier} seeds " +
+            NotificationSystem.ShowHelp($"Keep researching more tier {currentSeedsTier} seeds " +
                                                 $"to unlock next tier!");
-        NotificationSystem.ShowNotification(($"Research all {maxSeedsTier} seeds " +
-                                             $"to unlock ???"));
+        else
+            NotificationSystem.ShowHelp(($"Research all {maxSeedsTier} seeds " +
+                                         $"to unlock ???"));
     }
 }

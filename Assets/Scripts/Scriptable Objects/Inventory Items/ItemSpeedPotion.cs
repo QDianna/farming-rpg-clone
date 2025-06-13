@@ -11,13 +11,13 @@ public class ItemSpeedPotion : InventoryItem
     {
         if (player.hasSpeedBuff == false)
         {
-            NotificationSystem.ShowNotification("Drank speed potion, you will be running faster today!");
+            NotificationSystem.ShowHelp("Drank speed potion, you will be running faster today!");
             player.ApplySpeedBuff(speedMultiplier);
             player.inventorySystem.RemoveItem(this, 1);
         }
         else
         {
-            NotificationSystem.ShowNotification("Already drank speed potion today.");
+            NotificationSystem.ShowHelp("Already drank speed potion today.");
         }
     }
     

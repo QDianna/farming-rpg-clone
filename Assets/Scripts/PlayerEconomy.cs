@@ -107,7 +107,7 @@ public class PlayerEconomy : MonoBehaviour
     // Shows insufficient funds notification
     private void ShowInsufficientFundsMessage()
     {
-        NotificationSystem.ShowNotification("You don't have enough money for this, try selling some of your harvest!");
+        NotificationSystem.ShowHelp("You don't have enough money for this, try selling some of your harvest!");
     }
     
     // Processes successful purchase transaction

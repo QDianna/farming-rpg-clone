@@ -17,7 +17,7 @@ public class InteractionBuyLand : MonoBehaviour, IInteractable
         if (other.TryGetComponent<PlayerController>(out _))
         {
             InteractionSystem.Instance.SetCurrentInteractable(this);
-            NotificationSystem.ShowNotification("Press E to buy this land!");
+            NotificationSystem.ShowHelp("Press E to buy this land!");
         }
     }
 
@@ -42,13 +42,13 @@ public class InteractionBuyLand : MonoBehaviour, IInteractable
     {
         if (ResearchSystem.Instance.currentSeedsTier < requiredTier)
         {
-            NotificationSystem.ShowNotification($"Unlock Tier {requiredTier} plants first!");
+            NotificationSystem.ShowHelp($"Unlock Tier {requiredTier} plants first!");
             return false;
         }
         
         if (!player.playerEconomy.CanAfford(purchaseCost))
         {
-            NotificationSystem.ShowNotification($"Need {purchaseCost} coins to purchase this land!");
+            NotificationSystem.ShowHelp($"Need {purchaseCost} coins to purchase this land!");
             return false;
         }
         
@@ -60,7 +60,8 @@ public class InteractionBuyLand : MonoBehaviour, IInteractable
     {
         player.playerEconomy.SpendMoney(purchaseCost);
         player.plotlandController.UnlockPlotland(targetTilemap);
-        NotificationSystem.ShowNotification($"Land purchased for {purchaseCost} coins! You can start planting!");
+        NotificationSystem.ShowDialogue($"Land purchased for {purchaseCost} coins! " +
+                                        $"You can start planting!", 2f);
         
         Destroy(gameObject);
     }

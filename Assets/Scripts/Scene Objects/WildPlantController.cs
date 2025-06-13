@@ -181,7 +181,7 @@ public class WildPlantController : MonoBehaviour, IInteractable
     private void HarvestPlant(PlayerController player)
     {
         InventorySystem.Instance.AddItem(harvestableItem, collectAmount);
-        NotificationSystem.ShowNotification($"Picked up {harvestableItem.name} x{collectAmount}");
+        NotificationSystem.ShowHelp($"Picked up {harvestableItem.name} x{collectAmount}");
         harvestableItem.CollectItem(player);
         
         InteractionSystem.Instance.SetCurrentInteractable(null);

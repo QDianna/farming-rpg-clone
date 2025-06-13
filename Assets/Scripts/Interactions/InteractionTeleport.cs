@@ -82,6 +82,6 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
     // Shows zone entry notification
     private void ShowTeleportNotification()
     {
-        NotificationSystem.ShowNotification($"You entered {targetZone.zoneName}");
+        NotificationSystem.ShowDialogue($"You entered {targetZone.zoneName}", 1f);
     }
 }
