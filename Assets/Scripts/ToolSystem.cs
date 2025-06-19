@@ -10,13 +10,13 @@ public enum ToolType
 }
 
 /// <summary>
-/// Tool data container with type, icon, and key-bind information.
+/// Tool data container with type and key-bind information.
 /// </summary>
 public class Tool
 {
-    public readonly ToolType type;
-    public readonly int keyBind;
-    
+    public ToolType type;
+    public int keyBind;
+
     public Tool(ToolType type, int keyBind)
     {
         this.type = type;
@@ -34,31 +34,39 @@ public class ToolSystem : MonoBehaviour
     public Sprite hoeSprite;
     public Sprite axeSprite;
     public Sprite waterCanSprite;
-    
+
     [Header("Axe Configuration")]
     public float axeRange = 2f;
     public LayerMask treeLayer = 1 << 8;
-    
+
     [Header("Energy Consumption")]
-    [SerializeField] private float hoeEnergyCost = 5f;
-    [SerializeField] private float axeEnergyCost = 8f;
-    [SerializeField] private float waterCanEnergyCost = 3f;
+    [SerializeField] private float hoeEnergyCost ;
+    [SerializeField] private float axeEnergyCost ;
+    [SerializeField] private float waterCanEnergyCost;
 
     [HideInInspector] public ToolType selectedTool = ToolType.None;
-    private Dictionary<ToolType, Tool> tools = new();
-    
+    private List<Tool> toolList = new();
+
     public event System.Action OnSelectedToolChange;
-    
+
     private void Awake()
     {
         InitializeTools();
     }
-    
-    public void SetTool(int toolKey)
+
+    private void InitializeTools()
     {
-        foreach (var tool in tools.Values)
+        toolList.Add(new Tool(ToolType.None, 0));
+        toolList.Add(new Tool(ToolType.Hoe, 1));
+        toolList.Add(new Tool(ToolType.Axe, 2));
+        toolList.Add(new Tool(ToolType.WaterCan, 3));
+    }
+
+    public void SetTool(int key)
+    {
+        foreach (var tool in toolList)
         {
-            if (tool.keyBind == toolKey)
+            if (tool.keyBind == key)
             {
                 selectedTool = tool.type;
                 OnSelectedToolChange?.Invoke();
@@ -66,16 +74,16 @@ public class ToolSystem : MonoBehaviour
             }
         }
     }
-    
+
     public void UseTool(PlayerController player)
     {
-        // Check if player has enough energy for any tool action
         if (!HasEnoughEnergyForTool(player))
         {
-            NotificationSystem.ShowHelp("Too tired to use tools. Rest or eat something.");
+            NotificationSystem.ShowHelp("Too tired to use tools./n" +
+                                        "Get some rest or eat something.");
             return;
         }
-        
+
         switch (selectedTool)
         {
             case ToolType.Hoe:
@@ -89,17 +97,7 @@ public class ToolSystem : MonoBehaviour
                 break;
         }
     }
-    
-    // Creates tool dictionary with sprites and key-binds
-    private void InitializeTools()
-    {
-        tools[ToolType.None] = new Tool(ToolType.None, 0);
-        tools[ToolType.Hoe] = new Tool(ToolType.Hoe, 1);
-        tools[ToolType.Axe] = new Tool(ToolType.Axe, 2);
-        tools[ToolType.WaterCan] = new Tool(ToolType.WaterCan, 3);
-    }
 
-    // Uses hoe to till empty plot land and consumes energy
     private void UseHoe(PlayerController player)
     {
         if (player.plotlandController.CanTill(player.transform.position))
@@ -110,13 +108,11 @@ public class ToolSystem : MonoBehaviour
         }
     }
 
-    // Uses axe to chop trees within range and consumes energy
     private void UseAxe(PlayerController player)
     {
         player.animator.SetTrigger("Use Axe");
-        
+
         var closestTree = FindClosestTree(player.transform.position);
-        
         if (closestTree != null)
         {
             closestTree.TakeDamage();
@@ -124,18 +120,15 @@ public class ToolSystem : MonoBehaviour
         }
     }
 
-    // Uses watering can to help planted crops grow and consumes energy
     private void UseWateringCan(PlayerController player)
     {
-        if (!CanWaterPlants(player))
-            return;
+        if (!CanWaterPlants(player)) return;
 
         player.animator.SetTrigger("Use Water Can");
         player.plotlandController.AttendPlot(player.transform.position);
         player.playerStats.ConsumeEnergy(waterCanEnergyCost);
     }
-    
-    // Checks if player has enough energy for the selected tool
+
     private bool HasEnoughEnergyForTool(PlayerController player)
     {
         float requiredEnergy = selectedTool switch
@@ -145,24 +138,19 @@ public class ToolSystem : MonoBehaviour
             ToolType.WaterCan => waterCanEnergyCost,
             _ => 0f
         };
-        
+
         return player.playerStats.GetEnergy() >= requiredEnergy;
     }
-    
-    // Finds closest tree within axe range that can be chopped
+
     private TreeController FindClosestTree(Vector3 playerPosition)
     {
         Collider2D[] treesInRange = Physics2D.OverlapCircleAll(playerPosition, axeRange, treeLayer);
-    
-        if (treesInRange.Length == 0)
-            return null;
-    
         TreeController closestTree = null;
         float closestDistance = float.MaxValue;
-    
-        foreach (Collider2D treeCollider in treesInRange)
+
+        foreach (var collider in treesInRange)
         {
-            TreeController tree = treeCollider.GetComponent<TreeController>();
+            TreeController tree = collider.GetComponent<TreeController>();
             if (tree != null && !tree.isChopped)
             {
                 float distance = Vector2.Distance(playerPosition, tree.transform.position);
@@ -173,25 +161,21 @@ public class ToolSystem : MonoBehaviour
                 }
             }
         }
-        
+
         return closestTree;
     }
-    
-    // Validates watering conditions and shows appropriate messages
+
     private bool CanWaterPlants(PlayerController player)
     {
         if (!player.plotlandController.CanAttendPlot(player.transform.position))
-        {
-           // NotificationSystem.ShowNotification("You can water plants in the warm season to help them sprout");
             return false;
-        }
-        
+
         if (!TimeSystem.Instance.IsCurrentSeasonWarm())
         {
             NotificationSystem.ShowHelp("Plants don't need watering in cold season");
             return false;
         }
-        
+
         return true;
     }
 }

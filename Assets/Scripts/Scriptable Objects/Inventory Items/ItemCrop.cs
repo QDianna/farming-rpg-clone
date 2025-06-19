@@ -8,15 +8,19 @@ using UnityEngine;
 public class ItemCrop : InventoryItem
 {
     [Header("Consumption Settings")]
-    [SerializeField] private float hungerRestoreValue;
+    private float hungerRestoreAmount = 20;
+    private float energyRestoreAmount = 5;
     
     public override void UseItem(PlayerController player)
     {
         // Restore hunger and consume item
         if (!player || !player.playerStats) return;
         
-        player.playerStats.RestoreHunger(hungerRestoreValue);
+        player.playerStats.RestoreHunger(hungerRestoreAmount);
+        player.playerStats.RestoreEnergy(energyRestoreAmount);
+        NotificationSystem.ShowHelp($"Ate {name} " +
+                                    $"(+{hungerRestoreAmount} hunger, +{energyRestoreAmount} energy)");
+        
         player.inventorySystem.RemoveItem(this, 1);
-        NotificationSystem.ShowHelp($"Ate {name} (+{hungerRestoreValue} hunger)");
     }
 }

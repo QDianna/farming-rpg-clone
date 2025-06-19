@@ -15,7 +15,7 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
     {
         if (other.TryGetComponent<PlayerController>(out _))
             InteractionSystem.Instance.SetCurrentInteractable(this);
-        // NotificationSystem.ShowNotification("Press E to use go through!");
+        NotificationSystem.ShowHelp("Press E to use go through!");
     }
 
     public void OnTriggerExit2D(Collider2D other)
@@ -82,6 +82,6 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
     // Shows zone entry notification
     private void ShowTeleportNotification()
     {
-        NotificationSystem.ShowDialogue($"You entered {targetZone.zoneName}", 1f);
+        NotificationSystem.ShowHelp($"You entered {targetZone.zoneName}");
     }
 }

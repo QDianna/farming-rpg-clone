@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// Time display UI showing current season, day, and time with real-time updates.
+/// Time display UI showing current season, day, year and time with real-time updates.
 /// Updates automatically when time system values change through event system.
 /// </summary>
 public class TimeSystemHUD : MonoBehaviour
@@ -30,14 +30,12 @@ public class TimeSystemHUD : MonoBehaviour
         UnsubscribeFromEvents();
     }
 
-    // Sets up UI element references
     private void InitializeUI()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
         timeLabel = root.Q<Label>("Time");
     }
 
-    // Subscribes to time system change events
     private void SubscribeToEvents()
     {
         if (TimeSystem.Instance != null)
@@ -48,7 +46,6 @@ public class TimeSystemHUD : MonoBehaviour
         }
     }
 
-    // Unsubscribes from time system change events
     private void UnsubscribeFromEvents()
     {
         if (TimeSystem.Instance != null)
@@ -59,17 +56,18 @@ public class TimeSystemHUD : MonoBehaviour
         }
     }
 
-    // Updates time display with current season, day, and time
     private void UpdateDisplay()
     {
         if (timeLabel != null && TimeSystem.Instance != null)
         {
-            string formattedTime = FormatCurrentTime();
-            timeLabel.text = $"{TimeSystem.Instance.GetSeason()} Day {TimeSystem.Instance.GetDay()}\n{formattedTime}";
+            string yearDay = $"Year {TimeSystem.Instance.GetYear()} Day {TimeSystem.Instance.GetDay()}";
+            string seasonDay = $"Day {TimeSystem.Instance.GetDayInSeason()} of {TimeSystem.Instance.GetSeason()}";
+            string timeInfo = FormatCurrentTime();
+            
+            timeLabel.text = $"{yearDay}\n{seasonDay}\n{timeInfo}";
         }
     }
     
-    // Formats current time with zero-padded minutes
     private string FormatCurrentTime()
     {
         int hour = TimeSystem.Instance.GetHour();

@@ -1,26 +1,30 @@
 using UnityEngine;
+using System.Collections;
 
 /// <summary>
 /// Simple quest system to track player progression and unlocked features.
-/// Manages key story milestones, feature unlocks, and initial story introduction.
+/// Manages story introduction, tutorial, and witch quest progression.
 /// </summary>
 public class QuestsSystem : MonoBehaviour
 {
     public static QuestsSystem Instance { get; private set; }
     
     [Header("Quest Progress")]
+    [SerializeField] private bool hasShownIntroduction;
+    [SerializeField] private bool hasShownTutorial;
     [SerializeField] private bool hasMetWitch;
+    [SerializeField] private bool hasStartedWitchQuest;
     [SerializeField] private bool hasCompletedWitchQuest;
-    [SerializeField] private bool hasStartedMainQuest;
+    
+    [Header("Tutorial Settings")]
+    [SerializeField] private int tutorialDelay = 8 * 4; // Delay after introduction before showing tutorial
     
     public event System.Action OnWitchFirstMet;
     public event System.Action OnWitchQuestCompleted;
-    public event System.Action OnMainQuestStarted;
     
     // Public getters for quest states
     public bool HasMetWitch => hasMetWitch;
     public bool HasCompletedWitchQuest => hasCompletedWitchQuest;
-    public bool HasStartedMainQuest => hasStartedMainQuest;
     
     private void Awake()
     {
@@ -29,43 +33,51 @@ public class QuestsSystem : MonoBehaviour
     
     private void Start()
     {
-        // Start the main quest when the game begins
-        if (!hasStartedMainQuest)
+        // Start the introduction when the game begins
+        if (!hasShownIntroduction)
+            ShowIntroduction();
+        
+    }
+    
+    // Shows the player's opening monologue
+    private void ShowIntroduction()
+    {
+        if (!hasShownIntroduction)
         {
-            StartMainQuest();
+            hasShownIntroduction = true;
+            
+            NotificationSystem.ShowDialogue("My beloved has fallen gravely ill... " +
+                                            "I have never seen anything like this.", 3.4f);
+            NotificationSystem.ShowDialogue("It came without warning. Each day, their strength fades, " +
+                                            "their skin pale, their breath weak.", 3.4f);
+            NotificationSystem.ShowDialogue("No healer in town can explain it. I am running out of time.", 3.4f);
+            NotificationSystem.ShowDialogue("But it is not just them... " +
+                                            "Something is wrong with the world itself.", 3.4f);
+            NotificationSystem.ShowDialogue("The weather has turned strange... sudden storms, " +
+                                            "harsh winters, crops refusing to grow...", 3.4f);
+            NotificationSystem.ShowDialogue("Even the plants seem sick. " +
+                                            "I have seen seeds rot before they sprout.", 3.4f);
+            NotificationSystem.ShowDialogue("I must find a cure... maybe there is somebody out there who knows more...", 3.4f);
         }
     }
     
-    // Starts the main quest and shows the story introduction
-    public void StartMainQuest()
-    {
-        if (!hasStartedMainQuest)
-        {
-            hasStartedMainQuest = true;
-            OnMainQuestStarted?.Invoke();
-            ShowStoryIntroduction();
-            Debug.Log("Quest: Main quest 'Find a Cure' has started!");
-        }
-    }
-    
-    // Shows the initial story and quest objective
-    private void ShowStoryIntroduction()
-    {
-        NotificationSystem.ShowDialogue("My beloved has fallen gravely ill... I've never seen anything like this.", 1f);
-        NotificationSystem.ShowDialogue("It came without warning. Each day, their strength fades... their skin pale, their breath weak.", 1f);
-        NotificationSystem.ShowDialogue("No healer in town can explain it. I’m running out of time.", 1f);
-        NotificationSystem.ShowDialogue("I must find a cure... whatever it takes.", 1f);
-        NotificationSystem.ShowDialogue("I’ll search the land, gather what herbs I can, and seek help from anyone who might know more.", 1f);
-    }
-    
-    // Marks that the player has met the witch for the first time
+    // Marks that the player has met the witch and starts the witch quest
     public void SetWitchMet()
     {
         if (!hasMetWitch)
         {
             hasMetWitch = true;
             OnWitchFirstMet?.Invoke();
-            Debug.Log("Quest: Player has met the witch!");
+            StartWitchQuest();
+        }
+    }
+    
+    // Starts the witch quest when first meeting the witch
+    private void StartWitchQuest()
+    {
+        if (!hasStartedWitchQuest)
+        {
+            hasStartedWitchQuest = true;
         }
     }
     
@@ -76,10 +88,8 @@ public class QuestsSystem : MonoBehaviour
         {
             hasCompletedWitchQuest = true;
             OnWitchQuestCompleted?.Invoke();
-            Debug.Log("Quest: Witch quest completed!");
         }
     }
-    
     
     // Sets up singleton instance with persistence
     private void InitializeSingleton()

@@ -17,14 +17,16 @@ public class WeatherSystem : MonoBehaviour
     public static WeatherSystem Instance { get; private set; }
     
     [Header("Weather Probabilities")]
-    [Range(0f, 1f)] public float summerStormChance = 0.15f;
-    [Range(0f, 1f)] public float winterFreezeChance = 0.3f;
-    [Range(0f, 1f)] public float diseaseChance = 0.1f; // Can happen any season
+    [SerializeField] private float baseStormChance;
+    [SerializeField] private float baseFreezeChance;
+    [SerializeField] private float baseDiseaseChance;
+    [SerializeField] private float yearlyIntensityIncrease;
+    public float protectionDays;
     
     [Header("Visual Effects")]
     public GameObject stormParticles;
     public GameObject snowParticles;
-    public GameObject diseaseParticles; // Miasma/fog effect
+    public GameObject diseaseParticles;
     
     private WeatherEvent currentWeather = WeatherEvent.Clear;
     private WeatherEvent tomorrowsWeather = WeatherEvent.Clear;
@@ -60,33 +62,12 @@ public class WeatherSystem : MonoBehaviour
         return currentWeather == WeatherEvent.Freeze ? 0.5f : 1f;
     }
     
-    public WeatherEvent GetCurrentWeather()
-    {
-        return currentWeather;
-    }
-    
-    public WeatherEvent GetTomorrowsWeather()
-    {
-        return tomorrowsWeather;
-    }
-
-    public bool HasForecastForTomorrow()
-    {
-        return hasForecastForTomorrow;
-    }
-    
-    /// <summary>
-    /// Called when player sleeps to stop current weather immediately
-    /// </summary>
     public void StopWeatherOnSleep()
     {
         if (currentWeather != WeatherEvent.Clear)
             SetCurrentWeather(WeatherEvent.Clear);
     }
     
-    /// <summary>
-    /// Sets up singleton instance
-    /// </summary>
     private void InitializeSingleton()
     {
         if (Instance != null && Instance != this)
@@ -97,9 +78,6 @@ public class WeatherSystem : MonoBehaviour
         Instance = this;
     }
     
-    /// <summary>
-    /// Subscribes to time system events for forecast and weather application
-    /// </summary>
     private void SubscribeToTimeSystem()
     {
         if (TimeSystem.Instance != null)
@@ -109,9 +87,6 @@ public class WeatherSystem : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Unsubscribes from time system events
-    /// </summary>
     private void UnsubscribeFromTimeSystem()
     {
         if (TimeSystem.Instance != null)
@@ -121,9 +96,6 @@ public class WeatherSystem : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Checks if weather should stop at 8 PM (20:00)
-    /// </summary>
     private void CheckWeatherEndTime()
     {
         if (TimeSystem.Instance == null) return;
@@ -138,9 +110,6 @@ public class WeatherSystem : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Generates weather forecast at 12 PM for tomorrow
-    /// </summary>
     private void GenerateTomorrowsForecast()
     {
         if (TimeSystem.Instance == null) return;
@@ -161,9 +130,6 @@ public class WeatherSystem : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Starts forecasted weather at 8 AM
-    /// </summary>
     private void StartForecastedWeather()
     {
         if (TimeSystem.Instance == null) return;
@@ -182,36 +148,44 @@ public class WeatherSystem : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Generates weather based on season and day
-    /// </summary>
+    // Calculates weather chances based on current year progression
     private WeatherEvent GenerateWeatherForSeason(Season season, int currentDay)
     {
-        // First 3 days are always clear for tutorial
-        if (currentDay <= 1)
+        // First few days are always clear for tutorial
+        if (currentDay <= protectionDays)
         {
             Debug.Log($"[Weather] Protection period - Clear weather for tomorrow (Day {currentDay + 1})");
             return WeatherEvent.Clear;
         }
         
+        // Get current year from TimeSystem
+        int currentYear = TimeSystem.Instance?.GetYear() ?? 1;
+        
+        // Apply yearly intensity multiplier
+        float yearMultiplier = 1f + ((currentYear - 1) * yearlyIntensityIncrease);
+        
+        Debug.Log($"[Weather] Day {currentDay}, Year {currentYear}, Intensity: {yearMultiplier:F1}x");
+        
+        // Calculate adjusted chances
+        float adjustedStormChance = baseStormChance * yearMultiplier;
+        float adjustedFreezeChance = baseFreezeChance * yearMultiplier;
+        float adjustedDiseaseChance = baseDiseaseChance * yearMultiplier;
+        
         float randomValue = Random.Range(0f, 1f);
         
         // Disease can happen any season
-        if (randomValue <= diseaseChance)
+        if (randomValue <= adjustedDiseaseChance)
             return WeatherEvent.Disease;
         
         // Season-specific events
         return season switch
         {
-            Season.Summer when randomValue <= diseaseChance + summerStormChance => WeatherEvent.Storm,
-            Season.Winter when randomValue <= diseaseChance + winterFreezeChance => WeatherEvent.Freeze,
+            Season.Summer when randomValue <= adjustedDiseaseChance + adjustedStormChance => WeatherEvent.Storm,
+            Season.Winter when randomValue <= adjustedDiseaseChance + adjustedFreezeChance => WeatherEvent.Freeze,
             _ => WeatherEvent.Clear
         };
     }
     
-    /// <summary>
-    /// Shows weather forecast notification with preparation advice
-    /// </summary>
     private void ShowWeatherForecast(WeatherEvent weather)
     {
         bool hasMetWitch = QuestsSystem.Instance?.HasMetWitch ?? false;
@@ -232,49 +206,38 @@ public class WeatherSystem : MonoBehaviour
     
     private string GetStormForecastMessage(bool hasMetWitch)
     {
-        if (hasMetWitch)
-        {
-            return "The air feels wrong... this isn't just a regular storm.\n" +
-                   "I should prepare a Power Potion — this might harm the crops.";
-        }
-        else
-        {
-            return "Something's not right with the air... it feels heavier than any storm I've known.\n" +
-                   "I need to find out what's going on — and how to protect the crops.";
-        }
+        return hasMetWitch
+            ? "The air feels wrong... this isn't just a regular storm.\n" +
+              "Something powerful is coming tomorrow.\n" +
+              "I should prepare a Power Potion to protect the crops."
+            : "Something's not right with the air... it feels heavier than any storm I've known.\n" +
+              "A dangerous storm might hit tomorrow.\n" +
+              "I need to find a way to shield the crops.";
     }
-    
+
     private string GetFreezeForecastMessage(bool hasMetWitch)
     {
-        if (hasMetWitch)
-        {
-            return "This cold... it's not natural. The Witch warned me about such things.\n" +
-                   "A Power Potion might help keep the crops safe.";
-        }
-        else
-        {
-            return "It's colder than it should be... and it doesn't feel normal.\n" +
-                   "I should figure out what's causing this — before it hurts the plants.";
-        }
+        return hasMetWitch
+            ? "This cold... it's not natural. The Witch warned me about such things.\n" +
+              "A freezing wave may come tomorrow.\n" +
+              "I should prepare a Power Potion to protect the crops."
+            : "It's colder than it should be... and it doesn't feel normal.\n" +
+              "Something unnatural might hit tomorrow.\n" +
+              "I need to find a way to stop the damage.";
     }
-    
+
     private string GetDiseaseForecastMessage(bool hasMetWitch)
     {
-        if (hasMetWitch)
-        {
-            return "The air feels... sick. The Witch said the land itself can be affected.\n" +
-                   "I'll need Heal Potions ready, just in case the crops fall ill.";
-        }
-        else
-        {
-            return "Something feels wrong today... it's more than just the air.\n" +
-                   "I should look for answers — this might affect the land itself.";
-        }
+        return hasMetWitch
+            ? "The air feels... sick. The Witch said the land itself can be affected.\n" +
+              "I do not think my crops will survive this.\n" +
+              "I must prepare Heal Potions to help them."
+            : "Something feels wrong today... it's more than just the air.\n" +
+              "The soil might be affected too.\n" +
+              "I need to understand what's happening before it's too late.";
     }
+
     
-    /// <summary>
-    /// Sets current weather and updates all related systems
-    /// </summary>
     private void SetCurrentWeather(WeatherEvent weather)
     {
         currentWeather = weather;
@@ -282,18 +245,12 @@ public class WeatherSystem : MonoBehaviour
         TriggerWeatherEvent(weather);
     }
     
-    /// <summary>
-    /// Clears the forecast data
-    /// </summary>
     private void ClearForecast()
     {
         tomorrowsWeather = WeatherEvent.Clear;
         hasForecastForTomorrow = false;
     }
     
-    /// <summary>
-    /// Triggers appropriate event for weather type
-    /// </summary>
     private void TriggerWeatherEvent(WeatherEvent weather)
     {
         switch (weather)
@@ -313,18 +270,12 @@ public class WeatherSystem : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Updates particle effects based on current weather
-    /// </summary>
     private void UpdateVisualEffects()
     {
         DeactivateAllEffects();
         ActivateCurrentWeatherEffect();
     }
     
-    /// <summary>
-    /// Deactivates all weather particle effects
-    /// </summary>
     private void DeactivateAllEffects()
     {
         if (stormParticles) stormParticles.SetActive(false);
@@ -332,9 +283,6 @@ public class WeatherSystem : MonoBehaviour
         if (diseaseParticles) diseaseParticles.SetActive(false);
     }
     
-    /// <summary>
-    /// Activates particle effect for current weather
-    /// </summary>
     private void ActivateCurrentWeatherEffect()
     {
         switch (currentWeather)

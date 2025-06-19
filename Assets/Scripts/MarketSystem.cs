@@ -10,20 +10,20 @@ public class MarketSystem : MonoBehaviour
     public static MarketSystem Instance { get; private set; }
     
     [Header("Market Configuration")]
-    [SerializeField] private int dailySeedVariety = 2;
-    [SerializeField] private int seedQuantityPerType = 3;
+    [SerializeField] private int dailySeedVariety ;
     private readonly List<InventoryItem> currentDailySeeds = new();
+    private readonly List<InventoryItem> currentDailyCrops = new();
 
     [Header("Unlock-able Structures")]
     [SerializeField] private GameObject researchTable;
     [SerializeField] private GameObject craftingBench;
     
     [Header("Structure Costs")]
-    [SerializeField] private int researchTableCost = 500;
-    [SerializeField] private int researchTableWoodCost = 100;
-    [SerializeField] private int craftingBenchCost = 1000;
-    [SerializeField] private int craftingBenchWoodCost = 200;
-    [SerializeField] private int craftingBenchUpgradeCost = 1500;
+    [SerializeField] private int researchTableCost;
+    [SerializeField] private int researchTableWoodCost;
+    [SerializeField] private int craftingBenchCost;
+    [SerializeField] private int craftingBenchWoodCost;
+    [SerializeField] private int craftingBenchUpgradeCost;
     
     private bool isResearchTableUnlocked;
     private bool isCraftingBenchUnlocked;
@@ -48,16 +48,21 @@ public class MarketSystem : MonoBehaviour
         UnsubscribeFromEvents();
     }
     
-    // DAILY SEEDS METHODS
+    // DAILY SEEDS AND CROPS METHODS
     
     public List<InventoryItem> GetAvailableSeeds()
     {
         return new List<InventoryItem>(currentDailySeeds);
     }
+
+    public List<InventoryItem> GetAvailableCrops()
+    {
+        return new List<InventoryItem>(currentDailyCrops);
+    }
     
     public bool IsItemAvailable(InventoryItem item)
     {
-        return currentDailySeeds.Contains(item);
+        return currentDailySeeds.Contains(item) || currentDailyCrops.Contains(item);
     }
     
     // RESEARCH TABLE METHODS
@@ -212,10 +217,11 @@ public class MarketSystem : MonoBehaviour
     
     // DAILY MARKET REFRESH
     
-    // Refreshes daily seed selection based on current research tier
+    // Refreshes daily seed and crop selection based on current research tier
     private void RefreshDailyItems()
     {
         currentDailySeeds.Clear();
+        currentDailyCrops.Clear();
         
         if (ResearchSystem.Instance == null) 
             return;
@@ -224,25 +230,36 @@ public class MarketSystem : MonoBehaviour
         if (availableSeeds.Count == 0) 
             return;
         
-        SelectRandomSeeds(availableSeeds);
+        SelectRandomSeedsAndCrops(availableSeeds);
         OnMarketDataChanged?.Invoke();
     }
     
-    // Randomly selects seeds using Fisher-Yates shuffle
-    private void SelectRandomSeeds(List<ItemSeed> availableSeeds)
+    // Randomly selects seeds and their corresponding crops
+    private void SelectRandomSeedsAndCrops(List<ItemSeed> availableSeeds)
     {
         int seedTypesToShow = Mathf.Min(dailySeedVariety, availableSeeds.Count);
         
+        // Fisher-Yates shuffle for seed selection
         for (int i = 0; i < seedTypesToShow; i++)
         {
             int randomIndex = Random.Range(i, availableSeeds.Count);
             (availableSeeds[i], availableSeeds[randomIndex]) = (availableSeeds[randomIndex], availableSeeds[i]);
         }
         
+        // Add selected seeds and their corresponding crops
         for (int i = 0; i < seedTypesToShow; i++)
         {
-            currentDailySeeds.Add(availableSeeds[i]);
+            var selectedSeed = availableSeeds[i];
+            currentDailySeeds.Add(selectedSeed);
+            
+            // Add the corresponding crop if it exists
+            if (selectedSeed.resultedCrop != null)
+            {
+                currentDailyCrops.Add(selectedSeed.resultedCrop);
+            }
         }
+        
+        Debug.Log($"[Market] Daily refresh: {currentDailySeeds.Count} seeds, {currentDailyCrops.Count} crops");
     }
     
     // SYSTEM SETUP AND EVENTS

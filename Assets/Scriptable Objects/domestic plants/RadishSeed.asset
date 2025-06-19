@@ -16,14 +16,14 @@ MonoBehaviour:
   description: buy // plant // research
   sprite: {fileID: -1241740860, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
   droppedItemPrefab: {fileID: 0}
-  basePrice: 10
+  basePrice: 30
   canBeSold: 1
-  canBeBought: 0
+  canBeBought: 1
   maxStackSize: 99
   tier: 2
   season: 3
   resultedCrop: {fileID: 11400000, guid: 645109f386c440d43b028234384c2b87, type: 2}
-  growthTime: 10
+  growthTime: 600
   growthStageTiles:
   - {fileID: 11400000, guid: 5f69f79f11648f14b961ed68949dcf2c, type: 2}
   - {fileID: 11400000, guid: b543bea20218e1845b594c2af0306a8f, type: 2}

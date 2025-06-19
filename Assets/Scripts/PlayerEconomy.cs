@@ -11,7 +11,7 @@ public class PlayerEconomy : MonoBehaviour
     [SerializeField] private int startingMoney = 500;
     
     [Header("Price Modifiers")]
-    [SerializeField] private float sellPriceModifier = 0.7f;
+    [SerializeField] private float sellPriceModifier = 0.8f;
     [SerializeField] private float buyPriceModifier = 1.2f;
     
     private int currentMoney;

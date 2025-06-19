@@ -53,7 +53,7 @@ public class InteractionSleep : MonoBehaviour, IInteractable
         }
         
         // Skip to next day (will wake up at 6 AM)
-        TimeSystem.Instance.SkipDay();
+        TimeSystem.Instance.SkipDay(player);
         
         Debug.Log($"[InteractionSleep] Player slept from day {currentDay} to day {nextDay}");
     }

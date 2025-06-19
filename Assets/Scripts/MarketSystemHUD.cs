@@ -223,51 +223,70 @@ public class MarketSystemHUD : MonoBehaviour
         
         buyItemsContainer.Clear();
         
-        AddSeedsSection();
+        AddItemsSection();
         AddStructuresSection();
     }
     
-    private void AddSeedsSection()
+    private void AddItemsSection()
     {
         // Create title with tier info
-        var seedTitleWithTier = "";
+        var itemsTitleWithTier = "";
         if (ResearchSystem.Instance != null)
         {
-            seedTitleWithTier = $"Seeds Available Today (Tier {ResearchSystem.Instance.currentSeedsTier})";
+            itemsTitleWithTier = $"Items Available Today (Tier {ResearchSystem.Instance.currentSeedsTier})";
         }
         else
         {
-            seedTitleWithTier = "Seeds Available Today";
+            itemsTitleWithTier = "Items Available Today";
         }
         
-        var seedTitle = new Label(seedTitleWithTier);
-        seedTitle.AddToClassList("market-section-title");
-        buyItemsContainer.Add(seedTitle);
+        var itemsTitle = new Label(itemsTitleWithTier);
+        itemsTitle.AddToClassList("market-section-title");
+        buyItemsContainer.Add(itemsTitle);
         
-        AddAvailableSeeds();
+        AddAvailableItems();
     }
     
-    private void AddAvailableSeeds()
+    private void AddAvailableItems()
     {
-        var availableItems = market.GetAvailableItems();
-        if (availableItems.Count > 0)
+        var availableSeeds = MarketSystem.Instance?.GetAvailableSeeds() ?? new System.Collections.Generic.List<InventoryItem>();
+        var availableCrops = MarketSystem.Instance?.GetAvailableCrops() ?? new System.Collections.Generic.List<InventoryItem>();
+        
+        if (availableSeeds.Count > 0 || availableCrops.Count > 0)
         {
-            var seedsContainer = new VisualElement();
-            seedsContainer.AddToClassList("seeds-container");
-            
-            foreach (var item in availableItems)
+            // Add seeds section using existing classes
+            if (availableSeeds.Count > 0)
             {
-                var itemElement = CreateBuyItemElement(item);
-                seedsContainer.Add(itemElement);
+                var seedsContainer = new VisualElement();
+                seedsContainer.AddToClassList("seeds-container");
+                
+                foreach (var item in availableSeeds)
+                {
+                    var itemElement = CreateBuyItemElement(item);
+                    seedsContainer.Add(itemElement);
+                }
+                buyItemsContainer.Add(seedsContainer);
             }
             
-            buyItemsContainer.Add(seedsContainer);
+            // Add crops section using same classes as seeds
+            if (availableCrops.Count > 0)
+            {
+                var cropsContainer = new VisualElement();
+                cropsContainer.AddToClassList("seeds-container"); // Same class as seeds
+                
+                foreach (var item in availableCrops)
+                {
+                    var itemElement = CreateBuyItemElement(item);
+                    cropsContainer.Add(itemElement);
+                }
+                buyItemsContainer.Add(cropsContainer);
+            }
         }
         else
         {
-            var noSeedsLabel = new Label("No seeds available for current tier/season");
-            noSeedsLabel.AddToClassList("market-no-items");
-            buyItemsContainer.Add(noSeedsLabel);
+            var noItemsLabel = new Label("No items available for current tier/season");
+            noItemsLabel.AddToClassList("market-no-items");
+            buyItemsContainer.Add(noItemsLabel);
         }
     }
     

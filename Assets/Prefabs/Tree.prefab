@@ -104,8 +104,8 @@ MonoBehaviour:
   smallTreeWood: 3
   bigTreeWood: 5
   maxHealth: 3
-  trunkToSmallTime: 10
-  smallToBigTime: 20
+  trunkToSmallTime: 100
+  smallToBigTime: 200
   wood: {fileID: 11400000, guid: caa5995ef372893458671a2c00b504fc, type: 2}
   smallTreeSprite: {fileID: -1306868223, guid: d3f81775dc9319a408a3c845e1a19a3d, type: 3}
   bigTreeSprite: {fileID: 1324248737, guid: d3f81775dc9319a408a3c845e1a19a3d, type: 3}
@@ -147,7 +147,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.51}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -157,5 +157,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8394727, y: 0.6600001}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0

@@ -80,6 +80,12 @@ public class PlayerStats : MonoBehaviour
         SetEnergy(energy + amount);
     }
     
+    public void Sleep()
+    {
+        SetEnergy(100f);
+        Debug.Log("Player slept and restored energy to 100%");
+    }
+    
     // Applies gradual hunger loss over time
     private void UpdateHungerDegradation()
     {

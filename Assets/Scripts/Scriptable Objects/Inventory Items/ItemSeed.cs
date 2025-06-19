@@ -10,7 +10,7 @@ using UnityEngine.Tilemaps;
 public class ItemSeed : InventoryItem
 {
     [Header("Seed Properties")]
-    public int tier = 1;
+    public int tier;
     public Season season;
     public ItemCrop resultedCrop;
     

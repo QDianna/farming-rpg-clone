@@ -4,13 +4,18 @@ using UnityEngine;
 public class ItemWildPlant : InventoryItem
 {
     [Header("Wild Plant Properties")]
-    [SerializeField] private float energyRestoreAmount = 20f;
+    private float hungerRestoreAmount = 5f;
+    private float energyRestoreAmount = 20f;
+
     public override void UseItem(PlayerController player)
     {
         if (!player || !player.playerStats) return;
         
+        player.playerStats.RestoreHunger(hungerRestoreAmount);
         player.playerStats.RestoreEnergy(energyRestoreAmount);
+        NotificationSystem.ShowHelp($"Ate {name} " +
+                                    $"(+{hungerRestoreAmount} hunger, +{energyRestoreAmount} energy)");
+        
         player.inventorySystem.RemoveItem(this, 1);
-        NotificationSystem.ShowHelp($"Ate {name} (+{energyRestoreAmount} energy)");
     }
 }

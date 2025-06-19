@@ -16,8 +16,8 @@ MonoBehaviour:
   description: heals damaged plants
   sprite: {fileID: 1884988875, guid: a1f409a1ef3e9654698d16d783c85844, type: 3}
   droppedItemPrefab: {fileID: 0}
-  basePrice: 10
-  canBeSold: 1
+  basePrice: 0
+  canBeSold: 0
   canBeBought: 0
   maxStackSize: 99
   starsEffectPrefab: {fileID: 7762797338399269062, guid: 75489c9862eb74d498a132336ffba911, type: 3}

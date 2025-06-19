@@ -105,8 +105,9 @@ MonoBehaviour:
   collectAmount: 1
   readyStageSprite: {fileID: 1194209149, guid: 4038e15739dd2be498076e728299f386, type: 3}
   growingStageSprite: {fileID: -783504806, guid: 4038e15739dd2be498076e728299f386, type: 3}
-  regrowthTime: 10
-  season: 3
+  regrowthTime: 100
+  season: 2
+  dailySpawnChance: 0.45
 --- !u!61 &4288967050750866361
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,7 +142,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.8}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -151,5 +152,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.2, y: 1.8}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0

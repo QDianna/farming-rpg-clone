@@ -13,7 +13,7 @@ public abstract class InventoryItem : ScriptableObject
     public GameObject droppedItemPrefab;
     
     [Header("Economic Properties")]
-    public int basePrice = 10;
+    public int basePrice;
     public bool canBeSold = true;
     public bool canBeBought;
     

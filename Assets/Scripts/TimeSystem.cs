@@ -10,16 +10,19 @@ public enum Season
 }
 
 /// <summary>
-/// Singleton time system managing day/night cycles, seasons, and time progression.
-/// Handles sleep functionality and provides seasonal weather information.
+/// Singleton time system managing day/night cycles with separate season cycles for weather and plants.
+/// Weather seasons (Summer/Winter) last 4-5 days, Plant seasons (Spring/Autumn) last 3 days.
 /// </summary>
 public class TimeSystem : MonoBehaviour
 {
     public static TimeSystem Instance { get; private set; }
     
     [Header("Time Settings")]
-    [SerializeField] private float timeProgressionSpeed ;
-    [SerializeField] private int daysPerSeason;
+    [SerializeField] private float timeProgressionSpeed;
+    
+    [Header("Season Settings")]
+    [SerializeField] private int weatherSeasonDays; // Summer/Winter duration
+    [SerializeField] private int plantSeasonDays;   // Spring/Autumn duration
     [SerializeField] private int currentSeasonIndex;
     
     private static readonly List<Season> Seasons = new() { Season.Spring, Season.Summer, Season.Autumn, Season.Winter };
@@ -28,6 +31,8 @@ public class TimeSystem : MonoBehaviour
     private float currentTime = 6f; // Start at 6 AM
     private int cachedHour = 6;
     private int cachedMinute;
+    private int daysInCurrentSeason = 0; // Track days spent in current season
+    private int currentYear = 1; // Track current year
 
     public event System.Action OnDayChange;
     public event System.Action OnHourChange;
@@ -46,24 +51,45 @@ public class TimeSystem : MonoBehaviour
         UpdateTimeEvents();
     }
 
-    /// <summary>
-    /// Skips to the next day when player sleeps. Sets time to 6 AM.
-    /// </summary>
-    public void SkipDay()
+    public void SkipDay(PlayerController player)
     {
-        currentDay++;
-        currentTime = 6f; // Always wake up at 6 AM
+        // Calculate in-game hours skipped when sleeping
+        float hoursSkipped = CalculateTimeSkippedDuringSleep();
         
-        // Check for season change (every daysPerSeason days)
-        if (currentDay > 1 && (currentDay - 1) % daysPerSeason == 0)
+        currentDay++;
+        currentTime = 6f;
+        daysInCurrentSeason++;
+        
+        // Check for season change based on current season type
+        CheckSeasonChange();
+        
+        player.playerStats.Sleep();
+        
+        // Signal plotland to simulate growth during sleep
+        // Convert in-game hours to real-time seconds equivalent
+        if (player.plotlandController != null)
         {
-            currentSeasonIndex = (currentSeasonIndex + 1) % Seasons.Count;
-            // Debug.Log($"[TimeSystem] Season changed to: {GetSeason()}");
+            // If 24h in-game = 300 seconds real time, then 1h in-game = 12.5 seconds real time
+            float simulatedTime = hoursSkipped * (300f / 24f); // 12.5 seconds per in-game hour
+            player.plotlandController.SimulateGrowthDuringSleep(simulatedTime);
         }
         
-        // Debug.Log($"[TimeSystem] Day skipped to: {currentDay}, Time: {GetHour()}:{GetMinute():00}");
-        
         OnDayChange?.Invoke();
+    }
+    
+    // Calculates how many hours are skipped when sleeping
+    private float CalculateTimeSkippedDuringSleep()
+    {
+        if (currentTime <= 6f)
+        {
+            // If it's between midnight and 6 AM, skip to 6 AM same day
+            return 6f - currentTime;
+        }
+        else
+        {
+            // If it's after 6 AM, skip to 6 AM next day
+            return (24f - currentTime) + 6f;
+        }
     }
     
     /// <summary>
@@ -77,6 +103,8 @@ public class TimeSystem : MonoBehaviour
     public int GetHour() => Mathf.FloorToInt(currentTime);
     public int GetMinute() => Mathf.FloorToInt((currentTime % 1f) * 60f);
     public int GetDay() => currentDay;
+    public int GetYear() => currentYear;
+    public int GetDayInSeason() => daysInCurrentSeason + 1; // +1 because it's 0-based
     public Season GetSeason() => Seasons[currentSeasonIndex];
     
     /// <summary>
@@ -94,6 +122,65 @@ public class TimeSystem : MonoBehaviour
     public bool IsWarmSeason(Season season)
     {
         return season == Season.Spring || season == Season.Summer;
+    }
+    
+    /// <summary>
+    /// Checks if current season is a weather season (Summer/Winter)
+    /// </summary>
+    public bool IsWeatherSeason()
+    {
+        var season = Seasons[currentSeasonIndex];
+        return season == Season.Summer || season == Season.Winter;
+    }
+    
+    /// <summary>
+    /// Checks if current season is a plant season (Spring/Autumn)
+    /// </summary>
+    public bool IsPlantSeason()
+    {
+        var season = Seasons[currentSeasonIndex];
+        return season == Season.Spring || season == Season.Autumn;
+    }
+    
+    /// <summary>
+    /// Gets the appropriate duration for current season
+    /// </summary>
+    private int GetCurrentSeasonDuration()
+    {
+        return IsWeatherSeason() ? weatherSeasonDays : plantSeasonDays;
+    }
+    
+    /// <summary>
+    /// Checks if season should change based on current season's duration
+    /// </summary>
+    private void CheckSeasonChange()
+    {
+        int requiredDays = GetCurrentSeasonDuration();
+        
+        if (daysInCurrentSeason >= requiredDays)
+        {
+            AdvanceToNextSeason();
+        }
+    }
+    
+    /// <summary>
+    /// Advances to the next season and resets day counter
+    /// </summary>
+    private void AdvanceToNextSeason()
+    {
+        Season previousSeason = GetSeason();
+        currentSeasonIndex = (currentSeasonIndex + 1) % Seasons.Count;
+        daysInCurrentSeason = 0;
+        
+        // Check if we completed a full year (4 seasons)
+        if (currentSeasonIndex == 0) // Back to Spring = new year
+        {
+            currentYear++;
+            Debug.Log($"[TimeSystem] New year started: Year {currentYear}");
+        }
+        
+        Season newSeason = GetSeason();
+        Debug.Log($"[TimeSystem] Season changed from {previousSeason} to {newSeason}");
     }
     
     /// <summary>
@@ -130,15 +217,12 @@ public class TimeSystem : MonoBehaviour
     {
         currentTime = 0f;
         currentDay++;
+        daysInCurrentSeason++;
         
-        // Check for season change (every daysPerSeason days)
-        if ((currentDay - 1) % daysPerSeason == 0)
-        {
-            currentSeasonIndex = (currentSeasonIndex + 1) % Seasons.Count;
-            // Debug.Log($"[TimeSystem] Season changed to: {GetSeason()}");
-        }
+        // Check for season change
+        CheckSeasonChange();
         
-        // Debug.Log($"[TimeSystem] Day advanced naturally to: {currentDay}");
+        Debug.Log($"[TimeSystem] Day advanced naturally to: {currentDay}");
         OnDayChange?.Invoke();
     }
     

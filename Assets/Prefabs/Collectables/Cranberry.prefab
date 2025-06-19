@@ -105,8 +105,9 @@ MonoBehaviour:
   collectAmount: 1
   readyStageSprite: {fileID: -539051121, guid: 4038e15739dd2be498076e728299f386, type: 3}
   growingStageSprite: {fileID: -1636588016, guid: 4038e15739dd2be498076e728299f386, type: 3}
-  regrowthTime: 10
-  season: 1
+  regrowthTime: 100
+  season: 0
+  dailySpawnChance: 0.9
 --- !u!61 &4288967050750866361
 BoxCollider2D:
   m_ObjectHideFlags: 0

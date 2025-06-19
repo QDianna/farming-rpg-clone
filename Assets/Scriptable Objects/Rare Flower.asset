@@ -16,7 +16,7 @@ MonoBehaviour:
   description: craft the final potion
   sprite: {fileID: 1030179114559764198, guid: 88a8b2532e0cb8c409ffd76c835252c1, type: 3}
   droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}
-  basePrice: 10
+  basePrice: 0
   canBeSold: 0
   canBeBought: 0
   maxStackSize: 99

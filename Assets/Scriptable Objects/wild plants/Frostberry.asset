@@ -16,7 +16,7 @@ MonoBehaviour:
   description: sell // research // craft
   sprite: {fileID: -1794991727, guid: 4038e15739dd2be498076e728299f386, type: 3}
   droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}
-  basePrice: 10
-  canBeSold: 1
+  basePrice: 15
+  canBeSold: 0
   canBeBought: 0
   maxStackSize: 99
