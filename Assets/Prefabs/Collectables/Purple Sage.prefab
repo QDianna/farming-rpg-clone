@@ -88,7 +88,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &2491889303205340181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,13 +101,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648c96b9f842b04c986ffe2a6c2dd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  harvestableItem: {fileID: 11400000, guid: 23898785bc56ae249ac74ef76d1e553b, type: 2}
-  collectAmount: 1
+  collectedWildPlant: {fileID: 11400000, guid: 23898785bc56ae249ac74ef76d1e553b, type: 2}
   readyStageSprite: {fileID: -283229041, guid: 4038e15739dd2be498076e728299f386, type: 3}
   growingStageSprite: {fileID: 1463203788, guid: 4038e15739dd2be498076e728299f386, type: 3}
-  regrowthTime: 100
-  season: 2
-  dailySpawnChance: 0.9
+  dailySpawnChance: 0.7
+  regrowthTime: 150
+  warmSeason: 0
 --- !u!61 &4288967050750866361
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142,7 +141,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: 1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -152,5 +151,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0

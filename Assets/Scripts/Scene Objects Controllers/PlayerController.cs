@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
         hasSpeedBuff = true;
     
         NotificationSystem.ShowDialogue($"Speed increased by {(multiplier - 1f) * 100f:F0}% " +
-                                        $"for the rest of the day!", 1f);
+                                        $"for the rest of the day!", 3f);
     }
 
     // Method to remove speed buff (called on day change)

@@ -28,9 +28,11 @@ public class ItemNourishPotion : InventoryItem
         }
         
         // Apply nourish effect to the plot
-        player.plotlandController.ApplyNourishEffect(player.transform.position, bonusYieldMultiplier);
-        player.inventorySystem.RemoveItem(this, 1);
-        
-        NotificationSystem.ShowHelp("Applied nourish potion - this crop will yield more when harvested!");
+        if (player.plotlandController.ApplyNourishEffect(player.transform.position, bonusYieldMultiplier))
+        {
+            player.inventorySystem.RemoveItem(this, 1);
+            NotificationSystem.ShowHelp("Applied nourish potion - this crop will yield more when harvested!");
+        }
+
     }
 }

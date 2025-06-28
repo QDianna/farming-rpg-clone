@@ -32,6 +32,10 @@ public class TreeController : MonoBehaviour
     private void Start()
     {
         InitializeTree();
+        if (TimeSystem.Instance != null)
+        {
+            TimeSystem.Instance.OnSleepTimePassed += SimulateGrowthDuringSleep;
+        }
     }
     
     private void Update()
@@ -144,6 +148,26 @@ public class TreeController : MonoBehaviour
         
         StartCoroutine(GrowthScaleEffect());
     }
+    
+    public void SimulateGrowthDuringSleep(float seconds)
+    {
+        if (isGrowing)
+        {
+            growthTimer += seconds;
+
+            // Apply regrowth if timer overflowed
+            if (treeStage == 2 && growthTimer >= trunkToSmallTime)
+            {
+                GrowToStage(0); // Trunk -> Small
+            }
+            else if (treeStage == 0 && growthTimer >= smallToBigTime)
+            {
+                GrowToStage(1); // Small -> Big
+                StopGrowthCycle(); // Stop here, tree is mature
+            }
+        }
+    }
+
     
     // Updates sprite based on current tree stage
     private void UpdateTreeSprite()

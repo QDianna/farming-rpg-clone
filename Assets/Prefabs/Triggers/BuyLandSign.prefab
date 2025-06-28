@@ -133,7 +133,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2, y: 1.9902323}
+  m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
 --- !u!114 &4659586871319981448
 MonoBehaviour:
@@ -149,4 +149,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTilemap: {fileID: 0}
   requiredTier: 2
-  purchaseCost: 100
+  purchaseCost: 500

@@ -85,8 +85,18 @@ public class NotificationSystem : MonoBehaviour
     // Adds dialogue to queue and starts processing if idle
     private void QueueDialogue(string message, float duration)
     {
+        if (dialogueQueue.Count > 0)
+        {
+            NotificationData last = null;
+            foreach (var item in dialogueQueue)
+                last = item;
+
+            if (last != null && last.message == message)
+                return; // prevent duplicate
+        }
+
         dialogueQueue.Enqueue(new NotificationData(message, duration));
-        
+
         if (!isProcessingDialogue)
         {
             ProcessNextDialogue();
@@ -96,8 +106,18 @@ public class NotificationSystem : MonoBehaviour
     // Adds help message to queue and starts processing if idle
     private void QueueHelp(string message)
     {
+        if (helpQueue.Count > 0)
+        {
+            string last = null;
+            foreach (var item in helpQueue)
+                last = item;
+
+            if (last != null && last == message)
+                return;
+        }
+
         helpQueue.Enqueue(message);
-        
+
         if (!isProcessingHelp)
         {
             ProcessNextHelp();

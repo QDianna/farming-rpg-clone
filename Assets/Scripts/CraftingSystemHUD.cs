@@ -169,7 +169,7 @@ public class CraftingSystemHUD : MonoBehaviour
     }
     
     // Handles inventory item clicks when crafting bench is open
-    private void OnInventoryItemClicked(InventoryItem item)
+    private void OnInventoryItemClicked(InventoryItem item, bool no)
     {
         if (!IsCraftingBenchOpen()) 
             return;

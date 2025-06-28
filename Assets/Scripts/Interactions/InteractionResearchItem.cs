@@ -26,7 +26,7 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
         if (other.GetComponent<PlayerController>() != null)
         {
             InteractionSystem.Instance.SetCurrentInteractable(this);
-            // NotificationSystem.ShowNotification("Press E to use the Research Table!");
+            NotificationSystem.ShowHelp("Press E to use the Research Table.");
         }
     }
     
@@ -51,7 +51,9 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
         if (isTableOpen)
             CloseTable();
         else
+        {
             OpenTable();
+        }
     }
     
     public bool TryAddItem(InventoryItem item)
@@ -100,7 +102,7 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
                 currentResearchItem = null;
             }
             OnSlotChanged?.Invoke();
-            OnResearchCompleted?.Invoke(itemName, wasAlreadyResearched); // Pass both parameters!
+            OnResearchCompleted?.Invoke(itemName, wasAlreadyResearched);
         }
     
         return success;
@@ -160,7 +162,7 @@ public class InteractionResearchItem : MonoBehaviour, IInteractable
     }
     
     // Calculates research cost based on progress
-    private int GetResearchCost()
+    public int GetResearchCost()
     {
         int researchedCount = ResearchSystem.Instance?.GetProgress().researchedCount ?? 0;
         return baseResearchCost + (researchedCount * 10);

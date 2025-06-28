@@ -44,7 +44,7 @@ public class InteractionSleep : MonoBehaviour, IInteractable
         
         string sleepMessage = $"Good night! Sleeping until tomorrow morning (Day {nextDay})...";
         
-        NotificationSystem.ShowDialogue(sleepMessage, 2f);
+        NotificationSystem.ShowDialogue(sleepMessage, 3f);
         
         // Stop current weather immediately when sleeping
         if (WeatherSystem.Instance != null)

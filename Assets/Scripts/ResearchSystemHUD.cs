@@ -14,7 +14,7 @@ public class ResearchSystemHUD : MonoBehaviour
     private VisualElement tableContainer;
     private VisualElement slotContainer;
     private VisualElement slotIcon;
-    private Label slotQuantity;
+    private Label slotQuantity, researchPrice;
     private Button researchButton;
     private Label progressLabel;
     private VisualElement resultsContainer;
@@ -47,6 +47,7 @@ public class ResearchSystemHUD : MonoBehaviour
         slotContainer = tableContainer?.Q<VisualElement>("ResearchSlotContainer");
         slotIcon = slotContainer?.Q<VisualElement>("ItemIcon");
         slotQuantity = slotContainer?.Q<Label>("ItemQuantity");
+        researchPrice = tableContainer?.Q<Label>("ResearchPrice");
         researchButton = tableContainer?.Q<Button>("ConfirmResearch");
         progressLabel = tableContainer?.Q<Label>("ResearchProgress");
         resultsContainer = tableContainer?.Q<VisualElement>("ResearchResultsContainer");
@@ -159,7 +160,7 @@ public class ResearchSystemHUD : MonoBehaviour
     }
     
     // Handles inventory item clicks when research table is open
-    private void OnInventoryItemClicked(InventoryItem item)
+    private void OnInventoryItemClicked(InventoryItem item, bool no)
     {
         if (researchTable == null || !researchTable.IsOpen()) 
             return;
@@ -452,14 +453,19 @@ public class ResearchSystemHUD : MonoBehaviour
         if (item == null)
         {
             ShowEmptySlot();
+            if (researchPrice != null)
+                researchPrice.text = "";
         }
         else
         {
             ShowItemInSlot(item);
+            if (researchPrice != null)
+                researchPrice.text = "" + researchTable.GetResearchCost() + "g";
         }
 
         if (slotQuantity != null)
             slotQuantity.text = "";
+            
     }
     
     // Shows empty slot state

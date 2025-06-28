@@ -16,6 +16,8 @@ public class PlayerStats : MonoBehaviour
     private float hunger = 100f;
     private float health = 100f;
     private float energy = 100f;
+
+    private bool warned;
     
     public event Action<float> OnHungerChange;
     public event Action<float> OnHealthChange;
@@ -73,6 +75,7 @@ public class PlayerStats : MonoBehaviour
     public void RestoreHunger(float amount)
     {
         SetHunger(hunger + amount);
+        warned = false;
     }
 
     public void RestoreEnergy(float amount)
@@ -91,6 +94,11 @@ public class PlayerStats : MonoBehaviour
     {
         float hungerLoss = hungerLossRate / 60f * Time.deltaTime;
         SetHunger(hunger - hungerLoss);
+        if (hunger < 10f && !warned)
+        {
+            NotificationSystem.ShowHelp("You should eat something!");
+            warned = true;
+        }
     }
     
     // Applies health loss when starving
@@ -104,13 +112,19 @@ public class PlayerStats : MonoBehaviour
     }
     
     // Method to apply endurance buff
-    public void ApplyEnduranceBuff(float multiplier)
+    public bool ApplyEnduranceBuff(float multiplier)
     {
+        if (hasEnduranceBuff == false)
+        {
+            NotificationSystem.ShowHelp("Already applied!");
+            return false;
+        }
         energyMultiplier = multiplier;
         hasEnduranceBuff = true;
     
         NotificationSystem.ShowDialogue($"Energy consumption reduced by {(1f - multiplier) * 100f:F0}% " +
-                                        $"for the rest of the day!", 1f);
+                                        $"for the rest of the day!", 3f);
+        return true;
     }
     
     // Method to remove endurance buff (called on day change)

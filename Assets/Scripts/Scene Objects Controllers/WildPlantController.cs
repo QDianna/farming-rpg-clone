@@ -6,18 +6,15 @@ using UnityEngine;
 /// </summary>
 public class WildPlantController : MonoBehaviour, IInteractable
 {
-    [Header("Collection Settings")]
-    public InventoryItem harvestableItem;
-    public int collectAmount = 1;
-    
-    [Header("Growth Settings")]
+    [Header("References")]
+    public InventoryItem collectedWildPlant;
     [SerializeField] private Sprite readyStageSprite;
     [SerializeField] private Sprite growingStageSprite;
-    public float regrowthTime = 60f;
     
-    [Header("Seasonal Spawning")]
-    public Season season;
-    [Range(0f, 1f)] public float dailySpawnChance = 0.5f;
+    [Header("Settings")]
+    [Range(0f, 1f)] public float dailySpawnChance;
+    public float regrowthTime;
+    public bool warmSeason;
     
     private SpriteRenderer spriteRenderer;
     private bool isReadyForHarvest = false;
@@ -99,8 +96,7 @@ public class WildPlantController : MonoBehaviour, IInteractable
     {
         if (TimeSystem.Instance == null) return;
         
-        Season currentSeason = TimeSystem.Instance.GetSeason();
-        if (currentSeason == season)
+        if (TimeSystem.Instance.IsCurrentSeasonWarm() == warmSeason)
         {
             // Plant can potentially spawn in its season
             CheckDailySpawn();
@@ -112,35 +108,25 @@ public class WildPlantController : MonoBehaviour, IInteractable
         }
     }
     
-    // Daily spawn chance check
     private void CheckDailySpawn()
     {
         if (TimeSystem.Instance == null) return;
-        
-        Season currentSeason = TimeSystem.Instance.GetSeason();
-        
-        // Only check spawn in correct season
-        if (currentSeason != season)
-        {
-            SetPlantInactive();
+
+        // Always reset at start of day
+        SetPlantInactive();
+
+        // Skip if wrong season
+        if (TimeSystem.Instance.IsCurrentSeasonWarm() != warmSeason)
             return;
-        }
-        
-        // If plant is already active and regrowing, don't interrupt
-        if (isActive && !isReadyForHarvest) return;
-        
-        // Random spawn chance
+
+        // Roll spawn chance
         float randomValue = Random.Range(0f, 1f);
         if (randomValue <= dailySpawnChance)
         {
-            SpawnPlant();
-        }
-        else if (!isActive || (isActive && isReadyForHarvest))
-        {
-            // Plant doesn't spawn today or expires if ready
-            SetPlantInactive();
+            SpawnPlant(); // begin the regrowth timer today
         }
     }
+
     
     // Spawns the plant and makes it ready for harvest
     private void SpawnPlant()
@@ -174,16 +160,18 @@ public class WildPlantController : MonoBehaviour, IInteractable
     // Validates if plant can be harvested
     private bool CanHarvest()
     {
-        return harvestableItem != null && isReadyForHarvest && isActive;
+        return collectedWildPlant != null && isReadyForHarvest && isActive;
     }
     
     // Processes plant harvesting and gives rewards
     private void HarvestPlant(PlayerController player)
     {
-        InventorySystem.Instance.AddItem(harvestableItem, collectAmount);
-        NotificationSystem.ShowHelp($"Picked up {harvestableItem.name} x{collectAmount}");
-        harvestableItem.CollectItem(player);
-        
+        int collectAmount = Random.Range(1, 4);
+
+        InventorySystem.Instance.AddItem(collectedWildPlant, collectAmount);
+        NotificationSystem.ShowHelp($"Picked up {collectedWildPlant.newName} x{collectAmount}");
+        collectedWildPlant.CollectItem(player);
+
         InteractionSystem.Instance.SetCurrentInteractable(null);
     }
     

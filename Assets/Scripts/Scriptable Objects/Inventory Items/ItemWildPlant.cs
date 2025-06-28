@@ -4,8 +4,8 @@ using UnityEngine;
 public class ItemWildPlant : InventoryItem
 {
     [Header("Wild Plant Properties")]
-    private float hungerRestoreAmount = 5f;
-    private float energyRestoreAmount = 20f;
+    [SerializeField] private float hungerRestoreAmount;
+    [SerializeField] private float energyRestoreAmount;
 
     public override void UseItem(PlayerController player)
     {

@@ -18,8 +18,8 @@ public class ItemPowerPotion : InventoryItem
         }
         
         // Apply farm-wide protection
-        player.plotlandController.ApplyFarmProtection();
-        player.inventorySystem.RemoveItem(this, 1);
+        if (player.plotlandController.ApplyFarmProtection())
+            player.inventorySystem.RemoveItem(this, 1);
     }
     
 }

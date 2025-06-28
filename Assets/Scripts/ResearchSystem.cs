@@ -84,15 +84,11 @@ public class ResearchSystem : MonoBehaviour
         };
     }
     
-    // Returns seeds available for current tier and season
+    // Returns seeds available for current tier
     public List<ItemSeed> GetAvailableSeeds()
     {
-        var currentSeason = TimeSystem.Instance.GetSeason();
-        bool isWarmSeason = TimeSystem.Instance.IsWarmSeason(currentSeason);
-        
         return allSeeds
-            .Where(seed => seed.tier <= currentSeedsTier && 
-                          TimeSystem.Instance.IsWarmSeason(seed.season) == isWarmSeason)
+            .Where(seed => seed.tier <= currentSeedsTier)
             .ToList();
     }
     
@@ -188,7 +184,7 @@ public class ResearchSystem : MonoBehaviour
         currentSeedsTier++;
         OnTierUnlocked?.Invoke(currentSeedsTier);
         NotificationSystem.ShowDialogue($"Congratulations, you've unlocked tier {currentSeedsTier} " +
-                                        $"seeds!", 1f);
+                                        $"seeds!", 2.5f);
     }
     
     // Shows tier progression message
@@ -197,8 +193,5 @@ public class ResearchSystem : MonoBehaviour
         if (currentSeedsTier < maxSeedsTier)
             NotificationSystem.ShowHelp($"Keep researching more tier {currentSeedsTier} seeds " +
                                                 $"to unlock next tier!");
-        else
-            NotificationSystem.ShowHelp(($"Research all {maxSeedsTier} seeds " +
-                                         $"to unlock ???"));
     }
 }

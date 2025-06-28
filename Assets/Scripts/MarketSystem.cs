@@ -10,7 +10,7 @@ public class MarketSystem : MonoBehaviour
     public static MarketSystem Instance { get; private set; }
     
     [Header("Market Configuration")]
-    [SerializeField] private int dailySeedVariety ;
+    [SerializeField] private int dailySeedVariety;
     private readonly List<InventoryItem> currentDailySeeds = new();
     private readonly List<InventoryItem> currentDailyCrops = new();
 
@@ -154,7 +154,7 @@ public class MarketSystem : MonoBehaviour
         return isCraftingBenchPurchased && 
                !isCraftingBenchUpgraded && 
                QuestsSystem.Instance != null && 
-               QuestsSystem.Instance.HasCompletedWitchQuest;
+               QuestsSystem.Instance.hasCompletedWitchQuest;
     }
     
     public int GetCraftingBenchUpgradeCost()
@@ -179,7 +179,7 @@ public class MarketSystem : MonoBehaviour
     // Check if player has enough wood using correct inventory methods
     private bool HasEnoughWood(int woodCost)
     {
-        Debug.Log("not enough wood? " +  InventorySystem.Instance.HasItemByName("wood", woodCost));
+     //   Debug.Log("not enough wood? " +  InventorySystem.Instance.HasItemByName("wood", woodCost));
         return InventorySystem.Instance != null && 
                InventorySystem.Instance.HasItemByName("wood", woodCost);
     }
@@ -259,7 +259,7 @@ public class MarketSystem : MonoBehaviour
             }
         }
         
-        Debug.Log($"[Market] Daily refresh: {currentDailySeeds.Count} seeds, {currentDailyCrops.Count} crops");
+        //Debug.Log($"[Market] Daily refresh: {currentDailySeeds.Count} seeds, {currentDailyCrops.Count} crops");
     }
     
     // SYSTEM SETUP AND EVENTS

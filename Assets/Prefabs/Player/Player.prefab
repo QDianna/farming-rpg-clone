@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 279568774838252289}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,6 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47827a4ff44fd2e4088391b4df26828f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseMovementSpeed: 8
+  speedMultiplier: 2
   moveAction:
     m_Name: Move
     m_Type: 0
@@ -157,7 +159,6 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     m_Flags: 0
-  speed: 6
   interactAction:
     m_Name: Interact
     m_Type: 0
@@ -200,14 +201,30 @@ MonoBehaviour:
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: f06d145b-00b5-40d9-8095-699a0e3664c2
-      m_Path: <Keyboard>/tab
+    - m_Name: 1D Axis
+      m_Id: deb5ce99-c01a-4e9a-a2cc-0e506da2aa50
+      m_Path: 1DAxis
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Inventory
-      m_Flags: 0
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: e1981497-bfbf-4cb2-90d2-34d5c82c20ba
+      m_Path: <Keyboard>/x
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Inventory
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 76c1e23f-dd49-4b68-8793-abf4c3e76437
+      m_Path: <Keyboard>/z
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Inventory
+      m_Flags: 8
     m_Flags: 0
   useItemAction:
     m_Name: Use Item
@@ -228,10 +245,14 @@ MonoBehaviour:
     m_Flags: 0
   plotlandController: {fileID: 0}
   animator: {fileID: 0}
-  inventorySystem: {fileID: 0}
+  playerRigidbody: {fileID: 0}
   interactionSystem: {fileID: 0}
-  playerStats: {fileID: 0}
+  toolSystem: {fileID: 0}
+  inventorySystem: {fileID: 0}
   playerEconomy: {fileID: 0}
+  playerStats: {fileID: 0}
+  hasSpeedBuff: 0
+  movementSpeed: 20
 --- !u!114 &8349207872864668176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,16 +278,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - item: {fileID: 11400000, guid: 39e095594afaa0e47b0e217ed5359e37, type: 2}
-    quantity: 3
-  - item: {fileID: 11400000, guid: 262f4fb811249cb4c880ef14b14d1900, type: 2}
-    quantity: 3
-  - item: {fileID: 11400000, guid: 8a7a3847ff4a2b84381109364acc8a5a, type: 2}
-    quantity: 3
-  - item: {fileID: 11400000, guid: b9ba550b6bb46384fba2721fed788a5f, type: 2}
-    quantity: 3
   - item: {fileID: 11400000, guid: 2426096b11d87154eb78bc6f022a920a, type: 2}
-    quantity: 3
+    quantity: 5
+  - item: {fileID: 11400000, guid: 0bd609fcb62ed7347910701f63e9fb53, type: 2}
+    quantity: 5
+  selectedItemIndex: -1
 --- !u!114 &7423412828200520110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,8 +295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f453b3841a4b1aa25c57337d5504b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingMoney: 500
-  sellPriceModifier: 0.7
+  startingMoney: 100
+  sellPriceModifier: 0.8
   buyPriceModifier: 1.2
 --- !u!114 &2133682642818215000
 MonoBehaviour:
@@ -294,6 +310,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57550d6d1c6b46f4881933ef4600bb12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hungerLossRate: 5
+  starvingHealthLossRate: 10
+  hasEnduranceBuff: 0
 --- !u!114 &596685181290690568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,13 +325,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649da2a9be5d4e60884d3b8485371348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoeSprite: {fileID: 249908233549332648, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
-  axeSprite: {fileID: 7655413986662893830, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
-  waterCanSprite: {fileID: 1323920741824349584, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  hoeSprite: {fileID: 1423866260, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  axeSprite: {fileID: 784612727, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
+  waterCanSprite: {fileID: 1110527409, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
   axeRange: 2
   treeLayer:
     serializedVersion: 2
     m_Bits: 256
+  hoeEnergyCost: 2
+  axeEnergyCost: 1
+  waterCanEnergyCost: 1
   selectedTool: 0
 --- !u!50 &1001675679381337709
 Rigidbody2D:
@@ -385,7 +407,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.48}
+  m_Size: {x: 0.75, y: 0.45}
   m_EdgeRadius: 0
 --- !u!95 &279568774838252289
 Animator:

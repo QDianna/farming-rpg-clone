@@ -79,7 +79,7 @@ public class ToolSystem : MonoBehaviour
     {
         if (!HasEnoughEnergyForTool(player))
         {
-            NotificationSystem.ShowHelp("Too tired to use tools./n" +
+            NotificationSystem.ShowHelp("Too tired to use tools. " +
                                         "Get some rest or eat something.");
             return;
         }

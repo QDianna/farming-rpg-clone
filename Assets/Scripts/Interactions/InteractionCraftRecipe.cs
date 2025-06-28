@@ -52,7 +52,7 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
         if (other.TryGetComponent<PlayerController>(out _))
         {
             InteractionSystem.Instance.SetCurrentInteractable(this);
-            // NotificationSystem.ShowNotification("Press E to use the Crafting Bench!");
+            NotificationSystem.ShowHelp("Press E to use the Crafting Bench.");
         }
     }
 
@@ -228,7 +228,7 @@ public class InteractionCraftRecipe : MonoBehaviour, IInteractable
         outputSlot.Clear();
         UpdateRecipe();
         
-        NotificationSystem.ShowHelp($"Crafted {craftedItemName}!");
+        NotificationSystem.ShowHelp($"Crafted {craftedItemName}.");
     }
     
     // Removes specified quantity of item from input slots

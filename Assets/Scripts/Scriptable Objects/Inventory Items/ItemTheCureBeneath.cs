@@ -25,7 +25,7 @@ public class ItemTheCureBeneath : InventoryItem
             if (distance <= useRange)
             {
                 // Player is close enough - cure worked!
-                NotificationSystem.ShowDialogue("You have cured your spouse's illness and saved their life!", 4f);
+                NotificationSystem.ShowDialogue("You have cured your spouse's illness and saved their life!", 10f);
                 player.inventorySystem.RemoveItem(this, 1);
                 
                 // Change bed sprite to empty bed

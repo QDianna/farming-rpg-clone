@@ -9,17 +9,12 @@ public class ItemEndurancePotion : InventoryItem
     
     public override void UseItem(PlayerController player)
     {
-        if (player.playerStats.hasEnduranceBuff == false)
+        if (player.playerStats.ApplyEnduranceBuff(energyMultiplier))
         {
-            NotificationSystem.ShowHelp("Drank endurance potion, you will be using less energy for tasks today!");
-            player.playerStats.ApplyEnduranceBuff(energyMultiplier);
             player.inventorySystem.RemoveItem(this, 1);
+            NotificationSystem.ShowHelp("Drank endurance potion, you will be using less energy for tasks today!");
         }
 
-        else
-        {
-            NotificationSystem.ShowHelp("Already drank endurance potion today.");
-        }
     }
     
 }

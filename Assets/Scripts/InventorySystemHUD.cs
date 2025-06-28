@@ -18,7 +18,6 @@ public class InventorySystemHUD : MonoBehaviour
     private VisualElement inventoryContainer;
     private VisualElement inventoryItemsContainer;
     private readonly List<VisualElement> inventorySlots = new List<VisualElement>();
-    private bool isInventoryOpenForTab = false;
 
     private void Awake()
     {
@@ -71,7 +70,6 @@ public class InventorySystemHUD : MonoBehaviour
         {
             InventorySystem.Instance.OnSelectedItemChange += UpdateSelectedItemDisplay;
             InventorySystem.Instance.OnInventoryChanged += UpdateFullInventoryDisplay;
-            InventorySystem.Instance.OnInventoryItemClicked += OnInventoryItemClicked;
         }
     }
     
@@ -104,7 +102,6 @@ public class InventorySystemHUD : MonoBehaviour
         {
             InventorySystem.Instance.OnSelectedItemChange -= UpdateSelectedItemDisplay;
             InventorySystem.Instance.OnInventoryChanged -= UpdateFullInventoryDisplay;
-            InventorySystem.Instance.OnInventoryItemClicked -= OnInventoryItemClicked;
         }
     }
     
@@ -141,6 +138,12 @@ public class InventorySystemHUD : MonoBehaviour
         {
             tooltipsLabel.style.display = DisplayStyle.None;
         });
+        
+        target.RegisterCallback<DetachFromPanelEvent>(evt =>
+        {
+            tooltipsLabel.style.display = DisplayStyle.None;
+        });
+
 
         target.RegisterCallback<MouseMoveEvent>(evt =>
         {
@@ -199,6 +202,8 @@ public class InventorySystemHUD : MonoBehaviour
         {
             CreateInventorySlot(entry);
         }
+
+        UpdateSelectedItemDisplay();
     }
     
     // Removes all existing inventory slot UI elements
@@ -214,24 +219,33 @@ public class InventorySystemHUD : MonoBehaviour
     // Creates UI slot for inventory entry
     private void CreateInventorySlot(InventoryEntry entry)
     {
-        if (entry?.item == null) 
-            return;
-        
+        if (entry?.item == null) return;
+
         var slotContainer = CreateSlotContainer();
         var slotIcon = CreateSlotIcon(entry.item);
         var quantityLabel = CreateQuantityLabel(entry.quantity);
+        var itemNewLabel = CreateItemNewLabel(entry.item);
         
-        slotContainer.RegisterCallback<ClickEvent>(_ => OnInventorySlotClicked(entry.item));
+        // slotContainer.RegisterCallback<ClickEvent>(_ => OnInventorySlotClicked(entry.item));
+
+        slotContainer.RegisterCallback<PointerDownEvent>(evt =>
+        {
+            bool isShiftHeld = evt.shiftKey;
+
+            OnInventorySlotClicked(entry.item, isShiftHeld);
+        });
+
         
         slotContainer.Add(slotIcon);
         slotContainer.Add(quantityLabel);
-        
+        slotContainer.Add(itemNewLabel);
+
         inventoryItemsContainer.Add(slotContainer);
         inventorySlots.Add(slotContainer);
-        
-        RegisterTooltip(slotContainer, entry.item.newName);
 
+        RegisterTooltip(slotContainer, entry.item.newName);
     }
+
     
     // Creates the main slot container element
     private VisualElement CreateSlotContainer()
@@ -263,15 +277,25 @@ public class InventorySystemHUD : MonoBehaviour
         return quantityLabel;
     }
     
+    private Label CreateItemNewLabel(InventoryItem item)
+    {
+        var label = new Label(ResearchSystem.Instance.IsResearched(item.name) ? "" : "?");
+        label.name = "ItemNew";
+        label.AddToClassList("item-new");
+        return label;
+    }
+
+    
     // Handles inventory slot click events
-    private void OnInventorySlotClicked(InventoryItem item)
+    /*private void OnInventorySlotClicked(InventoryItem item)
     {
         InventorySystem.Instance.TriggerItemClick(item);
-    }
+    }*/
     
-    // Handles forwarded inventory item click events
-    private void OnInventoryItemClicked(InventoryItem item)
+    private void OnInventorySlotClicked(InventoryItem item, bool shiftHeld)
     {
-        // Event forwarded to systems that need it (crafting/market/research)
+        InventorySystem.Instance.TriggerItemClick(item, shiftHeld);
     }
+
+    
 }

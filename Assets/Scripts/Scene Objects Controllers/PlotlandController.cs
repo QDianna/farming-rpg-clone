@@ -23,7 +23,6 @@ public class PlotData
     public bool canStartGrowing;
     public bool isNourished;
     public bool isInfected;
-    public bool isProtected;
     public float nourishMultiplier = 1f;
 }
 
@@ -43,213 +42,10 @@ public class PlotlandController : MonoBehaviour
     [SerializeField] private TileBase tilledTile;
     
     private readonly Dictionary<Vector3Int, PlotData> plotStates = new();
-    private bool farmProtected;
+    private float freezeGrowthModifier = 1f;
+    private bool isFarmProtected;
     
     private void Awake()
-    {
-        InitializePlotData();
-    }
-    
-    private void Start()
-    {
-        SubscribeToWeatherEvents();
-    }
-    
-    private void Update()
-    {
-        UpdateCropGrowth();
-    }
-    
-    private void OnDestroy()
-    {
-        UnsubscribeFromWeatherEvents();
-    }
-    
-    // Validates if player can till at position (empty plots or infected plants)
-    public bool CanTill(Vector3 worldPos)
-    {
-        Vector3Int tilePos = GetTilePosition(worldPos);
-        return IsValidPlotAction(tilePos, PlotState.Empty) || 
-               (plotStates.ContainsKey(tilePos) && plotStates[tilePos].isInfected);
-    }
-    
-    public bool CanPlant(Vector3 worldPos)
-    {
-        Vector3Int tilePos = GetTilePosition(worldPos);
-        return IsValidPlotAction(tilePos, PlotState.Tilled);
-    }
-    
-    // Validates harvest action (grown and not infected)
-    public bool CanHarvest(Vector3 worldPos)
-    {
-        Vector3Int tilePos = GetTilePosition(worldPos);
-        return IsValidPlotAction(tilePos, PlotState.Grown) && 
-               !plotStates[tilePos].isInfected;
-    }
-    
-    public bool CanAttendPlot(Vector3 worldPos)
-    {
-        Vector3Int tilePos = GetTilePosition(worldPos);
-        return plotStates.ContainsKey(tilePos) &&
-               plotStates[tilePos].state == PlotState.Planted &&
-               !plotStates[tilePos].canStartGrowing;
-    }
-    
-    // Tills plot or destroys infected plants
-    public void TillPlot(Vector3 worldPos)
-    {
-        Vector3Int tilePos = GetTilePosition(worldPos);
-        
-        if (!plotStates.TryGetValue(tilePos, out var plotData)) 
-            return;
-        
-        // Handle infected plants - player loses them
-        if (plotData.isInfected)
-        {
-            ClearPlotAndSetTilled(tilePos, plotData);
-            return;
-        }
-        
-        // Normal tilling for empty plots
-        if (plotData.state == PlotState.Empty)
-        {
-            plotData.state = PlotState.Tilled;
-            UpdateTilemapTile(tilePos, tilledTile);
-        }
-    }
-    
-    public void PlantPlot(InventoryItem seed, Vector3 worldPos)
-    {
-        Vector3Int tilePos = GetTilePosition(worldPos);
-        var seedItem = seed as ItemSeed;
-        
-        if (seedItem == null || !plotStates.ContainsKey(tilePos)) 
-            return;
-        
-        SetupPlantedPlot(tilePos, seedItem);
-        DisplayCropStage(tilePos, seedItem, 0);
-        
-        // Apply protection to new plants if farm is currently protected
-        if (farmProtected)
-        {
-            plotStates[tilePos].isProtected = true;
-        }
-    }
-    
-    // Applies strength potion effect to planted crop
-    public void AttendPlot(Vector3 worldPos)
-    {
-        Vector3Int tilePos = GetTilePosition(worldPos);
-        
-        if (!plotStates.TryGetValue(tilePos, out var plotData)) 
-            return;
-
-        plotData.growthTimer = 0;
-        plotData.currentGrowthStage = 1;
-        plotData.canStartGrowing = true;
-        
-        DisplayCropStage(tilePos, plotData.seedData, 1);
-    }
-    
-    public void HarvestPlot(Vector3 worldPos, PlayerController player)
-    {
-        Vector3Int tilePos = GetTilePosition(worldPos);
-        
-        if (!plotStates.TryGetValue(tilePos, out var plotData)) 
-            return;
-
-        GiveHarvestRewards(plotData, player);
-        ResetPlotToEmpty(tilePos, plotData);
-    }
-    
-    public void UnlockPlotland(Tilemap tilemap)
-    {
-        foreach (Vector3Int pos in tilemap.cellBounds.allPositionsWithin)
-        {
-            var tile = tilemap.GetTile(pos);
-            
-            if (tile == lockedTile && IsValidPlotAction(pos, PlotState.Locked))
-            {
-                plotStates[pos].state = PlotState.Empty;
-                tilemap.SetTile(pos, emptyTile);
-            }
-        }
-    }
-    
-    // Applies a nourish potion effect to specific plot
-    public void ApplyNourishEffect(Vector3 worldPos, float multiplier)
-    {
-        Vector3Int tilePos = GetTilePosition(worldPos);
-    
-        if (!plotStates.TryGetValue(tilePos, out var plotData)) 
-            return;
-    
-        plotData.isNourished = true;
-        plotData.nourishMultiplier = multiplier;
-    }
-    
-    // Applies power potion protection to entire farm until next weather event
-    public void ApplyFarmProtection()
-    {
-        farmProtected = true;
-        
-        foreach (var kvp in plotStates)
-        {
-            if (kvp.Value.state == PlotState.Planted || kvp.Value.state == PlotState.Grown)
-            {
-                kvp.Value.isProtected = true;
-            }
-        }
-        
-        NotificationSystem.ShowDialogue("Farm-wide protection active! " +
-                                        "The land is shielded against the next corruption event.", 2f);
-        
-        Debug.Log("[PlotlandController] Farm protection applied");
-    }
-    
-    // Heals all infected plants across the farm with heal potion
-    public void HealAllInfectedPlants()
-    {
-        int healedCount = 0;
-        
-        foreach (var kvp in plotStates)
-        {
-            var plotData = kvp.Value;
-            if (plotData.isInfected)
-            {
-                plotData.isInfected = false;
-                healedCount++;
-                
-                if (plotData.seedData != null && plotData.currentGrowthStage >= 0)
-                {
-                    DisplayCropStage(kvp.Key, plotData.seedData, plotData.currentGrowthStage);
-                }
-            }
-        }
-
-        if (healedCount > 0)
-            NotificationSystem.ShowDialogue($"Healed {healedCount} infected plants! " +
-                                            $"The corruption has been cleansed.", 2f);
-        else
-            NotificationSystem.ShowHelp("No infected plants found to heal.");
-    }
-    
-    // Removes farm protection after it has been used
-    private void RemoveFarmProtection()
-    {
-        farmProtected = false;
-        
-        foreach (var plotData in plotStates.Values)
-        {
-            plotData.isProtected = false;
-        }
-        
-        NotificationSystem.ShowHelp("Farm protection has been consumed.");
-        Debug.Log("[PlotlandController] Farm protection consumed by weather event");
-    }
-    
-    // Scans all tilemaps and creates plot data entries
-    private void InitializePlotData()
     {
         plotStates.Clear();
         
@@ -259,6 +55,44 @@ public class PlotlandController : MonoBehaviour
         }
     }
     
+    private void Start()
+    {
+        if (WeatherSystem.Instance != null)
+        {
+            WeatherSystem.Instance.OnWeatherStopped += ResetFreezeEffect;
+            WeatherSystem.Instance.OnStorm += HandleStorm;
+            WeatherSystem.Instance.OnFreeze += HandleFreeze;
+            WeatherSystem.Instance.OnDisease += HandleDisease;
+        }
+        
+        if (TimeSystem.Instance != null)
+        {
+            TimeSystem.Instance.OnSleepTimePassed += SimulateGrowthDuringSleep;
+        }
+    }
+    
+    private void OnDestroy()
+    {
+        if (WeatherSystem.Instance != null)
+        {
+            WeatherSystem.Instance.OnWeatherStopped -= ResetFreezeEffect;
+            WeatherSystem.Instance.OnStorm -= HandleStorm;
+            WeatherSystem.Instance.OnFreeze -= HandleFreeze;
+            WeatherSystem.Instance.OnDisease -= HandleDisease;
+        }
+        
+        if (TimeSystem.Instance != null)
+        {
+            TimeSystem.Instance.OnSleepTimePassed -= SimulateGrowthDuringSleep;
+        }
+    }
+    
+    private void Update()
+    {
+        UpdateCropGrowth();
+    }
+    
+    /********************************************** PLOTLAND BASE LOGIC **********************************************/
     private void ScanTilemapForPlots(Tilemap tilemap)
     {
         foreach (Vector3Int pos in tilemap.cellBounds.allPositionsWithin)
@@ -286,214 +120,23 @@ public class PlotlandController : MonoBehaviour
         return plotData;
     }
     
-    private void SubscribeToWeatherEvents()
-    {
-        if (WeatherSystem.Instance != null)
-        {
-            WeatherSystem.Instance.OnStorm += HandleStorm;
-            WeatherSystem.Instance.OnFreeze += HandleFreeze;
-            WeatherSystem.Instance.OnDisease += HandleDisease;
-        }
-    }
-    
-    private void UnsubscribeFromWeatherEvents()
-    {
-        if (WeatherSystem.Instance != null)
-        {
-            WeatherSystem.Instance.OnStorm -= HandleStorm;
-            WeatherSystem.Instance.OnFreeze -= HandleFreeze;
-            WeatherSystem.Instance.OnDisease -= HandleDisease;
-        }
-    }
-    
-    // Handles storm weather event with protection checks
-    private void HandleStorm()
-    {
-        if (farmProtected)
-        {
-            NotificationSystem.ShowHelp("Power Potion shields the land from the storm's corruption!");
-            RemoveFarmProtection(); // Consume the protection
-            return;
-        }
-    
-        var plantedPlots = GetPlantedPlots();
-        if (plantedPlots.Count == 0) return;
-
-        int plantsToDestroy = Random.Range(1, Mathf.Min(3, plantedPlots.Count + 1));
-    
-        for (int i = 0; i < plantsToDestroy; i++)
-        {
-            DestroyRandomPlot(plantedPlots);
-        }
-    
-        if (plantsToDestroy > 0)
-            NotificationSystem.ShowDialogue($"Corrupted storm destroyed {plantsToDestroy} crops!", 2f);
-    }
-
-    // Handles freeze weather event with protection checks  
-    private void HandleFreeze()
-    {
-        if (farmProtected)
-        {
-            NotificationSystem.ShowHelp("Power Potion shields the crops from the unnatural cold!");
-            RemoveFarmProtection(); // Consume the protection
-            return;
-        }
-    
-        var plantedPlots = GetPlantedPlots();
-        if (plantedPlots.Count == 0) return;
-
-        int plantsToFreeze = Random.Range(1, Mathf.Min(2, plantedPlots.Count + 1));
-    
-        for (int i = 0; i < plantsToFreeze; i++)
-        {
-            FreezeRandomPlot(plantedPlots);
-        }
-    
-        if (plantsToFreeze > 0)
-            NotificationSystem.ShowDialogue($"Corrupted frost damaged {plantsToFreeze} crops!", 2f);
-    }
-
-    // Handles disease outbreak, infecting 30-60% of planted crops
-    private void HandleDisease()
-    {
-        var plantedPlots = GetPlantedPlots();
-    
-        if (plantedPlots.Count == 0) 
-            return;
-
-        int plantsToInfect = Random.Range(
-            Mathf.RoundToInt(plantedPlots.Count * 0.3f), 
-            Mathf.RoundToInt(plantedPlots.Count * 0.6f) + 1
-        );
-    
-        plantsToInfect = Mathf.Max(1, plantsToInfect);
-    
-        for (int i = 0; i < plantsToInfect && plantedPlots.Count > 0; i++)
-        {
-            InfectRandomPlot(plantedPlots);
-        }
-    
-        NotificationSystem.ShowDialogue($"Mysterious blight infected {plantsToInfect} crops!", 2f);
-    }
-    
-    // Freezes random plot, reducing growth stage or destroying early crops
-    private void FreezeRandomPlot(List<Vector3Int> plantedPlots)
-    {
-        if (plantedPlots.Count == 0) return;
-        
-        int randomIndex = Random.Range(0, plantedPlots.Count);
-        Vector3Int plotPos = plantedPlots[randomIndex];
-        plantedPlots.RemoveAt(randomIndex);
-        
-        var plotData = plotStates[plotPos];
-        
-        if (plotData.currentGrowthStage > 1)
-        {
-            plotData.currentGrowthStage = Mathf.Max(1, plotData.currentGrowthStage - 1);
-            plotData.growthTimer *= 0.5f;
-            DisplayCropStage(plotPos, plotData.seedData, plotData.currentGrowthStage);
-        }
-        else
-        {
-            ResetPlotFromStorm(plotPos, plotData);
-        }
-    }
-    
-    // Infects random plot and displays sick sprite
-    private void InfectRandomPlot(List<Vector3Int> plantedPlots)
-    {
-        if (plantedPlots.Count == 0) return;
-        
-        int randomIndex = Random.Range(0, plantedPlots.Count);
-        Vector3Int plotPos = plantedPlots[randomIndex];
-        plantedPlots.RemoveAt(randomIndex);
-        
-        var plotData = plotStates[plotPos];
-        plotData.isInfected = true;
-        
-        if (plotData.seedData?.sickStageTile != null && cropTilemap != null)
-        {
-            cropTilemap.SetTile(plotPos, plotData.seedData.sickStageTile);
-        }
-    }
-    
-    // Clears infected plant and resets to tilled state
-    private void ClearPlotAndSetTilled(Vector3Int tilePos, PlotData plotData)
-    {
-        if (cropTilemap != null)
-            cropTilemap.SetTile(tilePos, null);
-        
-        plotData.state = PlotState.Tilled;
-        plotData.seedData = null;
-        plotData.growthTimer = 0;
-        plotData.currentGrowthStage = 0;
-        plotData.canStartGrowing = false;
-        plotData.isInfected = false;
-        plotData.isNourished = false;
-        plotData.nourishMultiplier = 1f;
-        
-        UpdateTilemapTile(tilePos, tilledTile);
-    }
-    
-    private Vector3Int GetTilePosition(Vector3 worldPos)
-    {
-        return plotlandTierTilemaps[0].WorldToCell(worldPos);
-    }
-    
-    private bool IsValidPlotAction(Vector3Int tilePos, PlotState requiredState)
-    {
-        return plotStates.ContainsKey(tilePos) && plotStates[tilePos].state == requiredState;
-    }
-    
-    private void UpdateTilemapTile(Vector3Int tilePos, TileBase newTile)
-    {
-        foreach (var tilemap in plotlandTierTilemaps)
-        {
-            if (tilemap.GetTile(tilePos) != null)
-            {
-                tilemap.SetTile(tilePos, newTile);
-                break;
-            }
-        }
-    }
-    
-    private void SetupPlantedPlot(Vector3Int tilePos, ItemSeed seedItem)
-    {
-        var plotData = plotStates[tilePos];
-        plotData.state = PlotState.Planted;
-        plotData.seedData = seedItem;
-        plotData.currentGrowthStage = 0;
-        plotData.canStartGrowing = false;
-    }
-    
-    private void DisplayCropStage(Vector3Int tilePos, ItemSeed seedData, int stage)
-    {
-        if (cropTilemap != null && seedData != null && stage < seedData.growthStageTiles.Count)
-        {
-            cropTilemap.SetTile(tilePos, seedData.growthStageTiles[stage]);
-        }
-    }
-    
     private void UpdateCropGrowth()
     {
-        float growthModifier = WeatherSystem.Instance?.GetGrowthModifier() ?? 1f;
-        
         foreach (var kvp in plotStates)
         {
-            UpdateIndividualCropGrowth(kvp.Key, kvp.Value, growthModifier);
+            UpdateIndividualCropGrowth(kvp.Key, kvp.Value);
         }
     }
     
-    // Updates individual crop growth, infected plants don't grow
-    private void UpdateIndividualCropGrowth(Vector3Int tilePos, PlotData plotData, float growthModifier)
+    private void UpdateIndividualCropGrowth(Vector3Int tilePos, PlotData plotData)
     {
         if (plotData.state != PlotState.Planted || plotData.seedData == null || !plotData.canStartGrowing)
             return;
         
         if (plotData.isInfected) return;
 
-        plotData.growthTimer += Time.deltaTime * growthModifier;
+        // freezing can slow down growth
+        plotData.growthTimer += Time.deltaTime * freezeGrowthModifier;
         
         int newStage = CalculateGrowthStage(plotData);
         if (newStage > plotData.currentGrowthStage)
@@ -524,11 +167,165 @@ public class PlotlandController : MonoBehaviour
             plotData.state = PlotState.Grown;
     }
     
-    // Simulates plant growth for the time period when player sleeps
+    public bool CanTill(Vector3 worldPos)
+    {
+        Vector3Int tilePos = GetTilePosition(worldPos);
+        return IsValidPlotAction(tilePos, PlotState.Empty) || 
+               (plotStates.ContainsKey(tilePos) && plotStates[tilePos].isInfected);
+    }
+    
+    public bool CanPlant(Vector3 worldPos)
+    {
+        Vector3Int tilePos = GetTilePosition(worldPos);
+        return IsValidPlotAction(tilePos, PlotState.Tilled);
+    }
+    
+    public bool CanHarvest(Vector3 worldPos)
+    {
+        Vector3Int tilePos = GetTilePosition(worldPos);
+        return IsValidPlotAction(tilePos, PlotState.Grown) && 
+               !plotStates[tilePos].isInfected;
+    }
+    
+    public bool CanAttendPlot(Vector3 worldPos)
+    {
+        Vector3Int tilePos = GetTilePosition(worldPos);
+        return plotStates.ContainsKey(tilePos) &&
+               plotStates[tilePos].state == PlotState.Planted &&
+               !plotStates[tilePos].canStartGrowing;
+    }
+    
+    public void TillPlot(Vector3 worldPos)
+    {
+        Vector3Int tilePos = GetTilePosition(worldPos);
+        
+        if (!plotStates.TryGetValue(tilePos, out var plotData)) 
+            return;
+        
+        // infected plants - player loses them
+        if (plotData.isInfected)
+        {
+            ClearPlotAndSetTilled(tilePos, plotData);
+            return;
+        }
+        
+        // normal tilling for empty plots
+        if (plotData.state == PlotState.Empty)
+        {
+            plotData.state = PlotState.Tilled;
+            UpdateTilemapTile(tilePos, tilledTile);
+        }
+    }
+    
+    public void PlantPlot(InventoryItem seed, Vector3 worldPos)
+    {
+        Vector3Int tilePos = GetTilePosition(worldPos);
+        var seedItem = seed as ItemSeed;
+        
+        if (seedItem == null || !plotStates.ContainsKey(tilePos)) 
+            return;
+        
+        SetupPlantedPlot(tilePos, seedItem);
+        DisplayCropStage(tilePos, seedItem, 0);
+    }
+    
+    public void AttendPlot(Vector3 worldPos)
+    {
+        Vector3Int tilePos = GetTilePosition(worldPos);
+        
+        if (!plotStates.TryGetValue(tilePos, out var plotData)) 
+            return;
+
+        plotData.growthTimer = 0;
+        plotData.currentGrowthStage = 1;
+        plotData.canStartGrowing = true;
+        
+        DisplayCropStage(tilePos, plotData.seedData, 1);
+    }
+    
+    public void HarvestPlot(Vector3 worldPos, PlayerController player)
+    {
+        Vector3Int tilePos = GetTilePosition(worldPos);
+        
+        if (!plotStates.TryGetValue(tilePos, out var plotData)) 
+            return;
+
+        GiveHarvestRewards(plotData, player);
+        ResetPlotToEmpty(tilePos, plotData);
+    }
+    
+    private Vector3Int GetTilePosition(Vector3 worldPos)
+    {
+        return plotlandTierTilemaps[0].WorldToCell(worldPos);
+    }
+    
+    private bool IsValidPlotAction(Vector3Int tilePos, PlotState requiredState)
+    {
+        return plotStates.ContainsKey(tilePos) && plotStates[tilePos].state == requiredState;
+    }
+    
+    private void DisplayCropStage(Vector3Int tilePos, ItemSeed seedData, int stage)
+    {
+        if (cropTilemap != null && seedData != null && stage < seedData.growthStageTiles.Count)
+        {
+            cropTilemap.SetTile(tilePos, seedData.growthStageTiles[stage]);
+        }
+    }
+    
+    private void ClearPlotAndSetTilled(Vector3Int tilePos, PlotData plotData)
+    {
+        if (cropTilemap != null)
+            cropTilemap.SetTile(tilePos, null);
+        
+        plotData.state = PlotState.Tilled;
+        plotData.seedData = null;
+        plotData.growthTimer = 0;
+        plotData.currentGrowthStage = 0;
+        plotData.canStartGrowing = false;
+        plotData.isInfected = false;
+        plotData.isNourished = false;
+        plotData.nourishMultiplier = 1f;
+        
+        UpdateTilemapTile(tilePos, tilledTile);
+    }
+    
+    private void UpdateTilemapTile(Vector3Int tilePos, TileBase newTile)
+    {
+        foreach (var tilemap in plotlandTierTilemaps)
+        {
+            if (tilemap.GetTile(tilePos) != null)
+            {
+                tilemap.SetTile(tilePos, newTile);
+                break;
+            }
+        }
+    }
+    
+    private void SetupPlantedPlot(Vector3Int tilePos, ItemSeed seedItem)
+    {
+        var plotData = plotStates[tilePos];
+        plotData.state = PlotState.Planted;
+        plotData.seedData = seedItem;
+        plotData.currentGrowthStage = 0;
+        plotData.canStartGrowing = false;
+    }
+    
+    public void UnlockPlotland(Tilemap tilemap)
+    {
+        foreach (Vector3Int pos in tilemap.cellBounds.allPositionsWithin)
+        {
+            var tile = tilemap.GetTile(pos);
+            
+            if (tile == lockedTile && IsValidPlotAction(pos, PlotState.Locked))
+            {
+                plotStates[pos].state = PlotState.Empty;
+                tilemap.SetTile(pos, emptyTile);
+            }
+        }
+    }
+    
     public void SimulateGrowthDuringSleep(float timeInSeconds)
     {
-        float growthModifier = WeatherSystem.Instance?.GetGrowthModifier() ?? 1f;
-    
         foreach (var kvp in plotStates)
         {
             var plotData = kvp.Value;
@@ -536,12 +333,10 @@ public class PlotlandController : MonoBehaviour
             if (plotData.state != PlotState.Planted || plotData.seedData == null || !plotData.canStartGrowing)
                 continue;
         
-            if (plotData.isInfected) continue; // Infected plants don't grow
+            if (plotData.isInfected) continue;
         
-            // Apply the time skip to growth timer
-            plotData.growthTimer += timeInSeconds * growthModifier;
+            plotData.growthTimer += timeInSeconds;
         
-            // Update to appropriate growth stage
             int newStage = CalculateGrowthStage(plotData);
             if (newStage > plotData.currentGrowthStage)
             {
@@ -563,6 +358,132 @@ public class PlotlandController : MonoBehaviour
         }
         
         return plantedPlots;
+    }
+    
+    private void GiveHarvestRewards(PlotData plotData, PlayerController player)
+    {
+        var cropItem = plotData.seedData.resultedCrop;
+        int seedAmount = Random.Range(1, 3);
+        int cropAmount = Random.Range(1, 3);
+        
+        if (plotData.isNourished)
+        {
+            seedAmount = Mathf.RoundToInt(seedAmount * plotData.nourishMultiplier);
+            cropAmount = Mathf.RoundToInt(cropAmount * plotData.nourishMultiplier);
+            NotificationSystem.ShowDialogue($"Nourish potion bonus: +{(plotData.nourishMultiplier - 1f) * 100f:F0}% " +
+                                            $"yield!", 3f);
+        }
+        
+        player.inventorySystem.AddItem(plotData.seedData, seedAmount);
+        player.inventorySystem.AddItem(cropItem, cropAmount);
+        cropItem.CollectItem(player);
+    }
+    
+    private void ResetPlotToEmpty(Vector3Int tilePos, PlotData plotData)
+    {
+        if (cropTilemap != null)
+            cropTilemap.SetTile(tilePos, null);
+
+        UpdateTilemapTile(tilePos, emptyTile);
+
+        plotData.state = PlotState.Empty;
+        plotData.seedData = null;
+        plotData.growthTimer = 0;
+        plotData.currentGrowthStage = 0;
+        plotData.canStartGrowing = false;
+        plotData.isNourished = false;
+        plotData.nourishMultiplier = 1f;
+        plotData.isInfected = false;
+    }
+    
+    /********************************************** PLOTLAND BUFFS AND DEBUFFS **********************************************/
+    private void HandleStorm()
+    {
+        if (isFarmProtected)
+        {
+            NotificationSystem.ShowDialogue("Power Potion shields the crops from the corrupted storm!", 3f);
+            RemoveFarmProtection();
+            return;
+        }
+    
+        var plantedPlots = GetPlantedPlots();
+        if (plantedPlots.Count == 0) return;
+
+        int plantsToDestroy = Mathf.CeilToInt(plantedPlots.Count * 0.2f);
+    
+        for (int i = 0; i < plantsToDestroy; i++)
+        {
+            DestroyRandomPlot(plantedPlots);
+        }
+    
+        if (plantsToDestroy > 0)
+            NotificationSystem.ShowDialogue($"Corrupted storm destroyed {plantsToDestroy} of your crops!", 3f);
+    }
+
+    private void HandleFreeze()
+    {
+        if (isFarmProtected)
+        {
+            NotificationSystem.ShowDialogue("Power Potion shields the crops from the unnatural cold!", 3f);
+            RemoveFarmProtection();
+            return;
+        }
+
+        freezeGrowthModifier = 0.5f; // plants grow 50% slower during freeze
+        NotificationSystem.ShowDialogue("A chilling frost slows down all crops!", 3f);
+    }
+    
+    public void ResetFreezeEffect()
+    {
+        if (freezeGrowthModifier < 1f)
+        {
+            freezeGrowthModifier = 1f;
+            Debug.Log("[PlotlandController] Growth speed restored after freeze.");
+        }
+    }
+
+    private void HandleDisease()
+    {
+        var plantedPlots = GetPlantedPlots();
+    
+        if (plantedPlots.Count == 0) 
+            return;
+
+        int plantsToInfect = Random.Range(
+            Mathf.RoundToInt(plantedPlots.Count * 0.2f), 
+            Mathf.RoundToInt(plantedPlots.Count * 0.4f) + 1
+        );
+    
+        plantsToInfect = Mathf.Max(1, plantsToInfect);
+    
+        for (int i = 0; i < plantsToInfect && plantedPlots.Count > 0; i++)
+        {
+            InfectRandomPlot(plantedPlots);
+        }
+    
+        NotificationSystem.ShowDialogue($"Mysterious blight infected {plantsToInfect} crops!", 3f);
+    }
+    
+    public bool ApplyFarmProtection()
+    {
+        if (isFarmProtected)
+        {
+            NotificationSystem.ShowHelp("Farm is already protected!");
+            return false;
+        }
+        
+        isFarmProtected = true;
+        NotificationSystem.ShowDialogue("Farm-wide protection activated! " +
+                                        "The land is shielded against the next weather event.", 3f);
+        return true;
+    }
+    
+    private void RemoveFarmProtection()
+    {
+        isFarmProtected = false;
+        
+        NotificationSystem.ShowHelp("Farm protection has been consumed.");
+        Debug.Log("[PlotlandController] Farm protection consumed by weather event");
     }
     
     private void DestroyRandomPlot(List<Vector3Int> plantedPlots)
@@ -588,43 +509,65 @@ public class PlotlandController : MonoBehaviour
         
         UpdateTilemapTile(plotPos, tilledTile);
     }
-    
-    // Gives harvest rewards with nourish potion bonuses
-    private void GiveHarvestRewards(PlotData plotData, PlayerController player)
+
+    private void InfectRandomPlot(List<Vector3Int> plantedPlots)
     {
-        var cropItem = plotData.seedData.resultedCrop;
-        int seedAmount = Random.Range(1, 3);
-        int cropAmount = Random.Range(1, 3);
+        if (plantedPlots.Count == 0) return;
         
-        if (plotData.isNourished)
+        int randomIndex = Random.Range(0, plantedPlots.Count);
+        Vector3Int plotPos = plantedPlots[randomIndex];
+        plantedPlots.RemoveAt(randomIndex);
+        
+        var plotData = plotStates[plotPos];
+        plotData.isInfected = true;
+        
+        if (plotData.seedData?.sickStageTile != null && cropTilemap != null)
         {
-            seedAmount = Mathf.RoundToInt(seedAmount * plotData.nourishMultiplier);
-            cropAmount = Mathf.RoundToInt(cropAmount * plotData.nourishMultiplier);
-            NotificationSystem.ShowDialogue($"Nourish potion bonus: +{(plotData.nourishMultiplier - 1f) * 100f:F0}% " +
-                                            $"yield!", 1f);
+            cropTilemap.SetTile(plotPos, plotData.seedData.sickStageTile);
         }
-        
-        player.inventorySystem.AddItem(plotData.seedData, seedAmount);
-        player.inventorySystem.AddItem(cropItem, cropAmount);
-        cropItem.CollectItem(player);
     }
     
-    // Resets plot to empty state and clears all potion effects
-    private void ResetPlotToEmpty(Vector3Int tilePos, PlotData plotData)
+    public bool HealAllInfectedPlants()
     {
-        if (cropTilemap != null)
-            cropTilemap.SetTile(tilePos, null);
+        int healedCount = 0;
+        
+        foreach (var kvp in plotStates)
+        {
+            var plotData = kvp.Value;
+            if (plotData.isInfected)
+            {
+                plotData.isInfected = false;
+                healedCount++;
+                
+                if (plotData.seedData != null && plotData.currentGrowthStage >= 0)
+                {
+                    DisplayCropStage(kvp.Key, plotData.seedData, plotData.currentGrowthStage);
+                }
+            }
+        }
 
-        UpdateTilemapTile(tilePos, emptyTile);
+        if (healedCount > 0)
+            return true;
+        
+        NotificationSystem.ShowHelp("No infected plants found to heal.");
+        return false;
+    }
+    
+    public bool ApplyNourishEffect(Vector3 worldPos, float multiplier)
+    {
+        Vector3Int tilePos = GetTilePosition(worldPos);
+    
+        if (!plotStates.TryGetValue(tilePos, out var plotData)) 
+            return false;
 
-        plotData.state = PlotState.Empty;
-        plotData.seedData = null;
-        plotData.growthTimer = 0;
-        plotData.currentGrowthStage = 0;
-        plotData.canStartGrowing = false;
-        plotData.isNourished = false;
-        plotData.nourishMultiplier = 1f;
-        plotData.isInfected = false;
-        plotData.isProtected = false;
+        if (!plotData.isNourished)
+        {
+            plotData.isNourished = true;
+            plotData.nourishMultiplier = multiplier;
+            return true;
+        }
+        
+        NotificationSystem.ShowHelp("Plant already nourished!");
+        return false;
     }
 }

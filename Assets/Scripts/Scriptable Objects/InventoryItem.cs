@@ -14,11 +14,7 @@ public abstract class InventoryItem : ScriptableObject
     
     [Header("Economic Properties")]
     public int basePrice;
-    public bool canBeSold = true;
-    public bool canBeBought;
-    
-    [Header("Inventory Properties")]
-    public int maxStackSize = 99;
+
     
     public virtual void UseItem(PlayerController player)
     {

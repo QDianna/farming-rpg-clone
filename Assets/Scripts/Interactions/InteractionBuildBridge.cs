@@ -7,8 +7,9 @@ using UnityEngine;
 public class InteractionBuildBridge : MonoBehaviour, IInteractable
 {
     [Header("Requirements")]
-    [SerializeField] private int energyRequired = 50;
-    [SerializeField] private int woodRequired = 100;
+    [SerializeField] private int energyRequired;
+
+    [SerializeField] private int woodRequired;
     
     [Header("References")]
     [SerializeField] private GameObject bridgeSprite; // river_bridge
@@ -29,7 +30,7 @@ public class InteractionBuildBridge : MonoBehaviour, IInteractable
         {
             NotificationSystem.ShowDialogue("You could build a bridge to go across! " +
                                                 $"Gather {woodRequired} pieces of wood by chopping down trees. " +
-                                                "Press E when you are ready.", 4f);
+                                                "Press E when you are ready.", 6f);
             InteractionSystem.Instance.SetCurrentInteractable(this);
         }
     }
@@ -91,7 +92,7 @@ public class InteractionBuildBridge : MonoBehaviour, IInteractable
             Destroy(blockerCollider);
             
         bridgeBuilt = true;
-        NotificationSystem.ShowDialogue("Bridge built! You can now cross the river.", 1f);
+        NotificationSystem.ShowHelp("Bridge built! Now you can cross the river.");
         
         // Remove interaction
         InteractionSystem.Instance.SetCurrentInteractable(null);

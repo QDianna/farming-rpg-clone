@@ -17,7 +17,7 @@ public class InteractionBuyLand : MonoBehaviour, IInteractable
         if (other.TryGetComponent<PlayerController>(out _))
         {
             InteractionSystem.Instance.SetCurrentInteractable(this);
-            NotificationSystem.ShowHelp("Press E to buy this land!");
+            NotificationSystem.ShowHelp($"Press E to buy this land for {purchaseCost}.");
         }
     }
 
@@ -60,8 +60,7 @@ public class InteractionBuyLand : MonoBehaviour, IInteractable
     {
         player.playerEconomy.SpendMoney(purchaseCost);
         player.plotlandController.UnlockPlotland(targetTilemap);
-        NotificationSystem.ShowDialogue($"Land purchased for {purchaseCost} coins! " +
-                                        $"You can start planting!", 2f);
+        NotificationSystem.ShowHelp($"Land purchased for {purchaseCost} coins!");
         
         Destroy(gameObject);
     }

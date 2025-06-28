@@ -16,7 +16,6 @@ MonoBehaviour:
   description: sell // research // craft
   sprite: {fileID: -1414924699, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
   droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}
-  basePrice: 15
-  canBeSold: 0
-  canBeBought: 0
-  maxStackSize: 99
+  basePrice: 30
+  hungerRestoreAmount: 25
+  energyRestoreAmount: 40

@@ -11,7 +11,7 @@ public class ItemSeed : InventoryItem
 {
     [Header("Seed Properties")]
     public int tier;
-    public Season season;
+    public bool warmSeason;
     public ItemCrop resultedCrop;
     
     [Header("Growth Settings")]
@@ -23,7 +23,7 @@ public class ItemSeed : InventoryItem
     {
         if (!CanPlantInCurrentSeason())
         {
-            NotificationSystem.ShowHelp($"Cannot plant {name} in this season!");
+            NotificationSystem.ShowHelp($"You can only plant {newName} in a " + (warmSeason? "warm" : "cold") + " season!");
             return;
         }
         
@@ -48,7 +48,7 @@ public class ItemSeed : InventoryItem
     // Checks if seed can be planted in current season
     private bool CanPlantInCurrentSeason()
     {
-        return TimeSystem.Instance.IsCurrentSeasonWarm() == TimeSystem.Instance.IsWarmSeason(season);
+        return TimeSystem.Instance.IsCurrentSeasonWarm() == warmSeason;
     }
     
     // Plants the seed and triggers planting animation

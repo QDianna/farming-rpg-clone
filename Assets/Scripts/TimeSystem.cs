@@ -21,8 +21,7 @@ public class TimeSystem : MonoBehaviour
     [SerializeField] private float timeProgressionSpeed;
     
     [Header("Season Settings")]
-    [SerializeField] private int weatherSeasonDays; // Summer/Winter duration
-    [SerializeField] private int plantSeasonDays;   // Spring/Autumn duration
+    [SerializeField] private int daysPerSeason;
     [SerializeField] private int currentSeasonIndex;
     
     private static readonly List<Season> Seasons = new() { Season.Spring, Season.Summer, Season.Autumn, Season.Winter };
@@ -35,6 +34,8 @@ public class TimeSystem : MonoBehaviour
     private int currentYear = 1; // Track current year
 
     public event System.Action OnDayChange;
+    public event System.Action<float> OnSleepTimePassed;
+
     public event System.Action OnHourChange;
     public event System.Action OnMinuteChange;
     public event System.Action On8AM;
@@ -65,14 +66,16 @@ public class TimeSystem : MonoBehaviour
         
         player.playerStats.Sleep();
         
-        // Signal plotland to simulate growth during sleep
-        // Convert in-game hours to real-time seconds equivalent
+        // Signal growing elements to simulate growth during sleep
+        float simulatedTime = hoursSkipped * (300f / 24f);
+        OnSleepTimePassed?.Invoke(simulatedTime);
+        /*// Convert in-game hours to real-time seconds equivalent
         if (player.plotlandController != null)
         {
             // If 24h in-game = 300 seconds real time, then 1h in-game = 12.5 seconds real time
             float simulatedTime = hoursSkipped * (300f / 24f); // 12.5 seconds per in-game hour
             player.plotlandController.SimulateGrowthDuringSleep(simulatedTime);
-        }
+        }*/
         
         OnDayChange?.Invoke();
     }
@@ -125,39 +128,11 @@ public class TimeSystem : MonoBehaviour
     }
     
     /// <summary>
-    /// Checks if current season is a weather season (Summer/Winter)
-    /// </summary>
-    public bool IsWeatherSeason()
-    {
-        var season = Seasons[currentSeasonIndex];
-        return season == Season.Summer || season == Season.Winter;
-    }
-    
-    /// <summary>
-    /// Checks if current season is a plant season (Spring/Autumn)
-    /// </summary>
-    public bool IsPlantSeason()
-    {
-        var season = Seasons[currentSeasonIndex];
-        return season == Season.Spring || season == Season.Autumn;
-    }
-    
-    /// <summary>
-    /// Gets the appropriate duration for current season
-    /// </summary>
-    private int GetCurrentSeasonDuration()
-    {
-        return IsWeatherSeason() ? weatherSeasonDays : plantSeasonDays;
-    }
-    
-    /// <summary>
     /// Checks if season should change based on current season's duration
     /// </summary>
     private void CheckSeasonChange()
     {
-        int requiredDays = GetCurrentSeasonDuration();
-        
-        if (daysInCurrentSeason >= requiredDays)
+        if (daysInCurrentSeason >= daysPerSeason)
         {
             AdvanceToNextSeason();
         }
@@ -180,7 +155,7 @@ public class TimeSystem : MonoBehaviour
         }
         
         Season newSeason = GetSeason();
-        Debug.Log($"[TimeSystem] Season changed from {previousSeason} to {newSeason}");
+        NotificationSystem.ShowDialogue($"This is the first day of {newSeason}!", 3f);
     }
     
     /// <summary>

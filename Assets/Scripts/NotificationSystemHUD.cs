@@ -9,8 +9,8 @@ using UnityEngine.UIElements;
 public class NotificationSystemHUD : MonoBehaviour
 {
     [Header("Animation Settings")]
-    private float fadeInDuration = 0.1f;
-    private float fadeOutDuration = 0.4f;
+    private float fadeInDuration = 0.2f;
+    private float fadeOutDuration = 0.3f;
     
     // Dialogue UI elements
     private VisualElement dialogueContainer;

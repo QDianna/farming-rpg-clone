@@ -16,9 +16,15 @@ public class MarketSystemHUD : MonoBehaviour
     private Button confirmSale;
     private Label totalValue;
     private Label playerMoney;
+    private Label tooltipsLabel;
     
     private void Awake()
     {
+        var root = GetComponent<UIDocument>().rootVisualElement;
+        
+        tooltipsLabel = root.Q<Label>("Tooltip");
+        tooltipsLabel.style.display = DisplayStyle.None;
+        
         SetupUIReferences();
     }
     
@@ -44,6 +50,7 @@ public class MarketSystemHUD : MonoBehaviour
         confirmSale = root.Q<Button>("ConfirmSale");
         totalValue = root.Q<Label>("TotalValue");
         playerMoney = root.Q<Label>("PlayerMoney");
+        tooltipsLabel = root.Q<Label>("Tooltip");
         
         if (marketContainer != null)
         {
@@ -128,11 +135,12 @@ public class MarketSystemHUD : MonoBehaviour
     }
     
     // Handle inventory clicks when market is open
-    private void OnInventoryItemClicked(InventoryItem item)
+    private void OnInventoryItemClicked(InventoryItem item, bool shiftHeld)
     {
         if (IsMarketOpen())
         {
-            market.TryAddItemToSell(item, 1);
+            int amountToSell = shiftHeld ? 10 : 1;
+            market.TryAddItemToSell(item, amountToSell);
         }
     }
     
@@ -227,6 +235,33 @@ public class MarketSystemHUD : MonoBehaviour
         AddStructuresSection();
     }
     
+    private void RegisterTooltip(VisualElement target, string text)
+    {
+        target.RegisterCallback<MouseEnterEvent>(evt =>
+        {
+            tooltipsLabel.text = text;
+            tooltipsLabel.style.display = DisplayStyle.Flex;
+        });
+
+        target.RegisterCallback<MouseLeaveEvent>(evt =>
+        {
+            tooltipsLabel.style.display = DisplayStyle.None;
+        });
+        
+        target.RegisterCallback<DetachFromPanelEvent>(evt =>
+        {
+            tooltipsLabel.style.display = DisplayStyle.None;
+        });
+
+
+        target.RegisterCallback<MouseMoveEvent>(evt =>
+        {
+            tooltipsLabel.style.left = evt.mousePosition.x + 10;
+            tooltipsLabel.style.top = evt.mousePosition.y + 10;
+        });
+    }
+
+    
     private void AddItemsSection()
     {
         // Create title with tier info
@@ -264,6 +299,8 @@ public class MarketSystemHUD : MonoBehaviour
                 {
                     var itemElement = CreateBuyItemElement(item);
                     seedsContainer.Add(itemElement);
+                    
+                    RegisterTooltip(seedsContainer, item.newName);
                 }
                 buyItemsContainer.Add(seedsContainer);
             }
@@ -303,7 +340,9 @@ public class MarketSystemHUD : MonoBehaviour
         int buyPrice = market.playerEconomy.GetBuyPrice(item);
         var priceLabel = new Label($"{buyPrice}g");
         priceLabel.AddToClassList("item-price");
+        
         itemElement.Add(priceLabel);
+        RegisterTooltip(itemElement, item.newName);
         
         // Just trigger the action - let InteractionMarket handle the logic
         itemElement.RegisterCallback<ClickEvent>(_ => market.TryBuyItem(item, 1));
@@ -315,7 +354,7 @@ public class MarketSystemHUD : MonoBehaviour
     // Only show structures if player has met the witch
     private void AddStructuresSection()
     {
-        if (QuestsSystem.Instance == null || !QuestsSystem.Instance.HasMetWitch)
+        if (QuestsSystem.Instance == null || !QuestsSystem.Instance.hasMetWitch)
         {
             return;
         }

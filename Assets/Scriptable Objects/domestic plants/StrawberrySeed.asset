@@ -17,13 +17,10 @@ MonoBehaviour:
   sprite: {fileID: 897654790, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
   droppedItemPrefab: {fileID: 0}
   basePrice: 20
-  canBeSold: 1
-  canBeBought: 1
-  maxStackSize: 99
   tier: 2
-  season: 0
+  warmSeason: 1
   resultedCrop: {fileID: 11400000, guid: 5572ee5d9f9eeb04dba85b5fcdbd4c6b, type: 2}
-  growthTime: 420
+  growthTime: 300
   growthStageTiles:
   - {fileID: 11400000, guid: 0c6cbf29f50cb4c44b8a90b726a73f62, type: 2}
   - {fileID: 11400000, guid: 881dadffb935c1e4e9be681513b8efe7, type: 2}

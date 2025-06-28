@@ -60,6 +60,7 @@ public class InteractionMarket : MonoBehaviour, IInteractable
     {
         if (other.TryGetComponent<PlayerController>(out _))
         {
+            NotificationSystem.ShowHelp("Press E to use the Market.");
             InteractionSystem.Instance.SetCurrentInteractable(this);
         }
     }
@@ -79,7 +80,10 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         if (isMarketOpen)
             CloseMarket();
         else
+        {
+            NotificationSystem.ShowHelp("click to sell 1\nshift-click to sell 10");
             OpenMarket(player);
+        }
     }
     
     // SELL METHODS
@@ -203,7 +207,7 @@ public class InteractionMarket : MonoBehaviour, IInteractable
         if (success && craftingSystemHUD != null)
         {
             craftingSystemHUD.UnlockAllUpgradeSlots();
-            NotificationSystem.ShowDialogue("Crafting bench was upgraded, check it out!", 1f);
+            NotificationSystem.ShowHelp("Crafting bench was upgraded, check it out!");
             OnTransactionCompleted?.Invoke();
         }
         

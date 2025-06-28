@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Unity.Cinemachine;
 
@@ -60,7 +61,7 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
     }
     
     // Handles camera positioning and bounds updates
-    private void UpdateCameraForTeleport(Vector3 oldPosition, Vector3 newPosition, Transform playerTransform)
+    /*private void UpdateCameraForTeleport(Vector3 oldPosition, Vector3 newPosition, Transform playerTransform)
     {
         var virtualCamera = cameraConfiner.GetComponent<CinemachineCamera>();
         if (virtualCamera == null) 
@@ -77,7 +78,33 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
         // Notify Cinemachine about the teleport to prevent interpolation
         Vector3 teleportDelta = newPosition - oldPosition;
         virtualCamera.OnTargetObjectWarped(playerTransform, teleportDelta);
+    }*/
+    
+    private void UpdateCameraForTeleport(Vector3 oldPosition, Vector3 newPosition, Transform playerTransform)
+    {
+        StartCoroutine(DeferredCameraUpdate(oldPosition, newPosition, playerTransform));
     }
+
+    private IEnumerator DeferredCameraUpdate(Vector3 oldPosition, Vector3 newPosition, Transform playerTransform)
+    {
+        var virtualCamera = cameraConfiner.GetComponent<CinemachineCamera>();
+        if (virtualCamera == null)
+            yield break;
+
+        // Setează noul confiner
+        cameraConfiner.BoundingShape2D = targetZone.cameraBounds;
+        cameraConfiner.InvalidateBoundingShapeCache();
+
+        yield return null; // așteaptă un frame pentru ca Cinemachine să proceseze noul collider
+
+        // Snap camera
+        virtualCamera.transform.position = new Vector3(newPosition.x, newPosition.y, virtualCamera.transform.position.z);
+
+        // Comunică teleportul la Cinemachine
+        Vector3 teleportDelta = newPosition - oldPosition;
+        virtualCamera.OnTargetObjectWarped(playerTransform, teleportDelta);
+    }
+
     
     // Shows zone entry notification
     private void ShowTeleportNotification()

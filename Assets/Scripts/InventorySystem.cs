@@ -26,12 +26,15 @@ public class InventorySystem : MonoBehaviour
     public static InventorySystem Instance { get; private set; }
 
     [SerializeField] private List<InventoryEntry> items = new List<InventoryEntry>();
-    [HideInInspector] public int selectedItemIndex = -2;
+    [HideInInspector] public int selectedItemIndex = -1;
 
     public event System.Action OnSelectedItemChange;
     public event System.Action OnInventoryChanged;
-    public event System.Action<InventoryItem> OnInventoryItemClicked;
+    // public event System.Action<InventoryItem> OnInventoryItemClicked;
 
+    public event System.Action<InventoryItem, bool> OnInventoryItemClicked;
+
+    
     private void Awake()
     {
         InitializeSingleton();
@@ -58,7 +61,16 @@ public class InventorySystem : MonoBehaviour
     public void UseCurrentItem(PlayerController player)
     {
         var item = GetSelectedItem();
-        item?.UseItem(player);
+        if (item == null) return;
+
+        var quantity = GetSelectedItemQuantity();
+        if (quantity <= 0)
+        {
+            NotificationSystem.ShowHelp("You don't have any more of this item!");
+            return;
+        }
+
+        item.UseItem(player);
     }
     
     public InventoryItem GetSelectedItem()
@@ -77,9 +89,6 @@ public class InventorySystem : MonoBehaviour
     
     public void GetNextItem()
     {
-        if (HandleEmptySelection()) 
-            return;
-        
         if (items.Count == 0) 
             return;
 
@@ -89,24 +98,13 @@ public class InventorySystem : MonoBehaviour
     
     public void GetPreviousItem()
     {
-        if (HandleEmptySelection()) 
-            return;
-    
         if (items.Count == 0) 
             return;
 
         selectedItemIndex = (selectedItemIndex - 1 + items.Count) % items.Count;
         OnSelectedItemChange?.Invoke();
     }
-
-    /*public void ShowAllItems()
-    {
-        if (items.Count == 0) 
-        return;
-
-        OnInventoryOpened?.Invoke();
-    }*/
-
+    
     public void AddItem(InventoryItem item, int amount)
     {
         var existingEntry = FindItemEntry(item);
@@ -126,12 +124,6 @@ public class InventorySystem : MonoBehaviour
             return;
         
         entry.quantity -= amount;
-        
-        if (entry.quantity <= 0)
-        {
-            RemoveEntryAndUpdateSelection(entry);
-        }
-        
         TriggerInventoryEvents();
     }
     
@@ -162,9 +154,23 @@ public class InventorySystem : MonoBehaviour
         return new List<InventoryEntry>(items);
     }
     
-    public void TriggerItemClick(InventoryItem item)
+    /*public void TriggerItemClick(InventoryItem item)
     {
+        var entry = FindItemEntry(item);
+        if (entry == null || entry.quantity <= 0)
+            return; // Do nothing if item doesn't exist or is empty
+
         OnInventoryItemClicked?.Invoke(item);
+    }*/
+    
+    
+    public void TriggerItemClick(InventoryItem item, bool shiftHeld)
+    {
+        var entry = FindItemEntry(item);
+        if (entry == null || entry.quantity <= 0)
+            return;
+
+        OnInventoryItemClicked?.Invoke(item, shiftHeld);
     }
     
     // Sets up singleton instance
@@ -173,7 +179,7 @@ public class InventorySystem : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            selectedItemIndex = -2;
+            selectedItemIndex = -1;
         }
         else
         {
@@ -187,32 +193,10 @@ public class InventorySystem : MonoBehaviour
         return items.Count > 0 && selectedItemIndex >= 0 && selectedItemIndex < items.Count;
     }
     
-    // Handles navigation when no item is selected
-    private bool HandleEmptySelection()
-    {
-        if (selectedItemIndex == -2)
-        {
-            selectedItemIndex = -1;
-            return true;
-        }
-        return false;
-    }
-    
     // Finds inventory entry for specific item
     private InventoryEntry FindItemEntry(InventoryItem item)
     {
         return items.Find(entry => entry.item == item);
-    }
-    
-    // Removes entry and updates selection index
-    private void RemoveEntryAndUpdateSelection(InventoryEntry entry)
-    {
-        items.Remove(entry);
-
-        if (items.Count == 0)
-            selectedItemIndex = -1;
-        else if (selectedItemIndex >= items.Count)
-            selectedItemIndex = 0;
     }
     
     // Triggers both selection and inventory change events

@@ -18,8 +18,8 @@ public class ItemHealPotion : InventoryItem
         }
         
         // Heal all infected plants farm-wide
-        player.plotlandController.HealAllInfectedPlants();
-        player.inventorySystem.RemoveItem(this, 1);
+        if (player.plotlandController.HealAllInfectedPlants())
+            player.inventorySystem.RemoveItem(this, 1);
     }
     
 }

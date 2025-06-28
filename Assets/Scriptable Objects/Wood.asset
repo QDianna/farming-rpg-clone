@@ -16,7 +16,4 @@ MonoBehaviour:
   description: sell / build
   sprite: {fileID: -2113911436, guid: fe4fa141081de484da2f499d75d2ff58, type: 3}
   droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}
-  basePrice: 10
-  canBeSold: 1
-  canBeBought: 0
-  maxStackSize: 99
+  basePrice: 8
