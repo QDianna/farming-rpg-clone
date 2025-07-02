@@ -15,10 +15,7 @@ MonoBehaviour:
   newName: The Cure Beneath
   description: brings life to all
   sprite: {fileID: 2807716563117960152, guid: 2023ac7a27bdcfb42860cd4546cb626e, type: 3}
-  droppedItemPrefab: {fileID: 0}
+  droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}
   basePrice: 0
-  canBeSold: 0
-  canBeBought: 0
-  maxStackSize: 99
   useRange: 5
   emptyBedSprite: {fileID: 2122107185238573207, guid: a20e000453388f743aad97b25285e211, type: 3}

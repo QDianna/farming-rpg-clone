@@ -169,7 +169,7 @@ public class WildPlantController : MonoBehaviour, IInteractable
         int collectAmount = Random.Range(1, 4);
 
         InventorySystem.Instance.AddItem(collectedWildPlant, collectAmount);
-        NotificationSystem.ShowHelp($"Picked up {collectedWildPlant.newName} x{collectAmount}");
+        NotificationSystem.ShowHelp($"Collected {collectedWildPlant.newName} x{collectAmount}");
         collectedWildPlant.CollectItem(player);
 
         InteractionSystem.Instance.SetCurrentInteractable(null);

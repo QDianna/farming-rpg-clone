@@ -81,7 +81,7 @@ public class InteractionMarket : MonoBehaviour, IInteractable
             CloseMarket();
         else
         {
-            NotificationSystem.ShowHelp("click to sell 1\nshift-click to sell 10");
+            NotificationSystem.ShowHelp("Click to sell x1\nShift-Click to sell x10");
             OpenMarket(player);
         }
     }

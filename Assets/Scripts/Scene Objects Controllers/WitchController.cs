@@ -72,32 +72,30 @@ public class WitchController : MonoBehaviour, IInteractable
         }
 
         // Queue up initial dialogues (already have delays handled internally)
-        NotificationSystem.ShowDialogue("Witch: So... you have come. I know why you are here. " +
-                                        "The illness that grips your spouse... it is no ordinary sickness.", 4f);
+        NotificationSystem.ShowDialogue("Witch: So, you've come, I know why you're here. " +
+                                        "The illness that grips your spouse... it is no ordinary sickness!", 5f);
         NotificationSystem.ShowDialogue("Witch: It is the land itself that is ill. " +
-                                        "A creeping corruption spreads through the soil, the air... and into us.", 4f);
+                                        "A creeping corruption spreads through the soil, the air and into us.", 5f);
         NotificationSystem.ShowDialogue("Witch: You must have seen it too, your plants falling ill, " +
-                                        "stunted growth, and the weather twisting with unusual force...", 4f);
+                                        "the weather twisting with unusual force...", 5f);
         NotificationSystem.ShowDialogue("Witch: The cold is more powerful than before, the land refuses to grow anything. " +
-                                        "Without help, your crops will wither before they sprout.", 4f);
-        NotificationSystem.ShowDialogue("Witch: Take this... It is a strength potion... " +
-                                        "it will allow your seeds to grow during the cold.", 5f);
-
-        // Wait for 21 seconds = total duration of the above
-        yield return new WaitForSeconds(4f * 4 + 5f); // 21 seconds
-
-        // Give potion
-        InventorySystem.Instance.AddItem(strengthPotion, 3);
+                                        "Without help, your crops will wither before they sprout!", 5f);
+        NotificationSystem.ShowDialogue("Witch: Take this... It is a strength potion. " +
+                                        "It will allow your seeds to grow during the cold.", 5f);
+        
+        // Wait for dialogue and give strength potion
+        yield return new WaitForSeconds(5 * 5f);
+        InventorySystem.Instance.AddItem(strengthPotion, 12);
         strengthPotion.CollectItem(player);
 
         // Remaining dialogue (already internally delayed)
         NotificationSystem.ShowDialogue("Witch: But listen... this is only a gift. " +
                                         "You must learn how to craft more, or you will not survive the next winter!", 5f);
-        NotificationSystem.ShowDialogue("Witch: I need you to bring me four potions: Power, Heal, Speed, and Endurance. " +
-                                        "They will help us stand against what is poisoning this land.", 5f);
+        NotificationSystem.ShowDialogue("Witch: I need a favour in return. Bring me four potions: Power, Heal, Speed, and Endurance. " +
+                                        "I will tell you more then...", 5f);
 
         // Wait another 10 seconds for the two above
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(3 * 5f);
 
         // Final unlocks
         UnlockResearchTable();
@@ -120,10 +118,16 @@ public class WitchController : MonoBehaviour, IInteractable
    private void CheckPotionCollection(PlayerController player)
    {
        NotificationSystem.ShowDialogue("Witch: Have you brought the potions? " +
-                                       "Power, Heal, Speed, and Endurance.", 4.8f);
+                                       "Power, Heal, Speed, and Endurance.", 5f);
 
        if (HasAllRequiredPotions())
        {
+           currentState = WitchQuestState.QuestComplete;
+           if (QuestsSystem.Instance != null)
+           {
+               QuestsSystem.Instance.SetWitchQuestCompleted();
+           }
+           
            CollectPotionsAndGiveReward(player);
        }
        else
@@ -155,10 +159,6 @@ public class WitchController : MonoBehaviour, IInteractable
        InventorySystem.Instance.RemoveItem(endurancePot, 1);
        InventorySystem.Instance.RemoveItem(speedPot, 1);
        
-       // Give final flower
-       InventorySystem.Instance.AddItem(rareFlower, 1);
-       rareFlower.CollectItem(player);
-       
        StartCompletionDialogue(player);
    }
    
@@ -169,11 +169,12 @@ public class WitchController : MonoBehaviour, IInteractable
 
    private IEnumerator CompletionSequence(PlayerController player)
    {
-       NotificationSystem.ShowDialogue("Witch: You've done it, good job!", 3f);
+       
+       NotificationSystem.ShowDialogue("Witch: You've done it, good job! ", 3f);
        NotificationSystem.ShowDialogue("Witch: With these, we can finally prepare the cure. " +
-                                       "But it needs one last, secret ingredient... here, take this.", 4f);
+                                       "But it needs one last, secret ingredient... here, take this.", 5f);
 
-       yield return new WaitForSeconds(3f + 4f); // Wait for first 2 lines to finish
+       yield return new WaitForSeconds(3 * 5f); // Wait for first 2 lines to finish
 
        // Give rare flower
        InventorySystem.Instance.AddItem(rareFlower, 1);
@@ -181,15 +182,8 @@ public class WitchController : MonoBehaviour, IInteractable
 
        // Continue with the rest of the dialogue
        NotificationSystem.ShowDialogue("Witch: Add the Rare Flower to the potions I asked you for. " +
-                                       "It will complete the final recipe!", 4f);
-       NotificationSystem.ShowDialogue("Witch: Go now, your spouse awaits you!", 3f);
-       
-       currentState = WitchQuestState.QuestComplete;
-
-       if (QuestsSystem.Instance != null)
-       {
-           QuestsSystem.Instance.SetWitchQuestCompleted();
-       }
+                                       "It will complete the final recipe!", 5f);
+       NotificationSystem.ShowDialogue("Witch: Go now, your spouse awaits you!", 5f);
    }
 
    
@@ -211,12 +205,12 @@ public class WitchController : MonoBehaviour, IInteractable
        if (missingPotions.Length > 2)
            missingPotions = missingPotions.Substring(0, missingPotions.Length - 2);
        
-       NotificationSystem.ShowDialogue($"Witch: You still need: {missingPotions}", 4f);
+       NotificationSystem.ShowDialogue($"Witch: Come back when you have: {missingPotions}", 5f);
    }
    
    // Shows dialogue when quest is complete
    private void ShowQuestCompleteDialogue(PlayerController player)
    {
-       NotificationSystem.ShowDialogue("Witch: Go now, craft the final potion and save your spouse!", 4f);
+       NotificationSystem.ShowDialogue("Witch: Go now, craft the final potion and save your spouse!", 5f);
    }
 }

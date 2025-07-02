@@ -20,7 +20,7 @@ MonoBehaviour:
   tier: 1
   warmSeason: 1
   resultedCrop: {fileID: 11400000, guid: 062b5afc6c5432a41942a8f29c745942, type: 2}
-  growthTime: 150
+  growthTime: 15
   growthStageTiles:
   - {fileID: 11400000, guid: eea0a8f891973b04c8e48e04b41abde1, type: 2}
   - {fileID: 11400000, guid: 46d0784dfbd05f44996398d7e07a05c7, type: 2}

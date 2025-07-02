@@ -15,20 +15,16 @@ public class QuestsSystem : MonoBehaviour
     public bool hasStartedWitchQuest;
     public bool hasCompletedWitchQuest;
     public bool hasMetWitch;
-
-    [Header("Tutorial Settings")]
-    private float introDelay = 3f;
-
     
-    public event System.Action OnWitchFirstMet;
-    public event System.Action OnWitchQuestCompleted;
+    private float introDelay = 2f;
+    private string currentMissionText = "";
+    
+    public event System.Action OnWitchFirstMet, OnWitchQuestCompleted;
 
     [SerializeField] private UIDocument uiDocument;
-    private Label missionText;
     private VisualElement missionsContainer;
-
-    private string currentMissionText = "";
-
+    private Label missionText;
+    
     private void Awake()
     {
         InitializeSingleton();
@@ -56,6 +52,9 @@ public class QuestsSystem : MonoBehaviour
 
     private IEnumerator DelayedIntroduction()
     {
+        AddMissionLine("Use the hoe and seeds from your inventory to grow crops. " +
+                       "Don't forget to water them in warm seasons!");
+        
         yield return new WaitForSeconds(introDelay);
         if (!hasShownIntroduction)
             ShowIntroduction();
@@ -85,20 +84,17 @@ public class QuestsSystem : MonoBehaviour
     private void ShowIntroduction()
     {
         NotificationSystem.ShowDialogue("My beloved has fallen gravely ill... " +
-                                        "I have never seen anything like this.", 4f);
-        NotificationSystem.ShowDialogue("It came without warning. No healer in town can explain it " +
-                                        "and he's running out of time.", 4f);
+                                        "I have never seen anything like this.", 5f);
+        NotificationSystem.ShowDialogue("It came without warning, no healer in town can explain it " +
+                                        "and he's running out of time.", 5f);
         NotificationSystem.ShowDialogue("But it is not just them... " +
-                                        "Something is wrong with the world itself.", 4f);
-        NotificationSystem.ShowDialogue("The weather has turned strange... sudden storms, " +
-                                        "harsh winters, crops refusing to grow...", 4f);
+                                        "Something is wrong with the world itself!", 5f);
+        NotificationSystem.ShowDialogue("The weather has turned strange, sudden storms, " +
+                                        "harsh winters... I can't make anything grow in that cold.", 5f);
         NotificationSystem.ShowDialogue("Even the plants seem sick. " +
-                                        "I have seen seeds rot before they sprout.", 4f);
-        NotificationSystem.ShowDialogue("I must find a cure... " +
-                                        "there must be somebody who knows more...", 4f);
-
-        AddMissionLine("Use the hoe and seeds from your inventory to grow crops. " +
-                       "Don't forget to water them in warm seasons!");
+                                        "I have seen seeds rot before they sprout!", 5f);
+        NotificationSystem.ShowDialogue("I must do something... " +
+                                        "there must be somebody who knows more!", 5f);
         
         hasShownIntroduction = true;
     }
@@ -124,10 +120,10 @@ public class QuestsSystem : MonoBehaviour
             AddMissionLine("Buy Research Table and Crafting Bench from the Market.");
             AddMissionLine("Learn how to craft Strength Potion by researching plants. " +
                            "You need to prepare for cold seasons, crops won't grow without them!");
-            AddMissionLine("Try to research the seeds also, they might give you more insight!");
+            AddMissionLine("Try to research the seeds also, they might give you more insight...");
+            AddMissionLine("Bring Power, Heal, Speed, and Endurance potions to the witch.");
         }
     }
-
 
     // Marks that the player has completed the witch's quest
     public void SetWitchQuestCompleted()

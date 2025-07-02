@@ -30,6 +30,8 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
         if (!CanTeleport())
             return;
 
+        player.LockInputForFrames(3); // lock player so it doesnt fck the camera
+        
         var playerRb = player.GetComponent<Rigidbody2D>();
         if (playerRb == null) 
             return;
@@ -59,50 +61,47 @@ public class InteractionTeleport : MonoBehaviour, IInteractable
         
         InteractionSystem.Instance.SetCurrentInteractable(null);
     }
-    
-    // Handles camera positioning and bounds updates
-    /*private void UpdateCameraForTeleport(Vector3 oldPosition, Vector3 newPosition, Transform playerTransform)
-    {
-        var virtualCamera = cameraConfiner.GetComponent<CinemachineCamera>();
-        if (virtualCamera == null) 
-            return;
 
-        // Force camera to snap to new position to prevent bounds collision
-        Vector3 cameraPosition = new Vector3(newPosition.x, newPosition.y, virtualCamera.transform.position.z);
-        virtualCamera.transform.position = cameraPosition;
-        
-        // Update camera bounds for new zone
-        cameraConfiner.BoundingShape2D = targetZone.cameraBounds;
-        cameraConfiner.InvalidateBoundingShapeCache();
-
-        // Notify Cinemachine about the teleport to prevent interpolation
-        Vector3 teleportDelta = newPosition - oldPosition;
-        virtualCamera.OnTargetObjectWarped(playerTransform, teleportDelta);
-    }*/
-    
     private void UpdateCameraForTeleport(Vector3 oldPosition, Vector3 newPosition, Transform playerTransform)
     {
         StartCoroutine(DeferredCameraUpdate(oldPosition, newPosition, playerTransform));
     }
 
-    private IEnumerator DeferredCameraUpdate(Vector3 oldPosition, Vector3 newPosition, Transform playerTransform)
+    private IEnumerator DeferredCameraUpdate(Vector3 oldPos, Vector3 newPos, Transform playerTransform)
     {
         var virtualCamera = cameraConfiner.GetComponent<CinemachineCamera>();
         if (virtualCamera == null)
             yield break;
 
-        // Setează noul confiner
         cameraConfiner.BoundingShape2D = targetZone.cameraBounds;
         cameraConfiner.InvalidateBoundingShapeCache();
 
-        yield return null; // așteaptă un frame pentru ca Cinemachine să proceseze noul collider
+        yield return null; // confiner apply
 
-        // Snap camera
-        virtualCamera.transform.position = new Vector3(newPosition.x, newPosition.y, virtualCamera.transform.position.z);
-
-        // Comunică teleportul la Cinemachine
-        Vector3 teleportDelta = newPosition - oldPosition;
+        Vector3 teleportDelta = newPos - oldPos;
         virtualCamera.OnTargetObjectWarped(playerTransform, teleportDelta);
+
+        yield return null; // așteaptă ca CinemachineBrain să aplice transformul
+
+        var vcamPos = virtualCamera.transform.position;
+        var mainCam = Camera.main;
+
+        if (mainCam != null)
+        {
+            var mainCamPos = mainCam.transform.position;
+
+            if (Vector3.Distance(mainCamPos, vcamPos) > 0.1f)
+            {
+                Debug.Log("Main Camera out of sync with Virtual Camera — forcing position");
+                mainCam.transform.position = vcamPos;
+            }
+        }
+        else
+        {
+            Debug.Log("ERROR Camera.main is NULL — could not verify sync");
+            // yield break;
+        }
+
     }
 
     

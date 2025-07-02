@@ -35,7 +35,7 @@ public abstract class InventoryItem : ScriptableObject
     private Vector3 CalculateDropPosition(Vector3 playerPosition)
     {
         Vector2 randomDirection = Random.insideUnitCircle.normalized;
-        float randomDistance = Random.Range(0.8f, 1.2f);
+        float randomDistance = Random.Range(1.2f, 1.8f);
         Vector2 offset = randomDirection * randomDistance;
         
         return playerPosition + new Vector3(offset.x, offset.y, 0);

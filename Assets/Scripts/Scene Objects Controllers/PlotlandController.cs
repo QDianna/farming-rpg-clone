@@ -246,8 +246,8 @@ public class PlotlandController : MonoBehaviour
     public void HarvestPlot(Vector3 worldPos, PlayerController player)
     {
         Vector3Int tilePos = GetTilePosition(worldPos);
-        
-        if (!plotStates.TryGetValue(tilePos, out var plotData)) 
+
+        if (!plotStates.TryGetValue(tilePos, out var plotData))
             return;
 
         GiveHarvestRewards(plotData, player);
@@ -377,6 +377,7 @@ public class PlotlandController : MonoBehaviour
         player.inventorySystem.AddItem(plotData.seedData, seedAmount);
         player.inventorySystem.AddItem(cropItem, cropAmount);
         cropItem.CollectItem(player);
+        NotificationSystem.ShowHelp($"Harvested {cropItem.newName} x{cropAmount}");
     }
     
     private void ResetPlotToEmpty(Vector3Int tilePos, PlotData plotData)

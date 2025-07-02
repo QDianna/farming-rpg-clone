@@ -15,9 +15,6 @@ MonoBehaviour:
   newName: strength potion
   description: helps plants sprout in cold weather
   sprite: {fileID: -195270696, guid: a1f409a1ef3e9654698d16d783c85844, type: 3}
-  droppedItemPrefab: {fileID: 0}
+  droppedItemPrefab: {fileID: 2853588265277958318, guid: 8b4fd5c83626cd34ab2bcef71be5ff7e, type: 3}
   basePrice: 20
-  canBeSold: 0
-  canBeBought: 0
-  maxStackSize: 99
   starsEffectPrefab: {fileID: 7762797338399269062, guid: 75489c9862eb74d498a132336ffba911, type: 3}

@@ -36,6 +36,14 @@ public class PlayerController : MonoBehaviour
     private Vector2 currentMovement;
     private Vector2 lastMoveDirection = Vector2.down;
     
+    bool queueinteract;
+    private int inputLockFrames = 0;
+
+    public void LockInputForFrames(int frames)
+    {
+        inputLockFrames = frames;
+    }
+    
     private void Awake()
     {
         InitializeComponents();
@@ -64,14 +72,31 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (inputLockFrames > 0)
+            return;
+
         HandleMovementInput();
         HandleActionInputs();
     }
 
     private void FixedUpdate()
     {
+        if (inputLockFrames > 0)
+        {
+            inputLockFrames--;
+            //playerRigidbody.velocity = Vector2.zero;
+            return;
+        }
+
         ApplyMovement();
+
+        if (queueinteract)
+        {
+            interactionSystem.TryInteract(this);
+            queueinteract = false;
+        }
     }
+
     
     // Caches all required component references
     private void InitializeComponents()
@@ -150,7 +175,10 @@ public class PlayerController : MonoBehaviour
     private void HandleActionInputs()
     {
         if (interactAction.triggered)
-            interactionSystem.TryInteract(this);
+        {
+            queueinteract = true;
+        }
+        // interactionSystem.TryInteract(this);
         
         if (toolAction.triggered)
             toolSystem.UseTool(this);
