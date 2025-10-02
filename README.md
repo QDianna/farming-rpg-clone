@@ -3,13 +3,13 @@
 Proiect de licență, dezvoltat în **Unity**.  
 Jocul este un **2D farming RPG** în care jucătorul își gestionează propria fermă, cultivă plante, colectează resurse și interacționează cu lumea înconjurătoare.  
 
-## Descriere
+## Descriere  
 - **Gameplay**: jucătorul poate cultiva terenuri, aduna resurse și produce obiecte utile.  
 - **Obiective**: progresul se bazează pe dezvoltarea fermei și pe explorarea mediului.  
 - **Grafică**: stil pixel-art simplificat, adaptat pentru experiență casual.  
 - **Interacțiuni**: sistem de iteme, colectare, crafting și economie de bază.  
 
-## Rol și contribuții
+## Rol și contribuții  
 - Design și dezvoltare completă în **Unity**.  
 - Implementarea mecanicilor de bază:  
   - sistem de plantare și recoltare,  
@@ -18,7 +18,7 @@ Jocul este un **2D farming RPG** în care jucătorul își gestionează propria 
   - logică de joc pentru progres și salvarea datelor.  
 - Crearea diagramei arhitecturale și documentației aferente lucrării de licență.  
 
-## Tehnologii
+## Tehnologii  
 - **Unity** (C# scripting)  
 - **Tilemaps** pentru construirea hărții și a mediului 2D  
 - **Animator & Sprite Sheets** pentru animații și personaje  
@@ -44,3 +44,4 @@ Proiectul demonstrează folosirea conceptelor de **game development în Unity**,
 - gestionarea resurselor și progresului jucătorului.  
 
 Acest joc reprezintă baza pentru un **farming RPG educațional și extensibil**, creat ca lucrare de licență.  
+
