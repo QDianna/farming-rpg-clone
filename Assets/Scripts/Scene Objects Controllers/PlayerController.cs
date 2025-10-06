@@ -1,3 +1,5 @@
+using System;
+using NUnit.Framework.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -39,6 +41,36 @@ public class PlayerController : MonoBehaviour
     bool queueinteract;
     private int inputLockFrames = 0;
 
+    private EventBinding<TestEvent> testEventBinding;
+    private EventBinding<PlayerEvent> playerEventBinding;
+
+    void HandleTestEvent()
+    {
+        Debug.Log("Test event received"!);
+        
+    }
+
+    void HandlePlayerEvent(PlayerEvent playerEvent)
+    {
+        Debug.Log($"Player event received! Health is {playerEvent.health}, mana is {playerEvent.mana}");
+        
+    }
+
+    private void OnEnable()
+    {
+        testEventBinding = new EventBinding<TestEvent>(HandleTestEvent);
+        EventBus<TestEvent>.Register(testEventBinding);
+
+        playerEventBinding = new EventBinding<PlayerEvent>(HandlePlayerEvent);
+        EventBus<PlayerEvent>.Register(playerEventBinding);
+    }
+
+    private void OnDisable()
+    {
+        EventBus<TestEvent>.Deregister(testEventBinding);
+        EventBus<PlayerEvent>.Deregister(playerEventBinding);
+    }
+
     public void LockInputForFrames(int frames)
     {
         inputLockFrames = frames;
@@ -77,6 +109,20 @@ public class PlayerController : MonoBehaviour
 
         HandleMovementInput();
         HandleActionInputs();
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            EventBus<TestEvent>.Raise(new TestEvent());
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            EventBus<PlayerEvent>.Raise(new PlayerEvent
+            {
+                health = 100,
+                mana = 100
+            });
+        }
     }
 
     private void FixedUpdate()
